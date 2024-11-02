@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://gv2ggu7gf5vo"]
+[gd_scene load_steps=4 format=3 uid="uid://gv2ggu7gf5vo"]
 
-[node name="Main" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://dccpg2stfd2bp" path="res://player.tscn" id="1_oompg"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_mubev"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwug4"]
+
+[node name="World" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_oompg")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.41313, 0, 0, 0, 0.240613, 0, 0, 0, 4.81457, 0, -0.0979378, 0)
+mesh = SubResource("BoxMesh_qwug4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95658, 0.29147, 0, -0.29147, 0.95658, 0, 0.900932, 1.93411)
+script = ExtResource("2_mubev")

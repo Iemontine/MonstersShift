@@ -8,7 +8,6 @@ size = Vector3(0.319366, 0.488495, 0.305237)
 
 [sub_resource type="Animation" id="Animation_fgc70"]
 length = 0.001
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,25 +21,8 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_b6tgc"]
-resource_name = "idle_back"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-
 [sub_resource type="Animation" id="Animation_chgrh"]
 resource_name = "idle_front"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,7 +38,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ii2q7"]
 resource_name = "idle_left"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,7 +53,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xufsm"]
 resource_name = "idle_right"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,10 +66,8 @@ tracks/0/keys = {
 "values": [7]
 }
 
-[sub_resource type="Animation" id="Animation_ik3dh"]
-resource_name = "walk_back"
-length = 0.4
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_b6tgc"]
+resource_name = "idle_back"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -97,33 +75,15 @@ tracks/0/path = NodePath("Sprite3D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9, 10, 11, 10]
-}
-
-[sub_resource type="Animation" id="Animation_sip0t"]
-resource_name = "walk_front"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1]
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_o8jh3"]
 resource_name = "walk_left"
-length = 0.4
-loop_mode = 1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,16 +91,15 @@ tracks/0/path = NodePath("Sprite3D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 4, 5, 4]
+"values": [3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_2edkg"]
 resource_name = "walk_right"
-length = 0.4
-loop_mode = 1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -148,10 +107,42 @@ tracks/0/path = NodePath("Sprite3D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [6, 7, 8, 7]
+"values": [6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_ik3dh"]
+resource_name = "walk_back"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_sip0t"]
+resource_name = "walk_front"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jh8nh"]
@@ -167,67 +158,67 @@ _data = {
 "walk_right": SubResource("Animation_2edkg")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_liakt"]
-animation = &"idle_back"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j2dvk"]
-animation = &"idle_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hqa7m"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cspey"]
 animation = &"idle_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ijnga"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5aa3v"]
+animation = &"idle_back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0oc0j"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tujto"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mw4ur"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_liakt")
-blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_j2dvk")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_hqa7m")
-blend_point_2/pos = Vector2(0, 1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_ijnga")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3egbv"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_cspey")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_5aa3v")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_0oc0j")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_tujto")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytul3"]
-animation = &"walk_back"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kw1ok"]
-animation = &"walk_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ayepy"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bg2kd"]
 animation = &"walk_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hulbk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1ictg"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lbbkq"]
 animation = &"walk_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bwdj4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ytul3")
-blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_kw1ok")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_ayepy")
-blend_point_2/pos = Vector2(0, 1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_hulbk")
-blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6i4kc"]
+animation = &"walk_back"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jp7h5"]
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_a5b5h"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_bg2kd")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_1ictg")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_lbbkq")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_6i4kc")
+blend_point_3/pos = Vector2(0, -1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65x72"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8somn"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6e21r"]
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i45u7"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_mw4ur")
-states/Idle/position = Vector2(327, 113)
-states/Start/position = Vector2(196, 100)
-states/Walk/node = SubResource("AnimationNodeBlendSpace2D_bwdj4")
-states/Walk/position = Vector2(542, 113)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jp7h5"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_8somn")]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_3egbv")
+states/Idle/position = Vector2(366, 100)
+states/Start/position = Vector2(201, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_a5b5h")
+states/Walk/position = Vector2(523, 100)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_65x72"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_6e21r")]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_odqq1")
+SPEED = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00860642, 0.316317, -0.00753284)
@@ -241,11 +232,14 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_i45u7")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(-1, 0.0531914)
-parameters/Walk/blend_position = Vector2(-0.0101138, 0.0531914)
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(-0.955743, 0.0700637)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.883188, 1.90225)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00379182, 0.293001, -0.00191891)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20252e-05, 0.293001, -0.000437737)
 texture_filter = 0
 texture = ExtResource("2_dfx8p")
 hframes = 12
