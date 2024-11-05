@@ -183,11 +183,11 @@ animation = &"idle_left"
 blend_point_0/node = SubResource("AnimationNodeAnimation_liakt")
 blend_point_0/pos = Vector2(0, -1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_j2dvk")
-blend_point_1/pos = Vector2(1, 0)
+blend_point_1/pos = Vector2(-1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_hqa7m")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_ijnga")
-blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytul3"]
@@ -206,11 +206,11 @@ animation = &"walk_left"
 blend_point_0/node = SubResource("AnimationNodeAnimation_ytul3")
 blend_point_0/pos = Vector2(0, -1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_kw1ok")
-blend_point_1/pos = Vector2(1, 0)
+blend_point_1/pos = Vector2(-1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_ayepy")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_hulbk")
-blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jp7h5"]
@@ -241,7 +241,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_i45u7")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(-1, 0.0531914)
+parameters/Idle/blend_position = Vector2(-0.94528, -0.0212766)
 parameters/Walk/blend_position = Vector2(-0.0101138, 0.0531914)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -250,3 +250,8 @@ texture_filter = 0
 texture = ExtResource("2_dfx8p")
 hframes = 12
 frame = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540029, 0)
+light_size = 0.452
+light_specular = 0.074

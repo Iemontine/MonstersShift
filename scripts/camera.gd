@@ -1,15 +1,28 @@
 extends Camera3D
 
-var player: Node = null
-var offset: Vector3 = Vector3()
+@export var player: NodePath
+@export var distance: float = 5.0
+@export var sensitivity: float = 1
+@export var height: float = 2.0  # New height variable
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	player = $"../Player" # Adjust the path to your player node
-	if player:
-		offset = global_transform.origin - player.global_transform.origin
+var rotation_x: float = 0.0
+var rotation_y: float = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _process(delta):
 	if player:
-		global_transform.origin = player.global_transform.origin + offset
+		var player_node = get_node(player)
+		var mouse_movement = Input.get_last_mouse_velocity()
+		
+		rotation_x -= mouse_movement.y * (sensitivity/1000)
+		rotation_y -= mouse_movement.x * (sensitivity/1000)
+		
+		rotation_x = clamp(rotation_x, -90, 90)
+		
+		var local_rotation = Vector3(deg_to_rad(rotation_x), deg_to_rad(rotation_y), 0)
+		var offset = Vector3(0, height, distance).rotated(Vector3(1, 0, 0), local_rotation.x).rotated(Vector3(0, 1, 0), local_rotation.y)
+		
+		global_transform.origin = player_node.global_transform.origin - offset
+		look_at(player_node.global_transform.origin, Vector3.UP)
