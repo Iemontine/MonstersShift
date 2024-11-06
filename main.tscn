@@ -5,9 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://can8l8n7madac" path="res://assets/models/Building_1.png" id="4_hna76"]
 
 [sub_resource type="Environment" id="Environment_dpc1k"]
-fog_enabled = true
 fog_light_color = Color(0.136826, 0.136826, 0.136826, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.7585
 volumetric_fog_albedo = Color(0.137255, 0.137255, 0.137255, 1)
 volumetric_fog_emission = Color(0.137255, 0.137255, 0.137255, 1)
@@ -25,7 +23,6 @@ grow_amount = -0.015
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3hig"]
 resource_name = "Building_1"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("4_hna76")
 emission_enabled = true
 emission_energy_multiplier = 0.0

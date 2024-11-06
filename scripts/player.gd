@@ -3,12 +3,15 @@ extends CharacterBody3D
 
 @export var speed = 1.7
 @export var camera: NodePath
+
+
 @onready var anim = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 
-var can_interact: bool = false
+
 var last_direction = Vector2.ZERO
+
 
 func handle_movement():
 	var input_vector = Vector2.ZERO
@@ -35,7 +38,7 @@ func handle_movement():
 		var camera_right = camera_node.global_transform.basis.x
 		var direction = (camera_right * target_velocity.x + camera_forward * target_velocity.z).normalized()
 		
-		velocity = velocity.lerp(Vector3(direction.x, 0, direction.z) * speed, 0.1)  # Adjust the factor for more or less slipperiness
+		velocity = velocity.lerp(Vector3(direction.x, 0, direction.z) * speed, 0.1)	# slippery velocity
 		
 		print(input_vector)
 
@@ -51,6 +54,7 @@ func handle_movement():
 		look_at(camera_node.global_transform.origin, Vector3.UP)
 	else:
 		print("Camera node not found")
+
 
 func _physics_process(delta):
 	handle_movement()
