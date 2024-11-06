@@ -1,14 +1,5 @@
 # "Untitled Spooky Farm Sim Game"
 
-## Team Members & Roles:
-
-1. Briana: Movement/physics, UI, supportive
-2. Katherine: Art, animation, narrative
-3. Matthew: Developer, logic, core mechanics
-4. Darroll: Developer
-5. Everyone: Game design
-6. [Open Role?]: TBD if necessary based on project scope
-
 ## High-Level Concept
 * Genre: Horror with a [Farming/Minigame/Roguelike/Survival] twist
 * Setting: Cute small-town life with disturbing, horror-laden secrets. A quaint rural town where the player is a newcomer trying to survive and thrive, only to discover that sinister secrets lurk behind the wholesome facade.
