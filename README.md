@@ -66,28 +66,13 @@
     * Visual style and required assets, taking time required into consideration ensuring we have time to create animations, especially for transformations and spooky effects.
 4. Testing and Iterations
 
-Timeline
-Week 1 — 11/04
-Basic town
-Movement
-Interaction with objects
-Textboxes
-Object framework
-Transitioning between scenes
-Attempt to make an interior
-Try with sidescroller
-Week 2 — 11/11
-Flesh out textboxes
-Start minigames - window popup? in-world?
-Week 3 — 11/18
-Interiors
-Exteriors
-Fleshing out minigames
-Night time is ready
-Week 4 — 11/25
-Horror mechanics at night time
-Combat?
-Week 5 — 12/02
-Testing, polish, debugging, and final adjustments for submission.
-
-
+| **Week 1 — 11/04**                              | **Week 2 — 11/11**                     | **Week 3 — 11/18**                                 | **Week 4 — 11/25**                  | **Week 5 — 12/02**                                     |
+|-------------------------------------------------|----------------------------------------|----------------------------------------------------|-------------------------------------|--------------------------------------------------------|
+| - Basic town                                    | - Flesh out textboxes                  | - Interiors                                       | - Horror mechanics at night time    | - Testing, polish, debugging, and final adjustments for submission |
+| - Movement                                      | - Start minigames (window popup? in-world?) | - Exteriors                                    | - Combat?                           |                                                        |
+| - Interaction with objects                      |                                        | - Fleshing out minigames                           |                                     |                                                        |
+| - Textboxes                                     |                                        | - Night time is ready                              |                                     |                                                        |
+| - Object framework                              |                                        |                                                    |                                     |                                                        |
+| - Transitioning between scenes                  |                                        |                                                    |                                     |                                                        |
+| - Attempt to make an interior                   |                                        |                                                    |                                     |                                                        |
+| - Try with sidescroller                         |                                        |                                                    |                                     |                                                        |
