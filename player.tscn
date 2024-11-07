@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_odqq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lnte"]
-size = Vector2(16, 30)
+size = Vector2(18, 30)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4y652"]
 animation = &"idle"
@@ -42,23 +42,6 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_sq2wp")
 states/walk/position = Vector2(388, 100)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_12msk")]
 
-[sub_resource type="Animation" id="Animation_p1a8w"]
-resource_name = "walk_left"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [56, 57, 58, 59, 60, 61]
-}
-
 [sub_resource type="Animation" id="Animation_k42ag"]
 length = 0.001
 tracks/0/type = "value"
@@ -89,6 +72,40 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_56iem"]
+resource_name = "walk_down"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37]
+}
+
+[sub_resource type="Animation" id="Animation_p1a8w"]
+resource_name = "walk_left"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59, 60, 61]
 }
 
 [sub_resource type="Animation" id="Animation_agcur"]
@@ -125,23 +142,6 @@ tracks/0/keys = {
 "values": [40, 41, 42, 43, 44, 45]
 }
 
-[sub_resource type="Animation" id="Animation_56iem"]
-resource_name = "walk_down"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [32, 33, 34, 35, 36, 37]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_msejx"]
 _data = {
 "RESET": SubResource("Animation_k42ag"),
@@ -156,7 +156,7 @@ _data = {
 script = ExtResource("1_odqq1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -2)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_5lnte")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -170,7 +170,6 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
 texture = ExtResource("1_das30")
 hframes = 8
 vframes = 8
