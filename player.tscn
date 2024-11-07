@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dor7vry5lsfnu"]
+[gd_scene load_steps=20 format=3 uid="uid://dor7vry5lsfnu"]
 
 [ext_resource type="Texture2D" uid="uid://bw3bsnufa6rud" path="res://assets/characters/player.png" id="1_das30"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_odqq1"]
@@ -152,10 +152,13 @@ _data = {
 "walk_up": SubResource("Animation_x7ky2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auygv"]
+size = Vector2(30, 30)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_odqq1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_5lnte")
 
@@ -174,3 +177,8 @@ texture = ExtResource("1_das30")
 hframes = 8
 vframes = 8
 frame = 56
+
+[node name="InteractBox" type="CollisionShape2D" parent="."]
+position = Vector2(24, -2)
+shape = SubResource("RectangleShape2D_auygv")
+disabled = true
