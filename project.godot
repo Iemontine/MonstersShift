@@ -56,6 +56,10 @@ text/autopauses={}
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_accept={
