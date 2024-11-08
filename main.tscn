@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c7xhpd2n5uak6"]
+[gd_scene load_steps=6 format=3 uid="uid://c7xhpd2n5uak6"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://player.tscn" id="1_oompg"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_dwmir"]
@@ -8365,7 +8365,7 @@ target = NodePath("../Player")
 [node name="interactable" type="TileMapLayer" parent="."]
 z_index = 1
 position = Vector2(0, -81)
-tile_map_data = PackedByteArray("AAD5////AAAAAAAAAQA=")
+tile_map_data = PackedByteArray(0, 0, 249, 255, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
 tile_set = SubResource("TileSet_fb7ji")
 
 [node name="terrain" type="TileMapLayer" parent="."]
