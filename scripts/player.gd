@@ -10,22 +10,21 @@ extends CharacterBody2D
 @onready var interact_box = $InteractBox
 
 var last_direction = Vector2.ZERO
-var is_frozen = false
+var frozen = false
 
 func handle_movement():
-	if is_frozen:
-		return
 	var input_vector = Vector2.ZERO
+	
+	if not frozen:
+		if Input.is_action_pressed("ui_up"):
+			input_vector.y -= 1
+		elif Input.is_action_pressed("ui_down"):
+			input_vector.y += 1
 
-	if Input.is_action_pressed("ui_up"):
-		input_vector.y -= 1
-	elif Input.is_action_pressed("ui_down"):
-		input_vector.y += 1
-
-	if Input.is_action_pressed("ui_left"):
-		input_vector.x -= 1
-	elif Input.is_action_pressed("ui_right"):
-		input_vector.x += 1
+		if Input.is_action_pressed("ui_left"):
+			input_vector.x -= 1
+		elif Input.is_action_pressed("ui_right"):
+			input_vector.x += 1
 
 	input_vector = input_vector.normalized()
 
@@ -50,7 +49,7 @@ func handle_movement():
 	animationTree.set("parameters/walk/blend_position", input_vector)
 
 func handle_interaction():
-	if is_frozen:
+	if frozen:
 		return
 		
 	var space_state = get_world_2d().direct_space_state
@@ -73,8 +72,8 @@ func _physics_process(_delta):
 
 func _on_freeze():
 	print("frozen!")
-	is_frozen = true
+	frozen = true
 
 func _on_unfreeze():
 	print("unfrozen	!")
-	is_frozen = false
+	frozen = false
