@@ -1,18 +1,7 @@
-extends StaticBody2D
-class_name Interactable
+extends Interactable
+class_name Sign
 
-signal interacted
-signal freeze
-signal unfreeze
-
-@onready var player = get_node("../../Player")
-
-func _ready() -> void:
-	connect("interacted", Callable(self, "_on_interacted"))
-	connect("freeze", Callable(player, "_on_freeze"))
-	connect("unfreeze", Callable(player, "_on_unfreeze"))
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_interacted() -> void:

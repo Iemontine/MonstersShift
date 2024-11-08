@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7xhpd2n5uak6"]
+[gd_scene load_steps=6 format=3 uid="uid://c7xhpd2n5uak6"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://player.tscn" id="1_oompg"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_dwmir"]
-[ext_resource type="Texture2D" uid="uid://bfdlfrkg6vf1q" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/5_Floor_Modular_Buildings_16x16.png" id="4_w0xem"]
-[ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/billboard.tscn" id="6_euoq0"]
+[ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="6_euoq0"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v20kt"]
 scenes/1/scene = ExtResource("6_euoq0")
@@ -28,7 +27,3 @@ target = NodePath("../Player")
 position = Vector2(0, -81)
 tile_map_data = PackedByteArray(0, 0, 249, 255, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
 tile_set = SubResource("TileSet_fb7ji")
-
-[node name="5FloorModularBuildings16x16" type="Sprite2D" parent="."]
-position = Vector2(106, -36)
-texture = ExtResource("4_w0xem")
