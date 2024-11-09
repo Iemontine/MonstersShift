@@ -1,6 +1,7 @@
 class_name NPC
 extends CharacterBody2D
 
+
 @export var speed: float = 50.0
 @export var path: Path2D
 @export var stop_points: Array[int] = []
@@ -12,10 +13,13 @@ extends CharacterBody2D
 @onready var path_follow: PathFollow2D = path.get_node("PathFollow2D")
 @onready var original_speed = speed / 1000.0
 
+
 var last_direction = Vector2.ZERO
+
 
 func _ready() -> void:
 	speed /= 1000.0
+
 
 func handle_movement(delta):
 	if !path or !path_follow:
@@ -27,9 +31,9 @@ func handle_movement(delta):
 	animation_tree.set("parameters/walk/blend_position", direction_vector)
 
 	for stop_index in stop_points:
-		print(stop_index, " ", global_position.distance_to(path.curve.get_point_position(stop_index)))
 		if global_position.distance_to(path.curve.get_point_position(stop_index)) < 10:
 			stop_event(stop_index)
+
 
 func stop_event(index):
 	speed = 0
@@ -42,6 +46,7 @@ func stop_event(index):
 			#await get_tree().create_timer(5.0).timeout
 			##anim.play("animation_2")
 	speed = original_speed
+
 
 func _physics_process(delta):
 	handle_movement(delta)
