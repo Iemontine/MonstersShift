@@ -4,7 +4,6 @@ class_name SceneManager
 
 var scene_path = "res://scenes/"
 var dest_path: String
-var source_player: Player
 var dest_player: Player
 
 
