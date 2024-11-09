@@ -71,9 +71,7 @@ func _physics_process(_delta):
 		handle_interaction()
 
 func _on_freeze():
-	print("frozen!")
 	frozen = true
 
 func _on_unfreeze():
-	print("unfrozen	!")
 	frozen = false

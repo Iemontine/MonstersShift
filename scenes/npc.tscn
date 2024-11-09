@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dor7vry5lsfnu"]
+[gd_scene load_steps=19 format=3 uid="uid://5gmuqjdg170g"]
 
-[ext_resource type="Texture2D" uid="uid://fljhbtq5ks2d" path="res://assets/characters/player.png" id="1_das30"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_odqq1"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_b7xak"]
+[ext_resource type="Texture2D" uid="uid://fljhbtq5ks2d" path="res://assets/characters/player.png" id="2_qyn7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lnte"]
 size = Vector2(18, 30)
@@ -144,19 +144,16 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_msejx"]
 _data = {
-"RESET": SubResource("Animation_k42ag"),
-"idle": SubResource("Animation_b8443"),
-"walk_down": SubResource("Animation_56iem"),
-"walk_left": SubResource("Animation_p1a8w"),
-"walk_right": SubResource("Animation_agcur"),
-"walk_up": SubResource("Animation_x7ky2")
+&"RESET": SubResource("Animation_k42ag"),
+&"idle": SubResource("Animation_b8443"),
+&"walk_down": SubResource("Animation_56iem"),
+&"walk_left": SubResource("Animation_p1a8w"),
+&"walk_right": SubResource("Animation_agcur"),
+&"walk_up": SubResource("Animation_x7ky2")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_auygv"]
-size = Vector2(30, 30)
-
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_odqq1")
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_b7xak")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
@@ -169,16 +166,11 @@ parameters/walk/blend_position = Vector2(-0.0478796, 0.558887)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_msejx")
+&"": SubResource("AnimationLibrary_msejx")
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_das30")
+texture = ExtResource("2_qyn7v")
 hframes = 8
 vframes = 8
 frame = 56
-
-[node name="InteractBox" type="CollisionShape2D" parent="."]
-position = Vector2(24, -2)
-shape = SubResource("RectangleShape2D_auygv")
-disabled = true
