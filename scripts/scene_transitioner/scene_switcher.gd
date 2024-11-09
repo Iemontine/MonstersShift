@@ -3,7 +3,7 @@ extends Area2D
 
 
 @export var destination_scene: String
-@onready var player: Player
+var target: Player
 
 
 func _on_body_entered(player: Node2D) -> void:

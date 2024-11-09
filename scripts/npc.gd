@@ -35,16 +35,21 @@ func handle_movement(delta):
 			stop_event(stop_index)
 
 
-func stop_event(index):
+func stop_event(stop_index):
 	speed = 0
-	await get_tree().create_timer(1.0).timeout
-	#match index:
-		#0:
-			#await get_tree().create_timer(5.0).timeout
-			##anim.play("animation_1")
-		#1:
-			#await get_tree().create_timer(5.0).timeout
-			##anim.play("animation_2")
+	match stop_index:
+		0:
+			await get_tree().create_timer(5.0).timeout
+			#anim.play("animation_1")
+		1:
+			await get_tree().create_timer(5.0).timeout
+		3:
+			await get_tree().create_timer(5.0).timeout
+		4:
+			await get_tree().create_timer(5.0).timeout
+		5:
+			await get_tree().create_timer(5.0).timeout
+			
 	speed = original_speed
 
 
