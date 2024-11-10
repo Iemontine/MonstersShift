@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7xhpd2n5uak6"]
+[gd_scene load_steps=14 format=4 uid="uid://c7xhpd2n5uak6"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://scenes/player.tscn" id="1_oompg"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_dwmir"]
 [ext_resource type="Texture2D" uid="uid://ce875yrdr4bk" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="4_ab005"]
+[ext_resource type="PackedScene" uid="uid://rbtdi3wbhydq" path="res://interactable/door_treehouse.tscn" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://scenes/npc.tscn" id="5_sv1nc"]
 [ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="6_euoq0"]
-[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/scene_switcher.tscn" id="8_3fb3c"]
+[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/loadzone.tscn" id="8_3fb3c"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v20kt"]
 scenes/1/scene = ExtResource("6_euoq0")
+scenes/2/scene = ExtResource("4_o6xl0")
 
 [sub_resource type="TileSet" id="TileSet_fb7ji"]
 sources/0 = SubResource("TileSetScenesCollectionSource_v20kt")
@@ -8367,7 +8369,7 @@ point_count = 5
 
 [node name="Player" parent="." instance=ExtResource("1_oompg")]
 z_index = 1
-position = Vector2(0, -75)
+position = Vector2(-80, -80)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -8378,8 +8380,7 @@ target = NodePath("../Player")
 
 [node name="interactable" type="TileMapLayer" parent="."]
 z_index = 1
-position = Vector2(0, -81)
-tile_map_data = PackedByteArray("AAAKAP3/AAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAEAPr/AAAAAAAAAQABAPf/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_fb7ji")
 
 [node name="terrain" type="TileMapLayer" parent="."]
@@ -8420,5 +8421,6 @@ position = Vector2(166, -11)
 rotation = 2.37875
 
 [node name="SceneSwitcher" parent="." instance=ExtResource("8_3fb3c")]
-position = Vector2(-197, -58)
+position = Vector2(-195, -56)
 destination_scene = "Scene_2"
+should_player_walk = null

@@ -21,9 +21,9 @@ var ignore_scene_switcher = false
 
 func handle_movement():
 	var input_vector = Vector2.ZERO
+	
 	if walk_to:
 		input_vector = last_direction
-		
 	elif not frozen:
 		if Input.is_action_pressed("ui_up"):
 			input_vector.y -= 1
@@ -59,7 +59,7 @@ func handle_movement():
 
 
 func handle_interaction():
-	if frozen and !walk_to:
+	if frozen and not walk_to:
 		return
 		
 	var space_state = get_world_2d().direct_space_state
@@ -78,15 +78,14 @@ func handle_interaction():
 func _physics_process(_delta):
 	handle_movement()
 	move_and_slide()
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
 
 
 func _on_freeze():
-	print("frozen!")
 	frozen = true
 
 
 func _on_unfreeze():
-	print("unfrozen!")
 	frozen = false

@@ -7,21 +7,25 @@ var dest_path: String
 var dest_player: Player
 
 
-func switch_scene(source_player: Player, destination: String) -> void:
+func switch_scene(src_player: Player, destination: String, should_player_walk: bool) -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
+
 	
 	dest_path = scene_path + destination + ".tscn"
-	var last_direction = source_player.last_direction
-	source_player.get_tree().call_deferred("change_scene_to_file", dest_path)
-	source_player.get_parent().remove_child(source_player)
+	var last_direction = src_player.last_direction
+	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
+	#src_player.get_parent().remove_child(src_player)
 	
-	await get_tree().create_timer(0.05).timeout # replace with actual await completed scene transition code
+	# TODO: replace with actual await completed scene transition code
+	await get_tree().create_timer(0.05).timeout
+	
 	var new_scene = get_tree().root.get_node(destination)
 	dest_player = new_scene.get_node("Player")
 	dest_player.last_direction = last_direction
 	dest_player.frozen = true
-	dest_player.walk_to = true
+	if should_player_walk:
+		dest_player.walk_to = true
 	dest_player.ignore_scene_switcher = true
 	adjust_player_position(new_scene, dest_player)
 

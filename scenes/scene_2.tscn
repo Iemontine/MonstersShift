@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cx8emrvcsyh44"]
 
-[ext_resource type="Texture2D" uid="uid://d0wj2r51r33qy" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="1_ii2x2"]
-[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/scene_switcher.tscn" id="2_w2ar1"]
+[ext_resource type="Texture2D" uid="uid://cnib5e01o8l22" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="1_ii2x2"]
+[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/loadzone.tscn" id="2_w2ar1"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_dvode"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://scenes/player.tscn" id="5_ccscm"]
 
@@ -1192,6 +1192,7 @@ script = ExtResource("3_dvode")
 [node name="SceneSwitcher" parent="." instance=ExtResource("2_w2ar1")]
 position = Vector2(262, -31)
 destination_scene = "Main"
+should_player_walk = null
 
 [node name="Player" parent="." instance=ExtResource("5_ccscm")]
 z_index = 1
