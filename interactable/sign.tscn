@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(16, 32)
 
-[node name="Interactable" type="StaticBody2D"]
+[node name="Sign" type="StaticBody2D"]
 physics_interpolation_mode = 2
 script = ExtResource("1_varwe")
 

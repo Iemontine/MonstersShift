@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://qiyrotejuoax"]
+
+[ext_resource type="Script" path="res://interactable/scripts/day_night_button.gd" id="1_s5d0w"]
+[ext_resource type="Texture2D" uid="uid://bw8tlj1wr30er" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_0n7qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
+size = Vector2(16, 32)
+
+[node name="DayNightButton" type="StaticBody2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_s5d0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("2_0n7qj")
+region_enabled = true
+region_rect = Rect2(208, 256, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_v7ggh")

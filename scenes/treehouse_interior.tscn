@@ -1687,7 +1687,7 @@ sources/1 = SubResource("TileSetAtlasSource_xm38y")
 sources/4 = SubResource("TileSetAtlasSource_x5d7m")
 sources/5 = SubResource("TileSetAtlasSource_hw1gd")
 
-[node name="Treehouse" type="Node2D"]
+[node name="Treehouse_Interior" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 10
@@ -1699,7 +1699,7 @@ script = ExtResource("2_pdgtp")
 z_index = 2
 position = Vector2(-56, -33)
 scale = Vector2(3.257, 0.195)
-destination_scene = "Main"
+destination_scene = "Treehouse_Exterior"
 should_player_walk = null
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]

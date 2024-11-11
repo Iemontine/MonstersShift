@@ -3,7 +3,7 @@ class_name TreehouseDoor
 
 
 func _ready():
-	destination_scene = "Treehouse"
+	destination_scene = "Treehouse_Interior"
 	super()
 	
 func _on_interacted() -> void:
