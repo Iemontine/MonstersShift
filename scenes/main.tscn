@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://scenes/player.tscn" id="1_oompg"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_dwmir"]
-[ext_resource type="Texture2D" uid="uid://ce875yrdr4bk" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="4_ab005"]
-[ext_resource type="PackedScene" path="res://interactable/door_treehouse.tscn" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dre680fieqvci" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="4_ab005"]
+[ext_resource type="PackedScene" uid="uid://rbtdi3wbhydq" path="res://interactable/door_treehouse.tscn" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://scenes/npc.tscn" id="5_sv1nc"]
 [ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="6_euoq0"]
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/loadzone.tscn" id="8_3fb3c"]
