@@ -25,14 +25,14 @@ func handle_movement():
 	if walk_to:
 		input_vector = last_direction
 	elif not frozen:
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("up"):
 			input_vector.y -= 1
-		elif Input.is_action_pressed("ui_down"):
+		elif Input.is_action_pressed("down"):
 			input_vector.y += 1
 
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("left"):
 			input_vector.x -= 1
-		elif Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed("right"):
 			input_vector.x += 1
 
 	input_vector = input_vector.normalized()
