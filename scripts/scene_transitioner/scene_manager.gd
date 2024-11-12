@@ -2,7 +2,7 @@ extends Node
 class_name SceneManager
 
 
-var scene_path = "res://scenes/"
+var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
 
