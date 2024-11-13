@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bquokw4krqvca"]
 
-[ext_resource type="Texture2D" uid="uid://b8jghikprn3sg" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Door_Treehouse.png" id="1_rx072"]
+[ext_resource type="Texture2D" uid="uid://cq4n4pywvkekf" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Door_Treehouse.png" id="1_rx072"]
 [ext_resource type="Script" path="res://interactable/scripts/door_treehouse.gd" id="1_uw8t0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
@@ -83,3 +83,6 @@ shape = SubResource("RectangleShape2D_v7ggh")
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_h7s5o")
 animation = &"treehouse_door_open"
+
+[node name="Spawnpoint" type="Marker2D" parent="."]
+position = Vector2(0, 20)

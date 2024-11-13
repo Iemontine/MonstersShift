@@ -7,15 +7,13 @@ var dest_path: String
 var dest_player: Player
 
 
-func switch_scene(src_player: Player, destination: String, should_player_walk: bool) -> void:
+func switch_scene(src_player: Player, destination: String, should_player_walk: bool, door_name: String = "") -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
-	
 	dest_path = scene_path + destination + ".tscn"
 	var last_direction = src_player.last_direction
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
-	#src_player.get_parent().remove_child(src_player)
 	
 	# TODO: replace with actual await completed scene transition code
 	await get_tree().create_timer(0.05).timeout
@@ -26,9 +24,12 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	dest_player.frozen = true
 	if should_player_walk:
 		dest_player.walk_to = true
-	dest_player.ignore_scene_switcher = true
-	adjust_player_position(new_scene, dest_player)
-
+	dest_player.ignore_loadzone = true
+	
+	if door_name != "":
+		move_player_to_door(new_scene, dest_player, door_name)
+	else:
+		move_player_to_loadzone(new_scene, dest_player)
 	start_timer(0.5)
 	
 
@@ -43,14 +44,22 @@ func start_timer(duration: float):
 
 func on_timer_completed():
 	dest_player.walk_to = false
-	dest_player.ignore_scene_switcher = false
+	dest_player.ignore_loadzone = false
 	dest_player.frozen = false
 
 
-func adjust_player_position(new_scene, player):
-	var scene_switcher = new_scene.get_node("SceneSwitcher")
-	if player and scene_switcher:
-		player.global_position = scene_switcher.global_position
+func move_player_to_loadzone(new_scene, player):
+	var loadzone = new_scene.get_node("Loadzone")
+	if player and loadzone:
+		player.global_position = loadzone.global_position
+		var camera = new_scene.get_node("Camera2D")
+		if camera:
+			camera.target = player
+			
+func move_player_to_door(new_scene, player, door_name):
+	var marker = new_scene.get_node(door_name).get_node("Spawnpoint")
+	if player and marker:
+		player.global_position = marker.global_position
 		var camera = new_scene.get_node("Camera2D")
 		if camera:
 			camera.target = player

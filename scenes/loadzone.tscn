@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f73c5"]
 size = Vector2(40.5, 175)
 
-[node name="SceneSwitcher" type="Area2D"]
+[node name="Loadzone" type="Area2D"]
 script = ExtResource("1_44gdv")
 
 [node name="Area1" type="CollisionShape2D" parent="."]

@@ -16,7 +16,7 @@ var last_direction = Vector2.ZERO
 var frozen = false
 var enter_scene: bool = false
 var walk_to: bool = false
-var ignore_scene_switcher = false
+var ignore_loadzone = false
 
 
 func handle_movement():

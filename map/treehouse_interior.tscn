@@ -1,13 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://dg5e1j6trerk0"]
+[gd_scene load_steps=13 format=4 uid="uid://dg5e1j6trerk0"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_pdgtp"]
-[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/loadzone.tscn" id="3_vtsow"]
-[ext_resource type="Texture2D" uid="uid://bpnntwx5y4fqr" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
+[ext_resource type="Texture2D" uid="uid://c0f8umk6t43h5" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://scenes/player.tscn" id="4_mxmix"]
-[ext_resource type="Texture2D" uid="uid://d0kd78qegjbcv" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="5_70imq"]
-[ext_resource type="Texture2D" uid="uid://euiye1nd6etr" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floor_Shadows_16x16.png" id="6_njdqb"]
-[ext_resource type="Texture2D" uid="uid://pfhkr8yxfir1" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="7_ecpsx"]
-[ext_resource type="Texture2D" uid="uid://dqke4gh6qpefn" path="res://assets/tileset/exteriors/TREEHOUSE.PNG.png" id="8_khf0r"]
+[ext_resource type="Texture2D" uid="uid://vsrm0tys1rdt" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="5_70imq"]
+[ext_resource type="Texture2D" uid="uid://2dh0d7fhfaud" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floor_Shadows_16x16.png" id="6_njdqb"]
+[ext_resource type="Texture2D" uid="uid://dr30byk2dxipi" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="7_ecpsx"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door_treehouse.tscn" id="7_ya4jy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("4_he1c2")
@@ -1695,13 +1694,6 @@ position = Vector2(0, -81)
 zoom = Vector2(3, 3)
 script = ExtResource("2_pdgtp")
 
-[node name="SceneSwitcher" parent="." instance=ExtResource("3_vtsow")]
-z_index = 2
-position = Vector2(-56, -33)
-scale = Vector2(3.257, 0.195)
-destination_scene = "Treehouse_Exterior"
-should_player_walk = null
-
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
 z_index = 1
 position = Vector2(0, -75)
@@ -1714,4 +1706,7 @@ tile_set = SubResource("TileSet_5m6t8")
 visible = false
 position = Vector2(1.16669, 5.125)
 scale = Vector2(0.370052, 0.370573)
-texture = ExtResource("8_khf0r")
+
+[node name="TreehouseDoor" parent="." instance=ExtResource("7_ya4jy")]
+position = Vector2(-56, -40)
+_destination_scene = "Treehouse_Exterior"
