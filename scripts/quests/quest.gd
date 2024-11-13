@@ -1,6 +1,7 @@
 extends Node
 class_name Quest
 
+var reward : int = 0
 var finished : bool
 
 func _process(_delta: float) -> void:
@@ -12,7 +13,7 @@ func get_quest_name() -> String:
 
 # unsure of what type this should be
 func get_rewards() -> int:
-	return 0;
+	return reward;
 
 func done() -> bool:
 	return finished
