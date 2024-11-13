@@ -39,6 +39,8 @@ func finish() -> void:
 	# either link this signal to the character or the quest
 	# need to talk ab which we want to do ^^
 	game_done.emit(self)
+	# potential idea is tie each minigame as a part of a quest and use this signal to trigger progression
+	# signal should also be used to update any flags for nighttime stuff
 	queue_free()
 
 # special overload for minigames	

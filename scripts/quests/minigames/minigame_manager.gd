@@ -5,6 +5,10 @@ extends Node
 var _current : Minigame = null
 
 func set_game(minigame : Minigame) -> void:
+	if minigame.get_quest_name() == "null minigame":
+		printerr("Cannot start null minigame")
+		return
+	
 	if _current != null:
 		printerr("Finish current minigame first")
 		return
