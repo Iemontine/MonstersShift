@@ -7,7 +7,7 @@ var dest_path: String
 var dest_player: Player
 
 
-func switch_scene(src_player: Player, destination: String, should_player_walk: bool, door_name: String = "") -> void:
+func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
@@ -26,10 +26,10 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 		dest_player.walk_to = true
 	dest_player.ignore_loadzone = true
 	
-	if door_name != "":
-		move_player_to_door(new_scene, dest_player, door_name)
-	else:
-		move_player_to_loadzone(new_scene, dest_player)
+	if loadzone_name.begins_with("Loadzone"):
+		move_player_to_loadzone(new_scene, dest_player, loadzone_name)
+	elif loadzone_name.begins_with("Door"):
+		move_player_to_door(new_scene, dest_player, loadzone_name)
 	start_timer(0.5)
 	
 
@@ -48,8 +48,8 @@ func on_timer_completed():
 	dest_player.frozen = false
 
 
-func move_player_to_loadzone(new_scene, player):
-	var loadzone = new_scene.get_node("Loadzone")
+func move_player_to_loadzone(new_scene, player, loadzone_name = "Loadzone"):
+	var loadzone = new_scene.get_node(loadzone_name)
 	if player and loadzone:
 		player.global_position = loadzone.global_position
 		var camera = new_scene.get_node("Camera2D")

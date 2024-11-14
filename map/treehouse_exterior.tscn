@@ -1,16 +1,16 @@
 [gd_scene load_steps=21 format=4 uid="uid://dkjd2a74ar4fy"]
 
-[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://scenes/player.tscn" id="1_ni0hd"]
+[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_nucyf"]
-[ext_resource type="Texture2D" uid="uid://ce875yrdr4bk" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="3_8iffc"]
-[ext_resource type="Texture2D" uid="uid://cnib5e01o8l22" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="4_302ri"]
-[ext_resource type="Texture2D" uid="uid://dhaejv75e4xhc" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="6_k2vro"]
-[ext_resource type="Texture2D" uid="uid://c8jpgqsq6tjs" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="7_srtvs"]
-[ext_resource type="Texture2D" uid="uid://c8mb5cy750kf7" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="8_gkbrt"]
+[ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="3_8iffc"]
+[ext_resource type="Texture2D" uid="uid://c06l310spirwj" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="4_302ri"]
+[ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="6_k2vro"]
+[ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="7_srtvs"]
+[ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="8_gkbrt"]
 [ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="9_s6p8i"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door_treehouse.tscn" id="10_ke287"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="10_ke287"]
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="11_doksa"]
-[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scenes/loadzone.tscn" id="12_lh7wg"]
+[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="12_lh7wg"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ni0hd"]
@@ -19745,8 +19745,10 @@ tile_set = SubResource("TileSet_r6rqm")
 [node name="Sign" parent="." instance=ExtResource("9_s6p8i")]
 position = Vector2(952, -64)
 
-[node name="TreehouseDoor" parent="." instance=ExtResource("10_ke287")]
+[node name="Door_Treehouse" parent="." instance=ExtResource("10_ke287")]
 position = Vector2(920, -424)
+destination_scene = "Treehouse_Interior"
+target_door = "Door_Treehouse"
 
 [node name="TreehouseLight" type="PointLight2D" parent="."]
 position = Vector2(912, -377)
@@ -19755,9 +19757,10 @@ enabled = false
 color = Color(0.65533, 0.398047, 0.0745394, 1)
 texture = ExtResource("11_doksa")
 
-[node name="Loadzone" parent="." instance=ExtResource("12_lh7wg")]
+[node name="Loadzone_Town" parent="." instance=ExtResource("12_lh7wg")]
 position = Vector2(267, -25)
 destination_scene = "Town"
+destination_loadzone = "Loadzone_Treehouse"
 
 [node name="DayNightButton" parent="." instance=ExtResource("13_mqu8j")]
 position = Vector2(960, -336)
