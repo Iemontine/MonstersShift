@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c27sdg6fx6eqh"]
 
-[ext_resource type="Script" path="res://scripts/scene_transitioner/loadzone.gd" id="1_44gdv"]
+[ext_resource type="Script" path="res://scripts/loadzones/loadzone.gd" id="1_44gdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f73c5"]
 size = Vector2(40.5, 175)
