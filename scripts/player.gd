@@ -2,8 +2,10 @@ class_name Player
 extends CharacterBody2D
 
 
+
 @export var speed = 100
 @export var camera: NodePath
+
 
 
 @onready var anim = $AnimationPlayer
@@ -12,11 +14,14 @@ extends CharacterBody2D
 @onready var interact_box = $InteractBox
 
 
+
 var last_direction = Vector2.ZERO
 var frozen = false
 var enter_scene: bool = false
 var walk_to: bool = false
 var ignore_loadzone = false
+var cutscene_walk: bool = false
+var cutscene_walk_direction: Vector2
 
 
 func handle_movement():
@@ -24,6 +29,8 @@ func handle_movement():
 	
 	if walk_to:
 		input_vector = last_direction
+	elif cutscene_walk:
+		input_vector = cutscene_walk_direction
 	elif not frozen:
 		if Input.is_action_pressed("up"):
 			input_vector.y -= 1
@@ -60,6 +67,7 @@ func handle_movement():
 	animationTree.set("parameters/walk/blend_position", input_vector)
 
 
+
 func handle_interaction():
 	if frozen and not walk_to:
 		return
@@ -77,16 +85,20 @@ func handle_interaction():
 			collider.interact()
 
 
+
 func _physics_process(_delta):
 	handle_movement()
 	move_and_slide()
+	
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
 
 
+
 func _on_freeze():
 	frozen = true
+
 
 
 func _on_unfreeze():
