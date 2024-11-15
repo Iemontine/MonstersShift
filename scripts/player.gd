@@ -1,18 +1,17 @@
 class_name Player
 extends CharacterBody2D
 
-
-@export var speed = 100
-@export var camera: NodePath
-
-
-@onready var anim = $AnimationPlayer
-@onready var animationTree = $AnimationTree
+@onready var animationPlayer = $SpriteLayers/AnimationPlayer
+@onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
 
+const ACCELERATION = 10
+const FRICTION = 10
 
+@export var speed = 100
 var last_direction = Vector2.ZERO
+@export var camera: NodePath
 var frozen = false
 var enter_scene: bool = false
 var walk_to: bool = false
@@ -20,47 +19,16 @@ var ignore_loadzone = false
 var cutscene_walk: bool = false
 var cutscene_walk_direction: Vector2
 
+func _ready():
+	animationTree.set_animation_player(animationPlayer.get_path())
+	animationTree.active = true
 
-func handle_movement():
-	var input_vector = Vector2.ZERO
+func travel_to_anim(animName:String, direction = null):
+	if direction != null: last_direction = direction
 	
-	if walk_to:
-		input_vector = last_direction
-	elif cutscene_walk:
-		input_vector = cutscene_walk_direction
-	elif not frozen:
-		if Input.is_action_pressed("up"):
-			input_vector.y -= 1
-		elif Input.is_action_pressed("down"):
-			input_vector.y += 1
-
-		if Input.is_action_pressed("left"):
-			input_vector.x -= 1
-		elif Input.is_action_pressed("right"):
-			input_vector.x += 1
-
-	input_vector = input_vector.normalized()
-
-	if Input.is_key_pressed(KEY_SHIFT):
-		velocity = input_vector * speed * 10
-	else:
-		velocity = input_vector * speed
-	
-	if input_vector != Vector2.ZERO:
-		last_direction = input_vector
-
-		# Update InteractBox position based on last direction
-		if last_direction == Vector2.UP:
-			interact_box.position = Vector2(0, -32)
-		elif last_direction == Vector2.DOWN:
-			interact_box.position = Vector2(0, 28)
-		elif last_direction == Vector2.LEFT:
-			interact_box.position = Vector2(-24, -2)
-		elif last_direction == Vector2.RIGHT:
-			interact_box.position = Vector2(24, -2)
-		#$Light.position = interact_box.position
-	animationTree.set("parameters/walk/blend_position", input_vector)
-
+	animationTree.set("parameters/"+animName+"/blend_position", last_direction)
+	animationState.travel(animName)
+	# TODO: reimplement the interact box moving based on direction
 
 func handle_interaction():
 	if frozen and not walk_to:
@@ -80,9 +48,7 @@ func handle_interaction():
 
 
 func _physics_process(_delta):
-	handle_movement()
 	move_and_slide()
-	
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
