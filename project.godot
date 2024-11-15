@@ -27,6 +27,7 @@ directories/dch_directory={
 "character": "res://dialogic/character.dch"
 }
 directories/dtl_directory={
+"cutscene": "res://dialogic/cutscene.dtl",
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true

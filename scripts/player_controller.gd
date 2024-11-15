@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 		player.cutscene_walk = false
 		player.ignore_loadzone = false
 		player.frozen = false
-		player.get_node("Label").visible = false
+		#player.get_node("Label").visible = false
 	else:
 		if cmd_list.front() is Vector2:
 			player.walk_to = false
@@ -66,4 +66,4 @@ func _process(_delta: float) -> void:
 		elif cmd_list.front() is String and dialog_started == false:
 				dialog_started = true
 				Dialogic.signal_event.connect(_on_dialogic_signal)
-				Dialogic.start("test")
+				Dialogic.start("cutscene")
