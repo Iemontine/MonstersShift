@@ -31,6 +31,7 @@ func start_dialogue(dialogue_name: String, signal_name: String):
 
 
 func _on_dialogic_signal(signal_name: String):
+	if signal_list.is_empty(): return
 	if signal_name == signal_list.front():
 		print("Something was activated!")
 	cmd_list.pop_front()
