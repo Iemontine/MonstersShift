@@ -10,7 +10,7 @@ var dialog_started: bool = false
 func _init(body: Player) -> void:
 	player = body
 
-func command(command: Vector2, duration: float):
+func queue_command(command: Vector2, duration: float):
 	cmd_list.push_back(command)
 	var timer = Timer.new()
 	timer.wait_time = duration
@@ -32,7 +32,7 @@ func _on_dialogic_signal(signal_name: String):
 	signal_list.pop_front()
 	dialog_started = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# If no commands, set player properties to default
 	if cmd_list.is_empty():
 		player.walk_to = false
