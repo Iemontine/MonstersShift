@@ -54,6 +54,8 @@ func handle_movement():
 			interact_box.position = Vector2(-24, -2)
 		elif last_direction == Vector2.RIGHT:
 			interact_box.position = Vector2(24, -2)
+		#$Light.position = interact_box.position
+		
 
 	animationTree.set("parameters/walk/blend_position", input_vector)
 
