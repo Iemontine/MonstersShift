@@ -2,17 +2,14 @@ class_name Player
 extends CharacterBody2D
 
 
-
 @export var speed = 100
 @export var camera: NodePath
-
 
 
 @onready var anim = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
-
 
 
 var last_direction = Vector2.ZERO
@@ -62,10 +59,7 @@ func handle_movement():
 		elif last_direction == Vector2.RIGHT:
 			interact_box.position = Vector2(24, -2)
 		#$Light.position = interact_box.position
-		
-
 	animationTree.set("parameters/walk/blend_position", input_vector)
-
 
 
 func handle_interaction():
@@ -85,7 +79,6 @@ func handle_interaction():
 			collider.interact()
 
 
-
 func _physics_process(_delta):
 	handle_movement()
 	move_and_slide()
@@ -95,10 +88,8 @@ func _physics_process(_delta):
 		handle_interaction()
 
 
-
 func _on_freeze():
 	frozen = true
-
 
 
 func _on_unfreeze():

@@ -1,5 +1,6 @@
 extends Interactable
 
+
 func _on_interacted() -> void:
 	var controller: PlayerController = PlayerController.new(player)
 	controller.queue_command(Vector2(0,1), 1)
