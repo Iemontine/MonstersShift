@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 		if cmd_list.front() is Vector2:
 			player.walk_to = false
 			player.cutscene_walk = true
-			player.ignore_scene_switcher = true
+			player.ignore_loadzone = true
 			player.frozen = true
 			player.ignore_loadzone = cmd_list.front()
 			
