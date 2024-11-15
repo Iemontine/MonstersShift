@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
 			player.cutscene_walk = true
 			player.ignore_loadzone = true
 			player.frozen = true
-			player.ignore_loadzone = cmd_list.front()
+			player.cutscene_walk_direction = cmd_list.front()
 			
 			if timer_list.front().is_stopped():
 				timer_list.front().start()
