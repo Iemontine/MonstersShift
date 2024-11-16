@@ -5,7 +5,7 @@ const FRICTION = 1000000
 
 var velocity = Vector2.ZERO
 
-@export var movement_anim:String = "Walk"
+var movement_anim:String = "Walk"
 @export var enabled:bool = true
 @onready var player = get_parent()
 

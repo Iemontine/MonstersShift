@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
+@onready var default_speed = speed
 
 
 const ACCELERATION = 10
@@ -13,6 +14,7 @@ const FRICTION = 10
 
 
 @export var speed = 50
+@export var sprint_multiplier = 10
 @export var camera: NodePath
 var last_direction = Vector2.ZERO
 var frozen = false
@@ -29,15 +31,15 @@ var cutscene_walk_direction: Vector2
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
 	animationTree.active = true
+	speed = default_speed
 
 
 func travel_to_anim(animName:String, direction = null):
 	if direction != null: last_direction = direction
 
 	animationTree.set("parameters/"+animName+"/blend_position", last_direction)
-	if animName.begins_with("Walk"):
-		print("woah")
-		animationTree.advance(get_physics_process_delta_time() * 0.001)
+	#if animName.begins_with("Walk"):
+		#animationTree.advance(get_physics_process_delta_time() * 0.001)
 	animationState.travel(animName)
 
 
@@ -77,6 +79,13 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
 
+	if Input.is_key_pressed(KEY_SHIFT):
+		speed = sprint_multiplier * default_speed
+		$Movement.movement_anim = "Run"
+	else:
+		speed = default_speed
+		$Movement.movement_anim = "Walk"
+	print(speed)
 
 func _on_freeze():
 	frozen = true
