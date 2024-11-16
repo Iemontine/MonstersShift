@@ -35,6 +35,9 @@ func travel_to_anim(animName:String, direction = null):
 	if direction != null: last_direction = direction
 
 	animationTree.set("parameters/"+animName+"/blend_position", last_direction)
+	if animName.begins_with("Walk"):
+		print("woah")
+		animationTree.advance(get_physics_process_delta_time() * 0.001)
 	animationState.travel(animName)
 
 
