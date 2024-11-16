@@ -85,7 +85,6 @@ func _physics_process(_delta):
 	else:
 		speed = default_speed
 		$Movement.movement_anim = "Walk"
-	print(speed)
 
 func _on_freeze():
 	frozen = true
