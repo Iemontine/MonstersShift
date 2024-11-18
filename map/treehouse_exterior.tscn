@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dkjd2a74ar4fy"]
+[gd_scene load_steps=24 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_nucyf"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="11_doksa"]
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="12_lh7wg"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
+[ext_resource type="Script" path="res://interactable/scripts/test_quest_sign.gd" id="14_nucyf"]
+[ext_resource type="Script" path="res://interactable/scripts/test_quest_door.gd" id="15_8iffc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ni0hd"]
 texture = ExtResource("3_8iffc")
@@ -19768,3 +19770,13 @@ destination_loadzone = "Loadzone_Treehouse"
 
 [node name="DayNightButton" parent="." instance=ExtResource("13_mqu8j")]
 position = Vector2(960, -336)
+
+[node name="QuestTest" parent="." instance=ExtResource("13_mqu8j")]
+position = Vector2(864, -319)
+script = ExtResource("14_nucyf")
+
+[node name="Door" parent="." instance=ExtResource("10_ke287")]
+position = Vector2(826, -290)
+script = ExtResource("15_8iffc")
+destination_scene = "Treehouse_Interior"
+target_door = "Door_Treehouse"

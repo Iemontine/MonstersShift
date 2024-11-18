@@ -3,7 +3,7 @@ class_name TestQuestDoor
 
 var locked : bool = true
 
-func _ready() -> void:
+func _init() -> void:
 	QuestSignals.test_quest.connect(_unlock)
 
 func _on_interacted() -> void:
