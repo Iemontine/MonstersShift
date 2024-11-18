@@ -45,4 +45,5 @@ func finish_quest(quest:Quest):
 	if quest.done():
 		# give player rewards
 		var rewards := quest.get_rewards()
+		quest_list.erase(quest.get_quest_name())
 		quest.queue_free()

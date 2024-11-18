@@ -21,3 +21,7 @@ func get_rewards() -> int:
 
 func done() -> bool:
 	return finished
+
+func _finish() -> void:
+	finished = true
+	quest_manager.finish_quest(self)

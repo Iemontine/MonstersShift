@@ -8,6 +8,7 @@ func _init() -> void:
 
 func _on_interacted() -> void:
 	if not locked:
+		QuestSignals.end_quest_test.emit()
 		super()
 
 func _unlock() -> void:
