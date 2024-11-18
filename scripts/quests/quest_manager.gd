@@ -19,6 +19,7 @@ func accept_quest(quest:Quest) -> void:
 		return
 	
 	quest_list[quest.get_quest_name()] = quest
+	set_active_quest(quest)
 	
 func set_active_quest(quest:Quest) -> void:
 	if quest.get_quest_name() == "null quest":
@@ -28,6 +29,9 @@ func set_active_quest(quest:Quest) -> void:
 		printerr("cannot set a quest that hasn't been accepted as active quest")
 		return
 	
+	if not quest.started:
+		quest.start()
+		
 	_active_quest = quest.get_quest_name()
 
 func finish_quest(quest:Quest):
