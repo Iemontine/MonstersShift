@@ -19,10 +19,9 @@
 "export_overrides": {
 "image": "\"res://assets/characters/dialogue_sprite/sign_sprite.png\""
 },
-"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1,
 "scene": ""
 }
 },

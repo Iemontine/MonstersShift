@@ -24,16 +24,15 @@ TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://dialogic/character.dch",
-"no_character": "res://dialogic/no_character.dch"
+"sign": "res://dialogic/Characters/sign.dch"
 }
 directories/dtl_directory={
 "cutscene": "res://dialogic/cutscene.dtl",
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic/speaker_dialogue.tres"]
-layout/default_style="res://dialogic/speaker_dialogue.tres"
+layout/style_list=["res://dialogic/Styles/speaker_dialogue.tres", "res://dialogic/Styles/speaker_without_dialogue.tres"]
+layout/default_style="res://dialogic/Styles/speaker_without_dialogue.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
