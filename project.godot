@@ -24,14 +24,15 @@ TransitionScreen="*res://scenes/transition_screen.tscn"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://dialogic/character.dch"
+"character": "res://dialogic/character.dch",
+"no_character": "res://dialogic/no_character.dch"
 }
 directories/dtl_directory={
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://dialogic/speaker_dialogue.tres"]
+layout/default_style="res://dialogic/speaker_dialogue.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -163,4 +164,4 @@ right={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.366595, 0.366595, 0.366595, 1)
