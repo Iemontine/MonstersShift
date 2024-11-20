@@ -1,32 +1,35 @@
-[gd_scene load_steps=59 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=63 format=4 uid="uid://b70h03vjoiqqx"]
 
-[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
-[ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
-[ext_resource type="Texture2D" uid="uid://dko55w4tmr77f" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/12_Hotel_and_Hospital_16x16.png" id="4_8qite"]
-[ext_resource type="Texture2D" uid="uid://dep4xdqyh7xr6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/5_Floor_Modular_Buildings_16x16.png" id="6_ydesw"]
-[ext_resource type="Texture2D" uid="uid://cshesc2karof3" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/22_Post_Office_16x16.png" id="7_6yl6j"]
-[ext_resource type="Texture2D" uid="uid://bqt1kabdylcqv" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_No_Sand_Basic_16x16.png" id="8_ishcx"]
-[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="8_q4pxj"]
-[ext_resource type="Texture2D" uid="uid://f3ws3wkrk5pd" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png" id="8_vcpp3"]
-[ext_resource type="Texture2D" uid="uid://gnwsao7w86l3" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/10_Vehicles_16x16.png" id="9_lxj4r"]
-[ext_resource type="Texture2D" uid="uid://brwdfosl6lfox" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_16x16.png" id="11_8svx7"]
-[ext_resource type="Texture2D" uid="uid://dqd2fvienjcxo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png" id="12_ffurh"]
-[ext_resource type="Texture2D" uid="uid://c06l310spirwj" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="13_e1wsi"]
-[ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="14_e0pg0"]
-[ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="15_idu3t"]
-[ext_resource type="Texture2D" uid="uid://1vtbnqixpft8" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/13_School_16x16.png" id="16_pwx13"]
-[ext_resource type="Texture2D" uid="uid://dd84hr3xw7vey" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/14_Swimming_Pool_16x16.png" id="17_n1kx1"]
-[ext_resource type="Texture2D" uid="uid://bp8newl8ec6t4" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/16_Office_16x16.png" id="19_by33p"]
-[ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="22_5j3o1"]
-[ext_resource type="Texture2D" uid="uid://bqfb2dk6b5xaf" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/4_Generic_Buildings_16x16.png" id="22_wl2cu"]
-[ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="23_jxgvl"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="23_tcn14"]
-[ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="24_0i5uc"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="25_x3iwy"]
-[ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc.tscn" id="28_mgbvr"]
+[ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="1_3r1de"]
+[ext_resource type="Texture2D" uid="uid://c06l310spirwj" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="2_owwi2"]
+[ext_resource type="Texture2D" uid="uid://bqt1kabdylcqv" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_No_Sand_Basic_16x16.png" id="3_8mmwb"]
+[ext_resource type="Texture2D" uid="uid://f3ws3wkrk5pd" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png" id="4_hcsjk"]
+[ext_resource type="Texture2D" uid="uid://dqd2fvienjcxo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png" id="5_gfb5v"]
+[ext_resource type="Texture2D" uid="uid://gnwsao7w86l3" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/10_Vehicles_16x16.png" id="6_1u2tk"]
+[ext_resource type="Texture2D" uid="uid://1vtbnqixpft8" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/13_School_16x16.png" id="7_ty4mv"]
+[ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="8_v8cds"]
+[ext_resource type="Texture2D" uid="uid://dep4xdqyh7xr6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/5_Floor_Modular_Buildings_16x16.png" id="9_4ro7c"]
+[ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="10_8jn15"]
+[ext_resource type="Texture2D" uid="uid://dd84hr3xw7vey" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/14_Swimming_Pool_16x16.png" id="11_askra"]
+[ext_resource type="Texture2D" uid="uid://bp8newl8ec6t4" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/16_Office_16x16.png" id="12_qppbe"]
+[ext_resource type="Texture2D" uid="uid://cshesc2karof3" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/22_Post_Office_16x16.png" id="13_5bsnx"]
+[ext_resource type="Texture2D" uid="uid://bqfb2dk6b5xaf" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/4_Generic_Buildings_16x16.png" id="14_at6vc"]
+[ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="15_q1ym8"]
+[ext_resource type="Texture2D" uid="uid://brwdfosl6lfox" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_16x16.png" id="16_yhq4o"]
+[ext_resource type="Texture2D" uid="uid://dko55w4tmr77f" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/12_Hotel_and_Hospital_16x16.png" id="17_qucsp"]
+[ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="18_3g72g"]
+[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="19_slg5n"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="20_jstpm"]
+[ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="21_bdmye"]
+[ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc.tscn" id="22_rnfdq"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="23_nsl3u"]
+[ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="24_tuncc"]
+[ext_resource type="PackedScene" uid="uid://cfxgqwxv24342" path="res://better_visual/moving_car_right.tscn" id="25_qqynp"]
+[ext_resource type="PackedScene" uid="uid://ctunr6ytrqvj3" path="res://better_visual/moving_car_left.tscn" id="26_rhj4n"]
+[ext_resource type="Script" path="res://scripts/bakery_front.gd" id="27_7gyym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
-texture = ExtResource("2_5qoex")
+texture = ExtResource("1_3r1de")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 13
@@ -8309,7 +8312,7 @@ texture = ExtResource("2_5qoex")
 11:103/0/terrains_peering_bit/top_side = 9
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m2a2"]
-texture = ExtResource("13_e1wsi")
+texture = ExtResource("2_owwi2")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -9497,7 +9500,7 @@ texture = ExtResource("13_e1wsi")
 9:67/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i5uc"]
-texture = ExtResource("8_ishcx")
+texture = ExtResource("3_8mmwb")
 0:0/animation_columns = 8
 0:0/animation_separation = Vector2i(3, 0)
 0:0/animation_mode = 1
@@ -9692,7 +9695,7 @@ texture = ExtResource("8_ishcx")
 0:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgbvr"]
-texture = ExtResource("8_vcpp3")
+texture = ExtResource("4_hcsjk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -13535,7 +13538,7 @@ texture = ExtResource("8_vcpp3")
 38:102/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1b8d"]
-texture = ExtResource("12_ffurh")
+texture = ExtResource("5_gfb5v")
 16:0/0 = 0
 17:0/0 = 0
 18:0/0 = 0
@@ -17840,7 +17843,7 @@ texture = ExtResource("12_ffurh")
 1:218/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrct8"]
-texture = ExtResource("9_lxj4r")
+texture = ExtResource("6_1u2tk")
 10:113/0 = 0
 9:113/0 = 0
 8:113/0 = 0
@@ -17873,10 +17876,10 @@ texture = ExtResource("9_lxj4r")
 11:39/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ccldd"]
-texture = ExtResource("16_pwx13")
+texture = ExtResource("7_ty4mv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukl65"]
-texture = ExtResource("14_e0pg0")
+texture = ExtResource("8_v8cds")
 16:38/0 = 0
 15:38/0 = 0
 15:37/0 = 0
@@ -17887,7 +17890,7 @@ texture = ExtResource("14_e0pg0")
 17:42/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fb3tg"]
-texture = ExtResource("6_ydesw")
+texture = ExtResource("9_4ro7c")
 22:170/0 = 0
 22:171/0 = 0
 22:173/0 = 0
@@ -17984,7 +17987,7 @@ texture = ExtResource("6_ydesw")
 10:111/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uap6c"]
-texture = ExtResource("15_idu3t")
+texture = ExtResource("10_8jn15")
 
 [sub_resource type="TileSet" id="TileSet_ov417"]
 physics_layer_0/collision_layer = 1
@@ -18052,7 +18055,7 @@ sources/5 = SubResource("TileSetAtlasSource_ccldd")
 sources/8 = SubResource("TileSetAtlasSource_uap6c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7gcn"]
-texture = ExtResource("16_pwx13")
+texture = ExtResource("7_ty4mv")
 10:1/0 = 0
 11:1/0 = 0
 12:1/0 = 0
@@ -20589,7 +20592,7 @@ texture = ExtResource("16_pwx13")
 31:115/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcn14"]
-texture = ExtResource("17_n1kx1")
+texture = ExtResource("11_askra")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -21206,7 +21209,7 @@ texture = ExtResource("17_n1kx1")
 20:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yffl"]
-texture = ExtResource("19_by33p")
+texture = ExtResource("12_qppbe")
 0:1/0 = 0
 1:1/0 = 0
 3:1/0 = 0
@@ -22793,7 +22796,7 @@ texture = ExtResource("19_by33p")
 10:93/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvha8"]
-texture = ExtResource("15_idu3t")
+texture = ExtResource("10_8jn15")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -26703,7 +26706,7 @@ texture = ExtResource("15_idu3t")
 26:195/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txolg"]
-texture = ExtResource("7_6yl6j")
+texture = ExtResource("13_5bsnx")
 17:0/0 = 0
 18:0/0 = 0
 0:1/0 = 0
@@ -27378,7 +27381,7 @@ texture = ExtResource("7_6yl6j")
 31:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c0f0q"]
-texture = ExtResource("22_wl2cu")
+texture = ExtResource("14_at6vc")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -31257,7 +31260,7 @@ texture = ExtResource("22_wl2cu")
 15:198/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2qx6f"]
-texture = ExtResource("6_ydesw")
+texture = ExtResource("9_4ro7c")
 19:0/0 = 0
 20:0/0 = 0
 21:0/0 = 0
@@ -36508,7 +36511,7 @@ texture = ExtResource("6_ydesw")
 18:258/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3chqw"]
-texture = ExtResource("23_jxgvl")
+texture = ExtResource("15_q1ym8")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -37407,7 +37410,7 @@ texture = ExtResource("23_jxgvl")
 5:37/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4soi5"]
-texture = ExtResource("14_e0pg0")
+texture = ExtResource("8_v8cds")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -38724,7 +38727,7 @@ texture = ExtResource("14_e0pg0")
 21:56/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikj77"]
-texture = ExtResource("11_8svx7")
+texture = ExtResource("16_yhq4o")
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -40363,7 +40366,7 @@ texture = ExtResource("11_8svx7")
 28:67/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eenl6"]
-texture = ExtResource("4_8qite")
+texture = ExtResource("17_qucsp")
 17:0/0 = 0
 18:0/0 = 0
 19:0/0 = 0
@@ -41663,35 +41666,35 @@ _data = {
 point_count = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5rcs"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0y6r"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(32, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iir4a"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(64, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jut6"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(96, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pygju"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(128, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bhut"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(160, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijxfu"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(192, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grjys"]
-atlas = ExtResource("24_0i5uc")
+atlas = ExtResource("24_tuncc")
 region = Rect2(224, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yffl"]
@@ -41726,6 +41729,8 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrct8"]
+
 [node name="Town" type="Node2D"]
 
 [node name="terrain3" type="TileMapLayer" parent="."]
@@ -41757,532 +41762,533 @@ position = Vector2(-4302, -174)
 
 [node name="row of trees" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, -352)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees2" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, -312)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees2"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees2"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees2"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees2"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees2"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees3" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, -272)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees3"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees3"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees3"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees3"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees3"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees4" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, -236)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees4"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees4"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees4"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees4"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees4"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees5" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, -204)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees5"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees5"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees5"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees5"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees5"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees6" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, -164)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees6"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees6"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees6"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees6"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees6"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees7" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, -124)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees7"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees7"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees7"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees7"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees7"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees8" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, -88)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees8"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees8"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees8"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees8"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees8"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees9" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, -52)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees9"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees9"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees9"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees9"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees9"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees10" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, -12)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees10"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees10"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees10"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees10"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees10"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees11" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, 28)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees11"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees11"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees11"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees11"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees11"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees12" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, 64)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees12"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees12"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees12"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees12"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees12"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees13" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1336, 96)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees13"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees13"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees13"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees13"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees13"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="row of trees14" type="Sprite2D" parent="repeating_trees_floor"]
 position = Vector2(1312, 136)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x23" type="Sprite2D" parent="repeating_trees_floor/row of trees14"]
 position = Vector2(56, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x24" type="Sprite2D" parent="repeating_trees_floor/row of trees14"]
 position = Vector2(112, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x25" type="Sprite2D" parent="repeating_trees_floor/row of trees14"]
 position = Vector2(168, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x26" type="Sprite2D" parent="repeating_trees_floor/row of trees14"]
 position = Vector2(224, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
 [node name="11Camping16x27" type="Sprite2D" parent="repeating_trees_floor/row of trees14"]
 position = Vector2(280, 0)
-texture = ExtResource("22_5j3o1")
+texture = ExtResource("18_3g72g")
 region_enabled = true
 region_rect = Rect2(128, 1016, 64, 56)
 
-[node name="Player" parent="." instance=ExtResource("1_f72b0")]
+[node name="Player" parent="." instance=ExtResource("19_slg5n")]
 z_index = 3
 position = Vector2(76, 94)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 position = Vector2(458, 1)
 zoom = Vector2(3, 3)
-script = ExtResource("25_x3iwy")
+script = ExtResource("20_jstpm")
+target = NodePath("../Player")
 
-[node name="Loadzone_Treehouse" parent="." instance=ExtResource("8_q4pxj")]
+[node name="Loadzone_Treehouse" parent="." instance=ExtResource("21_bdmye")]
 z_index = 1
 position = Vector2(-14, -18)
 destination_scene = "Treehouse_Exterior"
 destination_loadzone = "Loadzone_Town"
 
-[node name="Loadzone_Downtown" parent="." instance=ExtResource("8_q4pxj")]
+[node name="Loadzone_Downtown" parent="." instance=ExtResource("21_bdmye")]
 z_index = 1
 position = Vector2(-1751, 82)
 rotation = 1.57079
 destination_scene = "Downtown"
 destination_loadzone = "Loadzone_Downtown"
 
-[node name="NPC" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
+[node name="NPC" parent="." node_paths=PackedStringArray("path") instance=ExtResource("22_rnfdq")]
 position = Vector2(-440, -550)
 collision_layer = 0
 collision_mask = 0
@@ -42298,7 +42304,7 @@ curve = SubResource("Curve2D_qgqjp")
 [node name="PathFollow2D" type="PathFollow2D" parent="NPC/Path2D"]
 position = Vector2(111, 52)
 
-[node name="NPC2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
+[node name="NPC2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("22_rnfdq")]
 position = Vector2(-630, -546)
 collision_layer = 0
 collision_mask = 0
@@ -42315,35 +42321,59 @@ curve = SubResource("Curve2D_7odw2")
 position = Vector2(166, -11)
 rotation = 2.37875
 
-[node name="Door_Cobini1" parent="." instance=ExtResource("23_tcn14")]
+[node name="Door_Conbini1" parent="." instance=ExtResource("23_nsl3u")]
 position = Vector2(-1144, -208)
-destination_scene = "Cobini"
-target_door = "Door_Cobini1"
+destination_scene = "Conbini"
+target_door = "Door_Conbini1"
 
-[node name="CollisionShape2D" parent="Door_Cobini1" index="0"]
+[node name="CollisionShape2D" parent="Door_Conbini1" index="0"]
 position = Vector2(8, 22)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini1" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini1" index="1"]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_8yffl")
 
-[node name="Spawnpoint" parent="Door_Cobini1" index="2"]
+[node name="Spawnpoint" parent="Door_Conbini1" index="2"]
 position = Vector2(8, 36)
 
-[node name="Door_Cobini2" parent="." instance=ExtResource("23_tcn14")]
+[node name="Door_Conbini2" parent="." instance=ExtResource("23_nsl3u")]
 position = Vector2(-1048, -208)
-destination_scene = "Cobini"
-target_door = "Door_Cobini2"
+destination_scene = "Conbini"
+target_door = "Door_Conbini2"
 
-[node name="CollisionShape2D" parent="Door_Cobini2" index="0"]
+[node name="CollisionShape2D" parent="Door_Conbini2" index="0"]
 position = Vector2(8, 22)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini2" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini2" index="1"]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_8yffl")
 
-[node name="Spawnpoint" parent="Door_Cobini2" index="2"]
+[node name="Spawnpoint" parent="Door_Conbini2" index="2"]
 position = Vector2(8, 36)
 
-[editable path="Door_Cobini1"]
-[editable path="Door_Cobini2"]
+[node name="BetterVisual" type="Node2D" parent="."]
+
+[node name="MovingCar2" parent="BetterVisual" instance=ExtResource("25_qqynp")]
+position = Vector2(-2693, -110)
+
+[node name="MovingCar" parent="BetterVisual" instance=ExtResource("26_rhj4n")]
+position = Vector2(-2354, -38)
+
+[node name="BakeryFront" type="Area2D" parent="."]
+position = Vector2(-1752, -165)
+scale = Vector2(-5.10677, 2.10829)
+script = ExtResource("27_7gyym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BakeryFront"]
+position = Vector2(17.4278, 7.58908)
+shape = SubResource("RectangleShape2D_jrct8")
+
+[node name="BakeryDoor" parent="." instance=ExtResource("23_nsl3u")]
+position = Vector2(-1832, -203)
+destination_scene = "Bakery"
+target_door = "BakeryDoor"
+
+[connection signal="body_entered" from="BakeryFront" to="BakeryFront" method="_on_body_entered"]
+
+[editable path="Door_Conbini1"]
+[editable path="Door_Conbini2"]
