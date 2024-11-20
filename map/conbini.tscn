@@ -1,15 +1,14 @@
 [gd_scene load_steps=34 format=4 uid="uid://b5vbrn4n2gs74"]
 
-[ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
-[ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
-[ext_resource type="Texture2D" uid="uid://c8cl0a6ru5q6i" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/16_Grocery_store_Shadowless.png" id="3_yd03f"]
-[ext_resource type="Texture2D" uid="uid://uuysgv17wo43" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/12_Kitchen_16x16.png" id="4_s3n0r"]
-[ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_5vmdk"]
-[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="7_leub4"]
-[ext_resource type="Texture2D" uid="uid://cmn3yis03rci" path="res://assets/Othermart_(Interior).png" id="8_tqn77"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_e82j6"]
-[ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
+[ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_eolnq"]
+[ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_hw75u"]
+[ext_resource type="Texture2D" uid="uid://c8cl0a6ru5q6i" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/16_Grocery_store_Shadowless.png" id="3_4cskp"]
+[ext_resource type="Texture2D" uid="uid://uuysgv17wo43" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/12_Kitchen_16x16.png" id="4_v1upa"]
+[ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_b4grd"]
+[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_rstxo"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="7_1114q"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="8_x62t1"]
+[ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="9_armc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ohj"]
 texture = ExtResource("1_mtsbs")
@@ -2342,10 +2341,10 @@ texture = ExtResource("3_yd03f")
 3:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1rpj"]
-texture = ExtResource("4_s3n0r")
+texture = ExtResource("4_v1upa")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqbno"]
-texture = ExtResource("5_5vmdk")
+texture = ExtResource("5_b4grd")
 11:2/0 = 0
 10:2/0 = 0
 10:3/0 = 0
@@ -2862,35 +2861,35 @@ sources/5 = SubResource("TileSetAtlasSource_rqbno")
 sources/0 = SubResource("TileSetAtlasSource_ig5gw")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5rcs"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0y6r"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(32, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iir4a"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(64, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jut6"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(96, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pygju"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(128, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bhut"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(160, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijxfu"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(192, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grjys"]
-atlas = ExtResource("10_a2425")
+atlas = ExtResource("9_armc3")
 region = Rect2(224, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fxe2m"]
@@ -2968,7 +2967,7 @@ position = Vector2(-42, -84)
 z_index = 10
 y_sort_enabled = true
 zoom = Vector2(3.375, 3.375)
-script = ExtResource("7_leub4")
+script = ExtResource("7_1114q")
 target = NodePath("../Player")
 
 [node name="Othermart(interior)" type="Sprite2D" parent="."]
@@ -2976,19 +2975,18 @@ visible = false
 y_sort_enabled = true
 position = Vector2(-2, 6)
 scale = Vector2(2.36431, 2.43325)
-texture = ExtResource("8_tqn77")
 
 [node name="Door_Cobini1" parent="." instance=ExtResource("9_e82j6")]
 y_sort_enabled = true
 position = Vector2(-8, 104)
 destination_scene = "Town"
-target_door = "Door_Cobini1"
+target_door = "Door_Conbini1"
 
 [node name="CollisionShape2D" parent="Door_Cobini1" index="0"]
 y_sort_enabled = true
 position = Vector2(8, 27)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini1" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini1" index="1"]
 modulate = Color(1, 1, 1, 0.243137)
 y_sort_enabled = true
 position = Vector2(8, 8)
@@ -3003,18 +3001,18 @@ position = Vector2(8, 14)
 y_sort_enabled = true
 position = Vector2(152, 104)
 destination_scene = "Town"
-target_door = "Door_Cobini2"
+target_door = "Door_Conbini2"
 
-[node name="CollisionShape2D" parent="Door_Cobini2" index="0"]
+[node name="CollisionShape2D" parent="Door_Conbini2" index="0"]
 position = Vector2(8, 27)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini2" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini2" index="1"]
 modulate = Color(1, 1, 1, 0.243137)
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fxe2m")
 
-[node name="Spawnpoint" parent="Door_Cobini2" index="2"]
+[node name="Spawnpoint" parent="Door_Conbini2" index="2"]
 position = Vector2(9, 14)
 
-[editable path="Door_Cobini1"]
-[editable path="Door_Cobini2"]
+[editable path="Door_Conbini1"]
+[editable path="Door_Conbini2"]

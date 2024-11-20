@@ -6,7 +6,9 @@ extends CharacterBody2D
 @onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
+@onready var textbox:TextureRect = $TextBox
 @onready var default_speed = speed
+
 
 
 const ACCELERATION = 10
