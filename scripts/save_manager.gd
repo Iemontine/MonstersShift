@@ -14,7 +14,7 @@ func load_node(node:Dictionary) -> void:
 		scene.add_child(object)
 		object.global_position = Vector2(node["pos_x"], node["pos_y"])
 		for i in node.keys():
-			if i == "file" or i == "parent" or i == "pos_x" or i == "pos_y" or i == "last_dir_x" or i == "last_dir_y":
+			if i == "file" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue
 			object.set(i, node[i])
 	
@@ -25,13 +25,12 @@ func load_node(node:Dictionary) -> void:
 		scene_manager.switch_scene_on_load(get_tree().get_current_scene().get_node("Player"), node["parent"].replace("/root/", ""), false, object.global_position)
 		await scene_manager.finished_switching
 		object = get_tree().get_current_scene().get_node("Player")
-		print("before pos", object.global_position)
 		object.global_position = Vector2(node["pos_x"], node["pos_y"])
-		print("after pos", object.global_position)
 		object.last_direction = Vector2(node["last_dir_x"], node["last_dir_y"])
-		#scene.get_node("Camera2D").target = object
-		print("done loading")
-		#scene_manager.switch_scene_on_load(object, node["parent"].replace("/root/", ""), false)
+		for i in node.keys():
+			if i == "file" or i == "parent" or i == "pos_x" or i == "pos_y" or i == "last_dir_x" or i == "last_dir_y":
+				continue
+			object.set(i, node[i])
 		
 func save_game() -> void:
 	var save_file = FileAccess.open(_path, FileAccess.WRITE)
@@ -70,9 +69,7 @@ func load_game() -> void:
 		
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
-		print("Saving")
 		save_game()
 	
 	if Input.is_action_just_pressed("load"):
-		print("Loading")
 		load_game()
