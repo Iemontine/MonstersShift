@@ -37,7 +37,7 @@ func handle_movement(delta):
 
 func stop_event(stop_index):
 	speed = 0
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(stop_index).timeout
 	#match stop_index:
 		#0:
 			#await get_tree().create_timer(5.0).timeout

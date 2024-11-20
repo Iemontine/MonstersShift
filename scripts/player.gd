@@ -2,60 +2,57 @@ class_name Player
 extends CharacterBody2D
 
 
-@export var speed = 100
-@export var camera: NodePath
-
-
-@onready var anim = $AnimationPlayer
-@onready var animationTree = $AnimationTree
+@onready var animationPlayer = $SpriteLayers/AnimationPlayer
+@onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
+@onready var default_speed = speed
 
 
+const ACCELERATION = 10
+const FRICTION = 10
+
+
+@export var speed = 50
+@export var sprint_multiplier = 10
+@export var camera: NodePath
 var last_direction = Vector2.ZERO
 var frozen = false
 var enter_scene: bool = false
 var walk_to: bool = false
 var ignore_loadzone = false
+var cutscene_walk: bool = false
+var cutscene_walk_direction: Vector2
+
+# TODO: refactor this, all these booleans/flags is bad style. frozen and walk_to can potentially be replaced with unbinding the input map
+# and further logic. cutscene_walk and cutscene_walk_direction could leverage the current state of binding the input map and last_direction
+# respectively
+
+func _ready():
+	animationTree.set_animation_player(animationPlayer.get_path())
+	animationTree.active = true
+	speed = default_speed
 
 
-func handle_movement():
-	var input_vector = Vector2.ZERO
-	
-	if walk_to:
-		input_vector = last_direction
-	elif not frozen:
-		if Input.is_action_pressed("up"):
-			input_vector.y -= 1
-		elif Input.is_action_pressed("down"):
-			input_vector.y += 1
+func travel_to_anim(animName:String, direction = null):
+	if direction != null: last_direction = direction
 
-		if Input.is_action_pressed("left"):
-			input_vector.x -= 1
-		elif Input.is_action_pressed("right"):
-			input_vector.x += 1
+	animationTree.set("parameters/"+animName+"/blend_position", last_direction)
+	#if animName.begins_with("Walk"):
+		#animationTree.advance(get_physics_process_delta_time() * 0.001)
+	animationState.travel(animName)
 
-	input_vector = input_vector.normalized()
 
-	if Input.is_key_pressed(KEY_SHIFT):
-		velocity = input_vector * speed * 10
-	else:
-		velocity = input_vector * speed
-	
-	if input_vector != Vector2.ZERO:
-		last_direction = input_vector
+func move_interact_box():
+	var direction = last_direction
+	var box_position = interact_box.position
 
-		# Update InteractBox position based on last direction
-		if last_direction == Vector2.UP:
-			interact_box.position = Vector2(0, -32)
-		elif last_direction == Vector2.DOWN:
-			interact_box.position = Vector2(0, 28)
-		elif last_direction == Vector2.LEFT:
-			interact_box.position = Vector2(-24, -2)
-		elif last_direction == Vector2.RIGHT:
-			interact_box.position = Vector2(24, -2)
+	if direction == Vector2.UP: box_position = Vector2(0, -17)
+	elif direction == Vector2.DOWN: box_position = Vector2(0, 17)
+	elif direction == Vector2.LEFT: box_position = Vector2(-19, -13.25)
+	elif direction == Vector2.RIGHT: box_position = Vector2(19, -13.25)
 
-	animationTree.set("parameters/walk/blend_position", input_vector)
+	interact_box.position = box_position
 
 
 func handle_interaction():
@@ -76,12 +73,18 @@ func handle_interaction():
 
 
 func _physics_process(_delta):
-	handle_movement()
 	move_and_slide()
+	move_interact_box()
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
 
+	if Input.is_key_pressed(KEY_SHIFT):
+		speed = sprint_multiplier * default_speed
+		$Movement.movement_anim = "Run"
+	else:
+		speed = default_speed
+		$Movement.movement_anim = "Walk"
 
 func _on_freeze():
 	frozen = true

@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 scene_manager="*res://scripts/loadzones/scene_manager.gd"
-TransitionScreen="*res://scenes/transition_screen.tscn"
+TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 
 [dialogic]
 
@@ -28,6 +28,7 @@ directories/dch_directory={
 "no_character": "res://dialogic/no_character.dch"
 }
 directories/dtl_directory={
+"cutscene": "res://dialogic/cutscene.dtl",
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true
@@ -57,7 +58,7 @@ text/autopauses={}
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/msca/plugin.cfg")
 
 [filesystem]
 
