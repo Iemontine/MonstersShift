@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
-@onready var textbox:TextureRect = $TextBox
 @onready var default_speed = speed
 
 
@@ -89,6 +88,7 @@ func _physics_process(_delta):
 		$Movement.movement_anim = "Walk"
 
 func _on_freeze():
+	print("freeze")
 	frozen = true
 
 

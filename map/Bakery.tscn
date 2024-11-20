@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dyh7fci6ujtsl"]
+[gd_scene load_steps=16 format=4 uid="uid://bd8uj64wiyria"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_h573d"]
 [ext_resource type="Texture2D" uid="uid://ctasx5ys0ajvb" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png" id="2_dixcs"]

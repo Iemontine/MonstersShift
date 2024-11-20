@@ -40,6 +40,11 @@ script = ExtResource("1_ncqph")
 scene = ExtResource("5_f0fq3")
 overrides = {}
 
+[sub_resource type="Resource" id="Resource_ncqph"]
+script = ExtResource("1_ncqph")
+scene = ExtResource("6_50pjq")
+overrides = {}
+
 [sub_resource type="Resource" id="Resource_06s0d"]
 script = ExtResource("1_ncqph")
 scene = ExtResource("7_158ky")
@@ -48,11 +53,6 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_qc7jf"]
 script = ExtResource("1_ncqph")
 scene = ExtResource("8_s7r2f")
-overrides = {}
-
-[sub_resource type="Resource" id="Resource_ncqph"]
-script = ExtResource("1_ncqph")
-scene = ExtResource("6_50pjq")
 overrides = {}
 
 [resource]

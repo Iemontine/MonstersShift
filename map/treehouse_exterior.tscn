@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://interactable/scripts/test_quest_sign.gd" id="14_nucyf"]
 [ext_resource type="Script" path="res://interactable/scripts/test_quest_door.gd" id="15_8iffc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ni0hd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
 texture = ExtResource("3_8iffc")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -8352,9 +8352,9 @@ terrain_set_1/terrain_8/name = "road1"
 terrain_set_1/terrain_8/color = Color(0.627451, 0.12549, 0.941176, 1)
 terrain_set_1/terrain_9/name = "road2"
 terrain_set_1/terrain_9/color = Color(1, 0, 1, 1)
-sources/0 = SubResource("TileSetAtlasSource_ni0hd")
+sources/0 = SubResource("TileSetAtlasSource_8iffc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cso3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_302ri"]
 texture = ExtResource("4_302ri")
 1:1/0 = 0
 2:1/0 = 0
@@ -9628,9 +9628,9 @@ texture = ExtResource("4_302ri")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "cliff-grass"
 terrain_set_0/terrain_0/color = Color(1, 0, 0, 1)
-sources/1 = SubResource("TileSetAtlasSource_0cso3")
+sources/1 = SubResource("TileSetAtlasSource_302ri")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5mui"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d42bs"]
 texture = ExtResource("6_k2vro")
 22:0/0 = 0
 23:0/0 = 0
@@ -13662,7 +13662,7 @@ texture = ExtResource("6_k2vro")
 15:180/0 = 0
 16:180/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m67hv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2vro"]
 texture = ExtResource("7_srtvs")
 2:0/0 = 0
 3:0/0 = 0
@@ -14979,7 +14979,7 @@ texture = ExtResource("7_srtvs")
 20:56/0 = 0
 21:56/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnrrg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srtvs"]
 texture = ExtResource("8_gkbrt")
 1:0/0 = 0
 2:0/0 = 0
@@ -18907,9 +18907,9 @@ terrain_set_0/terrain_5/color = Color(1, 0, 0, 1)
 terrain_set_1/mode = 0
 terrain_set_1/terrain_0/name = "grass w/ dirt"
 terrain_set_1/terrain_0/color = Color(1, 0, 0, 1)
-sources/8 = SubResource("TileSetAtlasSource_m67hv")
-sources/9 = SubResource("TileSetAtlasSource_bnrrg")
-sources/4 = SubResource("TileSetAtlasSource_p5mui")
+sources/8 = SubResource("TileSetAtlasSource_k2vro")
+sources/9 = SubResource("TileSetAtlasSource_srtvs")
+sources/4 = SubResource("TileSetAtlasSource_d42bs")
 
 [node name="Treehouse_Exterior" type="Node2D"]
 

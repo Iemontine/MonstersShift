@@ -26,6 +26,6 @@ func update() -> void:
 	else:
 		_current.update()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _current != null:
 		update()
