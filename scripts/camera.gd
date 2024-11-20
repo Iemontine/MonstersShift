@@ -3,6 +3,8 @@ extends Camera2D
 
 @export var target: Player
 
+func set_target(player:Player) -> void:
+	target = player
 
 func _physics_process(_delta: float) -> void:
 	if target:

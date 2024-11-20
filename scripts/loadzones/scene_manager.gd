@@ -1,16 +1,40 @@
 extends Node
 class_name SceneManager
 
+signal finished_switching
 
 var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
 
+func switch_scene_on_load(src_player: Player, destination: String, should_player_walk: bool, pos:Vector2) -> void:
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+
+	
+	dest_path = scene_path + destination + ".tscn"
+	var last_direction = src_player.last_direction
+	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
+	
+	# TODO: replace with actual await completed scene transition code
+	await get_tree().create_timer(0.05).timeout
+	
+	var new_scene = get_tree().root.get_node(destination)
+	dest_player = new_scene.get_node("Player")
+	dest_player.last_direction = last_direction
+	dest_player.frozen = true
+	if should_player_walk:
+		dest_player.walk_to = true
+	dest_player.ignore_loadzone = true
+	
+	dest_player.global_position = pos
+	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
+	
 	dest_path = scene_path + destination + ".tscn"
 	var last_direction = src_player.last_direction
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
@@ -46,6 +70,7 @@ func on_timer_completed():
 	dest_player.walk_to = false
 	dest_player.ignore_loadzone = false
 	dest_player.frozen = false
+	finished_switching.emit()
 
 
 func move_player_to_loadzone(new_scene, player, loadzone_name = "Loadzone"):

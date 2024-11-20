@@ -71,6 +71,17 @@ func handle_interaction():
 		if collider is Interactable:
 			collider.interact()
 
+func save():
+	var dict := {
+		"file": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": global_position.x,
+		"pos_y": global_position.y,
+		"last_dir_x": last_direction.x,
+		"last_dir_y": last_direction.y,
+		"name": name
+	}
+	return dict
 
 func _physics_process(_delta):
 	move_and_slide()

@@ -18911,7 +18911,7 @@ sources/4 = SubResource("TileSetAtlasSource_p5mui")
 
 [node name="Treehouse_Exterior" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ni0hd")]
+[node name="Player" parent="." groups=["savable"] instance=ExtResource("1_ni0hd")]
 z_index = 3
 position = Vector2(455, -50)
 
