@@ -52,6 +52,7 @@ overrides = {}
 script = ExtResource("1_pcv88")
 scene = ExtResource("6_fykmy")
 overrides = {
+"boxes_stylebox_hovered": "\"choice_panel_hover.tres\"",
 "text_color_use_global": "false"
 }
 
