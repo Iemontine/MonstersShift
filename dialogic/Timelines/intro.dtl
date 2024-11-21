@@ -1,4 +1,6 @@
 # Intro Cutscene
+# Add intro music
+[sound volume="0.0"]
 # Slide 1
 [background arg="res://dialogic/Images/intro_temp_image1.png" fade="1.0"]
 As a kid, everything seems perfect. There are no worries, no hardships, no struggles.
