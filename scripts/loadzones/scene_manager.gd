@@ -21,10 +21,9 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	var new_scene = get_tree().root.get_node(destination)
 	dest_player = new_scene.get_node("Player")
 	dest_player.last_direction = last_direction
-	dest_player.frozen = true
+	dest_player.state = Player.PlayerState.FROZEN
 	if should_player_walk:
-		dest_player.walk_to = true
-	dest_player.ignore_loadzone = true
+		dest_player.state = Player.PlayerState.WALK_TO
 	
 	if loadzone_name.begins_with("Loadzone"):
 		move_player_to_loadzone(new_scene, dest_player, loadzone_name)
@@ -43,9 +42,7 @@ func start_timer(duration: float):
 
 
 func on_timer_completed():
-	dest_player.walk_to = false
-	dest_player.ignore_loadzone = false
-	dest_player.frozen = false
+	dest_player.state = Player.PlayerState.NORMAL
 
 
 func move_player_to_loadzone(new_scene, player, loadzone_name = "Loadzone"):

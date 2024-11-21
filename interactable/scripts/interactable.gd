@@ -2,6 +2,7 @@ extends StaticBody2D
 class_name Interactable
 
 
+
 signal interacted
 signal freeze
 signal unfreeze

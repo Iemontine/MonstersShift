@@ -2,6 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 
+enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK }
+
+
 @onready var animationPlayer = $SpriteLayers/AnimationPlayer
 @onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
@@ -9,25 +12,13 @@ extends CharacterBody2D
 @onready var default_speed = speed
 
 
-
-const ACCELERATION = 10
-const FRICTION = 10
-
-
 @export var speed = 50
 @export var sprint_multiplier = 10
 @export var camera: NodePath
 var last_direction = Vector2.ZERO
-var frozen = false
-var enter_scene: bool = false
-var walk_to: bool = false
-var ignore_loadzone = false
-var cutscene_walk: bool = false
+var state = PlayerState.NORMAL
 var cutscene_walk_direction: Vector2
 
-# TODO: refactor this, all these booleans/flags is bad style. frozen and walk_to can potentially be replaced with unbinding the input map
-# and further logic. cutscene_walk and cutscene_walk_direction could leverage the current state of binding the input map and last_direction
-# respectively
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
@@ -37,10 +28,7 @@ func _ready():
 
 func travel_to_anim(animName:String, direction = null):
 	if direction != null: last_direction = direction
-
 	animationTree.set("parameters/"+animName+"/blend_position", last_direction)
-	#if animName.begins_with("Walk"):
-		#animationTree.advance(get_physics_process_delta_time() * 0.001)
 	animationState.travel(animName)
 
 
@@ -57,7 +45,7 @@ func move_interact_box():
 
 
 func handle_interaction():
-	if frozen and not walk_to:
+	if state == PlayerState.FROZEN or state == PlayerState.WALK_TO:
 		return
 		
 	var space_state = get_world_2d().direct_space_state
@@ -74,8 +62,12 @@ func handle_interaction():
 
 
 func _physics_process(_delta):
+	if state == PlayerState.FROZEN: return
+
 	move_and_slide()
 	move_interact_box()
+
+	if state == PlayerState.WALK_TO: return
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_interaction()
@@ -87,9 +79,10 @@ func _physics_process(_delta):
 		speed = default_speed
 		$Movement.movement_anim = "Walk"
 
+
 func _on_freeze():
-	frozen = true
+	state = PlayerState.FROZEN
 
 
 func _on_unfreeze():
-	frozen = false
+	state = PlayerState.NORMAL

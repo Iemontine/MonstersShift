@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="untitledhorror"
-run/main_scene="res://map/town.tscn"
+run/main_scene="res://map/dev.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

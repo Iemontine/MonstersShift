@@ -40,31 +40,17 @@ func _on_dialogic_signal(signal_name: String):
 
 
 func _process(_delta: float) -> void:
-	# If no commands, set player properties to default
-	if cmd_list.is_empty():
-		player.walk_to = false
-		player.cutscene_walk = false
-		player.ignore_loadzone = false
-		player.frozen = false
-		#player.get_node("Label").visible = false
-	else:
-		if cmd_list.front() is Vector2:
-			player.walk_to = false
-			player.cutscene_walk = true
-			player.ignore_loadzone = true
-			player.frozen = true
-			player.cutscene_walk_direction = cmd_list.front()
-			
-			if timer_list.front().is_stopped():
-				timer_list.front().start()
-			elif timer_list.front().time_left < 0.1:
-				player.walk_to = false
-				player.cutscene_walk = false
-				player.ignore_loadzone = false
-				player.frozen = false
-				timer_list.pop_front()
-				cmd_list.pop_front()
-		elif cmd_list.front() is String and dialog_started == false:
-				dialog_started = true
-				Dialogic.signal_event.connect(_on_dialogic_signal)
-				Dialogic.start("cutscene")
+	if cmd_list.front() is Vector2:
+		player.state = Player.PlayerState.CUTSCENE_WALK
+		player.cutscene_walk_direction = cmd_list.front()
+		
+		if timer_list.front().is_stopped():
+			timer_list.front().start()
+		elif timer_list.front().time_left < 0.1:
+			player.state = Player.PlayerState.NORMAL
+			timer_list.pop_front()
+			cmd_list.pop_front()
+	elif cmd_list.front() is String and dialog_started == false:
+			dialog_started = true
+			Dialogic.signal_event.connect(_on_dialogic_signal)
+			Dialogic.start("cutscene")
