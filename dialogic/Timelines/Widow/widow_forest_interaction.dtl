@@ -1,0 +1,14 @@
+# Interacting with the widow in the forest
+# Humming
+[sound volume="0.0"]
+player: Hello ma’am, what are you doing?
+widow: Hmm? Oh nothing… just humming an old tune…
+widow: Say… you look just like that dear boy, what was his name again?
+player: Benjamin? He was my brother… I’m here to find out how he passed.
+widow: Passed you say? Poor Benji… what a sweetheart.
+player: “Did you know him? I’d like to know what happened to him.
+widow: Ah yes. He helped me out after…
+# Crying sounds
+[sound volume="0.0"]
+The woman stops speaking and tears begin to fall from her eyes.
+player: She seems like she needs space, I’ll come talk to her later.

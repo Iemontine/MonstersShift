@@ -46,7 +46,8 @@ directories/dtl_directory={
 "intro": "res://dialogic/Timelines/intro.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
-"test": "res://dialogic/test.dtl"
+"test": "res://dialogic/test.dtl",
+"widow_forest_interaction": "res://dialogic/Timelines/Widow/widow_forest_interaction.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/Styles/speaker_dialogue.tres", "res://dialogic/Styles/speaker_without_dialogue.tres"]
