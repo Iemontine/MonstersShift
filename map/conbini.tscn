@@ -2924,7 +2924,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Cobini" type="Node2D"]
+[node name="Conbini" type="Node2D"]
 y_sort_enabled = true
 
 [node name="floor" type="TileMapLayer" parent="."]
@@ -2970,43 +2970,43 @@ zoom = Vector2(3.375, 3.375)
 script = ExtResource("7_leub4")
 target = NodePath("../Player")
 
-[node name="Door_Cobini1" parent="." instance=ExtResource("9_e82j6")]
+[node name="Door_Conbini1" parent="." instance=ExtResource("9_e82j6")]
 y_sort_enabled = true
 position = Vector2(-8, 104)
 destination_scene = "Town"
-target_door = "Door_Cobini1"
+target_door = "Door_Conbini1"
 
-[node name="CollisionShape2D" parent="Door_Cobini1" index="0"]
+[node name="CollisionShape2D" parent="Door_Conbini1" index="0"]
 y_sort_enabled = true
 position = Vector2(8, 27)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini1" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini1" index="1"]
 modulate = Color(1, 1, 1, 0.243137)
 y_sort_enabled = true
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fxe2m")
 frame_progress = 0.194715
 
-[node name="Spawnpoint" parent="Door_Cobini1" index="2"]
+[node name="Spawnpoint" parent="Door_Conbini1" index="2"]
 y_sort_enabled = true
 position = Vector2(8, 14)
 
-[node name="Door_Cobini2" parent="." instance=ExtResource("9_e82j6")]
+[node name="Door_Conbini2" parent="." instance=ExtResource("9_e82j6")]
 y_sort_enabled = true
 position = Vector2(152, 104)
 destination_scene = "Town"
-target_door = "Door_Cobini2"
+target_door = "Door_Conbini2"
 
-[node name="CollisionShape2D" parent="Door_Cobini2" index="0"]
+[node name="CollisionShape2D" parent="Door_Conbini2" index="0"]
 position = Vector2(8, 27)
 
-[node name="AnimatedSprite2D" parent="Door_Cobini2" index="1"]
+[node name="AnimatedSprite2D" parent="Door_Conbini2" index="1"]
 modulate = Color(1, 1, 1, 0.243137)
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fxe2m")
 
-[node name="Spawnpoint" parent="Door_Cobini2" index="2"]
+[node name="Spawnpoint" parent="Door_Conbini2" index="2"]
 position = Vector2(9, 14)
 
-[editable path="Door_Cobini1"]
-[editable path="Door_Cobini2"]
+[editable path="Door_Conbini1"]
+[editable path="Door_Conbini2"]

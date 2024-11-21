@@ -22,7 +22,6 @@ static func change_image_colors(image, old_palette, new_palette, debug_text = ""
 		for x in range(image_width):
 			for y in range(image_height):
 				var color = image.get_pixel(x,y)
-				#print(color)
 				if color.a > 0:
 					var pos_in_palette = get_pos_in_palette(old_palette,color)
 					if pos_in_palette != -1 && new_palette.size() > pos_in_palette:

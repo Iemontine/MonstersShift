@@ -88,7 +88,6 @@ func _physics_process(_delta):
 		$Movement.movement_anim = "Walk"
 
 func _on_freeze():
-	print("freeze")
 	frozen = true
 
 
