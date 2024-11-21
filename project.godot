@@ -31,8 +31,12 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
+"baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
+"baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
+"baker_fail_night": "res://dialogic/Timelines/Baker/baker_fail_night.dtl",
 "baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",
 "baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
+"baker_success_night": "res://dialogic/Timelines/Baker/baker_success_night.dtl",
 "click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
 "click_on_picture_frame": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_picture_frame.dtl",
 "click_on_record_player": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_record_player.dtl",
