@@ -9974,7 +9974,7 @@ position = Vector2(56, -56)
 position = Vector2(176, 80)
 
 [node name="TreehouseLight" type="PointLight2D" parent="."]
-position = Vector2(0, -176)
+position = Vector2(0, -40)
 scale = Vector2(0.53125, 0.515625)
 enabled = false
 color = Color(0.65533, 0.398047, 0.0745394, 1)
