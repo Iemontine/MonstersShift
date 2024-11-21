@@ -30,12 +30,18 @@ directories/dch_directory={
 "widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
-"arrival_start_outside": "res://dialogic/Timelines/arrival_start_outside.dtl",
-"click_on_bed": "res://dialogic/Timelines/click_on_bed.dtl",
-"click_on_picture_frame": "res://dialogic/Timelines/click_on_picture_frame.dtl",
-"click_on_record_player": "res://dialogic/Timelines/click_on_record_player.dtl",
+"arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
+"baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",
+"baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
+"click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
+"click_on_picture_frame": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_picture_frame.dtl",
+"click_on_record_player": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_record_player.dtl",
 "cutscene": "res://dialogic/cutscene.dtl",
+"exit_house_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/exit_house_postarrival.dtl",
+"first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
+"leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
+"outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true

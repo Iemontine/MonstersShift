@@ -1,0 +1,14 @@
+# First interaction with the baker
+baker: Hey there sugar! You new to town? I think I’d recognize a face like yours if I’d seen it before!
+# Baker lets out guffaw
+[sound volume="0.0"]
+player: I actually just moved into this place my brother left me. Did you know him? His name was Benjamin.
+baker: Benjamin…hm…oh! You mean my old pal Benny? He was the best! He would always come help out.
+baker: Without him here, I’ve been so behind! The stress is making me very hungry…
+My brother was helping this man. Maybe I can too?
+- Help the Baker
+	player: How about I help you out? What can I do?
+	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
+- Come back later
+	player: Well, I wish you luck with your bakery.
+	baker: Thanks muffin! Come back whenever, I could always use the help.
