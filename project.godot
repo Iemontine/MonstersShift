@@ -24,10 +24,18 @@ TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 [dialogic]
 
 directories/dch_directory={
-"sign": "res://dialogic/Characters/sign.dch"
+"baker": "res://dialogic/Characters/baker.dch",
+"player": "res://dialogic/Characters/player.dch",
+"sign": "res://dialogic/Characters/sign.dch",
+"widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
+"arrival_start_outside": "res://dialogic/Timelines/arrival_start_outside.dtl",
+"click_on_bed": "res://dialogic/Timelines/click_on_bed.dtl",
+"click_on_picture_frame": "res://dialogic/Timelines/click_on_picture_frame.dtl",
+"click_on_record_player": "res://dialogic/Timelines/click_on_record_player.dtl",
 "cutscene": "res://dialogic/cutscene.dtl",
+"intro": "res://dialogic/Timelines/intro.dtl",
 "test": "res://dialogic/test.dtl"
 }
 glossary/default_case_sensitive=true
