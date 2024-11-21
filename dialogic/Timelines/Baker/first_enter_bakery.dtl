@@ -1,6 +1,6 @@
 # Starts the first time you enter the bakery
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Door_Wood_Open_Stereo.wav" volume="0.0"]
 [wait time="0.4"]
-[music fade="0.0" volume="0.0"]
+[music path="res://assets/sound/Free_Chiptune_MusicPack_4/#64 I Think I Like You - Orchestrated.WAV" fade="0.0" volume="5.0"]
 baker: Fresh bread! Fresh bread! Come get it while it’s nice and hot!
 player: Wait… That man was in the photo at Benjamin’s house. I should go talk to him.
