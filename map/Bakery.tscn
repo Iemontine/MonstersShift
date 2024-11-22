@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bd8uj64wiyria"]
+[gd_scene load_steps=15 format=4 uid="uid://b4pbwskimakuc"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_k8d66"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_ml246"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="4_lbpre"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="5_xblhb"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="6_5gx6c"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="7_6x0wb"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="7_6x0wb"]
 [ext_resource type="PackedScene" uid="uid://bqkhrkowk7iwy" path="res://interactable/item_pickup.tscn" id="8_cmyle"]
-[ext_resource type="Texture2D" uid="uid://msxymg8rrg2t" path="res://baker_assets/chocolate.PNG" id="9_llyj7"]
+[ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="10_q1r2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
 texture = ExtResource("1_k8d66")
@@ -281,7 +281,7 @@ tile_map_data = PackedByteArray("AAAoAAMAAQArACgAAAAoAAQAAQArACgAAAAoAAUAAQArACg
 tile_set = SubResource("TileSet_0210a")
 
 [node name="props2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACAP3/CgAIAAgAAAD6//3/CgALACMAAAAGAP3/CgAJABcAAAD7//v/CgAGABkAAAACAPv/CgAGABkAAAACAPj/CgAGABkAAAD7//j/CgAGABkAAAA=")
+tile_map_data = PackedByteArray("AAACAP3/CgAIAAgAAAAGAP3/CgAJABcAAAD7//v/CgAGABkAAAACAPv/CgAGABkAAAACAPj/CgAGABkAAAD7//j/CgAGABkAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
 [node name="Player" parent="." instance=ExtResource("5_xblhb")]
@@ -300,6 +300,7 @@ script = ExtResource("7_6x0wb")
 target = NodePath("../Player")
 
 [node name="ItemPickup" parent="." instance=ExtResource("8_cmyle")]
-position = Vector2(45, 21)
-item_name = "chocolate"
-item_texture = ExtResource("9_llyj7")
+position = Vector2(48, 24)
+
+[node name="CuttingBoard" parent="." instance=ExtResource("10_q1r2h")]
+position = Vector2(-88, -40)

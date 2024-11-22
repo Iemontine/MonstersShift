@@ -11,7 +11,7 @@ static func create_shader_material(original_palette, use_palette)->ShaderMateria
 		p_count = p_count +1
 	return shader_material
 
-static func change_image_colors(image, old_palette, new_palette, debug_text = "") -> Image:
+static func change_image_colors(image, old_palette, new_palette, _debug_text = "") -> Image:
 	if image != null:
 		# Get the size of the image
 		var image_width = image.get_width()
@@ -69,7 +69,7 @@ static func create_palette_from_texture(node_texture) ->Array:
 
 static func get_pos_in_palette(palette, color)->int:
 	var pos = 0
-	var found:bool
+	var _found:bool
 	for c in palette:
 		if c is String: c = Color(c)
 		if c.r == color.r && c.g == color.g && color.b == color.b: return pos
