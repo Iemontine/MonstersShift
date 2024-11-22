@@ -34,7 +34,8 @@ func move_player(_delta):
 		player.travel_to_anim(movement_anim, input_vector)
 		velocity = input_vector * player.speed
 	else:
-		player.travel_to_anim("Idle")
+		if player.state == player.PlayerState.NORMAL:
+			player.travel_to_anim("Idle")
 		velocity = Vector2.ZERO
 		
 	player.set_velocity(velocity)

@@ -10,7 +10,6 @@ signal unfreeze
 
 @onready var player = get_parent().get_node("Player")
 
-
 func _ready() -> void:
 	connect("interacted", Callable(self, "_on_interacted"))
 	connect("freeze", Callable(player, "_on_freeze"))

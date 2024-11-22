@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 
-enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK }
+enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK, HOLDING_ITEM }
 
 
 @onready var animationPlayer = $SpriteLayers/AnimationPlayer
@@ -10,7 +10,8 @@ enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK }
 @onready var animationState = animationTree.get("parameters/playback")
 @onready var interact_box = $InteractBox
 @onready var default_speed = speed
-
+@onready var movement = $Movement
+@onready var item_holding = $ItemHoldingTexture
 
 @export var speed = 50
 @export var sprint_multiplier = 10
@@ -19,11 +20,13 @@ var last_direction = Vector2.ZERO
 var state = PlayerState.NORMAL
 var cutscene_walk_direction: Vector2
 
+var item:Item = null
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
 	animationTree.active = true
 	speed = default_speed
+	item_holding.visible = false
 
 
 func travel_to_anim(animName:String, direction = null):
@@ -62,8 +65,9 @@ func handle_interaction():
 
 
 func _physics_process(_delta):
+	_handle_item_holding()
 	if state == PlayerState.FROZEN: return
-
+	
 	move_and_slide()
 	move_interact_box()
 
@@ -78,7 +82,18 @@ func _physics_process(_delta):
 	else:
 		speed = default_speed
 		$Movement.movement_anim = "Walk"
+	if state == PlayerState.HOLDING_ITEM:
+		#$Movement.movement_anim = "WalkCarry"
+		pass
 
+func _handle_item_holding() -> void:
+	if state == PlayerState.HOLDING_ITEM:
+		item_holding.texture = item.sprite
+		item_holding.global_position = global_position + Vector2(-10,-38)
+		item_holding.visible = true
+		
+	else:
+		item_holding.visible = false
 
 func _on_freeze():
 	state = PlayerState.FROZEN
