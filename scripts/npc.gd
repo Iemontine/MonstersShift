@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var anim = $SpriteLayer/AnimationPlayer
 @onready var animation_tree = $SpriteLayers/AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
-@onready var path_follow: PathFollow2D = path.get_node_or_null("PathFollow2D")
+var path_follow: PathFollow2D
 @onready var original_speed = speed / 1000.0
 
 
@@ -18,6 +18,7 @@ var last_direction = Vector2.ZERO
 
 
 func _ready() -> void:
+	if path: path_follow = path.get_node_or_null("PathFollow2D")
 	speed /= 1000.0
 
 
