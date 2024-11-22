@@ -20,6 +20,7 @@ uniform vec4 replace_7: source_color;
 const float precision = 0.1;
 
 vec4 swap_color(vec4 color){
+	
 	const float EPSILON = 0.0001;
 	vec4 original_colors[8] = vec4[8] (original_0, original_1, original_2, original_3, original_4, original_5, original_6, original_7);
 	vec4 replace_colors[8] = vec4[8] (replace_0, replace_1, replace_2, replace_3, replace_4, replace_5, replace_6, replace_7);
