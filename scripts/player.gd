@@ -79,6 +79,7 @@ func _physics_process(_delta):
 		if current_interactable:
 			hold_start_time = Time.get_ticks_msec() / 1000.0
 			is_holding = true
+			#hacky, im so sorry
 			if current_interactable is CuttingBoard:
 				state = PlayerState.FROZEN
 				travel_to_anim("CraftSmith")
