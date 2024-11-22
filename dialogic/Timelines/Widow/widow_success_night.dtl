@@ -1,0 +1,18 @@
+# Happens when you win the widow's nighttime game
+After collecting all the items, you slowly hand them over to the widow.
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Small_Polyester_PickUp_Stereo.wav" volume="0.0"]
+As she silently stares at them, her appearance turns back to normal. She looks up at you with a sad smile.
+widow: Oh thank you dear. I lost my head for a second.
+player: Can I ask what happened to you?
+widow: Of course. Many years ago, in a tragic accident, I lost my child and husband.
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Single_Mono_06.wav" volume="0.0"]
+widow: ...They were everything to me. Without them, I couldn’t breathe. I couldn’t move. I just layed in bed. Frozen.
+widow: My sadness consumed me and turned me into what you just saw.
+widow: I thought I would be like that forever…but then I met your sweet brother Benji. He saved me from myself.
+Benjamin helped this woman. Helped her recover from something unimaginable. Wow…
+player: I am so sorry for your loss. That must have been incredibly difficult.
+widow: Thank you dear, and I am sorry for attacking you. Learning that Benji passed sent me back into that dark place.
+player: No need to apologize, I understand. Please never hesitate to reach out to me for support.
+widow: Oh you are just the sweetest…just like Benji. I’ll see you around.
+leave widow [animation="Slide Out Right"]
+player: There is so much about my brother that I just don’t know…

@@ -1,6 +1,7 @@
-# Interacting with the widow in the forest
-# Humming
-[sound volume="0.0"]
+# Interacting with the widow ifor the first time
+[sound path="res://assets/sound/widow_humming.mp3" volume="0.0"]
+[wait time="1.5"]
+As you walk up to the woman, you hear a sad tune.
 player: Hello ma’am, what are you doing?
 widow: Hmm? Oh nothing… just humming an old tune…
 widow: Say… you look just like that dear boy, what was his name again?
