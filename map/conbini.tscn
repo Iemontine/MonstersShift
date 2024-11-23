@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uuysgv17wo43" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/12_Kitchen_16x16.png" id="4_s3n0r"]
 [ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_5vmdk"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="7_leub4"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="7_leub4"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_e82j6"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
 

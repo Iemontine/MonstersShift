@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bquokw4krqvca"]
 
-[ext_resource type="Script" path="res://interactable/scripts/door.gd" id="1_inmpo"]
+[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/scripts/door.gd" id="1_inmpo"]
 [ext_resource type="Texture2D" uid="uid://cfu4to76dcd4r" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Door_Treehouse.png" id="1_rx072"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]

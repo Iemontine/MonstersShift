@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://cfxgqwxv24342"]
 
-[ext_resource type="Script" path="res://better_visual/moving_car.gd" id="1_vucso"]
+[ext_resource type="Script" uid="uid://sview3u2x66y" path="res://better_visual/moving_car.gd" id="1_vucso"]
 [ext_resource type="Texture2D" uid="uid://c0cv5wbx0fflq" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_4_16x16_3.png" id="2_bwuer"]
 [ext_resource type="Texture2D" uid="uid://d3adnsw5kcssu" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_5_16x16_4.png" id="3_b48t5"]
 [ext_resource type="Texture2D" uid="uid://c8l5i3wajwu02" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_1.png" id="4_bwuer"]

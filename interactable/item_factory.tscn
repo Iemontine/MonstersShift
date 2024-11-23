@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd325esb66evn"]
+
+[ext_resource type="Script" uid="uid://cvw5cvm8d1hnk" path="res://interactable/scripts/item_factory.gd" id="1_ttfb8"]
+[ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_ykcv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlxa8"]
+size = Vector2(16, 24)
+
+[node name="ItemFactory" type="StaticBody2D"]
+script = ExtResource("1_ttfb8")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ykcv6")
+region_enabled = true
+region_rect = Rect2(80, 640, 16, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_jlxa8")

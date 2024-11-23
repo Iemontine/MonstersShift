@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="1_2im0w"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_bo5tw"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="2_5khfr"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="2_5khfr"]
 [ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="2_c600j"]
 [ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="3_8i6jl"]
 [ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="3_a6bnu"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="5_c600j"]
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="6_8i6jl"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="7_o2eel"]
-[ext_resource type="Script" path="res://interactable/scripts/test_quest_sign.gd" id="8_hg566"]
+[ext_resource type="Script" uid="uid://ces3gppm6uni6" path="res://interactable/scripts/test_quest_sign.gd" id="8_hg566"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_8d6uy"]
-[ext_resource type="Script" path="res://interactable/scripts/test_quest_door.gd" id="10_kwjqk"]
+[ext_resource type="Script" uid="uid://dnf6kt3da7c0d" path="res://interactable/scripts/test_quest_door.gd" id="10_kwjqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2eel"]
 texture = ExtResource("1_2im0w")
