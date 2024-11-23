@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=4 uid="uid://b4pbwskimakuc"]
 
-[ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_k8d66"]
-[ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_ml246"]
-[ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="3_7cyfo"]
-[ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="4_lbpre"]
-[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="5_xblhb"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="6_5gx6c"]
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="7_6x0wb"]
-[ext_resource type="PackedScene" uid="uid://bqkhrkowk7iwy" path="res://interactable/item_pickup.tscn" id="8_cmyle"]
-[ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="10_q1r2h"]
+[ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_7cyfo"]
+[ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_lbpre"]
+[ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="3_xblhb"]
+[ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="4_5gx6c"]
+[ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="5_6x0wb"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="6_fcgx5"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="7_jjlq4"]
+[ext_resource type="PackedScene" uid="uid://bqkhrkowk7iwy" path="res://interactable/item_pickup.tscn" id="8_yu6ri"]
+[ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_ffbsp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
-texture = ExtResource("1_k8d66")
+texture = ExtResource("1_7cyfo")
 52:96/0 = 0
 52:97/0 = 0
 52:98/0 = 0
@@ -206,7 +206,7 @@ texture = ExtResource("1_k8d66")
 35:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbpre"]
-texture = ExtResource("2_ml246")
+texture = ExtResource("2_lbpre")
 5:40/size_in_atlas = Vector2i(1, 2)
 5:40/0 = 0
 8:11/size_in_atlas = Vector2i(1, 2)
@@ -243,7 +243,7 @@ texture = ExtResource("2_ml246")
 6:25/0/texture_origin = Vector2i(-16, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xblhb"]
-texture = ExtResource("3_7cyfo")
+texture = ExtResource("3_xblhb")
 7:5/0 = 0
 8:5/0 = 0
 8:6/0 = 0
@@ -258,7 +258,7 @@ texture = ExtResource("3_7cyfo")
 10:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5gx6c"]
-texture = ExtResource("4_lbpre")
+texture = ExtResource("4_5gx6c")
 
 [sub_resource type="TileSet" id="TileSet_0210a"]
 sources/0 = SubResource("TileSetAtlasSource_7cyfo")
@@ -284,10 +284,10 @@ tile_set = SubResource("TileSet_0210a")
 tile_map_data = PackedByteArray("AAACAP3/CgAIAAgAAAAGAP3/CgAJABcAAAD7//v/CgAGABkAAAACAPv/CgAGABkAAAACAPj/CgAGABkAAAD7//j/CgAGABkAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
-[node name="Player" parent="." instance=ExtResource("5_xblhb")]
+[node name="Player" parent="." instance=ExtResource("5_6x0wb")]
 position = Vector2(-27, 34)
 
-[node name="BakeryDoor" parent="." instance=ExtResource("6_5gx6c")]
+[node name="BakeryDoor" parent="." instance=ExtResource("6_fcgx5")]
 position = Vector2(127, 184)
 destination_scene = "Town"
 target_door = "BakeryDoor"
@@ -296,11 +296,21 @@ target_door = "BakeryDoor"
 z_index = 10
 position = Vector2(458, 1)
 zoom = Vector2(3, 3)
-script = ExtResource("7_6x0wb")
+script = ExtResource("7_jjlq4")
 target = NodePath("../Player")
 
-[node name="ItemPickup" parent="." instance=ExtResource("8_cmyle")]
+[node name="ItemPickup2" parent="." instance=ExtResource("8_yu6ri")]
+position = Vector2(96, 48)
+item_name = "Chocolate"
+
+[node name="ItemSprite" parent="ItemPickup2" index="1"]
+region_rect = Rect2(0, 736, 16, 16)
+
+[node name="ItemPickup" parent="." instance=ExtResource("8_yu6ri")]
 position = Vector2(48, 24)
 
-[node name="CuttingBoard" parent="." instance=ExtResource("10_q1r2h")]
+[node name="CuttingBoard" parent="." instance=ExtResource("9_ffbsp")]
 position = Vector2(-88, -40)
+
+[editable path="ItemPickup2"]
+[editable path="ItemPickup"]

@@ -8,7 +8,7 @@ size = Vector2(16, 16)
 
 [node name="ItemPickup" type="StaticBody2D"]
 script = ExtResource("1_6cx30")
-item_name = "Chocolate"
+item_name = "Bread"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jlxa8")

@@ -3,19 +3,22 @@ extends CharacterBody2D
 
 
 enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK, CARRYING_ITEM }
-const CLICK_THRESHOLD = 1.0
+const CLICK_THRESHOLD = 0.5
 
 
 @onready var animationPlayer = $SpriteLayers/AnimationPlayer
 @onready var animationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
+
 @onready var interact_box = $InteractBox
 @onready var default_speed = speed
 @onready var movement = $Movement
+
 @onready var carried_item: Sprite2D = $CarriedItem
+@onready var carried_item_name: String = ""
 
 
-@export var speed = 50
+@export var speed = 100
 @export var sprint_multiplier = 2
 @export var camera: NodePath
 
@@ -23,7 +26,6 @@ const CLICK_THRESHOLD = 1.0
 var last_direction = Vector2.ZERO
 var state = PlayerState.NORMAL
 var cutscene_walk_direction: Vector2
-
 
 var hold_start_time = 0.0
 var is_holding = false
@@ -73,9 +75,8 @@ func handle_interaction():
 
 
 func _physics_process(_delta):
-	if state == PlayerState.FROZEN and not is_holding: return
+	if state == PlayerState.FROZEN: return
 	
-	move_and_slide()
 	move_interact_box()
 
 	if state == PlayerState.WALK_TO: return
@@ -94,7 +95,12 @@ func _physics_process(_delta):
 		else:
 			$Movement.movement_anim = "Walk"
 
+var last_state = PlayerState.NORMAL
 func _process(_delta: float) -> void:
+	if last_state != state:
+		print(state)
+		last_state = state
+	
 	carry_item()
 	if state == PlayerState.WALK_TO: return
 	# Start holding on an interactable, if there is one
@@ -103,18 +109,21 @@ func _process(_delta: float) -> void:
 		# Detect the start of a click or hold
 		if Input.is_action_just_pressed("ui_accept"):
 			hold_start_time = Time.get_ticks_msec() / 1000.0
-			is_holding = true
-			#hacky, im so sorry
-			if current_interactable is CuttingBoard:
-				state = PlayerState.FROZEN
-				travel_to_anim("CraftSmith")
+
+			if state != PlayerState.CARRYING_ITEM:
+				is_holding = true
+				#hacky, im so sorry, play hold animation
+				if current_interactable is CuttingBoard and current_interactable.craft_output == "":
+					state = PlayerState.FROZEN
+					travel_to_anim("CraftSmith")
 
 		# Detect a click, or end of a hold
 		if Input.is_action_just_released("ui_accept"):
 			var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
 			if hold_time < CLICK_THRESHOLD: handle_interaction()
 			is_holding = false
-			state = PlayerState.NORMAL
+			if state != PlayerState.CARRYING_ITEM:
+				state = PlayerState.NORMAL
 			if current_interactable: current_interactable.cancel_hold()
 			current_interactable = null
 
@@ -129,6 +138,8 @@ func carry_item() -> void:
 		carried_item.visible = true
 	else:
 		carried_item.visible = false
+		# This is done in baker_cuttingboard
+		# carried_item_name = ""
 
 
 func _on_freeze():

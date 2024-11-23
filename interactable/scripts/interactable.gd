@@ -9,9 +9,12 @@ signal hold_interacted
 @export var required_hold_time = 2.5
 var current_hold_time = 0.0
 
-@onready var player = get_parent().get_node("Player")
+@onready var player: Player
 
 func _ready() -> void:
+	# Fixes finding player on factory-created nodes
+	player = get_parent().get_node_or_null("Player")
+	if player == null: player = get_parent().get_parent().get_node("Player")
 	connect("interacted", Callable(self, "_on_interacted"))
 	connect("freeze", Callable(player, "_on_freeze"))
 	connect("unfreeze", Callable(player, "_on_unfreeze"))
@@ -39,7 +42,6 @@ func update_hold_time(hold_time: float) -> void:
 
 func cancel_hold() -> void:
 	current_hold_time = 0.0
-	player.state = player.PlayerState.NORMAL
 
 func hold_to_interact(_hold_time: float) -> void:
 	hold_interacted.emit()
