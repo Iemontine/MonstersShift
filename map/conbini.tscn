@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://b5vbrn4n2gs74"]
+[gd_scene load_steps=34 format=4 uid="uid://b5vbrn4n2gs74"]
 
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
 [ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_5vmdk"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="7_leub4"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_e82j6"]
+[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/scripts/door.gd" id="8_qnp4u"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ohj"]
@@ -2860,6 +2860,9 @@ sources/2 = SubResource("TileSetAtlasSource_a1rpj")
 sources/5 = SubResource("TileSetAtlasSource_rqbno")
 sources/0 = SubResource("TileSetAtlasSource_ig5gw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
+size = Vector2(32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5rcs"]
 atlas = ExtResource("10_a2425")
 region = Rect2(0, 0, 32, 48)
@@ -2970,43 +2973,52 @@ zoom = Vector2(3.375, 3.375)
 script = ExtResource("7_leub4")
 target = NodePath("../Player")
 
-[node name="Door_Conbini1" parent="." instance=ExtResource("9_e82j6")]
+[node name="Door_Conbini1" type="StaticBody2D" parent="."]
+physics_interpolation_mode = 2
 y_sort_enabled = true
-position = Vector2(-8, 104)
+position = Vector2(160, 112)
+script = ExtResource("8_qnp4u")
 destination_scene = "Town"
 target_door = "Door_Conbini1"
 
-[node name="CollisionShape2D" parent="Door_Conbini1" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini1"]
+z_index = 1
 y_sort_enabled = true
-position = Vector2(8, 27)
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_v7ggh")
 
-[node name="AnimatedSprite2D" parent="Door_Conbini1" index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door_Conbini1"]
 modulate = Color(1, 1, 1, 0.243137)
 y_sort_enabled = true
-position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fxe2m")
+animation = &"door_open"
 frame_progress = 0.194715
 
-[node name="Spawnpoint" parent="Door_Conbini1" index="2"]
+[node name="Spawnpoint" type="Marker2D" parent="Door_Conbini1"]
 y_sort_enabled = true
 position = Vector2(8, 14)
 
-[node name="Door_Conbini2" parent="." instance=ExtResource("9_e82j6")]
+[node name="Door_Conbini2" type="StaticBody2D" parent="."]
+physics_interpolation_mode = 2
 y_sort_enabled = true
-position = Vector2(152, 104)
+position = Vector2(0, 112)
+script = ExtResource("8_qnp4u")
 destination_scene = "Town"
-target_door = "Door_Conbini2"
+target_door = "Door_Conbini1"
 
-[node name="CollisionShape2D" parent="Door_Conbini2" index="0"]
-position = Vector2(8, 27)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini2"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_v7ggh")
 
-[node name="AnimatedSprite2D" parent="Door_Conbini2" index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door_Conbini2"]
 modulate = Color(1, 1, 1, 0.243137)
-position = Vector2(8, 8)
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_fxe2m")
+animation = &"door_open"
+frame_progress = 0.194715
 
-[node name="Spawnpoint" parent="Door_Conbini2" index="2"]
-position = Vector2(9, 14)
-
-[editable path="Door_Conbini1"]
-[editable path="Door_Conbini2"]
+[node name="Spawnpoint" type="Marker2D" parent="Door_Conbini2"]
+y_sort_enabled = true
+position = Vector2(8, 14)

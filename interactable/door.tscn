@@ -72,18 +72,14 @@ animations = [{
 
 [node name="Door" type="StaticBody2D"]
 physics_interpolation_mode = 2
-position = Vector2(0, -24)
 script = ExtResource("1_inmpo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_v7ggh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_h7s5o")
 animation = &"door_open"
 
 [node name="Spawnpoint" type="Marker2D" parent="."]
-position = Vector2(0, 20)
