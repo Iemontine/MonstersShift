@@ -136,9 +136,9 @@ func get_default_colors_for_layer(layer_name: String) -> Array:
 			return palettes["hair"]["base"]
 		"12face", "01body":
 			return palettes["skin"]["base"]
-		"10outr", "11neck", "14head", "15over":
+		"11neck", "14head", "15over":
 			return palettes["4color"]["base"]
-		"00undr", "02sock", "09hand", "03fot1", "04lwr1", "05shrt", "06lwr2", "07fot2", "08lwr3":
+		"10outr", "00undr", "02sock", "09hand", "03fot1", "04lwr1", "05shrt", "06lwr2", "07fot2", "08lwr3":
 			return palettes["3color"]["base"]
 		_:
 			return DEFAULT_COLORS

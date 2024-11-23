@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=59 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -22,8 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="23_jxgvl"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="23_tcn14"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="24_0i5uc"]
+[ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="25_x3iwy"]
-[ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc.tscn" id="28_mgbvr"]
+[ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -34322,12 +34323,6 @@ sources/13 = SubResource("TileSetAtlasSource_8yffl")
 sources/14 = SubResource("TileSetAtlasSource_lvha8")
 sources/19 = SubResource("TileSetAtlasSource_txolg")
 
-[sub_resource type="Curve2D" id="Curve2D_qgqjp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 107, 52, 0, 0, 0, 0, 232, 52, 0, 0, 0, 0, 232, 126, 0, 0, 0, 0, 107, 126, 0, 0, 0, 0, 107, 52)
-}
-point_count = 5
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5rcs"]
 atlas = ExtResource("24_0i5uc")
 region = Rect2(0, 0, 32, 48)
@@ -34391,6 +34386,12 @@ animations = [{
 "name": &"door_open",
 "speed": 15.0
 }]
+
+[sub_resource type="Curve2D" id="Curve2D_qgqjp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 107, 52, 0, 0, 0, 0, 232, 52, 0, 0, 0, 0, 232, 126, 0, 0, 0, 0, 107, 126, 0, 0, 0, 0, 107, 52)
+}
+point_count = 5
 
 [node name="Town" type="Node2D"]
 y_sort_enabled = true
@@ -34957,23 +34958,6 @@ rotation = 1.57079
 destination_scene = "Downtown"
 destination_loadzone = "Loadzone_Downtown"
 
-[node name="NPC" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
-y_sort_enabled = true
-position = Vector2(-1100, -162)
-collision_layer = 0
-collision_mask = 0
-speed = 100.0
-path = NodePath("Path2D")
-stop_points = Array[int]([1, 2, 3, 4])
-
-[node name="Path2D" type="Path2D" parent="NPC"]
-top_level = true
-position = Vector2(-593, -589)
-curve = SubResource("Curve2D_qgqjp")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="NPC/Path2D"]
-position = Vector2(107, 52)
-
 [node name="Door_Conbini1" parent="." instance=ExtResource("23_tcn14")]
 position = Vector2(-1144, -208)
 destination_scene = "Conbini"
@@ -35013,7 +34997,36 @@ script = ExtResource("25_x3iwy")
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-419, -490)
+position = Vector2(-236, -412)
+
+[node name="NPC_Widow" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
+y_sort_enabled = true
+position = Vector2(-485, -533)
+collision_layer = 0
+collision_mask = 0
+path = NodePath("Path2D")
+stop_points = Array[int]([1, 2, 3, 4])
+
+[node name="Path2D" type="Path2D" parent="NPC_Widow"]
+top_level = true
+position = Vector2(-593, -589)
+curve = SubResource("Curve2D_qgqjp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="NPC_Widow/Path2D"]
+position = Vector2(107, 52)
+
+[node name="NPC_Baker" parent="." node_paths=PackedStringArray("path") instance=ExtResource("25_0i5uc")]
+position = Vector2(-297, -537)
+path = NodePath("Path2D")
+stop_points = Array[int]([1, 2, 3, 4])
+
+[node name="Path2D" type="Path2D" parent="NPC_Baker"]
+top_level = true
+position = Vector2(-404, -589)
+curve = SubResource("Curve2D_qgqjp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="NPC_Baker/Path2D"]
+position = Vector2(107, 52)
 
 [editable path="Door_Conbini1"]
 [editable path="Door_Conbini2"]
