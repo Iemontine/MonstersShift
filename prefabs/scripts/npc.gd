@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var stop_points: Array[int] = []
 
 
-@onready var anim = $SpriteLayer/AnimationPlayer
+@onready var anim = $SpriteLayers/AnimationPlayer
 @onready var animation_tree = $SpriteLayers/AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 var path_follow: PathFollow2D
