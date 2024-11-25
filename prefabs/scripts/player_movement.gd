@@ -34,10 +34,11 @@ func move_player(_delta):
 		player.travel_to_anim(movement_anim, input_vector)
 		velocity = input_vector * player.speed
 	else:
-		if player.state == player.PlayerState.NORMAL:
-			player.travel_to_anim("Idle")
-		elif player.state == Player.PlayerState.CARRYING_ITEM:
+		if player.state == Player.PlayerState.CARRYING_ITEM:
 			player.travel_to_anim("IdleCarry")
+		else:
+			player.travel_to_anim("Idle")
+		
 		velocity = Vector2.ZERO
 		
 	player.set_velocity(velocity)

@@ -50,8 +50,10 @@ func _process(_delta: float) -> void:
 	if current_interactable:
 		handle_input()
 
-	if is_holding and current_interactable:
-		update_hold_time()
+	var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
+	if is_holding and current_interactable and hold_time >= CLICK_THRESHOLD:
+		if state == PlayerState.NORMAL or state == PlayerState.FROZEN:	# hacky
+			update_hold_time()
 
 func travel_to_anim(animName: String, direction = null):
 	if direction != null: last_direction = direction
@@ -106,20 +108,25 @@ func update_speed_and_animation():
 func handle_input():
 	if Input.is_action_just_pressed("ui_accept"):
 		hold_start_time = Time.get_ticks_msec() / 1000.0
-		if state != PlayerState.CARRYING_ITEM:
-			is_holding = true
-			if current_interactable is CuttingBoard and (current_interactable as CuttingBoard).items.size() > 0 and current_interactable.craft_output == "":
-				state = PlayerState.FROZEN
-				travel_to_anim("CraftSmith")
+		is_holding = true
 
 	if Input.is_action_just_released("ui_accept"):
 		var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
-		if hold_time < CLICK_THRESHOLD: handle_interaction()
+		if hold_time < CLICK_THRESHOLD:
+			handle_interaction()
 		is_holding = false
 		if state != PlayerState.CARRYING_ITEM:
 			state = PlayerState.NORMAL
-		if current_interactable: current_interactable.cancel_hold()
+		if current_interactable:
+			current_interactable.cancel_hold()
 		current_interactable = null
+
+	if is_holding:
+		var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
+		if hold_time >= CLICK_THRESHOLD:
+			if state != PlayerState.CARRYING_ITEM and current_interactable is CuttingBoard and (current_interactable as CuttingBoard).items.size() > 0 and !current_interactable.is_locked:
+				state = PlayerState.FROZEN
+				travel_to_anim("CraftSmith")
 
 func update_hold_time():
 	var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time

@@ -13,7 +13,7 @@ item_name = "Bread"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jlxa8")
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_0aose")
 region_enabled = true
 region_rect = Rect2(208, 576, 16, 16)

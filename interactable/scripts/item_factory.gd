@@ -10,6 +10,7 @@ func _ready() -> void:
 	super()
 
 func _on_interacted() -> void:
+	# TODO: ensure only 1 item is available at any given time, currently multiple can be produced if the player is holding something
 	produce_item()
 
 func produce_item() -> void:
@@ -27,7 +28,7 @@ func play_audio(audio_path: String) -> void:
 func create_item_pickup() -> Node:
 	var item_pickup = load("res://interactable/item_pickup.tscn").instantiate()
 	item_pickup.item_name = item_name
-	var sprite = item_pickup.get_node("ItemSprite")
+	var sprite = item_pickup.get_node("Sprite2D")
 	sprite.texture = item_texture
 	sprite.region_enabled = true
 	sprite.region_rect = item_region_rect

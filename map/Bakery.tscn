@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b4pbwskimakuc"]
+[gd_scene load_steps=19 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_7cyfo"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_lbpre"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="7_jjlq4"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="9_7cyfo"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_ffbsp"]
+[ext_resource type="Texture2D" uid="uid://dqd2fvienjcxo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png" id="11_5gx6c"]
+[ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="11_xblhb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
 texture = ExtResource("1_7cyfo")
@@ -357,20 +359,29 @@ item_name = "Sugar"
 item_texture = ExtResource("2_lbpre")
 item_region_rect = Rect2(32, 320, 16, 16)
 
-[node name="ItemFactory2" parent="." instance=ExtResource("9_7cyfo")]
+[node name="ChocolateFactory" parent="." instance=ExtResource("9_7cyfo")]
 position = Vector2(-56, 80)
 item_name = "Chocolate"
 item_texture = ExtResource("2_lbpre")
 item_region_rect = Rect2(0, 736, 16, 16)
 
-[node name="ItemFactory3" parent="." instance=ExtResource("9_7cyfo")]
+[node name="VanillaFactory" parent="." instance=ExtResource("9_7cyfo")]
 position = Vector2(-8, 80)
 item_name = "Vanilla"
 item_texture = ExtResource("2_lbpre")
 item_region_rect = Rect2(32, 736, 16, 16)
 
+[node name="DoughFactory" parent="." instance=ExtResource("9_7cyfo")]
+position = Vector2(40, 80)
+item_name = "Flour"
+item_texture = ExtResource("2_lbpre")
+item_region_rect = Rect2(192, 464, 16, 16)
+
 [node name="region finder" type="Sprite2D" parent="."]
 position = Vector2(336, 16)
-texture = ExtResource("2_lbpre")
+texture = ExtResource("11_5gx6c")
 region_enabled = true
-region_rect = Rect2(32, 736, 16, 16)
+region_rect = Rect2(32, 912, 16, 16)
+
+[node name="Baker_Trashcan" parent="." instance=ExtResource("11_xblhb")]
+position = Vector2(88, 72)
