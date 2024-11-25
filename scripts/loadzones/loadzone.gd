@@ -9,8 +9,8 @@ var target: Player
 
 
 func _on_body_entered(player: Player) -> void:
-	if player is Player and player.state != Player.PlayerState.WALK_TO:
-		player.state = Player.PlayerState.FROZEN
+	if player is Player and player.state != Player.PlayerState.CONTROLLED:
+		player.state = Player.PlayerState.LOCKED
 		if should_player_walk:
-			player.state = Player.PlayerState.WALK_TO
-		scene_manager.switch_scene(player, destination_scene, player.state == Player.PlayerState.WALK_TO, destination_loadzone)
+			player.state = Player.PlayerState.CONTROLLED
+		scene_manager.switch_scene(player, destination_scene, player.state == Player.PlayerState.CONTROLLED, destination_loadzone)

@@ -1,50 +1,49 @@
 class_name Player
 extends CharacterBody2D
 
-enum PlayerState { NORMAL, FROZEN, WALK_TO, CUTSCENE_WALK, CARRYING_ITEM }
+enum PlayerState { NORMAL, LOCKED, CONTROLLED, CARRYING_ITEM }
 const CLICK_THRESHOLD = 0.5
 
-@onready var animationPlayer = $SpriteLayers/AnimationPlayer
-@onready var animationTree = $SpriteLayers/AnimationTree
+# General variables
+@onready var animationPlayer:AnimationPlayer = $SpriteLayers/AnimationPlayer
+@onready var animationTree:AnimationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
-@onready var interact_box = $InteractBox
-@onready var default_speed = speed
-@onready var movement = $Movement
-@onready var carried_item: Sprite2D = $CarriedItem
-@onready var carried_item_name: String = ""
-
-@export var speed = 100
-@export var sprint_multiplier = 2
 @export var camera: NodePath
 
-var last_direction = Vector2.ZERO
-var state = PlayerState.NORMAL
-var cutscene_walk_direction: Vector2
+# Variables related to movement
+@onready var default_speed = speed
+@onready var movement = $Movement
+@export var speed = 100
+@export var sprint_multiplier = 2
+var direction:Vector2 = Vector2.ZERO
+
+# Variables related to interactables
+@onready var interact_box = $InteractBox
+@onready var carried_item: Sprite2D = $CarriedItem
+@onready var carried_item_name: String = ""
+var state:PlayerState = PlayerState.NORMAL
 var hold_start_time = 0.0
 var is_holding = false
-var current_interactable = null
-var last_state = PlayerState.NORMAL
+var current_interactable = null # current target interactable being held on
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
 	animationTree.active = true
 	speed = default_speed
+	PlayerController.player = self
 
 func _physics_process(_delta):
-	if state == PlayerState.FROZEN: return
+	if state == PlayerState.LOCKED: return
 
 	move_interact_box()
 	update_speed_and_animation()
 
-	if state == PlayerState.WALK_TO: return
-
 func _process(_delta: float) -> void:
-	if last_state != state:
-		print(state)
-		last_state = state
-
+	# TODO: delete label
+	var state_names = ["NORMAL", "LOCKED", "CONTROLLED", "CARRYING_ITEM"]
+	$Label.text = "State: " + state_names[int(state)] + ", Animation: " + animationState.get_current_node()
 	carry_item()
-	if state == PlayerState.WALK_TO: return
+	if state == PlayerState.CONTROLLED: return
 
 	current_interactable = get_interactable()
 	if current_interactable:
@@ -52,31 +51,27 @@ func _process(_delta: float) -> void:
 
 	var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
 	if is_holding and current_interactable and hold_time >= CLICK_THRESHOLD:
-		if state == PlayerState.NORMAL or state == PlayerState.FROZEN:	# hacky
+		if state == PlayerState.NORMAL or state == PlayerState.LOCKED:	# hacky
 			update_hold_time()
 
-func travel_to_anim(animName: String, direction = null):
-	if direction != null: last_direction = direction
-	animationTree.set("parameters/" + animName + "/blend_position", last_direction)
+func travel_to_anim(animName: String, _direction = null):
+	if _direction != null: direction = _direction
+	animationTree.active = true
+	animationTree.set("parameters/" + animName + "/blend_position", direction)
 	animationState.travel(animName)
 
 func move_interact_box():
-	var direction = last_direction
-	var box_position = interact_box.position
-
 	if direction == Vector2.UP:
-		box_position = Vector2(0, -17)
+		interact_box.position = Vector2(0, -17)
 	elif direction == Vector2.DOWN:
-		box_position = Vector2(0, 17)
+		interact_box.position = Vector2(0, 17)
 	elif direction == Vector2.LEFT:
-		box_position = Vector2(-19, -13.25)
+		interact_box.position = Vector2(-19, -13.25)
 	elif direction == Vector2.RIGHT:
-		box_position = Vector2(19, -13.25)
-
-	interact_box.position = box_position
+		interact_box.position = Vector2(19, -13.25)
 
 func handle_interaction():
-	if (state == PlayerState.FROZEN and not is_holding) or state == PlayerState.WALK_TO:
+	if (state == PlayerState.LOCKED and not is_holding) or state == PlayerState.CONTROLLED:
 		return
 
 	var space_state = get_world_2d().direct_space_state
@@ -125,7 +120,7 @@ func handle_input():
 		var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
 		if hold_time >= CLICK_THRESHOLD:
 			if state != PlayerState.CARRYING_ITEM and current_interactable is CuttingBoard and (current_interactable as CuttingBoard).items.size() > 0 and !current_interactable.is_locked:
-				state = PlayerState.FROZEN
+				state = PlayerState.LOCKED
 				travel_to_anim("CraftSmith")
 
 func update_hold_time():
@@ -137,7 +132,7 @@ func carry_item() -> void:
 	carried_item.visible = state == PlayerState.CARRYING_ITEM
 
 func _on_freeze():
-	state = PlayerState.FROZEN
+	state = PlayerState.LOCKED
 
 func _on_unfreeze():
 	state = PlayerState.NORMAL

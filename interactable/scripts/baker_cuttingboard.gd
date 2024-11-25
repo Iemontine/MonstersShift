@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 		player.carried_item.texture = null
 		player.carried_item.visible = false
 		if player.is_holding:
-			player.state = Player.PlayerState.FROZEN
+			player.state = Player.PlayerState.LOCKED
 		else:
 			player.state = Player.PlayerState.NORMAL
 

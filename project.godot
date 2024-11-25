@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="untitledhorror"
-run/main_scene="res://map/bakery.tscn"
+run/main_scene="res://map/dev.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+PlayerController="*res://prefabs/scripts/player_controller.gd"
 scene_manager="*res://scripts/loadzones/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 QuestSignals="*res://scripts/quests/quest_signals.gd"

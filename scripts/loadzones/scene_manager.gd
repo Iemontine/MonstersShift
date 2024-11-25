@@ -21,9 +21,9 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	var new_scene = get_tree().root.get_node(destination)
 	dest_player = new_scene.get_node("Player")
 	dest_player.last_direction = last_direction
-	dest_player.state = Player.PlayerState.FROZEN
+	dest_player.state = Player.PlayerState.LOCKED
 	if should_player_walk:
-		dest_player.state = Player.PlayerState.WALK_TO
+		dest_player.state = Player.PlayerState.CONTROLLED
 	
 	if loadzone_name.begins_with("Loadzone"):
 		move_player_to_loadzone(new_scene, dest_player, loadzone_name)

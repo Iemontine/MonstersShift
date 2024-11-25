@@ -1,56 +1,70 @@
-class_name PlayerController
+#Global Class: PlayerController
 extends Node2D
 
-
 var player: Player
-var cmd_list: Array
-var timer_list: Array[Timer] = []
-var signal_list: Array[String]
-var dialog_started: bool = false
 
+func _ready() -> void:
+	player = get_node_or_null("Player")
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
-func _init(body: Player) -> void:
-	player = body
+func start_cutscene() -> void:
+	# TODO: swipe in cool black bars at the top and bottom of the screen
+	Dialogic.start("cutscene")
 
+func _on_dialogic_signal(argument:String):
+	print(argument)
+	if argument == "control":
+		player.state = Player.PlayerState.CONTROLLED
+	elif argument == "uncontrol":
+		player.state = Player.PlayerState.NORMAL
 
-func queue_command(command: Vector2, duration: float):
-	cmd_list.push_back(command)
-	var timer = Timer.new()
-	timer.wait_time = duration
-	timer.one_shot = true
-	timer_list.push_back(timer)
-	add_child(timer)
+# Possible commands callable by Dialogic are below:
+# playAnimation which must be followed by an animationComplete,
+# setSpeed, sprint, resetSpeed, moveUp, moveDown, moveLeft, moveRight, stop
 
+func playAnimation(animName: String, direction_x: int = 0, direction_y: int = 0) -> void:
+	player.state = Player.PlayerState.LOCKED
+	var direction = Vector2(direction_x, direction_y)
+	player.travel_to_anim(animName, direction)
 
-func start_dialogue(dialogue_name: String, signal_name: String):
-	cmd_list.push_back(dialogue_name)
-	signal_list.push_back(signal_name)
-	
-	if has_signal(signal_name):
-		print(has_signal)
+# a hacky, but unfortunately functional way to allow the player to continue moving after an animation
+func animationComplete() -> void:
+	player.state = Player.PlayerState.CONTROLLED
+	player.direction = Vector2.ZERO
 
+func setSpeed(speed: float) -> void:
+	player.speed = speed
 
-func _on_dialogic_signal(signal_name: String):
-	if signal_list.is_empty(): return
-	if signal_name == signal_list.front():
-		print("Something was activated!")
-	cmd_list.pop_front()
-	signal_list.pop_front()
-	dialog_started = false
+func sprint() -> void:
+	player.speed = player.sprint_multiplier * player.default_speed
+	if player.state == Player.PlayerState.CARRYING_ITEM:
+		player.movement.movement_anim = "RunCarry"
+	else:
+		player.movement.movement_anim = "Run"
 
+func resetSpeed() -> void:
+	player.speed = player.default_speed
+	if player.state == Player.PlayerState.CARRYING_ITEM:
+		player.movement.movement_anim = "WalkCarry"
+	else:
+		player.movement.movement_anim = "Walk"
 
-func _process(_delta: float) -> void:
-	if cmd_list.front() is Vector2:
-		player.state = Player.PlayerState.CUTSCENE_WALK
-		player.cutscene_walk_direction = cmd_list.front()
-		
-		if timer_list.front().is_stopped():
-			timer_list.front().start()
-		elif timer_list.front().time_left < 0.1:
-			player.state = Player.PlayerState.NORMAL
-			timer_list.pop_front()
-			cmd_list.pop_front()
-	elif cmd_list.front() is String and dialog_started == false:
-			dialog_started = true
-			Dialogic.signal_event.connect(_on_dialogic_signal)
-			Dialogic.start("cutscene")
+func moveUp() -> void:
+	player.direction = Vector2(0, -1)
+	print("Moving up")
+
+func moveDown() -> void:
+	player.direction = Vector2(0, 1)
+	print("Moving down")
+
+func moveLeft() -> void:
+	player.direction = Vector2(-1, 0)
+	print("Moving left")
+
+func moveRight() -> void:
+	player.direction = Vector2(1, 0)
+	print("Moving right")
+
+func stop() -> void:
+	player.direction = Vector2(0, 0)
+	print("Stopping")
