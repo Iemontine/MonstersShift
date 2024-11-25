@@ -110,7 +110,7 @@ func handle_input():
 		if hold_time < CLICK_THRESHOLD:
 			handle_interaction()
 		is_holding = false
-		if state != PlayerState.CARRYING_ITEM:
+		if state != PlayerState.CARRYING_ITEM and state != PlayerState.LOCKED:
 			state = PlayerState.NORMAL
 		if current_interactable:
 			current_interactable.cancel_hold()

@@ -12,7 +12,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	await TransitionScreen.on_transition_finished
 
 	dest_path = scene_path + destination + ".tscn"
-	var last_direction = src_player.last_direction
+	var last_direction = src_player.direction
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
 	
 	# TODO: replace with actual await completed scene transition code
@@ -20,7 +20,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	
 	var new_scene = get_tree().root.get_node(destination)
 	dest_player = new_scene.get_node("Player")
-	dest_player.last_direction = last_direction
+	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED

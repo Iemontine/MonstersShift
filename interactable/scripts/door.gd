@@ -8,6 +8,8 @@ class_name Door
 
 func _on_interacted() -> void:
 	player.state = Player.PlayerState.LOCKED
+	player.velocity = Vector2.ZERO
+	player.travel_to_anim("Idle")
 	$AnimatedSprite2D.play("door_open")
 	scene_manager.switch_scene(player, destination_scene, false, target_door)
 	super()

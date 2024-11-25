@@ -1708,6 +1708,11 @@ position = Vector2(1.16669, 5.125)
 scale = Vector2(0.370052, 0.370573)
 
 [node name="Door_Treehouse" parent="." instance=ExtResource("7_ya4jy")]
-position = Vector2(-56, -40)
+position = Vector2(-56, -32)
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
+
+[node name="Spawnpoint" parent="Door_Treehouse" index="2"]
+position = Vector2(0, 19)
+
+[editable path="Door_Treehouse"]
