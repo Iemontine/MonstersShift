@@ -11,5 +11,5 @@ func _on_interacted() -> void:
 	player.velocity = Vector2.ZERO
 	player.travel_to_anim("Idle")
 	$AnimatedSprite2D.play("door_open")
-	scene_manager.switch_scene(player, destination_scene, false, target_door)
+	SceneManager.switch_scene(player, destination_scene, false, target_door)
 	super()

@@ -94,7 +94,8 @@ func update_speed_and_animation():
 		else:
 			movement.movement_anim = "Run"
 	else:
-		speed = default_speed
+		if state != PlayerState.CONTROLLED:
+			speed = default_speed
 		if state == PlayerState.CARRYING_ITEM:
 			movement.movement_anim = "WalkCarry"
 		else:

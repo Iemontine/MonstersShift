@@ -1,0 +1,15 @@
+[signal arg="control"]
+do PlayerController.setSpeed(25)
+do PlayerController.moveUp()
+[wait time="1.0"]
+do PlayerController.stop()
+[wait time="0.25"]
+Here it is. The home of my long lost, deadbeat brother.of the worst brother on the planet. Of course he would disappear and leave me to pick up the pieces.
+You really had to die and leave me nothing but a cryptic note and decrepit treehouse in the middle of nowhere.
+Eh. I’m not surprised in the slightest he grew up to be a loner hermit.
+...Why am I talking to myself? I just want to get this over with. I’m heading in.
+[wait time="0.5"]
+do PlayerController.moveUp()
+do PlayerController.advanceStory()
+[wait time="1.0"]
+do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")

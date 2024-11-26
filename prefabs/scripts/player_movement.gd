@@ -41,4 +41,3 @@ func move_player(_delta):
 
 	player.set_velocity(velocity)
 	player.move_and_slide()
-	velocity = player.velocity

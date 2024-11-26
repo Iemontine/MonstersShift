@@ -12,4 +12,4 @@ func _on_body_entered(player) -> void:
 		player.state = Player.PlayerState.LOCKED
 		if should_player_walk:
 			player.state = Player.PlayerState.CONTROLLED
-		scene_manager.switch_scene(player, destination_scene, player.state == Player.PlayerState.CONTROLLED, destination_loadzone)
+		SceneManager.switch_scene(player, destination_scene, player.state == Player.PlayerState.CONTROLLED, destination_loadzone)

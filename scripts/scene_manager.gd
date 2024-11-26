@@ -1,6 +1,7 @@
+# SceneManager - Global Autoloaded Singleton
 extends Node
-class_name SceneManager
 
+signal scene_transition_completed
 
 var scene_path = "res://map/"
 var dest_path: String
@@ -43,6 +44,7 @@ func start_timer(duration: float):
 
 func on_timer_completed():
 	dest_player.state = Player.PlayerState.NORMAL
+	emit_signal("scene_transition_completed")
 
 
 func move_player_to_loadzone(new_scene, player, loadzone_name = "Loadzone"):

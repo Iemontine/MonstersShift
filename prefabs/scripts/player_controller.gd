@@ -2,14 +2,15 @@
 extends Node2D
 
 var player: Player
+const Event = preload("res://scripts/story_manager.gd").Event
 
 func _ready() -> void:
 	player = get_node_or_null("Player")
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
-func start_cutscene() -> void:
+func start_cutscene(cutscene_name: String) -> void:
 	# TODO: swipe in cool black bars at the top and bottom of the screen
-	Dialogic.start("cutscene")
+	Dialogic.start(cutscene_name)
 
 func _on_dialogic_signal(argument:String):
 	print(argument)
@@ -31,6 +32,12 @@ func playAnimation(animName: String, direction_x: int = 0, direction_y: int = 0)
 func animationComplete() -> void:
 	player.state = Player.PlayerState.CONTROLLED
 	player.direction = Vector2.ZERO
+
+func switchScene(destination_scene: String, destination_loadzone: String) -> void:
+	SceneManager.switch_scene(player, destination_scene, false, destination_loadzone)
+	
+func advanceStory() -> void:
+	StoryManager.advance_story()
 
 func setSpeed(speed: float) -> void:
 	player.speed = speed
@@ -65,6 +72,7 @@ func moveRight() -> void:
 	player.direction = Vector2(1, 0)
 	print("Moving right")
 
+# TODO: get the player facing in the last direction they moved in instead of assuming left facing when calling stop()
 func stop() -> void:
 	player.direction = Vector2(0, 0)
 	print("Stopping")

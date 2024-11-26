@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dkjd2a74ar4fy"]
+[gd_scene load_steps=21 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="2_nucyf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="10_ke287"]
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="11_doksa"]
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="12_lh7wg"]
+[ext_resource type="PackedScene" uid="uid://dxiydhu8wr4dn" path="res://interactable/test_cutscene.tscn" id="12_vut3b"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
@@ -17658,10 +17659,10 @@ destination_loadzone = "Loadzone_Treehouse"
 
 [node name="DayNightButton" parent="." instance=ExtResource("13_mqu8j")]
 y_sort_enabled = true
-position = Vector2(960, -336)
+position = Vector2(1000, -416)
 
 [node name="Player" parent="." instance=ExtResource("1_ni0hd")]
-position = Vector2(912, -90)
+position = Vector2(912, -312)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 visible = false
@@ -17671,5 +17672,8 @@ position = Vector2(-352, -58)
 zoom = Vector2(3, 3)
 script = ExtResource("2_nucyf")
 target = NodePath("../Player")
+
+[node name="TestCutscene" parent="." instance=ExtResource("12_vut3b")]
+position = Vector2(952, -290)
 
 [editable path="Door_Treehouse"]

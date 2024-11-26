@@ -11,19 +11,17 @@ config_version=5
 [application]
 
 config/name="untitledhorror"
-run/main_scene="res://map/dev.tscn"
+run/main_scene="res://map/treehouse_exterior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerController="*res://prefabs/scripts/player_controller.gd"
-scene_manager="*res://scripts/loadzones/scene_manager.gd"
+SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
-QuestSignals="*res://scripts/quests/quest_signals.gd"
-quest_manager="*res://scripts/quests/quest_manager.gd"
-MinigameManager="*res://scripts/quests/minigames/minigame_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+StoryManager="*res://scripts/story_manager.gd"
 
 [dialogic]
 
@@ -31,8 +29,10 @@ directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 directories/dtl_directory={
-"cutscene": "res://dialogic/cutscene.dtl",
-"test": "res://dialogic/test.dtl"
+"Timelines/test": "res://dialogic/Timelines/test.dtl",
+"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
+"arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
+"arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/Styles/speaker_dialogue.tres", "res://dialogic/Styles/speaker_without_dialogue.tres"]
