@@ -23,8 +23,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_j0ukd")
+offset = Vector2(0, -6)
 region_enabled = true
 region_rect = Rect2(160, 576, 32, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_v7ggh")

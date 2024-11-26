@@ -45,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 		player.carried_item.visible = false
 		if player.is_holding:
 			player.state = Player.PlayerState.LOCKED
-		else:
+		else:	# TODO: this breaks doors
 			player.state = Player.PlayerState.NORMAL
 
 func move_items_to_target(target_position: Vector2, lerp_factor: float) -> void:
