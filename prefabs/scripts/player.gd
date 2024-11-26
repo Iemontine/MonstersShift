@@ -18,7 +18,7 @@ const CLICK_THRESHOLD = 0.5
 var direction:Vector2 = Vector2.ZERO
 
 # Variables related to interactables
-@onready var interact_box = $InteractBox
+@onready var interact_box = $InteractBox/CollisionShape2D
 @onready var carried_item: Sprite2D = $CarriedItem
 @onready var carried_item_name: String = ""
 var state:PlayerState = PlayerState.NORMAL

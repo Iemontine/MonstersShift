@@ -6,8 +6,9 @@ extends Camera2D
 
 func _process(_delta: float) -> void:
 	if target:
+		# TODO: adjust zoom for different resolutions
 		
-		position = target.position + Vector2(0, -10)
+		position = target.position + Vector2(0, -12.5)
 
 		if Input.is_key_pressed(KEY_KP_ADD) or Input.is_key_pressed(KEY_EQUAL):
 			zoom += Vector2(0.06, 0.06)
