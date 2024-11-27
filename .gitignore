@@ -3,7 +3,13 @@
 /android/
 .vscode/
 *.tmp
+assets/sound/
 assets/tileset/
 assets/characters/
 assets/ui_and_font/
+<<<<<<< HEAD
 .DS_Store
+*.uid
+=======
+.DS_Store
+>>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
