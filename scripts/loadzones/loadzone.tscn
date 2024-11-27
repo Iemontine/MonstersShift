@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://cw1fo2h5hd4q6" path="res://scripts/loadzones/loadzone.gd" id="1_44gdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f73c5"]
-size = Vector2(40.5, 175)
+size = Vector2(5, 200)
 
 [node name="Loadzone" type="Area2D"]
 script = ExtResource("1_44gdv")
 
 [node name="Area1" type="CollisionShape2D" parent="."]
-scale = Vector2(0.119999, 1)
+z_index = 4
 shape = SubResource("RectangleShape2D_f73c5")
 debug_color = Color(1, 1, 1, 0.42)
+metadata/_edit_group_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

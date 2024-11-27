@@ -23,6 +23,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	dest_player = new_scene.get_node("Player")
 	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED
+	dest_player.travel_to_anim("Idle")
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED
 	
@@ -56,9 +57,14 @@ func move_player_to_loadzone(new_scene, player, loadzone_name = "Loadzone"):
 			camera.target = player
 			
 func move_player_to_door(new_scene, player, door_name):
-	var marker = new_scene.get_node(door_name).get_node("Spawnpoint")
+	var door = new_scene.get_node(door_name)
+	var marker = door.get_node("Spawnpoint")
 	if player and marker:
 		player.global_position = marker.global_position
+
+		var direction_vector = marker.global_position - door.global_position
+		player.direction = direction_vector
+
 		var camera = new_scene.get_node("Camera2D")
 		if camera:
 			camera.target = player
