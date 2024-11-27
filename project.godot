@@ -26,13 +26,40 @@ StoryManager="*res://scripts/story_manager.gd"
 [dialogic]
 
 directories/dch_directory={
-"sign": "res://dialogic/Characters/sign.dch"
+"baker": "res://dialogic/Characters/baker.dch",
+"player": "res://dialogic/Characters/player.dch",
+"sign": "res://dialogic/Characters/sign.dch",
+"widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
 "Timelines/test": "res://dialogic/Timelines/test.dtl",
-"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
+"arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
-"arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl"
+"arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
+"baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
+"baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
+"baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
+"baker_fail_night": "res://dialogic/Timelines/Baker/baker_fail_night.dtl",
+"baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",
+"baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
+"baker_success_night": "res://dialogic/Timelines/Baker/baker_success_night.dtl",
+"click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
+"click_on_picture_frame": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_picture_frame.dtl",
+"click_on_record_player": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_record_player.dtl",
+"exit_house_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/exit_house_postarrival.dtl",
+"first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
+"intro": "res://dialogic/Timelines/intro.dtl",
+"leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
+"night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
+"outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
+"test": "res://dialogic/test.dtl",
+"test2": "res://dialogic/Timelines/test2.dtl",
+"widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
+"widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
+"widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
+"widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
+"widow_success_daytime": "res://dialogic/Timelines/Widow/widow_success_daytime.dtl",
+"widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/Styles/speaker_dialogue.tres", "res://dialogic/Styles/speaker_without_dialogue.tres"]
