@@ -151,3 +151,18 @@ func get_interactable():
 		if collider is Interactable:
 			return collider
 	return null
+<<<<<<< HEAD
+
+func save():
+	var dict := {
+		"file": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": global_position.x,
+		"pos_y": global_position.y,
+		"last_dir_x": direction.x,
+		"last_dir_y": direction.y,
+		"name": name
+	}
+	return dict
+=======
+>>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
