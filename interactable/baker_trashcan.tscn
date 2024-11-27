@@ -1,21 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcekq52n6k3uf"]
 
-[ext_resource type="Script" path="res://interactable/scripts/baker_trashcan.gd" id="1_ey28m"]
-[ext_resource type="Texture2D" uid="uid://b6wirt5a20b0d" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_wvjy0"]
+[ext_resource type="Script" uid="uid://bmcgetgj122b8" path="res://interactable/baker_trashcan.gd" id="1_ey28m"]
+[ext_resource type="Texture2D" uid="uid://dqd2fvienjcxo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png" id="2_ey28m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
-size = Vector2(16, 32)
+size = Vector2(16, 10.21)
 
 [node name="Baker_Trashcan" type="StaticBody2D"]
 physics_interpolation_mode = 2
+y_sort_enabled = true
+position = Vector2(0, -4)
 script = ExtResource("1_ey28m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 8)
-texture = ExtResource("2_wvjy0")
+y_sort_enabled = true
+position = Vector2(0, 1)
+texture = ExtResource("2_ey28m")
 region_enabled = true
-region_rect = Rect2(208, 256, 16, 32)
+region_rect = Rect2(224, 1544, 16, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+y_sort_enabled = true
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_v7ggh")

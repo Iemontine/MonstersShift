@@ -2,7 +2,7 @@ class_name ItemPickup
 extends Interactable
 
 @export var item_name: String
-@onready var icon = $Sprite2D
+@onready var icon = get_node_or_null("Sprite2D")
 
 func _on_interacted() -> void:
 	if player.state == Player.PlayerState.CARRYING_ITEM: return

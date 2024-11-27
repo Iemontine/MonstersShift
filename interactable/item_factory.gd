@@ -14,7 +14,6 @@ func _on_interacted() -> void:
 	produce_item()
 
 func produce_item() -> void:
-	print("produce")
 	var item_pickup = create_item_pickup()
 	add_child(item_pickup)
 	# play_audio("res://assets/factory_produce.mp3")

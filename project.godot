@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerController="*res://prefabs/scripts/player_controller.gd"
+PlayerController="*res://scripts/player_controller.gd"
 SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryManager="*res://scripts/story_manager.gd"
+<<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
 
 [dialogic]
@@ -86,7 +87,14 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+<<<<<<<HEADdirectories/dch_directory={
+"sign": "res://dialogic/Characters/sign.dch"
+}
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [filesystem]
 

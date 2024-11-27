@@ -58,6 +58,7 @@ func arrange_items_on_board() -> void:
 	for i in range(items.size()):
 		var item = items[i]["item"]
 		var target_position = Vector2(start_x + i * 16 + 8, -item_height)
+		item.z_index = 100
 		item.position = item.position.lerp(target_position, 0.1)
 
 func handle_item_interaction() -> void:
@@ -76,12 +77,12 @@ func handle_item_interaction() -> void:
 func add_item_to_board(carried_item: Sprite2D) -> void:
 	var item_pickup = ItemPickup.new()
 	item_pickup.item_name = player.carried_item_name
-	add_child(item_pickup)
 	var sprite = Sprite2D.new()
 	sprite.texture = carried_item.texture
 	sprite.region_enabled = true
 	sprite.region_rect = carried_item.region_rect
 	item_pickup.add_child(sprite)
+	add_child(item_pickup)
 	item_pickup.icon = sprite
 	items.append({"name": player.carried_item_name, "item": item_pickup})
 
@@ -102,7 +103,7 @@ func create_item_pickup(recipe: String):
 	var item_pickup = load("res://interactable/item_pickup.tscn").instantiate()
 	add_child(item_pickup)
 	item_pickup.item_name = recipe
-	var sprite = item_pickup.icon
+	var sprite:Sprite2D = item_pickup.icon
 	sprite.texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png")
 	match recipe:
 		"Brownie":
@@ -122,7 +123,6 @@ func print_items_on_board() -> void:
 	var item_names = []
 	for item in items:
 		item_names.append(item["name"])
-	print("Items on cutting board: ", item_names)
 	$templabel.text = str(item_names)
 
 func reset_item_positions() -> void:
