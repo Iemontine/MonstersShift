@@ -1,0 +1,15 @@
+# First interaction with the baker
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Reflexion_Mouth_Open_Mono_05.wav" volume="0.0"]
+baker: Hey there sugar! You new to town? I think I’d recognize a face like yours if I’d seen it before!
+player: I actually just moved into this place my brother left me. Did you know him? His name was Benjamin.
+baker: Benjamin…hm…oh! You mean my old pal Benny? He was the best! He would always come help out.
+baker: Without him here, I’ve been so behind! The stress is making me very hungry…
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_08.wav" volume="0.0"]
+My brother was helping this man. Maybe I can too?
+- Help the Baker
+	player: How about I help you out? What can I do?
+	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
+	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
+- Come back later
+	player: Well, I wish you luck with your bakery.
+	baker: Thanks muffin! Come back whenever, I could always use the help.

@@ -25,11 +25,11 @@ func load_node(node:Dictionary) -> void:
 		var last_dir = Vector2(node["last_dir_x"], node["last_dir_y"])
 		var scene_player := get_tree().get_current_scene().get_node("Player")
 		var parent = node["parent"].replace("/root/", "")
-		scene_manager.switch_scene_on_load(scene_player, parent, last_pos, last_dir)
+		SceneManager.switch_scene_on_load(scene_player, parent, last_pos, last_dir)
 		node.erase("parent")
 		node.erase("last_dir_x")
 		node.erase("last_dir_y")
-		await scene_manager.finished_switching
+		await SceneManager.scene_transition_completed
 		object = get_tree().get_current_scene().get_node("Player")
 		
 	
@@ -49,6 +49,8 @@ func save_game() -> void:
 			
 		save_file.store_line(save_node(node))
 	
+	var story_state := {"StoryCurrentEvent": StoryManager.current_event}
+	save_file.store_line(JSON.stringify(story_state))
 	save_done.emit()
 
 func load_game() -> void:
@@ -71,7 +73,11 @@ func load_game() -> void:
 			continue
 		
 		var data = json.data
+		if data.has("StoryCurrentEvent"):
+			StoryManager.transition_to_event(data["StoryCurrentEvent"])
+			continue
 		load_node(data)
+		
 		
 		pass
 	
@@ -80,10 +86,8 @@ func load_game() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
 		save_game()
-		#await save_done
 		print("saved")
 	
 	if Input.is_action_just_pressed("load"):
 		load_game()
-		#await load_done
 		print("load")

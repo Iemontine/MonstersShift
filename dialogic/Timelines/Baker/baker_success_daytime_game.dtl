@@ -1,0 +1,5 @@
+# Occurs after winning the Baker's daytime minigame
+baker: Look at this beautiful pastry! You’re a peach for helping me out.
+The baker takes a bite of pastry and starts humming to himself happily.
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Reflexion_Mouth_Close_Mono_06.wav" volume="0.0"]
+baker: Wow you are talented! Feel free to come back to help again.

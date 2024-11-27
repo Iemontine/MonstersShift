@@ -5,13 +5,11 @@ extends Area2D
 @export var destination_scene: String
 @export var should_player_walk:bool = true
 @export var destination_loadzone: String = "Loadzone"
-var target: Player
 
 
-func _on_body_entered(player: Player) -> void:
-	if player is Player and not player.ignore_loadzone:
-		player.frozen = true
+func _on_body_entered(player) -> void:
+	if player is Player and player.state != Player.PlayerState.CONTROLLED:
+		player.state = Player.PlayerState.LOCKED
 		if should_player_walk:
-			player.walk_to = true
-		player.ignore_loadzone = true
-		scene_manager.switch_scene(player, destination_scene, player.walk_to, destination_loadzone)
+			player.state = Player.PlayerState.CONTROLLED
+		SceneManager.switch_scene(player, destination_scene, player.state == Player.PlayerState.CONTROLLED, destination_loadzone)
