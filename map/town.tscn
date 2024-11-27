@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=71 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="21_8yffl"]
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="22_5j3o1"]
 [ext_resource type="Texture2D" uid="uid://b7wdtlbcje3hj" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Floor_Modular_Buildings_1_Door_Bakery_16x16.png" id="22_8yffl"]
+[ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="22_lvha8"]
 [ext_resource type="Texture2D" uid="uid://bqfb2dk6b5xaf" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/4_Generic_Buildings_16x16.png" id="22_wl2cu"]
 [ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="23_jxgvl"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
@@ -28934,6 +28935,38 @@ sources/19 = SubResource("TileSetAtlasSource_txolg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uap6c"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2du2o"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apa6g"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_picw4"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dpva"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rcys"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g01uf"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3con8"]
+atlas = ExtResource("22_lvha8")
+region = Rect2(224, 0, 32, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvha8"]
 atlas = ExtResource("22_8yffl")
 region = Rect2(9, 0, 30, 32)
@@ -28968,6 +29001,35 @@ region = Rect2(345, 0, 30, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yffl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uap6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2du2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apa6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_picw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dpva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rcys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g01uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3con8")
+}],
+"loop": true,
+"name": &"conbini_door_open",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lvha8")
@@ -29585,10 +29647,10 @@ shape = SubResource("RectangleShape2D_v7ggh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door_Conbini1"]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_8yffl")
-animation = &""
+animation = &"conbini_door_open"
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Conbini1"]
-position = Vector2(8, 36)
+position = Vector2(8, 31)
 
 [node name="Door_Conbini2" type="StaticBody2D" parent="."]
 physics_interpolation_mode = 2
@@ -29604,12 +29666,12 @@ position = Vector2(8, 10)
 shape = SubResource("RectangleShape2D_v7ggh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door_Conbini2"]
-position = Vector2(8, 8)
+position = Vector2(9, 8)
 sprite_frames = SubResource("SpriteFrames_8yffl")
-animation = &""
+animation = &"conbini_door_open"
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Conbini2"]
-position = Vector2(8, 36)
+position = Vector2(8, 30)
 
 [node name="Door_Bakery" type="StaticBody2D" parent="."]
 physics_interpolation_mode = 2
@@ -29627,7 +29689,7 @@ sprite_frames = SubResource("SpriteFrames_8yffl")
 animation = &"door_open"
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
-position = Vector2(8, 36)
+position = Vector2(1, 20)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10

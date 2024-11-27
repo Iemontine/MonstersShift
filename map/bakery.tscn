@@ -659,13 +659,6 @@ position = Vector2(40, -32)
 collision_layer = 8
 collision_mask = 0
 
-[node name="Sprite2D" parent="CuttingBoard" index="1"]
-position = Vector2(0, -7.7)
-
-[node name="CollisionShape2D" parent="CuttingBoard" index="2"]
-z_index = 1
-position = Vector2(0, -6)
-
 [node name="SugarFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
@@ -700,5 +693,3 @@ item_region_rect = Rect2(192, 464, 16, 16)
 
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
 position = Vector2(-104, 29)
-
-[editable path="CuttingBoard"]
