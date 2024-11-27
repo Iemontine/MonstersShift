@@ -1694,7 +1694,7 @@ position = Vector2(0, -81)
 zoom = Vector2(3, 3)
 script = ExtResource("2_pdgtp")
 
-[node name="Player" parent="." groups=["savable"] instance=ExtResource("4_mxmix")]
+[node name="Player" parent="." instance=ExtResource("4_mxmix")]
 z_index = 1
 position = Vector2(109, -116)
 

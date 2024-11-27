@@ -2,36 +2,43 @@ extends Node
 
 var _path : String = "user://save_game.sav"
 
+signal save_done
+signal load_done
+
+
 func save_node(node:Node) -> String:
 	var save = node.call("save")
 	return JSON.stringify(save)
 
 func load_node(node:Dictionary) -> void:
 	var object = load(node["file"]).instantiate()
-	#if not node["name"] == "Player":
+	node.erase("file")
 	var scene = get_node(node["parent"])
 	if not node["name"] == "Player":
+		node.erase("parent")
 		scene.add_child(object)
 		object.global_position = Vector2(node["pos_x"], node["pos_y"])
-		for i in node.keys():
-			if i == "file" or i == "parent" or i == "pos_x" or i == "pos_y":
-				continue
-			object.set(i, node[i])
 	
 	elif node["name"] == "Player":
 		# ensure the current scene is the player's scene
-		#var dest_path :String = "res://map/" + node["parent"].replace("/root/", "") + ".tscn"
-		object.global_position = Vector2(node["pos_x"], node["pos_y"])
-		scene_manager.switch_scene_on_load(get_tree().get_current_scene().get_node("Player"), node["parent"].replace("/root/", ""), false, object.global_position)
+		var last_pos = Vector2(node["pos_x"], node["pos_y"])
+		var last_dir = Vector2(node["last_dir_x"], node["last_dir_y"])
+		var scene_player := get_tree().get_current_scene().get_node("Player")
+		var parent = node["parent"].replace("/root/", "")
+		scene_manager.switch_scene_on_load(scene_player, parent, last_pos, last_dir)
+		node.erase("parent")
+		node.erase("last_dir_x")
+		node.erase("last_dir_y")
 		await scene_manager.finished_switching
 		object = get_tree().get_current_scene().get_node("Player")
-		object.global_position = Vector2(node["pos_x"], node["pos_y"])
-		object.last_direction = Vector2(node["last_dir_x"], node["last_dir_y"])
-		for i in node.keys():
-			if i == "file" or i == "parent" or i == "pos_x" or i == "pos_y" or i == "last_dir_x" or i == "last_dir_y":
-				continue
-			object.set(i, node[i])
 		
+	
+	node.erase("pos_x")
+	node.erase("pos_y")
+	
+	for i in node.keys():
+		object.set(i, node[i])
+	
 func save_game() -> void:
 	var save_file = FileAccess.open(_path, FileAccess.WRITE)
 	var nodes_to_save := get_tree().get_nodes_in_group("savable")
@@ -41,7 +48,8 @@ func save_game() -> void:
 			continue
 			
 		save_file.store_line(save_node(node))
-	pass
+	
+	save_done.emit()
 
 func load_game() -> void:
 	if not FileAccess.file_exists(_path):
@@ -59,17 +67,23 @@ func load_game() -> void:
 		var line := save_file.get_line()
 		var parse_flag := json.parse(line)
 		if parse_flag != OK:
-			printerr("Save parse error: ", json.get_error_message(), " in ", line, " at line ", json.get_error_line())
+			printerr("Error: ", json.get_error_message(), " in ", line, " at line ", json.get_error_line())
 			continue
 		
 		var data = json.data
 		load_node(data)
 		
 		pass
-		
+	
+	load_done.emit()
+	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
 		save_game()
+		#await save_done
+		print("saved")
 	
 	if Input.is_action_just_pressed("load"):
 		load_game()
+		#await load_done
+		print("load")

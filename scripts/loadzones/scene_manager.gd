@@ -7,7 +7,7 @@ var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
 
-func switch_scene_on_load(src_player: Player, destination: String, should_player_walk: bool, pos:Vector2) -> void:
+func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
@@ -23,11 +23,14 @@ func switch_scene_on_load(src_player: Player, destination: String, should_player
 	dest_player = new_scene.get_node("Player")
 	dest_player.last_direction = last_direction
 	dest_player.frozen = true
-	if should_player_walk:
-		dest_player.walk_to = true
 	dest_player.ignore_loadzone = true
 	
+	var camera = new_scene.get_node("Camera2D")
+	if camera:
+		camera.target = dest_player
+	
 	dest_player.global_position = pos
+	dest_player.last_direction = dir
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:

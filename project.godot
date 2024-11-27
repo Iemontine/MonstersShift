@@ -24,12 +24,9 @@ SaveManager="*res://scripts/save_manager.gd"
 
 [dialogic]
 
-directories/dch_directory={
-"character": "res://dialogic/character.dch"
-}
+directories/dch_directory={}
 directories/dtl_directory={
-"cutscene": "res://dialogic/cutscene.dtl",
-"test": "res://dialogic/test.dtl"
+"cutscene": "res://dialogic/cutscene.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
