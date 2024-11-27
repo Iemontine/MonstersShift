@@ -22,7 +22,10 @@ SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryManager="*res://scripts/story_manager.gd"
+<<<<<<< HEAD
 SaveManager="*res://scripts/save_manager.gd"
+=======
+>>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
 
 [dialogic]
 
@@ -197,6 +200,7 @@ right={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+<<<<<<< HEAD
 ]
 }
 save={
@@ -207,6 +211,8 @@ save={
 load={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":76,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+=======
+>>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
 ]
 }
 
