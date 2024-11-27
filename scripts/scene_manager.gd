@@ -7,6 +7,30 @@ var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
 
+func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	
+	dest_path = scene_path + destination + ".tscn"
+	var last_direction = src_player.direction
+	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
+	
+	# TODO: replace with actual await completed scene transition code
+	await get_tree().create_timer(0.05).timeout
+	
+	var new_scene = get_tree().root.get_node(destination)
+	dest_player = new_scene.get_node("Player")
+	dest_player.direction = last_direction
+	dest_player.state = Player.PlayerState.LOCKED
+<<<<<<< HEAD
+	
+	var camera = new_scene.get_node("Camera2D")
+	if camera:
+		camera.target = dest_player
+	
+	dest_player.global_position = pos
+	dest_player.direction = dir
+	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
 	TransitionScreen.transition()
@@ -23,6 +47,8 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	dest_player = new_scene.get_node("Player")
 	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED
+=======
+>>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
 	dest_player.travel_to_anim("Idle")
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED
