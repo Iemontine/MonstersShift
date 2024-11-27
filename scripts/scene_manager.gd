@@ -22,7 +22,6 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	dest_player = new_scene.get_node("Player")
 	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED
-<<<<<<< HEAD
 	
 	var camera = new_scene.get_node("Camera2D")
 	if camera:
@@ -47,8 +46,6 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	dest_player = new_scene.get_node("Player")
 	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED
-=======
->>>>>>> 379b9ab657851f888eff5a828a48bee8c29e25c0
 	dest_player.travel_to_anim("Idle")
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED
