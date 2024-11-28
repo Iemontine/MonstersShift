@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd325esb66evn"]
 
-[ext_resource type="Script" uid="uid://cvw5cvm8d1hnk" path="res://interactable/scripts/item_factory.gd" id="1_ttfb8"]
+[ext_resource type="Script" path="res://interactable/scripts/item_factory.gd" id="1_ttfb8"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_ykcv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlxa8"]

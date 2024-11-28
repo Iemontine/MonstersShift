@@ -1,6 +1,6 @@
 class_name NPC
 extends CharacterBody2D
-
+#exist
 
 @export var speed: float = 50.0
 @export var path: Path2D

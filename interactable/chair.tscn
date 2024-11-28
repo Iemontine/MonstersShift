@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://57nkfs84s4dl"]
+
+[ext_resource type="Script" path="res://chair.gd" id="1_btrd3"]
+[ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="2_48gkr"]
+[ext_resource type="Texture2D" uid="uid://cdqka654qymt8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/5_Classroom_and_library_16x16.png" id="2_btrd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpyd4"]
+size = Vector2(22, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpyd4"]
+atlas = ExtResource("2_48gkr")
+region = Rect2(1, 284, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btrd3"]
+atlas = ExtResource("2_btrd3")
+region = Rect2(16.8634, 56.9059, 14.2075, 16.224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48gkr"]
+atlas = ExtResource("2_btrd3")
+region = Rect2(1, 12, 14, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qug7r"]
+atlas = ExtResource("2_btrd3")
+region = Rect2(49, 49, 12, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsus8"]
+atlas = ExtResource("2_btrd3")
+region = Rect2(83, 81, 12, 21)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_48gkr"]
+frames = 4
+speed_scale = -39.2
+frame_0/texture = SubResource("AtlasTexture_btrd3")
+frame_0/duration = 0.0
+frame_1/texture = SubResource("AtlasTexture_48gkr")
+frame_1/duration = 1.0
+frame_2/texture = SubResource("AtlasTexture_qug7r")
+frame_2/duration = 0.0
+frame_3/texture = SubResource("AtlasTexture_lsus8")
+frame_3/duration = 1.0
+
+[node name="Chair" type="Area2D"]
+script = ExtResource("1_btrd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_cpyd4")
+
+[node name="Stool" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_cpyd4")
+
+[node name="Chair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8.34465e-07, 5.96046e-07)
+scale = Vector2(1.42857, 1.25)
+texture = SubResource("AnimatedTexture_48gkr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
