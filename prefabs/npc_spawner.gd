@@ -1,12 +1,14 @@
 extends Node2D
 class_name NPCSpawner
 
+
 @export var npc_scene: PackedScene 
 @export var spawn_location:Vector2
-@export var travel_locations: Array[Chair]  # Array of Chair objects
-@export var max_npcs: int = 1
-@export var spawn_interval: float = 3.0
+@export var travel_locations: Array[Chair]
+@export var max_npcs: int = 3
+@export var spawn_interval: float = 1.0
 @onready var animation_player: AnimatedSprite2D = $AnimatedSprite2D
+
 
 var npc_instances: Array = []
 var spawn_timer: Timer
