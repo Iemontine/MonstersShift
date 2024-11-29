@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_ku7ja"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jqod6"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_nc3pf"]
-[ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/basic_npc.tscn" id="13_fcgx5"]
-[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://interactable/chair.tscn" id="13_isg2c"]
+[ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_basic.tscn" id="13_fcgx5"]
+[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="13_isg2c"]
 [ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="14_1e5pi"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="17_ef8ty"]
 
@@ -21,7 +21,11 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_w3fag"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_oanem"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2r75x"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -106,7 +110,7 @@ texture = ExtResource("1_ffbsp")
 47:14/0 = 0
 47:14/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2r75x")
 43:12/0 = 0
-43:12/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_w3fag")
+43:12/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_oanem")
 35:36/0 = 0
 39:36/0 = 0
 35:40/0 = 0
