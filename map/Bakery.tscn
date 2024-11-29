@@ -425,7 +425,7 @@ position = Vector2(-72, -118)
 chair_direction = 3
 
 [node name="npc_spawner" parent="." node_paths=PackedStringArray("travel_locations") instance=ExtResource("13_cvdsg")]
-position = Vector2(1, -169)
+position = Vector2(3, -170)
 npc_scene = ExtResource("15_f3nwg")
 travel_locations = [NodePath("../Chair6"), NodePath("../Chair7"), NodePath("../Chair4")]
 max_npcs = 3

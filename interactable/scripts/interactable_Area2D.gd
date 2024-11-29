@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 class_name InteractableArea2D
 
 signal interacted
