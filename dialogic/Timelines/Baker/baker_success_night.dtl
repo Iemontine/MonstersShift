@@ -1,0 +1,16 @@
+# Player wins baker's nightime minigame
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Attack/Voice_Female_V2_Attack_Mono_08.wav" volume="0.0"]
+[wait time="0.6" hide_text="false"]
+[sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/16bit/Vocal/Impact Pain Hurt/zombie_massacre_vocal_impact_pain_hurt_25.wav" volume="-10.0"]
+Through the window, you throw a piece of food at the zombie baker. He devours it and slowly, his eyes turn back to normal.
+baker: Oh my, I just went full zombie mode.
+player: Yes you were absolutely determined to eat me! Why? What are you?
+baker: It’s a long story involving a deadly virus.
+baker: I became a baker because the only thing preventing full zombification is the consumption of pastries.
+baker: Your brother was one of the few people who knew. That’s why he was always helping out at the bakery.
+baker: He wanted to help cure me.
+Benjamin wasn’t just working at the bakery. He was trying to help this man.
+player: Well, should I be worried about this zombie trance happening again in the future.
+baker: Uhhh you never know! But I should be good for a long while. Thank you again.
+leave baker [animation="Slide Out Right"]
+player: My brother and his secrets…what else will I discover?

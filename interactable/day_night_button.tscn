@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qiyrotejuoax"]
 
-[ext_resource type="Script" uid="uid://b18kf0a7cykql" path="res://interactable/scripts/day_night_button.gd" id="1_s5d0w"]
+[ext_resource type="Script" uid="uid://da5mrivsxn4wu" path="res://interactable/day_night_button.gd" id="1_s5d0w"]
 [ext_resource type="Texture2D" uid="uid://b6wirt5a20b0d" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_0n7qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]

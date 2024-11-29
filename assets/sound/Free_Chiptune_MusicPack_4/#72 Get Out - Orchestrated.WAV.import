@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dntpgkdppl3pb"
+path="res://.godot/imported/#72 Get Out - Orchestrated.WAV-3ea10d181172879859b3a5cfa7ad7f5f.sample"
+
+[deps]
+
+source_file="res://assets/sound/Free_Chiptune_MusicPack_4/#72 Get Out - Orchestrated.WAV"
+dest_files=["res://.godot/imported/#72 Get Out - Orchestrated.WAV-3ea10d181172879859b3a5cfa7ad7f5f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
