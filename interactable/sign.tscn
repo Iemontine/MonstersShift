@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwc4ls6ucen5q"]
 
-[ext_resource type="Script" uid="uid://bgqgmw8o7dsyy" path="res://interactable/scripts/sign.gd" id="1_varwe"]
+[ext_resource type="Script" path="res://interactable/sign.gd" id="1_61ity"]
 [ext_resource type="Texture2D" uid="uid://b6wirt5a20b0d" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_uvutd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
@@ -8,7 +8,7 @@ size = Vector2(16, 32)
 
 [node name="Sign" type="StaticBody2D"]
 physics_interpolation_mode = 2
-script = ExtResource("1_varwe")
+script = ExtResource("1_61ity")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 8)
