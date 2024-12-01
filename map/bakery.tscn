@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="13_jqod6"]
-[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="Script" uid="uid://c6b00dg3c023b" path="res://interactable/door.gd" id="14_x3sc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
 texture = ExtResource("1_fcgx5")
