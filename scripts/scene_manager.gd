@@ -6,6 +6,7 @@ signal scene_transition_completed
 var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
+var current_scene: String
 
 func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
 	TransitionScreen.transition()
@@ -43,6 +44,8 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	await get_tree().create_timer(0.05).timeout
 	
 	var new_scene = get_tree().root.get_node(destination)
+	current_scene = destination
+
 	dest_player = new_scene.get_node("Player")
 	dest_player.direction = last_direction
 	dest_player.state = Player.PlayerState.LOCKED

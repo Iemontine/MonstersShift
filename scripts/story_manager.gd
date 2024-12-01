@@ -29,56 +29,54 @@ func advance_story():
 
 func _on_scene_transition_completed():
 	match current_event:
-		Event.INTRO:
-			_event_name = "intro"
-		Event.ARRIVAL_START_OUTSIDE:
-			_event_name = "arrival_start_outside"
-		Event.CLICK_ON_BED:
-			_event_name = "click_on_bed"
-		Event.CLICK_ON_PICTURE_FRAME:
-			_event_name = "click_on_picture_frame"
-		Event.CLICK_ON_RECORD_PLAYER:
-			_event_name = "click_on_record_player"
-		Event.EXIT_HOUSE_POSTARRIVAL:
-			_event_name = "exit_house_postarrival"
+		# Event.INTRO:
+		# 	_event_name = "intro"
+		# Event.ARRIVAL_START_OUTSIDE:
+		# 	_event_name = "arrival_start_outside"
+		# Event.CLICK_ON_BED:
+		# 	_event_name = "click_on_bed"
+		# Event.CLICK_ON_PICTURE_FRAME:
+		# 	_event_name = "click_on_picture_frame"
+		# Event.CLICK_ON_RECORD_PLAYER:
+		# 	_event_name = "click_on_record_player"
+		# Event.EXIT_HOUSE_POSTARRIVAL:
+		# 	_event_name = "exit_house_postarrival"
 		Event.OUTSIDE_BAKERY:
 			_event_name = "outside_bakery"
-		Event.FIRST_ENTER_BAKERY:
-			_event_name = "first_enter_bakery"
-		Event.BAKER_FIRST_INTERACTION:
-			_event_name = "baker_first_interaction"
-		Event.BAKER_SUCCESS_DAYTIME:
-			_event_name = "baker_success_daytime"
-		Event.BAKER_FAIL_DAYTIME:
-			_event_name = "baker_fail_daytime"
-		Event.NIGHT_OUTSIDE_BAKERY:
-			_event_name = "night_outside_bakery"
-		Event.BAKER_BEFORE_CHASE:
-			_event_name = "baker_before_chase"
-		Event.BAKER_BEFORE_NIGHT_GAME:
-			_event_name = "baker_before_night_game"
-		Event.BAKER_SUCCESS_NIGHT:
-			_event_name = "baker_success_night"
-		Event.BAKER_FAIL_NIGHT:
-			_event_name = "baker_fail_night"
-		Event.WIDOW_FIRST_INTERACTION:
-			_event_name = "widow_first_interaction"
-		Event.WIDOW_BEFORE_DAY_GAME:
-			_event_name = "widow_before_day_game"
-		Event.WIDOW_SUCCESS_DAYTIME:
-			_event_name = "widow_success_daytime"
-		Event.WIDOW_FAIL_DAYTIME:
-			_event_name = "widow_fail_daytime"
-		Event.WIDOW_SUCCESS_NIGHT:
-			_event_name = "widow_success_night"
-		Event.WIDOW_FAIL_NIGHT:
-			_event_name = "widow_fail_night"
-		Event.END:
-			_event_name = "end"
+			if SceneManager.current_scene == "Bakery":
+				_event_name = "first_enter_bakery"
+				PlayerController.start_cutscene(_event_name)
+		# Event.FIRST_ENTER_BAKERY:
+		# 	_event_name = "first_enter_bakery"
+		# Event.BAKER_FIRST_INTERACTION:
+		# 	_event_name = "baker_first_interaction"
+		# Event.BAKER_SUCCESS_DAYTIME:
+		# 	_event_name = "baker_success_daytime"
+		# Event.BAKER_FAIL_DAYTIME:
+		# 	_event_name = "baker_fail_daytime"
+		# Event.NIGHT_OUTSIDE_BAKERY:
+		# 	_event_name = "night_outside_bakery"
+		# Event.BAKER_BEFORE_CHASE:
+		# 	_event_name = "baker_before_chase"
+		# Event.BAKER_BEFORE_NIGHT_GAME:
+		# 	_event_name = "baker_before_night_game"
+		# Event.BAKER_SUCCESS_NIGHT:
+		# 	_event_name = "baker_success_night"
+		# Event.BAKER_FAIL_NIGHT:
+		# 	_event_name = "baker_fail_night"
+		# Event.WIDOW_FIRST_INTERACTION:
+		# 	_event_name = "widow_first_interaction"
+		# Event.WIDOW_BEFORE_DAY_GAME:
+		# 	_event_name = "widow_before_day_game"
+		# Event.WIDOW_SUCCESS_DAYTIME:
+		# 	_event_name = "widow_success_daytime"
+		# Event.WIDOW_FAIL_DAYTIME:
+		# 	_event_name = "widow_fail_daytime"
+		# Event.WIDOW_SUCCESS_NIGHT:
+		# 	_event_name = "widow_success_night"
+		# Event.WIDOW_FAIL_NIGHT:
+		# 	_event_name = "widow_fail_night"
+		# Event.END:
+		# 	_event_name = "end"
 		_:
 			print("unknown event")
-	
-	print(_event_name)
-	if _event_name != "":
-		PlayerController.start_cutscene(_event_name)
-		_event_name = ""
