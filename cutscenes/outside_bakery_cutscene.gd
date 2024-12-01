@@ -9,3 +9,4 @@ func _ready() -> void:
 	
 func _on_body_entered(_body:Player) -> void:
 	StoryManager.transition_to_event(Event.OUTSIDE_BAKERY)
+	queue_free()
