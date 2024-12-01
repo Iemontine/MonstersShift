@@ -14,7 +14,7 @@ enum Event {
 	END 
 }
 
-var _event_name:String
+var _event_name:String = ""
 
 @onready var current_event = Event.INTRO
 
@@ -79,4 +79,6 @@ func _on_scene_transition_completed():
 			print("unknown event")
 	
 	print(_event_name)
-	PlayerController.start_cutscene(_event_name)
+	if _event_name != "":
+		PlayerController.start_cutscene(_event_name)
+		_event_name = ""

@@ -1,6 +1,6 @@
 extends Area2D
 
-const Event = preload("res://scripts/story_manager.gd").Event
+#const Event = preload("res://scripts/story_manager.gd").Event
 
 
 func _ready() -> void:
@@ -8,5 +8,6 @@ func _ready() -> void:
 	
 	
 func _on_body_entered(_body:Player) -> void:
-	StoryManager.transition_to_event(Event.OUTSIDE_BAKERY)
+	StoryManager.transition_to_event(StoryManager.Event.OUTSIDE_BAKERY)
+	PlayerController.start_cutscene("outside_bakery")
 	queue_free()

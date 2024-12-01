@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgh21riaspka0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q521i"]
-size = Vector2(111, 57)
+size = Vector2(111, 49.25)
 
 [node name="OutsideBakeryCutscene" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(0, 2.625)
 shape = SubResource("RectangleShape2D_q521i")
