@@ -1,5 +1,6 @@
-[signal arg="control"]
 # Starts the first time you enter the bakery
+[signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Door_Wood_Open_Stereo.wav" volume="0.0"]
 [wait time="0.4"]
 baker: Fresh bread! Fresh bread! Come get it while it’s nice and hot!
