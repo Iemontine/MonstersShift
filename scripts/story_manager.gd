@@ -32,47 +32,47 @@ func _on_scene_transition_completed():
 		Event.INTRO:
 			_event_name = "intro"
 		Event.ARRIVAL_START_OUTSIDE:
-			_event_name = "arrival start outside"
+			_event_name = "arrival_start_outside"
 		Event.CLICK_ON_BED:
-			_event_name = "click on bed"
+			_event_name = "click_on_bed"
 		Event.CLICK_ON_PICTURE_FRAME:
-			_event_name = "click on picture frame"
+			_event_name = "click_on_picture_frame"
 		Event.CLICK_ON_RECORD_PLAYER:
-			_event_name = "click on record player"
+			_event_name = "click_on_record_player"
 		Event.EXIT_HOUSE_POSTARRIVAL:
-			_event_name = "exit house postarrival"
+			_event_name = "exit_house_postarrival"
 		Event.OUTSIDE_BAKERY:
-			_event_name = "outside bakery"
+			_event_name = "outside_bakery"
 		Event.FIRST_ENTER_BAKERY:
-			_event_name = "first enter bakery"
+			_event_name = "first_enter_bakery"
 		Event.BAKER_FIRST_INTERACTION:
-			_event_name = "baker first interaction"
+			_event_name = "baker_first_interaction"
 		Event.BAKER_SUCCESS_DAYTIME:
-			_event_name = "baker success daytime"
+			_event_name = "baker_success_daytime"
 		Event.BAKER_FAIL_DAYTIME:
-			_event_name = "baker fail daytime"
+			_event_name = "baker_fail_daytime"
 		Event.NIGHT_OUTSIDE_BAKERY:
-			_event_name = "night outside bakery"
+			_event_name = "night_outside_bakery"
 		Event.BAKER_BEFORE_CHASE:
-			_event_name = "baker before chase"
+			_event_name = "baker_before_chase"
 		Event.BAKER_BEFORE_NIGHT_GAME:
-			_event_name = "baker before night game"
+			_event_name = "baker_before_night_game"
 		Event.BAKER_SUCCESS_NIGHT:
-			_event_name = "baker success night"
+			_event_name = "baker_success_night"
 		Event.BAKER_FAIL_NIGHT:
-			_event_name = "baker fail night"
+			_event_name = "baker_fail_night"
 		Event.WIDOW_FIRST_INTERACTION:
-			_event_name = "widow first interaction"
+			_event_name = "widow_first_interaction"
 		Event.WIDOW_BEFORE_DAY_GAME:
-			_event_name = "widow before day game"
+			_event_name = "widow_before_day_game"
 		Event.WIDOW_SUCCESS_DAYTIME:
-			_event_name = "idow success daytime"
+			_event_name = "widow_success_daytime"
 		Event.WIDOW_FAIL_DAYTIME:
-			_event_name = "widow fail daytime"
+			_event_name = "widow_fail_daytime"
 		Event.WIDOW_SUCCESS_NIGHT:
-			_event_name = "widow success night"
+			_event_name = "widow_success_night"
 		Event.WIDOW_FAIL_NIGHT:
-			_event_name = "widow fail night"
+			_event_name = "widow_fail_night"
 		Event.END:
 			_event_name = "end"
 		_:
