@@ -33,6 +33,46 @@ func _on_scene_transition_completed():
 			_event_name = "intro"
 		Event.ARRIVAL_START_OUTSIDE:
 			_event_name = "arrival start outside"
+		Event.CLICK_ON_BED:
+			_event_name = "click on bed"
+		Event.CLICK_ON_PICTURE_FRAME:
+			_event_name = "click on picture frame"
+		Event.CLICK_ON_RECORD_PLAYER:
+			_event_name = "click on record player"
+		Event.EXIT_HOUSE_POSTARRIVAL:
+			_event_name = "exit house postarrival"
+		Event.OUTSIDE_BAKERY:
+			_event_name = "outside bakery"
+		Event.FIRST_ENTER_BAKERY:
+			_event_name = "first enter bakery"
+		Event.BAKER_FIRST_INTERACTION:
+			_event_name = "baker first interaction"
+		Event.BAKER_SUCCESS_DAYTIME:
+			_event_name = "baker success daytime"
+		Event.BAKER_FAIL_DAYTIME:
+			_event_name = "baker fail daytime"
+		Event.NIGHT_OUTSIDE_BAKERY:
+			_event_name = "night outside bakery"
+		Event.BAKER_BEFORE_CHASE:
+			_event_name = "baker before chase"
+		Event.BAKER_BEFORE_NIGHT_GAME:
+			_event_name = "baker before night game"
+		Event.BAKER_SUCCESS_NIGHT:
+			_event_name = "baker success night"
+		Event.BAKER_FAIL_NIGHT:
+			_event_name = "baker fail night"
+		Event.WIDOW_FIRST_INTERACTION:
+			_event_name = "widow first interaction"
+		Event.WIDOW_BEFORE_DAY_GAME:
+			_event_name = "widow before day game"
+		Event.WIDOW_SUCCESS_DAYTIME:
+			_event_name = "idow success daytime"
+		Event.WIDOW_FAIL_DAYTIME:
+			_event_name = "widow fail daytime"
+		Event.WIDOW_SUCCESS_NIGHT:
+			_event_name = "widow success night"
+		Event.WIDOW_FAIL_NIGHT:
+			_event_name = "widow fail night"
 		Event.END:
 			_event_name = "end"
 		_:
