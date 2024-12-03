@@ -30,6 +30,7 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	
 	dest_player.global_position = pos
 	dest_player.direction = dir
+	handle_day_shift(dest_player)
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
