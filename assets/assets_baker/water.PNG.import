@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dti4m1bjmes8b"
-path="res://.godot/imported/flour.png-389bf5902297a9b6fce174c2763cccb7.ctex"
+uid="uid://bxabn02h8j41n"
+path="res://.godot/imported/water.PNG-7a254a942b8d72515199d82eed5a7dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baker_assets/flour.png"
-dest_files=["res://.godot/imported/flour.png-389bf5902297a9b6fce174c2763cccb7.ctex"]
+source_file="res://assets/assets_baker/water.PNG"
+dest_files=["res://.godot/imported/water.PNG-7a254a942b8d72515199d82eed5a7dc9.ctex"]
 
 [params]
 

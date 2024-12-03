@@ -76,3 +76,26 @@ func moveRight() -> void:
 func stop() -> void:
 	player.direction = Vector2(0, 0)
 	print("Stopping")
+
+#func start_quick_time_events():
+	## Logic to start quick time events
+	## Player follows Path2D and responds to quick time events
+	#player.state = Player.PlayerState.LOCKED
+	#var path = get_tree().root.get_node("Path2D")
+	#player.follow_path(path)
+	#
+	#player.connect("path_follow_completed", Callable(self, "_on_path_follow_completed"))
+#
+#func _on_path_follow_completed():
+	#player.state = Player.PlayerState.NORMAL
+	## Logic to handle the end of quick time events
+	#if player.global_position.distance_to(target_position) < tolerance:
+		#print("Correct!")
+	#else:
+		#print("Incorrect!")
+
+func freeze_player():
+	player.state = Player.PlayerState.LOCKED
+
+func unfreeze_player():
+	player.state = Player.PlayerState.NORMAL

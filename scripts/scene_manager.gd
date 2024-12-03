@@ -30,6 +30,7 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	
 	dest_player.global_position = pos
 	dest_player.direction = dir
+	
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
@@ -57,6 +58,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 		move_player_to_loadzone(new_scene, dest_player, loadzone_name)
 	elif loadzone_name.begins_with("Door"):
 		move_player_to_door(new_scene, dest_player, loadzone_name)
+	
 	start_timer(0.5)
 	
 

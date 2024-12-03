@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deo7f4a45ccqp"
-path="res://.godot/imported/chopping_board.png-31414b9df29c02a55a77ec3463d0964f.ctex"
+uid="uid://2f2pr6dllrh5"
+path="res://.godot/imported/fruits.PNG-a2e39e6f685d50464b838a918df78ed8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baker_assets/chopping_board.png"
-dest_files=["res://.godot/imported/chopping_board.png-31414b9df29c02a55a77ec3463d0964f.ctex"]
+source_file="res://assets/assets_baker/fruits.PNG"
+dest_files=["res://.godot/imported/fruits.PNG-a2e39e6f685d50464b838a918df78ed8.ctex"]
 
 [params]
 

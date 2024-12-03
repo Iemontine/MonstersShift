@@ -26,13 +26,22 @@ var hold_start_time = 0.0
 var is_holding = false
 var current_interactable = null # current target interactable being held on
 
+# WIDOW
+# var path_follow: PathFollow2D
+# var path_following: bool = false
+
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
 	animationTree.active = true
 	speed = default_speed
 	PlayerController.player = self
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	# WIDOW
+	#if state == PlayerState.LOCKED and path_following:
+		#_on_path_follow_timeout(delta)
+		#return
+
 	if state == PlayerState.LOCKED: return
 
 	move_interact_box()
@@ -163,3 +172,25 @@ func save():
 		"name": name
 	}
 	return dict
+
+# WIDOW
+# func follow_path(path: Path2D):
+# 	path_follow = path.get_node_or_null("PathFollow2D")
+# 	if not path_follow:
+# 		path_follow = PathFollow2D.new()
+# 		path.add_child(path_follow)
+# 	path_follow.progress_ratio = 0
+# 	path_follow.set_loop(false)
+# 	path_follow.set_cubic_interpolation(true)
+# 	path_follow.set_rotation_mode(PathFollow2D.RotationMode.ORIENTED)
+# 	path_following = true
+
+# func _on_path_follow_timeout(delta):
+# 	path_follow.progress_ratio += 0.01 * delta
+# 	var direction_vector = (path_follow.position - global_position).normalized()
+# 	global_position = path_follow.position
+# 	travel_to_anim("Walk", direction_vector)
+# 	if path_follow.progress_ratio >= 1.0:
+# 		path_follow.queue_free()
+# 		path_following = false
+# 		emit_signal("path_follow_completed")

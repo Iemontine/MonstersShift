@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://msxymg8rrg2t"
-path="res://.godot/imported/chocolate.PNG-c754c20e29f42c55497d3c66e51c0c33.ctex"
+uid="uid://cs2tkjjrj86mv"
+path="res://.godot/imported/butter.PNG-dbe00e94296f7f0f57a1e88155980291.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baker_assets/chocolate.PNG"
-dest_files=["res://.godot/imported/chocolate.PNG-c754c20e29f42c55497d3c66e51c0c33.ctex"]
+source_file="res://assets/assets_baker/butter.PNG"
+dest_files=["res://.godot/imported/butter.PNG-dbe00e94296f7f0f57a1e88155980291.ctex"]
 
 [params]
 

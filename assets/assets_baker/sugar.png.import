@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs2tkjjrj86mv"
-path="res://.godot/imported/butter.PNG-605632156c845c62024fdc5f27753cfd.ctex"
+uid="uid://bbxjqehte7yer"
+path="res://.godot/imported/sugar.png-76e952832eb6a935492ff72b253ff276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baker_assets/butter.PNG"
-dest_files=["res://.godot/imported/butter.PNG-605632156c845c62024fdc5f27753cfd.ctex"]
+source_file="res://assets/assets_baker/sugar.png"
+dest_files=["res://.godot/imported/sugar.png-76e952832eb6a935492ff72b253ff276.ctex"]
 
 [params]
 

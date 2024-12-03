@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b5vbrn4n2gs74"]
+[gd_scene load_steps=38 format=4 uid="uid://b5vbrn4n2gs74"]
 
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
 [ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_5vmdk"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="7_leub4"]
-[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="8_qnp4u"]
+[ext_resource type="Script" uid="uid://ci5ejr68eafbe" path="res://interactable/door.gd" id="8_qnp4u"]
+[ext_resource type="PackedScene" uid="uid://bywfnd7utfd7x" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
+[ext_resource type="Script" uid="uid://qq38h4w3so7a" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
+[ext_resource type="Texture2D" uid="uid://cj5u1w22hvh6a" path="res://assets/assets_widow/watermelon.png" id="11_ffkw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ohj"]
 texture = ExtResource("1_mtsbs")
@@ -2927,6 +2930,8 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffkw8"]
+
 [node name="Conbini" type="Node2D"]
 y_sort_enabled = true
 
@@ -3022,3 +3027,60 @@ frame_progress = 0.194715
 [node name="Spawnpoint" type="Marker2D" parent="Door_Conbini2"]
 y_sort_enabled = true
 position = Vector2(8, 14)
+
+[node name="GroceryItem" parent="." instance=ExtResource("10_34ohj")]
+z_index = 1
+position = Vector2(-204, -108)
+
+[node name="GroceryItem2" parent="." instance=ExtResource("10_34ohj")]
+z_index = 1
+position = Vector2(10, -113)
+
+[node name="GroceryItem3" parent="." instance=ExtResource("10_34ohj")]
+z_index = 1
+position = Vector2(136, -151)
+
+[node name="GroceryUi" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.523
+anchor_bottom = 0.525
+offset_left = -169.0
+offset_top = -113.0
+offset_right = -168.496
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_dvsie")
+
+[node name="Button1" type="Button" parent="GroceryUi"]
+z_index = 2
+layout_mode = 0
+offset_left = 13.0
+offset_top = 29.0
+offset_right = 92.0
+offset_bottom = 115.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ffkw8")
+icon = ExtResource("11_ffkw8")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="GroceryUi"]
+z_index = 2
+layout_mode = 0
+offset_left = 130.0
+offset_top = 27.0
+offset_right = 209.0
+offset_bottom = 113.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ffkw8")
+icon = ExtResource("11_ffkw8")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="GroceryUi"]
+z_index = 2
+layout_mode = 0
+offset_left = 239.0
+offset_top = 27.0
+offset_right = 318.0
+offset_bottom = 113.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ffkw8")
+icon = ExtResource("11_ffkw8")
+expand_icon = true
