@@ -29070,6 +29070,7 @@ point_count = 5
 y_sort_enabled = true
 
 [node name="Surroundings" type="CanvasModulate" parent="."]
+y_sort_enabled = true
 
 [node name="terrain3" type="TileMapLayer" parent="Surroundings"]
 z_index = -4
