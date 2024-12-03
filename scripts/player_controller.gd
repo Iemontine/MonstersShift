@@ -7,6 +7,7 @@ const Event = preload("res://scripts/story_manager.gd").Event
 func _ready() -> void:
 	player = get_node_or_null("Player")
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	if player: player.connect("path_follow_completed", Callable(self, "_on_path_follow_completed"))
 
 func start_cutscene(cutscene_name: String) -> void:
 	# TODO: swipe in cool black bars at the top and bottom of the screen
@@ -15,9 +16,15 @@ func start_cutscene(cutscene_name: String) -> void:
 func _on_dialogic_signal(argument:String):
 	print(argument)
 	if argument == "control":
-		player.state = Player.PlayerState.CONTROLLED
+		control_player()
 	elif argument == "uncontrol":
-		player.state = Player.PlayerState.NORMAL
+		uncontrol_player()
+
+func control_player() -> void:
+	player.state = Player.PlayerState.CONTROLLED
+
+func uncontrol_player() -> void:
+	player.state = Player.PlayerState.NORMAL
 
 # Possible commands callable by Dialogic are below:
 # playAnimation which must be followed by an animationComplete,
@@ -77,25 +84,6 @@ func stop() -> void:
 	player.direction = Vector2(0, 0)
 	print("Stopping")
 
-#func start_quick_time_events():
-	## Logic to start quick time events
-	## Player follows Path2D and responds to quick time events
-	#player.state = Player.PlayerState.LOCKED
-	#var path = get_tree().root.get_node("Path2D")
-	#player.follow_path(path)
-	#
-	#player.connect("path_follow_completed", Callable(self, "_on_path_follow_completed"))
-#
-#func _on_path_follow_completed():
-	#player.state = Player.PlayerState.NORMAL
-	## Logic to handle the end of quick time events
-	#if player.global_position.distance_to(target_position) < tolerance:
-		#print("Correct!")
-	#else:
-		#print("Incorrect!")
-
-func freeze_player():
-	player.state = Player.PlayerState.LOCKED
-
-func unfreeze_player():
+func _on_path_follow_completed():
 	player.state = Player.PlayerState.NORMAL
+	print("Correct!")

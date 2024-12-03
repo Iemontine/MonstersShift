@@ -27,8 +27,8 @@ var is_holding = false
 var current_interactable = null # current target interactable being held on
 
 # WIDOW
-# var path_follow: PathFollow2D
-# var path_following: bool = false
+var path_follow: PathFollow2D
+var path_following: bool = false
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
@@ -37,10 +37,9 @@ func _ready():
 	PlayerController.player = self
 
 func _physics_process(delta):
-	# WIDOW
-	#if state == PlayerState.LOCKED and path_following:
-		#_on_path_follow_timeout(delta)
-		#return
+	if state == PlayerState.CONTROLLED and path_following:
+		_on_path_follow_timeout(delta)
+		return
 
 	if state == PlayerState.LOCKED: return
 
@@ -173,24 +172,30 @@ func save():
 	}
 	return dict
 
-# WIDOW
-# func follow_path(path: Path2D):
-# 	path_follow = path.get_node_or_null("PathFollow2D")
-# 	if not path_follow:
-# 		path_follow = PathFollow2D.new()
-# 		path.add_child(path_follow)
-# 	path_follow.progress_ratio = 0
-# 	path_follow.set_loop(false)
-# 	path_follow.set_cubic_interpolation(true)
-# 	path_follow.set_rotation_mode(PathFollow2D.RotationMode.ORIENTED)
-# 	path_following = true
+# Targets the path sitting as a child of the root of the scene
+func follow_path():
+	var path = get_parent().get_node_or_null("Path2D")
+	path_follow = path.get_node_or_null("PathFollow2D")
+	if not path_follow: return
+	path_follow.progress_ratio = 0
+	path_follow.set_loop(false)
+	path_follow.set_cubic_interpolation(true)
+	path_following = true
 
-# func _on_path_follow_timeout(delta):
-# 	path_follow.progress_ratio += 0.01 * delta
-# 	var direction_vector = (path_follow.position - global_position).normalized()
-# 	global_position = path_follow.position
-# 	travel_to_anim("Walk", direction_vector)
-# 	if path_follow.progress_ratio >= 1.0:
-# 		path_follow.queue_free()
-# 		path_following = false
-# 		emit_signal("path_follow_completed")
+func _on_path_follow_timeout(delta):
+	path_follow.progress_ratio += (speed / 3000.0) * delta
+	var direction_vector = (path_follow.get_global_position() - global_position).normalized()
+	direction_vector.x = round(direction_vector.x)
+	direction_vector.y = round(direction_vector.y)
+	if abs(direction_vector.x) > abs(direction_vector.y):
+		direction_vector.y = 0
+	else:
+		direction_vector.x = 0
+	global_position = path_follow.get_global_position()
+	travel_to_anim("Walk", direction_vector)
+	if path_follow.progress_ratio >= 1.0:
+		path_following = false
+		state = PlayerState.NORMAL
+		#emit_signal("path_follow_completed")
+
+# TODO: Add trigger for quick time events

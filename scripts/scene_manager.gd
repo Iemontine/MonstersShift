@@ -60,7 +60,6 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 		move_player_to_door(new_scene, dest_player, loadzone_name)
 	
 	start_timer(0.5)
-	
 
 func start_timer(duration: float):
 	var timer = Timer.new()

@@ -9,7 +9,7 @@ enum Event {
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, 
 	BAKER_BEFORE_NIGHT_GAME, BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT,
-	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_SUCCESS_DAYTIME,
+	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, WIDOW_SUCCESS_DAYTIME,
 	WIDOW_FAIL_DAYTIME, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	END 
 }
@@ -62,15 +62,22 @@ func _on_scene_transition_completed():
 		# 	_event_name = "baker_before_night_game"
 		# Event.BAKER_SUCCESS_NIGHT:
 		# 	_event_name = "baker_success_night"
-			_event_name = "baker_fail_night"
+			# _event_name = "baker_fail_night"
 		# Event.WIDOW_FIRST_INTERACTION:
 		# 	_event_name = "widow_first_interaction"
 		# WIDOW
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
-			# elif SceneManager.current_scene == "Town":
-			# 	PlayerController.start_quick_time_events()
+		Event.WIDOW_DAY_GAME_CORRECT:
+			if SceneManager.current_scene == "Town":
+				var player = PlayerController.player
+
+				start_player_path_follow(player)
+
+
+		# Event.WIDOW_DAY_GAME_WRONG:
+
 		# Event.WIDOW_BEFORE_DAY_GAME:
 		# 	_event_name = "widow_before_day_game"
 		# Event.WIDOW_SUCCESS_DAYTIME:
@@ -89,9 +96,15 @@ func _on_scene_transition_completed():
 # WIDOW
 func enable_grocery_items():
 	var items = get_tree().get_nodes_in_group("grocery_item")
-	var enabled_item = items[randi() % items.size()]
-	for item in items:
-		item.enabled = false
-		item.exclamation_sprite.visible = false
-	enabled_item.enabled = true
-	enabled_item.exclamation_sprite.visible = true
+	#var enabled_item = items[randi() % items.size()]
+	#for item in items:
+		#item.enabled = false
+		#item.exclamation_sprite.visible = false
+	#enabled_item.enabled = true
+	#enabled_item.exclamation_sprite.visible = true
+
+func start_player_path_follow(player):
+	player.speed = 100  # Set the speed for the player
+	player.path_following = true
+	player.state = Player.PlayerState.CONTROLLED
+	player.follow_path()
