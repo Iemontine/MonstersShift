@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
-[ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="13_6x0wb"]
+[ext_resource type="PackedScene" path="res://prefabs/npc_spawner.tscn" id="13_6x0wb"]
 [ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="13_jqod6"]
-[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
-[ext_resource type="Script" path="res://interactable/door.gd" id="14_x3sc3"]
-[ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_basic.tscn" id="14_yu6ri"]
+[ext_resource type="PackedScene" path="res://prefabs/chair.tscn" id="14_fcgx5"]
+[ext_resource type="Script" uid="uid://4opmqbuwlfpx" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="PackedScene" path="res://prefabs/npc_basic.tscn" id="14_yu6ri"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="15_jjlq4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yu6ri"]
@@ -709,7 +709,7 @@ position = Vector2(-104, 29)
 position = Vector2(-48, -176)
 
 [node name="NPC_Spawner" parent="Dev TODO, Integrate door and fix other fx" node_paths=PackedStringArray("travel_locations") instance=ExtResource("13_6x0wb")]
-position = Vector2(48, 32)
+position = Vector2(48, 0)
 npc_scene = ExtResource("14_yu6ri")
 travel_locations = [NodePath("../Chair1"), NodePath("../Chair2"), NodePath("../Chair3")]
 

@@ -35,7 +35,6 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Timelines/test": "res://dialogic/Timelines/test.dtl",
-"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
 "arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
@@ -56,6 +55,7 @@ directories/dtl_directory={
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/test.dtl",
+"test2": "res://dialogic/Timelines/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
@@ -91,6 +91,10 @@ text/autopauses={}
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
