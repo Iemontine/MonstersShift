@@ -4,7 +4,7 @@ extends Control
 @onready var buttons = [$Button1, $Button2, $Button3]
 
 func _ready():
-	visible = false
+	get_parent().visible = false
 	for button in buttons:
 		button.pressed.connect(self._button_pressed)
 

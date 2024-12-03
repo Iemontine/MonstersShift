@@ -69,8 +69,8 @@ func _on_scene_transition_completed():
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
-			elif SceneManager.current_scene == "Town":
-				PlayerController.start_quick_time_events()
+			# elif SceneManager.current_scene == "Town":
+			# 	PlayerController.start_quick_time_events()
 		# Event.WIDOW_BEFORE_DAY_GAME:
 		# 	_event_name = "widow_before_day_game"
 		# Event.WIDOW_SUCCESS_DAYTIME:
