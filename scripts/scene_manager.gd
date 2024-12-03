@@ -1,12 +1,15 @@
 # SceneManager - Global Autoloaded Singleton
 extends Node
 
+enum TIME {DAY, EVENING, NIGHT}
+
 signal scene_transition_completed
 
 var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
-var night : bool = false
+var time_of_day = TIME.DAY
+
 
 func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
 	TransitionScreen.transition()
@@ -101,17 +104,18 @@ func handle_day_shift(player:Player) -> void:
 	var surroundings:= player.get_parent().get_node_or_null("Surroundings")
 	var lights := get_tree().get_nodes_in_group("light")
 	
-	if not night:
+	# add a special case for evenining
+	if time_of_day == TIME.DAY or time_of_day == TIME.EVENING:
 		for light in lights:
 			light.enabled = false
 		if surroundings != null:
 			surroundings.color = Color("#ffffff")
-	else:
+	elif time_of_day == TIME.NIGHT:
 		for light in lights:
 			light.enabled = true
 		if surroundings != null:
 			surroundings.color = Color("#132771")
 
 func change_time_of_day(player:Player) -> void:
-	night = not night
+	time_of_day = ( time_of_day + 1 ) % 3
 	handle_day_shift(player)

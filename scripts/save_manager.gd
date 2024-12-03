@@ -44,7 +44,7 @@ func save_game() -> void:
 	var nodes_to_save := get_tree().get_nodes_in_group("savable")
 	
 	# save story state first so that we can load the time of day before the player
-	var story_state := {"StoryCurrentEvent": StoryManager.current_event, "TimeOfDay": SceneManager.night};
+	var story_state := {"StoryCurrentEvent": StoryManager.current_event, "TimeOfDay": SceneManager.time_of_day};
 	save_file.store_line(JSON.stringify(story_state))
 	
 	# load all savable nodes
@@ -80,7 +80,7 @@ func load_game() -> void:
 		var data = json.data
 		if data.has("StoryCurrentEvent"):
 			StoryManager.transition_to_event(data["StoryCurrentEvent"])
-			SceneManager.night = data["TimeOfDay"]
+			SceneManager.time_of_day = data["TimeOfDay"]
 			continue
 		load_node(data)
 		
@@ -97,3 +97,5 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("load"):
 		load_game()
 		print("load")
+		
+	print("Time of day: ", SceneManager.time_of_day)
