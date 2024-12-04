@@ -7,6 +7,7 @@ const Event = preload("res://scripts/story_manager.gd").Event
 func _ready() -> void:
 	player = get_node_or_null("Player")
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	if player: player.connect("path_follow_completed", Callable(self, "_on_path_follow_completed"))
 
 func start_cutscene(cutscene_name: String) -> void:
 	# TODO: swipe in cool black bars at the top and bottom of the screen
@@ -15,9 +16,15 @@ func start_cutscene(cutscene_name: String) -> void:
 func _on_dialogic_signal(argument:String):
 	print(argument)
 	if argument == "control":
-		player.state = Player.PlayerState.CONTROLLED
+		control_player()
 	elif argument == "uncontrol":
-		player.state = Player.PlayerState.NORMAL
+		uncontrol_player()
+
+func control_player() -> void:
+	player.state = Player.PlayerState.CONTROLLED
+
+func uncontrol_player() -> void:
+	player.state = Player.PlayerState.NORMAL
 
 # Possible commands callable by Dialogic are below:
 # playAnimation which must be followed by an animationComplete,
@@ -57,22 +64,38 @@ func resetSpeed() -> void:
 		player.movement.movement_anim = "Walk"
 
 func moveUp() -> void:
-	player.direction = Vector2(0, -1)
-	print("Moving up")
+	move(Vector2.UP)
 
 func moveDown() -> void:
-	player.direction = Vector2(0, 1)
-	print("Moving down")
+	move(Vector2.DOWN)
 
 func moveLeft() -> void:
-	player.direction = Vector2(-1, 0)
-	print("Moving left")
+	move(Vector2.LEFT)
 
 func moveRight() -> void:
-	player.direction = Vector2(1, 0)
-	print("Moving right")
+	move(Vector2.RIGHT)
 
-# TODO: get the player facing in the last direction they moved in instead of assuming left facing when calling stop()
+func move(direction: Vector2) -> void:
+	player.direction = direction
+	player.state = Player.PlayerState.CONTROLLED
+	match direction:
+		Vector2.UP:
+			print("Moving up")
+		Vector2.DOWN:
+			print("Moving down")
+		Vector2.LEFT:
+			print("Moving left")
+		Vector2.RIGHT:
+			print("Moving right")
+
 func stop() -> void:
-	player.direction = Vector2(0, 0)
+	player.state = Player.PlayerState.LOCKED
+	if player.state == Player.PlayerState.CARRYING_ITEM:
+		player.travel_to_anim("IdleCarry")
+	else:
+		player.travel_to_anim("Idle")
 	print("Stopping")
+
+func _on_path_follow_completed():
+	player.state = Player.PlayerState.NORMAL
+	print("Correct!")

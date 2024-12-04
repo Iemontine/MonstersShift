@@ -10,6 +10,7 @@ My brother was helping this man. Maybe I can too?
 	player: How about I help you out? What can I do?
 	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
 	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
-- Come back later
-	player: Well, I wish you luck with your bakery.
-	baker: Thanks muffin! Come back whenever, I could always use the help.
+- You have no choice. Help him.
+	player: How about I help you out? What can I do?
+	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
+	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.

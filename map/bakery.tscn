@@ -1,18 +1,33 @@
-[gd_scene load_steps=30 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene load_steps=35 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="3_yu6ri"]
 [ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="4_ffbsp"]
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_igw2u"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="6_e8yhp"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="7_eyyg0"]
 [ext_resource type="Script" path="res://prefabs/scripts/camera.gd" id="8_farls"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
+[ext_resource type="PackedScene" path="res://prefabs/npc_spawner.tscn" id="13_6x0wb"]
 [ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="13_jqod6"]
-[ext_resource type="Script" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="PackedScene" path="res://prefabs/chair.tscn" id="14_fcgx5"]
+[ext_resource type="Script" uid="uid://4opmqbuwlfpx" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="PackedScene" path="res://prefabs/npc_basic.tscn" id="14_yu6ri"]
+[ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="15_jjlq4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yu6ri"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ffbsp"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
 texture = ExtResource("1_fcgx5")
@@ -208,8 +223,10 @@ texture = ExtResource("1_fcgx5")
 69:12/0 = 0
 39:18/0 = 0
 39:18/0/y_sort_origin = -1000
+39:18/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yu6ri")
 47:14/0 = 0
 47:14/0/y_sort_origin = -1000
+47:14/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ffbsp")
 52:61/0 = 0
 52:61/0/z_index = 4
 52:61/0/y_sort_origin = 23
@@ -505,6 +522,7 @@ texture = ExtResource("5_igw2u")
 
 [sub_resource type="TileSet" id="TileSet_0210a"]
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_7cyfo")
 sources/8 = SubResource("TileSetAtlasSource_xblhb")
 sources/9 = SubResource("TileSetAtlasSource_5gx6c")
@@ -602,7 +620,7 @@ tile_set = SubResource("TileSet_0210a")
 
 [node name="props" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAoAAMAAQArACgAAAAoAAQAAQArACgAAAAoAAUAAQArACgAAAAoAAYAAQArACgAAAAoAAcAAQArACcAAAAoAAgAAQAsACgAAAAoAAkAAQAsACgAAAAoAAoAAQAsACgAAAAoAAsAAQAsACgAAAAoAAwAAQAsACgAAAApAAMAAQArACgAAAApAAQAAQArACgAAAApAAUAAQArACgAAAApAAYAAQArACgAAAApAAcAAQArACcAAAApAAgAAQAsACgAAAApAAkAAQAsACgAAAApAAoAAQAsACgAAAApAAsAAQAsACgAAAApAAwAAQAsACgAAAAqAAMAAQArACgAAAAqAAQAAQArACgAAAAqAAUAAQArACgAAAAqAAYAAQArACgAAAAqAAcAAQArACcAAAAqAAgAAQAsACgAAAAqAAkAAQAsACgAAAAqAAoAAQAsACgAAAAqAAsAAQAsACgAAAAqAAwAAQAsACgAAAArAAMAAQArACgAAAArAAQAAQArACgAAAArAAUAAQArACgAAAArAAYAAQArACgAAAArAAcAAQArACcAAAArAAgAAQAsACgAAAArAAkAAQAsACgAAAArAAoAAQAsACgAAAArAAsAAQAsACgAAAArAAwAAQAsACgAAAAsAAMAAQArACgAAAAsAAQAAQArACgAAAAsAAUAAQArACgAAAAsAAYAAQArACgAAAAsAAcAAQArACcAAAAsAAgAAQAsACgAAAAsAAkAAQAsACgAAAAsAAoAAQAsACgAAAAsAAsAAQAsACgAAAAsAAwAAQAsACgAAAAsAA0AAQAsACgAAAAtAAMAAQArACgAAAAtAAQAAQArACgAAAAtAAUAAQArACgAAAAtAAYAAQArACgAAAAtAAcAAQArACcAAAAtAAgAAQAsACgAAAAtAAkAAQAsACgAAAAtAAoAAQAsACgAAAAtAAsAAQAsACgAAAAtAAwAAQAsACgAAAAtAA0AAQAsACgAAAAuAAMAAQArACgAAAAuAAQAAQArACgAAAAuAAUAAQArACgAAAAuAAYAAQArACgAAAAuAAcAAQArACcAAAAuAAgAAQAsACgAAAAuAAkAAQAsACgAAAAuAAoAAQAsACgAAAAuAAsAAQAsACgAAAAuAAwAAQAsACgAAAAvAAMAAQArACgAAAAvAAQAAQArACgAAAAvAAUAAQArACgAAAAvAAYAAQArACgAAAAvAAcAAQArACcAAAAvAAgAAQAsACgAAAAvAAkAAQAsACgAAAAvAAoAAQAsACgAAAAvAAsAAQAsACgAAAAvAAwAAQAsACgAAAAwAAMAAQArACgAAAAwAAQAAQArACgAAAAwAAUAAQArACgAAAAwAAYAAQArACgAAAAwAAcAAQArACcAAAAwAAgAAQAsACgAAAAwAAkAAQAsACgAAAAwAAoAAQAsACgAAAAwAAsAAQAsACgAAAAwAAwAAQAsACgAAAAxAAMAAQAsACgAAAAxAAQAAQAsACgAAAAxAAUAAQAsACgAAAAxAAYAAQAsACgAAAAxAAcAAQAsACgAAAAxAAgAAQAsACgAAAAxAAkAAQAsACgAAAAxAAoAAQAsACgAAAAxAAsAAQAsACgAAAAxAAwAAQAsACgAAAAyAAMAAQAsACgAAAAyAAQAAQAsACgAAAAyAAUAAQAsACgAAAAyAAYAAQAsACgAAAAyAAcAAQAsACgAAAAyAAgAAQAsACgAAAAyAAkAAQAsACgAAAAyAAoAAQAsACgAAAAyAAsAAQAsACgAAAAyAAwAAQAsACgAAAD///7/CgAIAAsAAAAAAP3/CgAFAAEAAAAAAP7/CgADAAkAAAABAP3/CgAFAAEAAAABAP7/CgAFAAkAAAACAP3/CgAFAAEAAAADAP3/CgAFAAEAAAACAP7/CgAFAAkAABADAP7/CgADAAoAAAD5//7/CgACAAoAAAD5//3/CgAEAAEAAAD9/wEACgAEAAEAAAD9/wIACgACAAoAAAD+/wEACgAFAAEAAAD+/wIACgADAAoAAAD//wEACgAFAAEAAAD//wIACgADAAoAAAAAAAEACgAFAAEAAAAAAAIACgADAAoAAAABAAEACgAFAAEAAAABAAIACgADAAoAAAACAAEACgAFAAEAAAACAAIACgADAAoAAAADAAEACgAFAAEAAAADAAIACgADAAoAAAAEAAEACgAFAAEAAAAEAAIACgADAAoAAAAFAAEACgAFAAEAAAAFAAIACgADAAoAAAAGAAEACgAFAAEAAAAGAAIACgADAAoAAAD8//f/CgAGABAAAAD8//j/CgAGAA8AAAD9//f/CgAHABAAAAD9//j/CgAHAA8AAAD+//f/CgAIABAAAAD+//j/CgAIAA8AAAD8//n/CgAGABEAAAD9//n/CgAHABEAAAD+//n/CgAIABEAAAABAPf/CgAGABAAAAABAPj/CgAGAA8AAAABAPn/CgAGABEAAAACAPf/CgAHABAAAAACAPj/CgAHAA8AAAACAPn/CgAHABEAAAADAPf/CgAIABAAAAADAPj/CgAIAA8AAAADAPn/CgAIABEAAAAFAP3/CgAFAAEAAAAFAP7/CgADAAoAAAAGAP3/CgAGAAEAAAAGAP7/CgAEAAoAAAD6//3/CgAFAAEAAAD6//7/CgADAAoAAAD7//3/CgAGAAEAAAD7//7/CgAEAAoAAAD+//z/CgAAACYAAAAEAP3/CgAFAAEAAAAEAP7/CgADAAoAAAD+//v/AAA2AEIAAAD7//v/AAA5AEIAAAA=")
+tile_map_data = PackedByteArray("AAD///7/CgAIAAsAAAAAAP3/CgAFAAEAAAAAAP7/CgADAAkAAAABAP3/CgAFAAEAAAABAP7/CgAFAAkAAAACAP3/CgAFAAEAAAADAP3/CgAFAAEAAAACAP7/CgAFAAkAABADAP7/CgADAAoAAAD5//7/CgACAAoAAAD5//3/CgAEAAEAAAD9/wEACgAEAAEAAAD9/wIACgACAAoAAAD+/wEACgAFAAEAAAD+/wIACgADAAoAAAD//wEACgAFAAEAAAD//wIACgADAAoAAAAAAAEACgAFAAEAAAAAAAIACgADAAoAAAABAAEACgAFAAEAAAABAAIACgADAAoAAAACAAEACgAFAAEAAAACAAIACgADAAoAAAADAAEACgAFAAEAAAADAAIACgADAAoAAAAEAAEACgAFAAEAAAAEAAIACgADAAoAAAAFAAEACgAFAAEAAAAFAAIACgADAAoAAAAGAAEACgAFAAEAAAAGAAIACgADAAoAAAD8//f/CgAGABAAAAD8//j/CgAGAA8AAAD9//f/CgAHABAAAAD9//j/CgAHAA8AAAD+//f/CgAIABAAAAD+//j/CgAIAA8AAAD8//n/CgAGABEAAAD9//n/CgAHABEAAAD+//n/CgAIABEAAAABAPf/CgAGABAAAAABAPj/CgAGAA8AAAABAPn/CgAGABEAAAACAPf/CgAHABAAAAACAPj/CgAHAA8AAAACAPn/CgAHABEAAAADAPf/CgAIABAAAAADAPj/CgAIAA8AAAADAPn/CgAIABEAAAAFAP3/CgAFAAEAAAAFAP7/CgADAAoAAAAGAP3/CgAGAAEAAAAGAP7/CgAEAAoAAAD6//3/CgAFAAEAAAD6//7/CgADAAoAAAD7//3/CgAGAAEAAAD7//7/CgAEAAoAAAD+//z/CgAAACYAAAAEAP3/CgAFAAEAAAAEAP7/CgADAAoAAAD+//v/AAA2AEIAAAD7//v/AAA5AEIAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
 [node name="props2" type="TileMapLayer" parent="."]
@@ -635,13 +653,6 @@ frame_progress = 1.0
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
 position = Vector2(8, 36)
-
-[node name="BakeryDoor" parent="." instance=ExtResource("6_e8yhp")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(127, 184)
-destination_scene = "Town"
-target_door = "BakeryDoor"
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 position = Vector2(104, -23)
@@ -693,3 +704,23 @@ item_region_rect = Rect2(192, 464, 16, 16)
 
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
 position = Vector2(-104, 29)
+
+[node name="Dev TODO, Integrate door and fix other fx" type="Node2D" parent="."]
+position = Vector2(-48, -176)
+
+[node name="NPC_Spawner" parent="Dev TODO, Integrate door and fix other fx" node_paths=PackedStringArray("travel_locations") instance=ExtResource("13_6x0wb")]
+position = Vector2(48, 0)
+npc_scene = ExtResource("14_yu6ri")
+travel_locations = [NodePath("../Chair1"), NodePath("../Chair2"), NodePath("../Chair3")]
+
+[node name="Chair1" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+position = Vector2(112, 80)
+
+[node name="Chair2" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+position = Vector2(-16, 80)
+
+[node name="Chair3" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+position = Vector2(48, 80)
+
+[node name="NPC_Baker" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("15_jjlq4")]
+position = Vector2(0, 136)

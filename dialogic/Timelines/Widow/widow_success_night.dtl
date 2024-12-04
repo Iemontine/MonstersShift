@@ -1,8 +1,8 @@
 # Happens when you win the widow's nighttime game
-After collecting all the items, you slowly hand them over to the widow.
+After you run into the graveyard, the widow slowly stops.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Small_Polyester_PickUp_Stereo.wav" volume="0.0"]
-As she silently stares at them, her appearance turns back to normal. She looks up at you with a sad smile.
-widow: Oh thank you dear. I lost my head for a second.
+As she silently stares at the graveyards, her appearance turns back to normal. She looks up at you with a sad smile.
+widow: Oh dear, I lost my head for a second.
 player: Can I ask what happened to you?
 widow: Of course. Many years ago, in a tragic accident, I lost my child and husband.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Single_Mono_06.wav" volume="0.0"]

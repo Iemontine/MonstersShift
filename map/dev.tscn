@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://moodc767j6bj"]
+[gd_scene load_steps=16 format=4 uid="uid://moodc767j6bj"]
 
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="1_2im0w"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_bo5tw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="6_8i6jl"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="7_o2eel"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_8d6uy"]
+[ext_resource type="PackedScene" uid="uid://dxiydhu8wr4dn" path="res://interactable/test_cutscene.tscn" id="11_5khfr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2eel"]
 texture = ExtResource("1_2im0w")
@@ -9986,3 +9987,6 @@ position = Vector2(-56, -56)
 position = Vector2(-40, -184)
 destination_scene = "Treehouse_Interior"
 target_door = "Door_Treehouse"
+
+[node name="TestCutscene" parent="." instance=ExtResource("11_5khfr")]
+position = Vector2(160, 42)

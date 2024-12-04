@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="untitledhorror"
-run/main_scene="res://map/bakery.tscn"
+config/name="MonstersShift"
+run/main_scene="res://map/treehouse_interior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -44,6 +44,7 @@ directories/dtl_directory={
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
 "baker_fail_night": "res://dialogic/Timelines/Baker/baker_fail_night.dtl",
 "baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",
+"baker_player_insomnia": "res://dialogic/Timelines/Baker/baker_player_insomnia.dtl",
 "baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
 "baker_success_night": "res://dialogic/Timelines/Baker/baker_success_night.dtl",
 "click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
@@ -60,6 +61,7 @@ directories/dtl_directory={
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
 "widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
+"widow_player_insomnia": "res://dialogic/Timelines/Widow/widow_player_insomnia.dtl",
 "widow_success_daytime": "res://dialogic/Timelines/Widow/widow_success_daytime.dtl",
 "widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl"
 }
@@ -91,6 +93,10 @@ text/autopauses={}
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -215,4 +221,4 @@ load={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.366595, 0.366595, 0.366595, 1)
+environment/defaults/default_clear_color=Color(0.122252, 0.122252, 0.122252, 1)

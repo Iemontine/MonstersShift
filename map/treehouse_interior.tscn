@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://maal4dmma0vp" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/6_Music_and_sport_Shadowless.png" id="11_6iqdp"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
+[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
+[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
+[ext_resource type="PackedScene" uid="uid://bq2wbg5ks1bxv" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("4_he1c2")
@@ -20739,11 +20742,12 @@ sources/9 = SubResource("TileSetAtlasSource_ms87o")
 [node name="Treehouse_Interior" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 position = Vector2(0, -81)
 zoom = Vector2(3, 3)
 script = ExtResource("2_pdgtp")
+target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
 position = Vector2(109, -116)
@@ -20783,5 +20787,14 @@ target_door = "Door_Treehouse"
 
 [node name="Spawnpoint" parent="Door_Treehouse" index="2"]
 position = Vector2(0, 19)
+
+[node name="BedCutscene" parent="." instance=ExtResource("8_dhls6")]
+position = Vector2(-75, 98)
+
+[node name="PictureFrameCutscene" parent="." instance=ExtResource("9_6koqr")]
+position = Vector2(17, -18)
+
+[node name="RecordPlayerCutscene" parent="." instance=ExtResource("10_12jsx")]
+position = Vector2(83, 61)
 
 [editable path="Door_Treehouse"]
