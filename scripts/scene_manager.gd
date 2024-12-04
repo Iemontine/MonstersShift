@@ -105,11 +105,17 @@ func handle_day_shift(player:Player) -> void:
 	var lights := get_tree().get_nodes_in_group("light")
 	
 	# add a special case for evenining
-	if time_of_day == TIME.DAY or time_of_day == TIME.EVENING:
+	if time_of_day == TIME.DAY:
 		for light in lights:
 			light.enabled = false
 		if surroundings != null:
 			surroundings.color = Color("#ffffff")
+	elif time_of_day == TIME.EVENING:
+		if surroundings != null:
+			for light : PointLight2D in lights:
+				light.enabled = true
+				light.energy = 0.5
+			surroundings.color = Color("#fabb7b")
 	elif time_of_day == TIME.NIGHT:
 		for light in lights:
 			light.enabled = true
