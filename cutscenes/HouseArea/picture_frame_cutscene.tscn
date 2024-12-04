@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20gua"]
 size = Vector2(26, 27)
 
-[node name="PictureFrameCutscene" type="Area2D"]
+[node name="PictureFrameCutscene" type="StaticBody2D"]
 script = ExtResource("1_20gua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -14,6 +14,8 @@ enum Event {
 	END 
 }
 
+var check_for_bed = false
+
 var _event_name:String = ""
 
 @onready var current_event = Event.INTRO
@@ -38,10 +40,16 @@ func _on_scene_transition_completed():
 			if SceneManager.current_scene == "Treehouse_Exterior":
 				_event_name = "exit_house_postarrival"
 				PlayerController.start_cutscene(_event_name)
-		# Event.CLICK_ON_PICTURE_FRAME:
-		# 	_event_name = "click_on_picture_frame"
-		# Event.CLICK_ON_RECORD_PLAYER:
-		# 	_event_name = "click_on_record_player"
+		Event.CLICK_ON_PICTURE_FRAME:
+			_event_name = "click_on_picture_frame"
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
+		Event.CLICK_ON_RECORD_PLAYER:
+			_event_name = "click_on_record_player"
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
 		# Event.EXIT_HOUSE_POSTARRIVAL:
 		# 	_event_name = "exit_house_postarrival"
 		Event.OUTSIDE_BAKERY:
