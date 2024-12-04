@@ -8,7 +8,7 @@ size = Vector2(16, 32)
 
 [node name="Sign" type="StaticBody2D"]
 physics_interpolation_mode = 2
-script = ExtResource("1_varwe")
+script = ExtResource("1_61ity")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 8)

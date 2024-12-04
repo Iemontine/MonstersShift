@@ -29738,11 +29738,9 @@ curve = SubResource("Curve2D_qgqjp")
 [node name="PathFollow2D" type="PathFollow2D" parent="NPC_Widow/Path2D"]
 position = Vector2(107, 52)
 
-[node name="NPC_Baker" parent="." node_paths=PackedStringArray("path") instance=ExtResource("25_0i5uc")]
+[node name="NPC_Baker" parent="." instance=ExtResource("25_0i5uc")]
 y_sort_enabled = true
 position = Vector2(-297, -537)
-path = NodePath("Path2D")
-stop_points = Array[int]([1, 2, 3, 4])
 
 [node name="Path2D" type="Path2D" parent="NPC_Baker"]
 top_level = true
