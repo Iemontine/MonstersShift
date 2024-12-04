@@ -27,8 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
-[ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/outside_bakery_cutscene.tscn" id="28_q1b8d"]
-[ext_resource type="Script" uid="uid://1j6afns5tvag" path="res://cutscenes/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
+[ext_resource type="Script" uid="uid://1j6afns5tvag" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")

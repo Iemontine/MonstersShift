@@ -1,5 +1,7 @@
 # Click on picture frame inside the house
+[signal arg="control"]
 The picture depicts a familiar face, only older and tired, with his arms wrapped around some people you don’t recognize.
 Seeing these strangers smiling and laughing with Benjamin leaves a pang in your heart along with lingering confusion.
 player: What… was Benjamin not a loner? Who are these people?
 player: They might know more about what happened to him…maybe I can find them?
+[signal arg="uncontrol"]

@@ -33,8 +33,12 @@ func _on_scene_transition_completed():
 		# 	_event_name = "intro"
 		# Event.ARRIVAL_START_OUTSIDE:
 		# 	_event_name = "arrival_start_outside"
-		# Event.CLICK_ON_BED:
-		# 	_event_name = "click_on_bed"
+		Event.CLICK_ON_BED:
+			_event_name = "click_on_bed"
+			print(SceneManager.current_scene)
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
 		# Event.CLICK_ON_PICTURE_FRAME:
 		# 	_event_name = "click_on_picture_frame"
 		# Event.CLICK_ON_RECORD_PLAYER:

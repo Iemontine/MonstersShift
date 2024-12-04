@@ -1,2 +1,4 @@
+[signal arg="control"]
 # Occurs right after exploring the house and then exiting it
 player: I think I need to go to town and see if I can find any clues about Benjamin’s life here.
+[signal arg="uncontrol"]
