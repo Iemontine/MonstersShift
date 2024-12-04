@@ -1719,12 +1719,12 @@ target_door = "Door_Treehouse"
 position = Vector2(0, 19)
 
 [node name="BedCutscene" parent="." instance=ExtResource("8_dhls6")]
-position = Vector2(74, 96)
+position = Vector2(-75, 98)
 
 [node name="PictureFrameCutscene" parent="." instance=ExtResource("9_6koqr")]
-position = Vector2(35, -16)
+position = Vector2(17, -18)
 
 [node name="RecordPlayerCutscene" parent="." instance=ExtResource("10_12jsx")]
-position = Vector2(-78, 65)
+position = Vector2(83, 61)
 
 [editable path="Door_Treehouse"]
