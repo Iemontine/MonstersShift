@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=75 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://1vtbnqixpft8" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/13_School_16x16.png" id="16_pwx13"]
 [ext_resource type="Texture2D" uid="uid://dd84hr3xw7vey" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/14_Swimming_Pool_16x16.png" id="17_n1kx1"]
 [ext_resource type="Texture2D" uid="uid://bp8newl8ec6t4" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/16_Office_16x16.png" id="19_by33p"]
-[ext_resource type="Script" uid="uid://3xsgx6mgsh3b" path="res://interactable/door.gd" id="21_8yffl"]
+[ext_resource type="Script" uid="uid://c56swi3ppx7u8" path="res://interactable/door.gd" id="21_8yffl"]
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="22_5j3o1"]
 [ext_resource type="Texture2D" uid="uid://b7wdtlbcje3hj" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Floor_Modular_Buildings_1_Door_Bakery_16x16.png" id="22_8yffl"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="22_lvha8"]
@@ -28,7 +28,8 @@
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
 [ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
-[ext_resource type="Script" uid="uid://1j6afns5tvag" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="Script" uid="uid://bli66x72o7avx" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29062,6 +29063,12 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_jrct8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1136, -176, 0, 0, 0, 0, -1136, -144, 0, 0, 0, 0, -1280, -144, 0, 0, 0, 0, -1280, -176, 0, 0, 0, 0, -1328, -176, 0, 0, 0, 0, -1328, -144, 0, 0, 0, 0, -2160, -144, 0, 0, 0, 0, -2160, -448, 0, 0, 0, 0, -1336, -440, 0, 0, 0, 0, -1336, -464)
+}
+point_count = 10
+
 [sub_resource type="Curve2D" id="Curve2D_qgqjp"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 107, 52, 0, 0, 0, 0, 232, 52, 0, 0, 0, 0, 232, 126, 0, 0, 0, 0, 107, 126, 0, 0, 0, 0, 107, 52)
@@ -29642,7 +29649,7 @@ y_sort_enabled = true
 position = Vector2(-1144, -208)
 script = ExtResource("21_8yffl")
 destination_scene = "Conbini"
-target_door = "Door_Conbini1"
+target_door = "Door_Conbini2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini1"]
 z_index = 1
@@ -29663,7 +29670,7 @@ y_sort_enabled = true
 position = Vector2(-1048, -208)
 script = ExtResource("21_8yffl")
 destination_scene = "Conbini"
-target_door = "Door_Conbini2"
+target_door = "Door_Conbini1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini2"]
 z_index = 1
@@ -29694,6 +29701,7 @@ sprite_frames = SubResource("SpriteFrames_8yffl")
 animation = &"door_open"
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
+z_index = 10
 position = Vector2(1, 20)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
@@ -29704,8 +29712,15 @@ zoom = Vector2(3, 3)
 script = ExtResource("25_x3iwy")
 target = NodePath("../Player")
 
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jrct8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1136, -176)
+rotation = 1.5708
+
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-1745, -166)
+position = Vector2(-1072, -149)
 
 [node name="NPC_Widow" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
@@ -29738,3 +29753,6 @@ position = Vector2(107, 52)
 [node name="OutsideBakeryCutscene" parent="." instance=ExtResource("28_q1b8d")]
 position = Vector2(-1863, -153)
 script = ExtResource("29_q1b8d")
+
+[node name="TestCutscene" parent="." instance=ExtResource("30_jrct8")]
+position = Vector2(-1160, -175)

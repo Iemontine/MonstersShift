@@ -38,15 +38,15 @@ func handle_movement(delta):
 	global_position = path_follow.get_global_position()
 	travel_to_anim("Walk", direction_vector)
 
-	for stop_index in stop_points:
-		if global_position.distance_to(path.curve.get_point_position(stop_index)) < 10:
-			stop_event(stop_index)
+	# for stop_index in stop_points:
+	# 	if global_position.distance_to(path.curve.get_point_position(stop_index)) < 10:
+	# 		stop_event(stop_index)
 
 
-func stop_event(stop_index):
-	speed = 0
-	await get_tree().create_timer(1).timeout
-	speed = original_speed
+# func stop_event(stop_index):
+# 	speed = 0
+# 	await get_tree().create_timer(1).timeout
+# 	speed = original_speed
 
 
 func _physics_process(delta):

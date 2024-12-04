@@ -1691,11 +1691,12 @@ sources/5 = SubResource("TileSetAtlasSource_hw1gd")
 
 [node name="Treehouse_Interior" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 position = Vector2(0, -81)
 zoom = Vector2(3, 3)
 script = ExtResource("2_pdgtp")
+target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
 z_index = 1

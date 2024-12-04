@@ -98,4 +98,4 @@ func _process(_delta: float) -> void:
 		load_game()
 		print("load")
 		
-	print("Time of day: ", SceneManager.time_of_day)
+	# print("Time of day: ", SceneManager.time_of_day)
