@@ -20,10 +20,10 @@ config/icon="res://icon.svg"
 PlayerController="*res://scripts/player_controller.gd"
 SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryManager="*res://scripts/story_manager.gd"
 <<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
