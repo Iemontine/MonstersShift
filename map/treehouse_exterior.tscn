@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dkjd2a74ar4fy"]
+[gd_scene load_steps=23 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="2_nucyf"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxiydhu8wr4dn" path="res://interactable/test_cutscene.tscn" id="12_vut3b"]
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 [ext_resource type="PackedScene" uid="uid://ftjlrq5makyi" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.tscn" id="13_ni0hd"]
+[ext_resource type="PackedScene" uid="uid://cqq1lhxfiyg3q" path="res://cutscenes/HouseArea/leave_too_early_cutscene.tscn" id="14_nucyf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
 texture = ExtResource("3_8iffc")
@@ -16725,5 +16726,8 @@ destination_loadzone = "Loadzone_Treehouse"
 
 [node name="OutsideTreehouseCutscene" parent="." instance=ExtResource("13_ni0hd")]
 position = Vector2(891, -359)
+
+[node name="LeaveTooEarlyCutscene" parent="." instance=ExtResource("14_nucyf")]
+position = Vector2(283, 3)
 
 [editable path="Door_Treehouse"]
