@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b5vbrn4n2gs74"]
+[gd_scene load_steps=44 format=4 uid="uid://b5vbrn4n2gs74"]
 
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
 [ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
@@ -7,16 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://b8mc2issdqycu" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/16_Grocery_store_16x16.png" id="5_5vmdk"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="7_leub4"]
-[ext_resource type="Script" uid="uid://c56swi3ppx7u8" path="res://interactable/door.gd" id="8_qnp4u"]
-[ext_resource type="PackedScene" uid="uid://bywfnd7utfd7x" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
+[ext_resource type="Script" uid="uid://4opmqbuwlfpx" path="res://interactable/door.gd" id="8_qnp4u"]
+[ext_resource type="PackedScene" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
-[ext_resource type="Script" uid="uid://bb5vmmj8012hl" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
+[ext_resource type="Script" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
 [ext_resource type="Texture2D" uid="uid://cj5u1w22hvh6a" path="res://assets/assets_widow/watermelon1.png" id="11_ffkw8"]
 [ext_resource type="Texture2D" uid="uid://rum8rc8a2dli" path="res://assets/assets_widow/watermelon2.png" id="12_hc52d"]
 [ext_resource type="Texture2D" uid="uid://bqor2m8j2rgww" path="res://assets/assets_widow/holding.png" id="13_84gf0"]
 [ext_resource type="Texture2D" uid="uid://bgiq32cub0w77" path="res://assets/assets_widow/watermelon3.png" id="13_eebgc"]
-[ext_resource type="Shader" uid="uid://bn5m58kv2s8xw" path="res://shaders/grayscale.gdshader" id="14_ashp5"]
-[ext_resource type="Texture2D" uid="uid://ctasx5ys0ajvb" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png" id="17_eebgc"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="14_ashp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ohj"]
 texture = ExtResource("1_mtsbs")
@@ -3173,9 +3172,3 @@ scale = Vector2(0.260119, 0.260119)
 mouse_filter = 2
 texture = ExtResource("11_ffkw8")
 expand_mode = 1
-
-[node name="16GroceryStoreBlackShadow16x16" type="Sprite2D" parent="."]
-position = Vector2(-665, -154)
-texture = ExtResource("17_eebgc")
-region_enabled = true
-region_rect = Rect2(224, 232, 16, 16)
