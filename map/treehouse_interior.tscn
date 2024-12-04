@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://dg5e1j6trerk0"]
+[gd_scene load_steps=28 format=4 uid="uid://dg5e1j6trerk0"]
 
-[ext_resource type="Script" path="res://prefabs/scripts/camera.gd" id="2_pdgtp"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="2_pdgtp"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="4_mxmix"]
 [ext_resource type="Texture2D" uid="uid://dmlf7ovlrtnon" path="res://assets/tileset/interiors/1_Interiors/Interiors_16x16.png" id="5_7w46f"]
@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://cdv4jlnyyel50" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floor_Shadows_16x16.png" id="6_njdqb"]
 [ext_resource type="Texture2D" uid="uid://rj7m3vr08uxi" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="7_ecpsx"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="7_ya4jy"]
+[ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
 [ext_resource type="Texture2D" uid="uid://boplmfg22sf2d" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/4_Bedroom_Shadowless.png" id="9_4hge0"]
+[ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
+[ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://maal4dmma0vp" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/6_Music_and_sport_Shadowless.png" id="11_6iqdp"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
-[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
-[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
-[ext_resource type="PackedScene" uid="uid://bq2wbg5ks1bxv" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("4_he1c2")
@@ -20750,13 +20750,22 @@ script = ExtResource("2_pdgtp")
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
-position = Vector2(109, -116)
+position = Vector2(-36, 25)
 
 [node name="interior layer -- top decor" type="TileMapLayer" parent="."]
 z_index = 3
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAFAAUAAgAAAAoCAAADAAUABgABAEUAABADAAYABgABAEYAABD6/wIAAgACAAYCAAD6/wUAAgARAAIAAAD6//v/AgAAALsAAAD6//z/AgAAALwAAAAFAPv/AgADALsAAAAFAPz/AgADALwAAAD7////AgAcABoBAAD6/wYACQAIAAYAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
+
+[node name="RecordPlayerCutscene" parent="interior layer -- top decor" instance=ExtResource("10_12jsx")]
+position = Vector2(-88, 86)
+
+[node name="PictureFrameCutscene" parent="interior layer -- top decor" instance=ExtResource("9_6koqr")]
+position = Vector2(-88, 43)
+
+[node name="BedCutscene" parent="interior layer -- top decor" instance=ExtResource("8_dhls6")]
+position = Vector2(74, 90)
 
 [node name="interior layer -- furniture higher2" type="TileMapLayer" parent="."]
 z_index = 2
@@ -20787,14 +20796,5 @@ target_door = "Door_Treehouse"
 
 [node name="Spawnpoint" parent="Door_Treehouse" index="2"]
 position = Vector2(0, 19)
-
-[node name="BedCutscene" parent="." instance=ExtResource("8_dhls6")]
-position = Vector2(-75, 98)
-
-[node name="PictureFrameCutscene" parent="." instance=ExtResource("9_6koqr")]
-position = Vector2(17, -18)
-
-[node name="RecordPlayerCutscene" parent="." instance=ExtResource("10_12jsx")]
-position = Vector2(83, 61)
 
 [editable path="Door_Treehouse"]

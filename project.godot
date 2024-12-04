@@ -20,10 +20,10 @@ config/icon="res://icon.svg"
 PlayerController="*res://scripts/player_controller.gd"
 SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryManager="*res://scripts/story_manager.gd"
 <<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -35,7 +35,6 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Timelines/test": "res://dialogic/Timelines/test.dtl",
-"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
 "arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
@@ -57,6 +56,7 @@ directories/dtl_directory={
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/test.dtl",
+"test2": "res://dialogic/Timelines/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
@@ -221,4 +221,4 @@ load={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.122252, 0.122252, 0.122252, 1)
+environment/defaults/default_clear_color=Color(0.255659, 0.255659, 0.255659, 1)
