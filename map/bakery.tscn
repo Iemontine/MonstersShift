@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="13_jqod6"]
-[ext_resource type="Script" uid="uid://ci5ejr68eafbe" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="Script" uid="uid://c56swi3ppx7u8" path="res://interactable/door.gd" id="14_x3sc3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cyfo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6x0wb"]
 texture = ExtResource("1_fcgx5")
 52:96/0 = 0
 52:96/0/y_sort_origin = -5
@@ -352,7 +352,7 @@ texture = ExtResource("1_fcgx5")
 5:45/0 = 0
 5:45/0/y_sort_origin = 22
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6x0wb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcgx5"]
 texture = ExtResource("2_jjlq4")
 0:0/size_in_atlas = Vector2i(2, 1)
 0:0/animation_columns = 3
@@ -362,7 +362,7 @@ texture = ExtResource("2_jjlq4")
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbpre"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjlq4"]
 texture = ExtResource("3_yu6ri")
 5:40/size_in_atlas = Vector2i(1, 2)
 5:40/0 = 0
@@ -488,7 +488,7 @@ texture = ExtResource("3_yu6ri")
 8:15/0 = 0
 8:15/0/y_sort_origin = 21
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xblhb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yu6ri"]
 texture = ExtResource("4_ffbsp")
 7:5/0 = 0
 8:5/0 = 0
@@ -500,16 +500,16 @@ texture = ExtResource("4_ffbsp")
 10:0/0 = 0
 10:0/0/texture_origin = Vector2i(-8, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5gx6c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffbsp"]
 texture = ExtResource("5_igw2u")
 
 [sub_resource type="TileSet" id="TileSet_0210a"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7cyfo")
-sources/8 = SubResource("TileSetAtlasSource_xblhb")
-sources/9 = SubResource("TileSetAtlasSource_5gx6c")
-sources/10 = SubResource("TileSetAtlasSource_lbpre")
-sources/1 = SubResource("TileSetAtlasSource_6x0wb")
+sources/0 = SubResource("TileSetAtlasSource_6x0wb")
+sources/8 = SubResource("TileSetAtlasSource_yu6ri")
+sources/9 = SubResource("TileSetAtlasSource_ffbsp")
+sources/10 = SubResource("TileSetAtlasSource_jjlq4")
+sources/1 = SubResource("TileSetAtlasSource_fcgx5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu6ri"]
 size = Vector2(32, 32)

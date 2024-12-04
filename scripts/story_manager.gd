@@ -104,7 +104,7 @@ func enable_grocery_items():
 	#enabled_item.exclamation_sprite.visible = true
 
 func start_player_path_follow(player):
-	player.speed = 100  # Set the speed for the player
+	player.speed = 50  # Set the speed for the player
 	player.path_following = true
 	player.state = Player.PlayerState.CONTROLLED
 	player.follow_path()

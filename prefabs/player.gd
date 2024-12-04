@@ -39,7 +39,6 @@ func _ready():
 func _physics_process(delta):
 	if state == PlayerState.CONTROLLED and path_following:
 		_on_path_follow_timeout(delta)
-		return
 
 	if state == PlayerState.LOCKED: return
 
@@ -51,6 +50,7 @@ func _process(_delta: float) -> void:
 	var state_names = ["NORMAL", "LOCKED", "CONTROLLED", "CARRYING_ITEM"]
 	$Label.text = "State: " + state_names[int(state)] + ", Animation: " + animationState.get_current_node()
 	carry_item()
+	carried_item.visible = state == PlayerState.CARRYING_ITEM or path_following
 	if state == PlayerState.CONTROLLED: return
 
 	current_interactable = get_interactable()
@@ -106,7 +106,7 @@ func update_speed_and_animation():
 			speed = default_speed
 		if state == PlayerState.CARRYING_ITEM:
 			movement.movement_anim = "WalkCarry"
-		else:
+		elif state != PlayerState.CONTROLLED and !path_following:
 			movement.movement_anim = "Walk"
 
 func handle_input():
@@ -138,7 +138,7 @@ func update_hold_time():
 
 func carry_item() -> void:
 	if not carried_item: return
-	carried_item.visible = state == PlayerState.CARRYING_ITEM
+	carried_item.visible = state == PlayerState.CARRYING_ITEM or path_following # TODO: and state is DAY_WIDOW_GAME
 
 func _on_freeze():
 	state = PlayerState.LOCKED
@@ -181,18 +181,22 @@ func follow_path():
 	path_follow.set_loop(false)
 	path_follow.set_cubic_interpolation(true)
 	path_following = true
+	# Hacky hold logic
+	var texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png")
+	var atlas_texture = AtlasTexture.new()
+	atlas_texture.atlas = texture
+	atlas_texture.region = Rect2(224, 232, 16, 16)
+	carried_item.texture = atlas_texture
 
 func _on_path_follow_timeout(delta):
-	path_follow.progress_ratio += (speed / 3000.0) * delta
+	var path : Path2D = get_parent().get_node_or_null("Path2D")
+	var path_length = path.curve.get_baked_length()
+	path_follow.progress_ratio += (speed / path_length) * delta
 	var direction_vector = (path_follow.get_global_position() - global_position).normalized()
-	direction_vector.x = round(direction_vector.x)
-	direction_vector.y = round(direction_vector.y)
-	if abs(direction_vector.x) > abs(direction_vector.y):
-		direction_vector.y = 0
-	else:
-		direction_vector.x = 0
 	global_position = path_follow.get_global_position()
-	travel_to_anim("Walk", direction_vector)
+	travel_to_anim("WalkCarry", direction_vector)
+	get_node("Movement").movement_anim = "WalkCarry"
+	
 	if path_follow.progress_ratio >= 1.0:
 		path_following = false
 		state = PlayerState.NORMAL

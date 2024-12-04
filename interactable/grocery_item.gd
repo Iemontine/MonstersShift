@@ -113,7 +113,7 @@ func animate_nodes_down() -> void:
 	var paper: Control = grocery_ui.get_node("Paper")
 	var hint: Control = grocery_ui.get_node("Hint")
 	
-	var tween: Tween = get_tree().create_tween().set_parallel(true)
+	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(paper, "position:y", paper.position.y + 100, 0.5)
 	tween.tween_property(hint, "position:y", hint.position.y + 100, 0.5)
 	
@@ -127,7 +127,7 @@ func animate_nodes_up() -> void:
 	var paper: Control = grocery_ui.get_node("Paper")
 	var hint: Control = grocery_ui.get_node("Hint")
 	
-	var tween: Tween = get_tree().create_tween().set_parallel(true)
+	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(paper, "position:y", paper.position.y - 100, 0.5)
 	tween.tween_property(hint, "position:y", hint.position.y - 100, 0.5)
 	

@@ -81,7 +81,7 @@ func moveRight() -> void:
 
 # TODO: get the player facing in the last direction they moved in instead of assuming left facing when calling stop()
 func stop() -> void:
-	player.direction = Vector2(0, 0)
+	# player.direction = Vector2(0, 0)
 	print("Stopping")
 
 func _on_path_follow_completed():
