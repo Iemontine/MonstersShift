@@ -1,12 +1,16 @@
 # SceneManager - Global Autoloaded Singleton
 extends Node
 
+enum TIME {DAY, EVENING, NIGHT}
+
 signal scene_transition_completed
 
 var scene_path = "res://map/"
 var dest_path: String
 var dest_player: Player
+
 var current_scene: String
+var time_of_day = TIME.DAY
 
 func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
 	TransitionScreen.transition()
@@ -30,6 +34,7 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	
 	dest_player.global_position = pos
 	dest_player.direction = dir
+	handle_day_shift(dest_player)
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
@@ -52,6 +57,8 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	dest_player.travel_to_anim("Idle")
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED
+	
+	handle_day_shift(dest_player)
 	
 	if loadzone_name.begins_with("Loadzone"):
 		move_player_to_loadzone(new_scene, dest_player, loadzone_name)
@@ -94,3 +101,31 @@ func move_player_to_door(new_scene, player, door_name):
 		var camera = new_scene.get_node("Camera2D")
 		if camera:
 			camera.target = player
+
+func handle_day_shift(player:Player) -> void:
+	
+	var surroundings:= player.get_parent().get_node_or_null("Surroundings")
+	var lights := get_tree().get_nodes_in_group("light")
+	
+	# add a special case for evenining
+	if time_of_day == TIME.DAY:
+		for light : PointLight2D  in lights:
+			light.enabled = false
+		if surroundings != null:
+			surroundings.color = Color("#ffffff")
+	elif time_of_day == TIME.EVENING:
+		if surroundings != null:
+			for light : PointLight2D in lights:
+				light.enabled = true
+				light.energy = 0.5
+			surroundings.color = Color("#fabb7b")
+	elif time_of_day == TIME.NIGHT:
+		for light : PointLight2D  in lights:
+			light.enabled = true
+			light.energy = 1.0
+		if surroundings != null:
+			surroundings.color = Color("#132771")
+
+func change_time_of_day(player:Player) -> void:
+	time_of_day = ( time_of_day + 1 ) % 3
+	handle_day_shift(player)

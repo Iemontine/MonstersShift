@@ -16691,7 +16691,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(0, 20)
 
-[node name="TreehouseLight" type="PointLight2D" parent="."]
+[node name="TreehouseLight" type="PointLight2D" parent="." groups=["light"]]
 y_sort_enabled = true
 position = Vector2(912, -377)
 scale = Vector2(0.53125, 0.515625)
