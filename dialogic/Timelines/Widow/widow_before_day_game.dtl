@@ -7,7 +7,6 @@ A note slides under the door. It’s a shopping list stained with tears.
 - Help the Widow
 	player: Of course, I’ll be right back
 	Better head to town and get those groceries.
-- Come back later
-	player: I can’t right now but I’ll come back later.
-	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Sigh_Mono_12.wav" volume="0.0"]
-	widow: No worries….
+- She's so sad, how could I leave?
+	player: Of course, I’ll be right back
+	Better head to town and get those groceries.

@@ -2,7 +2,7 @@
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Closet_Key_Insertion_Stereo.wav" volume="5.0"]
 [wait time="0.5" hide_text="false"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Window_Mechanism_Old_Solo_Stereo.wav" volume="5.0"]
-As you run into the [treehouse/rv], you lock the door and peer out the windows. You see the baker approaching.
+As you run into the treehouse, you lock the door and peer out the windows. You see the baker approaching.
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_short_07.wav" volume="-20.0"]
 baker: Mmmmm….graahh….I am so so hungry
 player: I did not come here to become zombie food, I must survive!

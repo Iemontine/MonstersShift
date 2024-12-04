@@ -5,7 +5,7 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, EXIT_HOUSE_POSTARRIVAL,
+	CLICK_ON_RECORD_PLAYER, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, 
 	BAKER_BEFORE_NIGHT_GAME, BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT,
@@ -13,6 +13,8 @@ enum Event {
 	WIDOW_FAIL_DAYTIME, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	END 
 }
+
+var check_for_bed = false
 
 var _event_name:String = ""
 
@@ -33,12 +35,21 @@ func _on_scene_transition_completed():
 		# 	_event_name = "intro"
 		# Event.ARRIVAL_START_OUTSIDE:
 		# 	_event_name = "arrival_start_outside"
-		# Event.CLICK_ON_BED:
-		# 	_event_name = "click_on_bed"
-		# Event.CLICK_ON_PICTURE_FRAME:
-		# 	_event_name = "click_on_picture_frame"
-		# Event.CLICK_ON_RECORD_PLAYER:
-		# 	_event_name = "click_on_record_player"
+		Event.CLICK_ON_BED:
+			_event_name = "click_on_bed"
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
+		Event.CLICK_ON_PICTURE_FRAME:
+			_event_name = "click_on_picture_frame"
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
+		Event.CLICK_ON_RECORD_PLAYER:
+			_event_name = "click_on_record_player"
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "exit_house_postarrival"
+				PlayerController.start_cutscene(_event_name)
 		# Event.EXIT_HOUSE_POSTARRIVAL:
 		# 	_event_name = "exit_house_postarrival"
 		Event.OUTSIDE_BAKERY:
