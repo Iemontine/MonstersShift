@@ -1,0 +1,5 @@
+# Player insomnia before going to bakery
+[signal arg="control"]
+After hours of tossing and turning, you decide to get out of bed.
+player: I just can't sleep...might as well go for a walk.
+[signal arg="uncontrol"]

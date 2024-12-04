@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="untitledhorror"
-run/main_scene="res://map/bakery.tscn"
+config/name="MonstersShift"
+run/main_scene="res://map/treehouse_exterior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -35,7 +35,6 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Timelines/test": "res://dialogic/Timelines/test.dtl",
-"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
 "arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
@@ -44,6 +43,7 @@ directories/dtl_directory={
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
 "baker_fail_night": "res://dialogic/Timelines/Baker/baker_fail_night.dtl",
 "baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",
+"baker_player_insomnia": "res://dialogic/Timelines/Baker/baker_player_insomnia.dtl",
 "baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
 "baker_success_night": "res://dialogic/Timelines/Baker/baker_success_night.dtl",
 "click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
@@ -56,10 +56,12 @@ directories/dtl_directory={
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/test.dtl",
+"test2": "res://dialogic/Timelines/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
 "widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
+"widow_player_insomnia": "res://dialogic/Timelines/Widow/widow_player_insomnia.dtl",
 "widow_success_daytime": "res://dialogic/Timelines/Widow/widow_success_daytime.dtl",
 "widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl"
 }
@@ -91,6 +93,10 @@ text/autopauses={}
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

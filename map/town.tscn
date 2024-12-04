@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=73 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
+[ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
+[ext_resource type="Script" uid="uid://1j6afns5tvag" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29734,3 +29736,7 @@ curve = SubResource("Curve2D_qgqjp")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="NPC_Baker/Path2D"]
 position = Vector2(107, 52)
+
+[node name="OutsideBakeryCutscene" parent="." instance=ExtResource("28_q1b8d")]
+position = Vector2(-1863, -153)
+script = ExtResource("29_q1b8d")

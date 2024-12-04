@@ -1,0 +1,5 @@
+# Player insomnia before going to convenience store
+[signal arg="control"]
+Once again, sleep eludes you.
+player: Maybe a drink or something will help me relax. I'm going to the store.
+[signal arg="uncontrol"]
