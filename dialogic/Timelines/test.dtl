@@ -1,5 +1,15 @@
 what a funy looking sign
-- yeah!
-	sign: how DARE you. my family started this country, by the way.
-- No
-	the sign nods in approval
+[signal arg="control_npc"]
+do NpcController.set_target_npc("Dev TODO Integrate door and fix other fx/NPC_Baker")
+do NpcController.setSpeed(100)
+do NpcController.moveUp()
+[wait time="1.0"]
+do NpcController.stop()
+[wait time="1.0"]
+do NpcController.moveDown()
+[wait time="1.0"]
+do NpcController.stop()
+do NpcController.playAnimation("MusicSinging", 0, 1)
+[wait time="1.0"]
+do NpcController.animationComplete()
+[signal arg="uncontrol_npc"]

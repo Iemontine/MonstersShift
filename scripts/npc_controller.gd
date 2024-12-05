@@ -1,17 +1,28 @@
+#Global Class: NpcController
 extends Node
 
 var npc: NPC
 
 func set_target_npc(npc_name: String) -> void:
-	npc = get_node_or_null(npc_name)
-	if npc:
-		print("NPC Controller: Target NPC set to ", npc_name)
-	else:
-		print("NPC Controller: NPC not found")
+	var current_scene = get_tree().current_scene
+	npc = current_scene.get_node_or_null(npc_name)
 
-func playAnimation(animName: String, direction: Vector2 = Vector2.ZERO) -> void:
+func _on_dialogic_signal(argument:String):
+	print(argument)
+	if argument == "control_npc":
+		control_npc()
+	elif argument == "uncontrol_npc":
+		uncontrol_npc()
+
+func control_npc() -> void:
+	npc.state = NPC.NPCState.CONTROLLED
+
+func uncontrol_npc() -> void:
+	npc.state = NPC.NPCState.NORMAL
+
+func playAnimation(animName: String, direction_x: int = 0, direction_y: int = 0) -> void:
 	if npc:
-		npc.playAnimation(animName, direction)
+		npc.playAnimation(animName, Vector2(direction_x, direction_y))
 
 func animationComplete() -> void:
 	if npc:

@@ -10,7 +10,6 @@ var path_follow: PathFollow2D
 
 func _ready() -> void:
 	if path: path_follow = path.get_node_or_null("PathFollow2D")
-	speed /= 1000.0
 
 
 func travel_to_anim(animName:String, direction = null):

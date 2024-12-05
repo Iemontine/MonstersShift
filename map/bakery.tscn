@@ -824,7 +824,7 @@ item_region_rect = Rect2(192, 464, 16, 16)
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
 position = Vector2(-104, 29)
 
-[node name="Dev TODO, Integrate door and fix other fx" type="Node2D" parent="."]
+[node name="Dev TODO Integrate door and fix other fx" type="Node2D" parent="."]
 position = Vector2(-48, -176)
 
 [node name="Chair1" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
