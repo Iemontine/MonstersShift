@@ -11,5 +11,5 @@ widow: He used to come visit me at my house by [location] and keep me company.
 player: Did you know him? I’d like to know what happened to him.
 widow: Ah yes. He helped me out after…
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Sigh_Mono_01.wav" volume="-2.0"]
-The woman stops speaking and tears begin to fall from her eyes.
-player: She seems like she needs space, maybe I’ll find her again later.
+The woman stops speaking and tears begin to fall from her eyes. She runs off to the house next door.
+player: Is she okay? Maybe I can help her.
