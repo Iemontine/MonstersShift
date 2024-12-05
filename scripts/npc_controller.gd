@@ -5,6 +5,7 @@ var npc: NPC
 
 func set_target_npc(npc_name: String) -> void:
 	var current_scene = get_tree().current_scene
+	print(current_scene.get_node_or_null(npc_name))
 	npc = current_scene.get_node_or_null(npc_name)
 
 func _on_dialogic_signal(argument:String):
