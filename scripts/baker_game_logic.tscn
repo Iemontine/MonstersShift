@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct2t64jd11l0j"]
 
-[ext_resource type="Script" path="res://baker_game_logic.gd" id="1_xn047"]
+[ext_resource type="Script" uid="uid://csdgjtk63kbes" path="res://scripts/baker_game_logic.gd" id="1_xn047"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrvjx"]
 bg_color = Color(0.91154, 0.678785, 0.759224, 1)

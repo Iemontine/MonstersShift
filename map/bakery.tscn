@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://bu6o8lxvf718k" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/13_Conference_Hall_Black_Shadow_16x16.png" id="16_eyyg0"]
 [ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="16_yu6ri"]
 [ext_resource type="Texture2D" uid="uid://mw38uglnpyjg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="17_farls"]
-[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://board_ui.tscn" id="17_ffbsp"]
-[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://baker_game_logic.tscn" id="18_igw2u"]
+[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="17_ffbsp"]
+[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
 [ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
 [ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
 
