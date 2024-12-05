@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://38pmhp2ff8f7"]
+
+[ext_resource type="Script" uid="uid://day7n2ftv55v8" path="res://cutscenes/WidowArea/widow_door_cutscene.gd" id="1_d1drc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1drc"]
+size = Vector2(67, 51)
+
+[node name="WidowDoorCutscene" type="StaticBody2D"]
+script = ExtResource("1_d1drc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_d1drc")

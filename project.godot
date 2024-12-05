@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 PlayerController="*res://scripts/player_controller.gd"
 SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryManager="*res://scripts/story_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 NpcController="*res://scripts/npc_controller.gd"
 
 [dialogic]
@@ -49,6 +49,7 @@ directories/dtl_directory={
 "click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
 "click_on_picture_frame": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_picture_frame.dtl",
 "click_on_record_player": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_record_player.dtl",
+"day_two_morning": "res://dialogic/Timelines/Widow/day_two_morning.dtl",
 "exit_house_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/exit_house_postarrival.dtl",
 "first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
@@ -220,4 +221,4 @@ load={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.122252, 0.122252, 0.122252, 1)
+environment/defaults/default_clear_color=Color(0.255659, 0.255659, 0.255659, 1)
