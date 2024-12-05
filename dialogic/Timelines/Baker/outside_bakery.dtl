@@ -1,4 +1,8 @@
+[signal arg="control"]
+do PlayerController.stop()
 # Starts right outside of the bakery
 As you pass in front of a bakery, the smell of baked goods wafts through the air.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Surprise_Vowel_Mono_08.wav" volume="0.0"]
+do PlayerController.playAnimation("MoodThumbsUp")
 player: That smells fantastic! I wonder what they have?
+[signal arg="uncontrol"]

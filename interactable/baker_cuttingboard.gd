@@ -89,14 +89,14 @@ func add_item_to_board(carried_item: Sprite2D) -> void:
 	player.carried_item_name = ""
 	player.carried_item.visible = false
 	player.state = player.PlayerState.NORMAL
-	play_audio("res://assets/bread.mp3")
+	#play_audio("res://assets/bread.mp3")
 
 func craft_item(ingredient_names: Array) -> void:
 	print("Crafting with: ", ingredient_names)
 	var recipe = recipes.get(ingredient_names, "Garbage")
 	craft_output = recipe
 	create_item_pickup(recipe)
-	play_audio("res://assets/cake.mp3")
+	#play_audio("res://assets/cake.mp3")
 	$templabel.text = "Created a " + recipe
 
 func create_item_pickup(recipe: String):
@@ -129,11 +129,11 @@ func reset_item_positions() -> void:
 	for item in items:
 		item.position = Vector2.ZERO
 
-func play_audio(audio_path: String) -> void:
-	var audio_stream = AudioStreamPlayer.new()
-	audio_stream.stream = load(audio_path)
-	add_child(audio_stream)
-	audio_stream.play()
+#func play_audio(audio_path: String) -> void:
+	#var audio_stream = AudioStreamPlayer.new()
+	#audio_stream.stream = load(audio_path)
+	#add_child(audio_stream)
+	#audio_stream.play()
 
 func empty_self() -> void:
 	for child in get_children():

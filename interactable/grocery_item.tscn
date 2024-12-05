@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bywfnd7utfd7x"]
+
+[ext_resource type="Script" uid="uid://bimimfrjxclgr" path="res://interactable/grocery_item.gd" id="1_xoevg"]
+[ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="2_x3ppk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoevg"]
+size = Vector2(16, 32)
+
+[node name="GroceryItem" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_xoevg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xoevg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("2_x3ppk")
+region_enabled = true
+region_rect = Rect2(144, 8, 16, 24)
