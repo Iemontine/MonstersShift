@@ -19,7 +19,7 @@ func _on_body_entered(body: Node) -> void:
 
 
 func _process(delta: float) -> void:
-	if npc and npc.state == BasicNPC.State.ARRIVED:
+	if npc and npc.state == NPC.NPCState.BASIC_ARRIVED:
 		npc.travel_to_anim("SitChair")
 
 		# Adjust position and animation based on chair direction
@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		npc.label.text = npc.want
 		npc.label.visible = true
 		baker.customer_want.get_or_add(self, npc.want)
-	if npc and npc.state == BasicNPC.State.LEAVING:
+	if npc and npc.state == NPC.NPCState.BASIC_ARRIVED:
 		npc = null
 		
 func _on_body_exited(body: Node) -> void:
