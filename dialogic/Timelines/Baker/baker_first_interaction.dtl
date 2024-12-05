@@ -1,6 +1,9 @@
 # First interaction with the baker
 [signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V1_Reflexion_Mouth_Open_Mono_05.wav" volume="0.0"]
+do NpcController.set_target_npc("NPC_Baker")
+do NpcController.playAnimation("Wave")
 baker: Hey there sugar! You new to town? I think I’d recognize a face like yours if I’d seen it before!
 player: I actually just moved into this place my brother left me. Did you know him? His name was Benjamin.
 baker: Benjamin…hm…oh! You mean my old pal Benny? He was the best! He would always come help out.
