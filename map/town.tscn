@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=76 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -28,8 +28,9 @@
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://prefabs/scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
 [ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
-[ext_resource type="Script" uid="uid://bli66x72o7avx" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="Script" uid="uid://c3leyu3ui5q63" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 [ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
+[ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_mingame.tscn" id="31_ccldd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29065,7 +29066,7 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_jrct8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1136, -176, 0, 0, 0, 0, -1136, -144, 0, 0, 0, 0, -1280, -144, 0, 0, 0, 0, -1280, -176, 0, 0, 0, 0, -1328, -176, 0, 0, 0, 0, -1328, -144, 0, 0, 0, 0, -2160, -144, 0, 0, 0, 0, -2160, -448, 0, 0, 0, 0, -1336, -440, 0, 0, 0, 0, -1336, -464)
+"points": PackedVector2Array(0, 0, 0, 0, -1136, -176, 0, 0, 0, 0, -1136, -144, 0, 0, 0, 0, -1280, -144, 0, 0, 0, 0, -1280, -176, 0, 0, 0, 0, -1328, -176, 0, 0, 0, 0, -1328, -144, 0, 0, 0, 0, -2160, -144, 0, 0, 0, 0, -2160, -440, 0, 0, 0, 0, -1336, -440, 0, 0, 0, 0, -1336, -472)
 }
 point_count = 10
 
@@ -29720,15 +29721,13 @@ position = Vector2(-1136, -176)
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-1072, -149)
+position = Vector2(-1088, -144)
 
-[node name="NPC_Widow" parent="." node_paths=PackedStringArray("path") instance=ExtResource("28_mgbvr")]
+[node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
 position = Vector2(-492, -531)
 collision_layer = 0
 collision_mask = 0
-path = NodePath("Path2D")
-stop_points = Array[int]([1, 2, 3, 4])
 
 [node name="Path2D" type="Path2D" parent="NPC_Widow"]
 top_level = true
@@ -29756,3 +29755,6 @@ script = ExtResource("29_q1b8d")
 
 [node name="TestCutscene" parent="." instance=ExtResource("30_jrct8")]
 position = Vector2(-1160, -175)
+
+[node name="Sign" parent="." instance=ExtResource("31_ccldd")]
+position = Vector2(-1088, -180)
