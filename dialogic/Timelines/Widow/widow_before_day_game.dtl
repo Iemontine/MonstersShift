@@ -1,8 +1,10 @@
 # Interacting with widow in her house during the day to get the minigame
+[signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/widow_crying.mp3" volume="0.0"]
 The front door of the house is ajar. You hear weeping from within.
 player: Um… are you okay ma’am?
-widow: Oh… hello there darling… I can’t seem to get out of bed today. Will you be a doll and pick up some shopping for me?
+widow: Oh… hello again darling… Will you be a doll and pick up some shopping for me?
 A note slides under the door. It’s a shopping list stained with tears.
 - Help the Widow
 	player: Of course, I’ll be right back
@@ -10,3 +12,4 @@ A note slides under the door. It’s a shopping list stained with tears.
 - She's so sad, how could I leave?
 	player: Of course, I’ll be right back
 	Better head to town and get those groceries.
+[signal arg="uncontrol"]

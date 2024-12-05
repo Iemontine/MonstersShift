@@ -27,10 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
 [ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
-[ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
-[ext_resource type="Script" uid="uid://tsg70fau7j66" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
-[ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
-[ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_mingame.tscn" id="31_ccldd"]
+[ext_resource type="PackedScene" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
+[ext_resource type="Script" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="PackedScene" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
+[ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29721,17 +29721,17 @@ position = Vector2(-1136, -176)
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-1088, -144)
+position = Vector2(-1305, -416)
 
 [node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
-position = Vector2(-492, -531)
+position = Vector2(-1196, -488)
 collision_layer = 0
 collision_mask = 0
 
 [node name="Path2D" type="Path2D" parent="NPC_Widow"]
 top_level = true
-position = Vector2(-593, -589)
+position = Vector2(-1304, -541)
 curve = SubResource("Curve2D_qgqjp")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="NPC_Widow/Path2D"]
@@ -29755,5 +29755,5 @@ script = ExtResource("29_q1b8d")
 [node name="TestCutscene" parent="." instance=ExtResource("30_jrct8")]
 position = Vector2(-1160, -175)
 
-[node name="Sign" parent="." instance=ExtResource("31_ccldd")]
-position = Vector2(-1088, -180)
+[node name="WidowDoorCutscene" parent="." instance=ExtResource("31_ccldd")]
+position = Vector2(-1334, -487)

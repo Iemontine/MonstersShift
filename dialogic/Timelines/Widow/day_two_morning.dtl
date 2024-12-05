@@ -1,0 +1,5 @@
+# Morning cutscene before going off to find the widow
+[signal arg="control"]
+player: Wow what a crazy night! I can't believe baked goods calmed a zombie down.
+player: Oh well, it's a brand new day. Maybe I can check out that fountain in town?
+[signal arg="uncontrol"]

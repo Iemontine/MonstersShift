@@ -1,4 +1,6 @@
 # Interacting with the widow ifor the first time
+[signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/widow_humming.mp3" volume="0.0"]
 [wait time="1.5"]
 As you walk up to the woman, you hear a sad tune.
@@ -7,9 +9,10 @@ widow: Hmm? Oh nothing… just humming an old tune…
 widow: Say… you look just like that dear boy, what was his name again?
 player: Benjamin? He was my brother… I’m here to find out how he passed.
 widow: Passed you say? Poor Benji… what a sweetheart.
-widow: He used to come visit me at my house by [location] and keep me company.
+widow: He used to come visit me at my house next door and keep me company.
 player: Did you know him? I’d like to know what happened to him.
 widow: Ah yes. He helped me out after…
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Sigh_Mono_01.wav" volume="-2.0"]
-The woman stops speaking and tears begin to fall from her eyes.
-player: She seems like she needs space, maybe I’ll find her again later.
+The woman stops speaking and tears begin to fall from her eyes. She runs off to her house.
+player: Is she okay? Maybe I can help her.
+[signal arg="uncontrol"]
