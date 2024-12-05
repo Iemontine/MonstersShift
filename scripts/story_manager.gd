@@ -39,16 +39,19 @@ func _on_scene_transition_completed():
 			_event_name = "click_on_bed"
 			if SceneManager.current_scene == "Treehouse_Exterior":
 				_event_name = "exit_house_postarrival"
+				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene(_event_name)
 		Event.CLICK_ON_PICTURE_FRAME:
 			_event_name = "click_on_picture_frame"
 			if SceneManager.current_scene == "Treehouse_Exterior":
 				_event_name = "exit_house_postarrival"
+				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene(_event_name)
 		Event.CLICK_ON_RECORD_PLAYER:
 			_event_name = "click_on_record_player"
 			if SceneManager.current_scene == "Treehouse_Exterior":
 				_event_name = "exit_house_postarrival"
+				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene(_event_name)
 		# Event.EXIT_HOUSE_POSTARRIVAL:
 		# 	_event_name = "exit_house_postarrival"
@@ -56,6 +59,7 @@ func _on_scene_transition_completed():
 			_event_name = "outside_bakery"
 			if SceneManager.current_scene == "Bakery":
 				_event_name = "first_enter_bakery"
+				StoryManager.transition_to_event(StoryManager.Event.FIRST_ENTER_BAKERY)
 				PlayerController.start_cutscene(_event_name)
 		# Event.FIRST_ENTER_BAKERY:
 		# 	_event_name = "first_enter_bakery"

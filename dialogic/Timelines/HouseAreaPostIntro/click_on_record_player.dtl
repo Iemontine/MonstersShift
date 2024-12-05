@@ -2,7 +2,7 @@
 [signal arg="control"]
 do PlayerController.stop()
 The vinyl player has an old record sitting in it. You drop the needle and a familiar tune begins to play…
-[music path="#72 Get Out - Orchestrated.WAV" fade="0.0" volume="-5.0"]
+[music path="res://assets/sound/Free_Chiptune_MusicPack_4/#72 Get Out - Orchestrated.WAV" fade="0.0" volume="-5.0"]
 player: I remember this song was always his favorite. He would play it any chance he could.
 You close your eyes and listen to the soft, beautiful melody.
 player: ...
