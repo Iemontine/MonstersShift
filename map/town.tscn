@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=76 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
 [ext_resource type="Script" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 [ext_resource type="PackedScene" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
+[ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29754,3 +29755,6 @@ script = ExtResource("29_q1b8d")
 
 [node name="TestCutscene" parent="." instance=ExtResource("30_jrct8")]
 position = Vector2(-1160, -175)
+
+[node name="WidowDoorCutscene" parent="." instance=ExtResource("31_ccldd")]
+position = Vector2(-1334, -487)
