@@ -12,7 +12,11 @@ var state:State
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var carried_item: Sprite2D = $CarriedItem
 @onready var carried_item_name: String = ""
+@onready var chat_bubble: AnimatedSprite2D = $ChatBubble
+
 var customer_want = {}
+
+signal point_earned
 
 var player:Player
 var old_velocity = Vector2.ZERO
@@ -40,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			on_interacted()
 			pass
 	elif state == State.HOLDING_ITEM:
-		travel_to_anim("RunCarry", velocity)
+		travel_to_anim("WalkCarry", old_velocity)
 		for key in customer_want:
 			if customer_want[key] == carried_item_name:
 				print(key)
@@ -50,15 +54,18 @@ func _physics_process(delta: float) -> void:
 				state = State.DELIVERING
 				break
 	elif state == State.DELIVERING:
+		travel_to_anim("WalkCarry", old_velocity)
 		if agent_2d.is_navigation_finished():
+			point_earned.emit()
 			carried_item_name = ""
 			state = State.RETURNING
 			travel_to_position = spawn_location
 			#make NPC return to door
-			current_chair_target.npc.state = BasicNPC.State.LEAVING
+			current_chair_target.npc.state = NPCBakeryCustomer.State.LEAVING
 			customer_want.erase(current_chair_target)
 			print(current_chair_target)
 	elif state == State.RETURNING:
+		travel_to_anim("Walk", old_velocity)
 		if agent_2d.is_navigation_finished():
 			state = State.IDLE
 	
@@ -74,7 +81,7 @@ func _physics_process(delta: float) -> void:
 
 func travel_to_anim(animName:String, direction = null):
 	if direction != null: old_velocity = direction
-
+	animation_tree.active = true
 	animation_tree.set("parameters/"+animName+"/blend_position", direction)
 	animation_state.travel(animName)
 
@@ -82,6 +89,12 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 
 func on_interacted() -> void:
+	if (player.carried_item_name == "Garbage"):
+		chat_bubble.play("mad")
+	elif player.carried_item_name == "":
+		chat_bubble.play("question")
+		
+		return
 	if contains_string_in_dict(player.carried_item_name, customer_want):
 		#baker get item
 		add_child(player.carried_item)
@@ -95,7 +108,7 @@ func on_interacted() -> void:
 	else:
 		# TODO: this is bad because it continues to fire if the player holds the interact button
 		# (involving the usage of signals from the Area2Ds)
-		print("no want want that")
+		print("no one wants that")
 
 func _on_area_2d_body_entered(body: Player) -> void:
 	player = body

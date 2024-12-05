@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://57nkfs84s4dl"]
 
-[ext_resource type="Script" uid="uid://c1dm8qtfdmqo1" path="res://prefabs/chair.gd" id="1_btrd3"]
+[ext_resource type="Script" path="res://prefabs/chair.gd" id="1_btrd3"]
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="2_48gkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpyd4"]
@@ -11,6 +11,8 @@ atlas = ExtResource("2_48gkr")
 region = Rect2(1, 284, 13, 13)
 
 [node name="Chair" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_btrd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -22,3 +24,4 @@ y_sort_enabled = true
 texture = SubResource("AtlasTexture_cpyd4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

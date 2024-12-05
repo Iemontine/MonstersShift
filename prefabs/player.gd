@@ -122,7 +122,7 @@ func handle_input():
 		if hold_time >= CLICK_THRESHOLD:
 			if state != PlayerState.CARRYING_ITEM and current_interactable is CuttingBoard and (current_interactable as CuttingBoard).items.size() > 0 and !current_interactable.is_locked:
 				state = PlayerState.LOCKED
-				travel_to_anim("CraftSmith")
+				travel_to_anim("WorkAtDesk1")
 
 func update_hold_time():
 	var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
