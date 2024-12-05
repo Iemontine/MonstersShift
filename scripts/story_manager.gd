@@ -18,7 +18,7 @@ var check_for_bed = false
 
 var _event_name:String = ""
 
-@onready var current_event = Event.DAY_TWO_MORNING
+@onready var current_event = Event.INTRO
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
