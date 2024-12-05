@@ -16,7 +16,6 @@ func _ready() -> void:
 	label.text = want
 	label.visible = false
 	state = NPCState.BASIC_PATH_FINDING
-	super._ready()
 
 func _physics_process(_delta: float) -> void:
 	if state == NPCState.CONTROLLED:

@@ -19,8 +19,10 @@ func _ready() -> void:
 	super._ready()
 
 func _physics_process(_delta: float) -> void:
-	if state == NPCState.CONTROLLED:
+	if state == NPCState.CONTROLLED or state == NPCState.LOCKED:	# Important it is both CONTROLLED and LOCKED
+		super._physics_process(_delta)
 		return
+		
 	agent_2d.target_position = travel_to_position
 	var current_agent_position = global_position
 	var next_path_position = agent_2d.get_next_path_position()
@@ -50,15 +52,16 @@ func _physics_process(_delta: float) -> void:
 		NPCState.BAKER_RETURNING:
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BAKER_IDLE
-	
+
 	if agent_2d.avoidance_enabled:
 		agent_2d.set_velocity(new_velocity)
 	else:
 		_on_navigation_agent_2d_velocity_computed(new_velocity)
-	
+
 	super._physics_process(_delta)
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	if state == NPCState.CONTROLLED or state == NPCState.LOCKED: return
 	velocity = safe_velocity
 
 func on_interacted() -> void:
