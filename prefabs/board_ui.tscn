@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0py0olc2x7cv"]
+
+[ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://recipe_board.png" id="1_ocgyd"]
+
+[node name="Board_UI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 0.032
+anchor_right = 0.9
+anchor_bottom = 0.988
+offset_left = -0.144012
+offset_top = 0.264
+offset_right = 0.199951
+offset_bottom = -0.223999
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_ocgyd")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.374
+anchor_top = 0.331
+anchor_right = 0.634
+anchor_bottom = 0.422
+offset_left = 0.213989
+offset_top = 0.110977
+offset_right = 4122.07
+offset_bottom = 1043.78
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 800
+text = "Recipes"
+horizontal_alignment = 1

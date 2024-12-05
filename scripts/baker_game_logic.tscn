@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct2t64jd11l0j"]
+
+[ext_resource type="Script" uid="uid://csdgjtk63kbes" path="res://scripts/baker_game_logic.gd" id="1_xn047"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrvjx"]
+bg_color = Color(0.91154, 0.678785, 0.759224, 1)
+border_width_left = 200
+border_width_top = 200
+border_width_right = 200
+border_width_bottom = 200
+border_color = Color(0.976471, 0.909804, 0.945098, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+shadow_color = Color(0.669799, 0.436169, 0.659497, 0.6)
+shadow_size = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q780k"]
+bg_color = Color(0.909965, 0.414142, 0.525839, 1)
+border_width_left = 200
+border_width_top = 200
+border_width_right = 200
+border_width_bottom = 200
+border_color = Color(0.976652, 0.908319, 0.944597, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 700
+corner_radius_bottom_right = 700
+corner_radius_bottom_left = 500
+
+[node name="BakerGameLogic" type="CanvasLayer"]
+script = ExtResource("1_xn047")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_left = 0.054
+anchor_top = 0.031
+anchor_right = 0.938
+anchor_bottom = 0.103
+offset_left = -0.208
+offset_top = -0.0880013
+offset_right = 19361.4
+offset_bottom = 893.256
+grow_horizontal = 2
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 500
+theme_override_styles/background = SubResource("StyleBoxFlat_vrvjx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q780k")
+value = 50.0
+show_percentage = false
+
+[node name="Points" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 73.0
+offset_right = 3516.0
+offset_bottom = 1435.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 1000
+text = "Points
+"
+
+[node name="GameLabel" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.219
+anchor_right = 1.0
+anchor_bottom = 0.77
+offset_left = 0.392
+offset_top = 0.0879974
+offset_right = 21693.0
+offset_bottom = 6843.04
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 2000
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

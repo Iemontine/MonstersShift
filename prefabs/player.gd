@@ -130,7 +130,7 @@ func handle_input():
 		if hold_time >= CLICK_THRESHOLD:
 			if state != PlayerState.CARRYING_ITEM and current_interactable is CuttingBoard and (current_interactable as CuttingBoard).items.size() > 0 and !current_interactable.is_locked:
 				state = PlayerState.LOCKED
-				travel_to_anim("CraftSmith")
+				travel_to_anim("WorkAtDesk1")
 
 func update_hold_time():
 	var hold_time = (Time.get_ticks_msec() / 1000.0) - hold_start_time
@@ -171,6 +171,8 @@ func save():
 		"name": name
 	}
 	return dict
+	
+# ============================= WIDOW MINIGAME =================================
 
 # Targets the path sitting as a child of the root of the scene
 func follow_path():
@@ -181,7 +183,7 @@ func follow_path():
 	path_follow.set_loop(false)
 	path_follow.set_cubic_interpolation(true)
 	path_following = true
-	# Hacky hold logic
+	# Hacky hold logic, TODO: turn into function, reuse where available
 	var texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png")
 	var atlas_texture = AtlasTexture.new()
 	atlas_texture.atlas = texture
@@ -196,7 +198,6 @@ func _on_path_follow_timeout(delta):
 	global_position = path_follow.get_global_position()
 	travel_to_anim("WalkCarry", direction_vector)
 	get_node("Movement").movement_anim = "WalkCarry"
-	
 	if path_follow.progress_ratio >= 1.0:
 		path_following = false
 		state = PlayerState.NORMAL
