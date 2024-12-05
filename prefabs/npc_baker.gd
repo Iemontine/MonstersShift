@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 	agent_2d.target_position = travel_to_position
 	var current_agent_position = global_position
 	var next_path_position = agent_2d.get_next_path_position()
-	var new_velocity = current_agent_position.direction_to(next_path_position) * speed
+	var new_velocity = current_agent_position.direction_to(next_path_position) * 50
 	old_velocity = new_velocity
 	
 	match state:
@@ -58,7 +58,6 @@ func _physics_process(_delta: float) -> void:
 				#make NPC return to door
 				current_chair_target.npc.state = NPCState.BASIC_LEAVING
 				customer_want.erase(current_chair_target)
-				print(current_chair_target)
 		NPCState.BAKER_RETURNING:
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BAKER_IDLE

@@ -33,7 +33,6 @@ func _physics_process(_delta: float) -> void:
 	
 	match state:
 		NPCState.BASIC_PATH_FINDING:
-			print("npc walking")
 			travel_to_anim("Walk", new_velocity)
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BASIC_ARRIVED
