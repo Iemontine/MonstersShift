@@ -29738,7 +29738,6 @@ curve = SubResource("Curve2D_qgqjp")
 position = Vector2(107, 52)
 
 [node name="NPC_Baker" parent="." instance=ExtResource("25_0i5uc")]
-y_sort_enabled = true
 position = Vector2(-297, -537)
 
 [node name="Path2D" type="Path2D" parent="NPC_Baker"]

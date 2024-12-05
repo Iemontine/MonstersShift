@@ -9,11 +9,11 @@ signal make_sound(state_name, sound_name)
 var shader = preload("res://shaders/simple_ramp_shader.gdshader")
 
 @export var color_00undr: Color
-@export var color_01body: Color
-@export var color_02sock: Color
+@export var color_01body: Color = SKIN_COLOR.pick_random()
+@export var color_02sock: Color = CLOTHES_COLOR.pick_random()
 @export var color_03fot1: Color
-@export var color_04lwr1: Color
-@export var color_05shrt: Color
+@export var color_04lwr1: Color = CLOTHES_COLOR.pick_random()
+@export var color_05shrt: Color = CLOTHES_COLOR.pick_random()
 @export var color_06lwr2: Color
 @export var color_07fot2: Color
 @export var color_08lwr3: Color
@@ -35,6 +35,28 @@ const DEFAULT_COLORS = [
 	Color("#942132"),
 	Color("#181818")
 ]
+const SKIN_COLOR = [
+	Color(0.851, 0.596, 0.471),
+	Color(0.407, 0.238, 0.152),
+	Color(0.916, 0.732, 0.644),
+	Color(0.67, 0.418, 0.291)
+]
+const CLOTHES_COLOR = [
+	Color(0.864, 0.499, 0.785),
+	Color(0.336, 0.671, 0.643),
+	Color(0.25, 0.25, 0.25), #gray
+	Color(0.009, 0.003, 0.001), # black
+	Color(1.0, 1.0, 1.0), #white
+	Color(0.003, 0.307, 0.609),
+	Color(0.612, 0.141, 0.188),
+	Color(0.275, 0.256, 0.077),
+	Color(0.707, 0.4, 0.23),
+	Color(0.601, 0.601, 0.601),
+	Color(0.353, 0.362, 0.532),
+	Color(0.181, 0.378, 0.416), 
+	
+]
+
 
 var palettes
 
@@ -107,6 +129,12 @@ func _physics_process(_delta: float) -> void:
 	set_layer_shader("13hair", color_13hair)
 	set_layer_shader("14head", color_14head)
 	set_layer_shader("15over", color_15over)
+	
+func random_color() -> Color:
+	var r = randi()%2
+	var g = randi()%2
+	var b = randi()%2
+	return Color(r,g,b)
 
 func set_layer_shader(layer_name: String, base_color: Color):
 	var layer_node = get_node_or_null(layer_name)

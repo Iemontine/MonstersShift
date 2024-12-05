@@ -32,7 +32,7 @@ func on_timer_completed():
 		spawn_npc()
 
 func spawn_npc():
-	animation_player.play("double door open")
+	animation_player.play("door_open")
 	# Spawn NPC
 	var npc_instance = npc_scene.instantiate()
 	npc_instance.position = spawn_location
