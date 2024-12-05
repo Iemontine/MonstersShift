@@ -20765,7 +20765,7 @@ position = Vector2(-88, 86)
 position = Vector2(-88, 43)
 
 [node name="BedCutscene" parent="interior layer -- top decor" instance=ExtResource("8_dhls6")]
-position = Vector2(74, 90)
+position = Vector2(87, 87)
 
 [node name="interior layer -- furniture higher2" type="TileMapLayer" parent="."]
 z_index = 2
