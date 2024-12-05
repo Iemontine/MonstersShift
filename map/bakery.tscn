@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_bakery_customer.tscn" id="8_igw2u"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
-[ext_resource type="Script" path="res://map/baker_camera.gd" id="10_ffbsp"]
+[ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://map/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
-[ext_resource type="Script" path="res://interactable/door.gd" id="14_x3sc3"]
+[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="14_x3sc3"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="15_jjlq4"]
 [ext_resource type="Texture2D" uid="uid://bu6o8lxvf718k" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/13_Conference_Hall_Black_Shadow_16x16.png" id="16_eyyg0"]
-[ext_resource type="Script" path="res://map/recipe_board.gd" id="16_yu6ri"]
+[ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="16_yu6ri"]
 [ext_resource type="Texture2D" uid="uid://mw38uglnpyjg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="17_farls"]
 [ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://board_ui.tscn" id="17_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://baker_game_logic.tscn" id="18_igw2u"]
@@ -768,7 +768,7 @@ position = Vector2(8, 36)
 
 [node name="NPC_Spawner" parent="Door_Bakery" node_paths=PackedStringArray("travel_locations") instance=ExtResource("7_ffbsp")]
 npc_scene = ExtResource("8_igw2u")
-travel_locations = [NodePath("../../Dev TODO, Integrate door and fix other fx/Chair1"), NodePath("../../Dev TODO, Integrate door and fix other fx/Chair2"), NodePath("../../Dev TODO, Integrate door and fix other fx/Chair3")]
+travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath("../../Chair3")]
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 z_index = 1
@@ -824,31 +824,28 @@ item_region_rect = Rect2(192, 464, 16, 16)
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
 position = Vector2(-104, 29)
 
-[node name="Dev TODO Integrate door and fix other fx" type="Node2D" parent="."]
-position = Vector2(-48, -176)
-
-[node name="Chair1" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+[node name="Chair1" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(25, 312)
+position = Vector2(-23, 120)
 chair_direction = 1
 
-[node name="Chair2" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+[node name="Chair2" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-40, 312)
+position = Vector2(-88, 120)
 chair_direction = 1
 
-[node name="Chair3" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("14_fcgx5")]
+[node name="Chair3" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-40, 360)
+position = Vector2(-88, 168)
 chair_direction = 1
 
-[node name="NPC_Baker" parent="Dev TODO, Integrate door and fix other fx" instance=ExtResource("15_jjlq4")]
+[node name="NPC_Baker" parent="." instance=ExtResource("15_jjlq4")]
 position = Vector2(-42, 188)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Dev TODO, Integrate door and fix other fx"]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAHABIAAAAIAAQAAAADABAAAQAOAAMAAAD8/xAAAgAAABwAAAAJABAAAgANABUAAAAGABAAAwAJAAcAAAABABQABAANACEAAAD9/xcABAANACEAAAD9/xQABAANACEAAAA=")
