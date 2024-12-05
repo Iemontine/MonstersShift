@@ -8,15 +8,18 @@ baker: Hey there sugar! You new to town? I think I’d recognize a face like you
 do NpcController.playAnimation("Idle2", 0, 1)
 player: I actually just moved into this place my brother left me. Did you know him? His name was Benjamin.
 baker: Benjamin…hm…oh! You mean my old pal Benny? He was the best! He would always come help out.
+do NpcController.playAnimation("MoodSad", 0, 1)
 baker: Without him here, I’ve been so behind! The stress is making me very hungry…
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_08.wav" volume="0.0"]
 My brother was helping this man. Maybe I can too?
 - Help the Baker
 	player: How about I help you out? What can I do?
+	do NpcController.playAnimation("MoodLaugh", 0, 1)
 	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
 	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
 - You have no choice. Help him.
 	player: How about I help you out? What can I do?
+	do NpcController.playAnimation("MoodLaugh", 0, 1)
 	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
 	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
 [signal arg="uncontrol"]
