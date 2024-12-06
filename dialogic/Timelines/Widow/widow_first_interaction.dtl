@@ -1,15 +1,15 @@
-# Interacting with the widow ifor the first time
+# Interacting with the widow for the first time
 [signal arg="control"]
 do PlayerController.stop()
+[sound path="res://assets/sound/widow_humming.mp3" volume="0.0"]
+As you walk into the park, you hear a woman humming a sad tune.
 do NpcController.set_target_npc("NPC_Widow")
 do NpcController.playAnimation("SitChair", 0, 1)
-[sound path="res://assets/sound/widow_humming.mp3" volume="0.0"]
-As you walk up to the woman, you hear a sad tune.
 do PlayerController.moveRight()
-[wait time="0.4"]
+[wait time="0.9"]
 do PlayerController.moveUp()
-[wait time="0.2"]
-do PlayerController.playAnimation("SitChair", 0, 1)
+[wait time="0.5"]
+do PlayerController.playAnimation("Look", -1, 0)
 player: Hello ma’am, what are you doing?
 widow: Hmm? Oh nothing… just humming an old tune…
 widow: Say… you look just like that dear boy, what was his name again?

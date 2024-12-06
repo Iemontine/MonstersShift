@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=79 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -32,6 +32,8 @@
 [ext_resource type="Script" uid="uid://tsg70fau7j66" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 [ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
 [ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
+[ext_resource type="PackedScene" uid="uid://d3ojvtx4yjg2j" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
+[ext_resource type="Script" uid="uid://dv05ig8ew0kbp" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29726,7 +29728,7 @@ position = Vector2(-1298, -416)
 
 [node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
-position = Vector2(-1202, -499)
+position = Vector2(-1200, -499)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("27_txolg")
@@ -29759,3 +29761,7 @@ position = Vector2(-1160, -175)
 
 [node name="WidowDoorCutscene" parent="." instance=ExtResource("31_ccldd")]
 position = Vector2(-1334, -487)
+
+[node name="WidowFirstCutscene" parent="." instance=ExtResource("33_fb3tg")]
+position = Vector2(-1254, -447)
+script = ExtResource("34_uap6c")
