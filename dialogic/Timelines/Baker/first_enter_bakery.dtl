@@ -5,6 +5,7 @@ do PlayerController.stop()
 do NpcController.set_target_npc("NPC_Baker")
 do NpcController.playAnimation("Wave")
 [wait time="0.4"]
+do NpcController.stop()
 baker: Fresh bread! Fresh bread! Come get it while it’s nice and hot!
 player: Wait… That man was in the photo at Benjamin’s house. I should go talk to him.
 [signal arg="uncontrol"]

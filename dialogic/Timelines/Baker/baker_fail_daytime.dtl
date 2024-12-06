@@ -1,3 +1,8 @@
 # Happens if you fail the daytime minigame before death screen
+[signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Pain/Voice_Male_V1_Pain_Mono_13.wav" volume="-5.0"]
 baker: Awful! You are fired!!
+- Try Again
+	do SaveManager.load_game()
+[signal arg="uncontrol"]
