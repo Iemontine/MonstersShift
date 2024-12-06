@@ -118,7 +118,8 @@ func _on_scene_transition_completed():
 
 # WIDOW
 func enable_grocery_items():
-	var items = get_tree().get_nodes_in_group("grocery_item")
+	print()
+	#var items = get_tree().get_nodes_in_group("grocery_item")
 	#var enabled_item = items[randi() % items.size()]
 	#for item in items:
 		#item.enabled = false

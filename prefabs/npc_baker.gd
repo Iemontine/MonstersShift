@@ -4,7 +4,7 @@ class_name BakerNPC
 @onready var agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var carried_item: Sprite2D = $CarriedItem
 @onready var carried_item_name: String = ""
-@onready var chat_bubble: AnimatedSprite2D = $ChatBubble
+#@onready var chat_bubble: AnimatedSprite2D = $ChatBubble
 
 var customer_want = {}
 
@@ -79,12 +79,12 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 
 func on_interacted() -> void:
-	if (player.carried_item_name == "Garbage"):
-		chat_bubble.play("mad")
-	elif player.carried_item_name == "":
-		chat_bubble.play("question")
+	#if (player.carried_item_name == "Garbage"):
+		#chat_bubble.play("mad")
+	#elif player.carried_item_name == "":
+		#chat_bubble.play("question")
+		#return
 		
-		return
 	if _contains_string_in_dict(player.carried_item_name, customer_want):
 		add_child(player.carried_item)
 		state = NPCState.BAKER_HOLDING_ITEM
@@ -96,12 +96,14 @@ func on_interacted() -> void:
 		# (involving the usage of signals from the Area2Ds)
 		print("no one wants that")
 
-func _on_area_2d_body_entered(body: Player) -> void:
-	player = body
-	player_in_area = true
+func _on_area_2d_body_entered(_body: Object) -> void:
+	if _body is Player:
+		player = _body
+		player_in_area = true
 
-func _on_area_2d_body_exited(_body: Player) -> void:
-	player_in_area = false
+func _on_area_2d_body_exited(_body: Object) -> void:
+	if _body is Player:
+		player_in_area = false
 
 func _contains_string_in_dict(target_string: String, dictionary: Dictionary) -> bool:
 	for value in dictionary.values():

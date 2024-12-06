@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://dg5e1j6trerk0"]
 
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="2_pdgtp"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_pdgtp"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
 [ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_io5y2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="4_mxmix"]
@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://b0pmhwx0vknha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/21_Clothing_Store_Black_Shadow_16x16.png" id="7_q3ipt"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="7_ya4jy"]
 [ext_resource type="Texture2D" uid="uid://dmthlsilfm2sg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/18_Jail_Black_Shadow_16x16.png" id="8_1my0l"]
-[ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
+[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
 [ext_resource type="Texture2D" uid="uid://boplmfg22sf2d" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/4_Bedroom_Shadowless.png" id="9_4hge0"]
-[ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
+[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
 [ext_resource type="Texture2D" uid="uid://ccclynhkmikvl" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/26_Condominium_Black_Shadow_16x16.png" id="9_hkc28"]
-[ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
+[ext_resource type="PackedScene" uid="uid://bq2wbg5ks1bxv" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
 
@@ -484,7 +484,7 @@ sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
 [node name="Treehouse_Interior" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(8, 25)
+position = Vector2(-6, 41)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -532,8 +532,7 @@ tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABg
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
-z_index = -1
-position = Vector2(-44, 26)
+position = Vector2(-27, 67)
 
 [node name="Treehouse_png" type="Sprite2D" parent="."]
 visible = false

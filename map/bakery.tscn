@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
 [ext_resource type="PackedScene" path="res://prefabs/npc_bakery_customer.tscn" id="8_igw2u"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
-[ext_resource type="Script" path="res://map/baker_camera.gd" id="10_ffbsp"]
+[ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
@@ -848,7 +848,7 @@ position = Vector2(-56, 96)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHABIAAAAIAAQAAAADABAAAQAOAAMAAAD8/xAAAgAAABwAAAAJABAAAgANABUAAAAGABAAAwAJAAcAAAABABQABAANACEAAAD9/xcABAANACEAAAD9/xQABAANACEAAAA=")
+tile_map_data = PackedByteArray("AAD8/xAAAgAAABwAAAD9/xQABAANACEAAAD9/xcABAANACEAAAABABQABAANACEAAAADABAAAQAOAAMAAAAGABAAAwAJAAcAAAAHABIAAAAIAAQAAAAJABAAAgANABUAAAA=")
 tile_set = SubResource("TileSet_mwicy")
 
 [node name="Recipe_board" type="StaticBody2D" parent="."]
