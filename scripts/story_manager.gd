@@ -7,7 +7,7 @@ enum Event {
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
 	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
-	BAKER_FAIL_DAYTIME, NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, 
+	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, 
 	BAKER_BEFORE_NIGHT_GAME, BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING,
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, WIDOW_SUCCESS_DAYTIME,
 	WIDOW_FAIL_DAYTIME, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
@@ -19,7 +19,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.DAY_TWO_MORNING
+@onready var current_event = Event.INTRO
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -67,6 +67,12 @@ func _on_scene_transition_completed():
 			if SceneManager.current_scene == "Bakery":
 				_event_name = "first_enter_bakery"
 				StoryManager.transition_to_event(StoryManager.Event.FIRST_ENTER_BAKERY)
+				PlayerController.start_cutscene(_event_name)
+		Event.BAKER_SUCCESS_DAYTIME:
+			_event_name = "baker_success_daytime_game"
+			if SceneManager.current_scene == "Town":
+				_event_name = "leaving_bakery_evening"
+				StoryManager.transition_to_event(StoryManager.Event.LEAVING_BAKERY_EVENING)
 				PlayerController.start_cutscene(_event_name)
 		# Event.FIRST_ENTER_BAKERY:
 		# 	_event_name = "first_enter_bakery"

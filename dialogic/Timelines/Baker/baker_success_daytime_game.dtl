@@ -10,3 +10,4 @@ The baker takes a bite of pastry and starts humming to himself happily.
 baker: Wow you are talented! Feel free to come back to help again.
 do NpcController.stop()
 [signal arg="uncontrol"]
+do SceneManager.change_time_of_day()

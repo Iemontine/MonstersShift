@@ -126,6 +126,7 @@ func handle_day_shift(player:Player) -> void:
 		if surroundings != null:
 			surroundings.color = Color("#132771")
 
-func change_time_of_day(player:Player) -> void:
+func change_time_of_day() -> void:
+	var player = get_tree().get_current_scene().get_node("Player")
 	time_of_day = ( time_of_day + 1 ) % 3
 	handle_day_shift(player)

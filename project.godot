@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/town.tscn"
+run/main_scene="res://map/treehouse_interior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -34,10 +34,10 @@ directories/dch_directory={
 "widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
-"Timelines/test": "res://dialogic/Timelines/test.dtl",
+"Timelines/test": "res://dialogic/Timelines/Random/test.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
-"arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
-"arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
+"arrived_at_treehouse_1": "res://dialogic/Timelines/Random/arrived_at_treehouse_1.dtl",
+"arrived_at_treehouse_2": "res://dialogic/Timelines/Random/arrived_at_treehouse_2.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
@@ -54,9 +54,10 @@ directories/dtl_directory={
 "first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
+"leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
-"test2": "res://dialogic/Timelines/test2.dtl",
+"test2": "res://dialogic/Timelines/Random/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
