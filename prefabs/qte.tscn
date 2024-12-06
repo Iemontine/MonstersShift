@@ -1,43 +1,130 @@
-[gd_scene load_steps=5 format=3 uid="uid://0i3iff18r8mh"]
+[gd_scene load_steps=10 format=3 uid="uid://0i3iff18r8mh"]
 
 [ext_resource type="Script" uid="uid://cbt5omduqu576" path="res://prefabs/qte.gd" id="1_5bm8v"]
 [ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="1_elwcc"]
-[ext_resource type="Texture2D" uid="uid://cb7qvtgw6n8yx" path="res://assets/characters/qte.png" id="3_x3piw"]
+[ext_resource type="Texture2D" uid="uid://cb7qvtgw6n8yx" path="res://assets/assets_widow/qte.png" id="3_x3piw"]
+
+[sub_resource type="Curve" id="Curve_x3piw"]
+min_value = 0.1
+max_value = 3.0
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 3), 4.06, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bm8v"]
-size = Vector2(3, 14)
+size = Vector2(20, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2nmy"]
+size = Vector2(20, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3piw"]
+size = Vector2(135, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh81u"]
+size = Vector2(67, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho6jx"]
+size = Vector2(36.68, 76)
 
 [node name="QTE" type="CanvasLayer"]
+offset = Vector2(575, 300)
+transform = Transform2D(1, 0, 0, 1, 575, 300)
 script = ExtResource("1_5bm8v")
+speed_curve = SubResource("Curve_x3piw")
 
-[node name="Arrow" type="Sprite2D" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Arrow" type="StaticBody2D" parent="Control"]
+position = Vector2(211, 55)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="ArrowSprite" type="Sprite2D" parent="Control/Arrow"]
 modulate = Color(0.537571, 0.542299, 0.541131, 1)
-position = Vector2(216, 64)
+z_index = 1
+position = Vector2(0.25, 1.25)
 scale = Vector2(4, 4)
 texture = ExtResource("1_elwcc")
 region_enabled = true
 region_rect = Rect2(176, 208, 16, 16)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Arrow"]
-position = Vector2(0, -2)
-scale = Vector2(1, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/StaticBody2D"]
-position = Vector2(0, -4.76838e-06)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Arrow"]
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5bm8v")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="Qte" type="Sprite2D" parent="."]
+[node name="Qte" type="Sprite2D" parent="Control"]
 position = Vector2(-7.62939e-06, -2.86102e-06)
 scale = Vector2(1.0531, 1.0531)
 texture = ExtResource("3_x3piw")
 
-[node name="Fail" type="StaticBody2D" parent="."]
-position = Vector2(216, 48)
-scale = Vector2(3.99999, 3.99999)
+[node name="Bounce" type="StaticBody2D" parent="Control"]
+position = Vector2(-231, 66)
+collision_layer = 2048
+collision_mask = 2048
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fail"]
-position = Vector2(-107.5, 1.99999)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_5bm8v")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Bounce"]
+shape = SubResource("RectangleShape2D_m2nmy")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Bad" type="StaticBody2D" parent="Control"]
+position = Vector2(-147, 56)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Bad"]
+position = Vector2(-6, 10)
+shape = SubResource("RectangleShape2D_x3piw")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Good" type="StaticBody2D" parent="Control"]
+position = Vector2(-50, 67)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Good"]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_wh81u")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Perfect" type="StaticBody2D" parent="Control"]
+position = Vector2(0, 66)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Perfect"]
+shape = SubResource("RectangleShape2D_ho6jx")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Good2" type="StaticBody2D" parent="Control"]
+position = Vector2(52, 66)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Good2"]
+shape = SubResource("RectangleShape2D_wh81u")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Bad2" type="StaticBody2D" parent="Control"]
+position = Vector2(153, 66)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Bad2"]
+shape = SubResource("RectangleShape2D_x3piw")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Bounce2" type="StaticBody2D" parent="Control"]
+position = Vector2(233, 56)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Bounce2"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_m2nmy")
 debug_color = Color(0, 0.6, 0.701961, 0)
