@@ -24,4 +24,3 @@ My brother was helping this man. Maybe I can too?
 	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
 do PlayerController.switchScene("Bakery", "Door_Bakery")
 [signal arg="uncontrol"]
-do SaveManager.save_game()

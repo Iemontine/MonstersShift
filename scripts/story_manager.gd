@@ -20,7 +20,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.LEAVING_BAKERY_EVENING
+@onready var current_event = Event.FIRST_ENTER_BAKERY
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))

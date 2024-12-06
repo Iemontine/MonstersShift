@@ -13,7 +13,7 @@ var current_points:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_game = true
-	
+	game_label.visible = false
 	#progress bar logic
 	progress_bar.max_value = game_duration
 	game_timer.start(game_duration)
@@ -41,7 +41,11 @@ func start_timer(duration: float):
 
 func _on_game_timer_timeout() -> void:
 	game_label.text = "Game Over!"
+	progress_bar.visible = false
+	points_label.visible = false
 	game_label.visible = true
+	PlayerController.start_cutscene("baker_fail_daytime")
+	
 
 
 func _on_npc_baker_point_earned() -> void:

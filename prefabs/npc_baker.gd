@@ -79,12 +79,11 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 
 func on_interacted() -> void:
-	if (player.carried_item_name == "Garbage"):
-		chat_bubble.play("mad")
-	elif player.carried_item_name == "":
-		chat_bubble.play("question")
-		
-		return
+	#if (player.carried_item_name == "Garbage"):
+		#chat_bubble.play("mad")
+	#elif player.carried_item_name == "":
+ 		#chat_bubble.play("question")
+		#return
 	if _contains_string_in_dict(player.carried_item_name, customer_want):
 		add_child(player.carried_item)
 		state = NPCState.BAKER_HOLDING_ITEM
