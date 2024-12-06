@@ -5,7 +5,6 @@ var npc: NPC
 
 func set_target_npc(npc_name: String) -> void:
 	var current_scene = get_tree().current_scene
-	print(current_scene.get_node_or_null(npc_name))
 	npc = current_scene.get_node_or_null(npc_name)
 
 func _on_dialogic_signal(argument:String):
@@ -68,3 +67,7 @@ func switchScene(destination_scene: String, destination_loadzone: String) -> voi
 func advanceStory() -> void:
 	if npc:
 		npc.advanceStory()
+
+func hideSprite() -> void:
+	if npc:
+		npc.visible = false

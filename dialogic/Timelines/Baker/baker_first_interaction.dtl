@@ -22,4 +22,6 @@ My brother was helping this man. Maybe I can too?
 	do NpcController.playAnimation("MoodLaugh", 0, 1)
 	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_04.wav" volume="0.0"]
 	baker: Oh you’re just as sweet as cupcakes! I knew I could count on you.
+do PlayerController.switchScene("Bakery", "Door_Bakery")
 [signal arg="uncontrol"]
+do SaveManager.save_game()

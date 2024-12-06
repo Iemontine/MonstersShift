@@ -1,22 +1,33 @@
 # Interacting with the widow ifor the first time
 [signal arg="control"]
 do PlayerController.stop()
+do NpcController.set_target_npc("NPC_Widow")
+do NpcController.playAnimation("SitChair", 0, 1)
 [sound path="res://assets/sound/widow_humming.mp3" volume="0.0"]
-[wait time="1.5"]
 As you walk up to the woman, you hear a sad tune.
+do PlayerController.moveRight()
+[wait time="0.4"]
+do PlayerController.moveUp()
+[wait time="0.2"]
+do PlayerController.playAnimation("SitChair", 0, 1)
 player: Hello ma’am, what are you doing?
 widow: Hmm? Oh nothing… just humming an old tune…
 widow: Say… you look just like that dear boy, what was his name again?
 player: Benjamin? He was my brother… I’m here to find out how he passed.
-do NpcController.set_target_npc("NPC_Widow")
 do NpcController.playAnimation("MoodSad")
 widow: Passed you say? Poor Benji… what a sweetheart.
 widow: He used to come visit me at my house next door and keep me company.
 player: Did you know him? I’d like to know what happened to him.
 widow: Ah yes. He helped me out after…
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Sigh_Mono_01.wav" volume="-2.0"]
-The woman stops speaking and tears begin to fall from her eyes. She runs off to her house.
-do NpcController.sprint()
+The woman stops speaking and tears begin to fall from her eyes. 
+do NpcController.setSpeed(200)
 do NpcController.moveDown()
+[wait time="0.3"]
+do NpcController.moveLeft()
+[wait time="0.7"]
+do NpcController.moveUp()
+[wait time="0.2"]
+do NpcController.hideSprite()
 player: Is she okay? Maybe I can help her.
 [signal arg="uncontrol"]
