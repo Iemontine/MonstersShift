@@ -80,6 +80,12 @@ func _on_scene_transition_completed():
 				_event_name = "baker_player_insomnia"
 				StoryManager.transition_to_event(StoryManager.Event.BAKER_PLAYER_INSOMNIA)
 				PlayerController.start_cutscene(_event_name)
+		Event.NIGHT_OUTSIDE_BAKERY:
+			_event_name = "night_outside_bakery"
+			if SceneManager.current_scene == "Bakery":
+				_event_name = "baker_before_chase"
+				StoryManager.transition_to_event(StoryManager.Event.BAKER_BEFORE_CHASE)
+				PlayerController.start_cutscene(_event_name)
 		# Event.FIRST_ENTER_BAKERY:
 		# 	_event_name = "first_enter_bakery"
 		# Event.BAKER_FIRST_INTERACTION:

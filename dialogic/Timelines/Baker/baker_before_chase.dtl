@@ -1,8 +1,23 @@
 # Occurs right before chase scene
-[sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_medium_13.wav" volume="-20.0"]
+[signal arg="control"]
+do NpcController.set_target_npc("NPC_Baker")
+do NpcController.playAnimation("Hug", 0, -1)
+do PlayerController.stop()
+do PlayerController.moveUp()
+[wait time="1.0"]
+do PlayerController.moveLeft()
+[wait time="1.0"]
+do PlayerController.moveUp()
+[wait time="0.5"]
+do PlayerController.stop()
 Walking in the bakery, you look around until you spot the baker.
+[sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_medium_13.wav" volume="-20.0"]
 You hear a weird grumbling noise coming from him. He turns towards you, his face is sunken in and eyes bright red.
 baker: Uuuuuu…ugh….I am feeling hungry…hungry for your brains!
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Attack/Voice_Female_V1_Attack_Mono_04.wav" volume="0.0"]
 player: What! He’s a zombie? I have to run!!
 In a panic, you grab the baking equipment. Hopefully, it’ll be useful.
+do PlayerController.hideSprite()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+[signal arg="uncontrol"]
