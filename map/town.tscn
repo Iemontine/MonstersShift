@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=78 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
 [ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
+[ext_resource type="PackedScene" uid="uid://0i3iff18r8mh" path="res://prefabs/qte.tscn" id="33_ukl65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29722,7 +29723,7 @@ position = Vector2(-1136, -176)
 rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-1328, -137)
+position = Vector2(-1048, -146)
 
 [node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
@@ -29761,3 +29762,5 @@ position = Vector2(-1334, -487)
 
 [node name="Sign" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-1072, -170)
+
+[node name="QTE" parent="." instance=ExtResource("33_ukl65")]

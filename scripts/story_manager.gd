@@ -94,9 +94,9 @@ func _on_scene_transition_completed():
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
 				var player = PlayerController.player
-
 				start_player_path_follow(player)
-
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
 
 		# Event.WIDOW_DAY_GAME_WRONG:
 
