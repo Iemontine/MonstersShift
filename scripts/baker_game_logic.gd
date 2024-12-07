@@ -25,7 +25,12 @@ func _process(delta: float) -> void:
 	if start_game:
 		if current_points >= points_required:
 				game_label.text = "You Win!"
+				progress_bar.visible = false
+				points_label.visible = false
 				game_label.visible = true
+				start_game = false
+				StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_DAYTIME)
+				PlayerController.start_cutscene("baker_success_daytime_game")
 		progress_bar.value = game_timer.get_time_left()
 		points_label.text = str(current_points) + " / " + str(points_required)
 		
@@ -44,6 +49,7 @@ func _on_game_timer_timeout() -> void:
 	progress_bar.visible = false
 	points_label.visible = false
 	game_label.visible = true
+	StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_DAYTIME)
 	PlayerController.start_cutscene("baker_fail_daytime")
 	
 

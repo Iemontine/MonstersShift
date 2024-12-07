@@ -20,7 +20,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.FIRST_ENTER_BAKERY
+@onready var current_event = Event.EXIT_HOUSE_POSTARRIVAL
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -65,7 +65,7 @@ func _on_scene_transition_completed():
 		# 	_event_name = "exit_house_postarrival"
 		Event.OUTSIDE_BAKERY:
 			_event_name = "outside_bakery"
-			if SceneManager.current_scene == "Bakery":
+			if SceneManager.current_scene == "Bakery_No_Game":
 				_event_name = "first_enter_bakery"
 				StoryManager.transition_to_event(StoryManager.Event.FIRST_ENTER_BAKERY)
 				PlayerController.start_cutscene(_event_name)
@@ -82,7 +82,7 @@ func _on_scene_transition_completed():
 				PlayerController.start_cutscene(_event_name)
 		Event.NIGHT_OUTSIDE_BAKERY:
 			_event_name = "night_outside_bakery"
-			if SceneManager.current_scene == "Bakery":
+			if SceneManager.current_scene == "Bakery_No_Game":
 				_event_name = "baker_before_chase"
 				StoryManager.transition_to_event(StoryManager.Event.BAKER_BEFORE_CHASE)
 				PlayerController.start_cutscene(_event_name)

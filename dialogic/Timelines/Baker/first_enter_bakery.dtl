@@ -1,10 +1,13 @@
 # Starts the first time you enter the bakery
 [signal arg="control"]
 do PlayerController.stop()
+do PlayerController.moveUp()
+[wait time="0.2"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Door_Wood_Open_Stereo.wav" volume="0.0"]
 do NpcController.set_target_npc("NPC_Baker")
-do NpcController.playAnimation("Wave")
-[wait time="0.4"]
+do NpcController.playAnimation("Wave", 0, 1)
+[wait time="1.0"]
 do NpcController.stop()
 baker: Fresh bread! Fresh bread! Come get it while it’s nice and hot!
 player: Wait… That man was in the photo at Benjamin’s house. I should go talk to him.
