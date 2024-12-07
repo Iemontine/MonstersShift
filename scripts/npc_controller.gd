@@ -58,8 +58,7 @@ func moveRight() -> void:
 
 func stop() -> void:
 	if npc:
-		npc.state = npc.NPCState.LOCKED
-		npc.travel_to_anim("Idle")
+		npc.stop()
 		print("Stopping")
 
 func switchScene(destination_scene: String, destination_loadzone: String) -> void:
