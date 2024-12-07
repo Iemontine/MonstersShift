@@ -2,7 +2,7 @@
 [signal arg="control"]
 do PlayerController.stop()
 do PlayerController.moveUp()
-[wait time="0.2"]
+[wait time="0.1"]
 do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Door_Wood_Open_Stereo.wav" volume="0.0"]
 do NpcController.set_target_npc("NPC_Baker")

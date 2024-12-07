@@ -5,10 +5,12 @@ do PlayerController.stop()
 [wait time="2.0"]
 baker: What a talented baker!
 - Exit
+	[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
 	do PlayerController.switchScene("Bakery_No_Game", "Door_Bakery")
-	do PlayerController.moveUp()
-	[wait time="0.2"]
 	[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+	do PlayerController.moveUp()
+	[wait time="0.1"]
+	do PlayerController.stop()
 	do NpcController.set_target_npc("NPC_Baker")
 	do NpcController.playAnimation("Wave", 0, 1)
 	baker: Look at these beautiful pastries! You’re a peach for helping me out.
