@@ -1,9 +1,9 @@
 # Happens right before nightime minigame starts
 [signal arg="control"]
 do PlayerController.stop()
-do PlayerController.playAnimation("FishingCastLine", 0, -1)
-[wait time="0.3"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Closet_Key_Insertion_Stereo.wav" volume="5.0"]
+[wait time="0.3"]
+do PlayerController.playAnimation("FishingCastLine", 0, -1)
 [wait time="0.5" hide_text="false"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Window_Mechanism_Old_Solo_Stereo.wav" volume="5.0"]
 do PlayerController.moveDown()
