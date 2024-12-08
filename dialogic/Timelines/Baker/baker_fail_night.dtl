@@ -6,6 +6,5 @@ do PlayerController.stop()
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_medium_11.wav" volume="-20.0"]
 baker: Your brain will be perfect in my new recipe!
 - Try Again
-	# fix this switch scene
-	do PlayerController.switchScene("Bakery", "Bakery_Door")
+	do PlayerController.switchScene("Treehouse_Interior_Baker_Game", "Door_Treehouse")
 [signal arg="uncontrol"]

@@ -1,4 +1,13 @@
 # Player wins baker's nightime minigame
+[signal arg="control"]
+do PlayerController.stop()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+baker: What a talented baker!
+- Exit
+	[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
+	do PlayerController.switchScene("Bakery_No_Game", "Door_Bakery")
+	[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Attack/Voice_Female_V2_Attack_Mono_08.wav" volume="0.0"]
 [wait time="0.6" hide_text="false"]
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/16bit/Vocal/Impact Pain Hurt/zombie_massacre_vocal_impact_pain_hurt_25.wav" volume="-10.0"]

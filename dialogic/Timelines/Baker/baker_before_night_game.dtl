@@ -19,4 +19,5 @@ As you run into the treehouse, you lock the door and peer out the windows. You s
 baker: Mmmmm….graahh….I am so so hungry
 do PlayerController.playAnimation("MusicSinging", 0, 1)
 player: I did not come here to become zombie food, I must survive!
+do PlayerController.switchScene("Treehouse_Interior_Baker_Game", "Door_Treehouse")
 [signal arg="uncontrol"]

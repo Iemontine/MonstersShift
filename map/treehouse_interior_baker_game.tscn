@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=43 format=4 uid="uid://c2ssodjik8cd4"]
 
-[ext_resource type="Script" path="res://scripts/camera.gd" id="1_s7ksf"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="1_s7ksf"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
 [ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_fc45d"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="24_gptp6"]
 [ext_resource type="PackedScene" uid="uid://d2uq81x0r30my" path="res://prefabs/npc_spawner_house.tscn" id="25_m5cdb"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="26_1a82g"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("2_ch15b")
@@ -507,7 +508,7 @@ sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 [sub_resource type="ViewportTexture" id="ViewportTexture_1a82g"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Treehouse_Interior" type="Node2D"]
+[node name="Treehouse_Interior_Baker_Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(8, 25)
 
@@ -641,3 +642,13 @@ target = NodePath("../Player")
 position = Vector2(-56, -16)
 npc_scene = ExtResource("24_1a82g")
 travel_locations = [NodePath("../Chair1"), NodePath("../Chair2"), NodePath("../Chair3")]
+
+[node name="Door_Treehouse" parent="." instance=ExtResource("27_n8xkf")]
+position = Vector2(-56, -32)
+destination_scene = "Treehouse_Exterior"
+target_door = "Door_Treehouse"
+
+[node name="Spawnpoint" parent="Door_Treehouse" index="2"]
+position = Vector2(52, 37)
+
+[editable path="Door_Treehouse"]
