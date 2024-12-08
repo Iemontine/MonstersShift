@@ -34,7 +34,7 @@ do PlayerController.moveRight()
 do PlayerController.moveLeft()
 [wait time="0.5"]
 do PlayerController.moveDown()
-[wait time="0.8"]
+[wait time="0.7"]
 do PlayerController.moveRight()
 [wait time="0.6"]
 do PlayerController.moveDown()
