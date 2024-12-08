@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://0i3iff18r8mh"]
 
-[ext_resource type="Script" uid="uid://cbt5omduqu576" path="res://prefabs/qte.gd" id="1_5bm8v"]
+[ext_resource type="Script" uid="uid://cbt5omduqu576" path="res://prefabs/qte_day.gd" id="1_5bm8v"]
 [ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="1_elwcc"]
 [ext_resource type="Texture2D" uid="uid://cb7qvtgw6n8yx" path="res://assets/assets_widow/qte.png" id="3_x3piw"]
 
@@ -19,11 +19,11 @@ size = Vector2(20, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3piw"]
 size = Vector2(135, 76)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh81u"]
-size = Vector2(67, 76)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho6jx"]
 size = Vector2(36.68, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh81u"]
+size = Vector2(96.355, 76)
 
 [node name="QTE" type="CanvasLayer"]
 offset = Vector2(575, 300)
@@ -90,18 +90,8 @@ position = Vector2(-6, 10)
 shape = SubResource("RectangleShape2D_x3piw")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="Good" type="StaticBody2D" parent="Control"]
-position = Vector2(-50, 67)
-collision_layer = 2048
-collision_mask = 2048
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Good"]
-position = Vector2(-2, -1)
-shape = SubResource("RectangleShape2D_wh81u")
-debug_color = Color(0, 0.6, 0.701961, 0)
-
 [node name="Perfect" type="StaticBody2D" parent="Control"]
-position = Vector2(0, 66)
+position = Vector2(-66.7412, 65.9913)
 collision_layer = 2048
 collision_mask = 2048
 
@@ -109,12 +99,22 @@ collision_mask = 2048
 shape = SubResource("RectangleShape2D_ho6jx")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
+[node name="Perfect2" type="StaticBody2D" parent="Control"]
+position = Vector2(66.7412, 65.9913)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Perfect2"]
+shape = SubResource("RectangleShape2D_ho6jx")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
 [node name="Good2" type="StaticBody2D" parent="Control"]
-position = Vector2(52, 66)
+position = Vector2(5.2493, 65.9913)
 collision_layer = 2048
 collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Good2"]
+position = Vector2(-5.2493, 0)
 shape = SubResource("RectangleShape2D_wh81u")
 debug_color = Color(0, 0.6, 0.701961, 0)
 

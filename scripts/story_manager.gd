@@ -5,12 +5,13 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
+	CLICK_ON_RECORD_PLAYER, EXIT_HOUSE_POSTARRIVAL, READY_TO_EXIT, LEAVE_TOO_EARLY,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, 
 	BAKER_BEFORE_NIGHT_GAME, BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING,
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, WIDOW_SUCCESS_DAYTIME,
 	WIDOW_FAIL_DAYTIME, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
+	WIDOW_BEFORE_NIGHT_GAME,
 	END 
 }
 
@@ -90,13 +91,14 @@ func _on_scene_transition_completed():
 		# WIDOW
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
+				SceneManager.change_time_of_day()
 				enable_grocery_items()
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
-				var player = PlayerController.player
-				start_player_path_follow(player)
-				var qte = get_tree().current_scene.get_node("QTE")
-				qte.start_minigame()
+				start_player_path_follow()
+		#Event.WIDOW_BEFORE_NIGHT_GAME:
+			#if SceneManager.current_scene == "Treehouse_Exterior":
+				#start_player_path_follow()
 
 		# Event.WIDOW_DAY_GAME_WRONG:
 
@@ -127,8 +129,7 @@ func enable_grocery_items():
 	#enabled_item.enabled = true
 	#enabled_item.exclamation_sprite.visible = true
 
-func start_player_path_follow(player):
-	player.speed = 50  # Set the speed for the player
-	player.path_following = true
-	player.state = Player.PlayerState.CONTROLLED
-	player.follow_path()
+func start_player_path_follow():
+	var qte = get_tree().current_scene.get_node("QTE")
+	print(get_tree().root.get_tree_string_pretty())
+	qte.start_minigame()

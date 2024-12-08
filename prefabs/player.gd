@@ -8,7 +8,6 @@ const CLICK_THRESHOLD = 0.5
 @onready var animationPlayer:AnimationPlayer = $SpriteLayers/AnimationPlayer
 @onready var animationTree:AnimationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
-@export var camera: NodePath
 
 # Variables related to movement
 @onready var default_speed = speed
@@ -29,6 +28,7 @@ var current_interactable = null # current target interactable being held on
 # Used during Widow minigame
 var path_follow: PathFollow2D
 var path_following: bool = false
+signal path_follow_completed
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
@@ -100,6 +100,7 @@ func handle_interaction():
 			collider.interact()
 
 func update_speed_and_animation():
+	if path_following: return
 	if Input.is_key_pressed(KEY_SHIFT):
 		speed = sprint_multiplier * default_speed
 		if state == PlayerState.CARRYING_ITEM:
@@ -202,14 +203,11 @@ func _on_path_follow_timeout(delta):
 
 	# Progress along the path
 	path_follow.progress_ratio += (speed / path_length) * delta
-	var direction_vector = (path_follow.get_global_position() - global_position).normalized()
+	direction = (path_follow.get_global_position() - global_position).normalized()
 	
 	global_position = path_follow.get_global_position()
-	travel_to_anim("WalkCarry", direction_vector)
-	get_node("Movement").movement_anim = "WalkCarry"
+	travel_to_anim(get_node("Movement").movement_anim)
 	if path_follow.progress_ratio >= 1.0:
 		path_following = false
 		state = PlayerState.NORMAL
-		#emit_signal("path_follow_completed")
-
-# TODO: Add trigger for quick time events
+		emit_signal("path_follow_completed")

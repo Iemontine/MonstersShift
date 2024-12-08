@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://40bygst8skbn"]
 
-[ext_resource type="Script" uid="uid://dlxkh1g8kw16q" path="res://interactable/test_widow_minigame.gd" id="1_ufjhu"]
+[ext_resource type="Script" uid="uid://dlxkh1g8kw16q" path="res://interactable/test_widow_minigame_day.gd" id="1_ufjhu"]
 [ext_resource type="Texture2D" uid="uid://b6wirt5a20b0d" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_oynfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
