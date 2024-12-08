@@ -11,7 +11,8 @@ enum Event {
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
 	BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING,
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, 
-	WIDOW_SUCCESS_DAYTIME, WIDOW_DAY_QTE_SUCCESS, WIDOW_FAIL_DAYTIME, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
+	WIDOW_SUCCESS_DAYTIME, WIDOW_DAY_QTE_SUCCESS, WIDOW_FAIL_DAYTIME, WIDOW_PLAYER_INSOMNIA,
+	WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	END 
 }
 
@@ -61,8 +62,7 @@ func _on_scene_transition_completed():
 				_event_name = "exit_house_postarrival"
 				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene(_event_name)
-		# Event.EXIT_HOUSE_POSTARRIVAL:
-		# 	_event_name = "exit_house_postarrival"
+		
 		Event.OUTSIDE_BAKERY:
 			_event_name = "outside_bakery"
 			if SceneManager.current_scene == "Bakery_No_Game":
@@ -91,26 +91,7 @@ func _on_scene_transition_completed():
 				_event_name = "baker_before_night_game"
 				StoryManager.transition_to_event(StoryManager.Event.BAKER_BEFORE_NIGHT_GAME)
 				PlayerController.start_cutscene(_event_name)
-		# Event.FIRST_ENTER_BAKERY:
-		# 	_event_name = "first_enter_bakery"
-		# Event.BAKER_FIRST_INTERACTION:
-		# 	_event_name = "baker_first_interaction"
-		# Event.BAKER_SUCCESS_DAYTIME:
-		# 	_event_name = "baker_success_daytime"
-		# Event.BAKER_FAIL_DAYTIME:
-		# 	_event_name = "baker_fail_daytime"
-		# Event.NIGHT_OUTSIDE_BAKERY:
-		# 	_event_name = "night_outside_bakery"
-		# Event.BAKER_BEFORE_CHASE:
-		# 	_event_name = "baker_before_chase"
-		# Event.BAKER_BEFORE_NIGHT_GAME:
-		# 	_event_name = "baker_before_night_game"
-		# Event.BAKER_SUCCESS_NIGHT:
-		# 	_event_name = "baker_success_night"
-			# _event_name = "baker_fail_night"
-		# Event.WIDOW_FIRST_INTERACTION:
-		# 	_event_name = "widow_first_interaction"
-		# WIDOW
+		
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
@@ -119,6 +100,11 @@ func _on_scene_transition_completed():
 				var player = PlayerController.player
 
 				start_player_path_follow(player)
+		Event.WIDOW_SUCCESS_DAYTIME:
+			if SceneManager.current_scene == "Treehouse_Interior":
+				_event_name = "widow_player_insomnia"
+				StoryManager.transition_to_event(StoryManager.Event.WIDOW_PLAYER_INSOMNIA)
+				PlayerController.start_cutscene(_event_name)
 
 
 		# Event.WIDOW_DAY_GAME_WRONG:

@@ -1,3 +1,13 @@
 # Death comment after failing baker's nightime game
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_medium_11.wav" volume="-20.0"]
 baker: Your brain will be perfect in my new recipe!
+
+[signal arg="control"]
+do PlayerController.stop()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+baker: Your brain will be perfect in my new recipe!
+- Try Again
+	# fix this switch scene
+	do PlayerController.switchScene("Bakery", "Bakery_Door")
+[signal arg="uncontrol"]

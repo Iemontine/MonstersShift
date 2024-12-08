@@ -8,4 +8,9 @@ do PlayerController.stop()
 You leave the items at the door.
 widow: Thank you sweetheart! You sure do remind me of Benji… what an angel…
 player: I’m glad I could help and I'm glad my brother did too.
+do PlayerController.moveDown()
+[wait time="0.3"]
+do PlayerController.stop()
+do PlayerController.playAnimation("Idle2", 0, 1)
+player: It's getting late, I should head home.
 [signal arg="uncontrol"]
