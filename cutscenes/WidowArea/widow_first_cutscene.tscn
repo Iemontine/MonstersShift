@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3ojvtx4yjg2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqqih"]
-size = Vector2(20, 40)
+size = Vector2(18, 43.75)
 
 [node name="WidowFirstCutscene" type="Area2D"]
 
