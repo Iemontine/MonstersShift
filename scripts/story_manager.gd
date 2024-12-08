@@ -21,7 +21,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.NIGHT_OUTSIDE_BAKERY
+@onready var current_event = Event.INTRO
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -91,7 +91,12 @@ func _on_scene_transition_completed():
 				_event_name = "baker_before_night_game"
 				StoryManager.transition_to_event(StoryManager.Event.BAKER_BEFORE_NIGHT_GAME)
 				PlayerController.start_cutscene(_event_name)
-		
+		Event.BAKER_SUCCESS_NIGHT:
+			if SceneManager.current_scene == "Treehouse_Interior":
+				_event_name = "day_two_morning"
+				StoryManager.transition_to_event(StoryManager.Event.DAY_TWO_MORNING)
+				PlayerController.start_cutscene(_event_name)
+				
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()

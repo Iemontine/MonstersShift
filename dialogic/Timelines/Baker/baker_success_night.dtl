@@ -3,24 +3,49 @@
 do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
-baker: What a talented baker!
+baker: UGGHH I LOVE DESSERT!
 - Exit
 	[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
-	do PlayerController.switchScene("Bakery_No_Game", "Door_Bakery")
+	do PlayerController.switchScene("Treehouse_Interior_Baker_Success", "Door_Treehouse")
 	[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
-[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Attack/Voice_Female_V2_Attack_Mono_08.wav" volume="0.0"]
-[wait time="0.6" hide_text="false"]
-[sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/16bit/Vocal/Impact Pain Hurt/zombie_massacre_vocal_impact_pain_hurt_25.wav" volume="-10.0"]
-Through the window, you throw a piece of food at the zombie baker. He devours it and slowly, his eyes turn back to normal.
-baker: Oh my, I just went full zombie mode.
-player: Yes you were absolutely determined to eat me! Why? What are you?
-baker: It’s a long story involving a deadly virus.
-baker: I became a baker because the only thing preventing full zombification is the consumption of pastries.
-baker: Your brother was one of the few people who knew. That’s why he was always helping out at the bakery.
-baker: He wanted to help cure me.
-Benjamin wasn’t just working at the bakery. He was trying to help this man.
-player: Well, should I be worried about this zombie trance happening again in the future.
-baker: Uhhh you never know! But I should be good for a long while. Thank you again.
-leave baker [animation="Slide Out Right"]
-player: My brother and his secrets…what else will I discover?
-player: I guess I'll try to go back to bed...
+	do NpcController.set_target_npc("NPC_Baker")
+	do NpcController.setSpeed(100)
+	[sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/16bit/Vocal/Impact Pain Hurt/zombie_massacre_vocal_impact_pain_hurt_25.wav" volume="-10.0"]
+	do NpcController.playAnimation("WorkAtDesk2", 0, 1)
+	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Gasp_Mono_01.wav" volume="0.0"]
+	do PlayerController.playAnimation("MoodShocked", 0, -1)
+	[wait time="0.6" hide_text="false"]
+	do PlayerController.playAnimation("Look", -1, 0)
+	As the baker busts through the door, he devours the pastries you made from him. Slowly, his eyes turn back to normal.
+	do NpcController.stop()
+	do NpcController.playAnimation("MoodShocked")
+	baker: Oh my, I just went full zombie mode.
+	do NpcController.moveDown()
+	[wait time="0.2"]
+	do NpcController.moveRight()
+	[wait time="0.4"]
+	do NpcController.stop()
+	do NpcController.playAnimation("Look", 1, 0)
+	player: Yes you were absolutely determined to eat me! Why? What are you?
+	baker: It’s a long story involving a deadly virus.
+	baker: I became a baker because the only thing preventing full zombification is the consumption of pastries.
+	baker: Your brother was one of the few people who knew. That’s why he was always helping out at the bakery.
+	do NpcController.playAnimation("MoodSad", 0, 1)
+	baker: He wanted to help cure me.
+	Benjamin wasn’t just working at the bakery. He was trying to help this man.
+	do NpcController.playAnimation("Look", 1, 0)
+	player: Well, should I be worried about this zombie trance happening again in the future.
+	baker: Uhhh you never know! But I should be good for a long while. Thank you again.
+	do NpcController.moveLeft()
+	[wait time="0.4"]
+	do NpcController.moveUp()
+	[wait time="0.3"]
+	do NpcController.stop()
+	do NpcController.hideSprite()
+	do NpcController.stop()
+	do PlayerController.playAnimation("Idle2", 0, 1)
+	player: My brother and his secrets…what else will I discover?
+	player: I guess I'll try to go back to bed...
+	do SceneManager.change_time_of_day()
+	do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
+	[signal arg="uncontrol"]

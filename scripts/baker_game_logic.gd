@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_DAYTIME)
 					PlayerController.start_cutscene("baker_success_daytime_game")
 				else:
-					StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_NIGHT)
-					PlayerController.start_cutscene("baker_fail_night")
+					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_NIGHT)
+					PlayerController.start_cutscene("baker_success_night")
 		progress_bar.value = game_timer.get_time_left()
 		points_label.text = str(current_points) + " / " + str(points_required)
 		

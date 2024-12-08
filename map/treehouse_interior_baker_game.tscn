@@ -649,6 +649,6 @@ destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 
 [node name="Spawnpoint" parent="Door_Treehouse" index="2"]
-position = Vector2(52, 37)
+position = Vector2(49, 120)
 
 [editable path="Door_Treehouse"]
