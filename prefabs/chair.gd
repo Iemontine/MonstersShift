@@ -19,7 +19,7 @@ func _on_body_entered(body: Node) -> void:
 		npc = body  # Store a reference to the NPC
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if npc != null and npc.state == NPC.NPCState.BASIC_ARRIVED:
 		npc.travel_to_anim("SitChair")
 

@@ -34,7 +34,7 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	
 	dest_player.global_position = pos
 	dest_player.direction = dir
-	handle_day_shift(dest_player)
+	handle_day_shift()
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
@@ -58,7 +58,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	if should_player_walk:
 		dest_player.state = Player.PlayerState.CONTROLLED
 	
-	handle_day_shift(dest_player)
+	handle_day_shift()
 	
 	if loadzone_name.begins_with("Loadzone"):
 		move_player_to_loadzone(new_scene, dest_player, loadzone_name)
@@ -102,31 +102,36 @@ func move_player_to_door(new_scene, player, door_name):
 		if camera:
 			camera.target = player
 
-func handle_day_shift(player:Player) -> void:
+func handle_day_shift() -> void:
+	var surroundings = get_tree().current_scene.get_node_or_null("Surroundings")
+	var lights = get_tree().get_nodes_in_group("light")
 	
-	var surroundings:= player.get_parent().get_node_or_null("Surroundings")
-	var lights := get_tree().get_nodes_in_group("light")
-	
-	# add a special case for evenining
 	if time_of_day == TIME.DAY:
-		for light : PointLight2D  in lights:
+		for light in lights:
 			light.enabled = false
-		if surroundings != null:
+		if surroundings:
 			surroundings.color = Color("#ffffff")
 	elif time_of_day == TIME.EVENING:
-		if surroundings != null:
-			for light : PointLight2D in lights:
-				light.enabled = true
-				light.energy = 0.5
+		for light in lights:
+			light.enabled = true
+			light.energy = 0.5
+		if surroundings:
 			surroundings.color = Color("#fabb7b")
 	elif time_of_day == TIME.NIGHT:
-		for light : PointLight2D  in lights:
+		for light in lights:
 			light.enabled = true
 			light.energy = 1.0
-		if surroundings != null:
+		if surroundings:
 			surroundings.color = Color("#132771")
 
-func change_time_of_day() -> void:
-	var player = get_tree().get_current_scene().get_node("Player")
-	time_of_day = ( time_of_day + 1 ) % 3
-	handle_day_shift(player)
+# func change_time_of_day(player:Player) -> void:
+# 	time_of_day = ( time_of_day + 1 ) % 3
+# 	handle_day_shift(player)
+
+func change_time_of_day(new_time_of_day: int = -1) -> void:
+	if new_time_of_day == -1:
+		time_of_day = TIME.values()[(time_of_day + 1) % 3]
+	else:
+		time_of_day = TIME.values()[new_time_of_day]
+	
+	handle_day_shift()

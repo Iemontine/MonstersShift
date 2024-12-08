@@ -18,6 +18,9 @@ func _physics_process(delta):
 
 
 func move_player(_delta):
+	if player.state == Player.PlayerState.CONTROLLED and player.path_following: 
+		return
+
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength(("left"))
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength(("up"))
@@ -39,7 +42,5 @@ func move_player(_delta):
 				player.travel_to_anim("Idle")
 		velocity = Vector2.ZERO
 	
-	if player.state == Player.PlayerState.CONTROLLED and player.path_following: 
-		return
 	player.set_velocity(velocity)
 	player.move_and_slide()

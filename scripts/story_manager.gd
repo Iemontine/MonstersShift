@@ -5,7 +5,7 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
+	CLICK_ON_RECORD_PLAYER, EXIT_HOUSE_POSTARRIVAL, READY_TO_EXIT, LEAVE_TOO_EARLY,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, BAKER_PLAYER_INSOMNIA,
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
@@ -99,6 +99,7 @@ func _on_scene_transition_completed():
 				
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
+				SceneManager.change_time_of_day()
 				enable_grocery_items()
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
@@ -132,7 +133,8 @@ func _on_scene_transition_completed():
 
 # WIDOW
 func enable_grocery_items():
-	var items = get_tree().get_nodes_in_group("grocery_item")
+	print()
+	#var items = get_tree().get_nodes_in_group("grocery_item")
 	#var enabled_item = items[randi() % items.size()]
 	#for item in items:
 		#item.enabled = false
@@ -140,8 +142,7 @@ func enable_grocery_items():
 	#enabled_item.enabled = true
 	#enabled_item.exclamation_sprite.visible = true
 
-func start_player_path_follow(player):
-	player.speed = 50  # Set the speed for the player
-	player.path_following = true
-	player.state = Player.PlayerState.CONTROLLED
-	player.follow_path()
+func start_player_path_follow():
+	var qte = get_tree().current_scene.get_node("QTE")
+	print(get_tree().root.get_tree_string_pretty())
+	qte.start_minigame()

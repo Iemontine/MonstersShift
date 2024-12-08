@@ -8,7 +8,6 @@ const CLICK_THRESHOLD = 0.5
 @onready var animationPlayer:AnimationPlayer = $SpriteLayers/AnimationPlayer
 @onready var animationTree:AnimationTree = $SpriteLayers/AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
-@export var camera: NodePath
 
 # Variables related to movement
 @onready var default_speed = speed
@@ -26,9 +25,10 @@ var hold_start_time = 0.0
 var is_holding = false
 var current_interactable = null # current target interactable being held on
 
-# WIDOW
+# Used during Widow minigame
 var path_follow: PathFollow2D
 var path_following: bool = false
+signal path_follow_completed
 
 func _ready():
 	animationTree.set_animation_player(animationPlayer.get_path())
@@ -37,7 +37,8 @@ func _ready():
 	PlayerController.player = self
 
 func _physics_process(delta):
-	if state == PlayerState.CONTROLLED and path_following:
+	if path_following:
+		state = PlayerState.CONTROLLED
 		_on_path_follow_timeout(delta)
 
 	if state == PlayerState.LOCKED: return
@@ -49,6 +50,10 @@ func _process(_delta: float) -> void:
 	# TODO: delete label
 	var state_names = ["NORMAL", "LOCKED", "CONTROLLED", "CARRYING_ITEM"]
 	$Label.text = "State: " + state_names[int(state)] + ", Animation: " + animationState.get_current_node()
+
+	var qte = get_tree().get_root().get_node_or_null(("QTE"))
+	if qte and qte.is_active: return
+
 	carry_item()
 	carried_item.visible = state == PlayerState.CARRYING_ITEM or path_following
 	if state == PlayerState.CONTROLLED: return
@@ -95,6 +100,7 @@ func handle_interaction():
 			collider.interact()
 
 func update_speed_and_animation():
+	if path_following: return
 	if Input.is_key_pressed(KEY_SHIFT):
 		speed = sprint_multiplier * default_speed
 		if state == PlayerState.CARRYING_ITEM:
@@ -174,7 +180,7 @@ func save():
 	
 # ============================= WIDOW MINIGAME =================================
 
-# Targets the path sitting as a child of the root of the scene
+# Follows a path child to the root, called when the minigame starts
 func follow_path():
 	var path = get_parent().get_node_or_null("Path2D")
 	path_follow = path.get_node_or_null("PathFollow2D")
@@ -190,17 +196,18 @@ func follow_path():
 	atlas_texture.region = Rect2(224, 232, 16, 16)
 	carried_item.texture = atlas_texture
 
+# Called when the player is following a path in _physics_process()
 func _on_path_follow_timeout(delta):
 	var path : Path2D = get_parent().get_node_or_null("Path2D")
 	var path_length = path.curve.get_baked_length()
+
+	# Progress along the path
 	path_follow.progress_ratio += (speed / path_length) * delta
-	var direction_vector = (path_follow.get_global_position() - global_position).normalized()
+	direction = (path_follow.get_global_position() - global_position).normalized()
+	
 	global_position = path_follow.get_global_position()
-	travel_to_anim("WalkCarry", direction_vector)
-	get_node("Movement").movement_anim = "WalkCarry"
+	travel_to_anim(get_node("Movement").movement_anim)
 	if path_follow.progress_ratio >= 1.0:
 		path_following = false
 		state = PlayerState.NORMAL
-		#emit_signal("path_follow_completed")
-
-# TODO: Add trigger for quick time events
+		emit_signal("path_follow_completed")

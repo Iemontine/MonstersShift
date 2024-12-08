@@ -112,7 +112,7 @@ func load_palettes():
 func _ready():
 	load_palettes()
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	set_layer_shader("00undr", color_00undr)
 	set_layer_shader("01body", color_01body)
 	set_layer_shader("02sock", color_02sock)
@@ -148,6 +148,8 @@ func set_layer_shader(layer_name: String, base_color: Color):
 		var replace_color = colors[i] if colors.size() > i else original_color
 		shader_material.set_shader_parameter("original_" + str(i), original_color)
 		shader_material.set_shader_parameter("replace_" + str(i), replace_color)
+	var root_alpha = get_parent().modulate.a
+	shader_material.set_shader_parameter("alpha_modulation", root_alpha)
 	layer_node.material = shader_material
 
 func generate_color_ramp(base_color: Color, num_colors: int) -> Array:
