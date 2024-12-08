@@ -16,24 +16,30 @@ var _current_track : String
 var _track_path := "res://assets/sound/music/"
 var _use_custom_track : bool = true
 var _custom_track : String = "test_audio.WAV"
+var _current_playtime : float = 0.0
 
 @onready var stream_player : AudioStreamPlayer2D 
 
 func _ready() -> void:
-	stream_player = AudioStreamPlayer2D.new()
+	
 	SceneManager.scene_transition_completed.connect(_on_scene_transition_completed)
 	_on_scene_transition_completed()
 	
+func _process(delta: float) -> void:
+	if is_instance_valid(stream_player):
+		_current_playtime = stream_player.get_playback_position()
+		
+	print(_current_playtime)
+
 func _on_scene_transition_completed() -> void:
 	
-	
+	stream_player = AudioStreamPlayer2D.new()
 	
 	if _use_custom_track:
+		var stream = load(_track_path + _custom_track)
+		stream_player.stream = stream
 		if _current_track != _custom_track and _custom_track != "":
-			var stream = load(_track_path + _custom_track)
-			stream_player.stream = stream
-			stream_player.autoplay = true
-			print("playing track")
+			_current_playtime = 0.0
 			_current_track = _custom_track
 			pass
 		pass
@@ -41,6 +47,8 @@ func _on_scene_transition_completed() -> void:
 		if _current_track != _tracks[SceneManager.current_scene]:
 			stream_player.play()
 			pass
+
+			
 	else:
 		match SceneManager.time_of_day:
 			SceneManager.TIME.DAY:
@@ -56,6 +64,7 @@ func _on_scene_transition_completed() -> void:
 		
 	
 	get_tree().current_scene.add_child(stream_player)
+	stream_player.play(_current_playtime)
 	print(_current_track)
 
 func use_custom_track(track:String) -> void:
