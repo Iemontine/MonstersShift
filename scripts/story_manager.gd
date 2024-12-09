@@ -104,7 +104,7 @@ func _on_scene_transition_completed():
 				SceneManager.change_time_of_day()
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
-				start_player_path_follow()
+				start_player_path_follow(SceneManager.dest_player)
 		Event.WIDOW_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Treehouse_Interior":
 				_event_name = "widow_player_insomnia"
