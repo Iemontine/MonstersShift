@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var target: Player
+@export var target: CharacterBody2D
 var base_zoom: Vector2
 var cur_window_size: Vector2
 

@@ -1,8 +1,23 @@
 # Happens right before nightime minigame starts
+[signal arg="control"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Closet_Key_Insertion_Stereo.wav" volume="5.0"]
+[wait time="0.3"]
+do PlayerController.playAnimation("FishingCastLine", 0, -1)
 [wait time="0.5" hide_text="false"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Household_Window_Mechanism_Old_Solo_Stereo.wav" volume="5.0"]
+do PlayerController.moveDown()
+[wait time="0.2"]
+do PlayerController.moveRight()
+[wait time="0.5"]
+do PlayerController.moveUp()
+[wait time="0.3"]
+do PlayerController.stop()
+do PlayerController.playAnimation("Hug", 0, -1)
 As you run into the treehouse, you lock the door and peer out the windows. You see the baker approaching.
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_short_07.wav" volume="-20.0"]
 baker: Mmmmm….graahh….I am so so hungry
+do PlayerController.playAnimation("MusicSinging", 0, 1)
 player: I did not come here to become zombie food, I must survive!
+do PlayerController.switchScene("Treehouse_Interior_Baker_Game", "Door_Treehouse")
+[signal arg="uncontrol"]

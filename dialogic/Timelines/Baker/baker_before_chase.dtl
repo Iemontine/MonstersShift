@@ -1,8 +1,46 @@
 # Occurs right before chase scene
+[signal arg="control"]
+do PlayerController.stop()
+do PlayerController.moveUp()
+[wait time="0.1"]
+do PlayerController.stop()
+Walking in the bakery, you spot the baker.
+do NpcController.set_target_npc("NPC_Baker")
+do NpcController.setSpeed(200)
+do NpcController.moveLeft()
+[wait time="0.7"]
+do NpcController.moveUp()
+[wait time="0.6"]
+do NpcController.stop()
+do NpcController.setSpeed(100)
+do NpcController.playAnimation("Hug", 0, -1)
+player: Where is he going?
+do PlayerController.moveLeft()
+[wait time="1.3"]
+do PlayerController.moveUp()
+[wait time="1.3"]
+do PlayerController.stop()
 [sound path="res://assets/sound/Zombie_Massacre_Sound_Effects_Pack_01/Attack/zombie_massacre_vocal_attack_medium_13.wav" volume="-20.0"]
-Walking in the bakery, you look around until you spot the baker.
-You hear a weird grumbling noise coming from him. He turns towards you, his face is sunken in and eyes bright red.
+As you approach the baker, you hear a weird grumbling noise coming from him.
+do NpcController.playAnimation("Push", 0, 1)
+He turns towards you, his face is sunken in and eyes bright red.
 baker: Uuuuuu…ugh….I am feeling hungry…hungry for your brains!
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Attack/Voice_Female_V1_Attack_Mono_04.wav" volume="0.0"]
 player: What! He’s a zombie? I have to run!!
-In a panic, you grab the baking equipment. Hopefully, it’ll be useful.
+In a panic, you grab the baking supplies. Hopefully, it’ll be useful.
+do PlayerController.setSpeed(200)
+do PlayerController.moveRight()
+[wait time="0.6"]
+do PlayerController.moveLeft()
+[wait time="0.5"]
+do PlayerController.moveDown()
+[wait time="0.7"]
+do PlayerController.moveRight()
+[wait time="0.6"]
+do PlayerController.moveDown()
+[wait time="0.1"]
+do PlayerController.hideSprite()
+do PlayerController.resetSpeed()
+do PlayerController.stop()
+do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
+[signal arg="uncontrol"]

@@ -1,5 +1,22 @@
 # Player insomnia before going to bakery
+do SceneManager.change_time_of_day()
 [signal arg="control"]
+do PlayerController.stop()
+do PlayerController.moveDown()
+[wait time="0.5"]
+do PlayerController.moveRight()
+[wait time="1.2"]
+do PlayerController.moveDown()
+[wait time="0.5"]
+do PlayerController.stop()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+do PlayerController.playAnimation("IdleCarry", 0, 1)
+[wait time="0.7"]
+do PlayerController.stop()
 After hours of tossing and turning, you decide to get out of bed.
+do PlayerController.playAnimation("MoodSad")
 player: I just can't sleep...might as well go for a walk.
+player: Maybe I can stare at the pastries through the bakery window. Croissants always make me happy.
 [signal arg="uncontrol"]

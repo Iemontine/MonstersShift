@@ -12,8 +12,10 @@ var last_direction = Vector2.ZERO
 
 enum NPCState { NORMAL, LOCKED, CONTROLLED, 
 				BAKER_IDLE, BAKER_HOLDING_ITEM, BAKER_DELIVERING, BAKER_RETURNING, 
-				BASIC_PATH_FINDING, BASIC_ARRIVED, BASIC_LEAVING, BASIC_DESTROY }
+				BASIC_PATH_FINDING, BASIC_ARRIVED, BASIC_LEAVING, BASIC_DESTROY,
+				WIDOW_ATTACKING, WIDOW_BACKING_OFF, WIDOW_IDLE }
 var state: NPCState = NPCState.NORMAL
+var movement_anim = "Walk"
 
 func _ready() -> void:
 	speed /= 1000.0
@@ -29,20 +31,19 @@ func _physics_process(_delta):
 func move(direction: Vector2) -> void:
 	last_direction = direction
 	state = NPCState.CONTROLLED
-	match direction:
-		Vector2.UP:
-			print("NPC Moving up")
-		Vector2.DOWN:
-			print("NPC Moving down")
-		Vector2.LEFT:
-			print("NPC Moving left")
-		Vector2.RIGHT:
-			print("NPC Moving right")
-	travel_to_anim("Walk", direction)
+	# match direction:
+	# 	Vector2.UP:
+	# 		print("NPC Moving up")
+	# 	Vector2.DOWN:
+	# 		print("NPC Moving down")
+	# 	Vector2.LEFT:
+	# 		print("NPC Moving left")
+	# 	Vector2.RIGHT:
+	# 		print("NPC Moving right")
+	travel_to_anim(movement_anim, direction)
 	velocity = direction.normalized() * speed
 
 func stop() -> void:
-	print("stop")
 	state = NPCState.LOCKED
 	travel_to_anim("Idle")
 	velocity = Vector2.ZERO
@@ -54,6 +55,9 @@ func playAnimation(animName: String, direction: Vector2) -> void:
 func animationComplete() -> void:
 	state = NPCState.CONTROLLED
 	travel_to_anim("Idle")
+
+func setMovementAnim(animName: String) -> void:
+	movement_anim = animName
 
 func setSpeed(_speed: float) -> void:
 	self.speed = _speed

@@ -99,3 +99,6 @@ func stop() -> void:
 func _on_path_follow_completed():
 	player.state = Player.PlayerState.NORMAL
 	print("Correct!")
+
+func hideSprite() -> void:
+	player.visible = false

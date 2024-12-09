@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bqfb2dk6b5xaf" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/4_Generic_Buildings_16x16.png" id="22_isc8b"]
 [ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="23_4xyvg"]
 [ext_resource type="Texture2D" uid="uid://da6ssyhrntf0k" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/8_Worksite_16x16.png" id="24_hybe0"]
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="25_0b0mn"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="25_0b0mn"]
 [ext_resource type="Texture2D" uid="uid://i7igvwditeyx" path="res://assets/tileset/exteriors/FARAWAY_PLAZA.png" id="26_kymlt"]
 [ext_resource type="Texture2D" uid="uid://bt06pa77sy086" path="res://assets/tileset/exteriors/E-PtLbGWUAAiCDW.jpg" id="27_uhif5"]
 

@@ -1,5 +1,21 @@
 # Player insomnia before going to convenience store
 [signal arg="control"]
+do SceneManager.change_time_of_day()
+[signal arg="control"]
+do PlayerController.stop()
+do PlayerController.moveDown()
+[wait time="0.5"]
+do PlayerController.moveRight()
+[wait time="1.2"]
+do PlayerController.moveDown()
+[wait time="0.5"]
+do PlayerController.stop()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+do PlayerController.playAnimation("IdleCarry", 0, 1)
+[wait time="0.7"]
+do PlayerController.stop()
 Once again, sleep eludes you.
 player: Maybe a drink or something will help me relax. I'm going to the store.
 [signal arg="uncontrol"]

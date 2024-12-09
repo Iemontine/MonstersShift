@@ -7,9 +7,15 @@ player: Um… are you okay ma’am?
 widow: Oh… hello again darling… Will you be a doll and pick up some shopping for me?
 A note slides under the door. It’s a shopping list stained with tears.
 - Help the Widow
+	do PlayerController.playAnimation("PickupCarry", 0, -1)
+	[wait time="0.3"]
+	do PlayerController.stop()
 	player: Of course, I’ll be right back
 	Better head to town and get those groceries.
 - She's so sad, how could I leave?
+	do PlayerController.playAnimation("PickupCarry", 0, -1)
+	[wait time="0.3"]
+	do PlayerController.stop()
 	player: Of course, I’ll be right back
 	Better head to town and get those groceries.
 [signal arg="uncontrol"]

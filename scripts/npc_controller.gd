@@ -7,6 +7,9 @@ func set_target_npc(npc_name: String) -> void:
 	var current_scene = get_tree().current_scene
 	npc = current_scene.get_node_or_null(npc_name)
 
+func get_target_npc() -> NPC:
+	return npc
+
 func _on_dialogic_signal(argument:String):
 	print(argument)
 	if argument == "control_npc":
@@ -27,6 +30,10 @@ func playAnimation(animName: String, direction_x: int = 0, direction_y: int = 0)
 func animationComplete() -> void:
 	if npc:
 		npc.animationComplete()
+
+func setMovementAnim(animName: String) -> void:
+	if npc:
+		npc.setMovementAnim(animName)
 
 func setSpeed(speed: float) -> void:
 	if npc:
@@ -56,9 +63,14 @@ func moveRight() -> void:
 	if npc:
 		npc.move(Vector2.RIGHT)
 
+func teleport(position: Vector2) -> void:
+	if npc:
+		npc.global_position = position
+
 func stop() -> void:
 	if npc:
 		npc.stop()
+		print("Stopping")
 
 func switchScene(destination_scene: String, destination_loadzone: String) -> void:
 	if npc:
@@ -67,3 +79,7 @@ func switchScene(destination_scene: String, destination_loadzone: String) -> voi
 func advanceStory() -> void:
 	if npc:
 		npc.advanceStory()
+
+func hideSprite() -> void:
+	if npc:
+		npc.visible = false
