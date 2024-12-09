@@ -13,6 +13,8 @@ var current_scene: String
 var time_of_day = TIME.DAY
 
 func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, dir:Vector2) -> void:
+	MusicManager.stream_player.stream_paused = true
+	
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	
@@ -32,12 +34,16 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	if camera:
 		camera.target = dest_player
 	
+	current_scene = destination
+	
 	dest_player.global_position = pos
 	dest_player.direction = dir
 	handle_day_shift()
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
+	MusicManager.stream_player.stream_paused = true
+	
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
