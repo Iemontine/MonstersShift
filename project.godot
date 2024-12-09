@@ -21,10 +21,10 @@ PlayerController="*res://scripts/player_controller.gd"
 SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 StoryManager="*res://scripts/story_manager.gd"
-<<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 NpcController="*res://scripts/npc_controller.gd"
+<<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
 
 [dialogic]
 
@@ -35,11 +35,11 @@ directories/dch_directory={
 "widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
+"Timelines/arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
+"Timelines/arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
 "Timelines/test": "res://dialogic/Timelines/test.dtl",
 "Timelines/test2": "res://dialogic/Timelines/test2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
-"arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
-"arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
