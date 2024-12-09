@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 [ext_resource type="PackedScene" uid="uid://ftjlrq5makyi" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.tscn" id="13_ni0hd"]
 [ext_resource type="PackedScene" uid="uid://cqq1lhxfiyg3q" path="res://cutscenes/HouseArea/leave_too_early_cutscene.tscn" id="14_nucyf"]
-[ext_resource type="PackedScene" uid="uid://0i3iff18r8mh" path="res://prefabs/qte.tscn" id="15_302ri"]
-[ext_resource type="Script" uid="uid://gx1ktuffrybm" path="res://prefabs/qte_night.gd" id="16_d42bs"]
-[ext_resource type="PackedScene" uid="uid://1sgtrix5goov" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
+[ext_resource type="PackedScene" path="res://prefabs/qte.tscn" id="15_302ri"]
+[ext_resource type="Script" path="res://prefabs/qte_night.gd" id="16_d42bs"]
+[ext_resource type="PackedScene" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
 [ext_resource type="Script" uid="uid://dqkymrx58pq73" path="res://interactable/test_widow_minigame_night.gd" id="20_s6p8i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]

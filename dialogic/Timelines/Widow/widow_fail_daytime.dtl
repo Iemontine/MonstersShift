@@ -8,7 +8,7 @@ do PlayerController.stop()
 widow: Oh… my husband would’ve loved this… but it’s not what I wanted. My husband…
 - Try Again
 	# fix this switch scene
-	#do 
+	# #do 
 	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")
 	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")
 [signal arg="uncontrol"]

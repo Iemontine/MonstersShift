@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 	
 func _on_body_entered(_body:Object) -> void:
-	if _body is Player: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
+	if _body is Player and StoryManager.current_event > StoryManager.Event.WIDOW_PLAYER_INSOMNIA: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
 		var qte = get_tree().current_scene.get_node("QTE")
 		print(get_tree().root.get_tree_string_pretty())
 		qte.start_minigame()
