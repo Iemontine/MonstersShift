@@ -9,8 +9,8 @@ func _ready() -> void:
 	
 	
 func _on_body_entered(_body:Object) -> void:
-	if _body is Player: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
-		SceneManager.change_time_of_day(SceneManager.TIME.NIGHT)
+	if _body is Player and StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
+		#SceneManager.change_time_of_day(SceneManager.TIME.NIGHT)
 		
 		NpcController.set_target_npc("NPC_Widow")
 		NpcController.control_npc()

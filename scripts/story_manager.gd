@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.WIDOW_PLAYER_INSOMNIA
+@onready var current_event = Event.LEAVING_BAKERY_EVENING
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -101,7 +101,7 @@ func _on_scene_transition_completed():
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
-				SceneManager.change_time_of_day()
+				SceneManager.change_time_of_day(SceneManager.TIME.EVENING)
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)

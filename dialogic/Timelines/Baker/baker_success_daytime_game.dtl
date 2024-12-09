@@ -19,4 +19,4 @@ baker: What a talented baker!
 	baker: Wow you are talented! Feel free to come back to help again.
 	do NpcController.stop()
 	[signal arg="uncontrol"]
-	do SceneManager.change_time_of_day()
+	do SceneManager.change_time_of_day(-1)

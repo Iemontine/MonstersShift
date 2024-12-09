@@ -6,7 +6,7 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(_body:Object) -> void:
-	if _body is Player: # TODO add event check and StoryManager.current_event == StoryManager.Event.DAY_TWO_MORNING:
+	if _body is Player and StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI: 
 		NpcController.set_target_npc("NPC_Widow")
 		
 		var glow = widow.get_node("Glow")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="2_nucyf"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_nucyf"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="3_8iffc"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="4_84vi3"]
 [ext_resource type="Texture2D" uid="uid://c06l310spirwj" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="4_302ri"]
@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://1sgtrix5goov" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
 [ext_resource type="Script" uid="uid://dqkymrx58pq73" path="res://interactable/test_widow_minigame_night.gd" id="20_s6p8i"]
 [ext_resource type="Script" uid="uid://cxbblmx6om4n5" path="res://interactable/widow_scare.gd" id="21_ke287"]
-[ext_resource type="PackedScene" uid="uid://pcke2a0ebpuv" path="res://prefabs/qte_night.tscn" id="21_s6p8i"]
-[ext_resource type="Script" uid="uid://vvduimgrhlr0" path="res://scripts/widow_backforth_chase.gd" id="22_ke287"]
+[ext_resource type="PackedScene" path="res://prefabs/qte_night.tscn" id="21_s6p8i"]
+[ext_resource type="Script" path="res://scripts/widow_backforth_chase.gd" id="22_ke287"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
 texture = ExtResource("3_8iffc")
@@ -24159,7 +24159,7 @@ y_sort_enabled = true
 position = Vector2(1000, -416)
 
 [node name="Player" parent="." instance=ExtResource("1_ni0hd")]
-position = Vector2(3242, 481)
+position = Vector2(920, -339)
 
 [node name="TestWidowAttack" parent="." instance=ExtResource("12_s6p8i")]
 position = Vector2(1056, -280)
