@@ -24570,7 +24570,7 @@ y_sort_enabled = true
 position = Vector2(1000, -416)
 
 [node name="Player" parent="." instance=ExtResource("1_ni0hd")]
-position = Vector2(658, -52)
+position = Vector2(3324, 415)
 
 [node name="TestWidowAttack" parent="." instance=ExtResource("12_s6p8i")]
 position = Vector2(1056, -280)
