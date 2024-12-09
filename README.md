@@ -1,12 +1,19 @@
 # "Monsters' Shift"
 
-## High-Level Concept
-**Genre**:
-* Town Life Sim x Horror
+## Summary ##
+**Monsters' Shift is a town-life RPG with a cute and friendly vibe... but there is something sinister lying in wait. Explore Cedar City and uncover it's inhabitants secrets. Offer a helping hand to the townspeople and solve your own personal mystery at the same time -- just stay safe...
 
-**Setting**: 
-* A cute small-town, the childhood home of the protagonist, whose inhabitants turn into random themed monsters during the night.
-	* (don’t forget about the chopped babies)
+## Project Resources
+
+[Web-playable version of your game.](https://itch.io/)  
+[Trailor](https://youtube.com)  
+[Press Kit](https://dopresskit.com/)  
+[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1qwWCpMwKJGOLQ-rRJt8G8zisCa2XHFhv6zSWars0eWM/edit?usp=sharing)  
+
+## Gameplay Explanation ##
+
+**Use WASD keys to move and space bar to interact. Interactables and dialogue will give you hints as to what to do next. During the day, explore the town and help the townspeople with their tasks. At night, stay vigilant to safely help the villagers from giving in to their monstrous tendencies.
+
 
 **Inspiration Sources**:
 * Stardew Valley (RPG life-sim, farming mechanics)
