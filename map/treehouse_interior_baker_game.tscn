@@ -1,6 +1,5 @@
-[gd_scene load_steps=43 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=50 format=4 uid="uid://c2ssodjik8cd4"]
 
-[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="1_s7ksf"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
 [ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_fc45d"]
@@ -20,13 +19,22 @@
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="20_eaqha"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
+[ext_resource type="Script" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
 [ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
-[ext_resource type="PackedScene" uid="uid://dbr6j5hxj1e65" path="res://prefabs/npc_baker_as_customer.tscn" id="24_1a82g"]
-[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="24_gptp6"]
-[ext_resource type="PackedScene" uid="uid://d2uq81x0r30my" path="res://prefabs/npc_spawner_house.tscn" id="25_m5cdb"]
-[ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="26_1a82g"]
+[ext_resource type="Texture2D" uid="uid://bwv67phb884jc" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_vertical_right_3.png" id="26_1a82g"]
+[ext_resource type="PackedScene" uid="uid://cr16u0s13lt8w" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
+[ext_resource type="Script" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
+[ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
+[ext_resource type="Script" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
+[ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://plank_break_sound.wav" id="29_3l7dr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("2_ch15b")
@@ -126,6 +134,7 @@ texture = ExtResource("2_ch15b")
 21:2/0/y_sort_origin = 1009
 21:3/0 = 0
 21:3/0/y_sort_origin = 1009
+21:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1a82g")
 21:4/0 = 0
 21:4/0/y_sort_origin = 1009
 22:0/0 = 0
@@ -243,7 +252,7 @@ texture = ExtResource("2_ch15b")
 44:4/0 = 0
 44:4/0/y_sort_origin = 1009
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_n8xkf"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -259,7 +268,7 @@ texture = ExtResource("3_obc2q")
 1:24/0/y_sort_origin = -1000
 1:25/0 = 0
 1:25/0/y_sort_origin = -1000
-1:25/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1a82g")
+1:25/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_n8xkf")
 2:24/0 = 0
 2:24/0/y_sort_origin = -1000
 2:25/0 = 0
@@ -505,12 +514,42 @@ sources/15 = SubResource("TileSetAtlasSource_b6nma")
 sources/17 = SubResource("TileSetAtlasSource_wgr51")
 sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1a82g"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3vjk"]
+size = Vector2(22, 4.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8xkf"]
+atlas = ExtResource("26_1a82g")
+region = Rect2(137, 7, 18, 28)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a82g"]
+bg_color = Color(1, 0.32139, 0.282123, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8xkf"]
+bg_color = Color(1.68458e-06, 0.716907, 0.386323, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8xkf"]
 
 [node name="Treehouse_Interior_Baker_Game" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(8, 25)
+position = Vector2(14, 17)
 
 [node name="interior layer -- top decor" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -520,14 +559,17 @@ tile_set = SubResource("TileSet_5m6t8")
 [node name="RecordPlayerCutscene" parent="interior layer -- top decor" instance=ExtResource("14_v3vjk")]
 z_index = 1
 position = Vector2(-88, 86)
+script = null
 
 [node name="PictureFrameCutscene" parent="interior layer -- top decor" instance=ExtResource("15_u2itv")]
 z_index = 1
 position = Vector2(-88, 43)
+script = null
 
 [node name="BedCutscene" parent="interior layer -- top decor" instance=ExtResource("16_scgws")]
 z_index = 1
 position = Vector2(87, 87)
+script = null
 
 [node name="interior layer -- furniture higher2" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -541,12 +583,24 @@ tile_set = SubResource("TileSet_5m6t8")
 
 [node name="interior base -- wall" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD6//7/BQASABMAAAD7//7/BQATABMAAAD6//3/BQAQABIAAAD7//3/BQAQABIAAAD6//z/BQAQABIAAAD7//z/BQAQABIAAAD8//z/BQAQABIAAAD6//v/BQAQABIAAAD7//v/BQAQABIAAAD8//v/BQAQABIAAAD9//7/BQATABMAAAD+//7/BQATABMAAAD///7/BQATABMAAAD9//3/BQAQABIAAAD+//3/BQAQABIAAAD///3/BQAQABIAAAD9//z/BQAQABIAAAD+//z/BQAQABIAAAD///z/BQAQABIAAAD9//v/BQAQABIAAAD+//v/BQAQABIAAAD///v/BQAQABIAAAADAPv/BQAQABIAAAAEAPv/BQAQABIAAAAFAPv/BQAQABIAAAADAPz/BQAQABIAAAAEAPz/BQAQABIAAAAFAPz/BQAQABIAAAADAP3/BQAQABIAAAAEAP3/BQAQABIAAAAFAP3/BQAQABIAAAADAP7/BQATABMAAAAEAP7/BQATABMAAAAFAP7/BQAUABMAAAABAP7/BQATABMAAAACAP7/BQATABMAAAABAP3/BQAQABIAAAACAP3/BQAQABIAAAABAPz/BQAQABIAAAACAPz/BQAQABIAAAABAPv/BQAQABIAAAACAPv/BQAQABIAAAAAAP7/BQATABMAAAAAAP3/BQAQABIAAAAAAPz/BQAQABIAAAAAAPv/BQAQABIAAAD5////AAAnAAIAAAD5/wAAAAAnAAIAAAD5/wEAAAAnAAIAAAD5/wIAAAAnAAIAAAD5/wMAAAAnAAIAAAD5/wQAAAAnAAIAAAD5/wUAAAAnAAIAAAD5/wYAAAAnAAIAAAAGAP//AAApAAIAAAAGAAAAAAApAAIAAAAGAAEAAAApAAIAAAAGAAIAAAApAAIAAAAGAAMAAAApAAIAAAAGAAQAAAApAAIAAAAGAAUAAAApAAIAAAAGAAYAAAApAAIAAAD6/wcAAAAoAAMAAAD7/wcAAAAoAAMAAAD8/wcAAAAoAAMAAAD9/wcAAAAoAAMAAAD+/wcAAAAoAAMAAAD//wcAAAAoAAMAAAAAAAcAAAAoAAMAAAABAAcAAAAoAAMAAAACAAcAAAAoAAMAAAADAAcAAAAoAAMAAAAEAAcAAAAoAAMAAAAFAAcAAAAoAAMAAAAGAAcAAAApAAMAAAD5/wcAAAAnAAMAAAAGAPv/AAATAAIAAAAGAPz/AAATAAIAAAAGAP3/AAATAAIAAAAGAP7/AAATAAIAAAD5//v/AAARAAIAAAD5//z/AAARAAIAAAD5//3/AAARAAIAAAD5//7/AAARAAIAAAD8//7/BQAMABMAAAD8//3/BQAQABIAAAA=")
+tile_map_data = PackedByteArray("AAD5////AAARAAIAAAD5/wAAAAARAAIAAAD5/wEAAAARAAIAAAD5/wIAAAARAAIAAAD5/wMAAAARAAIAAAD5/wQAAAARAAIAAAD5/wUAAAARAAIAAAD5/wYAAAARAAIAAAAGAP//AAATAAIAAAAGAAAAAAATAAIAAAAGAAEAAAATAAIAAAAGAAIAAAATAAIAAAAGAAMAAAATAAIAAAAGAAQAAAATAAIAAAAGAAUAAAATAAIAAAAGAAYAAAATAAIAAAD6/wcAAAASAAMAAAD7/wcAAAASAAMAAAD8/wcAAAASAAMAAAD9/wcAAAASAAMAAAD+/wcAAAASAAMAAAD//wcAAAASAAMAAAAAAAcAAAASAAMAAAABAAcAAAASAAMAAAACAAcAAAASAAMAAAADAAcAAAASAAMAAAAEAAcAAAASAAMAAAAFAAcAAAASAAMAAAAGAAcAAAATAAMAAAD5/wcAAAARAAMAAAAGAPv/AAATAAIAAAAGAPz/AAATAAIAAAAGAP3/AAATAAIAAAAGAP7/AAATAAIAAAD5//v/AAARAAIAAAD5//z/AAARAAIAAAD5//3/AAARAAIAAAD5//7/AAARAAIAAAA=")
+tile_set = SubResource("TileSet_5m6t8")
+
+[node name="interior base -- wall2" type="TileMapLayer" parent="."]
+self_modulate = Color(1, 1, 1, 0.537255)
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD6//7/BQASABMAAAD7//7/BQATABMAAAD6//3/BQAQABIAAAD7//3/BQAQABIAAAD6//z/BQAQABIAAAD7//z/BQAQABIAAAD8//z/BQAQABIAAAD6//v/BQAQABIAAAD7//v/BQAQABIAAAD8//v/BQAQABIAAAD9//7/BQATABMAAAD+//7/BQATABMAAAD///7/BQATABMAAAD9//3/BQAQABIAAAD+//3/BQAQABIAAAD///3/BQAQABIAAAD9//z/BQAQABIAAAD+//z/BQAQABIAAAD///z/BQAQABIAAAD9//v/BQAQABIAAAD+//v/BQAQABIAAAD///v/BQAQABIAAAADAPv/BQAQABIAAAAEAPv/BQAQABIAAAAFAPv/BQAQABIAAAADAPz/BQAQABIAAAAEAPz/BQAQABIAAAAFAPz/BQAQABIAAAADAP3/BQAQABIAAAAEAP3/BQAQABIAAAAFAP3/BQAQABIAAAADAP7/BQATABMAAAAEAP7/BQATABMAAAAFAP7/BQAUABMAAAABAP7/BQATABMAAAACAP7/BQATABMAAAABAP3/BQAQABIAAAACAP3/BQAQABIAAAABAPz/BQAQABIAAAACAPz/BQAQABIAAAABAPv/BQAQABIAAAACAPv/BQAQABIAAAAAAP7/BQATABMAAAAAAP3/BQAQABIAAAAAAPz/BQAQABIAAAAAAPv/BQAQABIAAAD5////AAARAAIAAAD5/wAAAAARAAIAAAD5/wEAAAARAAIAAAD5/wIAAAARAAIAAAD5/wMAAAARAAIAAAD5/wQAAAARAAIAAAD5/wUAAAARAAIAAAD5/wYAAAARAAIAAAAGAP//AAATAAIAAAAGAAAAAAATAAIAAAAGAAEAAAATAAIAAAAGAAIAAAATAAIAAAAGAAMAAAATAAIAAAAGAAQAAAATAAIAAAAGAAUAAAATAAIAAAAGAAYAAAATAAIAAAD6/wcAAAASAAMAAAD7/wcAAAASAAMAAAD8/wcAAAASAAMAAAD9/wcAAAASAAMAAAD+/wcAAAASAAMAAAD//wcAAAASAAMAAAAAAAcAAAASAAMAAAABAAcAAAASAAMAAAACAAcAAAASAAMAAAADAAcAAAASAAMAAAAEAAcAAAASAAMAAAAFAAcAAAASAAMAAAAGAAcAAAATAAMAAAD5/wcAAAARAAMAAAAGAPv/AAATAAIAAAAGAPz/AAATAAIAAAAGAP3/AAATAAIAAAAGAP7/AAATAAIAAAD5//v/AAARAAIAAAD5//z/AAARAAIAAAD5//3/AAARAAIAAAD5//7/AAARAAIAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="interior base -- floor" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABgAAAADAP//AQABABgAAAADAAAAAQABABkAAAAEAP//AQABABgAAAAEAAAAAQABABkAAAAAAAAAAQABABkAAAABAAAAAQABABkAAAACAAAAAQABABkAAAD9////AQABABgAAAD9/wAAAQABABkAAAD+////AQABABgAAAD+/wAAAQABABkAAAD/////AQABABgAAAD//wAAAQABABkAAAD6////AQAAABgAAAD6/wAAAQAAABkAAAD7////AQABABgAAAD7/wAAAQABABkAAAD8////AQABABgAAAD8/wAAAQABABkAAAD6/wEAAQAAABkAAAD6/wIAAQAAABkAAAD7/wEAAQABABkAAAD7/wIAAQABABkAAAD8/wEAAQABABkAAAD8/wIAAQABABkAAAD9/wEAAQABABkAAAD9/wIAAQABABkAAAD+/wEAAQABABkAAAD+/wIAAQABABkAAAD//wEAAQABABkAAAD//wIAAQABABkAAAAAAAEAAQABABkAAAAAAAIAAQABABkAAAABAAEAAQABABkAAAABAAIAAQABABkAAAACAAEAAQABABkAAAACAAIAAQABABkAAAADAAEAAQABABkAAAADAAIAAQABABkAAAAEAAEAAQABABkAAAAEAAIAAQABABkAAAADAAMAAQABABkAAAADAAQAAQABABkAAAAEAAMAAQABABkAAAAEAAQAAQABABkAAAADAAUAAQABABkAAAADAAYAAQABABkAAAAAAAYAAQABABkAAAABAAYAAQABABkAAAACAAYAAQABABkAAAD9/wYAAQABABkAAAD+/wYAAQABABkAAAD//wYAAQABABkAAAD6/wYAAQAAABkAAAD7/wYAAQABABkAAAD8/wYAAQABABkAAAD7/wUAAQABABkAAAD8/wUAAQABABkAAAD9/wUAAQABABkAAAD7/wQAAQABABkAAAD8/wQAAQABABkAAAD9/wQAAQABABkAAAD6/wQAAQAAABkAAAD+/wQAAQABABkAAAD//wQAAQABABkAAAAAAAMAAQABABkAAAAAAAQAAQABABkAAAD+/wUAAQABABkAAAD//wUAAQABABkAAAAAAAUAAQABABkAAAABAAUAAQABABkAAAACAAUAAQABABkAAAABAAMAAQABABkAAAABAAQAAQABABkAAAACAAMAAQABABkAAAACAAQAAQABABkAAAAFAP//AQACABgAAAAFAAAAAQABABkAAAAFAAEAAQABABkAAAAFAAIAAQABABkAAAAFAAMAAQABABkAAAAFAAQAAQABABkAAAAEAAUAAQABABkAAAAEAAYAAQABABkAAAAFAAUAAQABABkAAAAFAAYAAQABABkAAAD6/wUAAQAAABkAAAD6/wMAAQAAABkAAAD7/wMAAQABABkAAAD8/wMAAQABABkAAAD9/wMAAQABABkAAAD+/wMAAQABABkAAAD//wMAAQABABkAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABgAAAADAP//AQABABgAAAADAAAAAQABABkAAAAEAP//AQABABgAAAAEAAAAAQABABkAAAAAAAAAAQABABkAAAABAAAAAQABABkAAAACAAAAAQABABkAAAD9////AQABABkAAAD9/wAAAQABABkAAAD+////AQABABgAAAD+/wAAAQABABkAAAD/////AQABABgAAAD//wAAAQABABkAAAD6////AQAAABgAAAD6/wAAAQAAABkAAAD7////AQABABkAAAD7/wAAAQABABkAAAD8////AQABABkAAAD8/wAAAQABABkAAAD6/wEAAQAAABkAAAD6/wIAAQAAABkAAAD7/wEAAQABABkAAAD7/wIAAQABABkAAAD8/wEAAQABABkAAAD8/wIAAQABABkAAAD9/wEAAQABABkAAAD9/wIAAQABABkAAAD+/wEAAQABABkAAAD+/wIAAQABABkAAAD//wEAAQABABkAAAD//wIAAQABABkAAAAAAAEAAQABABkAAAAAAAIAAQABABkAAAABAAEAAQABABkAAAABAAIAAQABABkAAAACAAEAAQABABkAAAACAAIAAQABABkAAAADAAEAAQABABkAAAADAAIAAQABABkAAAAEAAEAAQABABkAAAAEAAIAAQABABkAAAADAAMAAQABABkAAAADAAQAAQABABkAAAAEAAMAAQABABkAAAAEAAQAAQABABkAAAADAAUAAQABABkAAAADAAYAAQABABkAAAAAAAYAAQABABkAAAABAAYAAQABABkAAAACAAYAAQABABkAAAD9/wYAAQABABkAAAD+/wYAAQABABkAAAD//wYAAQABABkAAAD6/wYAAQAAABkAAAD7/wYAAQABABkAAAD8/wYAAQABABkAAAD7/wUAAQABABkAAAD8/wUAAQABABkAAAD9/wUAAQABABkAAAD7/wQAAQABABkAAAD8/wQAAQABABkAAAD9/wQAAQABABkAAAD6/wQAAQAAABkAAAD+/wQAAQABABkAAAD//wQAAQABABkAAAAAAAMAAQABABkAAAAAAAQAAQABABkAAAD+/wUAAQABABkAAAD//wUAAQABABkAAAAAAAUAAQABABkAAAABAAUAAQABABkAAAACAAUAAQABABkAAAABAAMAAQABABkAAAABAAQAAQABABkAAAACAAMAAQABABkAAAACAAQAAQABABkAAAAFAP//AQACABgAAAAFAAAAAQABABkAAAAFAAEAAQABABkAAAAFAAIAAQABABkAAAAFAAMAAQABABkAAAAFAAQAAQABABkAAAAEAAUAAQABABkAAAAEAAYAAQABABkAAAAFAAUAAQABABkAAAAFAAYAAQABABkAAAD6/wUAAQAAABkAAAD6/wMAAQAAABkAAAD7/wMAAQABABkAAAD8/wMAAQABABkAAAD9/wMAAQABABkAAAD+/wMAAQABABkAAAD//wMAAQABABkAAAD8//7/AQABABkAAAA=")
+tile_set = SubResource("TileSet_5m6t8")
+
+[node name="interior base -- floor2" type="TileMapLayer" parent="."]
+z_index = -3
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD6//v/AAAVAAMAAAD6//z/AAAVAAMAAAD6//3/AAAVAAMAAAD7//v/AAAVAAMAAAD7//z/AAAVAAMAAAD7//3/AAAVAAMAAAD8//v/AAAVAAMAAAD8//z/AAAVAAMAAAD8//3/AAAVAAMAAAD9//v/AAAVAAMAAAD9//z/AAAVAAMAAAD9//3/AAAVAAMAAAD+//v/AAAVAAMAAAD+//z/AAAVAAMAAAD+//3/AAAVAAMAAAD///v/AAAVAAMAAAD///z/AAAVAAMAAAD///3/AAAVAAMAAAAAAPv/AAAVAAMAAAAAAPz/AAAVAAMAAAAAAP3/AAAVAAMAAAABAPv/AAAVAAMAAAABAPz/AAAVAAMAAAABAP3/AAAVAAMAAAACAPv/AAAVAAMAAAACAPz/AAAVAAMAAAACAP3/AAAVAAMAAAADAPv/AAAVAAMAAAADAPz/AAAVAAMAAAADAP3/AAAVAAMAAAAEAPv/AAAVAAMAAAAEAPz/AAAVAAMAAAAEAP3/AAAVAAMAAAAFAPv/AAAVAAMAAAAFAPz/AAAVAAMAAAAFAP3/AAAVAAMAAAD8//7/AAAVAAMAAAD6//7/AAAVAAIAAAD7//7/AAAVAAIAAAD9//7/AAAVAAIAAAD+//7/AAAVAAIAAAD///7/AAAVAAIAAAAAAP7/AAAVAAIAAAABAP7/AAAVAAIAAAACAP7/AAAVAAIAAAADAP7/AAAVAAIAAAAEAP7/AAAVAAIAAAAFAP7/AAAVAAIAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="Player" parent="." instance=ExtResource("17_0cn4a")]
@@ -561,7 +615,7 @@ scale = Vector2(0.370052, 0.370573)
 [node name="SugarFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(28, 30)
+position = Vector2(5, 95)
 item_name = "Sugar"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(32, 320, 16, 16)
@@ -569,15 +623,23 @@ item_region_rect = Rect2(32, 320, 16, 16)
 [node name="ChocolateFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 4
 y_sort_enabled = true
-position = Vector2(61, 2)
+position = Vector2(-65, 95)
 item_name = "Chocolate"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(0, 736, 16, 16)
 
+[node name="WoodFactory" parent="." instance=ExtResource("20_eaqha")]
+z_index = 4
+y_sort_enabled = true
+position = Vector2(82, 47)
+item_name = "Wood"
+item_texture = ExtResource("21_gptp6")
+item_region_rect = Rect2(144, 70, 48, 10)
+
 [node name="VanillaFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(20, 83)
+position = Vector2(-29, 95)
 item_name = "Vanilla"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(32, 736, 16, 16)
@@ -585,7 +647,7 @@ item_region_rect = Rect2(32, 736, 16, 16)
 [node name="DoughFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(62, 67)
+position = Vector2(41, 96)
 item_name = "Flour"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(192, 464, 16, 16)
@@ -596,59 +658,160 @@ position = Vector2(-85, 8)
 [node name="CuttingBoard" parent="." instance=ExtResource("19_owop5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-1, -14)
+position = Vector2(42, -7)
 collision_layer = 8
 collision_mask = 0
 
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
 points_required = 5
 game_duration = 60.0
-
-[node name="Chair1" parent="." instance=ExtResource("24_gptp6")]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(-66, 91)
-chair_direction = 1
-
-[node name="Chair2" parent="." instance=ExtResource("24_gptp6")]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(-6, 44)
-chair_direction = 1
-
-[node name="Chair3" parent="." instance=ExtResource("24_gptp6")]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(-38, 66)
-chair_direction = 1
-
-[node name="NPC_Baker" parent="." instance=ExtResource("26_1a82g")]
-position = Vector2(88, 47)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4, 50)
-scale = Vector2(0.0878906, 0.108398)
-texture = SubResource("ViewportTexture_1a82g")
+night_time = true
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 y_sort_enabled = true
-position = Vector2(-77, -58)
-zoom = Vector2(3, 3)
-script = ExtResource("1_s7ksf")
+position = Vector2(-2, -12)
+scale = Vector2(1, 0.983673)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("22_1a82g")
 target = NodePath("../Player")
 
-[node name="NPC_Spawner_House" parent="." node_paths=PackedStringArray("travel_locations") instance=ExtResource("25_m5cdb")]
-position = Vector2(-56, -16)
-npc_scene = ExtResource("24_1a82g")
-travel_locations = [NodePath("../Chair1"), NodePath("../Chair2"), NodePath("../Chair3")]
-
 [node name="Door_Treehouse" parent="." instance=ExtResource("27_n8xkf")]
-position = Vector2(-56, -32)
+position = Vector2(-363, -21)
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 
 [node name="Spawnpoint" parent="Door_Treehouse" index="2"]
-position = Vector2(49, 120)
+position = Vector2(359, 117)
+
+[node name="NPC_Baker_Night" parent="." instance=ExtResource("26_danju")]
+z_index = -1
+position = Vector2(-25, -30)
+attack_damage = 3
+
+[node name="WindowMarker" parent="NPC_Baker_Night" index="0"]
+position = Vector2(29, 0)
+
+[node name="DoorMarker" parent="NPC_Baker_Night" index="1"]
+position = Vector2(-63, -1)
+
+[node name="00undr" parent="NPC_Baker_Night/SpriteLayers" index="2"]
+frame = 0
+
+[node name="01body" parent="NPC_Baker_Night/SpriteLayers" index="3"]
+frame = 0
+
+[node name="02sock" parent="NPC_Baker_Night/SpriteLayers" index="4"]
+frame = 0
+
+[node name="03fot1" parent="NPC_Baker_Night/SpriteLayers" index="5"]
+frame = 0
+
+[node name="05shrt" parent="NPC_Baker_Night/SpriteLayers" index="6"]
+frame = 0
+
+[node name="06lwr2" parent="NPC_Baker_Night/SpriteLayers" index="7"]
+frame = 0
+
+[node name="07fot2" parent="NPC_Baker_Night/SpriteLayers" index="8"]
+frame = 0
+
+[node name="08lwr3" parent="NPC_Baker_Night/SpriteLayers" index="9"]
+frame = 0
+
+[node name="09hand" parent="NPC_Baker_Night/SpriteLayers" index="10"]
+frame = 0
+
+[node name="10outr" parent="NPC_Baker_Night/SpriteLayers" index="11"]
+frame = 0
+
+[node name="04lwr1" parent="NPC_Baker_Night/SpriteLayers" index="12"]
+frame = 0
+
+[node name="11neck" parent="NPC_Baker_Night/SpriteLayers" index="13"]
+frame = 0
+
+[node name="12face" parent="NPC_Baker_Night/SpriteLayers" index="14"]
+frame = 0
+
+[node name="13hair" parent="NPC_Baker_Night/SpriteLayers" index="15"]
+frame = 0
+
+[node name="14head" parent="NPC_Baker_Night/SpriteLayers" index="16"]
+frame = 0
+
+[node name="15over" parent="NPC_Baker_Night/SpriteLayers" index="17"]
+frame = 0
+
+[node name="Window" type="StaticBody2D" parent="."]
+script = ExtResource("28_3l7dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_v3vjk")
+
+[node name="DoorVisual" type="Sprite2D" parent="."]
+position = Vector2(-56, -32.5)
+scale = Vector2(1, 1.17857)
+texture = SubResource("AtlasTexture_n8xkf")
+
+[node name="ProgressBar" type="ProgressBar" parent="DoorVisual"]
+offset_left = -16.0
+offset_top = -14.8485
+offset_right = 624.0
+offset_bottom = 58.1515
+scale = Vector2(0.05, 0.05)
+theme_override_styles/background = SubResource("StyleBoxFlat_1a82g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n8xkf")
+value = 100.0
+show_percentage = false
+script = ExtResource("27_vwit3")
+
+[node name="Wood" type="Sprite2D" parent="DoorVisual/ProgressBar"]
+position = Vector2(300, 169.697)
+scale = Vector2(14.5833, 11.8788)
+texture = ExtResource("21_gptp6")
+region_enabled = true
+region_rect = Rect2(144, 70, 48, 10)
+
+[node name="Wood2" type="Sprite2D" parent="DoorVisual/ProgressBar"]
+position = Vector2(320, 254.546)
+rotation = 0.317403
+scale = Vector2(11.6433, -11.8367)
+texture = ExtResource("21_gptp6")
+region_enabled = true
+region_rect = Rect2(144, 70, 48, 10)
+
+[node name="Wood3" type="Sprite2D" parent="DoorVisual/ProgressBar"]
+position = Vector2(320, 424.243)
+rotation = 2.87281
+scale = Vector2(14.5833, 11.8788)
+texture = ExtResource("21_gptp6")
+region_enabled = true
+region_rect = Rect2(144, 70, 48, 10)
+
+[node name="Wood4" type="Sprite2D" parent="DoorVisual/ProgressBar"]
+position = Vector2(320, 424.243)
+rotation = 0.203476
+scale = Vector2(11.7062, 11.8788)
+texture = ExtResource("21_gptp6")
+region_enabled = true
+region_rect = Rect2(144, 70, 48, 10)
+
+[node name="PlankBreakSound" type="AudioStreamPlayer" parent="DoorVisual/ProgressBar"]
+stream = ExtResource("29_3l7dr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DoorVisual"]
+script = ExtResource("27_danju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorVisual/StaticBody2D"]
+position = Vector2(0, 3.81819)
+rotation = -3.11841
+shape = SubResource("RectangleShape2D_n8xkf")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[connection signal="point_earned" from="NPC_Baker_Night" to="BakerGameLogic" method="_on_npc_baker_night_point_earned"]
 
 [editable path="Door_Treehouse"]
+[editable path="NPC_Baker_Night"]

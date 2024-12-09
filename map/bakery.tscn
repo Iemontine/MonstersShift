@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene load_steps=44 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
 [ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
 [ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
+[ext_resource type="Script" path="res://prefabs/help_button.gd" id="23_jwbsn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -722,6 +723,34 @@ sources/4 = SubResource("TileSetAtlasSource_jqod6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffbsp"]
 
+[sub_resource type="Theme" id="Theme_kw8w0"]
+Button/colors/font_color = Color(0.446716, 2.86378e-06, 0.285617, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwbsn"]
+bg_color = Color(0.982343, 0.982342, 0.982342, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.909329, 0.742238, 0.85766, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw8w0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.909804, 0.415686, 0.52549, 1)
+
 [node name="Bakery" type="Node2D"]
 y_sort_enabled = true
 
@@ -798,7 +827,7 @@ item_texture = ExtResource("3_yu6ri")
 item_region_rect = Rect2(32, 320, 16, 16)
 
 [node name="ChocolateFactory" parent="." instance=ExtResource("10_jwbsn")]
-z_index = 4
+z_index = 1
 y_sort_enabled = true
 position = Vector2(-8, 15)
 item_name = "Chocolate"
@@ -866,10 +895,138 @@ visible = false
 points_required = 3
 game_duration = 60.0
 
+[node name="HelpButton" type="Button" parent="BakerGameLogic"]
+offset_left = 1037.0
+offset_top = 539.0
+offset_right = 1123.0
+offset_bottom = 619.0
+theme = SubResource("Theme_kw8w0")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
+text = "?"
+script = ExtResource("23_jwbsn")
+
 [node name="12KitchenBlackShadow16x16" type="Sprite2D" parent="."]
 position = Vector2(-744, 128)
 texture = ExtResource("3_yu6ri")
 region_enabled = true
 region_rect = Rect2(0, 736, 16, 16)
 
+[node name="HelpLabels" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sugar" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -51.0
+offset_top = 32.0
+offset_right = 359.0
+offset_bottom = 270.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 130
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "sugar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chocolate" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -23.0
+offset_top = 32.0
+offset_right = 615.0
+offset_bottom = 257.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Chocolate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vanilla" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 13.0
+offset_top = 32.0
+offset_right = 463.0
+offset_bottom = 257.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Vanilla
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flour" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = 405.0
+offset_bottom = 257.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Flour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecipeBoard" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 81.0
+offset_top = -82.0
+offset_right = 962.0
+offset_bottom = 143.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Recipes Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CuttingBoard" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 17.0
+offset_top = -74.0
+offset_right = 898.0
+offset_bottom = 151.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Baking Board
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrashCan" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -121.0
+offset_top = 36.0
+offset_right = 516.0
+offset_bottom = 261.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw8w0")
+text = "Trash Can
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="point_earned" from="NPC_Baker" to="BakerGameLogic" method="_on_npc_baker_point_earned"]
+[connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
