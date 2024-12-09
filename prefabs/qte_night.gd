@@ -220,4 +220,5 @@ func _on_path_follow_completed():
 		wall.set_collision_mask_value(1, true)
 
 	stop_minigame()
-	
+	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_QTE_SUCCESS)
+	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_QTE_FAIL)

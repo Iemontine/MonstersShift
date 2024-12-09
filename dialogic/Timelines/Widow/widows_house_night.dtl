@@ -1,0 +1,16 @@
+# Interact with widows door at night to give snacks
+[signal arg="control"]
+do PlayerController.stop()
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="2.0"]
+do PlayerController.set_player_position(-1335, -460)
+[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+do PlayerController.playAnimation("Push", 0, -1)
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Small_Polyester_PickUp_Stereo.wav" volume="0.0"]
+[wait time="0.2"]
+do PlayerController.stop()
+player: Hello ma'am, are you home?
+You wait and only silence greets you.
+player: Is she asleep? Or is no one home?
+player: I guess I'll head home then.
+[signal arg="uncontrol"]

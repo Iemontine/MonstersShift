@@ -208,3 +208,5 @@ func set_player_movement_anim(_movement_anim: String):
 
 func _on_path_follow_completed():
 	stop_minigame()
+	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_SUCCESS)
+	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)

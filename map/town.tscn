@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=82 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -34,8 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
 [ext_resource type="PackedScene" uid="uid://0i3iff18r8mh" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
 [ext_resource type="Script" uid="uid://ofl2m7xgpjm2" path="res://interactable/test_enable_widowgame.gd" id="34_fb3tg"]
+[ext_resource type="Script" uid="uid://dv05ig8ew0kbp" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
+[ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="37_apa6g"]
 [ext_resource type="PackedScene" uid="uid://d3ojvtx4yjg2j" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
-[ext_resource type="Script" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
 texture = ExtResource("2_5qoex")
@@ -29765,6 +29766,7 @@ position = Vector2(-1334, -487)
 
 [node name="TestWidow" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-1072, -170)
+script = null
 
 [node name="QTE" parent="." node_paths=PackedStringArray("player") instance=ExtResource("33_ukl65")]
 visible = false
@@ -29773,3 +29775,43 @@ player = NodePath("../Player")
 [node name="Sign" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-72, -8)
 script = ExtResource("34_fb3tg")
+
+[node name="WidowFirstCutscene" parent="." instance=ExtResource("33_fb3tg")]
+position = Vector2(-1255, -444)
+script = ExtResource("34_uap6c")
+
+[node name="StreetLight1" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-951.5, -147.5)
+scale = Vector2(0.123047, 0.129357)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight2" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1287.5, -147.5)
+scale = Vector2(0.140383, 0.15515)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="BakeryWindowLight" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1881, -190)
+scale = Vector2(0.236328, 0.172602)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.0
+
+[node name="BakeryWindowLight2" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1830, -188)
+scale = Vector2(0.0552693, 0.0625)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.0
