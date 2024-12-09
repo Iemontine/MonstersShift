@@ -10,6 +10,8 @@ func _ready() -> void:
 	
 func _on_body_entered(_body:Object) -> void:
 	if _body is Player: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
+		
+		
 		NpcController.set_target_npc("NPC_Widow")
 		NpcController.control_npc()
 		NpcController.setSpeed(150)
