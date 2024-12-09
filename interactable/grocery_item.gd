@@ -75,8 +75,6 @@ func _on_yes_pressed() -> void:
 	print("Item button_index selected: ", current_button_index)
 
 	# TODO: actually check if correct
-	StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_SUCCESS)
-	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
 	# StoryManager.transition_to_event(Event.WIDOW_DAY_GAME_WRONG)
 	
 	hide_grocery_ui()
