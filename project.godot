@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/bakery.tscn"
+run/main_scene="res://map/treehouse_exterior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,7 +24,7 @@ StoryManager="*res://scripts/story_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 NpcController="*res://scripts/npc_controller.gd"
-<<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
+MusicManager="*res://scripts/music_manager.gd"
 
 [dialogic]
 
@@ -56,8 +56,11 @@ directories/dtl_directory={
 "first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
+"leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
+"test": "res://dialogic/Timelines/Random/test.dtl",
+"test2": "res://dialogic/Timelines/Random/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
@@ -90,7 +93,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-<<<<<<<HEADdirectories/dch_directory={
+directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
@@ -101,7 +104,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg")
 
 [filesystem]
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct2t64jd11l0j"]
+[gd_scene load_steps=5 format=3 uid="uid://ct2t64jd11l0j"]
 
-[ext_resource type="Script" uid="uid://csdgjtk63kbes" path="res://scripts/baker_game_logic.gd" id="1_xn047"]
+[ext_resource type="Script" path="res://scripts/baker_game_logic.gd" id="1_xn047"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrvjx"]
 bg_color = Color(0.91154, 0.678785, 0.759224, 1)
@@ -13,8 +13,6 @@ corner_radius_top_left = 500
 corner_radius_top_right = 500
 corner_radius_bottom_right = 500
 corner_radius_bottom_left = 500
-shadow_color = Color(0.669799, 0.436169, 0.659497, 0.6)
-shadow_size = 200
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q780k"]
 bg_color = Color(0.909965, 0.414142, 0.525839, 1)
@@ -27,6 +25,10 @@ corner_radius_top_left = 500
 corner_radius_top_right = 700
 corner_radius_bottom_right = 700
 corner_radius_bottom_left = 500
+
+[sub_resource type="Theme" id="Theme_vxi24"]
+Label/colors/font_color = Color(0.909804, 0.678431, 0.760784, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="BakerGameLogic" type="CanvasLayer"]
 script = ExtResource("1_xn047")
@@ -55,23 +57,28 @@ offset_top = 73.0
 offset_right = 3516.0
 offset_bottom = 1435.0
 scale = Vector2(0.05, 0.05)
+theme = SubResource("Theme_vxi24")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 600
 theme_override_font_sizes/font_size = 1000
 text = "Points
 "
 
 [node name="GameLabel" type="Label" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.004
 anchor_top = 0.219
 anchor_right = 1.0
 anchor_bottom = 0.77
-offset_left = 0.392
-offset_top = 0.0879974
-offset_right = 21693.0
-offset_bottom = 6843.04
+offset_left = -5.608
+offset_top = -147.912
+offset_right = 21687.0
+offset_bottom = 6695.04
 scale = Vector2(0.05, 0.05)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = SubResource("Theme_vxi24")
+theme_override_colors/font_color = Color(0.945098, 0.792157, 0.854902, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 600
 theme_override_font_sizes/font_size = 2000
 text = "Game Over!"
 horizontal_alignment = 1

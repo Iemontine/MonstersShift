@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_bakery_customer.tscn" id="8_igw2u"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
-[ext_resource type="Script" path="res://map/baker_camera.gd" id="10_ffbsp"]
+[ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
@@ -764,7 +764,7 @@ position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_yu6ri")
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
-position = Vector2(8, 36)
+position = Vector2(-136, -151)
 
 [node name="NPC_Spawner" parent="Door_Bakery" node_paths=PackedStringArray("travel_locations") instance=ExtResource("7_ffbsp")]
 npc_scene = ExtResource("8_igw2u")
@@ -827,27 +827,28 @@ position = Vector2(-104, 29)
 [node name="Chair1" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-23, 120)
+position = Vector2(-23, 133)
 chair_direction = 1
 
 [node name="Chair2" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-88, 120)
+position = Vector2(-88, 133)
 chair_direction = 1
 
 [node name="Chair3" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-88, 168)
+position = Vector2(-88, 181)
 chair_direction = 1
 
 [node name="NPC_Baker" parent="." instance=ExtResource("15_jjlq4")]
-position = Vector2(-56, 96)
+position = Vector2(-74, 19)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(-47, -176)
 tile_map_data = PackedByteArray("AAAHABIAAAAIAAQAAAADABAAAQAOAAMAAAD8/xAAAgAAABwAAAAJABAAAgANABUAAAAGABAAAwAJAAcAAAABABQABAANACEAAAD9/xcABAANACEAAAD9/xQABAANACEAAAA=")
 tile_set = SubResource("TileSet_mwicy")
 
@@ -870,3 +871,5 @@ position = Vector2(-744, 128)
 texture = ExtResource("3_yu6ri")
 region_enabled = true
 region_rect = Rect2(0, 736, 16, 16)
+
+[connection signal="point_earned" from="NPC_Baker" to="BakerGameLogic" method="_on_npc_baker_point_earned"]

@@ -13,7 +13,7 @@ var current_points:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_game = true
-	
+	game_label.visible = false
 	#progress bar logic
 	progress_bar.max_value = game_duration
 	game_timer.start(game_duration)
@@ -25,7 +25,16 @@ func _process(delta: float) -> void:
 	if start_game:
 		if current_points >= points_required:
 				game_label.text = "You Win!"
+				progress_bar.visible = false
+				points_label.visible = false
 				game_label.visible = true
+				start_game = false
+				if StoryManager.current_event <= StoryManager.Event.BAKER_FAIL_DAYTIME:
+					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_DAYTIME)
+					PlayerController.start_cutscene("baker_success_daytime_game")
+				else:
+					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_NIGHT)
+					PlayerController.start_cutscene("baker_success_night")
 		progress_bar.value = game_timer.get_time_left()
 		points_label.text = str(current_points) + " / " + str(points_required)
 		
@@ -41,7 +50,16 @@ func start_timer(duration: float):
 
 func _on_game_timer_timeout() -> void:
 	game_label.text = "Game Over!"
+	progress_bar.visible = false
+	points_label.visible = false
 	game_label.visible = true
+	if StoryManager.current_event <= StoryManager.Event.BAKER_FAIL_DAYTIME:
+		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_DAYTIME)
+		PlayerController.start_cutscene("baker_fail_daytime")
+	else: 
+		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_NIGHT)
+		PlayerController.start_cutscene("baker_fail_night")
+	
 
 
 func _on_npc_baker_point_earned() -> void:

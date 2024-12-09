@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://dg5e1j6trerk0"]
 
-[ext_resource type="Script" path="res://scripts/camera.gd" id="2_pdgtp"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_pdgtp"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
 [ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_io5y2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="4_mxmix"]
@@ -248,6 +248,12 @@ texture = ExtResource("5_70imq")
 2:24/0/y_sort_origin = -1000
 2:25/0 = 0
 2:25/0/y_sort_origin = -1000
+8:12/0 = 0
+8:13/0 = 0
+9:12/0 = 0
+9:13/0 = 0
+10:12/0 = 0
+10:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sd8jt"]
 texture = ExtResource("4_io5y2")
@@ -484,7 +490,7 @@ sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
 [node name="Treehouse_Interior" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(8, 25)
+position = Vector2(-6, 41)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -532,8 +538,7 @@ tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABg
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="Player" parent="." instance=ExtResource("4_mxmix")]
-z_index = -1
-position = Vector2(-44, 26)
+position = Vector2(-27, 67)
 
 [node name="Treehouse_png" type="Sprite2D" parent="."]
 visible = false
