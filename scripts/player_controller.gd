@@ -102,3 +102,6 @@ func _on_path_follow_completed():
 
 func hideSprite() -> void:
 	player.visible = false
+
+func set_player_position(x: float, y: float):
+	player.position = Vector2(x,y)

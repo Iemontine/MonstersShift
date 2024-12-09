@@ -11,7 +11,8 @@ enum Event {
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
 	BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING,
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, 
-	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME, WIDOW_PLAYER_INSOMNIA,
+	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME, 
+	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
 	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	END 
 }
@@ -21,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
+@onready var current_event = Event.WIDOW_PLAYER_INSOMNIA
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -113,10 +114,15 @@ func _on_scene_transition_completed():
 				PlayerController.start_cutscene(_event_name)
 		Event.WIDOW_PLAYER_INSOMNIA:
 			if SceneManager.current_scene == "Conbini":
-				#change
-				_event_name = "widow_player_insomnia"
-				StoryManager.transition_to_event(StoryManager.Event.WIDOW_PLAYER_INSOMNIA)
+				_event_name = "night_enter_conbini"
+				StoryManager.transition_to_event(StoryManager.Event.NIGHT_ENTER_CONBINI)
 				PlayerController.start_cutscene(_event_name)
+		Event.NIGHT_ENTER_CONBINI:
+			if SceneManager.current_scene == "Town":
+				_event_name = "widows_house_night"
+				StoryManager.transition_to_event(StoryManager.Event.WIDOWS_HOUSE_NIGHT)
+				PlayerController.start_cutscene(_event_name)
+		
 
 
 		# Event.WIDOW_DAY_GAME_WRONG:

@@ -54,6 +54,7 @@ directories/dtl_directory={
 "intro": "res://dialogic/Timelines/intro.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
+"night_enter_conbini": "res://dialogic/Timelines/Widow/night_enter_conbini.dtl",
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/Timelines/Random/test.dtl",
@@ -64,7 +65,8 @@ directories/dtl_directory={
 "widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
 "widow_player_insomnia": "res://dialogic/Timelines/Widow/widow_player_insomnia.dtl",
 "widow_success_daytime": "res://dialogic/Timelines/Widow/widow_success_daytime.dtl",
-"widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl"
+"widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl",
+"widows_house_night": "res://dialogic/Timelines/Widow/widows_house_night.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/Styles/speaker_dialogue.tres", "res://dialogic/Styles/speaker_without_dialogue.tres"]
