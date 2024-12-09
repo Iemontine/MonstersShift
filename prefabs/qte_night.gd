@@ -25,6 +25,9 @@ var max_x = 0.0
 var true_min_x = INF
 var true_max_x = -INF
 
+var normal_speed = 100
+var perfect_speed = 125
+
 func _ready():
 	_calculate_min_max()
 	$CanvasModulate.color.a = 0
@@ -93,17 +96,17 @@ func _process_collision_result(result):
 	for collision in result:
 		var collider = collision.collider
 		if collider.name.begins_with("Perfect"):
-			_handle_qte_result("Perfect", 125, "Run")
+			_handle_qte_result("Perfect", perfect_speed, "Run")
 			await get_tree().create_timer(1.5).timeout
 			set_player_speed(100)
 			set_player_movement_anim("Run")
 			minigame_timer.start()
 			break
 		elif collider.name.begins_with("Good"):
-			_handle_qte_result("Good", 100, "Run")
+			_handle_qte_result("Good", normal_speed, "Run")
 			break
 		elif collider.name.begins_with("Bad"):
-			_handle_qte_result("Bad", 100, "Run", true)
+			_handle_qte_result("Bad", normal_speed, "Run", true)
 			break
 
 func _handle_qte_result(result_type: String, speed: float, anim: String, lose_life: bool = false):
@@ -159,7 +162,7 @@ func start_minigame():
 	visible = true
 	minigame_timer.start()
 	if player:
-		set_player_speed(100)
+		set_player_speed(normal_speed)
 		set_player_movement_anim("Run")
 		player.path_following = true
 		player.state = Player.PlayerState.CONTROLLED
@@ -175,7 +178,7 @@ func _on_minigame_timer_timeout():
 	if minigame_active:
 		time_passed += 1
 		print("Minigame time: ", time_passed, " seconds , Number of lives: ", lives)
-		if int(time_passed) % 3 == 0 and time_passed > 7:
+		if int(time_passed) % 3 == 0 and time_passed > 6:
 			print("QTE event triggered at ", time_passed, " seconds")
 			reset()
 			set_player_speed(0)

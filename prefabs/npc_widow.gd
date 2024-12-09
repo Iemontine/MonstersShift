@@ -29,13 +29,15 @@ func _on_area_2d_body_exited(_body: Object) -> void:
 	if _body is Player:
 		player_in_area = false
 
-func activate_eyes() -> void:
+func activate_glow() -> void:
 	$Glowingeye.visible = true
 	$Glowingeye2.visible = true
+	$Glow.visible = true
 
-func deactivate_eyes() -> void:
+func deactivate_glow() -> void:
 	$Glowingeye.visible = false
 	$Glowingeye2.visible = false
+	$Glow.visible = false
 
 func attack(direction: Vector2) -> void:
 	state = NPCState.WIDOW_ATTACKING
@@ -43,7 +45,7 @@ func attack(direction: Vector2) -> void:
 	set_collision_mask_value(1, false) # Disable Collision Mask 1
 	travel_to_anim("Hug", direction)
 
-	activate_eyes()
+	activate_glow()
 
 	var player_position = get_tree().current_scene.get_node("Player").position
 
