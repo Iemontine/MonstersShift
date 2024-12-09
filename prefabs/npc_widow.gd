@@ -6,6 +6,8 @@ var player_in_area:bool = false
 
 func _ready() -> void:
 	state = NPCState.NORMAL # TODO: WIDOW_IDLE? widow states?
+	$Glowingeye.visible = false
+	$Glowingeye2.visible = false
 	super._ready()
 
 func _physics_process(_delta: float) -> void:
@@ -27,12 +29,22 @@ func _on_area_2d_body_exited(_body: Object) -> void:
 	if _body is Player:
 		player_in_area = false
 
+func activate_eyes() -> void:
+	$Glowingeye.visible = true
+	$Glowingeye2.visible = true
+
+func deactivate_eyes() -> void:
+	$Glowingeye.visible = false
+	$Glowingeye2.visible = false
+
 func attack(direction: Vector2) -> void:
-	state = NPCState.WIDOW_FLYING_ATTACK
+	state = NPCState.WIDOW_ATTACKING
 	set_collision_layer_value(1, false) # Disable Collision Layer 1
+	set_collision_mask_value(1, false) # Disable Collision Mask 1
 	travel_to_anim("Hug", direction)
 
-	
+	activate_eyes()
+
 	var player_position = get_tree().current_scene.get_node("Player").position
 
 	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_EXPO)
@@ -47,7 +59,7 @@ func backoff() -> void:
 	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(self, "modulate:a", 0, 0.5)
 	tween.tween_property(self, "position", position - last_direction * 50, 0.5)
-	
+
 	await get_tree().create_timer(0.5).timeout
 	
 	state = NPCState.WIDOW_IDLE

@@ -25,15 +25,14 @@
 [ext_resource type="Texture2D" uid="uid://bqfb2dk6b5xaf" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/4_Generic_Buildings_16x16.png" id="22_wl2cu"]
 [ext_resource type="Texture2D" uid="uid://bsayx2ov8ils6" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/6_Garage_Sales_16x16.png" id="23_jxgvl"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="25_0i5uc"]
-[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="25_x3iwy"]
-[ext_resource type="Script" uid="uid://dnkxjclljrba1" path="res://prefabs/npc_widow.gd" id="27_txolg"]
+[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
 [ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
 [ext_resource type="Script" uid="uid://tsg70fau7j66" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 [ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
 [ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
-[ext_resource type="PackedScene" uid="uid://0i3iff18r8mh" path="res://prefabs/qte.tscn" id="33_ukl65"]
+[ext_resource type="PackedScene" uid="uid://0i3iff18r8mh" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
 [ext_resource type="Script" uid="uid://ofl2m7xgpjm2" path="res://interactable/test_enable_widowgame.gd" id="34_fb3tg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
@@ -29732,7 +29731,6 @@ y_sort_enabled = true
 position = Vector2(-1200, -499)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("27_txolg")
 
 [node name="Path2D" type="Path2D" parent="NPC_Widow"]
 top_level = true

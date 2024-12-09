@@ -17,6 +17,7 @@ var time_per_qte = 5
 @onready var arrow : StaticBody2D = $Control/Arrow
 @onready var arrow_collision : CollisionShape2D = arrow.get_node("CollisionShape2D")
 @export var player:Player
+@export var widow:WidowNPC
 var direction = Vector2.LEFT
 
 var min_x = 0.0
@@ -52,7 +53,12 @@ func _physics_process(_delta: float) -> void:
 	if minigame_active:
 		handle_movement()
 		if qte_active:
-			player.travel_to_anim("JumpCarry", player.direction)
+			# Widow attacks
+			var directions = [Vector2.RIGHT, Vector2.LEFT, Vector2.UP]
+			var attack_direction = directions[randi() % directions.size()]
+			if widow.state != NPC.NPCState.WIDOW_ATTACKING and widow.state != NPC.NPCState.CONTROLLED:
+				widow.attack(attack_direction)
+			player.travel_to_anim("Evade", attack_direction)
 
 func handle_movement():
 	var normalized_position = (arrow.position.x - min_x) / (max_x - min_x)
@@ -87,17 +93,17 @@ func _process_collision_result(result):
 	for collision in result:
 		var collider = collision.collider
 		if collider.name.begins_with("Perfect"):
-			_handle_qte_result("Perfect", 100, "RunCarry")
+			_handle_qte_result("Perfect", 125, "Run")
 			await get_tree().create_timer(1.5).timeout
-			set_player_speed(50)
-			set_player_movement_anim("WalkCarry")
+			set_player_speed(100)
+			set_player_movement_anim("Run")
 			minigame_timer.start()
 			break
 		elif collider.name.begins_with("Good"):
-			_handle_qte_result("Good", 50, "WalkCarry")
+			_handle_qte_result("Good", 100, "Run")
 			break
 		elif collider.name.begins_with("Bad"):
-			_handle_qte_result("Bad", 50, "WalkCarry", true)
+			_handle_qte_result("Bad", 100, "Run", true)
 			break
 
 func _handle_qte_result(result_type: String, speed: float, anim: String, lose_life: bool = false):
@@ -108,6 +114,10 @@ func _handle_qte_result(result_type: String, speed: float, anim: String, lose_li
 	qte_active = false
 	if lose_life:
 		lives -= 1
+
+	if widow.state == widow.NPCState.WIDOW_ATTACKING:
+		widow.backoff()
+
 	minigame_timer.start()
 
 func _calculate_min_max():
@@ -149,8 +159,8 @@ func start_minigame():
 	visible = true
 	minigame_timer.start()
 	if player:
-		set_player_speed(50)
-		set_player_movement_anim("WalkCarry")
+		set_player_speed(100)
+		set_player_movement_anim("Run")
 		player.path_following = true
 		player.state = Player.PlayerState.CONTROLLED
 		player.follow_path()
@@ -165,7 +175,7 @@ func _on_minigame_timer_timeout():
 	if minigame_active:
 		time_passed += 1
 		print("Minigame time: ", time_passed, " seconds , Number of lives: ", lives)
-		if int(time_passed) % 3 == 0:
+		if int(time_passed) % 3 == 0 and time_passed > 7:
 			print("QTE event triggered at ", time_passed, " seconds")
 			reset()
 			set_player_speed(0)
@@ -201,4 +211,10 @@ func set_player_movement_anim(_movement_anim: String):
 		player.get_node("Movement").movement_anim = _movement_anim
 
 func _on_path_follow_completed():
+	var wall: StaticBody2D = get_tree().current_scene.get_node_or_null("WidowWall")
+	if wall:
+		wall.set_collision_layer_value(1, true)
+		wall.set_collision_mask_value(1, true)
+
 	stop_minigame()
+	

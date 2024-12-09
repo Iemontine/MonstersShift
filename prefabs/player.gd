@@ -15,6 +15,7 @@ const CLICK_THRESHOLD = 0.5
 @export var speed = 100
 @export var sprint_multiplier = 2
 var direction:Vector2 = Vector2.ZERO
+var sprint_enabled: bool = true
 
 # Variables related to interactables
 @onready var interact_box = $InteractBox/CollisionShape2D
@@ -28,6 +29,7 @@ var current_interactable = null # current target interactable being held on
 # Used during Widow minigame
 var path_follow: PathFollow2D
 var path_following: bool = false
+var distance_travelled: float = 0
 signal path_follow_completed
 
 func _ready():
@@ -101,7 +103,7 @@ func handle_interaction():
 
 func update_speed_and_animation():
 	if path_following: return
-	if Input.is_key_pressed(KEY_SHIFT):
+	if sprint_enabled and Input.is_key_pressed(KEY_SHIFT):
 		speed = sprint_multiplier * default_speed
 		if state == PlayerState.CARRYING_ITEM:
 			movement.movement_anim = "RunCarry"
@@ -189,17 +191,13 @@ func follow_path():
 	path_follow.set_loop(false)
 	path_follow.set_cubic_interpolation(true)
 	path_following = true
-	# Hacky hold logic, TODO: turn into function, reuse where available
-	var texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png")
-	var atlas_texture = AtlasTexture.new()
-	atlas_texture.atlas = texture
-	atlas_texture.region = Rect2(224, 232, 16, 16)
-	carried_item.texture = atlas_texture
 
 # Called when the player is following a path in _physics_process()
 func _on_path_follow_timeout(delta):
 	var path : Path2D = get_parent().get_node_or_null("Path2D")
 	var path_length = path.curve.get_baked_length()
+
+	distance_travelled = path_follow.progress_ratio * path_length
 
 	# Progress along the path
 	path_follow.progress_ratio += (speed / path_length) * delta
@@ -211,3 +209,13 @@ func _on_path_follow_timeout(delta):
 		path_following = false
 		state = PlayerState.NORMAL
 		emit_signal("path_follow_completed")
+
+func kill_player():
+	state = PlayerState.LOCKED
+	travel_to_anim("Death")
+
+func enable_sprint():
+	sprint_enabled = true
+
+func disable_sprint():
+	sprint_enabled = false

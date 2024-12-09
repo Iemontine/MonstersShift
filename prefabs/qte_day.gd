@@ -150,10 +150,16 @@ func start_minigame():
 	minigame_timer.start()
 	if player:
 		set_player_speed(50)
-		set_player_movement_anim("WalkCarry")
+		set_player_movement_anim("Walk")
 		player.path_following = true
 		player.state = Player.PlayerState.CONTROLLED
 		player.follow_path()
+		# Hacky hold logic, TODO: turn into function, reuse where available
+		var texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/16_Grocery_store_Black_Shadow_16x16.png")
+		var atlas_texture = AtlasTexture.new()
+		atlas_texture.atlas = texture
+		atlas_texture.region = Rect2(224, 232, 16, 16)
+		player.carried_item.texture = atlas_texture
 	
 func stop_minigame():
 	minigame_active = false

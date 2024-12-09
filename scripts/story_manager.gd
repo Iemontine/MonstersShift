@@ -103,9 +103,7 @@ func _on_scene_transition_completed():
 				enable_grocery_items()
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
-				var player = PlayerController.player
-
-				start_player_path_follow(player)
+				start_player_path_follow()
 		Event.WIDOW_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Treehouse_Interior":
 				_event_name = "widow_player_insomnia"
