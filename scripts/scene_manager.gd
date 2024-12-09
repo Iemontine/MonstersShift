@@ -34,6 +34,8 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	if camera:
 		camera.target = dest_player
 	
+	current_scene = destination
+	
 	dest_player.global_position = pos
 	dest_player.direction = dir
 	handle_day_shift(dest_player)
