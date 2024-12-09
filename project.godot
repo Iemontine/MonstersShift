@@ -35,9 +35,11 @@ directories/dch_directory={
 "widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
+"Timelines/arrived_at_treehouse_1": "res://dialogic/Timelines/arrived_at_treehouse_1.dtl",
+"Timelines/arrived_at_treehouse_2": "res://dialogic/Timelines/arrived_at_treehouse_2.dtl",
+"Timelines/test": "res://dialogic/Timelines/test.dtl",
+"Timelines/test2": "res://dialogic/Timelines/test2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
-"arrived_at_treehouse_1": "res://dialogic/Timelines/Random/arrived_at_treehouse_1.dtl",
-"arrived_at_treehouse_2": "res://dialogic/Timelines/Random/arrived_at_treehouse_2.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
@@ -91,7 +93,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-<<<<<<<HEADdirectories/dch_directory={
+directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
