@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var points_required:int
 @export var game_duration:float
+@export var night_time:bool
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var points_label: Label = $Points
@@ -35,6 +36,9 @@ func _process(delta: float) -> void:
 				else:
 					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_NIGHT)
 					PlayerController.start_cutscene("baker_success_night")
+		elif game_timer.is_stopped():
+			start_game = false
+			_on_game_timer_timeout()
 		progress_bar.value = game_timer.get_time_left()
 		points_label.text = str(current_points) + " / " + str(points_required)
 		
@@ -53,7 +57,7 @@ func _on_game_timer_timeout() -> void:
 	progress_bar.visible = false
 	points_label.visible = false
 	game_label.visible = true
-	if StoryManager.current_event <= StoryManager.Event.BAKER_FAIL_DAYTIME:
+	if !night_time:
 		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_DAYTIME)
 		PlayerController.start_cutscene("baker_fail_daytime")
 	else: 

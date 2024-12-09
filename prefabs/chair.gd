@@ -4,13 +4,14 @@ class_name Chair
 enum Direction { UP, DOWN, LEFT, RIGHT }
 
 @export var chair_direction: Direction
-var npc: BakeryCustomerNPC = null  # Keeps track of the NPC that entered the chair area
+var npc: BakeryCustomerNPC  # Keeps track of the NPC that entered the chair area
 var occupied:bool = false
 
-var baker:BakerNPC
+@onready var baker:BakerNPC = $"../NPC_Baker"
 
-func _ready() -> void:
-	baker = get_parent().get_node_or_null("NPC_Baker")
+#func _ready() -> void:
+#	if get_parent().get_node_or_null("NPC_Baker") is BakerNPC:
+#		baker = get_parent().get_node_or_null("NPC_Baker")
 
 func _on_body_entered(body: Node) -> void:
 	# Check if the body that entered is a NPCBakeryCustomer
