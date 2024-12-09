@@ -69,3 +69,8 @@ func _on_game_timer_timeout() -> void:
 func _on_npc_baker_point_earned() -> void:
 	print("points earned")
 	current_points += 1
+
+
+func _on_npc_baker_night_point_earned() -> void:
+	print("points earned")
+	current_points += 1
