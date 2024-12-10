@@ -1,6 +1,6 @@
 extends NPC
 class_name BakerNPCNight
-@export var attack_damage:int = 2
+@export var attack_damage:float = 2
 
 @onready var agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var carried_item: Sprite2D = $CarriedItem
@@ -72,6 +72,7 @@ func _physics_process(_delta: float) -> void:
 			travel_to_position = window_marker.position
 			if agent_2d.is_navigation_finished():
 				eat_timer.start(2)
+				point_earned.emit()
 				state = NPCState.BAKER_EAT_FOOD
 				food_at_window = false
 		NPCState.BAKER_ATTACKING_PLAYER:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene load_steps=48 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
@@ -6,23 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="4_ffbsp"]
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_igw2u"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="7_eyyg0"]
-[ext_resource type="PackedScene" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
-[ext_resource type="PackedScene" path="res://prefabs/npc_bakery_customer.tscn" id="8_igw2u"]
+[ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
+[ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_bakery_customer.tscn" id="8_igw2u"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
 [ext_resource type="Script" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
-[ext_resource type="PackedScene" path="res://prefabs/chair.tscn" id="14_fcgx5"]
+[ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="13_mwicy"]
+[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
 [ext_resource type="Script" path="res://interactable/door.gd" id="14_x3sc3"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="15_jjlq4"]
 [ext_resource type="Texture2D" uid="uid://bu6o8lxvf718k" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/13_Conference_Hall_Black_Shadow_16x16.png" id="16_eyyg0"]
 [ext_resource type="Script" path="res://map/recipe_board.gd" id="16_yu6ri"]
 [ext_resource type="Texture2D" uid="uid://mw38uglnpyjg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="17_farls"]
-[ext_resource type="PackedScene" path="res://prefabs/board_ui.tscn" id="17_ffbsp"]
-[ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
+[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="17_ffbsp"]
+[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
 [ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
 [ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
-[ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="23_jwbsn"]
+[ext_resource type="Script" path="res://prefabs/help_button.gd" id="23_jwbsn"]
+[ext_resource type="Script" path="res://prefabs/baker_menu.gd" id="25_ku7ja"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -723,6 +725,14 @@ sources/4 = SubResource("TileSetAtlasSource_jqod6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffbsp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw8w0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.909804, 0.415686, 0.52549, 1)
+
 [sub_resource type="Theme" id="Theme_kw8w0"]
 Button/colors/font_color = Color(0.446716, 2.86378e-06, 0.285617, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
@@ -743,13 +753,12 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.909329, 0.742238, 0.85766, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw8w0"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 30
-border_width_top = 30
-border_width_right = 30
-border_width_bottom = 30
-border_color = Color(0.909804, 0.415686, 0.52549, 1)
+[sub_resource type="Gradient" id="Gradient_ku7ja"]
+offsets = PackedFloat32Array(0, 0.68, 0.995)
+colors = PackedColorArray(0.93867, 0.630127, 0.680552, 1, 0.613016, 0.449122, 0.822151, 1, 1, 0.670588, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jqod6"]
+gradient = SubResource("Gradient_ku7ja")
 
 [node name="Bakery" type="Node2D"]
 y_sort_enabled = true
@@ -793,7 +802,7 @@ position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_yu6ri")
 
 [node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
-position = Vector2(-136, -151)
+position = Vector2(-120, -112)
 
 [node name="NPC_Spawner" parent="Door_Bakery" node_paths=PackedStringArray("travel_locations") instance=ExtResource("7_ffbsp")]
 npc_scene = ExtResource("8_igw2u")
@@ -801,7 +810,7 @@ travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 z_index = 1
-position = Vector2(-27, 15)
+position = Vector2(-55, 88)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 1
@@ -821,37 +830,57 @@ collision_mask = 0
 [node name="SugarFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-40, 15)
+position = Vector2(-24, 15)
 item_name = "Sugar"
-item_texture = ExtResource("3_yu6ri")
-item_region_rect = Rect2(32, 320, 16, 16)
+item_texture = ExtResource("13_mwicy")
+item_region_rect = Rect2(64, 0, 16, 16)
+
+[node name="ItemSprite" parent="SugarFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
 
 [node name="ChocolateFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-8, 15)
+position = Vector2(12, 15)
 item_name = "Chocolate"
-item_texture = ExtResource("3_yu6ri")
-item_region_rect = Rect2(0, 736, 16, 16)
+item_texture = ExtResource("13_mwicy")
+item_region_rect = Rect2(17, 0, 15, 16)
+
+[node name="ItemSprite" parent="ChocolateFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
 
 [node name="VanillaFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(24, 15)
+position = Vector2(46, 15)
 item_name = "Vanilla"
-item_texture = ExtResource("3_yu6ri")
-item_region_rect = Rect2(32, 736, 16, 16)
+item_texture = ExtResource("13_mwicy")
+item_region_rect = Rect2(48, 0, 16, 16)
+
+[node name="ItemSprite" parent="VanillaFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
 
 [node name="DoughFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(56, 15)
+position = Vector2(80, 15)
 item_name = "Flour"
-item_texture = ExtResource("3_yu6ri")
-item_region_rect = Rect2(192, 464, 16, 16)
+item_texture = ExtResource("13_mwicy")
+item_region_rect = Rect2(80, 0, 16, 16)
+
+[node name="ItemSprite" parent="DoughFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
 
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
-position = Vector2(-104, 29)
+z_index = 1
+position = Vector2(-104, 32)
+
+[node name="Sprite2D" parent="Baker_Trashcan" index="0"]
+z_index = 1
 
 [node name="Chair1" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
@@ -868,11 +897,93 @@ chair_direction = 1
 [node name="Chair3" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-88, 181)
+position = Vector2(-88, 183)
 chair_direction = 1
 
 [node name="NPC_Baker" parent="." instance=ExtResource("15_jjlq4")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(-74, 19)
+collision_layer = 0
+
+[node name="CarriedItem" parent="NPC_Baker" index="0"]
+position = Vector2(1, -33)
+
+[node name="SpriteLayers" parent="NPC_Baker" index="2"]
+z_index = 1
+
+[node name="00undr" parent="NPC_Baker/SpriteLayers" index="2"]
+flip_h = false
+frame = 0
+
+[node name="01body" parent="NPC_Baker/SpriteLayers" index="3"]
+flip_h = false
+frame = 0
+
+[node name="02sock" parent="NPC_Baker/SpriteLayers" index="4"]
+flip_h = false
+frame = 0
+
+[node name="03fot1" parent="NPC_Baker/SpriteLayers" index="5"]
+flip_h = false
+frame = 0
+
+[node name="05shrt" parent="NPC_Baker/SpriteLayers" index="6"]
+flip_h = false
+frame = 0
+
+[node name="06lwr2" parent="NPC_Baker/SpriteLayers" index="7"]
+flip_h = false
+frame = 0
+
+[node name="07fot2" parent="NPC_Baker/SpriteLayers" index="8"]
+flip_h = false
+frame = 0
+
+[node name="08lwr3" parent="NPC_Baker/SpriteLayers" index="9"]
+flip_h = false
+frame = 0
+
+[node name="09hand" parent="NPC_Baker/SpriteLayers" index="10"]
+flip_h = false
+frame = 0
+
+[node name="10outr" parent="NPC_Baker/SpriteLayers" index="11"]
+flip_h = false
+frame = 0
+
+[node name="04lwr1" parent="NPC_Baker/SpriteLayers" index="12"]
+flip_h = false
+frame = 0
+
+[node name="11neck" parent="NPC_Baker/SpriteLayers" index="13"]
+flip_h = false
+frame = 0
+
+[node name="12face" parent="NPC_Baker/SpriteLayers" index="14"]
+flip_h = false
+frame = 0
+
+[node name="13hair" parent="NPC_Baker/SpriteLayers" index="15"]
+flip_h = false
+frame = 0
+
+[node name="14head" parent="NPC_Baker/SpriteLayers" index="16"]
+flip_h = false
+frame = 0
+
+[node name="15over" parent="NPC_Baker/SpriteLayers" index="17"]
+flip_h = false
+frame = 0
+
+[node name="32x32_anims" parent="NPC_Baker/SpriteLayers" index="24"]
+offset = Vector2(0, -2)
+
+[node name="64x64_anims" parent="NPC_Baker/SpriteLayers" index="25"]
+offset = Vector2(0, -2)
+
+[node name="NavigationAgent2D" parent="NPC_Baker" index="4"]
+avoidance_enabled = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
@@ -891,22 +1002,6 @@ shape = SubResource("RectangleShape2D_ffbsp")
 [node name="Board_UI" parent="Recipe_board" instance=ExtResource("17_ffbsp")]
 visible = false
 
-[node name="BakerGameLogic" parent="." instance=ExtResource("18_igw2u")]
-points_required = 3
-game_duration = 60.0
-
-[node name="HelpButton" type="Button" parent="BakerGameLogic"]
-offset_left = 1037.0
-offset_top = 539.0
-offset_right = 1123.0
-offset_bottom = 619.0
-theme = SubResource("Theme_kw8w0")
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
-text = "?"
-script = ExtResource("23_jwbsn")
-
 [node name="12KitchenBlackShadow16x16" type="Sprite2D" parent="."]
 position = Vector2(-744, 128)
 texture = ExtResource("3_yu6ri")
@@ -914,7 +1009,6 @@ region_enabled = true
 region_rect = Rect2(0, 736, 16, 16)
 
 [node name="HelpLabels" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -923,9 +1017,9 @@ offset_bottom = 40.0
 [node name="Sugar" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -51.0
+offset_left = -34.0
 offset_top = 32.0
-offset_right = 359.0
+offset_right = 376.0
 offset_bottom = 270.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -938,9 +1032,9 @@ vertical_alignment = 1
 [node name="Chocolate" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -23.0
+offset_left = -6.0
 offset_top = 32.0
-offset_right = 615.0
+offset_right = 632.0
 offset_bottom = 257.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -953,9 +1047,9 @@ vertical_alignment = 1
 [node name="Vanilla" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 13.0
+offset_left = 36.0
 offset_top = 32.0
-offset_right = 463.0
+offset_right = 486.0
 offset_bottom = 257.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -969,10 +1063,10 @@ vertical_alignment = 1
 [node name="Flour" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 46.0
-offset_top = 32.0
-offset_right = 405.0
-offset_bottom = 257.0
+offset_left = 71.0
+offset_top = 33.0
+offset_right = 430.0
+offset_bottom = 258.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -1028,5 +1122,83 @@ text = "Trash Can
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BakerGameLogic" parent="." instance=ExtResource("18_igw2u")]
+points_required = 3
+game_duration = 60.0
+
+[node name="HelpButton" type="Button" parent="BakerGameLogic"]
+offset_left = 1037.0
+offset_top = 539.0
+offset_right = 1123.0
+offset_bottom = 619.0
+focus_mode = 0
+theme = SubResource("Theme_kw8w0")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
+text = "?"
+script = ExtResource("23_jwbsn")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("25_ku7ja")
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_jqod6")
+
+[node name="Start" type="Button" parent="Menu"]
+offset_left = 420.0
+offset_top = 223.0
+offset_right = 733.0
+offset_bottom = 303.0
+focus_mode = 0
+theme = SubResource("Theme_kw8w0")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="Menu"]
+offset_left = 426.0
+offset_top = 334.0
+offset_right = 733.0
+offset_bottom = 414.0
+size_flags_horizontal = 4
+focus_mode = 0
+theme = SubResource("Theme_kw8w0")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
+text = "Tutorial"
+
+[node name="Label" type="Label" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Baker Mini Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="point_earned" from="NPC_Baker" to="BakerGameLogic" method="_on_npc_baker_point_earned"]
 [connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Start" to="Menu" method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Tutorial" to="Menu" method="_on_tutorial_pressed"]
+
+[editable path="SugarFactory"]
+[editable path="ChocolateFactory"]
+[editable path="VanillaFactory"]
+[editable path="DoughFactory"]
+[editable path="Baker_Trashcan"]
+[editable path="NPC_Baker"]

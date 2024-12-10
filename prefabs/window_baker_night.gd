@@ -17,6 +17,6 @@ func _on_interacted() -> void:
 	elif player.carried_item_name != npc_baker_night.baker_want and player.carried_item_name != "":
 		Dialogic.start("BakerDontWantThis")
 	else:
-		Dialogic.start("BakerWindowNoItem")
+		PlayerController.start_cutscene("BakerWindowNoItem")
 		print("Thats not what the baker wanted")
 		pass
