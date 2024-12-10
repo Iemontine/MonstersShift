@@ -150,7 +150,7 @@ func start_minigame():
 	minigame_timer.start()
 	if player:
 		set_player_speed(50)
-		set_player_movement_anim("Walk")
+		set_player_movement_anim("WalkCarry")
 		player.path_following = true
 		player.state = Player.PlayerState.CONTROLLED
 		player.follow_path()

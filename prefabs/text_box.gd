@@ -11,7 +11,7 @@ func say(text:String,duration:float) -> void:
 	if !chatbox_on_cooldown:
 		visible = true
 		label.text = text
-		print(label.text)
+		# print(label.text)
 		start_timer(duration)
 
 func start_timer(duration: float):

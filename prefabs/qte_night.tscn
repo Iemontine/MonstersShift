@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://pcke2a0ebpuv"]
+[gd_scene load_steps=10 format=3 uid="uid://bbngd238unqyn"]
 
-[ext_resource type="Script" uid="uid://gx1ktuffrybm" path="res://prefabs/qte_night.gd" id="1_yd5jo"]
+[ext_resource type="Script" path="res://prefabs/qte_night.gd" id="1_yd5jo"]
 [ext_resource type="Texture2D" uid="uid://b3btdbaprpmxp" path="res://assets/assets_widow/evil_arrow.png" id="2_yd5jo"]
 [ext_resource type="Texture2D" uid="uid://bascwrekn3va8" path="res://assets/assets_widow/evil_qte.png" id="3_202w6"]
 
