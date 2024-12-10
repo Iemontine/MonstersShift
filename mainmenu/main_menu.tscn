@@ -13268,7 +13268,7 @@ sources/0 = SubResource("TileSetAtlasSource_lqro1")
 sources/1 = SubResource("TileSetAtlasSource_saq78")
 sources/2 = SubResource("TileSetAtlasSource_8uw0o")
 
-[node name="Main_Menu" type="Node"]
+[node name="Main_Menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
 
 [node name="Panel" type="Panel" parent="."]
