@@ -26,7 +26,7 @@ func _ready() -> void:
 	SceneManager.scene_transition_completed.connect(_on_scene_transition_completed)
 	_on_scene_transition_completed()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_instance_valid(stream_player):
 		_current_playtime = stream_player.get_playback_position()
 		

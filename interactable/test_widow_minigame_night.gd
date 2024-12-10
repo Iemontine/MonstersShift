@@ -10,10 +10,10 @@ func _ready() -> void:
 	
 func _on_body_entered(_body:Object) -> void:
 	if _body is Player:
-		if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
-				and StoryManager.current_event < StoryManager.Event.LAST_MORNING
-		): # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
-			#SceneManager.change_time_of_day(SceneManager.TIME.NIGHT)
+		#if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
+				#and StoryManager.current_event < StoryManager.Event.LAST_MORNING
+		#):
+			SceneManager.change_time_of_day(SceneManager.TIME.NIGHT)
 			
 			NpcController.set_target_npc("NPC_Widow")
 			NpcController.control_npc()
@@ -45,5 +45,4 @@ func _on_body_entered(_body:Object) -> void:
 			camera.target = player
 
 			var qte = get_tree().current_scene.get_node("QTE")
-			print(get_tree().root.get_tree_string_pretty())
 			qte.start_minigame()

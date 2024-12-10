@@ -7,12 +7,12 @@ func _ready() -> void:
 	
 func _on_body_entered(_body:Object) -> void:
 	if _body is Player:
-		if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
-			and StoryManager.current_event < StoryManager.Event.LAST_MORNING
-		): 
+		#if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
+			#and StoryManager.current_event < StoryManager.Event.LAST_MORNING
+		#): 
 			NpcController.set_target_npc("NPC_Widow")
 			
-			var glow = widow.get_node("Glow")
+			#var glow = widow.get_node("Glow")
 			
 			widow.visible = true
 			var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_EXPO)

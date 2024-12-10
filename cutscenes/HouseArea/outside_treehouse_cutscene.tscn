@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ftjlrq5makyi"]
 
-[ext_resource type="Script" uid="uid://du1op2ok5my2y" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.gd" id="1_fbua3"]
+[ext_resource type="Script" uid="uid://b04af4rufovv8" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.gd" id="1_fbua3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbua3"]
 size = Vector2(36, 28)
