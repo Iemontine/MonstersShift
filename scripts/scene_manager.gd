@@ -18,9 +18,11 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	
+	if destination == "Main_Menu": scene_path = "res://mainmenu/"
 	dest_path = scene_path + destination + ".tscn"
 	var last_direction = src_player.direction
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
+	scene_path = "res://map/"
 	
 	# TODO: replace with actual await completed scene transition code
 	await get_tree().create_timer(0.05).timeout
@@ -47,12 +49,15 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
+	if destination == "Main_Menu": scene_path = "res://mainmenu/"
 	dest_path = scene_path + destination + ".tscn"
 	var last_direction = src_player.direction
+	scene_path = "res://map/"
+	
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
 	
 	# TODO: replace with actual await completed scene transition code
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.05).timeout
 	
 	var new_scene = get_tree().root.get_node(destination)
 	current_scene = destination
