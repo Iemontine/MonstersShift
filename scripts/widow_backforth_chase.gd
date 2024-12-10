@@ -85,3 +85,5 @@ func attack() -> void:
 # 	print("Player touched the widow, killing player")
 # 	player.state = Player.PlayerState.LOCKED
 # 	player.travel_to_anim("Death")
+#	StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
+#	PlayerController.start_cutscene("widow_fail_night")
