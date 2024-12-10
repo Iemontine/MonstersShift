@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=4 uid="uid://dcrol3he1cowb"]
+[gd_scene load_steps=37 format=4 uid="uid://dcrol3he1cowb"]
 
 [ext_resource type="FontFile" uid="uid://cc61t5i06mcb3" path="res://assets/GrapeSoda.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://rmefhw4mhcdo" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Script" path="res://mainmenu/car.gd" id="4_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="6_j5v2v"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="13_5f2nu"]
+[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="14_ipt3t"]
 [ext_resource type="Texture2D" uid="uid://cssjdu75klnau" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_16x16.png" id="16_v2sba"]
 [ext_resource type="Texture2D" uid="uid://dbuqcyd3b4aq8" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_2_complete_5.png" id="18_qby1g"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="19_mg3m2"]
@@ -13267,7 +13268,7 @@ sources/0 = SubResource("TileSetAtlasSource_lqro1")
 sources/1 = SubResource("TileSetAtlasSource_saq78")
 sources/2 = SubResource("TileSetAtlasSource_8uw0o")
 
-[node name="MainMenu" type="Node"]
+[node name="Main_Menu" type="Node"]
 script = ExtResource("1_7vrkn")
 
 [node name="Panel" type="Panel" parent="."]
@@ -13427,7 +13428,25 @@ script = ExtResource("21_7bbuq")
 [node name="Player" parent="." instance=ExtResource("13_5f2nu")]
 position = Vector2(2867, 467)
 
+[node name="Door_Menu" parent="." instance=ExtResource("14_ipt3t")]
+y_sort_enabled = true
+position = Vector2(2784, 458)
+destination_scene = "Treehouse_Interior"
+target_door = "Door_Treehouse"
+
+[node name="CollisionShape2D" parent="Door_Menu" index="0"]
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" parent="Door_Menu" index="1"]
+y_sort_enabled = true
+
+[node name="Spawnpoint" parent="Door_Menu" index="2"]
+y_sort_enabled = true
+position = Vector2(0, 20)
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exitbutton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+
+[editable path="Door_Menu"]

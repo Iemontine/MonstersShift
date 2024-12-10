@@ -549,7 +549,7 @@ scale = Vector2(0.370052, 0.370573)
 [node name="Door_Treehouse" parent="." instance=ExtResource("7_ya4jy")]
 position = Vector2(-56, -32)
 script = ExtResource("19_gyu8w")
-event = 5
+event = 6
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 

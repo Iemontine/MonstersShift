@@ -6,14 +6,14 @@ do NpcController.control_npc()
 do NpcController.set_npc_position(891, -221)
 do NpcController.setSpeed(100)
 do NpcController.moveUp()
-[wait time="1.0"]
+[wait time="1.1"]
 do NpcController.stop()
 # 
 do NpcController.set_target_npc("NPC_Widow")
-do NpcController.set_npc_position(932, -222)
+do NpcController.set_npc_position(932, -221)
 do NpcController.setSpeed(100)
 do NpcController.moveUp()
-[wait time="1.0"]
+[wait time="1.1"]
 do NpcController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_07.wav" volume="0.0"]
 baker: Hello again sugar! We wanted to come thank you for your help.
@@ -30,9 +30,13 @@ do PlayerController.moveDown()
 do PlayerController.moveRight()
 [wait time="0.3"]
 do PlayerController.moveDown()
-[wait time="0.3"]
+[wait time="0.2"]
 do PlayerController.stop()
 do PlayerController.resetSpeed()
+do NpcController.set_target_npc("NPC_Baker")
+do NpcController.playAnimation("Look", 1, 0)
+do NpcController.set_target_npc("NPC_Widow")
+do NpcController.playAnimation("Look", -1, 0)
 player: It's what Benjamin would have wanted. I'm glad I could help.
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
@@ -52,4 +56,6 @@ do PlayerController.moveLeft()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 do PlayerController.stop()
+do PlayerController.switchScene("Main_Menu", "Door_Menu")
+[wait time="1.0"]
 [signal arg="uncontrol"]

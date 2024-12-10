@@ -11,11 +11,11 @@ A note slides under the door. It’s a shopping list stained with tears.
 	[wait time="0.3"]
 	do PlayerController.stop()
 	player: Of course, I’ll be right back
-	Better head to town and get those groceries.
-- She's so sad, how could I leave?
+	Better go get those groceries.
+- She's so sad, how could I not help?
 	do PlayerController.playAnimation("PickupCarry", 0, -1)
 	[wait time="0.3"]
 	do PlayerController.stop()
 	player: Of course, I’ll be right back
-	Better head to town and get those groceries.
+	Better go get those groceries.
 [signal arg="uncontrol"]

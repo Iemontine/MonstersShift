@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
 [ext_resource type="PackedScene" uid="uid://d3ojvtx4yjg2j" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
-[ext_resource type="PackedScene" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
+[ext_resource type="PackedScene" uid="uid://b2qfxonvvyga7" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
 [ext_resource type="Script" uid="uid://ofl2m7xgpjm2" path="res://interactable/test_enable_widowgame.gd" id="34_fb3tg"]
 [ext_resource type="Script" uid="uid://dv05ig8ew0kbp" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="37_apa6g"]
@@ -29724,7 +29724,7 @@ position = Vector2(-1104, -151)
 
 [node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
-position = Vector2(-1200, -499)
+position = Vector2(-329, -533)
 collision_layer = 0
 collision_mask = 0
 
