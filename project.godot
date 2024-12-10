@@ -25,11 +25,6 @@ SaveManager="*res://scripts/save_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 NpcController="*res://scripts/npc_controller.gd"
 MusicManager="*res://scripts/music_manager.gd"
-<<<<<<<HEADSaveManager="*res://scripts/save_manager.gd"
-scene_manager="*res://scripts/loadzones/scene_manager.gd"
-QuestSignals="*res://scripts/quests/quest_signals.gd"
-quest_manager="*res://scripts/quests/quest_manager.gd"
-MinigameManager="*res://scripts/quests/minigames/minigame_manager.gd"
 
 [dialogic]
 
@@ -42,9 +37,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "BakerDontWantThis": "res://dialogic/Timelines/Baker/BakerDontWantThis.dtl",
 "BakerWindowNoItem": "res://dialogic/Timelines/Baker/BakerWindowNoItem.dtl",
+"Random/arrived_at_treehouse_1": "res://dialogic/Timelines/Random/arrived_at_treehouse_1.dtl",
+"Random/arrived_at_treehouse_2": "res://dialogic/Timelines/Random/arrived_at_treehouse_2.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
-"arrived_at_treehouse_1": "res://dialogic/Timelines/Random/arrived_at_treehouse_1.dtl",
-"arrived_at_treehouse_2": "res://dialogic/Timelines/Random/arrived_at_treehouse_2.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",

@@ -29070,17 +29070,17 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_jrct8"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1136, -176, 0, 0, 0, 0, -1136, -144, 0, 0, 0, 0, -1280, -144, 0, 0, 0, 0, -1280, -176, 0, 0, 0, 0, -1328, -176, 0, 0, 0, 0, -1328, -144, 0, 0, 0, 0, -2160, -144, 0, 0, 0, 0, -2160, -440, 0, 0, 0, 0, -1336, -440, 0, 0, 0, 0, -1336, -472)
-}
-point_count = 10
-
 [sub_resource type="Curve2D" id="Curve2D_qgqjp"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 107, 52, 0, 0, 0, 0, 232, 52, 0, 0, 0, 0, 232, 126, 0, 0, 0, 0, 107, 126, 0, 0, 0, 0, 107, 52)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_jrct8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1136, -176, 0, 0, 0, 0, -1136, -144, 0, 0, 0, 0, -1280, -144, 0, 0, 0, 0, -1280, -176, 0, 0, 0, 0, -1328, -176, 0, 0, 0, 0, -1328, -144, 0, 0, 0, 0, -2160, -144, 0, 0, 0, 0, -2160, -440, 0, 0, 0, 0, -1336, -440, 0, 0, 0, 0, -1336, -472)
+}
+point_count = 10
 
 [node name="Town" type="Node2D"]
 y_sort_enabled = true
@@ -29719,13 +29719,6 @@ zoom = Vector2(3, 3)
 script = ExtResource("25_x3iwy")
 target = NodePath("../Player")
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_jrct8")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-1136, -176)
-rotation = 1.5708
-
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
 position = Vector2(-1104, -151)
 
@@ -29766,11 +29759,17 @@ position = Vector2(-1334, -487)
 
 [node name="TestWidow" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-1072, -170)
-script = null
 
 [node name="QTE" parent="." node_paths=PackedStringArray("player") instance=ExtResource("33_ukl65")]
 visible = false
 player = NodePath("../Player")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jrct8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1136, -176)
+rotation = 1.5708
 
 [node name="Sign" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-72, -8)

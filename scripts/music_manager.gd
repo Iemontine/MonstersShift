@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	if is_instance_valid(stream_player):
 		_current_playtime = stream_player.get_playback_position()
 		
-	print(_current_playtime)
+	#print(_current_playtime)
 
 func _on_scene_transition_completed() -> void:
 	
