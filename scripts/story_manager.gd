@@ -5,7 +5,7 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
+	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, LEAVE_TOO_EARLY, EXIT_HOUSE_POSTARRIVAL,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, BAKER_PLAYER_INSOMNIA,
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.LEAVING_BAKERY_EVENING
+@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -101,7 +101,7 @@ func _on_scene_transition_completed():
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
-				SceneManager.change_time_of_day(SceneManager.TIME.EVENING)
+				SceneManager.change_time_of_day(-1)
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)
