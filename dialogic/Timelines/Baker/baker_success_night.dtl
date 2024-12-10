@@ -46,6 +46,6 @@ baker: UGGHH I LOVE DESSERT!
 	do PlayerController.playAnimation("Idle2", 0, 1)
 	player: My brother and his secrets…what else will I discover?
 	player: I guess I'll try to go back to bed...
-	do SceneManager.change_time_of_day()
+	do SceneManager.change_time_of_day(-1)
 	do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
 	[signal arg="uncontrol"]

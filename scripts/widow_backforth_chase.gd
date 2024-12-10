@@ -45,6 +45,9 @@ func _on_body_entered(_body: Object) -> void:
 func _on_body_exited(_body: Object) -> void:
 	if _body is Player:
 		attack_mode_active = false
+		NpcController.stop()
+		NpcController.uncontrol_npc()
+		
 		player.enable_sprint() # Enable sprinting
 
 func attack() -> void:
@@ -85,3 +88,5 @@ func attack() -> void:
 # 	print("Player touched the widow, killing player")
 # 	player.state = Player.PlayerState.LOCKED
 # 	player.travel_to_anim("Death")
+#	StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
+#	PlayerController.start_cutscene("widow_fail_night")

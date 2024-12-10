@@ -5,7 +5,7 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL, LEAVE_TOO_EARLY,
+	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, LEAVE_TOO_EARLY, EXIT_HOUSE_POSTARRIVAL,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, BAKER_PLAYER_INSOMNIA,
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
@@ -14,7 +14,7 @@ enum Event {
 	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME, 
 	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
 	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
-	END 
+	LAST_MORNING, FINAL_SCENES, END 
 }
 
 var check_for_bed = false
@@ -101,7 +101,7 @@ func _on_scene_transition_completed():
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
-				SceneManager.change_time_of_day()
+				SceneManager.change_time_of_day(-1)
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)
@@ -121,7 +121,11 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.WIDOWS_HOUSE_NIGHT)
 				PlayerController.start_cutscene(_event_name)
 		
-
+		Event.LAST_MORNING:
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "final_scenes"
+				StoryManager.transition_to_event(StoryManager.Event.FINAL_SCENES)
+				PlayerController.start_cutscene(_event_name)
 
 		# Event.WIDOW_DAY_GAME_WRONG:
 

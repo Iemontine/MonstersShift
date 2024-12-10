@@ -1,5 +1,5 @@
 # Player insomnia before going to bakery
-do SceneManager.change_time_of_day()
+do SceneManager.change_time_of_day(-1)
 [signal arg="control"]
 do PlayerController.stop()
 do PlayerController.moveDown()
