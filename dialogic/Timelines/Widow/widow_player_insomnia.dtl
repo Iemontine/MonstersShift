@@ -1,6 +1,6 @@
 # Player insomnia before going to convenience store
 [signal arg="control"]
-do SceneManager.change_time_of_day()
+do SceneManager.change_time_of_day(-1)
 [signal arg="control"]
 do PlayerController.stop()
 do PlayerController.moveDown()
