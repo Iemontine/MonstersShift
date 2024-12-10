@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dg5e1j6trerk0"]
+[gd_scene load_steps=33 format=4 uid="uid://dg5e1j6trerk0"]
 
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_pdgtp"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
+[ext_resource type="Script" uid="uid://bip4dieqak5q7" path="res://interactable/event_lockable_door.gd" id="19_gyu8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("4_he1c2")
@@ -547,6 +548,8 @@ scale = Vector2(0.370052, 0.370573)
 
 [node name="Door_Treehouse" parent="." instance=ExtResource("7_ya4jy")]
 position = Vector2(-56, -32)
+script = ExtResource("19_gyu8w")
+event = 5
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 
