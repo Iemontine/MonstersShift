@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene load_steps=45 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
 [ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
 [ext_resource type="Script" path="res://prefabs/help_button.gd" id="23_jwbsn"]
-[ext_resource type="Script" path="res://prefabs/baker_menu.gd" id="25_ku7ja"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -753,13 +752,6 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.909329, 0.742238, 0.85766, 1)
 
-[sub_resource type="Gradient" id="Gradient_ku7ja"]
-offsets = PackedFloat32Array(0, 0.68, 0.995)
-colors = PackedColorArray(0.93867, 0.630127, 0.680552, 1, 0.613016, 0.449122, 0.822151, 1, 1, 0.670588, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jqod6"]
-gradient = SubResource("Gradient_ku7ja")
-
 [node name="Bakery" type="Node2D"]
 y_sort_enabled = true
 
@@ -810,7 +802,7 @@ travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 z_index = 1
-position = Vector2(-55, 88)
+position = Vector2(-19, 60)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 1
@@ -1140,61 +1132,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
 text = "?"
 script = ExtResource("23_jwbsn")
 
-[node name="Menu" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("25_ku7ja")
-
-[node name="TextureRect" type="TextureRect" parent="Menu"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_jqod6")
-
-[node name="Start" type="Button" parent="Menu"]
-offset_left = 420.0
-offset_top = 223.0
-offset_right = 733.0
-offset_bottom = 303.0
-focus_mode = 0
-theme = SubResource("Theme_kw8w0")
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
-text = "Start"
-
-[node name="Tutorial" type="Button" parent="Menu"]
-offset_left = 426.0
-offset_top = 334.0
-offset_right = 733.0
-offset_bottom = 414.0
-size_flags_horizontal = 4
-focus_mode = 0
-theme = SubResource("Theme_kw8w0")
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
-text = "Tutorial"
-
-[node name="Label" type="Label" parent="Menu"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -459.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 100
-text = "Baker Mini Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="point_earned" from="NPC_Baker" to="BakerGameLogic" method="_on_npc_baker_point_earned"]
 [connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
-[connection signal="pressed" from="Menu/Start" to="Menu" method="_on_start_pressed"]
-[connection signal="pressed" from="Menu/Tutorial" to="Menu" method="_on_tutorial_pressed"]
 
 [editable path="SugarFactory"]
 [editable path="ChocolateFactory"]

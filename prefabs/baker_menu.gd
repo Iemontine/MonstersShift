@@ -1,7 +1,9 @@
 extends CanvasLayer
+
+@onready var baker_game_logic: CanvasLayer = $"../BakerGameLogic"
+@export var player: Player
 @onready var start: Button = $Start
 @onready var tutorial: Button = $Tutorial
-@onready var baker_game_logic: CanvasLayer = $"../BakerGameLogic"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,4 +21,6 @@ func _on_start_pressed() -> void:
 
 
 func _on_tutorial_pressed() -> void:
-	Dialogic.start("how_to_play")
+		StoryManager.transition_to_event(StoryManager.Event.CLICK_ON_BED)
+		PlayerController.start_cutscene("how_to_play")
+		visible = false

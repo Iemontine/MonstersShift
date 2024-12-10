@@ -39,6 +39,7 @@ directories/dtl_directory={
 "BakerWindowNoItem": "res://dialogic/Timelines/Baker/BakerWindowNoItem.dtl",
 "Random/arrived_at_treehouse_1": "res://dialogic/Timelines/Random/arrived_at_treehouse_1.dtl",
 "Random/arrived_at_treehouse_2": "res://dialogic/Timelines/Random/arrived_at_treehouse_2.dtl",
+"Timelines/intro": "res://dialogic/Timelines/intro.dtl",
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",

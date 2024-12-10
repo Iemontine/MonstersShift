@@ -13,7 +13,8 @@ var start_game:bool
 var current_points:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_game = false
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	start_game = true
 	progress_bar.visible = false
 	#progress bar logic
 	progress_bar.max_value = game_duration
@@ -61,7 +62,14 @@ func _on_game_timer_timeout() -> void:
 	else: 
 		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_NIGHT)
 		PlayerController.start_cutscene("baker_fail_night")
-	
+
+func _on_dialogic_signal(argument:String):
+	if argument == "pause_game_timer":
+		game_timer.paused = true
+		visible = false
+	elif argument == "unpause_game_timer":
+		game_timer.paused = false
+		visible = true
 func start_game_timer():
 	# Start the game and timer
 	start_game = true
