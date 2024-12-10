@@ -5,7 +5,7 @@ do PlayerController.stop()
 [wait time="2.0"]
 do SceneManager.change_time_of_day(-1)
 do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
-do PlayerController.playAnimation("Sleeping", 0, 1)
 [clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+do PlayerController.playAnimation("Sleeping", 0, 1)
 player: I think I'll go back to the graveyard today...
 [signal arg="uncontrol"]

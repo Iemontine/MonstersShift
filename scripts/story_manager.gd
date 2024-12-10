@@ -14,7 +14,7 @@ enum Event {
 	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME, 
 	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
 	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
-	LAST_MORNING, END 
+	LAST_MORNING, FINAL_SCENES, END 
 }
 
 var check_for_bed = false
@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.WIDOW_NIGHT_QTE_SUCCESS
+@onready var current_event = Event.LAST_MORNING
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -121,7 +121,11 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.WIDOWS_HOUSE_NIGHT)
 				PlayerController.start_cutscene(_event_name)
 		
-
+		Event.LAST_MORNING:
+			if SceneManager.current_scene == "Treehouse_Exterior":
+				_event_name = "final_scenes"
+				StoryManager.transition_to_event(StoryManager.Event.FINAL_SCENES)
+				PlayerController.start_cutscene(_event_name)
 
 		# Event.WIDOW_DAY_GAME_WRONG:
 

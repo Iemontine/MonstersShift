@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dkjd2a74ar4fy"]
+[gd_scene load_steps=45 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_nucyf"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://cxbblmx6om4n5" path="res://interactable/widow_scare.gd" id="21_ke287"]
 [ext_resource type="PackedScene" path="res://prefabs/qte_night.tscn" id="21_s6p8i"]
 [ext_resource type="Script" uid="uid://vvduimgrhlr0" path="res://scripts/widow_backforth_chase.gd" id="22_ke287"]
+[ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="22_mqu8j"]
 [ext_resource type="Script" uid="uid://cj53ayj4ut46u" path="res://cutscenes/WidowArea/widow_last_cutscene.gd" id="24_lh7wg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
@@ -24221,7 +24222,10 @@ position = Vector2(480, -194)
 shape = SubResource("RectangleShape2D_doksa")
 
 [node name="NPC_Widow" parent="." instance=ExtResource("10_k2vro")]
-position = Vector2(756, -317)
+position = Vector2(263, -489)
+
+[node name="NPC_Baker" parent="." instance=ExtResource("22_mqu8j")]
+position = Vector2(227, -491)
 
 [node name="QTE" parent="." node_paths=PackedStringArray("player", "widow") instance=ExtResource("21_s6p8i")]
 visible = false
