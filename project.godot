@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://mainmenu/main_menu.tscn"
+run/main_scene="res://map/treehouse_exterior.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -60,6 +60,7 @@ directories/dtl_directory={
 "exit_house_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/exit_house_postarrival.dtl",
 "first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
+"last_morning": "res://dialogic/Timelines/FinalScenes/last_morning.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "night_enter_conbini": "res://dialogic/Timelines/Widow/night_enter_conbini.dtl",

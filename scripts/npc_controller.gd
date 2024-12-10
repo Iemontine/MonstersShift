@@ -83,3 +83,7 @@ func advanceStory() -> void:
 func hideSprite() -> void:
 	if npc:
 		npc.visible = false
+		
+func set_npc_position(x: float, y: float):
+	if npc:
+		npc.position = Vector2(x,y)

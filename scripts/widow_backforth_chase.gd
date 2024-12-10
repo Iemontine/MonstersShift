@@ -45,6 +45,9 @@ func _on_body_entered(_body: Object) -> void:
 func _on_body_exited(_body: Object) -> void:
 	if _body is Player:
 		attack_mode_active = false
+		NpcController.stop()
+		NpcController.uncontrol_npc()
+		
 		player.enable_sprint() # Enable sprinting
 
 func attack() -> void:

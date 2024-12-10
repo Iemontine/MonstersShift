@@ -4,21 +4,49 @@ do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 do PlayerController.set_player_position(3216, 319)
+do NpcController.set_target_npc("NPC_Widow")
+do NpcController.control_npc()
+do NpcController.animationComplete()
+do NpcController.stop()
+do NpcController.set_npc_position(3305, 288)
+[wait time="0.1"]
+do NpcController.playAnimation("Idle", 0, -1)
 [clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
-After you run into the graveyard, the widow slowly stops.
+do PlayerController.moveRight()
+[wait time="0.4"]
+do PlayerController.moveUp()
+[wait time="0.3"]
+do PlayerController.moveRight()
+[wait time="0.1"]
+do PlayerController.stop()
+As you run into the graveyard, you spot the widow frozen at a gravestone.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Small_Polyester_PickUp_Stereo.wav" volume="0.0"]
-As she silently stares at the graveyards, her appearance turns back to normal. She looks up at you with a sad smile.
+As she silently stares, her appearance turns back to normal. She looks up at you with a sad smile.
+do NpcController.playAnimation("Look", -1, 0)
 widow: Oh dear, I lost my head for a second.
 player: Can I ask what happened to you?
 widow: Of course. Many years ago, in a tragic accident, I lost my child and husband.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Single_Mono_06.wav" volume="0.0"]
+do NpcController.playAnimation("MoodSad", 0, -1)
 widow: ...They were everything to me. Without them, I couldn’t breathe. I couldn’t move. I just layed in bed. Frozen.
 widow: My sadness consumed me and turned me into what you just saw.
 widow: I thought I would be like that forever…but then I met your sweet brother Benji. He saved me from myself.
 Benjamin helped this woman. Helped her recover from something unimaginable. Wow…
+do PlayerController.moveRight()
+[wait time="0.1"]
+do PlayerController.stop()
 player: I am so sorry for your loss. That must have been incredibly difficult.
+do NpcController.playAnimation("Look", -1, 0)
 widow: Thank you dear, and I am sorry for attacking you. Learning that Benji passed sent me back into that dark place.
 player: No need to apologize, I understand. Please never hesitate to reach out to me for support.
 widow: Oh you are just the sweetest…just like Benji. I’ll see you around.
+do NpcController.setSpeed(150)
+do NpcController.moveDown()
+[wait time="0.3"]
+do NpcController.moveLeft()
+[wait time="2.0"]
+do NpcController.hideSprite()
+do NpcController.stop()
 player: There is so much about my brother that I just don’t know…
+do NpcController.control_npc()
 [signal arg="uncontrol"]
