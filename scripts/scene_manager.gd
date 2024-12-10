@@ -52,7 +52,7 @@ func switch_scene(src_player: Player, destination: String, should_player_walk: b
 	src_player.get_tree().call_deferred("change_scene_to_file", dest_path)
 	
 	# TODO: replace with actual await completed scene transition code
-	await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(0.1).timeout
 	
 	var new_scene = get_tree().root.get_node(destination)
 	current_scene = destination
