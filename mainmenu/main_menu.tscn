@@ -1,19 +1,18 @@
-[gd_scene load_steps=37 format=4 uid="uid://dcrol3he1cowb"]
+[gd_scene load_steps=36 format=4 uid="uid://dcrol3he1cowb"]
 
 [ext_resource type="FontFile" uid="uid://cc61t5i06mcb3" path="res://assets/GrapeSoda.ttf" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://rmefhw4mhcdo" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://cwcxal7cu3a8u" path="res://mainmenu/car.gd" id="4_0k4wn"]
+[ext_resource type="Script" path="res://mainmenu/car.gd" id="4_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="6_j5v2v"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="13_5f2nu"]
-[ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="14_ipt3t"]
 [ext_resource type="Texture2D" uid="uid://cssjdu75klnau" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_16x16.png" id="16_v2sba"]
 [ext_resource type="Texture2D" uid="uid://dbuqcyd3b4aq8" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_2_complete_5.png" id="18_qby1g"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="19_mg3m2"]
-[ext_resource type="Script" uid="uid://ckaa717283cgu" path="res://mainmenu/river.gd" id="21_7bbuq"]
+[ext_resource type="Script" path="res://mainmenu/river.gd" id="21_7bbuq"]
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="21_saq78"]
 [ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="22_8uw0o"]
 [ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="23_ql5ya"]
-[ext_resource type="Script" uid="uid://ditsh4idg1wvn" path="res://mainmenu/trees.gd" id="24_8uw0o"]
+[ext_resource type="Script" path="res://mainmenu/trees.gd" id="24_8uw0o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
@@ -13268,7 +13267,7 @@ sources/0 = SubResource("TileSetAtlasSource_lqro1")
 sources/1 = SubResource("TileSetAtlasSource_saq78")
 sources/2 = SubResource("TileSetAtlasSource_8uw0o")
 
-[node name="Main_Menu" type="Node"]
+[node name="MainMenu" type="Node"]
 script = ExtResource("1_7vrkn")
 
 [node name="Panel" type="Panel" parent="."]
@@ -13310,7 +13309,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 text = "Start game"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -13322,7 +13321,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
-text = "Credits"
+text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -13337,6 +13336,20 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 text = "Exit"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+text = "Credits"
 
 [node name="Label" type="Label" parent="."]
 z_index = 5
@@ -13414,24 +13427,7 @@ script = ExtResource("21_7bbuq")
 [node name="Player" parent="." instance=ExtResource("13_5f2nu")]
 position = Vector2(2867, 467)
 
-[node name="Door_Menu" parent="." instance=ExtResource("14_ipt3t")]
-y_sort_enabled = true
-position = Vector2(2784, 458)
-destination_scene = "Treehouse_Interior"
-target_door = "Door_Treehouse"
-
-[node name="CollisionShape2D" parent="Door_Menu" index="0"]
-y_sort_enabled = true
-
-[node name="AnimatedSprite2D" parent="Door_Menu" index="1"]
-y_sort_enabled = true
-
-[node name="Spawnpoint" parent="Door_Menu" index="2"]
-y_sort_enabled = true
-position = Vector2(0, 20)
-
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exitbutton_pressed"]
-
-[editable path="Door_Menu"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

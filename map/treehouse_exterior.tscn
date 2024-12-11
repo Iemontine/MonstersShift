@@ -1,7 +1,7 @@
 [gd_scene load_steps=50 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="2_nucyf"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_nucyf"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="3_8iffc"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="4_84vi3"]
 [ext_resource type="Texture2D" uid="uid://c06l310spirwj" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png" id="4_302ri"]

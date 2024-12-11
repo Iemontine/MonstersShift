@@ -1,5 +1,4 @@
 # Happens if you fail the widow's daytime game before loser screen
-
 [signal arg="control"]
 do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
@@ -8,6 +7,7 @@ do PlayerController.stop()
 widow: Oh… my husband would’ve loved this… but it’s not what I wanted. My husband…
 - Try Again
 	do PlayerController.switchScene("Conbini", "Door_Conbini1")
+	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")
 	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")
 	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")
 [signal arg="uncontrol"]

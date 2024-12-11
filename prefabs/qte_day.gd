@@ -180,27 +180,49 @@ func _on_minigame_timer_timeout():
 		else:
 			minigame_timer.start()
 
+#func _on_qte_timer_timeout():
+	#if qte_active:
+		#qte_time_passed += 1
+		#if qte_time_passed >= time_per_qte:
+			#print("QTE failed, losing a life")
+			#lives -= 1
+			#if lives <= 0:
+				#print("Game Over")
+				#minigame_active = false
+				#if player:
+					#player.path_following = false
+					#player.state = Player.PlayerState.NORMAL
+				#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
+				#PlayerController.start_cutscene("widow_day_qte_fail")
+			#_fade_out()
+			#minigame_timer.start()
+			#qte_active = false
+		#else:
+			#print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
+		#qte_timer.start()
+
 func _on_qte_timer_timeout():
 	if qte_active:
 		qte_time_passed += 1
 		if qte_time_passed >= time_per_qte:
-			# print("QTE failed, losing a life")
+			print("QTE failed, losing a life")
 			lives -= 1
 			if lives <= 0:
-				# print("Game Over")
+				print("Game Over")
 				minigame_active = false
 				if player:
-					player.path_following = false
-					player.state = Player.PlayerState.NORMAL
-					# Force the player to walk back to the convenience store to continue
-					StoryManager.transition_to_event(StoryManager.Event.WIDOW_BEFORE_DAY_GAME)
+					fail_player()
 			_fade_out()
 			minigame_timer.start()
 			qte_active = false
-		# else:
-			# print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
-		qte_timer.start()
+		else:
+			print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
+			qte_timer.start()
 
+func fail_player():
+	StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
+	PlayerController.start_cutscene("widow_day_qte_fail")
+	
 func set_player_speed(_speed: float):
 	if player: player.speed = _speed
 	
@@ -210,5 +232,3 @@ func set_player_movement_anim(_movement_anim: String):
 
 func _on_path_follow_completed():
 	stop_minigame()
-	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_SUCCESS)
-	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
