@@ -110,7 +110,7 @@ func create_item_pickup(recipe: String):
 	sprite.texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png")
 	match recipe:
 		"Brownie":
-			sprite.texture = load("res://kat_bakery_pixel_arts.png")
+			sprite.texture = load("res://assets/assets_baker/kat_bakery_pixelart.png")
 			sprite.region_rect = Rect2(33, 0, 16, 16)
 		"Cookie":
 			sprite.region_rect = Rect2(112, 736, 16, 16)
