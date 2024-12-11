@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
+@onready var current_event = Event.WIDOWS_HOUSE_NIGHT
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -133,6 +133,7 @@ func _on_scene_transition_completed():
 				PlayerController.start_cutscene(_event_name)
 		Event.WIDOW_PLAYER_INSOMNIA:
 			if SceneManager.current_scene == "Conbini":
+				StoryManager.conbini_night()
 				_event_name = "night_enter_conbini"
 				StoryManager.transition_to_event(StoryManager.Event.NIGHT_ENTER_CONBINI)
 				PlayerController.start_cutscene(_event_name)
