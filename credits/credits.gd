@@ -1,9 +1,9 @@
 extends Control
 
-@export var bg_color : Color = Color(0.556, 0.374, 0.315)
+@export var bg_color : Color = Color(0.123, 0.359, 0.237)
 @export var to_scene : PackedScene = null
-@export var title_color := Color(0.93, 0.642, 0.692)
-@export var text_color := Color(1, 0.769, 1)
+@export var title_color := Color(0.18, 0.435, 0.251)
+@export var text_color := Color(0.812, 1, 0.863)
 @export var title_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
 @export var text_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
 @export var Music : AudioStream = null
@@ -33,9 +33,11 @@ var lines := []
 
 var credits = [
 	[
-		"A final project for ECS 179"
+		"A final project for ECS 179",
+		""
 	],[
 		"Our Team",
+		"",
 		"Briana Fedkiw",
 		"Matthew Fulde",
 		"Noel Lee",
@@ -43,31 +45,41 @@ var credits = [
 		"Duy Nyugen",
 		"Darroll Saddi"
 	],[
-		"Art",
-		"slug"
+		"Narrative Design",
+		"",
+		"Briana Fedkiw"
 	],[
-		"Music",
-		"woohoo"
+		"Producer and Github Wizard",
+		"",
+		"Darroll Saddi"
 	],[
-		"Sound Effects",
-		"moo"
+		"Game Logic",
+		"",
+		"Duy Nguyen"
 	],[
-		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
+		"Animation and Visuals",
+		"",
+		"Katherine Li"
+	],[
+		"Game Feel and Music",
+		"",
+		"Matthew Fulde"
+	],[
+		"User Interface and Input",
+		"",
+		"Noel Lee"
 	],[
 		"Tools used",
+		"",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
 		"",
-		"Art sources:",
-		"https://myfavouriteartprogram.com"
+		"Project assets and source code:",
+		"https://github.com/Iemontine/MonstersShift"
 	],[
 		"Special thanks",
-		"yay",
-		"yippee",
-		"aaa"
+		"",
+		"Memorial Union Coffee House, for hosting our meetings and providing caffeine",
 	]
 ]
 
