@@ -191,20 +191,23 @@ func _on_qte_timer_timeout():
 	if qte_active:
 		qte_time_passed += 1
 		if qte_time_passed >= time_per_qte:
-			print("QTE failed, losing a life")
 			lives -= 1
 			if lives <= 0:
-				print("Game Over")
 				minigame_active = false
-				if player:
-					player.path_following = false
-					player.state = Player.PlayerState.NORMAL
+				if player: kill_player()
 			_fade_out()
 			minigame_timer.start()
 			qte_active = false
-		else:
-			print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
+		#else:
+			#print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
 		qte_timer.start()
+
+func kill_player():
+	player.path_following = false
+	player.state = Player.PlayerState.LOCKED
+	player.travel_to_anim("DeathBounce")
+	# StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
+	# PlayerController.start_cutscene("widow_fail_night")
 
 func set_player_speed(_speed: float):
 	if player: player.speed = _speed

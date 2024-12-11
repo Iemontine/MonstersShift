@@ -42,6 +42,7 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(_body: Object) -> void:
 	if _body is Player: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
+		attack_direction = Vector2.LEFT
 		NpcController.set_target_npc("NPC_Widow")
 		
 		glow = NpcController.get_target_npc().get_node("Glow")
@@ -81,6 +82,7 @@ func attack() -> void:
 		NpcController.moveLeft()
 
 func kill_player():
+	NpcController.stop()
 	NpcController.uncontrol_npc()
 	widow.attack(-attack_direction)
 	player.state = Player.PlayerState.LOCKED

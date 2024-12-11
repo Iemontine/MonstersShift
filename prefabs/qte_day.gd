@@ -184,19 +184,21 @@ func _on_qte_timer_timeout():
 	if qte_active:
 		qte_time_passed += 1
 		if qte_time_passed >= time_per_qte:
-			print("QTE failed, losing a life")
+			# print("QTE failed, losing a life")
 			lives -= 1
 			if lives <= 0:
-				print("Game Over")
+				# print("Game Over")
 				minigame_active = false
 				if player:
 					player.path_following = false
 					player.state = Player.PlayerState.NORMAL
+					# Force the player to walk back to the convenience store to continue
+					StoryManager.transition_to_event(StoryManager.Event.WIDOW_BEFORE_DAY_GAME)
 			_fade_out()
 			minigame_timer.start()
 			qte_active = false
-		else:
-			print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
+		# else:
+			# print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
 		qte_timer.start()
 
 func set_player_speed(_speed: float):

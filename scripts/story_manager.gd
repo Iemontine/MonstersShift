@@ -105,6 +105,8 @@ func _on_scene_transition_completed():
 		Event.WIDOW_DAY_GAME_CORRECT:
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
 		Event.WIDOW_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Treehouse_Interior":
 				_event_name = "widow_player_insomnia"
@@ -147,13 +149,9 @@ func _on_scene_transition_completed():
 
 # WIDOW
 func enable_grocery_items():
-	var _items = get_tree().get_nodes_in_group("grocery_item")
-	#var enabled_item = items[randi() % items.size()]
-	#for item in items:
-		#item.enabled = false
-		#item.exclamation_sprite.visible = false
-	#enabled_item.enabled = true
-	#enabled_item.exclamation_sprite.visible = true
+	if SceneManager.current_scene == "Conbini":
+		get_tree().current_scene_get_nodes_in_group("GroceryHandler").enable_grocery_items()
+
 
 func start_player_path_follow(player):
 	player.speed = 50  # Set the speed for the player
