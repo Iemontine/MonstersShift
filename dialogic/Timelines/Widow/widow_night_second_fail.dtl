@@ -7,5 +7,5 @@ do PlayerController.stop()
 widow: No escape...
 - Try Again
 	do PlayerController.set_player_position(1883, 461)
-	[wait time="1.0"]
+	[wait time="2.0"]
 [signal arg="uncontrol"]
