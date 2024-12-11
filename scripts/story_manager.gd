@@ -131,7 +131,6 @@ func _on_scene_transition_completed():
 			if SceneManager.current_scene == "Town":
 				StoryManager.transition_to_event(StoryManager.Event.WIDOWS_HOUSE_NIGHT)
 				PlayerController.start_cutscene("widows_house_night")
-		
 		Event.LAST_MORNING:
 			if SceneManager.current_scene == "Treehouse_Exterior":
 				StoryManager.transition_to_event(StoryManager.Event.FINAL_SCENES)

@@ -3153,9 +3153,9 @@ z_index = 1
 position = Vector2(-116, -104)
 enabled = true
 sprite_1 = ExtResource("13_qjfbt")
-sprite_2 = ExtResource("12_4fgb6")
-sprite_3 = ExtResource("11_eebgc")
-correct_index = 2
+sprite_2 = ExtResource("11_eebgc")
+sprite_3 = ExtResource("12_4fgb6")
+correct_index = 1
 
 [node name="GroceryItem2" parent="GroceryHandler" instance=ExtResource("10_34ohj")]
 z_index = 1

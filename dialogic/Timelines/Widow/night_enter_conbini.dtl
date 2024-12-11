@@ -6,5 +6,5 @@ do PlayerController.moveUp()
 do PlayerController.stop()
 player: Hmmm let me look around for what I want.
 do PlayerController.playAnimation("Idle2", 0, 1)
-player: I think I'll grab something for the widow. She seems like she needs a pick me up.
+player: I think I'll grab something for that poor widow. She seems like she needs a pick me up.
 [signal arg="uncontrol"]

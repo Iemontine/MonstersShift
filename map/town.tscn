@@ -29752,7 +29752,7 @@ z_index = 10
 position = Vector2(1, 20)
 
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
-position = Vector2(-1104, -151)
+position = Vector2(-40, -8)
 
 [node name="NPC_Widow" parent="." instance=ExtResource("28_mgbvr")]
 y_sort_enabled = true
@@ -29787,7 +29787,8 @@ script = ExtResource("29_q1b8d")
 position = Vector2(-1160, -175)
 
 [node name="WidowDoorCutscene" parent="." instance=ExtResource("31_ccldd")]
-position = Vector2(-1334, -487)
+z_index = 1
+position = Vector2(-1336, -494)
 
 [node name="TestWidow" parent="." instance=ExtResource("32_txolg")]
 position = Vector2(-1072, -170)
@@ -29850,7 +29851,7 @@ texture_scale = 2.0
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 y_sort_enabled = true
-position = Vector2(-352, -56)
+position = Vector2(-56, -16)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -29863,3 +29864,5 @@ drag_bottom_margin = 0.01
 editor_draw_limits = true
 script = ExtResource("25_x3iwy")
 target = NodePath("../Player")
+
+[connection signal="path_follow_completed" from="Player" to="WidowDoorCutscene" method="_on_player_path_follow_completed"]

@@ -6,6 +6,7 @@ var cur_window_size: Vector2
 
 func _ready() -> void:
 	var window_size = get_viewport().get_visible_rect().size
+	position = target.position
 	update_base_zoom(window_size)
 
 func update_base_zoom(window_size: Vector2) -> void:
