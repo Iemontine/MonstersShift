@@ -1,0 +1,24 @@
+# Intro Cutscene
+# Add intro music
+# Slide 1
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[wait time="1.0"]
+[wait time="1.0"]
+[background arg="res://assets/assets_baker/tutorial_1.png" fade="2.0"]
+The goal is to help the baker finish baking before the timer runs out.
+# Slide 2
+[background arg="res://assets/assets_baker/tutorial_2.png" fade="2.0"]
+Use these ingredients to make brownies, cookies, or cake.
+[background arg="res://assets/assets_baker/tutorial_3.png" fade="0.0"]
+The recipe for those baked goods can be found here.
+# Slide 3
+[background arg="res://assets/assets_baker/tutorial_4.png" fade="2.0"]
+But make sure to only bake what the customer wants. Shown with the chat bubble  above them.
+# Slide 4
+[background arg="res://assets/assets_baker/tutorial_5.png" fade="2.0"]
+Place the ingredients on the board and hold the space bar to craft the item.
+# Slide 5
+[background arg="res://assets/assets_baker/tutorial_6.png" fade="2.0"]
+Once crafted, give it to the baker to deliver to the customer.
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]

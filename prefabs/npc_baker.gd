@@ -5,6 +5,7 @@ class_name BakerNPC
 @onready var carried_item: Sprite2D = $CarriedItem
 @onready var carried_item_name: String = ""
 #@onready var chat_bubble: AnimatedSprite2D = $ChatBubble
+@onready var wait_timer: Timer = $WaitTimer
 
 var customer_want = {}
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	state = NPCState.BAKER_IDLE
 	travel_to_position = global_position
 	spawn_location = travel_to_position
+	carried_item.visible = false
 	super._ready()
 
 func _physics_process(_delta: float) -> void:
@@ -42,15 +44,17 @@ func _physics_process(_delta: float) -> void:
 				on_interacted()
 		NPCState.BAKER_HOLDING_ITEM:
 			travel_to_anim("WalkCarry", old_velocity)
+			carried_item.visible = true
 			for key in customer_want:
 				if customer_want[key] == carried_item_name:
 					print(key)
 					current_chair_target = key
 					travel_to_position = key.global_position
 					customer_want.erase(key)
-					state = NPCState.BAKER_DELIVERING
+					travel_to_anim("PickupCarry", Vector2(0,1))
 					break
 		NPCState.BAKER_DELIVERING:
+			load_item_texture()
 			travel_to_anim("WalkCarry", old_velocity)
 			if agent_2d.is_navigation_finished():
 				point_earned.emit()
@@ -61,6 +65,8 @@ func _physics_process(_delta: float) -> void:
 				current_chair_target.npc.state = NPCState.BASIC_LEAVING
 				customer_want.erase(current_chair_target)
 		NPCState.BAKER_RETURNING:
+			travel_to_anim("Walk", old_velocity)
+			carried_item.visible = false
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BAKER_IDLE
 	
@@ -109,3 +115,29 @@ func _contains_string_in_dict(target_string: String, dictionary: Dictionary) -> 
 		if target_string in value:
 			return true
 	return false
+
+
+func load_item_texture():
+	var sprite:Sprite2D = Sprite2D.new()
+	var rect
+	sprite.texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png")
+	match carried_item_name:
+		"Brownie":
+			sprite.texture = load("res://assets/assets_baker/kat_bakery_pixelart.png")
+			sprite.region_rect = Rect2(33, 0, 16, 16)
+			rect = Rect2(33, 0, 16, 16)
+		"Cookie":
+			sprite.region_rect = Rect2(112, 736, 16, 16)
+			rect = Rect2(112, 736, 16, 16)
+		"Cake":
+			sprite.region_rect = Rect2(176, 752, 16, 16)
+			rect = Rect2(176, 752, 16, 16)
+		_:
+			sprite.texture = load("res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png")
+			sprite.region_rect = Rect2(32, 912, 16, 16)
+	sprite.region_enabled = true
+	#add_child(sprite)
+	carried_item.texture = sprite.texture
+	carried_item.region_enabled = true
+	carried_item.region_rect = rect
+	

@@ -19,3 +19,6 @@ Benjamin always said I took too much responsibility for other people’s problem
 # Slide 5
 [background arg="res://dialogic/Images/cutscene 5 crayon.jpg" fade="1.0"]
 It’s time for me to finally find out what happened to Benjamin.
+[background arg="res://dialogic/Images/transition.png" fade="2.0"]
+[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
+[signal arg="uncontrol"]

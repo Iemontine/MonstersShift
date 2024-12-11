@@ -4,31 +4,31 @@ extends CanvasLayer
 @export var game_duration:float
 @export var night_time:bool
 
+@onready var help_labels: Control = $"../HelpLabels"
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var points_label: Label = $Points
-@onready var game_label: Label = $GameLabel
 @onready var game_timer: Timer = $GameTimer
 
-var start_game:bool
+var start_game:bool 
 var current_points:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	start_game = true
-	game_label.visible = false
+	progress_bar.visible = false
 	#progress bar logic
 	progress_bar.max_value = game_duration
 	game_timer.start(game_duration)
-	
-
+	if !night_time:
+		progress_bar.visible = true
+	help_labels.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if start_game:
 		if current_points >= points_required:
-				game_label.text = "You Win!"
 				progress_bar.visible = false
 				points_label.visible = false
-				game_label.visible = true
 				start_game = false
 				if StoryManager.current_event <= StoryManager.Event.BAKER_FAIL_DAYTIME:
 					StoryManager.transition_to_event(StoryManager.Event.BAKER_SUCCESS_DAYTIME)
@@ -53,18 +53,29 @@ func start_timer(duration: float):
 	timer.start()
 
 func _on_game_timer_timeout() -> void:
-	game_label.text = "Game Over!"
 	progress_bar.visible = false
 	points_label.visible = false
-	game_label.visible = true
+	visible = false
 	if !night_time:
 		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_DAYTIME)
 		PlayerController.start_cutscene("baker_fail_daytime")
 	else: 
 		StoryManager.transition_to_event(StoryManager.Event.BAKER_FAIL_NIGHT)
 		PlayerController.start_cutscene("baker_fail_night")
-	
 
+func _on_dialogic_signal(argument:String):
+	if argument == "pause_game_timer":
+		game_timer.paused = true
+		visible = false
+	elif argument == "unpause_game_timer":
+		game_timer.paused = false
+		visible = true
+func start_game_timer():
+	# Start the game and timer
+	start_game = true
+	points_label.visible = true
+	progress_bar.visible = true
+	game_timer.start(game_duration)
 
 func _on_npc_baker_point_earned() -> void:
 	print("points earned")
