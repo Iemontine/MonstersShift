@@ -19,23 +19,23 @@ baker: UGGHH I LOVE DESSERT!
 	As the baker busts through the door, he devours the pastries you made from him. Slowly, his eyes turn back to normal.
 	do NpcController.stop()
 	do NpcController.playAnimation("MoodShocked")
-	baker: Oh my, I just went full zombie mode.
+	baker (neutral): Oh my, I just went full zombie mode.
 	do NpcController.moveDown()
 	[wait time="0.2"]
 	do NpcController.moveRight()
 	[wait time="0.4"]
 	do NpcController.stop()
 	do NpcController.playAnimation("Look", 1, 0)
-	player: Yes you were absolutely determined to eat me! Why? What are you?
-	baker: It’s a long story involving a deadly virus.
-	baker: I became a baker because the only thing preventing full zombification is the consumption of pastries.
-	baker: Your brother was one of the few people who knew. That’s why he was always helping out at the bakery.
+	player (surprise): Yes you were absolutely determined to eat me! Why? What are you?
+	baker (neutral): It’s a long story involving a deadly virus.
+	baker (neutral): I became a baker because the only thing preventing full zombification is the consumption of pastries.
+	baker (neutral): Your brother was one of the few people who knew. That’s why he was always helping out at the bakery.
 	do NpcController.playAnimation("MoodSad", 0, 1)
-	baker: He wanted to help cure me.
+	baker (neutral): He wanted to help cure me.
 	Benjamin wasn’t just working at the bakery. He was trying to help this man.
 	do NpcController.playAnimation("Look", 1, 0)
-	player: Well, should I be worried about this zombie trance happening again in the future.
-	baker: Uhhh you never know! But I should be good for a long while. Thank you again.
+	player (neutral): Well, should I be worried about this zombie trance happening again in the future.
+	baker (smile): Uhhh you never know! But I should be good for a long while. Thank you again.
 	do NpcController.moveLeft()
 	[wait time="0.4"]
 	do NpcController.moveUp()
@@ -44,8 +44,8 @@ baker: UGGHH I LOVE DESSERT!
 	do NpcController.hideSprite()
 	do NpcController.stop()
 	do PlayerController.playAnimation("Idle2", 0, 1)
-	player: My brother and his secrets…what else will I discover?
-	player: I guess I'll try to go back to bed...
+	player (neutral): My brother and his secrets…what else will I discover?
+	player (neutral): I guess I'll try to go back to bed...
 	do SceneManager.change_time_of_day(-1)
 	do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
 	[signal arg="uncontrol"]

@@ -3,7 +3,7 @@
 do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
-baker: What a talented baker!
+baker (smile): What a talented baker!
 - Exit
 	[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
 	do PlayerController.switchScene("Bakery_No_Game", "Door_Bakery")
@@ -13,10 +13,10 @@ baker: What a talented baker!
 	do PlayerController.stop()
 	do NpcController.set_target_npc("NPC_Baker")
 	do NpcController.playAnimation("Wave", 0, 1)
-	baker: Look at these beautiful pastries! You’re a peach for helping me out.
+	baker (smile): Look at these beautiful pastries! You’re a peach for helping me out.
 	The baker takes a bite of pastry and starts humming to himself happily.
 	[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Reflexion_Mouth_Close_Mono_06.wav" volume="0.0"]
-	baker: Wow you are talented! Feel free to come back to help again.
+	baker (smile): Wow you are talented! Feel free to come back to help again.
 	do NpcController.stop()
 	[signal arg="uncontrol"]
 	do SceneManager.change_time_of_day(-1)

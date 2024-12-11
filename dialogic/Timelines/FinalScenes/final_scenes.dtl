@@ -16,11 +16,11 @@ do NpcController.moveUp()
 [wait time="1.1"]
 do NpcController.stop()
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Laugh_Short_Mono_07.wav" volume="0.0"]
-baker: Hello again sugar! We wanted to come thank you for your help.
+baker (smile): Hello again sugar! We wanted to come thank you for your help.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V2_Reflexion_Mouth_Close_Mono_09.wav" volume="0.0"]
-widow: Yes darling, you came at our time of need and didn't hesistate to help us.
-widow: We will be forever thankful.
-player: I...
+widow (smile): Yes darling, you came at our time of need and didn't hesistate to help us.
+widow (smile): We will be forever thankful.
+player (surprise): I...
 You ponder for a moment about this experience. You think about the people you met, the things you did.
 do PlayerController.setSpeed(75)
 do PlayerController.moveLeft()
@@ -37,7 +37,7 @@ do NpcController.set_target_npc("NPC_Baker")
 do NpcController.playAnimation("Look", 1, 0)
 do NpcController.set_target_npc("NPC_Widow")
 do NpcController.playAnimation("Look", -1, 0)
-player: It's what Benjamin would have wanted. I'm glad I could help.
+player (smile): It's what Benjamin would have wanted. I'm glad I could help.
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 do PlayerController.set_player_position(3400, 421)
@@ -46,12 +46,12 @@ do PlayerController.moveUp()
 do PlayerController.stop()
 [clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
 The gravestone reads "In Loving Memory of Benjamin, your time with us will forever be cherished."
-player: ...You really helped people here didn't you.
-player: Of course you would light up the world wherever you went.
+player (smile): ...You really helped people here didn't you.
+player (smile): Of course you would light up the world wherever you went.
 A single tear slides down your cheek as you sit down to touch the stone.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Footsteps_Tile_Jump_Land_01.wav" volume="0.0"]
 do PlayerController.playAnimation("SitFloor2", 0, -1)
-player: Rest easy Ben, I've got it from here.
+player (smile): Rest easy Ben, I've got it from here.
 do PlayerController.moveLeft()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]

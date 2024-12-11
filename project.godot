@@ -103,7 +103,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-directories/dch_directory={
+<<<<<<<HEADdirectories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")

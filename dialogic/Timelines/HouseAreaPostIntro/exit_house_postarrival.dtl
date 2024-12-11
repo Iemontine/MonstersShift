@@ -2,5 +2,5 @@
 # Occurs right after exploring the house and then exiting it
 do PlayerController.stop()
 do PlayerController.playAnimation("Idle2", 0, 1)
-player: I think I need to go to town and see if I can find any clues about Benjamin’s life here.
+player (neutral): I think I need to go to town and see if I can find any clues about Benjamin’s life here.
 [signal arg="uncontrol"]

@@ -1,7 +1,7 @@
 # If you try to exit the house area too early this plays
 [signal arg="control"]
 do PlayerController.stop()
-player: I should look around more before I head to town.
+player (neutral): I should look around more before I head to town.
 do PlayerController.playAnimation("Look", 1, 0)
 do PlayerController.moveRight()
 [wait time="0.5"]

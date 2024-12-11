@@ -1,6 +1,6 @@
 # Morning cutscene before going off to find the widow
 [signal arg="control"]
 do PlayerController.playAnimation("Sleeping", 0, 1)
-player: Wow what a crazy night! I can't believe baked goods calmed a zombie down.
-player: Oh well, it's a brand new day. Maybe I can check out that fountain in town?
+player (surprise): Wow what a crazy night! I can't believe baked goods calmed a zombie down.
+player (neutral): Oh well, it's a brand new day. Maybe I can check out that fountain in town?
 [signal arg="uncontrol"]

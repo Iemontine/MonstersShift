@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=4 uid="uid://dcrol3he1cowb"]
 
 [ext_resource type="FontFile" uid="uid://cc61t5i06mcb3" path="res://assets/GrapeSoda.ttf" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://rmefhw4mhcdo" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="2_5f2nu"]
 [ext_resource type="Script" path="res://mainmenu/car.gd" id="4_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="6_j5v2v"]
@@ -13302,9 +13302,9 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
@@ -13316,9 +13316,9 @@ text = "Start game"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
@@ -13330,9 +13330,9 @@ text = "Options"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
@@ -13344,9 +13344,9 @@ text = "Exit"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")

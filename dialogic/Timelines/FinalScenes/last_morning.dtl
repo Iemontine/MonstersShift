@@ -7,5 +7,5 @@ do SceneManager.change_time_of_day(-1)
 do PlayerController.switchScene("Treehouse_Interior", "Door_Treehouse")
 [clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
 do PlayerController.playAnimation("Sleeping", 0, 1)
-player: I think I'll go back to the cemetery today...
+player (neutral): I think I'll go back to the cemetery today...
 [signal arg="uncontrol"]

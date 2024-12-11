@@ -8,16 +8,52 @@
 "sound_moods": {},
 "style": "speaker_dialogue"
 },
-"default_portrait": "Default",
+"default_portrait": "smile",
 "description": "",
 "display_name": "Me",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(0, 30),
 "portraits": {
 "Default": {
 "export_overrides": {
 "image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"neutral": {
+"export_overrides": {
+"image": "\"res://dialogic/Images/player portraits/player neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://dialogic/Images/player portraits/player sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"smile": {
+"export_overrides": {
+"image": "\"res://dialogic/Images/player portraits/player smile.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"surprise": {
+"export_overrides": {
+"image": "\"res://dialogic/Images/player portraits/player surprise.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

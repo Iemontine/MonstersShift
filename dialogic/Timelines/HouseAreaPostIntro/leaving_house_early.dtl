@@ -4,5 +4,5 @@ do PlayerController.stop()
 do PlayerController.moveDown()
 [wait time="0.2"]
 do PlayerController.stop()
-player: I should look at Benjamin's belongings more before I leave.
+player (neutral): I should look at Benjamin's belongings more before I leave.
 [signal arg="uncontrol"]

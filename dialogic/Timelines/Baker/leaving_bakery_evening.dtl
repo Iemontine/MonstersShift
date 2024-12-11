@@ -1,5 +1,5 @@
 # Leaving the bakery after winning daytime baker game
 [signal arg="control"]
 do PlayerController.stop()
-player: It's getting late, I should head home.
+player (neutral): It's getting late, I should head home.
 [signal arg="uncontrol"]
