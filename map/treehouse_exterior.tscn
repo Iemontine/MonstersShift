@@ -24770,24 +24770,6 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(0, 20)
 
-[node name="Widow_Teleport" parent="." instance=ExtResource("10_ke287")]
-y_sort_enabled = true
-position = Vector2(611, -60)
-destination_scene = "Treehouse_Interior"
-target_door = "Door_Treehouse"
-
-[node name="CollisionShape2D" parent="Widow_Teleport" index="0"]
-visible = false
-y_sort_enabled = true
-
-[node name="AnimatedSprite2D" parent="Widow_Teleport" index="1"]
-visible = false
-y_sort_enabled = true
-
-[node name="Spawnpoint" parent="Widow_Teleport" index="2"]
-y_sort_enabled = true
-position = Vector2(0, 20)
-
 [node name="TreehouseLight" type="PointLight2D" parent="." groups=["light"]]
 y_sort_enabled = true
 position = Vector2(918, -390)
@@ -24899,6 +24881,5 @@ position = Vector2(2835, 344)
 shape = SubResource("RectangleShape2D_1pxbo")
 
 [editable path="Door_Treehouse"]
-[editable path="Widow_Teleport"]
 [editable path="AreaTrigger"]
 [editable path="AreaTrigger2"]

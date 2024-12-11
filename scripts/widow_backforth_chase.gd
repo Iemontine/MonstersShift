@@ -87,5 +87,5 @@ func kill_player():
 	widow.attack(-attack_direction)
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
-	StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
-	PlayerController.start_cutscene("widow_fail_night")
+	StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_SECOND_FAIL)
+	PlayerController.start_cutscene("widow_night_second_fail")
