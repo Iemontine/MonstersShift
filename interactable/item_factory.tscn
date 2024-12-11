@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interactable/item_factory.gd" id="1_ttfb8"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_ykcv6"]
-[ext_resource type="AudioStream" path="res://baker_sounds/pick_up_item.wav" id="3_ykcv6"]
+[ext_resource type="AudioStream" uid="uid://b01kc0mtnodcg" path="res://assets/baker_sounds/pick_up_item.wav" id="3_ykcv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlxa8"]
 size = Vector2(16, 13)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=58 format=4 uid="uid://c2ssodjik8cd4"]
 
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
 [ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
 [ext_resource type="Script" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
+[ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://assets/baker_sounds/plank_break_sound.wav" id="28_scgws"]
 [ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="30_3l7dr"]
 [ext_resource type="Script" path="res://map/recipe_board.gd" id="32_scgws"]
 [ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
@@ -657,6 +658,9 @@ collision_mask = 0
 [node name="Sprite2D" parent="CuttingBoard" index="1"]
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" parent="CuttingBoard" index="3"]
+stream = null
+
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
 points_required = 5
 game_duration = 100000.0
@@ -675,6 +679,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_scgws")
 theme_override_styles/normal = SubResource("StyleBoxFlat_scgws")
 text = "?"
 script = ExtResource("20_v3vjk")
+is_night = true
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -757,6 +762,9 @@ rotation = 0.0
 offset = Vector2(0, -10)
 frame = 3
 
+[node name="NavigationAgent2D" parent="NPC_Baker_Night" index="5"]
+debug_enabled = false
+
 [node name="Window" type="StaticBody2D" parent="."]
 script = ExtResource("28_3l7dr")
 
@@ -813,6 +821,7 @@ region_enabled = true
 region_rect = Rect2(144, 70, 48, 10)
 
 [node name="PlankBreakSound" type="AudioStreamPlayer" parent="DoorVisual/ProgressBar"]
+stream = ExtResource("28_scgws")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DoorVisual"]
 script = ExtResource("27_danju")
@@ -844,6 +853,9 @@ item_region_rect = Rect2(64, 0, 16, 16)
 z_index = 1
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" parent="SugarFactory2" index="2"]
+stream = null
+
 [node name="ChocolateFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
@@ -855,6 +867,9 @@ item_region_rect = Rect2(17, 0, 15, 16)
 [node name="ItemSprite" parent="ChocolateFactory2" index="0"]
 z_index = 1
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="ChocolateFactory2" index="2"]
+stream = null
 
 [node name="VanillaFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
@@ -868,6 +883,9 @@ item_region_rect = Rect2(48, 0, 16, 16)
 z_index = 1
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" parent="VanillaFactory2" index="2"]
+stream = null
+
 [node name="DoughFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
@@ -879,6 +897,9 @@ item_region_rect = Rect2(80, 0, 16, 16)
 [node name="ItemSprite" parent="DoughFactory2" index="0"]
 z_index = 1
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="DoughFactory2" index="2"]
+stream = null
 
 [node name="HelpLabels" type="Control" parent="."]
 layout_mode = 3

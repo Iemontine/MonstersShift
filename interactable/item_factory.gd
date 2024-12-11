@@ -11,7 +11,6 @@ func _ready() -> void:
 	super()
 
 func _on_interacted() -> void:
-	PlayerController.start_cutscene("how_to_play")
 	# TODO: ensure only 1 item is available at any given time, currently multiple can be produced if the player is holding something
 	produce_item()
 

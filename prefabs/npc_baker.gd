@@ -11,7 +11,7 @@ var customer_want = {}
 
 signal point_earned
 
-var player:Player
+@export var player:Player
 var old_velocity = Vector2.ZERO
 var travel_to_position:Vector2
 var want:String
@@ -40,18 +40,20 @@ func _physics_process(_delta: float) -> void:
 	match state:
 		NPCState.BAKER_IDLE:
 			travel_to_anim("Idle", Vector2(0,1))
-			if player_in_area and Input.is_action_pressed("ui_accept"):
-				on_interacted()
+			#if player_in_area and Input.is_action_pressed("ui_accept"):
+			#	on_interacted()
 		NPCState.BAKER_HOLDING_ITEM:
 			travel_to_anim("WalkCarry", old_velocity)
 			carried_item.visible = true
 			for key in customer_want:
 				if customer_want[key] == carried_item_name:
-					print(key)
 					current_chair_target = key
-					travel_to_position = key.global_position
+					#travel_to_position = key.global_position
 					customer_want.erase(key)
 					travel_to_anim("PickupCarry", Vector2(0,1))
+					#not letting player move before finish playing pickup animation
+					if wait_timer.is_stopped():
+						wait_timer.start(0.5) 
 					break
 		NPCState.BAKER_DELIVERING:
 			load_item_texture()
@@ -141,3 +143,9 @@ func load_item_texture():
 	carried_item.region_enabled = true
 	carried_item.region_rect = rect
 	
+
+
+func _on_wait_timer_timeout() -> void:
+	print("change baker state to delivery")
+	travel_to_position = current_chair_target.global_position
+	state = NPCState.BAKER_DELIVERING

@@ -1,0 +1,11 @@
+# night how to play
+[signal arg="damage_zero"]
+[background arg="res://dialogic/Images/night_tutorial1.jpg" fade="0.0"]
+Using the same tools and ingredients you had at the bakery, you must make the baker what he wants...
+[background arg="res://dialogic/Images/night_tutorial2.jpg" fade="0.0"]
+... Then throw the baked goods out through this window...
+[background arg="res://dialogic/Images/night_tutorial4.jpg" fade="0.0"]
+… while ensuring the baker can’t reach you. The baker will gradually break down the door...
+[background arg="res://dialogic/Images/night_tutorial3.jpg" fade="0.0"]
+... but you can repair it by taking wooden planks and placing them at the door to fortify it.
+[signal arg="return_damage"]
