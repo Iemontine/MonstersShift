@@ -11,7 +11,8 @@ var _tracks := {
 	"bakery_no_game": "bakery.wav",
 	"treehouse_interior_baker_game": "bakery_game_night.wav",
 	"conbini" : "conbini.wav",
-	"treehouse_interior" : "house.wav"
+	"treehouse_interior" : "house.wav",
+	"main_menu": "main_menu.wav"
 }
 var _current_track : String
 var _track_path := "res://assets/sound/music/"
@@ -75,7 +76,7 @@ func _on_scene_transition_completed() -> void:
 				if _current_track != _tracks["Outside Evening"]:
 					_current_playtime = 0.0
 					_current_track = _tracks["Outside Evening"]
-			SceneManager.Time.NIGHT:
+			SceneManager.TIME.NIGHT:
 				if not (FileAccess.file_exists(_track_path + _tracks["Outside Night"])):
 					return
 				var stream = load(_track_path + _tracks["Outside Night"])

@@ -5,7 +5,7 @@ extends Node
 enum Event { 
 	INTRO, 
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, LEAVE_TOO_EARLY, EXIT_HOUSE_POSTARRIVAL,
+	CLICK_ON_RECORD_PLAYER, LEAVE_TOO_EARLY, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL,
 	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
 	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, BAKER_PLAYER_INSOMNIA,
 	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.ARRIVAL_START_OUTSIDE
+@onready var current_event = Event.LAST_MORNING
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -34,6 +34,7 @@ func advance_story():
 	current_event = current_event + 1 as Event
 
 func _on_scene_transition_completed():
+	print(current_event)
 	match current_event:
 		# Event.INTRO:
 		# 	_event_name = "intro"
@@ -98,6 +99,10 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.DAY_TWO_MORNING)
 				PlayerController.start_cutscene(_event_name)
 				
+		Event.DAY_TWO_MORNING:
+			if SceneManager.current_scene == "Town":
+				NpcController.set_target_npc("NPC_Widow")
+				NpcController.set_npc_position(-1200.0, -499.0)
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
