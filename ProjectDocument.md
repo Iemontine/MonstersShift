@@ -44,6 +44,31 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
+### Descriptions
+NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
+* Dialogic was incredibly important in creating and displaying narrative - discussed [below](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#visual-design--user-interface-and-input-briana)
+* StoryManager holds all events in an enum --> these enums are used to access different story events
+  * Scene transition story events
+  * Interactable story events
+  * Area trigger story events
+* Wrote almost all dialogue (edits and adjustments from other creators)
+  * Dialogue gives most of the story, very important to read
+  * Also is used to direct the player in the correct directions
+  * Introduction was created in conjunction with Katherine who drew the pictures - gives player story set up
+* Improving dialogue feel
+  * Use of sound effects inside cutscenes
+  * Use of animations inside cutscenes (npc/player controllers --> added a few functions to what Darroll created)
+* Use of Matthew's scene manager
+  * Force switching scenes to get player to correct location for story
+  * Day/night cycles used for passage of time
+  * Used idea of transition in scene manager to make my own transitions inside dialogic when a player needs to teleport somehwere in a specific scene without being shown
+
+
+### Assets Used:
+* [Zombie Sounds](https://terrorbytegames.itch.io/zombie-massacre-sound-effects-starter-pack) by itch.io user TerrorByteGames - License given by the creator
+* [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal]([https://itch.io/game-assets/assets-cc0](https://creativecommons.org/publicdomain/zero/1.0/deed.en))
+* [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International]([https://itch.io/game-assets/assets-cc4-by](https://creativecommons.org/licenses/by/4.0/))
+
 ## Animation & Visuals (Katherine)
 
 **List your assets, including their sources and licenses.**
@@ -80,6 +105,20 @@ You should replay any **bold text** with your relevant information. Liberally us
 **Add an entry for each platform or input style your project supports.**
 **List your assets, including their sources and licenses.**
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+
+### Descriptions
+NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
+* Dialogic Visuals
+  * Custom dialogue boxes (background, font, portrait frame)
+  * Set up character styles (player, widow, baker)
+  * Set up general dialogue styles (speaker vs non-speaker)
+  * Other dialogic items discussed [above](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana)
+* Design & Draw portraits (Kat expanded on them)
+
+### Assets Used:
+* [Portrait Frames](https://gx310.itch.io/pxiel-art-ui-borders?download) by itch.io user GX310 - License given by the creator
+* [Dialogue Box Background](https://srtoasty.itch.io/ui-assets-pack-2) by itch.io user Sr.Toasty - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* [Friendly Scribbles Font](https://kmlgames.itch.io/friendly-scribbles) by itch.io user kmlgames - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 ## Press Kit and Trailer & Narrative (Katherine)
 
