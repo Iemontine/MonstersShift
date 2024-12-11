@@ -17,5 +17,5 @@ do PlayerController.playAnimation("IdleCarry", 0, 1)
 [wait time="0.7"]
 do PlayerController.stop()
 Once again, sleep eludes you.
-player: Maybe a drink or something will help me relax. I'm going to the store.
+player (neutral): Maybe a drink or something will help me relax. I'm going to the store.
 [signal arg="uncontrol"]

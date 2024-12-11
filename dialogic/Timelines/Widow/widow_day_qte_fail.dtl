@@ -4,7 +4,7 @@ do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Medium_Polyester_Drop_Stereo.wav" volume="0.0"]
-player: Oh no! The groceries! I have to go back for more...
+player (surprise): Oh no! The groceries! I have to go back for more...
 - Try Again
 	do PlayerController.switchScene("Conbini", "Door_Conbini1")
 [signal arg="uncontrol"]

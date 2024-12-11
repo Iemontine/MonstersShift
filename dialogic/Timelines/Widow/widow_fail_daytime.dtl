@@ -4,7 +4,7 @@ do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Expressions/Voice_Female_V1_Sigh_Mono_14.wav" volume="0.0"]
-widow: Oh… my husband would’ve loved this… but it’s not what I wanted. My husband…
+widow (sad or normal): Oh… my husband would’ve loved this… but it’s not what I wanted. My husband…
 - Try Again
 	do PlayerController.switchScene("Conbini", "Door_Conbini1")
 	do SceneManager.change_time_of_day("Bakery", "Bakery_Door")

@@ -9,8 +9,8 @@ do PlayerController.playAnimation("Push", 0, -1)
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Small_Polyester_PickUp_Stereo.wav" volume="0.0"]
 [wait time="0.2"]
 do PlayerController.stop()
-player: Hello ma'am, are you home?
+player (smile): Hello ma'am, are you home?
 You wait and only silence greets you.
-player: Is she asleep? Or is no one home?
-player: I guess I'll head home then.
+player (neutral): Is she asleep? Or is no one home?
+player (neutral): I guess I'll head home then.
 [signal arg="uncontrol"]

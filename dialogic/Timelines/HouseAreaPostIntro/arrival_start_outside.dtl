@@ -2,10 +2,10 @@
 [signal arg="control"]
 do PlayerController.stop()
 do PlayerController.playAnimation("MoodMadStomp")
-player: Here it is. The home of the worst brother on the planet. Of course he would disappear and leave me to pick up the pieces.
-player: You really had to die on me and leave no explanation, only a cryptic note and decrepit treehouse\
+player (neutral): Here it is. The home of the worst brother on the planet. Of course he would disappear and leave me to pick up the pieces.
+player (sad): You really had to die on me and leave no explanation, only a cryptic note and decrepit treehouse\
 in the middle of nowhere.
 do PlayerController.playAnimation("Idle2", 0, 1)
-player: Makes sense that you had become a loner hermit, not surprised in the slightest.
-player: ...Why am I talking to myself? I should check this place out.
+player (sad): Makes sense that you had become a loner hermit, not surprised in the slightest.
+player (neutral): ...Why am I talking to myself? I should check this place out.
 [signal arg="uncontrol"]

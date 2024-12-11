@@ -3,5 +3,5 @@
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Backpack_Medium_Polyester_Drop_Stereo.wav" volume="-5.0"]
 do PlayerController.playAnimation("MoodShocked", 0, 1)
 As you pass by the bakery, you hear a crash coming from inside.
-player: What was that? And who is awake right now? I should check it out.
+player (surprise): What was that? And who is awake right now? I should check it out.
 [signal arg="uncontrol"]
