@@ -10,6 +10,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if StoryManager.current_event != StoryManager.Event.READY_TO_EXIT:
+	if StoryManager.current_event == StoryManager.Event.READY_TO_EXIT:
 		visible = false
 	pass

@@ -10,9 +10,9 @@ func _ready() -> void:
 	
 func _on_body_entered(_body:Object) -> void:
 	if _body is Player:
-		#if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
-				#and StoryManager.current_event < StoryManager.Event.LAST_MORNING
-		#):
+		if (StoryManager.current_event > StoryManager.Event.NIGHT_ENTER_CONBINI
+				and StoryManager.current_event < StoryManager.Event.LAST_MORNING
+		):
 			SceneManager.change_time_of_day(SceneManager.TIME.NIGHT)
 			
 			NpcController.set_target_npc("NPC_Widow")
