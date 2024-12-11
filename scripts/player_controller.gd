@@ -94,6 +94,7 @@ func stop() -> void:
 		player.travel_to_anim("IdleCarry")
 	else:
 		player.travel_to_anim("Idle")
+		PlayerController.resetSpeed()
 	print("Stopping")
 
 func _on_path_follow_completed():

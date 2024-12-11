@@ -2,19 +2,19 @@
 extends Node
 
 # Implements a linear story, TODO: investigate non-linear story based on player choices? Enum might get ugly in that case.
-enum Event { 
-	INTRO, 
+enum Event {
+	INTRO,
 	ARRIVAL_START_OUTSIDE, CLICK_ON_BED, CLICK_ON_PICTURE_FRAME,
-	CLICK_ON_RECORD_PLAYER, READY_TO_EXIT, LEAVE_TOO_EARLY, EXIT_HOUSE_POSTARRIVAL,
-	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME, 
+	CLICK_ON_RECORD_PLAYER, LEAVE_TOO_EARLY, READY_TO_EXIT, EXIT_HOUSE_POSTARRIVAL,
+	OUTSIDE_BAKERY, FIRST_ENTER_BAKERY, BAKER_FIRST_INTERACTION, BAKER_SUCCESS_DAYTIME,
 	BAKER_FAIL_DAYTIME, LEAVING_BAKERY_EVENING, BAKER_PLAYER_INSOMNIA,
-	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME, 
+	NIGHT_OUTSIDE_BAKERY, BAKER_BEFORE_CHASE, BAKER_BEFORE_NIGHT_GAME,
 	BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING,
-	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG, 
-	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME, 
+	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG,
+	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME,
 	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
 	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
-	LAST_MORNING, FINAL_SCENES, END 
+	LAST_MORNING, FINAL_SCENES, END
 }
 
 var check_for_bed = false
@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.ARRIVAL_START_OUTSIDE
+@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -34,6 +34,7 @@ func advance_story():
 	current_event = current_event + 1 as Event
 
 func _on_scene_transition_completed():
+	print(current_event)
 	match current_event:
 		# Event.INTRO:
 		# 	_event_name = "intro"
@@ -98,13 +99,33 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.DAY_TWO_MORNING)
 				PlayerController.start_cutscene(_event_name)
 				
+		Event.DAY_TWO_MORNING:
+			if SceneManager.current_scene == "Town":
+				NpcController.set_target_npc("NPC_Widow")
+				NpcController.set_npc_position(-1200.0, -499.0)
 		Event.WIDOW_BEFORE_DAY_GAME:
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
 				SceneManager.change_time_of_day(-1)
-		Event.WIDOW_DAY_GAME_CORRECT:
+		Event.WIDOW_DAY_QTE_FAIL:
+			if SceneManager.current_scene == "Conbini":
+				enable_grocery_items()
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
+		Event.WIDOW_FAIL_DAYTIME:
+			if SceneManager.current_scene == "Conbini":
+				enable_grocery_items()
+			if SceneManager.current_scene == "Town":
+				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
+		Event.WIDOW_DAY_QTE_SUCCESS:
+			if SceneManager.current_scene == "Town":
+				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
 		Event.WIDOW_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Treehouse_Interior":
 				_event_name = "widow_player_insomnia"
@@ -145,15 +166,14 @@ func _on_scene_transition_completed():
 			print("unknown event")
 			
 
+func conbini_night():
+	get_tree().current_scene.get_node("Lights").enable_flickering_light()
+
 # WIDOW
 func enable_grocery_items():
-	var _items = get_tree().get_nodes_in_group("grocery_item")
-	#var enabled_item = items[randi() % items.size()]
-	#for item in items:
-		#item.enabled = false
-		#item.exclamation_sprite.visible = false
-	#enabled_item.enabled = true
-	#enabled_item.exclamation_sprite.visible = true
+	if SceneManager.current_scene == "Conbini":
+		get_tree().current_scene.get_node("GroceryHandler").enable_grocery_items()
+
 
 func start_player_path_follow(player):
 	player.speed = 50  # Set the speed for the player

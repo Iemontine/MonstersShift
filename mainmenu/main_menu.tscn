@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=4 uid="uid://dnaboy3kimo00"]
 
 [ext_resource type="FontFile" uid="uid://cc61t5i06mcb3" path="res://assets/GrapeSoda.ttf" id="1_06t4h"]
-[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://rmefhw4mhcdo" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Script" path="res://mainmenu/car.gd" id="4_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="6_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://cssjdu75klnau" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_16x16.png" id="16_v2sba"]
