@@ -950,7 +950,6 @@ position = Vector2(72, 121)
 [node name="BakerCutscenes" type="StaticBody2D" parent="NPC_Baker"]
 position = Vector2(74, -9)
 script = ExtResource("20_ojln8")
-required_hold_time = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Baker/BakerCutscenes"]
 position = Vector2(-74, 17)
