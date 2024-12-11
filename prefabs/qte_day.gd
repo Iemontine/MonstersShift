@@ -210,7 +210,7 @@ func fail_player():
 	player.carried_item.texture = null
 	PlayerController.start_cutscene("widow_day_qte_fail")
 	# Must disable path following to prevent player from contnuing to move after losing
-	
+
 func set_player_speed(_speed: float):
 	if player: player.speed = _speed
 	

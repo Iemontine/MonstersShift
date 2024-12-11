@@ -20,9 +20,11 @@ func _on_interacted() -> void:
 		PlayerController.control_player()
 		PlayerController.stop()
 		enabled = false
-		canvas_layer = get_node("../../CanvasLayer")
-		grocery_ui = canvas_layer.get_node("GroceryUI")
-		show_grocery_ui()
+		canvas_layer = get_node_or_null("../../CanvasLayer")
+		if !canvas_layer: canvas_layer = get_node_or_null("../CanvasLayer")
+		if canvas_layer:
+			grocery_ui = canvas_layer.get_node_or_null("GroceryUI")
+			show_grocery_ui()
 		print("grocery item interaacted")
 	super()
 
@@ -36,8 +38,9 @@ func show_grocery_ui():
 	grocery_ui.modulate.a = 1
 	
 	# Darken the background behind the UI
-	get_node("../../CanvasModulate").color = Color(0.7, 0.7, 0.7)
-	
+	var canvas_modulate: CanvasModulate = get_tree().current_scene.get_node_or_null("CanvasModulate")
+	canvas_modulate.color = Color(0.7, 0.7, 0.7)
+
 	# Hide the prompt initially
 	grocery_ui.get_node("Prompt_Label").visible = false
 	grocery_ui.get_node("Prompt").visible = false
@@ -95,7 +98,7 @@ func _on_yes_pressed() -> void:
 	
 	_disconnect_buttons()
 	grocery_ui.visible = false
-	get_node("../../CanvasModulate").color = Color(1, 1, 1)
+	get_tree().current_scene.get_node_or_null("CanvasModulate").color = Color(1, 1, 1)
 
 	_animate_nodes(-150, 0.5, Tween.TRANS_ELASTIC)
 
