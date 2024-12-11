@@ -10,7 +10,7 @@
 * Play our game [here!](https://itch.io/)
 * View our trailer & press kit [here!](https://youtube.com)  
 
-* Learn about our game and read our documentation [here]([https://docs.google.com/document/d/1qwWCpMwKJGOLQ-rRJt8G8zisCa2XHFhv6zSWars0eWM/edit?usp=sharing](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md)  
+* Learn about our game and read our documentation [here](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md) 
 
 ## Credits ##
 * Visual Design & UI / Narrative Design - Briana Fedkiw	
