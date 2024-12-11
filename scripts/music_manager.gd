@@ -1,5 +1,13 @@
 extends Node
 
+# all on a linear scale, seems like 1.0 is the max before it gets bad
+const max_vol : float = 0.25
+const min_vol : float = 0.0
+const default_vol : float = 0.05
+
+# in dB
+var volume : float = linear_to_db(default_vol)
+
 # dictionary of tracks to their associated scenes, { scene:track }
 # TODO: make sure non outside tracks line up with scene names
 # TODO: FIND TRACKS
@@ -84,10 +92,11 @@ func _on_scene_transition_completed() -> void:
 					_current_playtime = 0.0
 					_current_track = _tracks["Outside Night"]
 		
-		
+	stream_player.volume_db = volume
 	get_tree().current_scene.add_child(stream_player)
 	stream_player.play(_current_playtime)
 	print(_current_track)
+	print(volume)
 
 func use_custom_track(track:String) -> void:
 	_use_custom_track = true
@@ -132,6 +141,10 @@ func stop():
 		stream_player.stop()
 		if _use_custom_track:
 			end_custom_track()
+
+func set_volume(vol:float) :
+	vol = clamp(vol, min_vol, max_vol)
+	volume = linear_to_db(vol)
 	
 func _check_ouside() -> bool:
 	if SceneManager.current_scene == null:
