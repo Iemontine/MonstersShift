@@ -6,6 +6,8 @@ class_name QTE_Night
 func _ready() -> void:
 	super()
 	lives = 3
+	perfect_speed = 125
+	normal_speed = 100
 	normal_anim = "Run"
 	perfect_anim = "Run"
 

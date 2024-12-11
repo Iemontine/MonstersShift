@@ -6,13 +6,14 @@ var cur_window_size: Vector2
 
 func _ready() -> void:
 	var window_size = get_viewport().get_visible_rect().size
+	position = target.position
 	update_base_zoom(window_size)
 
 func update_base_zoom(window_size: Vector2) -> void:
 	base_zoom = Vector2(window_size.x / 1920.0, window_size.y / 1080.0)
 	zoom = base_zoom
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var window_size = get_viewport().get_visible_rect().size
 	if window_size != cur_window_size:
 		update_base_zoom(window_size)

@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		
 		# Check if player is on the wrong side of the widow
 		if (attack_direction == Vector2.LEFT and player.global_position.x < widow.global_position.x) or \
-		(attack_direction == Vector2.RIGHT and player.global_position.x > widow.global_position.x):
+		(attack_direction == Vector2.RIGHT and player.global_position.x > widow.global_position.x) and attack_mode_active:
 			kill_player()
 			attack_mode_active = false
 
@@ -88,4 +88,4 @@ func kill_player():
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
 	StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_SECOND_FAIL)
-	PlayerController.start_cutscene("widow_night_second_fail")
+	PlayerController.start_cutscene("widow_night_fail_night")

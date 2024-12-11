@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcekq52n6k3uf"]
 
-[ext_resource type="Script" path="res://interactable/baker_trashcan.gd" id="1_ey28m"]
+[ext_resource type="Script" uid="uid://bl48yo8f1e3so" path="res://interactable/baker_trashcan.gd" id="1_ey28m"]
 [ext_resource type="Texture2D" uid="uid://dqd2fvienjcxo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png" id="2_ey28m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
@@ -12,6 +12,7 @@ y_sort_enabled = true
 script = ExtResource("1_ey28m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(0, 1)
 texture = ExtResource("2_ey28m")
