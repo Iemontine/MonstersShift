@@ -1,4 +1,4 @@
-# The title of your game #
+# Monsters' Shift #
 
 ## Summary ##
 
@@ -7,9 +7,8 @@
 ## Project Resources
 
 [Web-playable version of your game.](https://itch.io/)  
-[Trailor](https://youtube.com)  
-[Press Kit](https://dopresskit.com/)  
-[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1qwWCpMwKJGOLQ-rRJt8G8zisCa2XHFhv6zSWars0eWM/edit?usp=sharing)  
+[Trailer & Press Kit](https://youtube.com)  
+[Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
 
@@ -37,34 +36,58 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## Producer
+## Producer (Darroll)
 
 **Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
 
-## User Interface and Input
+## Narrative Design (Briana)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
+**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
-**Add an entry for each platform or input style your project supports.**
-
-## Movement/Physics
-
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
-
-## Animation and Visuals
+## Animation & Visuals (Katherine)
 
 **List your assets, including their sources and licenses.**
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Game Logic
+## Game Logic & Game Feel (Matthew)
+
+**Document the game states and game data you managed and the design patterns you used to complete your task.**
+**Document what you added to and how you tweaked your game to improve its game feel.**
+
+## Game Logic (Duy)
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
 
+## User Interface and Input (Noel)
+
+**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**Describe the default input configuration.**
+**Add an entry for each platform or input style your project supports.**
+
+
 # Sub-Roles
 
-## Audio
+## Gameplay Testing (Darroll)
+
+**Add a link to the full results of your gameplay tests.**
+**Summarize the key findings from your gameplay tests.**
+
+## Visual Design & User Interface and Input (Briana)
+
+**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**Describe the default input configuration.**
+**Add an entry for each platform or input style your project supports.**
+**List your assets, including their sources and licenses.**
+**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+
+## Press Kit and Trailer & Narrative (Katherine)
+
+**Include links to your presskit materials and trailer.**
+**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+
+## Music (Matthew)
 
 **List your assets, including their sources and licenses.**
 
@@ -72,22 +95,12 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Document the sound style.** 
 
-## Gameplay Testing
-
-**Add a link to the full results of your gameplay tests.**
-
-**Summarize the key findings from your gameplay tests.**
-
-## Narrative Design
-
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
-
-## Press Kit and Trailer
-
-**Include links to your presskit materials and trailer.**
-
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
-
-## Game Feel and Polish
+## Game Feel and Polish (Duy)
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
+
+## Audio (Noel)
+
+**List your assets, including their sources and licenses.**
+
+**Describe the implementation of your audio system.**
