@@ -3,7 +3,6 @@ class_name GroceryItemNight
 
 func _ready() -> void:
 	super._ready()
-	StoryManager.conbini_night()
 	visible = true
 	enabled = true
 

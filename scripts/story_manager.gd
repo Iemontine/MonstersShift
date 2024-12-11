@@ -13,7 +13,8 @@ enum Event {
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG,
 	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME,
 	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
-	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
+	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_NIGHT_SECOND_FAIL,
+	WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	LAST_MORNING, FINAL_SCENES, END
 }
 
@@ -133,6 +134,7 @@ func _on_scene_transition_completed():
 				PlayerController.start_cutscene(_event_name)
 		Event.WIDOW_PLAYER_INSOMNIA:
 			if SceneManager.current_scene == "Conbini":
+				StoryManager.conbini_night()
 				_event_name = "night_enter_conbini"
 				StoryManager.transition_to_event(StoryManager.Event.NIGHT_ENTER_CONBINI)
 				PlayerController.start_cutscene(_event_name)

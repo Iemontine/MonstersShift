@@ -72,6 +72,7 @@ directories/dtl_directory={
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
 "widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
+"widow_night_second_fail": "res://dialogic/Timelines/Widow/widow_night_second_fail.dtl",
 "widow_player_insomnia": "res://dialogic/Timelines/Widow/widow_player_insomnia.dtl",
 "widow_success_daytime": "res://dialogic/Timelines/Widow/widow_success_daytime.dtl",
 "widow_success_night": "res://dialogic/Timelines/Widow/widow_success_night.dtl",
@@ -101,7 +102,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-<<<<<<<HEADdirectories/dch_directory={
+directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")

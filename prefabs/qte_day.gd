@@ -100,13 +100,14 @@ func _process_collision_result(result):
 			_handle_qte_result("Bad", 50, "WalkCarry", true)
 			break
 
-func _handle_qte_result(result_type: String, speed: float, anim: String, lose_life: bool = false):
+func _handle_qte_result(result_type: String, speed: float, anim: String, should_lose_life: bool = false):
 	print(result_type)
 	_fade_out()
 	set_player_speed(speed)
 	set_player_movement_anim(anim)
 	qte_active = false
-	lose_life()
+	if should_lose_life:
+		lose_life()
 	minigame_timer.start()
 
 func _calculate_min_max():

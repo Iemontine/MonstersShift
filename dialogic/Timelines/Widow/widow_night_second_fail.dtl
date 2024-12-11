@@ -1,11 +1,11 @@
-# Happens when you fail the widow's nighttime minigame before death screen
+# Happens when you fail the second widow's nighttime minigame before death screen
 [signal arg="control"]
 do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Single_Mono_01.wav" volume="0.0"]
-widow: I will haunt your mind….forever
+widow: No escape...
 - Try Again
-	do PlayerController.set_player_position(611, -54)
-	[wait time="2.0"]
+	do PlayerController.set_player_position(1883, 461)
+	[wait time="1.0"]
 [signal arg="uncontrol"]

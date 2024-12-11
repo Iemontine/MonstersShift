@@ -109,15 +109,14 @@ func _process_collision_result(result):
 			_handle_qte_result("Bad", normal_speed, "Run", true)
 			break
 
-func _handle_qte_result(result_type: String, speed: float, anim: String, lose_life: bool = false):
+func _handle_qte_result(result_type: String, speed: float, anim: String, should_lose_life: bool = false):
 	print(result_type)
 	_fade_out()
 	set_player_speed(speed)
 	set_player_movement_anim(anim)
 	qte_active = false
-	
-	lose_life()
-
+	if should_lose_life:
+		lose_life()
 	if widow.state == widow.NPCState.WIDOW_ATTACKING:
 		widow.backoff()
 
@@ -202,7 +201,8 @@ func _on_qte_timer_timeout():
 			lives -= 1
 			if lives <= 0:
 				minigame_active = false
-				if player: kill_player()
+				if player: 
+					kill_player()
 			_fade_out()
 			minigame_timer.start()
 			qte_active = false
@@ -215,8 +215,8 @@ func kill_player():
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
 	stop_minigame()
-	# StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
-	# PlayerController.start_cutscene("widow_fail_night")
+	StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
+	PlayerController.start_cutscene("widow_fail_night")
 
 func set_player_speed(_speed: float):
 	if player: player.speed = _speed
@@ -232,5 +232,4 @@ func _on_path_follow_completed():
 		wall.set_collision_mask_value(1, true)
 
 	stop_minigame()
-	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_QTE_SUCCESS)
-	#StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_QTE_FAIL)
+	StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_QTE_SUCCESS)
