@@ -105,4 +105,4 @@ func hideSprite() -> void:
 	player.visible = false
 
 func set_player_position(x: float, y: float):
-	player.position = Vector2(x,y)
+	player.global_position = Vector2(x, y)
