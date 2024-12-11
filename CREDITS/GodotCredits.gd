@@ -4,8 +4,8 @@ extends Control
 @export var to_scene : PackedScene = null
 @export var title_color := Color(0.93, 0.642, 0.692)
 @export var text_color := Color(1, 0.769, 1)
-@export var title_font : FontFile = load("res://assets/ui_and_font/font/Minecraftia-Regular.ttf")
-@export var text_font : FontFile = load("res://assets/ui_and_font/font/friendlyscribbles.ttf")
+@export var title_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
+@export var text_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
 @export var Music : AudioStream = null
 @export var Use_Video_Audio : bool = false
 @export var Video : VideoStream = null

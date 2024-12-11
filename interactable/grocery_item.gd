@@ -5,13 +5,20 @@ class_name GroceryItem
 @export var sprite_1: Texture
 @export var sprite_2: Texture
 @export var sprite_3: Texture
+@export var exclamation_sprite: Sprite2D
 @export var correct_index: int = 0
 
 var is_paper_down: bool = false
 var current_button_index: int = -1
 
 #func _ready():
-	#exclamation_sprite.visible = enabled
+	#exclamation_sprite.visible = false
+	#if StoryManager.current_event != StoryManager.Event.WIDOW_BEFORE_DAY_GAME && StoryManager.current_event != StoryManager.Event.WIDOW_DAY_GAME_CORRECT:
+		#exclamation_sprite.visible = true
+	#if StoryManager.current_event == StoryManager.Event.NIGHT_ENTER_CONBINI && StoryManager.current_event != StoryManager.Event.WIDOW_SUCCESS_NIGHT:
+		#exclamation_sprite.visible = true
+	#else:
+		#exclamation_sprite.visible = false
 
 func _on_interacted() -> void:
 	if enabled: 
