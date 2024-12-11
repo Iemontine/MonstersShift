@@ -11,5 +11,4 @@ func _on_exitbutton_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://credits.tscn")
-	pass # link to credits scene?
+	get_tree().change_scene_to_file("res://CREDITS/GodotCredits.tscn")

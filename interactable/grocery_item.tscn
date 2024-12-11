@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bywfnd7utfd7x"]
 
-[ext_resource type="Script" uid="uid://bimimfrjxclgr" path="res://interactable/grocery_item.gd" id="1_xoevg"]
+[ext_resource type="Script" path="res://interactable/grocery_item.gd" id="1_xoevg"]
 [ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="2_x3ppk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoevg"]

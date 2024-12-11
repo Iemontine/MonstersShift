@@ -18,13 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 [ext_resource type="PackedScene" uid="uid://ftjlrq5makyi" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.tscn" id="13_ni0hd"]
 [ext_resource type="PackedScene" uid="uid://cqq1lhxfiyg3q" path="res://cutscenes/HouseArea/leave_too_early_cutscene.tscn" id="14_nucyf"]
-[ext_resource type="PackedScene" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
-[ext_resource type="Script" uid="uid://dqkymrx58pq73" path="res://interactable/test_widow_minigame_night.gd" id="20_s6p8i"]
-[ext_resource type="Script" uid="uid://cxbblmx6om4n5" path="res://interactable/widow_scare.gd" id="21_ke287"]
+[ext_resource type="PackedScene" uid="uid://1sgtrix5goov" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
+[ext_resource type="Script" path="res://interactable/test_widow_minigame_night.gd" id="20_s6p8i"]
+[ext_resource type="Script" path="res://interactable/widow_scare.gd" id="21_ke287"]
 [ext_resource type="PackedScene" uid="uid://bbngd238unqyn" path="res://prefabs/qte_night.tscn" id="21_s6p8i"]
-[ext_resource type="Script" uid="uid://vvduimgrhlr0" path="res://scripts/widow_backforth_chase.gd" id="22_ke287"]
+[ext_resource type="Script" path="res://scripts/widow_backforth_chase.gd" id="22_ke287"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="22_mqu8j"]
-[ext_resource type="Script" uid="uid://cj53ayj4ut46u" path="res://cutscenes/WidowArea/widow_last_cutscene.gd" id="24_lh7wg"]
+[ext_resource type="Script" path="res://cutscenes/WidowArea/widow_last_cutscene.gd" id="24_lh7wg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iffc"]
 texture = ExtResource("3_8iffc")

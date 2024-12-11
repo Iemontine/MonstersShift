@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cj5u1w22hvh6a" path="res://assets/assets_widow/watermelon1.png" id="11_ffkw8"]
 [ext_resource type="Texture2D" uid="uid://dpo86wniggd40" path="res://assets/assets_widow/conbini_milk.png" id="12_4fgb6"]
 [ext_resource type="Texture2D" uid="uid://bqor2m8j2rgww" path="res://assets/assets_widow/holding.png" id="13_84gf0"]
+[ext_resource type="Texture2D" uid="uid://bgiq32cub0w77" path="res://assets/assets_widow/watermelon3.png" id="13_eebgc"]
+[ext_resource type="Shader" path="res://shaders/grayscale.gdshader" id="14_ashp5"]
 [ext_resource type="Texture2D" uid="uid://br778orhtvj6v" path="res://assets/assets_widow/conbini_pickles.png" id="13_qjfbt"]
 [ext_resource type="Shader" uid="uid://bt0jiodaf3ttl" path="res://shaders/grayscale.gdshader" id="14_ashp5"]
 [ext_resource type="Texture2D" uid="uid://b6y5rd6si1f2b" path="res://assets/assets_widow/orange1.png" id="14_fx8is"]

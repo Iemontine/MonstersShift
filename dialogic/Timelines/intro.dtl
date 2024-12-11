@@ -1,30 +1,21 @@
 # Intro Cutscene
 # Add intro music
 # Slide 1
-[signal arg="control"]
-[background arg="res://dialogic/Images/transition.png" fade="2.0"]
-[wait time="1.0"]
-do PlayerController.switchScene("Treehouse_Exterior", "Door_Treehouse")
-[wait time="1.0"]
-do PlayerController.set_player_position(916, -284)
-[background arg="res://dialogic/Images/intro_temp_image1.png" fade="2.0"]
+[background arg="res://dialogic/Images/cutscene 1 crayon.jpg" fade="1.0"]
 As a kid, everything seems perfect. There are no worries, no hardships, no struggles.
 It’s you and your sibling, excited to experience everything together.
 # Slide 2
-[background arg="res://dialogic/Images/intro_temp_image2.png" fade="2.0"]
+[background arg="res://dialogic/Images/cutscene 2 crayon.jpg" fade="1.0"]
 Over time, he grows distant. Eventually disappearing altogether.
 I thought Benjamin  and I would be best friends forever… but the years have taught me how unrealistic that is.
 # Slide 3
-[background fade="2.0"]
+[background arg="res://dialogic/Images/cutscene 3 crayon.jpg" fade="1.0"]
 Never did I imagine that the brother I once cherished would end up dead years after we were estranged.
 I always imagined hearing from Benjamin once again… but not like this.
 # Slide 4
-[background fade="2.0"]
-I was the only one written in his will. He left me a treehouse in a city I’ve never heard of and a note.
+[background arg="res://dialogic/Images/cutscene 4 crayon.jpg" fade="1.0"]
+I was the only one written in his will. He left me a [treehouse/RV] in a city I’ve never heard of and a note.
 Benjamin always said I took too much responsibility for other people’s problems. Ironic… now who’s leaving me a mess to clean up?
 # Slide 5
-[background fade="2.0"]
+[background arg="res://dialogic/Images/cutscene 5 crayon.jpg" fade="1.0"]
 It’s time for me to finally find out what happened to Benjamin.
-[background arg="res://dialogic/Images/transition.png" fade="2.0"]
-[clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
-[signal arg="uncontrol"]
