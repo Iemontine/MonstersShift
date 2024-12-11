@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=57 format=4 uid="uid://c2ssodjik8cd4"]
 
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="17_0cn4a"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="20_eaqha"]
+[ext_resource type="Script" path="res://prefabs/help_button.gd" id="20_v3vjk"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
 [ext_resource type="Script" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
@@ -28,7 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
 [ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
 [ext_resource type="Script" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
-[ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://plank_break_sound.wav" id="29_3l7dr"]
+[ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="30_3l7dr"]
+[ext_resource type="Script" path="res://map/recipe_board.gd" id="32_scgws"]
+[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -514,6 +517,26 @@ sources/15 = SubResource("TileSetAtlasSource_b6nma")
 sources/17 = SubResource("TileSetAtlasSource_wgr51")
 sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
+[sub_resource type="Theme" id="Theme_u2itv"]
+Button/colors/font_color = Color(0.446716, 2.86378e-06, 0.285617, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scgws"]
+bg_color = Color(0.982343, 0.982342, 0.982342, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.909329, 0.742238, 0.85766, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3vjk"]
 size = Vector2(22, 4.5)
 
@@ -546,6 +569,16 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8xkf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l7dr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.909804, 0.415686, 0.52549, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ubvu"]
 
 [node name="Treehouse_Interior_Baker_Game" type="Node2D"]
 y_sort_enabled = true
@@ -604,7 +637,7 @@ tile_map_data = PackedByteArray("AAD6//v/AAAVAAMAAAD6//z/AAAVAAMAAAD6//3/AAAVAAM
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="Player" parent="." instance=ExtResource("17_0cn4a")]
-z_index = -1
+z_index = 1
 position = Vector2(-44, 26)
 
 [node name="Treehouse_png" type="Sprite2D" parent="."]
@@ -612,60 +645,36 @@ visible = false
 position = Vector2(1.16669, 5.125)
 scale = Vector2(0.370052, 0.370573)
 
-[node name="SugarFactory" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(5, 95)
-item_name = "Sugar"
-item_texture = ExtResource("21_gptp6")
-item_region_rect = Rect2(32, 320, 16, 16)
-
-[node name="ChocolateFactory" parent="." instance=ExtResource("20_eaqha")]
-z_index = 4
-y_sort_enabled = true
-position = Vector2(-65, 95)
-item_name = "Chocolate"
-item_texture = ExtResource("21_gptp6")
-item_region_rect = Rect2(0, 736, 16, 16)
-
-[node name="WoodFactory" parent="." instance=ExtResource("20_eaqha")]
-z_index = 4
-y_sort_enabled = true
-position = Vector2(82, 47)
-item_name = "Wood"
-item_texture = ExtResource("21_gptp6")
-item_region_rect = Rect2(144, 70, 48, 10)
-
-[node name="VanillaFactory" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-29, 95)
-item_name = "Vanilla"
-item_texture = ExtResource("21_gptp6")
-item_region_rect = Rect2(32, 736, 16, 16)
-
-[node name="DoughFactory" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(41, 96)
-item_name = "Flour"
-item_texture = ExtResource("21_gptp6")
-item_region_rect = Rect2(192, 464, 16, 16)
-
 [node name="Baker_Trashcan" parent="." instance=ExtResource("22_m5cdb")]
 position = Vector2(-85, 8)
 
 [node name="CuttingBoard" parent="." instance=ExtResource("19_owop5")]
-z_index = 1
 y_sort_enabled = true
-position = Vector2(42, -7)
+position = Vector2(51, -3)
 collision_layer = 8
 collision_mask = 0
 
+[node name="Sprite2D" parent="CuttingBoard" index="1"]
+y_sort_enabled = true
+
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
 points_required = 5
-game_duration = 60.0
+game_duration = 100000.0
 night_time = true
+
+[node name="HelpButton" type="Button" parent="BakerGameLogic"]
+offset_left = 1037.0
+offset_top = 539.0
+offset_right = 1123.0
+offset_bottom = 619.0
+focus_mode = 0
+theme = SubResource("Theme_u2itv")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_scgws")
+theme_override_styles/normal = SubResource("StyleBoxFlat_scgws")
+text = "?"
+script = ExtResource("20_v3vjk")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -687,7 +696,7 @@ position = Vector2(359, 117)
 [node name="NPC_Baker_Night" parent="." instance=ExtResource("26_danju")]
 z_index = -1
 position = Vector2(-25, -30)
-attack_damage = 3
+attack_damage = 1.5
 
 [node name="WindowMarker" parent="NPC_Baker_Night" index="0"]
 position = Vector2(29, 0)
@@ -742,6 +751,11 @@ frame = 0
 
 [node name="15over" parent="NPC_Baker_Night/SpriteLayers" index="17"]
 frame = 0
+
+[node name="farmer_bow" parent="NPC_Baker_Night/SpriteLayers" index="21"]
+rotation = 0.0
+offset = Vector2(0, -10)
+frame = 3
 
 [node name="Window" type="StaticBody2D" parent="."]
 script = ExtResource("28_3l7dr")
@@ -799,7 +813,6 @@ region_enabled = true
 region_rect = Rect2(144, 70, 48, 10)
 
 [node name="PlankBreakSound" type="AudioStreamPlayer" parent="DoorVisual/ProgressBar"]
-stream = ExtResource("29_3l7dr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DoorVisual"]
 script = ExtResource("27_danju")
@@ -811,7 +824,227 @@ shape = SubResource("RectangleShape2D_n8xkf")
 one_way_collision = true
 one_way_collision_margin = 128.0
 
+[node name="WoodFactory" parent="." instance=ExtResource("20_eaqha")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(82, 47)
+item_name = "Wood"
+item_texture = ExtResource("21_gptp6")
+item_region_rect = Rect2(144, 70, 48, 10)
+
+[node name="SugarFactory2" parent="." instance=ExtResource("20_eaqha")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-65, 69)
+item_name = "Sugar"
+item_texture = ExtResource("30_3l7dr")
+item_region_rect = Rect2(64, 0, 16, 16)
+
+[node name="ItemSprite" parent="SugarFactory2" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="ChocolateFactory2" parent="." instance=ExtResource("20_eaqha")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-29, 69)
+item_name = "Chocolate"
+item_texture = ExtResource("30_3l7dr")
+item_region_rect = Rect2(17, 0, 15, 16)
+
+[node name="ItemSprite" parent="ChocolateFactory2" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="VanillaFactory2" parent="." instance=ExtResource("20_eaqha")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(5, 69)
+item_name = "Vanilla"
+item_texture = ExtResource("30_3l7dr")
+item_region_rect = Rect2(48, 0, 16, 16)
+
+[node name="ItemSprite" parent="VanillaFactory2" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="DoughFactory2" parent="." instance=ExtResource("20_eaqha")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(39, 69)
+item_name = "Flour"
+item_texture = ExtResource("30_3l7dr")
+item_region_rect = Rect2(80, 0, 16, 16)
+
+[node name="ItemSprite" parent="DoughFactory2" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="HelpLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.0
+offset_top = 53.0
+offset_right = -1.0
+offset_bottom = 93.0
+
+[node name="Sugar" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -34.0
+offset_top = 32.0
+offset_right = 376.0
+offset_bottom = 270.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 130
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "sugar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chocolate" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -6.0
+offset_top = 32.0
+offset_right = 632.0
+offset_bottom = 257.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Chocolate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vanilla" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 36.0
+offset_top = 32.0
+offset_right = 486.0
+offset_bottom = 257.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Vanilla
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flour" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 71.0
+offset_top = 33.0
+offset_right = 430.0
+offset_bottom = 258.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Flour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecipeBoard" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -69.0
+offset_top = -33.0
+offset_right = 812.0
+offset_bottom = 192.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Recipes Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CuttingBoard" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 70.0
+offset_top = -89.0
+offset_right = 951.0
+offset_bottom = 136.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Baking Board
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrashCan" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -61.0
+offset_top = -79.0
+offset_right = 576.0
+offset_bottom = 146.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Trash Can
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Breakable Door" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = -41.0
+offset_top = -111.0
+offset_right = 922.0
+offset_bottom = 114.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Breakable Door
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Window" type="Label" parent="HelpLabels"]
+z_index = 5
+layout_mode = 0
+offset_left = 23.0
+offset_top = -123.0
+offset_right = 660.0
+offset_bottom = 102.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_3l7dr")
+text = "Window"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recipe_board" type="StaticBody2D" parent="."]
+position = Vector2(-185, 79)
+script = ExtResource("32_scgws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipe_board"]
+position = Vector2(97, -37)
+shape = SubResource("RectangleShape2D_4ubvu")
+
+[node name="Board_UI" parent="Recipe_board" instance=ExtResource("33_0cn4a")]
+visible = false
+
+[connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
 [connection signal="point_earned" from="NPC_Baker_Night" to="BakerGameLogic" method="_on_npc_baker_night_point_earned"]
 
+[editable path="CuttingBoard"]
 [editable path="Door_Treehouse"]
 [editable path="NPC_Baker_Night"]
+[editable path="SugarFactory2"]
+[editable path="ChocolateFactory2"]
+[editable path="VanillaFactory2"]
+[editable path="DoughFactory2"]

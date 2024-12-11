@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0py0olc2x7cv"]
 
-[ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://recipe_board.png" id="1_ocgyd"]
+[ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://assets/assets_baker/recipe_board.png" id="1_ocgyd"]
 
 [node name="Board_UI" type="CanvasLayer"]
 

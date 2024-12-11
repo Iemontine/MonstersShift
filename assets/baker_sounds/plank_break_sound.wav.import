@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://denh5oit0yejr"
-path="res://.godot/imported/plank_break_sound.wav-9daf601d2c5a5930288ac5787cbe5978.sample"
+path="res://.godot/imported/plank_break_sound.wav-54360e3a05d69d389f3507f9db5b90cd.sample"
 
 [deps]
 
-source_file="res://plank_break_sound.wav"
-dest_files=["res://.godot/imported/plank_break_sound.wav-9daf601d2c5a5930288ac5787cbe5978.sample"]
+source_file="res://assets/baker_sounds/plank_break_sound.wav"
+dest_files=["res://.godot/imported/plank_break_sound.wav-54360e3a05d69d389f3507f9db5b90cd.sample"]
 
 [params]
 

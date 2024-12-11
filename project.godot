@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/treehouse_exterior.tscn"
+run/main_scene="res://mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -48,6 +48,7 @@ directories/dtl_directory={
 "baker_player_insomnia": "res://dialogic/Timelines/Baker/baker_player_insomnia.dtl",
 "baker_success_daytime_game": "res://dialogic/Timelines/Baker/baker_success_daytime_game.dtl",
 "baker_success_night": "res://dialogic/Timelines/Baker/baker_success_night.dtl",
+"baker_tutorial": "res://dialogic/Timelines/Baker/baker_tutorial.dtl",
 "click_on_bed": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_bed.dtl",
 "click_on_picture_frame": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_picture_frame.dtl",
 "click_on_record_player": "res://dialogic/Timelines/HouseAreaPostIntro/click_on_record_player.dtl",
@@ -55,6 +56,7 @@ directories/dtl_directory={
 "exit_house_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/exit_house_postarrival.dtl",
 "final_scenes": "res://dialogic/Timelines/FinalScenes/final_scenes.dtl",
 "first_enter_bakery": "res://dialogic/Timelines/Baker/first_enter_bakery.dtl",
+"how_to_play": "res://dialogic/Timelines/Baker/how_to_play.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
 "last_morning": "res://dialogic/Timelines/FinalScenes/last_morning.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
@@ -100,7 +102,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-<<<<<<<HEADdirectories/dch_directory={
+directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")

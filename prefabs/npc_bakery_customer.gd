@@ -3,6 +3,9 @@ class_name BakeryCustomerNPC
 
 @onready var agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var want_label = $WantLabel
+@onready var cake: Sprite2D = $Cake
+@onready var brownie: Sprite2D = $Brownie
+@onready var cookie: Sprite2D = $Cookie
 
 var food: Array[String] = ["Cake", "Cookie", "Brownie"]
 
@@ -14,9 +17,11 @@ var spawner:NPCSpawner
 var chair:Chair
 
 func _ready() -> void:
+	cake.visible = false
+	brownie.visible = false
+	cookie.visible = false
 	state = NPCState.BASIC_PATH_FINDING
 	want = food.pick_random()
-	want_label.text = want
 	want_label.visible = false
 
 func _physics_process(_delta: float) -> void:
@@ -36,7 +41,13 @@ func _physics_process(_delta: float) -> void:
 			travel_to_anim("Walk", new_velocity)
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BASIC_ARRIVED
+				set_want_texture()
+				want_label.text = ""
+				
 		NPCState.BASIC_LEAVING:
+			cake.visible = false
+			brownie.visible = false
+			cookie.visible = false
 			travel_to_anim("Walk", new_velocity)
 			travel_to_position = spawner.global_position
 			agent_2d.target_position = travel_to_position
@@ -57,3 +68,18 @@ func _physics_process(_delta: float) -> void:
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
+	
+func set_want_texture() -> void:
+	match want:
+		"Cake":
+			cake.visible = true
+			brownie.visible = false
+			cookie.visible = false
+		"Cookie":
+			cake.visible = false
+			brownie.visible = false
+			cookie.visible = true
+		"Brownie":
+			cake.visible = false
+			brownie.visible = true
+			cookie.visible = false

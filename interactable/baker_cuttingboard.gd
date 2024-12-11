@@ -1,6 +1,8 @@
 extends Interactable
 class_name CuttingBoard
 
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var items: Array = []
 var item_height: float = 10.0
 var craft_output: String = ""
@@ -75,6 +77,7 @@ func handle_item_interaction() -> void:
 	print_items_on_board()
 
 func add_item_to_board(carried_item: Sprite2D) -> void:
+	audio_player.play()
 	var item_pickup = ItemPickup.new()
 	item_pickup.item_name = player.carried_item_name
 	var sprite = Sprite2D.new()
@@ -107,7 +110,8 @@ func create_item_pickup(recipe: String):
 	sprite.texture = load("res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png")
 	match recipe:
 		"Brownie":
-			sprite.region_rect = Rect2(80, 752, 16, 16)
+			sprite.texture = load("res://kat_bakery_pixel_arts.png")
+			sprite.region_rect = Rect2(33, 0, 16, 16)
 		"Cookie":
 			sprite.region_rect = Rect2(112, 736, 16, 16)
 		"Cake":
