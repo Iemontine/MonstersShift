@@ -115,8 +115,8 @@ func _handle_qte_result(result_type: String, speed: float, anim: String, lose_li
 	set_player_speed(speed)
 	set_player_movement_anim(anim)
 	qte_active = false
-	if lose_life:
-		lives -= 1
+	
+	lose_life()
 
 	if widow.state == widow.NPCState.WIDOW_ATTACKING:
 		widow.backoff()
@@ -156,7 +156,7 @@ func reset():
 	await get_tree().create_timer(tween_length).timeout
 
 func start_minigame():
-	lives = 2
+	lives = 3
 	minigame_active = true
 	time_passed = 0.0
 	visible = true
@@ -173,6 +173,14 @@ func stop_minigame():
 	visible = false
 	minigame_timer.stop()
 	qte_timer.stop()
+
+func lose_life():
+	lives -= 1
+	if lives <= 0:
+		print("Game Over")
+		minigame_active = false
+		if player:
+			kill_player()
 
 func _on_minigame_timer_timeout():
 	if minigame_active:
@@ -206,6 +214,7 @@ func kill_player():
 	player.path_following = false
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
+	stop_minigame()
 	# StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
 	# PlayerController.start_cutscene("widow_fail_night")
 

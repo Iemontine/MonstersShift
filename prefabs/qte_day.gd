@@ -11,7 +11,7 @@ var qte_timer: Timer
 var minigame_timer: Timer
 var minigame_active = false
 var qte_active = false
-var lives = 2
+var lives = 3
 var time_per_qte = 5
 
 @onready var arrow : StaticBody2D = $Control/Arrow
@@ -106,8 +106,7 @@ func _handle_qte_result(result_type: String, speed: float, anim: String, lose_li
 	set_player_speed(speed)
 	set_player_movement_anim(anim)
 	qte_active = false
-	if lose_life:
-		lives -= 1
+	lose_life()
 	minigame_timer.start()
 
 func _calculate_min_max():
@@ -143,7 +142,7 @@ func reset():
 	await get_tree().create_timer(tween_length).timeout
 
 func start_minigame():
-	lives = 2
+	lives = 3
 	minigame_active = true
 	time_passed = 0.0
 	visible = true
@@ -180,38 +179,20 @@ func _on_minigame_timer_timeout():
 		else:
 			minigame_timer.start()
 
-#func _on_qte_timer_timeout():
-	#if qte_active:
-		#qte_time_passed += 1
-		#if qte_time_passed >= time_per_qte:
-			#print("QTE failed, losing a life")
-			#lives -= 1
-			#if lives <= 0:
-				#print("Game Over")
-				#minigame_active = false
-				#if player:
-					#player.path_following = false
-					#player.state = Player.PlayerState.NORMAL
-				#StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
-				#PlayerController.start_cutscene("widow_day_qte_fail")
-			#_fade_out()
-			#minigame_timer.start()
-			#qte_active = false
-		#else:
-			#print("Seconds until QTE timeout: ", time_per_qte - qte_time_passed)
-		#qte_timer.start()
+func lose_life():
+	lives -= 1
+	if lives <= 0:
+		print("Game Over")
+		minigame_active = false
+		if player:
+			fail_player()
+
 
 func _on_qte_timer_timeout():
 	if qte_active:
 		qte_time_passed += 1
 		if qte_time_passed >= time_per_qte:
-			print("QTE failed, losing a life")
-			lives -= 1
-			if lives <= 0:
-				print("Game Over")
-				minigame_active = false
-				if player:
-					fail_player()
+			lose_life()
 			_fade_out()
 			minigame_timer.start()
 			qte_active = false
@@ -220,8 +201,15 @@ func _on_qte_timer_timeout():
 			qte_timer.start()
 
 func fail_player():
+	player.path_following = false
+	# why no work
+	player.state = Player.PlayerState.LOCKED
+	player.travel_to_anim("DeathBounce")
+	stop_minigame()
 	StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
+	player.carried_item.texture = null
 	PlayerController.start_cutscene("widow_day_qte_fail")
+	# Must disable path following to prevent player from contnuing to move after losing
 	
 func set_player_speed(_speed: float):
 	if player: player.speed = _speed
