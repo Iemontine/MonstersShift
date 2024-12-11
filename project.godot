@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/treehouse_exterior.tscn"
+run/main_scene="res://map/town.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -42,6 +42,7 @@ directories/dtl_directory={
 "arrival_start_outside": "res://dialogic/Timelines/HouseAreaPostIntro/arrival_start_outside.dtl",
 "baker_before_chase": "res://dialogic/Timelines/Baker/baker_before_chase.dtl",
 "baker_before_night_game": "res://dialogic/Timelines/Baker/baker_before_night_game.dtl",
+"baker_day_two": "res://dialogic/Timelines/Baker/baker_day_two.dtl",
 "baker_fail_daytime": "res://dialogic/Timelines/Baker/baker_fail_daytime.dtl",
 "baker_fail_night": "res://dialogic/Timelines/Baker/baker_fail_night.dtl",
 "baker_first_interaction": "res://dialogic/Timelines/Baker/baker_first_interaction.dtl",

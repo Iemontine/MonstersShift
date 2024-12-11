@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="3_q1i20"]
 [ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="4_02hvq"]
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_ptbaf"]
-[ext_resource type="Script" path="res://interactable/door.gd" id="6_bspew"]
+[ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="6_bspew"]
 [ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="7_6i5ak"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="8_hp700"]
-[ext_resource type="Script" path="res://scripts/baker_camera.gd" id="9_fgfyo"]
+[ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://scripts/baker_camera.gd" id="9_fgfyo"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="10_n22bn"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="11_lss44"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_67438"]
@@ -17,10 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://mw38uglnpyjg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="15_1ljva"]
 [ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="16_1in08"]
 [ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="17_03171"]
-[ext_resource type="Script" path="res://map/recipe_board.gd" id="18_bihws"]
+[ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="18_bihws"]
 [ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="19_h4eum"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="20_iwgm1"]
-[ext_resource type="Script" path="res://cutscenes/BakerArea/baker_cutscenes.gd" id="20_ojln8"]
+[ext_resource type="Script" uid="uid://d10bt3xlv01ta" path="res://cutscenes/BakerArea/baker_cutscenes.gd" id="20_ojln8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -950,6 +950,7 @@ position = Vector2(72, 121)
 [node name="BakerCutscenes" type="StaticBody2D" parent="NPC_Baker"]
 position = Vector2(74, -9)
 script = ExtResource("20_ojln8")
+required_hold_time = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Baker/BakerCutscenes"]
 position = Vector2(-74, 17)
