@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://dg5e1j6trerk0"]
 
-[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_pdgtp"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_pdgtp"]
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
 [ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_io5y2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="4_mxmix"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
 [ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="15_d3ftm"]
-[ext_resource type="Script" uid="uid://cayrl7xm7o2fw" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
+[ext_resource type="Script" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
 texture = ExtResource("4_he1c2")
