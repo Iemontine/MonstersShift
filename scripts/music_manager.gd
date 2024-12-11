@@ -17,9 +17,9 @@ var _current_track : String
 var _track_path := "res://assets/sound/music/"
 var _use_custom_track : bool = false
 var _custom_track : String = "test_audio.WAV"
-var _current_playtime : float = 0.0
+var _current_playtime : float = 190.0
 
-@onready var stream_player : AudioStreamPlayer2D 
+@onready var stream_player : AudioStreamPlayer
 
 func _ready() -> void:
 	
@@ -30,11 +30,10 @@ func _process(_delta: float) -> void:
 	if is_instance_valid(stream_player):
 		_current_playtime = stream_player.get_playback_position()
 		
-	#print(_current_playtime)
 
 func _on_scene_transition_completed() -> void:
 	
-	stream_player = AudioStreamPlayer2D.new()
+	stream_player = AudioStreamPlayer.new()
 	
 	if _use_custom_track:
 		if not (FileAccess.file_exists(_track_path + _custom_track)):
@@ -75,7 +74,7 @@ func _on_scene_transition_completed() -> void:
 				if _current_track != _tracks["Outside Evening"]:
 					_current_playtime = 0.0
 					_current_track = _tracks["Outside Evening"]
-			SceneManager.Time.NIGHT:
+			SceneManager.TIME.NIGHT:
 				if not (FileAccess.file_exists(_track_path + _tracks["Outside Night"])):
 					return
 				var stream = load(_track_path + _tracks["Outside Night"])
@@ -85,7 +84,6 @@ func _on_scene_transition_completed() -> void:
 					_current_track = _tracks["Outside Night"]
 		
 		
-	
 	get_tree().current_scene.add_child(stream_player)
 	stream_player.play(_current_playtime)
 	print(_current_track)
@@ -106,7 +104,7 @@ func play_custom_track(track:String, delay:float = 0.5):
 	if stream_player:
 		stream_player.stop()
 		stream_player.queue_free()
-	stream_player = AudioStreamPlayer2D.new()
+	stream_player = AudioStreamPlayer.new()
 	var stream = load(_track_path + track)
 	var timer := Timer.new()
 	timer.wait_time = delay
@@ -131,6 +129,8 @@ func unpause():
 func stop():
 	if stream_player:
 		stream_player.stop()
+		if _use_custom_track:
+			end_custom_track()
 	
 func _check_ouside() -> bool:
 	if SceneManager.current_scene == null:
