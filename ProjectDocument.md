@@ -46,7 +46,10 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ### Descriptions
 NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
-* Dialogic was incredibly important in creating and displaying narrative - discussed [below](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#visual-design--user-interface-and-input-briana)
+
+* For 37 story events, covered their creation, conversion into dialogic, and connection to the gameplay --> See all below sections
+* * Dialogic was incredibly important in creating and displaying narrative - discussed [below](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#visual-design--user-interface-and-input-briana)
+  
 * StoryManager holds all events in an enum --> these enums are used to access different story events
   * Scene transition story events
   * Interactable story events
@@ -57,7 +60,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
   * Introduction was created in conjunction with Katherine who drew the pictures - gives player story set up
 * Improving dialogue feel
   * Use of sound effects inside cutscenes
-  * Use of animations inside cutscenes (npc/player controllers --> added a few functions to what Darroll created)
+  * Use of animations & movement inside cutscenes (npc/player controllers --> added a few functions to what Darroll created)
 * Use of Matthew's scene manager
   * Force switching scenes to get player to correct location for story
   * Day/night cycles used for passage of time
@@ -68,6 +71,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 * [Zombie Sounds](https://terrorbytegames.itch.io/zombie-massacre-sound-effects-starter-pack) by itch.io user TerrorByteGames - License given by the creator
 * [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
+* [Character Animations](https://seliel-the-shaper.itch.io/farmer-base) by itch.io user Seliel the Shaper - License: [Mana Seed User License](https://selieltheshaper.weebly.com/user-license.html)
 
 ## Animation & Visuals (Katherine)
 
@@ -98,7 +102,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 **Add a link to the full results of your gameplay tests.**
 **Summarize the key findings from your gameplay tests.**
 
-## Visual Design & User Interface and Input (Briana)
+## Visual Design & User Interface (Briana)
 
 **Describe your user interface and how it relates to gameplay. This can be done via the template.**
 **Describe the default input configuration.**
@@ -108,10 +112,11 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 
 ### Descriptions
 NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
-* Dialogic Visuals
+* Dialogic: Initially used dialogic's basic template of "Speaker Textbox Style" --> adjusted it to be more custom
   * Custom dialogue boxes (background, font, portrait frame)
   * Set up character styles (player, widow, baker)
   * Set up general dialogue styles (speaker vs non-speaker)
+  * Changed the dialogue choices to different appearance that fit the dialogue boxes
   * Other dialogic items discussed [above](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana)
 * Design & Draw portraits (Kat expanded on them)
 
