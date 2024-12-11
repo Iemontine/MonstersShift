@@ -802,7 +802,7 @@ travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 z_index = 1
-position = Vector2(-19, 60)
+position = Vector2(-6, 64)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 1
@@ -827,13 +827,6 @@ item_name = "Sugar"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(64, 0, 16, 16)
 
-[node name="ItemSprite" parent="SugarFactory" index="0"]
-z_index = 1
-y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="SugarFactory" index="2"]
-stream = null
-
 [node name="ChocolateFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
@@ -841,13 +834,6 @@ position = Vector2(12, 15)
 item_name = "Chocolate"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(17, 0, 15, 16)
-
-[node name="ItemSprite" parent="ChocolateFactory" index="0"]
-z_index = 1
-y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="ChocolateFactory" index="2"]
-stream = null
 
 [node name="VanillaFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
@@ -857,13 +843,6 @@ item_name = "Vanilla"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(48, 0, 16, 16)
 
-[node name="ItemSprite" parent="VanillaFactory" index="0"]
-z_index = 1
-y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="VanillaFactory" index="2"]
-stream = null
-
 [node name="DoughFactory" parent="." instance=ExtResource("10_jwbsn")]
 z_index = 1
 y_sort_enabled = true
@@ -872,19 +851,9 @@ item_name = "Flour"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(80, 0, 16, 16)
 
-[node name="ItemSprite" parent="DoughFactory" index="0"]
-z_index = 1
-y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="DoughFactory" index="2"]
-stream = null
-
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
 z_index = 1
 position = Vector2(-104, 32)
-
-[node name="Sprite2D" parent="Baker_Trashcan" index="0"]
-z_index = 1
 
 [node name="Chair1" parent="." instance=ExtResource("14_fcgx5")]
 z_index = 1
@@ -909,85 +878,6 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(-74, 19)
 collision_layer = 0
-
-[node name="CarriedItem" parent="NPC_Baker" index="0"]
-position = Vector2(1, -33)
-
-[node name="SpriteLayers" parent="NPC_Baker" index="2"]
-z_index = 1
-
-[node name="00undr" parent="NPC_Baker/SpriteLayers" index="2"]
-flip_h = false
-frame = 0
-
-[node name="01body" parent="NPC_Baker/SpriteLayers" index="3"]
-flip_h = false
-frame = 0
-
-[node name="02sock" parent="NPC_Baker/SpriteLayers" index="4"]
-flip_h = false
-frame = 0
-
-[node name="03fot1" parent="NPC_Baker/SpriteLayers" index="5"]
-flip_h = false
-frame = 0
-
-[node name="05shrt" parent="NPC_Baker/SpriteLayers" index="6"]
-flip_h = false
-frame = 0
-
-[node name="06lwr2" parent="NPC_Baker/SpriteLayers" index="7"]
-flip_h = false
-frame = 0
-
-[node name="07fot2" parent="NPC_Baker/SpriteLayers" index="8"]
-flip_h = false
-frame = 0
-
-[node name="08lwr3" parent="NPC_Baker/SpriteLayers" index="9"]
-flip_h = false
-frame = 0
-
-[node name="09hand" parent="NPC_Baker/SpriteLayers" index="10"]
-flip_h = false
-frame = 0
-
-[node name="10outr" parent="NPC_Baker/SpriteLayers" index="11"]
-flip_h = false
-frame = 0
-
-[node name="04lwr1" parent="NPC_Baker/SpriteLayers" index="12"]
-flip_h = false
-frame = 0
-
-[node name="11neck" parent="NPC_Baker/SpriteLayers" index="13"]
-flip_h = false
-frame = 0
-
-[node name="12face" parent="NPC_Baker/SpriteLayers" index="14"]
-flip_h = false
-frame = 0
-
-[node name="13hair" parent="NPC_Baker/SpriteLayers" index="15"]
-flip_h = false
-frame = 0
-
-[node name="14head" parent="NPC_Baker/SpriteLayers" index="16"]
-flip_h = false
-frame = 0
-
-[node name="15over" parent="NPC_Baker/SpriteLayers" index="17"]
-flip_h = false
-frame = 0
-
-[node name="32x32_anims" parent="NPC_Baker/SpriteLayers" index="24"]
-offset = Vector2(0, -2)
-
-[node name="64x64_anims" parent="NPC_Baker/SpriteLayers" index="25"]
-offset = Vector2(0, -2)
-
-[node name="NavigationAgent2D" parent="NPC_Baker" index="4"]
-avoidance_enabled = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
@@ -1146,10 +1036,3 @@ script = ExtResource("23_jwbsn")
 
 [connection signal="point_earned" from="NPC_Baker" to="BakerGameLogic" method="_on_npc_baker_point_earned"]
 [connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
-
-[editable path="SugarFactory"]
-[editable path="ChocolateFactory"]
-[editable path="VanillaFactory"]
-[editable path="DoughFactory"]
-[editable path="Baker_Trashcan"]
-[editable path="NPC_Baker"]

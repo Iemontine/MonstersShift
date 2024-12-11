@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://moodc767j6bj"]
+[gd_scene load_steps=18 format=4 uid="uid://moodc767j6bj"]
 
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="1_2im0w"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_bo5tw"]
-[ext_resource type="Script" uid="uid://cv8rirqc1mnxt" path="res://scripts/camera.gd" id="2_5khfr"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_5khfr"]
 [ext_resource type="Texture2D" uid="uid://c356pruw6jb5s" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/7_Villas_16x16.png" id="2_c600j"]
 [ext_resource type="Texture2D" uid="uid://cyoojuam0scpo" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/17_Garden_16x16.png" id="3_8i6jl"]
 [ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="3_a6bnu"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="7_o2eel"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="9_8d6uy"]
 [ext_resource type="PackedScene" uid="uid://dxiydhu8wr4dn" path="res://interactable/test_cutscene.tscn" id="11_5khfr"]
+[ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="12_2im0w"]
+[ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="13_c600j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2eel"]
 texture = ExtResource("1_2im0w")
@@ -9990,3 +9992,9 @@ target_door = "Door_Treehouse"
 
 [node name="TestCutscene" parent="." instance=ExtResource("11_5khfr")]
 position = Vector2(160, 42)
+
+[node name="NPC_Baker" parent="." instance=ExtResource("12_2im0w")]
+position = Vector2(80, 136)
+
+[node name="NPC_Widow" parent="." instance=ExtResource("13_c600j")]
+position = Vector2(-56, 128)

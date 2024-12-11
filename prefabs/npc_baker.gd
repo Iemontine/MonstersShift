@@ -47,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 			carried_item.visible = true
 			for key in customer_want:
 				if customer_want[key] == carried_item_name:
-					print(key)
+					# print(key)
 					current_chair_target = key
 					travel_to_position = key.global_position
 					customer_want.erase(key)
@@ -91,8 +91,9 @@ func on_interacted() -> void:
  		#chat_bubble.play("question")
 		#return
 	if _contains_string_in_dict(player.carried_item_name, customer_want):
-		add_child(player.carried_item)
+		#add_child(player.carried_item)
 		state = NPCState.BAKER_HOLDING_ITEM
+		carried_item = player.carried_item
 		carried_item_name = player.carried_item_name
 		player.carried_item_name = ""
 		player.state = Player.PlayerState.NORMAL
