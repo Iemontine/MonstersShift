@@ -1,5 +1,7 @@
-[gd_scene load_steps=54 format=4 uid="uid://b5vbrn4n2gs74"]
+[gd_scene load_steps=61 format=4 uid="uid://b5vbrn4n2gs74"]
 
+[ext_resource type="Texture2D" uid="uid://0lwsmeirq7xv" path="res://assets/pixellight.png" id="1_4b6yk"]
+[ext_resource type="Script" uid="uid://b3eqqvpgcgs3b" path="res://map/conbini_flickering_lights.gd" id="1_k0ype"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
 [ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
 [ext_resource type="Texture2D" uid="uid://c8cl0a6ru5q6i" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/16_Grocery_store_Shadowless.png" id="3_yd03f"]
@@ -26,6 +28,14 @@
 [ext_resource type="Texture2D" uid="uid://n7y6mhsv4m0a" path="res://assets/assets_widow/flower2.png" id="20_ixnx5"]
 [ext_resource type="Texture2D" uid="uid://bwvys0rqxs4wm" path="res://assets/assets_widow/flower3.png" id="21_s5oyc"]
 [ext_resource type="Texture2D" uid="uid://d0e0it7apgvji" path="res://assets/assets_widow/flowerhint.png" id="22_mt0kk"]
+[ext_resource type="Script" uid="uid://cty6ec12ennyl" path="res://interactable/grocery_item_night.gd" id="23_bkel7"]
+[ext_resource type="Texture2D" uid="uid://cvirn5gy242fj" path="res://assets/assets_widow/cowpico.png" id="24_mt0kk"]
+[ext_resource type="Texture2D" uid="uid://dvvduha2kkfcr" path="res://assets/assets_widow/pogarisweat.png" id="25_4b6yk"]
+[ext_resource type="Texture2D" uid="uid://dpwob2knta32s" path="res://assets/assets_widow/roobeer.png" id="26_k0ype"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k0ype"]
+frequency = 0.0862
+offset = Vector3(-75.47, 566.04, 654.21)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ohj"]
 texture = ExtResource("1_mtsbs")
@@ -2964,6 +2974,90 @@ y_sort_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("1_k0ype")
+noise = SubResource("FastNoiseLite_k0ype")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(-157, -106)
+scale = Vector2(0.207773, 0.36207)
+color = Color(0.572549, 0.580392, 0.686275, 1)
+energy = 0.2
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(-95, -102)
+scale = Vector2(0.207773, 0.36207)
+color = Color(0.572549, 0.580392, 0.686275, 1)
+energy = 0.2
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(-29, -106)
+scale = Vector2(0.207773, 0.36207)
+color = Color(0.572549, 0.580392, 0.686275, 1)
+energy = 0.5
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(34, -106)
+scale = Vector2(0.207773, 0.36207)
+color = Color(0.572549, 0.580392, 0.686275, 1)
+energy = 0.2
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(96, -105)
+scale = Vector2(0.207773, 0.36207)
+color = Color(0.572549, 0.580392, 0.686275, 1)
+energy = 0.2
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(144, -208)
+scale = Vector2(0.0835633, 0.118975)
+color = Color(0.574226, 0.579547, 0.684646, 1)
+energy = 0.6
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(176, -208)
+scale = Vector2(0.0835633, 0.118975)
+color = Color(0.574226, 0.579547, 0.684646, 1)
+energy = 0.6
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(208, -208)
+scale = Vector2(0.0835633, 0.118975)
+color = Color(0.574226, 0.579547, 0.684646, 1)
+energy = 0.6
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lights"]
+visible = false
+position = Vector2(240, -208)
+scale = Vector2(0.0835633, 0.118975)
+color = Color(0.574226, 0.579547, 0.684646, 1)
+energy = 0.6
+texture = ExtResource("1_4b6yk")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(73, 118)
+scale = Vector2(1.23212, 0.36207)
+color = Color(0.11391, 0.145834, 0.376769, 1)
+energy = 1.02
+texture = ExtResource("1_4b6yk")
+
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -3
 y_sort_enabled = true
@@ -2998,7 +3092,7 @@ tile_map_data = PackedByteArray("AAACAAcAAAALABgAAAADAAcAAAAMABgAAAAEAAcAAAANABg
 tile_set = SubResource("TileSet_rk4w4")
 
 [node name="Player" parent="." instance=ExtResource("6_643em")]
-position = Vector2(-68, -21)
+position = Vector2(178, -200)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -3063,7 +3157,7 @@ player = NodePath("../Player")
 
 [node name="GroceryItem1" parent="GroceryHandler" instance=ExtResource("10_34ohj")]
 z_index = 1
-position = Vector2(-128, -87)
+position = Vector2(-116, -104)
 enabled = true
 sprite_1 = ExtResource("13_qjfbt")
 sprite_2 = ExtResource("12_4fgb6")
@@ -3089,6 +3183,15 @@ sprite_2 = ExtResource("20_ixnx5")
 sprite_3 = ExtResource("21_s5oyc")
 hint_texture = ExtResource("22_mt0kk")
 correct_index = 2
+
+[node name="GroceryItemNight" parent="." instance=ExtResource("10_34ohj")]
+z_index = 1
+position = Vector2(176, -232)
+script = ExtResource("23_bkel7")
+enabled = true
+sprite_1 = ExtResource("24_mt0kk")
+sprite_2 = ExtResource("25_4b6yk")
+sprite_3 = ExtResource("26_k0ype")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
