@@ -29751,14 +29751,6 @@ animation = &"door_open"
 z_index = 10
 position = Vector2(1, 20)
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-z_index = 10
-y_sort_enabled = true
-position = Vector2(458, 1)
-zoom = Vector2(3, 3)
-script = ExtResource("25_x3iwy")
-target = NodePath("../Player")
-
 [node name="Player" parent="." instance=ExtResource("1_f72b0")]
 position = Vector2(-1104, -151)
 
@@ -29854,3 +29846,20 @@ enabled = false
 color = Color(1, 0.878431, 0.486275, 1)
 texture = ExtResource("37_apa6g")
 texture_scale = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(-352, -56)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.01
+drag_top_margin = 0.01
+drag_right_margin = 0.01
+drag_bottom_margin = 0.01
+editor_draw_limits = true
+script = ExtResource("25_x3iwy")
+target = NodePath("../Player")

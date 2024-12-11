@@ -24792,10 +24792,17 @@ script = ExtResource("13_ke287")
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
 y_sort_enabled = true
-position = Vector2(-352, -58)
+position = Vector2(-352, -56)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.01
+drag_top_margin = 0.01
+drag_right_margin = 0.01
+drag_bottom_margin = 0.01
+editor_draw_limits = true
 script = ExtResource("2_nucyf")
 target = NodePath("../Player")
 
