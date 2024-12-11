@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interactable/baker_cuttingboard.gd" id="1_1urdy"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="2_j0ukd"]
-[ext_resource type="AudioStream" path="res://baker_sounds/drop_item.wav" id="3_j0ukd"]
+[ext_resource type="AudioStream" path="res://assets/baker_sounds/drop_item.wav" id="3_j0ukd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(32, 16)

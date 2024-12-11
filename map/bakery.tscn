@@ -916,7 +916,77 @@ position = Vector2(1, -33)
 [node name="SpriteLayers" parent="NPC_Baker" index="2"]
 z_index = 1
 
-[node name="NavigationAgent2D" parent="NPC_Baker" index="3"]
+[node name="00undr" parent="NPC_Baker/SpriteLayers" index="2"]
+flip_h = false
+frame = 0
+
+[node name="01body" parent="NPC_Baker/SpriteLayers" index="3"]
+flip_h = false
+frame = 0
+
+[node name="02sock" parent="NPC_Baker/SpriteLayers" index="4"]
+flip_h = false
+frame = 0
+
+[node name="03fot1" parent="NPC_Baker/SpriteLayers" index="5"]
+flip_h = false
+frame = 0
+
+[node name="05shrt" parent="NPC_Baker/SpriteLayers" index="6"]
+flip_h = false
+frame = 0
+
+[node name="06lwr2" parent="NPC_Baker/SpriteLayers" index="7"]
+flip_h = false
+frame = 0
+
+[node name="07fot2" parent="NPC_Baker/SpriteLayers" index="8"]
+flip_h = false
+frame = 0
+
+[node name="08lwr3" parent="NPC_Baker/SpriteLayers" index="9"]
+flip_h = false
+frame = 0
+
+[node name="09hand" parent="NPC_Baker/SpriteLayers" index="10"]
+flip_h = false
+frame = 0
+
+[node name="10outr" parent="NPC_Baker/SpriteLayers" index="11"]
+flip_h = false
+frame = 0
+
+[node name="04lwr1" parent="NPC_Baker/SpriteLayers" index="12"]
+flip_h = false
+frame = 0
+
+[node name="11neck" parent="NPC_Baker/SpriteLayers" index="13"]
+flip_h = false
+frame = 0
+
+[node name="12face" parent="NPC_Baker/SpriteLayers" index="14"]
+flip_h = false
+frame = 0
+
+[node name="13hair" parent="NPC_Baker/SpriteLayers" index="15"]
+flip_h = false
+frame = 0
+
+[node name="14head" parent="NPC_Baker/SpriteLayers" index="16"]
+flip_h = false
+frame = 0
+
+[node name="15over" parent="NPC_Baker/SpriteLayers" index="17"]
+flip_h = false
+frame = 0
+
+[node name="32x32_anims" parent="NPC_Baker/SpriteLayers" index="24"]
+offset = Vector2(0, -2)
+
+[node name="64x64_anims" parent="NPC_Baker/SpriteLayers" index="25"]
+offset = Vector2(0, -2)
+
+[node name="NavigationAgent2D" parent="NPC_Baker" index="4"]
 avoidance_enabled = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
