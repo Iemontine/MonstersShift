@@ -22,7 +22,7 @@ var objects_interacted_with : int = 0
 
 var _event_name:String = ""
 
-@onready var current_event = Event.LAST_MORNING
+@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -107,7 +107,21 @@ func _on_scene_transition_completed():
 			if SceneManager.current_scene == "Conbini":
 				enable_grocery_items()
 				SceneManager.change_time_of_day(-1)
-		Event.WIDOW_DAY_GAME_CORRECT:
+		Event.WIDOW_DAY_QTE_FAIL:
+			if SceneManager.current_scene == "Conbini":
+				enable_grocery_items()
+			if SceneManager.current_scene == "Town":
+				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
+		Event.WIDOW_FAIL_DAYTIME:
+			if SceneManager.current_scene == "Conbini":
+				enable_grocery_items()
+			if SceneManager.current_scene == "Town":
+				start_player_path_follow(SceneManager.dest_player)
+				var qte = get_tree().current_scene.get_node("QTE")
+				qte.start_minigame()
+		Event.WIDOW_DAY_QTE_SUCCESS:
 			if SceneManager.current_scene == "Town":
 				start_player_path_follow(SceneManager.dest_player)
 				var qte = get_tree().current_scene.get_node("QTE")
@@ -158,7 +172,7 @@ func conbini_night():
 # WIDOW
 func enable_grocery_items():
 	if SceneManager.current_scene == "Conbini":
-		get_tree().current_scene_get_nodes_in_group("GroceryHandler").enable_grocery_items()
+		get_tree().current_scene.get_node("GroceryHandler").enable_grocery_items()
 
 
 func start_player_path_follow(player):

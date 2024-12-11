@@ -47,11 +47,11 @@ func _on_item_selected(is_correct: bool):
 			_check_final_result()
 
 func _check_final_result():
-	if correct_selections == 2: 	# don't care about the third item
+	if correct_selections >= 2: 	# don't care about the third item
 		print("success")
-		StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_GAME_CORRECT)
+		StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_SUCCESS)
 	else:
 		# TODO: failure?
-		StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_GAME_CORRECT)
+		StoryManager.transition_to_event(StoryManager.Event.WIDOW_DAY_QTE_FAIL)
 		print("fail")
 	SceneManager.switch_scene(player, "Town", false, "Door_Conbini1")

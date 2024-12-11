@@ -66,6 +66,7 @@ directories/dtl_directory={
 "test": "res://dialogic/Timelines/Random/test.dtl",
 "test2": "res://dialogic/Timelines/Random/test2.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
+"widow_day_qte_fail": "res://dialogic/Timelines/Widow/widow_day_qte_fail.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
 "widow_fail_night": "res://dialogic/Timelines/Widow/widow_fail_night.dtl",
 "widow_first_interaction": "res://dialogic/Timelines/Widow/widow_first_interaction.dtl",
