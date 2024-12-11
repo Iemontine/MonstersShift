@@ -1,14 +1,10 @@
 extends GroceryItem
 class_name GroceryItemNight
 
-func _ready() -> void:
-	super._ready()
-	visible = true
-	enabled = true
 
-func _on_interacted() -> void:
-	super()
-	
+#TODO: add triggers for visibility and enabled
+
+
 func show_grocery_ui():
 	super()
 	for child in grocery_ui.get_children():

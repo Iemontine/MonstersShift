@@ -24,6 +24,11 @@ var max_x = 0.0
 var true_min_x = INF
 var true_max_x = -INF
 
+var normal_speed = 50
+var perfect_speed = 100
+var normal_anim = "WalkCarry"
+var perfect_anim = "RunCarry"
+
 func _ready():
 	_calculate_min_max()
 	$CanvasModulate.color.a = 0
@@ -87,17 +92,17 @@ func _process_collision_result(result):
 	for collision in result:
 		var collider = collision.collider
 		if collider.name.begins_with("Perfect"):
-			_handle_qte_result("Perfect", 100, "RunCarry")
+			_handle_qte_result("Perfect", perfect_speed, perfect_anim)
 			await get_tree().create_timer(1.5).timeout
-			set_player_speed(50)
-			set_player_movement_anim("WalkCarry")
+			set_player_speed(normal_speed)
+			set_player_movement_anim(normal_anim)
 			minigame_timer.start()
 			break
 		elif collider.name.begins_with("Good"):
-			_handle_qte_result("Good", 50, "WalkCarry")
+			_handle_qte_result("Good", normal_speed, normal_anim)
 			break
 		elif collider.name.begins_with("Bad"):
-			_handle_qte_result("Bad", 50, "WalkCarry", true)
+			_handle_qte_result("Bad", normal_speed, normal_anim, true)
 			break
 
 func _handle_qte_result(result_type: String, speed: float, anim: String, should_lose_life: bool = false):
@@ -149,8 +154,8 @@ func start_minigame():
 	visible = true
 	minigame_timer.start()
 	if player:
-		set_player_speed(50)
-		set_player_movement_anim("WalkCarry")
+		set_player_speed(normal_speed)
+		set_player_movement_anim(normal_anim)
 		player.path_following = true
 		player.state = Player.PlayerState.CONTROLLED
 		player.follow_path()

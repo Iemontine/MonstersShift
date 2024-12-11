@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://n7y6mhsv4m0a" path="res://assets/assets_widow/flower2.png" id="20_ixnx5"]
 [ext_resource type="Texture2D" uid="uid://bwvys0rqxs4wm" path="res://assets/assets_widow/flower3.png" id="21_s5oyc"]
 [ext_resource type="Texture2D" uid="uid://d0e0it7apgvji" path="res://assets/assets_widow/flowerhint.png" id="22_mt0kk"]
-[ext_resource type="Script" path="res://interactable/grocery_item_night.gd" id="23_bkel7"]
+[ext_resource type="Script" uid="uid://cty6ec12ennyl" path="res://interactable/grocery_item_night.gd" id="23_bkel7"]
 [ext_resource type="Texture2D" uid="uid://cvirn5gy242fj" path="res://assets/assets_widow/cowpico.png" id="24_mt0kk"]
 [ext_resource type="Texture2D" uid="uid://dvvduha2kkfcr" path="res://assets/assets_widow/pogarisweat.png" id="25_4b6yk"]
 [ext_resource type="Texture2D" uid="uid://dpwob2knta32s" path="res://assets/assets_widow/roobeer.png" id="26_k0ype"]
