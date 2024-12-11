@@ -97,6 +97,40 @@ func use_custom_track(track:String) -> void:
 func end_custom_track() -> void:
 	_use_custom_track = false
 	_custom_track = ""
+
+func play_custom_track(track:String, delay:float = 0.5):
+	use_custom_track(track)
+	if not (FileAccess.file_exists(_track_path + track)):
+		return
+	
+	if stream_player:
+		stream_player.stop()
+		stream_player.queue_free()
+	stream_player = AudioStreamPlayer2D.new()
+	var stream = load(_track_path + track)
+	var timer := Timer.new()
+	timer.wait_time = delay
+	timer.one_shot = true
+	get_tree().current_scene.add_child(timer)
+	timer.start()
+	await timer.timeout
+	stream_player.stream = stream
+	_current_playtime = 0.0
+	get_tree().current_scene.add_child(stream_player)
+	stream_player.play(_current_playtime)
+
+func pause():
+	if stream_player:
+		stream_player.stream_paused = true
+
+
+func unpause():
+	if stream_player:
+		stream_player.stream_paused = false
+
+func stop():
+	if stream_player:
+		stream_player.stop()
 	
 func _check_ouside() -> bool:
 	if SceneManager.current_scene == null:
