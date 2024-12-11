@@ -14,9 +14,9 @@
 * Learn about our game and read our documentation [here](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md).
 
 ## Credits ##
-* Visual Design & UI / Narrative Design - Briana Fedkiw	
+* Narrative Design / Visual Design & UI - Briana Fedkiw	
 * Producer / Gameplay Testing - Darroll Saddi	
 * Game Logic / Game Feel - Duy Nguyen	
-* Animation & Visuals	/ Press Kit and Trailer - Katherine Li	
+* Animation & Visuals	/ Press Kit & Trailer + Narrative - Katherine Li	
 * Game Logic & Game Feel / Music - Matthew Fulde	
 * UI / Audio - Noel Lee	
