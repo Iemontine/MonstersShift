@@ -17,6 +17,6 @@
 * Visual Design & UI / Narrative Design - Briana Fedkiw	
 * Producer / Gameplay Testing - Darroll Saddi	
 * Game Logic / Game Feel - Duy Nguyen	
-* Animation and Visuals	/ Press Kit and Trailer - Katherine Li	
+* Animation & Visuals	/ Press Kit and Trailer - Katherine Li	
 * Game Logic & Game Feel / Music - Matthew Fulde	
 * UI / Audio - Noel Lee	
