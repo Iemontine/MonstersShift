@@ -66,8 +66,8 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 
 ### Assets Used:
 * [Zombie Sounds](https://terrorbytegames.itch.io/zombie-massacre-sound-effects-starter-pack) by itch.io user TerrorByteGames - License given by the creator
-* [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal]([https://itch.io/game-assets/assets-cc0](https://creativecommons.org/publicdomain/zero/1.0/deed.en))
-* [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International]([https://itch.io/game-assets/assets-cc4-by](https://creativecommons.org/licenses/by/4.0/))
+* [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 ## Animation & Visuals (Katherine)
 
