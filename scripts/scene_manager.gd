@@ -146,3 +146,6 @@ func change_time_of_day(new_time_of_day: int = -1) -> void:
 		time_of_day = TIME.values()[new_time_of_day]
 	
 	handle_day_shift()
+
+func switch_to_credits() -> void:
+	get_tree().change_scene_to_file("res://credits/credits.tscn")

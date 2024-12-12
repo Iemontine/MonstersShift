@@ -23,7 +23,7 @@ var objects_interacted_with : int = 0
 
 # var _event_name:String = ""
 
-@onready var current_event = Event.WIDOWS_HOUSE_NIGHT
+@onready var current_event = Event.LAST_MORNING
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
