@@ -6,7 +6,7 @@ class_name NPCSpawner
 @export var spawn_location:Vector2
 @export var travel_locations: Array[Chair]
 @export var max_npcs: int = 3
-@export var spawn_interval: float = 1.0
+@export var spawn_interval: float = 8.0
 @onready var animation_player: AnimatedSprite2D = $AnimatedSprite2D
 
 

@@ -68,14 +68,10 @@ func handle_holding_item_state() -> void:
 			current_chair_target = key
 			customer_want.erase(key)
 			travel_to_anim("PickupCarry", Vector2(0, 1))
-			await get_tree().create_timer(0.5).timeout
-			_on_wait_timer_timeout()
+			$NavigationAgent2D.target_desired_distance = 25
+			travel_to_position = current_chair_target.global_position
+			state = NPCState.BAKER_DELIVERING
 			break
-
-func _on_wait_timer_timeout() -> void:
-	$NavigationAgent2D.target_desired_distance = 20
-	travel_to_position = current_chair_target.global_position
-	state = NPCState.BAKER_DELIVERING
 
 func handle_delivering_state() -> void:
 	travel_to_anim("WalkCarry", old_velocity)

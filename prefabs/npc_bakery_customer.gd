@@ -21,7 +21,11 @@ func _ready() -> void:
 	brownie.visible = false
 	cookie.visible = false
 	state = NPCState.BASIC_PATH_FINDING
-	want = food.pick_random()
+
+	if spawner:
+		want = food[spawner.total_spawned - 1]
+	else:
+		want = food.pick_random()
 	want_label.visible = false
 
 func _physics_process(_delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene load_steps=46 format=4 uid="uid://n1ucfylsjlbl"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
@@ -718,6 +718,9 @@ sources/2 = SubResource("TileSetAtlasSource_mwicy")
 sources/3 = SubResource("TileSetAtlasSource_ku7ja")
 sources/4 = SubResource("TileSetAtlasSource_jqod6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwicy"]
+size = Vector2(58, 20)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw8w0"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 30
@@ -795,6 +798,8 @@ travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath
 
 [node name="Player" parent="." instance=ExtResource("7_eyyg0")]
 position = Vector2(24, 47)
+collision_layer = 2057
+collision_mask = 2049
 
 [node name="NPC_Baker" parent="." instance=ExtResource("15_jjlq4")]
 position = Vector2(-56, 96)
@@ -878,6 +883,15 @@ y_sort_enabled = true
 position = Vector2(-47, -176)
 tile_map_data = PackedByteArray("AAD8/xAAAgAAABwAAAD9/xQABAANACEAAAD9/xcABAANACEAAAABABQABAANACEAAAADABAAAQAOAAMAAAAGABAAAwAJAAcAAAAHABIAAAAIAAQAAAAJABAAAgANABUAAAA=")
 tile_set = SubResource("TileSet_mwicy")
+
+[node name="KitchenBarrier" type="StaticBody2D" parent="."]
+position = Vector2(-249.042, 152.561)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenBarrier"]
+position = Vector2(196.042, -48.5606)
+shape = SubResource("RectangleShape2D_mwicy")
 
 [node name="HelpLabels" type="Control" parent="."]
 layout_mode = 3
