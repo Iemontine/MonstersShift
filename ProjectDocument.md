@@ -103,13 +103,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 **Add a link to the full results of your gameplay tests.**
 **Summarize the key findings from your gameplay tests.**
 
-## Visual Design & User Interface (Briana)
-
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
-**Add an entry for each platform or input style your project supports.**
-**List your assets, including their sources and licenses.**
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+## Visual Design & UI (Briana)
 
 ### Dialogic:
 As mentioned in [Narrative Design](https://github.com/Iemontine/MonstersShift/blob/main/ProjectDocument.md#narrative-design-briana), Dialogic was our main tool to communicate narrative to the user through world interactions. Initially, the Dialogic template of "Speaker Textbox Style" was used to create basic textboxes but the following adjustments were made to make it more customzied:
@@ -121,8 +115,8 @@ As mentioned in [Narrative Design](https://github.com/Iemontine/MonstersShift/bl
 <img width="1561" alt="Screenshot 2024-12-11 at 10 26 46 PM" src="https://github.com/user-attachments/assets/4ebe1ace-9b84-4811-8abc-b58f2f3bb5c2" />
 All of these dialogue visual design choices were made to create a unique game feel.
 
-  * General dialogue styles were made: one dialogue box would have a portrait for speakers while the other box was for general narration. [See here](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Styles)
-  * Character styles had to be set up for the three different characters: player, widow, and baker. This involved adding different portraits and changing their display name. [See here](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Characters)
+  * General dialogue styles were made: one dialogue box would have a portrait for speakers while the other box was for general narration. [See here.](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Styles)
+  * Character styles had to be set up for the three different characters: player, widow, and baker. This involved adding different portraits and changing their display name. [See here.](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Characters)
   <img width="999" alt="Screenshot 2024-12-11 at 10 29 16 PM" src="https://github.com/user-attachments/assets/4d71aef4-6633-47ca-aa78-91220fa0d720" />
 
 ### Portrait Creation
