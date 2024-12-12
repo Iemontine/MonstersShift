@@ -112,20 +112,24 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ### Dialogic:
-As mentioned in [Narrative Design](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana), Dialogic was how the user was able to interact with the world to get narrative. Initially, the Dialogic template of "Speaker Textbox Style" was used to create basic textboxes but the following adjustments were made to make it more customzied:
-  * The background was changed to a brown, wooden texture. This required making a custom layer inside the dialogue styles and adjusting the background and size of the pre-existing box.
-  * Originally
-  * Custom dialogue boxes (background, font, portrait frame)
-  
-  
-  * Set up character styles (player, widow, baker)
-  * Set up general dialogue styles (speaker vs non-speaker)
-  * Changed the dialogue choices to different appearance that fit the dialogue boxes
-  * Other dialogic items discussed [above](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana)
+As mentioned in [Narrative Design](https://github.com/Iemontine/MonstersShift/blob/main/ProjectDocument.md#narrative-design-briana), Dialogic was our main tool to communicate narrative to the user through world interactions. Initially, the Dialogic template of "Speaker Textbox Style" was used to create basic textboxes but the following adjustments were made to make it more customzied:
+  * The background was changed to a brown, slightly shadowed texture. This required making a custom layer inside the dialogue styles and adjusting the background and size of the pre-existing box.
+  * Originally, there was not a clear border around the character portrait. So, I decided to find a frame asset that would stand out from the background but still be simple - leading to a white square frame.
+  * We used a special font that looked like doodles the character might be making as if she was taking notes.
+  * For the centered dialogue choices, I changed the background to be a similar brown to the large dialogue box.
+    
+<img width="1561" alt="Screenshot 2024-12-11 at 10 26 46 PM" src="https://github.com/user-attachments/assets/4ebe1ace-9b84-4811-8abc-b58f2f3bb5c2" />
+All of these dialogue visual design choices were made to create a unique game feel.
+
+  * General dialogue styles were made: one dialogue box would have a portrait for speakers while the other box was for general narration. [See here](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Styles)
+  * Character styles had to be set up for the three different characters: player, widow, and baker. This involved adding different portraits and changing their display name. [See here](https://github.com/Iemontine/MonstersShift/tree/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/dialogic/Characters)
+  <img width="999" alt="Screenshot 2024-12-11 at 10 29 16 PM" src="https://github.com/user-attachments/assets/4d71aef4-6633-47ca-aa78-91220fa0d720" />
 
 ### Portrait Creation
 We wanted to follow the classic style of having a character portrait for dialogue, similar to how Stardew Valley has their portraits. This feature brings more life to the game because the higher detail helps the player see a full character and not just a simple sprite. After Darroll designed the sprites with the group's feedback, I was able to take them and design character portraits. The process was done all on paper and involved sketching, outlining, and coloring to fit the sprites.
+
 ![image](https://github.com/user-attachments/assets/44acd39a-ac0c-4454-9841-7141b9f91970)
+
 After scanning in my drawings, I was able to send them to Katherine who placed them in game after she added pixelation and different facial expressions. Once in game, I was able to use Dialogic's character design feature to resize and move around the portraits to fit perfectly in the created frame.
 
 ### Assets Used:
