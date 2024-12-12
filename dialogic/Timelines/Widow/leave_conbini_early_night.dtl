@@ -1,0 +1,8 @@
+# if you try to leave the conbini before getting the drink this plays 
+[signal arg="control"]
+do PlayerController.stop()
+do PlayerController.moveUp()
+[wait time="0.2"]
+do PlayerController.stop()
+player (neutral): I should grab a drink before I go.
+[signal arg="uncontrol"]

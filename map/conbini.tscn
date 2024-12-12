@@ -3182,10 +3182,10 @@ hint_texture = ExtResource("22_mt0kk")
 correct_index = 2
 
 [node name="GroceryItemNight" parent="." instance=ExtResource("10_34ohj")]
+visible = false
 z_index = 1
 position = Vector2(176, -232)
 script = ExtResource("23_bkel7")
-enabled = true
 sprite_1 = ExtResource("24_mt0kk")
 sprite_2 = ExtResource("25_4b6yk")
 sprite_3 = ExtResource("26_k0ype")
