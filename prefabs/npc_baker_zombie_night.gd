@@ -1,5 +1,8 @@
 extends NPC
 class_name BakerNPCNight
+
+#check the _on_dialogic_signal function to change damage
+#BAD CODE ALERT!!!
 @export var attack_damage:float = 2
 
 @onready var agent_2d: NavigationAgent2D = $NavigationAgent2D
@@ -29,6 +32,7 @@ var food_at_window:bool = false
 
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	baker_want = food.pick_random()
 	travel_to_position = global_position
 	state = NPCState.BAKER_GO_TO_DOOR
@@ -108,9 +112,15 @@ func _contains_string_in_dict(target_string: String, dictionary: Dictionary) -> 
 			return true
 	return false
 
-
 func _on_eat_timer_timeout() -> void:
 	state = NPCState.BAKER_GO_TO_DOOR
 	eat_timer.stop()
 	baker_want = food.pick_random()
 	want_label.text = baker_want
+	
+func _on_dialogic_signal(argument:String):
+	if argument == "damage_zero":
+		attack_damage = 0
+	elif argument == "return_damage":
+		attack_damage = 2
+		
