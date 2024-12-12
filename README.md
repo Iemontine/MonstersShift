@@ -1,4 +1,4 @@
-# "Monsters' Shift"
+# Monsters' Shift
 
 ## Summary ##
 **Monsters' Shift is a town-life RPG with a cute and friendly vibe... but there is something sinister lying in wait. Explore Cedar City and uncover it's inhabitants secrets. Offer a helping hand to the townspeople and solve your own personal mystery at the same time -- just stay safe...
@@ -14,8 +14,8 @@
 * Learn about our game and read our documentation [here](https://github.com/Iemontine/MonstersShift/blob/main/ProjectDocument.md#monsters-shift).
 
 ## Credits ##
-* Narrative Design / Visual Design & UI - Briana Fedkiw	
 * Producer / Gameplay Testing - Darroll Saddi	
+* Narrative Design / Visual Design & UI - Briana Fedkiw	
 * Game Logic / Game Feel - Duy Nguyen	
 * Animation & Visuals	/ Press Kit, Trailer, & Narrative - Katherine Li	
 * Game Logic & Game Feel / Music - Matthew Fulde	
