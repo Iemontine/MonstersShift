@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bt38gs1l0k6ak"
-path="res://.godot/imported/Midnight.mp3-093b1847adff825a5c7b3bece3fcc084.mp3str"
+path="res://.godot/imported/Midnight.mp3-0ed146857e2e5a40a1fbd31ba13330d9.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Midnight.mp3"
-dest_files=["res://.godot/imported/Midnight.mp3-093b1847adff825a5c7b3bece3fcc084.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Midnight.mp3"
+dest_files=["res://.godot/imported/Midnight.mp3-0ed146857e2e5a40a1fbd31ba13330d9.mp3str"]
 
 [params]
 

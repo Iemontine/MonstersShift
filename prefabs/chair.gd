@@ -9,9 +9,9 @@ var occupied:bool = false
 
 @onready var baker:BakerNPC = $"../NPC_Baker"
 
-#func _ready() -> void:
-#	if get_parent().get_node_or_null("NPC_Baker") is BakerNPC:
-#		baker = get_parent().get_node_or_null("NPC_Baker")
+func _ready() -> void:
+	if get_parent().get_node_or_null("NPC_Baker") is BakerNPC:
+		baker = get_parent().get_node_or_null("NPC_Baker")
 
 func _on_body_entered(body: Node) -> void:
 	# Check if the body that entered is a NPCBakeryCustomer

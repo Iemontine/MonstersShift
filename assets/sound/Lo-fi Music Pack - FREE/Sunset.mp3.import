@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c72x2mlvfck8u"
-path="res://.godot/imported/Sunset.mp3-2caab9bb76687b81de19f55d1d65b155.mp3str"
+path="res://.godot/imported/Sunset.mp3-7ff85b3731148703d4e0f919dc91e0bc.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Sunset.mp3"
-dest_files=["res://.godot/imported/Sunset.mp3-2caab9bb76687b81de19f55d1d65b155.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Sunset.mp3"
+dest_files=["res://.godot/imported/Sunset.mp3-7ff85b3731148703d4e0f919dc91e0bc.mp3str"]
 
 [params]
 

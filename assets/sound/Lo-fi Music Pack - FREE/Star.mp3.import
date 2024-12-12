@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dxpvof003um7g"
-path="res://.godot/imported/Star.mp3-9aab75d2ef6a71c1060420914d86975c.mp3str"
+path="res://.godot/imported/Star.mp3-380bb153f82f9512344894f668b5f074.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Star.mp3"
-dest_files=["res://.godot/imported/Star.mp3-9aab75d2ef6a71c1060420914d86975c.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Star.mp3"
+dest_files=["res://.godot/imported/Star.mp3-380bb153f82f9512344894f668b5f074.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://kebia4sww6h6"
-path="res://.godot/imported/Rooftop.mp3-5faec72f5bcbb8c1e36ce1c89703e06e.mp3str"
+path="res://.godot/imported/Rooftop.mp3-d1b16046ac07faaa992392e9a9659148.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Rooftop.mp3"
-dest_files=["res://.godot/imported/Rooftop.mp3-5faec72f5bcbb8c1e36ce1c89703e06e.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Rooftop.mp3"
+dest_files=["res://.godot/imported/Rooftop.mp3-d1b16046ac07faaa992392e9a9659148.mp3str"]
 
 [params]
 

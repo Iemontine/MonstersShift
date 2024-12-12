@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b8ujll4eujibh"
-path="res://.godot/imported/Stroll.mp3-57faad58334be7860dd6c56bd7aac9f4.mp3str"
+path="res://.godot/imported/Stroll.mp3-a9f26602d0830e4a23ca8f7d3e9c2467.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Stroll.mp3"
-dest_files=["res://.godot/imported/Stroll.mp3-57faad58334be7860dd6c56bd7aac9f4.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Stroll.mp3"
+dest_files=["res://.godot/imported/Stroll.mp3-a9f26602d0830e4a23ca8f7d3e9c2467.mp3str"]
 
 [params]
 

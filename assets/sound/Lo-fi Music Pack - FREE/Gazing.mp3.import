@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bc5tckabf1g2v"
-path="res://.godot/imported/Gazing.mp3-4210d4ab753ae7b910266a04508688c2.mp3str"
+path="res://.godot/imported/Gazing.mp3-f57fd25c6703d5a298392a2cdbca1fac.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Gazing.mp3"
-dest_files=["res://.godot/imported/Gazing.mp3-4210d4ab753ae7b910266a04508688c2.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Gazing.mp3"
+dest_files=["res://.godot/imported/Gazing.mp3-f57fd25c6703d5a298392a2cdbca1fac.mp3str"]
 
 [params]
 
