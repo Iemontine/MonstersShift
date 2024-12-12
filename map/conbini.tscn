@@ -3103,7 +3103,6 @@ event = 26
 scene = "leave_conbini_early"
 destination_scene = "Town"
 target_door = "Door_Conbini2"
-required_hold_time = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini1"]
 z_index = 1
@@ -3131,7 +3130,6 @@ event = 26
 scene = "leave_conbini_early"
 destination_scene = "Town"
 target_door = "Door_Conbini1"
-required_hold_time = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Conbini2"]
 z_index = 1

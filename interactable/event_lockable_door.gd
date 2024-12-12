@@ -8,6 +8,6 @@ func _on_interacted() -> void:
 	if StoryManager.current_event >= event:
 		super()
 	else:
-		PlayerController.start_cutscene(dialogue)
+		PlayerController.start_cutscene(scene)
 	
 	pass
