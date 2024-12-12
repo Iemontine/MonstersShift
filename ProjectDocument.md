@@ -23,6 +23,9 @@ If your project contains code that: 1) your team did not write, and 2) does not 
 
 If you used tutorials or other intellectual guidance to create aspects of your project, include reference to that information as well.
 
+
+* Generally, we met once or twice a week in person to organize a general game plan and to discuss what we each were working on. We also maintained constant contact through Discord keeping each other up to date.
+
 # Main Roles #
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
@@ -41,26 +44,32 @@ You should replay any **bold text** with your relevant information. Liberally us
 **Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
 
 ## Narrative Design (Briana)
+Our game included approximately 40 story events. For about 95% of them, I covered their creation, conversion into dialogic, and connection to the gameplay. Dialogic was incredibly important in creating and displaying our main narrative. Cutscenes would occur in three different cases:
+* Scene transitions - works with the [Scene Manager](https://github.com/Iemontine/MonstersShift/blob/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/scripts/scene_manager.gd)
+* Interactables - works with the [Interactable Class](https://github.com/Iemontine/MonstersShift/blob/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/interactable/interactable.gd)
+* Area Triggers - works with Area2D nodes
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+### Story Content
+Since our game is heavily story-based, we needed to find a way to communicate all important narrative and directions. Through the use of dialogue, the player can gleam everything they need to know about the game if they read carefully. Also, dialogue was used to lead the player in correct directions. For example, after waking up on the second day, we encourage the player to visit the fountain in town so they can initiate the next story event ([see here](https://github.com/Iemontine/MonstersShift/blob/287d32d56b9d9b47556dfe263e53960ffcba4708/dialogic/Timelines/Widow/day_two_morning.dtl)). For the [introduction](https://github.com/Iemontine/MonstersShift/blob/287d32d56b9d9b47556dfe263e53960ffcba4708/dialogic/Timelines/intro.dtl), I worked with Katherine, who drew the actual images, to give the player all necessary background.
 
-### Descriptions
-NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
+<img width="472" alt="Screenshot 2024-12-11 at 11 35 45 PM" src="https://github.com/user-attachments/assets/39d7b620-4b27-4f9b-a1f1-f7d49e523c4c" />
 
-* For 37 story events, covered their creation, conversion into dialogic, and connection to the gameplay --> See all below sections
-* * Dialogic was incredibly important in creating and displaying narrative - discussed [below](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#visual-design--user-interface-and-input-briana)
-  
+### Story Manager
+To better organize the story, Darroll created a basic template for a [story manager](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd). Since our story is generally linear, we created an enum to hold all the story events. As I created dialogue, I added events to this [enum list](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L5-L19) so that cutscenes could appropiately be called later.
+
+### Scene Transition Story Events
+The scene transition story events were done using a combination of the story manager and the scene manager (developed by Darroll, Duy, and Matthew). The story manager was connected to the scene manager so when a scene transition occurs, a story event may or not play. Using the enums I created earlier, I determined which events needed to play on scene transitions and implemented them in the function [here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L37). Using a [match to current event](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L39) statement, I found what event was the last to occur. If it was a scene transition event, I would check what scene was currently switched to, and if it was the correct scene, the story transitions to the new event and a cutscene is played. For example, after leaving the bakery in evening, a player sleep cutscene will only play once the player goes inside the treehouse ([see here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L76-L79).
+
+The scene manager was also used for a few other narrative purposes. 
+
 * StoryManager holds all events in an enum --> these enums are used to access different story events
   * Scene transition story events
   * Interactable story events
   * Area trigger story events
-* Wrote almost all dialogue (edits and adjustments from other creators)
-  * Dialogue gives most of the story, very important to read
-  * Also is used to direct the player in the correct directions
-  * Introduction was created in conjunction with Katherine who drew the pictures - gives player story set up
 * Improving dialogue feel
   * Use of sound effects inside cutscenes
   * Use of animations & movement inside cutscenes (npc/player controllers --> added a few functions to what Darroll created)
+* Adding preventative dialogue / filler dialogue / hiding sprites before dialogue
 * Use of Matthew's scene manager
   * Force switching scenes to get player to correct location for story
   * Day/night cycles used for passage of time
@@ -68,7 +77,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 
 
 ### Assets Used:
-* [Dialogic](https://github.com/dialogic-godot/dialogic)
+* [Dialogic](https://github.com/dialogic-godot/dialogic) - License: [MIT License](https://github.com/dialogic-godot/dialogic/blob/main/LICENSE)
 * [Zombie Sounds](https://terrorbytegames.itch.io/zombie-massacre-sound-effects-starter-pack) by itch.io user TerrorByteGames - License given by the creator
 * [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
