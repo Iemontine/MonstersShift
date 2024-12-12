@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxpvof003um7g"
+path="res://.godot/imported/Star.mp3-9aab75d2ef6a71c1060420914d86975c.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Star.mp3"
+dest_files=["res://.godot/imported/Star.mp3-9aab75d2ef6a71c1060420914d86975c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

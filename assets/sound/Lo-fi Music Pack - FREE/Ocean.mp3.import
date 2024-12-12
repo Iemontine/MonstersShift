@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buqvycsqp2v5w"
+path="res://.godot/imported/Ocean.mp3-00699dc6f8fedac5f1405c425f997665.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Ocean.mp3"
+dest_files=["res://.godot/imported/Ocean.mp3-00699dc6f8fedac5f1405c425f997665.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

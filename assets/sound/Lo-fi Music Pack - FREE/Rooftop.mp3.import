@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kebia4sww6h6"
+path="res://.godot/imported/Rooftop.mp3-5faec72f5bcbb8c1e36ce1c89703e06e.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Rooftop.mp3"
+dest_files=["res://.godot/imported/Rooftop.mp3-5faec72f5bcbb8c1e36ce1c89703e06e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
