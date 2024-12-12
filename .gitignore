@@ -6,3 +6,4 @@
 assets/tileset/
 assets/characters/
 .DS_Store
+*.dll

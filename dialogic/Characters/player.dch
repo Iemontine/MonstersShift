@@ -8,12 +8,12 @@
 "sound_moods": {},
 "style": "speaker_dialogue"
 },
-"default_portrait": "smile",
+"default_portrait": "Default",
 "description": "",
 "display_name": "Me",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 30),
+"offset": Vector2(0, 0),
 "portraits": {
 "Default": {
 "export_overrides": {
