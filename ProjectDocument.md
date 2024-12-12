@@ -44,6 +44,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 My main role was organizing discussion about game development and ideation, integrating group ideas into the larger project while facilitating the discussion of project development as a whole.
 * I also managed the GitHub repository, creating file management standards, merging changes and taking care of the **over 400 commits** it took to bring the project to a satisfying state.
 * Managing 5 other teammates' branches involved thorough communication and understanding of what is within each repo and commit history, in addition to quickly and efficiently review changes, ensuring minimal code breaking during a merge.
+* What often works best is to communiate to your teammates what you expect from a merge. Committing frequently is important to denote what exactly you changed, helping reviewers merge faster. Additionally, ensuring that only files that one intends to change, are actually committed with changes, is also a nice bonus for the person who has to merge branches together. It is MOST easy if developers merge main into their branch before requesting their branch be merged, as this accelerates the merging process significantly.
 
 Wanting to start as early as possible, I led the team in an **Agile software development process**. 
 * This involved creating a rough plan of what we wanted to accomplish early on, with more specific and numerous goals written down as to be completed ASAP during a weekly/biweekly sprint.
@@ -55,20 +56,21 @@ Wanting to start as early as possible, I led the team in an **Agile software dev
 | * darroll: movement, interaction with objects & object framework, imported dialogic textboxes, object framework, set up autotiles <br> * kat: rough town/world layout <br> * duy: transitioning between scenes | * briana/kat: writing intro cutscenes, some dialog <br> * darroll: create a test minigame scene <br> * kat: fill up the design documents <br> * matthew: minigame/quest manager <br> * darroll: framework for characters with different clothing options & colors <br> * darroll: map dev, simple day-night effects, fleshing out load zones <br> * duy: figure out cutscene manager workflow | * everyone: flesh out both minigame mechanics <br> * kat/bri: choose art style (for drawings & ui) <br> * darroll: create sprites for each character <br> * briana: set up dialogue boxes in ui, add dialogue and add sound effects/music to it <br> * matthew: save manager <br> * darroll: town collisions completed, added interactable click+hold behavior, item factories, carryable items, crafting system, improved cutscene authoring tools <br> * bri: character sketches <br> * kat: documentation <br> * duy: baker minigame proof of concept | * briana: finish drawing character photos, start implementing the code to run cutscenes <br> * noel: implement main menu <br> * matthew: setting up quests including: starting the baker/widow full day interactions, night time, work with writers to line up with story <br> * kat: edit character photos <br> * darroll: implement widow game <br> * duy: implement the npcs movement & ordering the baker game | horror mechanics at night time <br> * duy: finish baker & night time <br> * darroll: finish widow & night time <br> * bri: finish writing cutscenes, adding triggers for cutscenes, managing story <br> * kat: draw cutscene photos, widow minigame art (?), finish up the treehouse interior, additional documentation(?) <br> * matthew: help bri connect cutscenes together <br> * noel: add background to main menu <br> * side tasks: matthew: investigate music | * kat: press kit <br> testing, polish, debugging, and final adjustments for submission <br> * styling <br> * someone: music, sound effects <br> *  [more things we didn't write down in the final week] |
 
 I also developed many of the important infrastructure tools from the ground up that made our project surrounding around a narrative and minigames, a success:
-### **Interactables**
+### **[Interactables](https://github.com/Iemontine/MonstersShift/tree/3a2e94b41a7945ed5247a9bd1240382e1b072555/interactable)**
 Common superclass that allows for objects to be interacted with by the player, including carryable items, NPCs, and objects. I also made a nice interface for interactables that you have to hold the interact key on to use, which only ended up being used for the Cuttingboard in the Baker minigames but it was as nice addition. I also implemented the ability to carry objects (as seen in the Bakery minigames), utilizing the factory pattern to generate an endless stream of carryable items in those minigames. 
+
+<img width="500" alt="Character Designer" src="https://github.com/user-attachments/assets/d7c237ff-dc23-4e7f-89eb-641cf48c656f" />
+
 ### **Cutscene Authoring Tools**
 I created the interfaces for player and NPC movement, and further implemented two Controller classes that allow cutscene authors to produce animated character interactions and cutscenes. These controller classes were based on Duy's early attempts to prompt the player to move in certain ways during a Dialogic cutscene in reaction to a signal released telling the player to then play a predefined set of actions. I revamped this to use the function calling feature of Dialogic to allow cutscene authors to directly write in the cutscene performance into a cutscene file (.dtl). I also used the NPCController for interesting effects during the Widow game such as when they jumpscare or divert the player away from the treehouse. As easy as I might be making it sound, it was extremely complicated to handle various player and NPC states, juggling the necessary constraints required for animations and movement animations to play in different conditions and minigame scenarios. These tools evolved as Bri, the primary cutscene designer, found need for more features.
 ### **Character Designer**
 Using the assets provided in a character asset pack we acquired, I imported the necessary animation trees and sprites and further implmented an easy way to set the clothing style of and clothing shader of our three main characters. I translate rough character ideas and sketches into sprite designs, which ended up being used as their final character designs.
 <img width="600" alt="Character Designer" src="https://github.com/user-attachments/assets/51543b46-988f-4d53-9b8c-4aa9712873a7" />
 <img width="250" alt="Character Designer" src="https://github.com/user-attachments/assets/b5353e68-2c82-4000-88c2-63f581f935b7" />
-### **Story Manager**
+### **[Story Manager](https://github.com/Iemontine/MonstersShift/blob/3a2e94b41a7945ed5247a9bd1240382e1b072555/scripts/story_manager.gd)**
 Manages current position in the story, allows for enabling/disabling of cutscene triggers or interactables. The enum list style of managing the current event was nice because it allowed for easy comparisons between the current event in relation to other events in the linear story.
-### **Scene Switcher**
+### **[Scene Switcher](https://github.com/Iemontine/MonstersShift/blob/3a2e94b41a7945ed5247a9bd1240382e1b072555/scripts/scene_manager.gd)**
 Based on Duy's early loadzone dev, I created a robust scene switching framework supporting doors and loadzones. The scene switching code can be called directly, emitting a "_on_scene_transition_complete" signal that was paramount in controlling the state, music, and appearance of the scene being loaded into. I revamped the loadzone code to be more robust against different entry directions, and also wrote the necessary code for doors, which leverage Interactable to allow a player to not only tranisition into a new scene, but teleport to a specific defined location (e.g. the other end of the door).
-### **Dialogic Integration**
-I helped bring in the necessary code integrations that allowed Dialogic to be used throughout the game.
 ### Map development
 Using the Interior and Exterior game assets we acquired, I helped create the world and game environments through a very iterative ideation-improve process. An easily overlookable part of this is having to set up the y-sorting (making it so the player properly renders above or below a sprite depending on how far above or below they are in the sprite, giving the illusion of depth) and collisions **per sprite, per level**. I often had to backtrack to optimize the tileset for size and complexity. Grouping together sprites, putting physics on Tileset entities themsleve,s and also ensuring that only the sprites being used are registered within the atlas were realizations I wish I had made early on, and would have helped avoid uselessly lost time. Here are some of the exteriors I mapped out and designed, with the help of Kat in ideation:
 #### Treehouse Exterior
@@ -77,32 +79,36 @@ Using the Interior and Exterior game assets we acquired, I helped create the wor
 #### Conbini
 <img width="600" alt="" src="https://github.com/user-attachments/assets/379a6e0f-4cfb-45a3-b1e0-379dc6281efc" />
 
-(show flickering lights)
 #### City/Town
 <img width="600" alt="" src="https://github.com/user-attachments/assets/40bcb381-1c55-4b38-8c11-5572e18795da" />
 
 ### Widow Minigames
-I fully implemented the Widow night time sequence, complete with fading music, and sound effects. I found time to introduce this binaural panning thing when the Widow is attacking the player on the left and right side of the screen, matching up to which ear they hear the widow coming from.
+Inside the Conbini which is a part of the Widow minigame, the player has to respond to popups for them to choose an item from the grocery store. These popups taught me how to use Tweening, an extremely useful tool that can animate any or most properties of a variety of node types between two values. This was particularly helpful for moving the paper and hint up and down, setting the transparency of the Widow when she attacks the player, or fading the music in/out during that sequence. Tweening also supports different transition effects, including EASE_IN, BOUNCE, or ELASTIC.
+
+https://github.com/user-attachments/assets/4bcb89d7-ca86-4230-b3f7-346d8ed68bd3
+
+I also made this cool flickering lights effect when visiting the Conbini at Night time, where I sampled a noise texture over time to provide the energy level of the lights that flicker.
+
+![Conbini at Night](https://github.com/user-attachments/assets/41ad77da-0c87-4fc5-8ea2-ef35af18cd6f)
+
+On the note of the Widow encounter and minigames, I created this QTE popup that animates onto the screen. The way I implemented this was by defining a speed curve at which the arrow we travel at each of the possible x values it can take along the length of the bar, then when the player clicks Interact, the arrow stops and I check for collisions. I implemented a game timer and QTE timer, such that I track how many second have passed in total useful for queueing up a new QTE and how many seconds the player has left in the current QTE before they automatically fail. Duy created the pixel art for both the daytime and nightime bar, and created the cool nighttime arrow. I extended the QTE day logic, which a simpler version of the night time version that does not involve getting killed or attacked, for the QTE at night version.
+![QTE in the editor, hitboxes visible](https://github.com/user-attachments/assets/17d8b90e-65b4-4b19-9e2c-45536a4f93de)
+
+Finally, I fully implemented the Widow night time sequence, complete with NPC animations, music transitions, and sound effects. I found time to introduce this binaural panning thing when the Widow is attacking the player on the left and right side of the screen, matching up to which ear they hear the widow coming from.
 
 https://github.com/user-attachments/assets/15aa1f12-de69-4b9e-a38f-6237236cfb72
 
-On the note of the Widow encounter and minigames, I created this QTE popup that animates onto the screen. The way I implemented this was by defining a speed curve at which the arrow we travel at each of the possible x values it can take along the length of the bar, then when the player clicks Interact, the arrow stops and I check for collisions. I implemented a game timer and QTE timer, such that I track how many second have passed in total useful for queueing up a new QTE and how many seconds the player has left in the current QTE before they automatically fail. Duy created the pixel art for both the daytime and nightime bar, and created the cool nighttime arrow.
-![image](https://github.com/user-attachments/assets/17d8b90e-65b4-4b19-9e2c-45536a4f93de)
-
-
-
 ### Bug/Helping Fixes
 In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
-1) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
-2) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
-3) Adding interesting sprites to the convenience store grocery items
-4) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
-5) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
-6) Fixing and reworking the Baker as an interactable with pathfinding
-7) Determining missing assets, file organization
-
-**Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
-
+1) Integrating necessary code that allowed Dialogic to be used throughout development
+2) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
+3) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
+4) Adding interesting sprites to the convenience store grocery items
+5) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
+6) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
+7) Fixing and reworking the Baker as an interactable with pathfinding
+8) Determining missing assets, file organization
+   
 ## Narrative Design (Briana)
 Our game included approximately 40 story events. For about 95% of them, I covered creation, conversion into dialogic, and connection to the gameplay. Dialogic was incredibly important in creating and displaying our main narrative. Cutscenes would occur in three different cases:
 * Scene transitions - works with the [Scene Manager](https://github.com/Iemontine/MonstersShift/blob/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/scripts/scene_manager.gd)
@@ -153,7 +159,6 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 * [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
 * [Character Animations](https://seliel-the-shaper.itch.io/farmer-base) by itch.io user Seliel the Shaper - License: [Mana Seed User License](https://selieltheshaper.weebly.com/user-license.html)
-
 
 
 ## Animation & Visuals (Katherine)
