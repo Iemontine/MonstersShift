@@ -13,7 +13,7 @@
 &"display_name": "The Baker",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(-5, 2),
 &"portraits": {
 "Default": {
 "export_overrides": {
@@ -71,5 +71,5 @@
 "scene": ""
 }
 },
-&"scale": 1.0
+&"scale": 1.25
 }

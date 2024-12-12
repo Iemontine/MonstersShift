@@ -13,7 +13,7 @@
 &"display_name": "Me",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(0, -2),
 &"portraits": {
 "Default": {
 "export_overrides": {
@@ -61,5 +61,5 @@
 "scene": ""
 }
 },
-&"scale": 1.0
+&"scale": 1.25
 }

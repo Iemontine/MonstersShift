@@ -13,7 +13,7 @@
 &"display_name": "The Widow",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(0, 10),
 &"portraits": {
 "Default": {
 "export_overrides": {
@@ -62,5 +62,5 @@
 "scene": ""
 }
 },
-&"scale": 1.0
+&"scale": 1.25
 }
