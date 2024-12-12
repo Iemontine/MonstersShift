@@ -43,9 +43,12 @@ func _physics_process(delta):
 		state = PlayerState.CONTROLLED
 		_on_path_follow_timeout(delta)
 
-	if state == PlayerState.LOCKED: return
-
 	move_interact_box()
+
+	if state == PlayerState.LOCKED: 
+		return
+		
+
 	update_speed_and_animation()
 
 func _process(_delta: float) -> void:

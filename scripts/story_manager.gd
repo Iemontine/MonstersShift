@@ -23,7 +23,7 @@ var objects_interacted_with : int = 0
 
 # var _event_name:String = ""
 
-@onready var current_event = Event.INTRO
+@onready var current_event = Event.WIDOWS_HOUSE_NIGHT
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -57,18 +57,14 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene("exit_house_postarrival")
 		Event.READY_TO_EXIT:
-			# _event_name = "ready_to_exit"
 			if SceneManager.current_scene == "Treehouse_Exterior":
-				# _event_name = 
 				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene("exit_house_postarrival")
 		
 		Event.OUTSIDE_BAKERY:
-			# _event_name = "outside_bakery"
 			if SceneManager.current_scene == "Bakery_No_Game":
-				# _event_name = "first_enter_bakery"
 				StoryManager.transition_to_event(StoryManager.Event.FIRST_ENTER_BAKERY)
-				PlayerController.start_cutscene("baker_success_daytime_game")
+				PlayerController.start_cutscene("first_enter_bakery")
 		Event.BAKER_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Town":
 				StoryManager.transition_to_event(StoryManager.Event.LEAVING_BAKERY_EVENING)

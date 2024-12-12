@@ -52,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 			travel_to_position = spawner.global_position
 			agent_2d.target_position = travel_to_position
 			if agent_2d.is_navigation_finished():
-				spawner.animation_player.play_backwards("double door open")
+				spawner.animation_player.play_backwards("door_open")
 				chair.occupied = false
 				visible = false
 				spawner.npc_instances.erase(self)

@@ -12,6 +12,7 @@ class_name NPCSpawner
 
 var npc_instances: Array = []
 var spawn_timer: Timer
+var total_spawned: int = 0
 
 
 func _ready():
@@ -28,10 +29,11 @@ func _ready():
 		chair.occupied = false  # Ensure all chairs start as unoccupied
 
 func on_timer_completed():
-	if npc_instances.size() < max_npcs:
+	if total_spawned < max_npcs:
 		spawn_npc()
 
 func spawn_npc():
+	total_spawned += 1
 	animation_player.play("door_open")
 	# Spawn NPC
 	var npc_instance = npc_scene.instantiate()

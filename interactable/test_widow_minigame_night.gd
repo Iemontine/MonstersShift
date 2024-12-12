@@ -24,7 +24,16 @@ func _on_body_entered(_body:Object) -> void:
 			
 			PlayerController.control_player()
 			PlayerController.stop()
+
+			var scream_sound = preload("res://assets/assets_widow/scream-90747.mp3")
+			var scream_player = AudioStreamPlayer.new()
+			scream_player.stream = scream_sound
+			add_child(scream_player)
+			scream_player.play()
 			
+			# Play the specified track using MusicManager
+			MusicManager.play_custom_track("Distorted_Signal__BGM_DOVA-SYNDROME_OFFICIAL_YouTube_CHANNEL.mp3")
+
 			var widow : WidowNPC = NpcController.get_target_npc()
 			var glow = widow.get_node("Glow")
 			var camera: Camera2D = get_tree().current_scene.get_node("Camera2D")
@@ -46,3 +55,7 @@ func _on_body_entered(_body:Object) -> void:
 
 			var qte = get_tree().current_scene.get_node("QTE")
 			qte.start_minigame()
+
+
+func _on_player_path_follow_completed() -> void:
+	MusicManager.stop()
