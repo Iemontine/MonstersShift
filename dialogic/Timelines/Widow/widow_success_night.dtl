@@ -1,8 +1,8 @@
 # Happens when you win the widow's nighttime game
 [signal arg="control"]
 do PlayerController.stop()
-[background arg="res://dialogic/Images/transition.png" fade="2.0"]
-[wait time="2.0"]
+[background arg="res://dialogic/Images/transition.png" fade="4.0"]
+[wait time="4.0"]
 do PlayerController.set_player_position(3216, 319)
 do NpcController.set_target_npc("NPC_Widow")
 do NpcController.control_npc()

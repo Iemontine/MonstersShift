@@ -133,7 +133,7 @@ func handle_day_shift() -> void:
 			light.enabled = true
 			light.energy = 1.0
 		if surroundings:
-			surroundings.color = Color("#132771")
+			surroundings.color = Color("#313d9a")
 
 # func change_time_of_day(player:Player) -> void:
 # 	time_of_day = ( time_of_day + 1 ) % 3

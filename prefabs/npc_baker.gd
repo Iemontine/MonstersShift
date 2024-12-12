@@ -33,6 +33,11 @@ func _physics_process(_delta: float) -> void:
 		
 	agent_2d.target_position = travel_to_position
 	var current_agent_position = global_position
+	# TODO: E 0:00:08:0401   npc_baker.gd:36 @ _physics_process(): NavigationServer navigation map query failed because it was made before first map synchronization.
+	# NavigationServer 'map_changed' signal can be used to receive update notifications.
+	# NavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.
+	# <C++ Source>   modules/navigation/nav_map.cpp:129 @ get_path()
+	#  <Stack Trace>  npc_baker.gd:36 @ _physics_process()
 	var next_path_position = agent_2d.get_next_path_position()
 	var new_velocity = current_agent_position.direction_to(next_path_position) * 50
 	old_velocity = new_velocity
@@ -43,14 +48,17 @@ func _physics_process(_delta: float) -> void:
 			if player_in_area and Input.is_action_pressed("ui_accept"):
 				on_interacted()
 		NPCState.BAKER_HOLDING_ITEM:
+			#if wait_timer.is_stop():            # <--
+				#wait_timer.start(0.5)
 			travel_to_anim("WalkCarry", old_velocity)
 			carried_item.visible = true
 			for key in customer_want:
 				if customer_want[key] == carried_item_name:
-					# print(key)
+					print(key)
 					current_chair_target = key
-					travel_to_position = key.global_position
+					travel_to_position = key.global_position # <--	
 					customer_want.erase(key)
+					state = NPCState.BAKER_DELIVERING # <--
 					travel_to_anim("PickupCarry", Vector2(0,1))
 					break
 		NPCState.BAKER_DELIVERING:

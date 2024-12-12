@@ -3,8 +3,6 @@
 /android/
 .vscode/
 *.tmp
-assets/sound/
 assets/tileset/
 assets/characters/
-assets/ui_and_font/
 .DS_Store

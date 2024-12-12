@@ -36,9 +36,9 @@ func _process(_delta: float) -> void:
 		
 		# Check if player is on the wrong side of the widow
 		if (attack_direction == Vector2.LEFT and player.global_position.x < widow.global_position.x) or \
-		(attack_direction == Vector2.RIGHT and player.global_position.x > widow.global_position.x) and attack_mode_active:
+		(attack_direction == Vector2.RIGHT and player.global_position.x > widow.global_position.x):
+			print(attack_mode_active)
 			kill_player()
-			attack_mode_active = false
 
 func _on_body_entered(_body: Object) -> void:
 	if _body is Player: # TODO, add event check e.g. StoryManager.current_event < StoryManager.Event.EXIT_HOUSE_POSTARRIVAL
@@ -46,7 +46,7 @@ func _on_body_entered(_body: Object) -> void:
 		NpcController.set_target_npc("NPC_Widow")
 		
 		glow = NpcController.get_target_npc().get_node("Glow")
-		glow.visible = true
+		widow.activate_glow()
 
 		NpcController.setSpeed(50)
 		
@@ -71,6 +71,8 @@ func _on_body_exited(_body: Object) -> void:
 		attack_mode_active = false
 		NpcController.stop()
 		NpcController.uncontrol_npc()
+		
+		# TODO: make her fade away
 		widow.deactivate_glow()
 		
 		player.enable_sprint() # Enable sprinting
@@ -88,4 +90,4 @@ func kill_player():
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
 	StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_SECOND_FAIL)
-	PlayerController.start_cutscene("widow_night_fail_night")
+	PlayerController.start_cutscene("widow_night_second_fail")

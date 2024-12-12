@@ -11,10 +11,9 @@ func _on_body_entered(_body:Object) -> void:
 			NpcController.set_target_npc("NPC_Widow")
 			var widow : WidowNPC = NpcController.get_target_npc()	
 			widow.deactivate_glow()
-			
 			StoryManager.transition_to_event(StoryManager.Event.WIDOW_SUCCESS_NIGHT)
 			PlayerController.start_cutscene("widow_success_night")
-		else:
+		else:	# TODO: make more restrictive
 			StoryManager.transition_to_event(StoryManager.Event.LAST_MORNING)
 			PlayerController.start_cutscene("last_morning")
 	
