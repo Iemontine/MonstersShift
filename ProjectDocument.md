@@ -119,6 +119,12 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
   * Changed the dialogue choices to different appearance that fit the dialogue boxes
   * Other dialogic items discussed [above](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana)
 * Design & Draw portraits (Kat expanded on them)
+* ![image](https://github.com/user-attachments/assets/dd8e34a8-7b73-407a-ae54-548432dc237f)
+* ![image](https://github.com/user-attachments/assets/767af385-b2fb-43c7-a365-4924019e44ad)
+* ![image](https://github.com/user-attachments/assets/1c302575-6ee3-4998-868e-a10d8e933a89)
+
+
+
 
 ### Assets Used:
 * [Portrait Frames](https://gx310.itch.io/pxiel-art-ui-borders?download) by itch.io user GX310 - License given by the creator
