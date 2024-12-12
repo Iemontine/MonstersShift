@@ -1,4 +1,4 @@
-# Monsters' Shift #
+# Monsters' Shift - Project Document #
 
 ## Summary ##
 
@@ -6,7 +6,7 @@
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
+[Web-playable version of the game!](https://itch.io/)  
 [Trailer & Press Kit](https://youtube.com)  
 [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
