@@ -6,8 +6,9 @@
 
 ## Project Resources
 
-[Web-playable version of the game!](https://itch.io/)  
-[Trailer & Press Kit](https://youtube.com)  
+[Web-playable version of your game.](https://itch.io/)  
+[Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
+[Trailer]()
 [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
