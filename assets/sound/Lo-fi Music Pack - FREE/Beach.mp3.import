@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0bb8ro38lko3"
+path="res://.godot/imported/Beach.mp3-eaec73639ce1a8c6bac6a868594b66e6.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Beach.mp3"
+dest_files=["res://.godot/imported/Beach.mp3-eaec73639ce1a8c6bac6a868594b66e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

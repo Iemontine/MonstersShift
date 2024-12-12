@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/treehouse_interior.tscn"
+run/main_scene="res://map/bakery.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -64,6 +64,7 @@ directories/dtl_directory={
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "leaving_house_early": "res://dialogic/Timelines/HouseAreaPostIntro/leaving_house_early.dtl",
 "night_enter_conbini": "res://dialogic/Timelines/Widow/night_enter_conbini.dtl",
+"night_how_to_play": "res://dialogic/Timelines/Baker/night_how_to_play.dtl",
 "night_outside_bakery": "res://dialogic/Timelines/Baker/night_outside_bakery.dtl",
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/Timelines/Random/test.dtl",
@@ -103,7 +104,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-<<<<<<<HEADdirectories/dch_directory={
+directories/dch_directory={
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
@@ -235,4 +236,4 @@ load={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.255659, 0.255659, 0.255659, 1)
+environment/defaults/default_clear_color=Color(0.118581, 0.118581, 0.118581, 1)

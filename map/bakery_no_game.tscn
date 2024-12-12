@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://blxlu4i872gp8"]
+[gd_scene load_steps=50 format=4 uid="uid://blxlu4i872gp8"]
 
 [ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_j0gfo"]
 [ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_gjsla"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="19_h4eum"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="20_iwgm1"]
 [ext_resource type="Script" uid="uid://d10bt3xlv01ta" path="res://cutscenes/BakerArea/baker_cutscenes.gd" id="20_ojln8"]
+[ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="22_h04ho"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -868,38 +869,6 @@ collision_layer = 8
 collision_mask = 0
 script = null
 
-[node name="SugarFactory" parent="." instance=ExtResource("11_lss44")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-40, 15)
-item_name = "Sugar"
-item_texture = ExtResource("3_q1i20")
-item_region_rect = Rect2(32, 320, 16, 16)
-
-[node name="ChocolateFactory" parent="." instance=ExtResource("11_lss44")]
-z_index = 4
-y_sort_enabled = true
-position = Vector2(-8, 15)
-item_name = "Chocolate"
-item_texture = ExtResource("3_q1i20")
-item_region_rect = Rect2(0, 736, 16, 16)
-
-[node name="VanillaFactory" parent="." instance=ExtResource("11_lss44")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(24, 15)
-item_name = "Vanilla"
-item_texture = ExtResource("3_q1i20")
-item_region_rect = Rect2(32, 736, 16, 16)
-
-[node name="DoughFactory" parent="." instance=ExtResource("11_lss44")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(56, 15)
-item_name = "Flour"
-item_texture = ExtResource("3_q1i20")
-item_region_rect = Rect2(192, 464, 16, 16)
-
 [node name="Baker_Trashcan" parent="." instance=ExtResource("12_67438")]
 position = Vector2(-104, 29)
 
@@ -954,3 +923,68 @@ script = ExtResource("20_ojln8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Baker/BakerCutscenes"]
 position = Vector2(-74, 17)
 shape = SubResource("RectangleShape2D_hycbo")
+
+[node name="SugarFactory" parent="." instance=ExtResource("11_lss44")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-24, 15)
+item_name = "Sugar"
+item_texture = ExtResource("22_h04ho")
+item_region_rect = Rect2(64, 0, 16, 16)
+
+[node name="ItemSprite" parent="SugarFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="SugarFactory" index="2"]
+stream = null
+
+[node name="ChocolateFactory" parent="." instance=ExtResource("11_lss44")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(12, 15)
+item_name = "Chocolate"
+item_texture = ExtResource("22_h04ho")
+item_region_rect = Rect2(17, 0, 15, 16)
+
+[node name="ItemSprite" parent="ChocolateFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="ChocolateFactory" index="2"]
+stream = null
+
+[node name="VanillaFactory" parent="." instance=ExtResource("11_lss44")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(46, 15)
+item_name = "Vanilla"
+item_texture = ExtResource("22_h04ho")
+item_region_rect = Rect2(48, 0, 16, 16)
+
+[node name="ItemSprite" parent="VanillaFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="VanillaFactory" index="2"]
+stream = null
+
+[node name="DoughFactory" parent="." instance=ExtResource("11_lss44")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(80, 15)
+item_name = "Flour"
+item_texture = ExtResource("22_h04ho")
+item_region_rect = Rect2(80, 0, 16, 16)
+
+[node name="ItemSprite" parent="DoughFactory" index="0"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="DoughFactory" index="2"]
+stream = null
+
+[editable path="SugarFactory"]
+[editable path="ChocolateFactory"]
+[editable path="VanillaFactory"]
+[editable path="DoughFactory"]

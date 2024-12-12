@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=58 format=4 uid="uid://c2ssodjik8cd4"]
 
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
@@ -18,20 +18,21 @@
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="17_0cn4a"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="20_eaqha"]
-[ext_resource type="Script" path="res://prefabs/help_button.gd" id="20_v3vjk"]
+[ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="20_v3vjk"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
-[ext_resource type="Script" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
+[ext_resource type="Script" uid="uid://bm46n0dpyb20l" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
-[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
+[ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
 [ext_resource type="Texture2D" uid="uid://bwv67phb884jc" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_vertical_right_3.png" id="26_1a82g"]
-[ext_resource type="PackedScene" uid="uid://cr16u0s13lt8w" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
-[ext_resource type="Script" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
+[ext_resource type="PackedScene" uid="uid://kilvngphlxac" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
+[ext_resource type="Script" uid="uid://c61rro7ns75sv" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
-[ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
-[ext_resource type="Script" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
+[ext_resource type="Script" uid="uid://c71guyw4tujej" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
+[ext_resource type="Script" uid="uid://cjhh7k24fxfqc" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
+[ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://assets/baker_sounds/plank_break_sound.wav" id="28_scgws"]
 [ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="30_3l7dr"]
-[ext_resource type="Script" path="res://map/recipe_board.gd" id="32_scgws"]
-[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
+[ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="32_scgws"]
+[ext_resource type="PackedScene" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -649,13 +650,12 @@ scale = Vector2(0.370052, 0.370573)
 position = Vector2(-85, 8)
 
 [node name="CuttingBoard" parent="." instance=ExtResource("19_owop5")]
-y_sort_enabled = true
 position = Vector2(51, -3)
 collision_layer = 8
 collision_mask = 0
 
-[node name="Sprite2D" parent="CuttingBoard" index="1"]
-y_sort_enabled = true
+[node name="AudioStreamPlayer2D" parent="CuttingBoard" index="3"]
+stream = null
 
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
 points_required = 5
@@ -675,6 +675,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_scgws")
 theme_override_styles/normal = SubResource("StyleBoxFlat_scgws")
 text = "?"
 script = ExtResource("20_v3vjk")
+is_night = true
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10
@@ -704,58 +705,8 @@ position = Vector2(29, 0)
 [node name="DoorMarker" parent="NPC_Baker_Night" index="1"]
 position = Vector2(-63, -1)
 
-[node name="00undr" parent="NPC_Baker_Night/SpriteLayers" index="2"]
-frame = 0
-
-[node name="01body" parent="NPC_Baker_Night/SpriteLayers" index="3"]
-frame = 0
-
-[node name="02sock" parent="NPC_Baker_Night/SpriteLayers" index="4"]
-frame = 0
-
-[node name="03fot1" parent="NPC_Baker_Night/SpriteLayers" index="5"]
-frame = 0
-
-[node name="05shrt" parent="NPC_Baker_Night/SpriteLayers" index="6"]
-frame = 0
-
-[node name="06lwr2" parent="NPC_Baker_Night/SpriteLayers" index="7"]
-frame = 0
-
-[node name="07fot2" parent="NPC_Baker_Night/SpriteLayers" index="8"]
-frame = 0
-
-[node name="08lwr3" parent="NPC_Baker_Night/SpriteLayers" index="9"]
-frame = 0
-
-[node name="09hand" parent="NPC_Baker_Night/SpriteLayers" index="10"]
-frame = 0
-
-[node name="10outr" parent="NPC_Baker_Night/SpriteLayers" index="11"]
-frame = 0
-
-[node name="04lwr1" parent="NPC_Baker_Night/SpriteLayers" index="12"]
-frame = 0
-
-[node name="11neck" parent="NPC_Baker_Night/SpriteLayers" index="13"]
-frame = 0
-
-[node name="12face" parent="NPC_Baker_Night/SpriteLayers" index="14"]
-frame = 0
-
-[node name="13hair" parent="NPC_Baker_Night/SpriteLayers" index="15"]
-frame = 0
-
-[node name="14head" parent="NPC_Baker_Night/SpriteLayers" index="16"]
-frame = 0
-
-[node name="15over" parent="NPC_Baker_Night/SpriteLayers" index="17"]
-frame = 0
-
-[node name="farmer_bow" parent="NPC_Baker_Night/SpriteLayers" index="21"]
-rotation = 0.0
-offset = Vector2(0, -10)
-frame = 3
+[node name="NavigationAgent2D" parent="NPC_Baker_Night" index="5"]
+debug_enabled = false
 
 [node name="Window" type="StaticBody2D" parent="."]
 script = ExtResource("28_3l7dr")
@@ -813,6 +764,7 @@ region_enabled = true
 region_rect = Rect2(144, 70, 48, 10)
 
 [node name="PlankBreakSound" type="AudioStreamPlayer" parent="DoorVisual/ProgressBar"]
+stream = ExtResource("28_scgws")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DoorVisual"]
 script = ExtResource("27_danju")
@@ -844,6 +796,9 @@ item_region_rect = Rect2(64, 0, 16, 16)
 z_index = 1
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" parent="SugarFactory2" index="2"]
+stream = null
+
 [node name="ChocolateFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
@@ -855,6 +810,9 @@ item_region_rect = Rect2(17, 0, 15, 16)
 [node name="ItemSprite" parent="ChocolateFactory2" index="0"]
 z_index = 1
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="ChocolateFactory2" index="2"]
+stream = null
 
 [node name="VanillaFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
@@ -868,6 +826,9 @@ item_region_rect = Rect2(48, 0, 16, 16)
 z_index = 1
 y_sort_enabled = true
 
+[node name="AudioStreamPlayer2D" parent="VanillaFactory2" index="2"]
+stream = null
+
 [node name="DoughFactory2" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
@@ -879,6 +840,9 @@ item_region_rect = Rect2(80, 0, 16, 16)
 [node name="ItemSprite" parent="DoughFactory2" index="0"]
 z_index = 1
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="DoughFactory2" index="2"]
+stream = null
 
 [node name="HelpLabels" type="Control" parent="."]
 layout_mode = 3

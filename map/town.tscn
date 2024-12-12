@@ -28,11 +28,11 @@
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="25_x3iwy"]
 [ext_resource type="PackedScene" uid="uid://5gmuqjdg170g" path="res://prefabs/npc_widow.tscn" id="28_mgbvr"]
 [ext_resource type="PackedScene" uid="uid://bgh21riaspka0" path="res://cutscenes/BakerArea/outside_bakery_cutscene.tscn" id="28_q1b8d"]
-[ext_resource type="Script" uid="uid://tsg70fau7j66" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
+[ext_resource type="Script" uid="uid://c3leyu3ui5q63" path="res://cutscenes/BakerArea/outside_bakery_cutscene.gd" id="29_q1b8d"]
 [ext_resource type="PackedScene" uid="uid://cpvmdg6y7vlcl" path="res://interactable/test_enable_widowgame.tscn" id="30_jrct8"]
 [ext_resource type="PackedScene" uid="uid://38pmhp2ff8f7" path="res://cutscenes/WidowArea/widow_door_cutscene.tscn" id="31_ccldd"]
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
-[ext_resource type="PackedScene" uid="uid://d3ojvtx4yjg2j" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
+[ext_resource type="PackedScene" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
 [ext_resource type="PackedScene" uid="uid://b2qfxonvvyga7" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
 [ext_resource type="Script" uid="uid://ofl2m7xgpjm2" path="res://interactable/test_enable_widowgame.gd" id="34_fb3tg"]
 [ext_resource type="Script" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
@@ -29164,7 +29164,7 @@ tile_set = SubResource("TileSet_ikj77")
 
 [node name="front_props" type="TileMapLayer" parent="Surroundings"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADE//P/AwARAAAAAADE//T/AwARAAEAAACv//P/AwARAAAAAACv//T/AwARAAEAAACR/+f/BwAYAKgAAACR/+j/BwAYAKkAAACR/+n/BwAYAKoAAACR/+r/BwAYAKsAAACR/+v/BwAYAKwAAACS/+f/BwAZAKgAAACS/+j/BwAZAKkAAACS/+n/BwAZAKoAAACS/+r/BwAZAKsAAACS/+v/BwAZAKwAAACT/+f/BwAaAKgAAACT/+j/BwAaAKkAAACT/+n/BwAaAKoAAACT/+r/BwAaAKsAAACU/+f/BwAbAKgAAACU/+j/BwAbAKkAAACU/+n/BwAbAKoAAACU/+r/BwAbAKsAAACW/+7/BwAaAJwAAACW/+//BwAaAJ0AAACX/+7/BwAbAJwAAACX/+//BwAbAJ0AAACY/+7/BwAcAJwAAACY/+//BwAcAJ0AAACJ/+j/BwAaAKwAAACJ/+n/BwAaAK0AAACJ/+r/BwAaAK4AAACK/+j/BwAbAKwAAACK/+n/BwAbAK0AAACK/+r/BwAbAK4AAACL/+n/BwAcAK0AAACL/+r/BwAcAK4AAACM/+j/BwAdAKwAAACM/+n/BwAdAK0AAACM/+r/BwAdAK4AAACN/+j/BwAeAKwAAACN/+n/BwAeAK0AAACN/+r/BwAeAK4AAAB1//X/AwALAJUAAAB2//T/AwAMAJQAAAB2//X/AwAMAJUAAAB3//P/AwANAJMAAAB3//T/AwANAJQAAAB3//X/AwANAJUAAAB4//P/AwAOAJMAAAB4//T/AwAOAJQAAAB4//X/AwAOAJUAAAB4//b/AwAOAJYAAAB4//f/AwAOAJcAAAB2//b/AwAMAJYAAABz//r/AwAAAJQAAAB0//n/AwABAJMAAAB0//r/AwABAJQAAAB1//n/AwACAJMAAAB1//r/AwACAJQAAAB1//v/AwACAJUAAAB2//n/AwADAJMAAAB2//r/AwADAJQAAAB2//v/AwADAJUAAAB2//z/AwADAJYAAAB2//3/AwADAJcAAAB3//b/AwANAJYAAABw//f/AwARAHkAAABy//T/AwARAHkAAABw//X/AwASAHkAAABx//b/AwAcAHsAAABx//f/AwAcAHwAAABy//b/AwAdAHsAAABy//f/AwAdAHwAAABt//b/AwAIABQAAABt//f/AwAIABUAAABu//b/AwAJABQAAABu//f/AwAJABUAAABv//b/AwAKABQAAABv//f/AwAKABUAAABr//b/AwALABQAAABr//f/AwALABUAAABs//b/AwAMABQAAABs//f/AwAMABUAAABy/+3/AwAGAAsAAABy/+7/AwAGAAwAAABz/+3/AwAHAAsAAABz/+7/AwAHAAwAAABy/+z/AwAGAAoAAABz/+z/AwAHAAoAAAB//+n/BwAaALAAAAB//+r/BwAaALEAAACA/+j/BwAbAK8AAACA/+n/BwAbALAAAACA/+r/BwAbALEAAACB/+j/BwAcAK8AAACB/+n/BwAcALAAAACB/+r/BwAcALEAAACC/+n/BwAdALAAAACC/+r/BwAdALEAAACC/+j/BwAdAK8AAACD/+n/BwAeALAAAACD/+r/BwAeALEAAAB4/9X/AwARAHkAAABd/+f/AwAJABQAAABd/+j/AwAJABUAAABe/+f/AwAJABQAAABe/+j/AwAJABUAAABf/+f/AwAJABQAAABf/+j/AwAJABUAAABg/+f/AwAJABQAAABg/+j/AwAJABUAAABh/+f/AwAJABQAAABh/+j/AwAJABUAAABi/+f/AwAJABQAAABi/+j/AwAJABUAAABj/+f/AwAJABQAAABj/+j/AwAJABUAAABk/+f/AwAJABQAAABk/+j/AwAJABUAAABl/+f/AwAJABQAAABl/+j/AwAJABUAAABm/+f/AwAJABQAAABm/+j/AwAJABUAAABn/+f/AwAJABQAAABn/+j/AwAJABUAAABo/+f/AwAJABQAAABo/+j/AwAJABUAAABp/+f/AwAJABQAAABp/+j/AwAJABUAAABq/+f/AwAJABQAAABq/+j/AwAJABUAAABr/+f/AwAJABQAAABr/+j/AwAJABUAAABs/+f/AwAJABQAAABs/+j/AwAJABUAAABt/+f/AwAJABQAAABt/+j/AwAJABUAAABu/+f/AwAJABQAAABu/+j/AwAJABUAAABv/+f/AwAJABQAAABv/+j/AwAJABUAAABw/+f/AwAJABQAAABw/+j/AwAJABUAAABx/+f/AwAJABQAAABx/+j/AwAJABUAAABb/+f/AwAIABQAAABb/+j/AwAIABUAAABc/+f/AwAJABQAAABc/+j/AwAJABUAAABy/+f/AwAKABQAAABy/+j/AwAKABUAAAC4/9r/AwAaAHsAAAC5/9r/AwAbAHsAAAC4/9v/AwAaAHwAAAC5/9v/AwAbAHwAAAC4/93/AwARAHkAAADD//b/AwAQAAAAAABz/9b/BAALACcAAAC1//X/BgAPACQAAACu//b/AwAQAAAAAAC8//7/AwAIABUAAAC9//7/AwAJABUAAAC6//3/AwALABQAAAC6//7/AwALABUAAAC7//3/AwAMABQAAAC7//7/AwAMABUAAAC8//3/AwAIABQAAAC9//3/AwAJABQAAAC+//3/AwAKABQAAAC+//7/AwAKABUAAADD//3/AwAYAHsAAADD//7/AwAYAHwAAADE//3/AwAZAHsAAADE//7/AwAZAHwAAADB//7/AwARAHkAAADC//3/AwARAHkAAAC///3/AwASAHkAAACa//L/BwAQAIEAAACF/+X/BAAIAG0AAACF/+b/BAAIAG4AAACF/+f/BAAIAG8AAACF/+j/BAAIAHAAAACF/+n/BAAIAHEAAACG/+X/BAAJAG0AAACG/+b/BAAJAG4AAACG/+f/BAAJAG8AAACG/+j/BAAJAHAAAACG/+n/BAAJAHEAAACH/+X/BAAKAG0AAACH/+b/BAAKAG4AAACH/+f/BAAKAG8AAACH/+j/BAAKAHAAAACH/+n/BAAKAHEAAAD0//j/AwALABsAAAD1//j/AwAMABsAAAD0//n/AwALABsAAAD1//n/AwALABsAAAD2//n/AwAMABsAAADx//b/AwALABsAAADw//b/AwAKABsAAADx//X/AwAKABsAAADx//T/AwAMABoAAADs//P/AwAMABoAAADr//P/AwAMABoAAADt//X/AwAMABsAAADs//T/AwALABsAAADt//T/AwALABsAAADt//P/AwALABsAAADr//X/AwAKABsAAADs//X/AwALABsAAADC//H/AwAYAB0AAACo//D/AwAVAAIAAACo//H/AwAVAAMAAACp//D/AwAWAAIAAACp//H/AwAWAAMAAACq//D/AwAXAAIAAACq//H/AwAXAAMAAACG/+//AwAeAAgAAACI//X/AwAGAM8AAACJ//X/BwACAPEAAAC5/+P/CQAAAAAAAAC5/9z/AwASAHkAAAC6/+H/BgARACoAAAA=")
+tile_map_data = PackedByteArray("AADE//P/AwARAAAAAADE//T/AwARAAEAAACv//P/AwARAAAAAACv//T/AwARAAEAAACR/+f/BwAYAKgAAACR/+j/BwAYAKkAAACR/+n/BwAYAKoAAACR/+r/BwAYAKsAAACR/+v/BwAYAKwAAACS/+f/BwAZAKgAAACS/+j/BwAZAKkAAACS/+n/BwAZAKoAAACS/+r/BwAZAKsAAACS/+v/BwAZAKwAAACT/+f/BwAaAKgAAACT/+j/BwAaAKkAAACT/+n/BwAaAKoAAACT/+r/BwAaAKsAAACU/+f/BwAbAKgAAACU/+j/BwAbAKkAAACU/+n/BwAbAKoAAACU/+r/BwAbAKsAAACW/+7/BwAaAJwAAACW/+//BwAaAJ0AAACX/+7/BwAbAJwAAACX/+//BwAbAJ0AAACY/+7/BwAcAJwAAACY/+//BwAcAJ0AAACJ/+j/BwAaAKwAAACJ/+n/BwAaAK0AAACJ/+r/BwAaAK4AAACK/+j/BwAbAKwAAACK/+n/BwAbAK0AAACK/+r/BwAbAK4AAACL/+n/BwAcAK0AAACL/+r/BwAcAK4AAACM/+j/BwAdAKwAAACM/+n/BwAdAK0AAACM/+r/BwAdAK4AAACN/+j/BwAeAKwAAACN/+n/BwAeAK0AAACN/+r/BwAeAK4AAAB1//X/AwALAJUAAAB2//T/AwAMAJQAAAB2//X/AwAMAJUAAAB3//P/AwANAJMAAAB3//T/AwANAJQAAAB3//X/AwANAJUAAAB4//P/AwAOAJMAAAB4//T/AwAOAJQAAAB4//X/AwAOAJUAAAB4//b/AwAOAJYAAAB4//f/AwAOAJcAAAB2//b/AwAMAJYAAABz//r/AwAAAJQAAAB0//n/AwABAJMAAAB0//r/AwABAJQAAAB1//n/AwACAJMAAAB1//r/AwACAJQAAAB1//v/AwACAJUAAAB2//n/AwADAJMAAAB2//r/AwADAJQAAAB2//v/AwADAJUAAAB2//z/AwADAJYAAAB2//3/AwADAJcAAAB3//b/AwANAJYAAABw//f/AwARAHkAAABy//T/AwARAHkAAABw//X/AwASAHkAAABx//b/AwAcAHsAAABx//f/AwAcAHwAAABy//b/AwAdAHsAAABy//f/AwAdAHwAAABt//b/AwAIABQAAABt//f/AwAIABUAAABu//b/AwAJABQAAABu//f/AwAJABUAAABv//b/AwAKABQAAABv//f/AwAKABUAAABr//b/AwALABQAAABr//f/AwALABUAAABs//b/AwAMABQAAABs//f/AwAMABUAAABy/+3/AwAGAAsAAABy/+7/AwAGAAwAAABz/+3/AwAHAAsAAABz/+7/AwAHAAwAAABy/+z/AwAGAAoAAABz/+z/AwAHAAoAAAB//+n/BwAaALAAAAB//+r/BwAaALEAAACA/+j/BwAbAK8AAACA/+n/BwAbALAAAACA/+r/BwAbALEAAACB/+j/BwAcAK8AAACB/+n/BwAcALAAAACB/+r/BwAcALEAAACC/+n/BwAdALAAAACC/+r/BwAdALEAAACC/+j/BwAdAK8AAACD/+n/BwAeALAAAACD/+r/BwAeALEAAAB4/9X/AwARAHkAAABd/+f/AwAJABQAAABd/+j/AwAJABUAAABe/+f/AwAJABQAAABe/+j/AwAJABUAAABf/+f/AwAJABQAAABf/+j/AwAJABUAAABg/+f/AwAJABQAAABg/+j/AwAJABUAAABh/+f/AwAJABQAAABh/+j/AwAJABUAAABi/+f/AwAJABQAAABi/+j/AwAJABUAAABj/+f/AwAJABQAAABj/+j/AwAJABUAAABk/+f/AwAJABQAAABk/+j/AwAJABUAAABl/+f/AwAJABQAAABl/+j/AwAJABUAAABm/+f/AwAJABQAAABm/+j/AwAJABUAAABn/+f/AwAJABQAAABn/+j/AwAJABUAAABo/+f/AwAJABQAAABo/+j/AwAJABUAAABp/+f/AwAJABQAAABp/+j/AwAJABUAAABq/+f/AwAJABQAAABq/+j/AwAJABUAAABr/+f/AwAJABQAAABr/+j/AwAJABUAAABs/+f/AwAJABQAAABs/+j/AwAJABUAAABt/+f/AwAJABQAAABt/+j/AwAJABUAAABu/+f/AwAJABQAAABu/+j/AwAJABUAAABv/+f/AwAJABQAAABv/+j/AwAJABUAAABw/+f/AwAJABQAAABw/+j/AwAJABUAAABx/+f/AwAJABQAAABx/+j/AwAJABUAAABb/+f/AwAIABQAAABb/+j/AwAIABUAAABc/+f/AwAJABQAAABc/+j/AwAJABUAAABy/+f/AwAKABQAAABy/+j/AwAKABUAAAC4/9r/AwAaAHsAAAC5/9r/AwAbAHsAAAC4/9v/AwAaAHwAAAC5/9v/AwAbAHwAAAC4/93/AwARAHkAAADD//b/AwAQAAAAAABz/9b/BAALACcAAAC1//X/BgAPACQAAACu//b/AwAQAAAAAAC8//7/AwAIABUAAAC9//7/AwAJABUAAAC6//3/AwALABQAAAC6//7/AwALABUAAAC7//3/AwAMABQAAAC7//7/AwAMABUAAAC8//3/AwAIABQAAAC9//3/AwAJABQAAAC+//3/AwAKABQAAAC+//7/AwAKABUAAADD//3/AwAYAHsAAADD//7/AwAYAHwAAADE//3/AwAZAHsAAADE//7/AwAZAHwAAADB//7/AwARAHkAAADC//3/AwARAHkAAAC///3/AwASAHkAAACa//L/BwAQAIEAAACF/+X/BAAIAG0AAACF/+b/BAAIAG4AAACF/+f/BAAIAG8AAACF/+j/BAAIAHAAAACF/+n/BAAIAHEAAACG/+X/BAAJAG0AAACG/+b/BAAJAG4AAACG/+f/BAAJAG8AAACG/+j/BAAJAHAAAACG/+n/BAAJAHEAAACH/+X/BAAKAG0AAACH/+b/BAAKAG4AAACH/+f/BAAKAG8AAACH/+j/BAAKAHAAAACH/+n/BAAKAHEAAAD0//j/AwALABsAAAD1//j/AwAMABsAAAD0//n/AwALABsAAAD1//n/AwALABsAAAD2//n/AwAMABsAAADx//b/AwALABsAAADw//b/AwAKABsAAADx//X/AwAKABsAAADx//T/AwAMABoAAADs//P/AwAMABoAAADr//P/AwAMABoAAADt//X/AwAMABsAAADs//T/AwALABsAAADt//T/AwALABsAAADt//P/AwALABsAAADr//X/AwAKABsAAADs//X/AwALABsAAADC//H/AwAYAB0AAACo//D/AwAVAAIAAACo//H/AwAVAAMAAACp//D/AwAWAAIAAACp//H/AwAWAAMAAACq//D/AwAXAAIAAACq//H/AwAXAAMAAACG/+//AwAeAAgAAACI//X/AwAGAM8AAACJ//X/BwACAPEAAAC5/+P/CQAAAAAAAAC5/9z/AwASAHkAAAC6/+H/BgARACoAAACh//P/AwARAAAAABCh//T/AwARAAEAABCi//b/AwAQAAAAABCX//P/AwARAAAAAACX//T/AwARAAEAAACW//b/AwAQAAAAAAB9//P/AwARAAAAAAB9//T/AwARAAEAAAB8//b/AwAQAAAAAACE/93/AwARAAAAAACE/97/AwARAAEAAACD/+D/AwAQAAAAAACO/93/AwARAAAAABCO/97/AwARAAEAABCP/+D/AwAQAAAAABCu/+X/AwARAAAAABCu/+b/AwARAAEAABCv/+j/AwAQAAAAABCj/+X/AwARAAAAAACj/+b/AwARAAEAAACi/+j/AwAQAAAAAACY/+X/AwARAAAAAACY/+b/AwARAAEAAACX/+j/AwAQAAAAAACO/+X/AwARAAAAABCO/+b/AwARAAEAABCP/+j/AwAQAAAAABCE/+X/AwARAAAAAACE/+b/AwARAAEAAACD/+j/AwAQAAAAAAA=")
 tile_set = SubResource("TileSet_ov417")
 
 [node name="repeating_trees_floor" type="Node2D" parent="Surroundings"]
@@ -29814,8 +29814,8 @@ script = ExtResource("34_uap6c")
 
 [node name="StreetLight1" type="PointLight2D" parent="." groups=["light"]]
 y_sort_enabled = true
-position = Vector2(-951.5, -147.5)
-scale = Vector2(0.123047, 0.129357)
+position = Vector2(-952, -151)
+scale = Vector2(0.123047, 0.108819)
 enabled = false
 color = Color(0.654902, 0.596078, 0.0745098, 1)
 texture = ExtResource("37_apa6g")
@@ -29823,8 +29823,98 @@ texture_scale = 2.5
 
 [node name="StreetLight2" type="PointLight2D" parent="." groups=["light"]]
 y_sort_enabled = true
-position = Vector2(-1287.5, -147.5)
-scale = Vector2(0.140383, 0.15515)
+position = Vector2(-1288, -151)
+scale = Vector2(0.140383, 0.125116)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight3" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1976, -499)
+scale = Vector2(0.140383, 0.126794)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight4" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1816, -503)
+scale = Vector2(0.140383, 0.120544)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight5" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1976, -388)
+scale = Vector2(0.140383, 0.09945)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight6" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1816, -388)
+scale = Vector2(0.140383, 0.09945)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight7" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1656, -376)
+scale = Vector2(0.140383, 0.121325)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight8" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1480, -372)
+scale = Vector2(0.140383, 0.127575)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight9" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1304, -372)
+scale = Vector2(0.140383, 0.1307)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight10" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1512, -151)
+scale = Vector2(0.140383, 0.125116)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight11" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1672, -153)
+scale = Vector2(0.140383, 0.125116)
+enabled = false
+color = Color(0.654902, 0.596078, 0.0745098, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 2.5
+
+[node name="StreetLight12" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-2088, -153)
+scale = Vector2(0.140383, 0.125116)
 enabled = false
 color = Color(0.654902, 0.596078, 0.0745098, 1)
 texture = ExtResource("37_apa6g")
@@ -29847,6 +29937,85 @@ enabled = false
 color = Color(1, 0.878431, 0.486275, 1)
 texture = ExtResource("37_apa6g")
 texture_scale = 2.0
+
+[node name="ConbiniWindowLight" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1240, -240)
+scale = Vector2(0.11377, 0.117551)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight2" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1192, -240)
+scale = Vector2(0.11377, 0.117551)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight3" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1144, -240)
+scale = Vector2(0.181885, 0.117551)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight4" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1040, -240)
+scale = Vector2(0.181885, 0.117551)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight5" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1096, -240)
+scale = Vector2(0.181885, 0.117551)
+enabled = false
+color = Color(1, 0.878431, 0.486275, 1)
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight6" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1088, -192)
+scale = Vector2(0.181885, 0.132813)
+enabled = false
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight7" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1136, -189.93)
+scale = Vector2(0.101359, 0.112161)
+enabled = false
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="ConbiniWindowLight8" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1040, -189)
+scale = Vector2(0.101359, 0.112161)
+enabled = false
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
+
+[node name="WidowWindowLight" type="PointLight2D" parent="." groups=["light"]]
+y_sort_enabled = true
+position = Vector2(-1336, -544)
+scale = Vector2(0.0909424, 0.0833789)
+enabled = false
+color = Color(0.972549, 0.662745, 0, 1)
+energy = 0.85
+texture = ExtResource("37_apa6g")
+texture_scale = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 z_index = 10

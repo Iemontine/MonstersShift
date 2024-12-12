@@ -4,7 +4,7 @@ class_name CuttingBoard
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var items: Array = []
-var item_height: float = 10.0
+var item_height: float = 30.0
 var craft_output: String = ""
 var is_locked: bool = false
 
@@ -35,7 +35,7 @@ func _on_hold_interacted() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if current_hold_time > 0:
-		move_items_to_target(Vector2.ZERO, 0.05 * current_hold_time / required_hold_time)
+		move_items_to_target(Vector2(0,-16), 0.05 * current_hold_time / required_hold_time)
 	else:
 		arrange_items_on_board()
 
@@ -60,7 +60,7 @@ func arrange_items_on_board() -> void:
 	for i in range(items.size()):
 		var item = items[i]["item"]
 		var target_position = Vector2(start_x + i * 16 + 8, -item_height)
-		item.z_index = 100
+		item.z_index = 1
 		item.position = item.position.lerp(target_position, 0.1)
 
 func handle_item_interaction() -> void:
@@ -120,6 +120,8 @@ func create_item_pickup(recipe: String):
 			sprite.texture = load("res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/3_City_Props_16x16.png")
 			sprite.region_rect = Rect2(32, 912, 16, 16)
 	sprite.region_enabled = true
+	item_pickup.position = Vector2(0, -16)
+	item_pickup.z_index = 1
 	return item_pickup
 	
 

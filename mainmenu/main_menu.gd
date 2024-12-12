@@ -1,7 +1,7 @@
 extends Node
 
 @export var player:Player
-@export var Music : AudioStream = load("res://assets/sound/Lo-fi Music Pack - FREE/Lo-fi Music Pack - FREE/Beach.mp3")
+@export var Music : AudioStream = load("res://assets/sound/Lo-fi Music Pack - FREE/Beach.mp3")
 
 func _ready() -> void:
 	var stream = AudioStreamPlayer.new()
