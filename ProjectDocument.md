@@ -68,6 +68,7 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 
 
 ### Assets Used:
+* [Dialogic](https://github.com/dialogic-godot/dialogic)
 * [Zombie Sounds](https://terrorbytegames.itch.io/zombie-massacre-sound-effects-starter-pack) by itch.io user TerrorByteGames - License given by the creator
 * [Voice Effects](https://nox-sound-design.itch.io/essentials-series-sfx-nox-sound) by itch.io user Nox_Sound_Design - License: [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
 * [Record Player Music](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes) by itch.io user ChillMindscapes - License: [Creative Commons Attribution v4.0 International](https://creativecommons.org/licenses/by/4.0/)
@@ -110,20 +111,22 @@ NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
 **List your assets, including their sources and licenses.**
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-### Descriptions
-NOTE TO REMOVE BEFORE SUBMITTING: Maybe split these into sub-sub-headings
-* Dialogic: Initially used dialogic's basic template of "Speaker Textbox Style" --> adjusted it to be more custom
+### Dialogic:
+As mentioned in [Narrative Design](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana), Dialogic was how the user was able to interact with the world to get narrative. Initially, the Dialogic template of "Speaker Textbox Style" was used to create basic textboxes but the following adjustments were made to make it more customzied:
+  * The background was changed to a brown, wooden texture. This required making a custom layer inside the dialogue styles and adjusting the background and size of the pre-existing box.
+  * Originally
   * Custom dialogue boxes (background, font, portrait frame)
+  
+  
   * Set up character styles (player, widow, baker)
   * Set up general dialogue styles (speaker vs non-speaker)
   * Changed the dialogue choices to different appearance that fit the dialogue boxes
   * Other dialogic items discussed [above](https://github.com/Iemontine/MonstersShift/blob/dev-bri-repo-setup/ProjectDocument.md#narrative-design-briana)
-* Design & Draw portraits (Kat expanded on them)
+
+### Portrait Creation
+We wanted to follow the classic style of having a character portrait for dialogue, similar to how Stardew Valley has their portraits. This feature brings more life to the game because the higher detail helps the player see a full character and not just a simple sprite. After Darroll designed the sprites with the group's feedback, I was able to take them and design character portraits. The process was done all on paper and involved sketching, outlining, and coloring to fit the sprites.
 ![image](https://github.com/user-attachments/assets/44acd39a-ac0c-4454-9841-7141b9f91970)
-
-
-
-
+After scanning in my drawings, I was able to send them to Katherine who placed them in game after she added pixelation and different facial expressions. Once in game, I was able to use Dialogic's character design feature to resize and move around the portraits to fit perfectly in the created frame.
 
 ### Assets Used:
 * [Portrait Frames](https://gx310.itch.io/pxiel-art-ui-borders?download) by itch.io user GX310 - License given by the creator
