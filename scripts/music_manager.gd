@@ -3,7 +3,7 @@ extends Node
 # all on a linear scale, seems like 1.0 is the max before it gets bad
 const max_vol : float = 0.25
 const min_vol : float = 0.0
-const default_vol : float = 0.05
+const default_vol : float = 0.10
 
 # in dB
 var volume : float = linear_to_db(default_vol)

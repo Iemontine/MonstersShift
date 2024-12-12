@@ -1,20 +1,20 @@
 {
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
-"_translation_id": "",
-"color": Color(1, 1, 1, 1),
-"custom_info": {
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": "speaker_dialogue"
 },
-"default_portrait": "Default",
-"description": "",
-"display_name": "The Baker",
-"mirror": false,
-"nicknames": [""],
-"offset": Vector2(0, 0),
-"portraits": {
+&"default_portrait": "Default",
+&"description": "",
+&"display_name": "The Baker",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(-5, 2),
+&"portraits": {
 "Default": {
 "export_overrides": {
 "image": ""
@@ -28,9 +28,10 @@
 "export_overrides": {
 "image": "\"res://dialogic/Images/baker portraits/baker angry.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 },
 "green eyes": {
@@ -70,5 +71,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+&"scale": 1.25
 }
