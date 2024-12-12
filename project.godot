@@ -111,6 +111,11 @@ text/autopauses={}
 
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/kathe/OneDrive/Desktop/productive/ECS 179/MonstersShift/credit_video.avi"
+movie_writer/fps=30
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg")

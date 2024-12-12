@@ -16029,7 +16029,7 @@ z_index = 2
 position = Vector2(200, 488)
 sprite_frames = SubResource("SpriteFrames_yhx66")
 autoplay = "default"
-frame_progress = 0.545205
+frame_progress = 0.30536
 
 [node name="decor" type="TileMapLayer" parent="."]
 z_index = 1
@@ -16056,7 +16056,7 @@ position = Vector2(624, 472)
 sprite_frames = SubResource("SpriteFrames_yhx66")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.701854
+frame_progress = 0.462004
 
 [node name="frog" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -16065,7 +16065,7 @@ scale = Vector2(1.21429, 1.21429)
 sprite_frames = SubResource("SpriteFrames_46cdr")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.320029
+frame_progress = 0.0801809
 
 [node name="pool" type="AnimatedSprite2D" parent="."]
 position = Vector2(624, 472)
@@ -16073,22 +16073,22 @@ scale = Vector2(1.21429, 1.21429)
 sprite_frames = SubResource("SpriteFrames_7kss2")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.550895
+frame_progress = 0.311049
 
 [node name="butterfly" type="AnimatedSprite2D" parent="."]
 position = Vector2(184, 416)
 sprite_frames = SubResource("SpriteFrames_vdbnv")
 autoplay = "default"
-frame_progress = 0.768244
+frame_progress = 0.528389
 
 [node name="butterfly2" type="AnimatedSprite2D" parent="."]
 position = Vector2(432, 440)
 sprite_frames = SubResource("SpriteFrames_rnwj4")
 autoplay = "default"
-frame_progress = 0.560876
+frame_progress = 0.321029
 
 [node name="butterfly3" type="AnimatedSprite2D" parent="."]
 position = Vector2(352, 424)
 sprite_frames = SubResource("SpriteFrames_eog7s")
 autoplay = "default"
-frame_progress = 0.0084356
+frame_progress = 0.76858
