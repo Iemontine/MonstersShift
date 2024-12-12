@@ -58,7 +58,7 @@ func handle_state() -> void:
 			handle_returning_state()
 
 func handle_idle_state() -> void:
-	travel_to_anim("Idle", Vector2(0, -1))
+	travel_to_anim("Idle", Vector2(0, 1))
 
 func handle_holding_item_state() -> void:
 	travel_to_anim("WalkCarry", old_velocity)

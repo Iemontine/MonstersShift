@@ -24696,12 +24696,14 @@ region_rect = Rect2(128, 1016, 64, 56)
 z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surroundings/TreeCollisions2"]
+modulate = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(376, -16, 547, 118, 1640, 120, 1608, -16)
 
 [node name="TreeCollisions" type="StaticBody2D" parent="Surroundings"]
 z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surroundings/TreeCollisions"]
+modulate = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(392, -96, 808, -96, 872, -152, 848, -184, 488, -184)
 
 [node name="repeating_trees_mountain" type="Node" parent="Surroundings"]

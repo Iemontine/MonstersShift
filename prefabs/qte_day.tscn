@@ -64,7 +64,7 @@ region_rect = Rect2(176, 208, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Arrow"]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5bm8v")
-debug_color = Color(0, 0.6, 0.701961, 0)
+debug_color = Color(0.998359, 0, 0.15035, 0.282)
 
 [node name="Qte" type="Sprite2D" parent="Control"]
 position = Vector2(-7.62939e-06, -2.86102e-06)

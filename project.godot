@@ -60,6 +60,7 @@ directories/dtl_directory={
 "how_to_play": "res://dialogic/Timelines/Baker/how_to_play.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
 "last_morning": "res://dialogic/Timelines/FinalScenes/last_morning.dtl",
+"leave_conbini_early": "res://dialogic/Timelines/Widow/leave_conbini_early.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "leaving_house_early": "res://dialogic/Timelines/HouseAreaPostIntro/leaving_house_early.dtl",
