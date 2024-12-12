@@ -61,6 +61,7 @@ directories/dtl_directory={
 "intro": "res://dialogic/Timelines/intro.dtl",
 "last_morning": "res://dialogic/Timelines/FinalScenes/last_morning.dtl",
 "leave_conbini_early": "res://dialogic/Timelines/Widow/leave_conbini_early.dtl",
+"leave_conbini_early_night": "res://dialogic/Timelines/Widow/leave_conbini_early_night.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "leaving_house_early": "res://dialogic/Timelines/HouseAreaPostIntro/leaving_house_early.dtl",
