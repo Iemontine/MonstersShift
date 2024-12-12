@@ -13,7 +13,7 @@ var volume : float = linear_to_db(default_vol)
 # TODO: FIND TRACKS
 var _tracks := {
 	"Outside Day" : "outside_day.wav",
-	"Outside Evening" : "outside_eve.wav",
+	"Outside Evening" : "outside_evening.wav",
 	"Outside Night" : "outside_night.wav",
 	"bakery" : "bakery_game_day.wav",
 	"bakery_no_game": "bakery.wav",
@@ -56,8 +56,9 @@ func _on_scene_transition_completed() -> void:
 		pass
 	elif not _check_ouside():
 		if SceneManager.current_scene:	# Added this line, TODO: current_scene not guaranteed a value on init
-			if not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
-					return
+			if not _tracks.has(SceneManager.current_scene.to_lower()) or \
+			   not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
+				return
 			var stream = load(_track_path + _tracks[SceneManager.current_scene.to_lower()])
 			stream_player.stream = stream
 			if _current_track != _tracks[SceneManager.current_scene.to_lower()]:
@@ -125,7 +126,14 @@ func play_custom_track(track:String, delay:float = 0.5):
 	stream_player.stream = stream
 	_current_playtime = 0.0
 	get_tree().current_scene.add_child(stream_player)
+	
+	# Set volume to 0 before starting playback
 	stream_player.play(_current_playtime)
+
+	# why THE FUCK CAN YOU NOT TWEEN VOLUME_DB?????
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property(stream_player, "volume_db", linear_to_db(max_vol), 1.0).from(-100)
+	tween.play()
 
 func pause():
 	if stream_player:
@@ -138,7 +146,11 @@ func unpause():
 
 func stop():
 	if stream_player:
-		stream_player.stop()
+		var tween: Tween = get_tree().create_tween()
+		tween.tween_property(stream_player, "volume_db", -100, 3.0)
+		await tween.finished
+		if stream_player:
+			stream_player.stop()
 		if _use_custom_track:
 			end_custom_track()
 

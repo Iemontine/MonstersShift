@@ -12,7 +12,7 @@ enum Event {
 	BAKER_SUCCESS_NIGHT, BAKER_FAIL_NIGHT, DAY_TWO_MORNING, BAKER_DAY_TWO,
 	WIDOW_FIRST_INTERACTION, WIDOW_BEFORE_DAY_GAME, WIDOW_DAY_GAME_CORRECT, WIDOW_DAY_GAME_WRONG,
 	WIDOW_DAY_QTE_SUCCESS, WIDOW_DAY_QTE_FAIL, WIDOW_SUCCESS_DAYTIME, WIDOW_FAIL_DAYTIME,
-	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, WIDOWS_HOUSE_NIGHT,
+	WIDOW_PLAYER_INSOMNIA, NIGHT_ENTER_CONBINI, GRABBED_NIGHT_ITEM, WIDOWS_HOUSE_NIGHT,
 	WIDOW_NIGHT_QTE_SUCCESS, WIDOW_NIGHT_QTE_FAIL, WIDOW_NIGHT_SECOND_FAIL,
 	WIDOW_SUCCESS_NIGHT, WIDOW_FAIL_NIGHT,
 	LAST_MORNING, FINAL_SCENES, END
@@ -23,7 +23,7 @@ var objects_interacted_with : int = 0
 
 # var _event_name:String = ""
 
-@onready var current_event = Event.WIDOW_BEFORE_DAY_GAME
+@onready var current_event = Event.INTRO
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -57,18 +57,14 @@ func _on_scene_transition_completed():
 				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene("exit_house_postarrival")
 		Event.READY_TO_EXIT:
-			# _event_name = "ready_to_exit"
 			if SceneManager.current_scene == "Treehouse_Exterior":
-				# _event_name = 
 				StoryManager.transition_to_event(StoryManager.Event.EXIT_HOUSE_POSTARRIVAL)
 				PlayerController.start_cutscene("exit_house_postarrival")
 		
 		Event.OUTSIDE_BAKERY:
-			# _event_name = "outside_bakery"
 			if SceneManager.current_scene == "Bakery_No_Game":
-				# _event_name = "first_enter_bakery"
 				StoryManager.transition_to_event(StoryManager.Event.FIRST_ENTER_BAKERY)
-				PlayerController.start_cutscene("baker_success_daytime_game")
+				PlayerController.start_cutscene("first_enter_bakery")
 		Event.BAKER_SUCCESS_DAYTIME:
 			if SceneManager.current_scene == "Town":
 				StoryManager.transition_to_event(StoryManager.Event.LEAVING_BAKERY_EVENING)
@@ -127,7 +123,7 @@ func _on_scene_transition_completed():
 				StoryManager.conbini_night()
 				StoryManager.transition_to_event(StoryManager.Event.NIGHT_ENTER_CONBINI)
 				PlayerController.start_cutscene("night_enter_conbini")
-		Event.NIGHT_ENTER_CONBINI:
+		Event.GRABBED_NIGHT_ITEM:
 			if SceneManager.current_scene == "Town":
 				StoryManager.transition_to_event(StoryManager.Event.WIDOWS_HOUSE_NIGHT)
 				PlayerController.start_cutscene("widows_house_night")
@@ -156,12 +152,21 @@ func _on_scene_transition_completed():
 
 func conbini_night():
 	get_tree().current_scene.get_node("Lights").enable_flickering_light()
+	enable_grocery_night()
 
 # WIDOW
 func enable_grocery_items():
 	if SceneManager.current_scene == "Conbini":
 		get_tree().current_scene.get_node("GroceryHandler").enable_grocery_items()
 
+func enable_grocery_night():
+	if SceneManager.current_scene == "Conbini":
+		get_tree().current_scene.get_node("GroceryItemNight").enable_grocery_item()
+		get_tree().current_scene.get_node("Door_Conbini2").event = Event.GRABBED_NIGHT_ITEM
+		get_tree().current_scene.get_node("Door_Conbini2").scene = "leave_conbini_early_night"
+		get_tree().current_scene.get_node("Door_Conbini1").event = Event.GRABBED_NIGHT_ITEM
+		get_tree().current_scene.get_node("Door_Conbini1").scene = "leave_conbini_early_night"
+		
 
 func start_player_path_follow(player):
 	player.speed = 50  # Set the speed for the player

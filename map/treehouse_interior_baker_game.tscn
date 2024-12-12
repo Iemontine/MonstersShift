@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://c2ssodjik8cd4"]
+[gd_scene load_steps=59 format=4 uid="uid://c2ssodjik8cd4"]
 
 [ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="2_ch15b"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="3_obc2q"]
@@ -16,23 +16,24 @@
 [ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="15_u2itv"]
 [ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="16_scgws"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="17_0cn4a"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="17_4ubvu"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="20_eaqha"]
-[ext_resource type="Script" path="res://prefabs/help_button.gd" id="20_v3vjk"]
+[ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="20_v3vjk"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
-[ext_resource type="Script" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
-[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
+[ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
 [ext_resource type="Texture2D" uid="uid://bwv67phb884jc" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_vertical_right_3.png" id="26_1a82g"]
-[ext_resource type="PackedScene" uid="uid://cr16u0s13lt8w" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
-[ext_resource type="Script" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
+[ext_resource type="PackedScene" uid="uid://kilvngphlxac" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
+[ext_resource type="Script" uid="uid://c61rro7ns75sv" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
-[ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
-[ext_resource type="Script" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
+[ext_resource type="Script" uid="uid://c71guyw4tujej" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
+[ext_resource type="Script" uid="uid://cjhh7k24fxfqc" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
 [ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://assets/baker_sounds/plank_break_sound.wav" id="28_scgws"]
 [ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="30_3l7dr"]
-[ext_resource type="Script" path="res://map/recipe_board.gd" id="32_scgws"]
-[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
+[ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://assets/assets_baker/recipe_board.png" id="31_0cn4a"]
+[ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="32_scgws"]
+[ext_resource type="PackedScene" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -518,26 +519,6 @@ sources/15 = SubResource("TileSetAtlasSource_b6nma")
 sources/17 = SubResource("TileSetAtlasSource_wgr51")
 sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
-[sub_resource type="Theme" id="Theme_u2itv"]
-Button/colors/font_color = Color(0.446716, 2.86378e-06, 0.285617, 1)
-Button/colors/font_outline_color = Color(1, 1, 1, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/fonts/font = null
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scgws"]
-bg_color = Color(0.982343, 0.982342, 0.982342, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.909329, 0.742238, 0.85766, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3vjk"]
 size = Vector2(22, 4.5)
 
@@ -571,6 +552,29 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8xkf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ubvu"]
+size = Vector2(31, 29)
+
+[sub_resource type="Theme" id="Theme_u2itv"]
+Button/colors/font_color = Color(0.446716, 2.86378e-06, 0.285617, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scgws"]
+bg_color = Color(0.982343, 0.982342, 0.982342, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.909329, 0.742238, 0.85766, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l7dr"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 30
@@ -578,8 +582,6 @@ border_width_top = 30
 border_width_right = 30
 border_width_bottom = 30
 border_color = Color(0.909804, 0.415686, 0.52549, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ubvu"]
 
 [node name="Treehouse_Interior_Baker_Game" type="Node2D"]
 y_sort_enabled = true
@@ -628,7 +630,7 @@ tile_set = SubResource("TileSet_5m6t8")
 
 [node name="interior base -- floor" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABgAAAADAP//AQABABgAAAADAAAAAQABABkAAAAEAP//AQABABgAAAAEAAAAAQABABkAAAAAAAAAAQABABkAAAABAAAAAQABABkAAAACAAAAAQABABkAAAD9////AQABABkAAAD9/wAAAQABABkAAAD+////AQABABgAAAD+/wAAAQABABkAAAD/////AQABABgAAAD//wAAAQABABkAAAD6////AQAAABgAAAD6/wAAAQAAABkAAAD7////AQABABkAAAD7/wAAAQABABkAAAD8////AQABABkAAAD8/wAAAQABABkAAAD6/wEAAQAAABkAAAD6/wIAAQAAABkAAAD7/wEAAQABABkAAAD7/wIAAQABABkAAAD8/wEAAQABABkAAAD8/wIAAQABABkAAAD9/wEAAQABABkAAAD9/wIAAQABABkAAAD+/wEAAQABABkAAAD+/wIAAQABABkAAAD//wEAAQABABkAAAD//wIAAQABABkAAAAAAAEAAQABABkAAAAAAAIAAQABABkAAAABAAEAAQABABkAAAABAAIAAQABABkAAAACAAEAAQABABkAAAACAAIAAQABABkAAAADAAEAAQABABkAAAADAAIAAQABABkAAAAEAAEAAQABABkAAAAEAAIAAQABABkAAAADAAMAAQABABkAAAADAAQAAQABABkAAAAEAAMAAQABABkAAAAEAAQAAQABABkAAAADAAUAAQABABkAAAADAAYAAQABABkAAAAAAAYAAQABABkAAAABAAYAAQABABkAAAACAAYAAQABABkAAAD9/wYAAQABABkAAAD+/wYAAQABABkAAAD//wYAAQABABkAAAD6/wYAAQAAABkAAAD7/wYAAQABABkAAAD8/wYAAQABABkAAAD7/wUAAQABABkAAAD8/wUAAQABABkAAAD9/wUAAQABABkAAAD7/wQAAQABABkAAAD8/wQAAQABABkAAAD9/wQAAQABABkAAAD6/wQAAQAAABkAAAD+/wQAAQABABkAAAD//wQAAQABABkAAAAAAAMAAQABABkAAAAAAAQAAQABABkAAAD+/wUAAQABABkAAAD//wUAAQABABkAAAAAAAUAAQABABkAAAABAAUAAQABABkAAAACAAUAAQABABkAAAABAAMAAQABABkAAAABAAQAAQABABkAAAACAAMAAQABABkAAAACAAQAAQABABkAAAAFAP//AQACABgAAAAFAAAAAQABABkAAAAFAAEAAQABABkAAAAFAAIAAQABABkAAAAFAAMAAQABABkAAAAFAAQAAQABABkAAAAEAAUAAQABABkAAAAEAAYAAQABABkAAAAFAAUAAQABABkAAAAFAAYAAQABABkAAAD6/wUAAQAAABkAAAD6/wMAAQAAABkAAAD7/wMAAQABABkAAAD8/wMAAQABABkAAAD9/wMAAQABABkAAAD+/wMAAQABABkAAAD//wMAAQABABkAAAD8//7/AQABABkAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABgAAAADAP//AQABABgAAAADAAAAAQABABkAAAAEAP//AQABABgAAAAEAAAAAQABABkAAAAAAAAAAQABABkAAAABAAAAAQABABkAAAACAAAAAQABABkAAAD9////AQABABkAAAD9/wAAAQABABkAAAD+////AQABABgAAAD+/wAAAQABABkAAAD/////AQABABgAAAD//wAAAQABABkAAAD6////AQAAABgAAAD6/wAAAQAAABkAAAD7////AQABABkAAAD8////AQABABkAAAD8/wAAAQABABkAAAD6/wEAAQAAABkAAAD6/wIAAQAAABkAAAD7/wEAAQABABkAAAD7/wIAAQABABkAAAD8/wEAAQABABkAAAD8/wIAAQABABkAAAD9/wEAAQABABkAAAD9/wIAAQABABkAAAD//wEAAQABABkAAAD//wIAAQABABkAAAAAAAEAAQABABkAAAAAAAIAAQABABkAAAABAAEAAQABABkAAAABAAIAAQABABkAAAACAAEAAQABABkAAAACAAIAAQABABkAAAADAAEAAQABABkAAAADAAIAAQABABkAAAAEAAEAAQABABkAAAAEAAIAAQABABkAAAADAAMAAQABABkAAAADAAQAAQABABkAAAAEAAMAAQABABkAAAAEAAQAAQABABkAAAADAAUAAQABABkAAAADAAYAAQABABkAAAAAAAYAAQABABkAAAABAAYAAQABABkAAAACAAYAAQABABkAAAD9/wYAAQABABkAAAD+/wYAAQABABkAAAD//wYAAQABABkAAAD6/wYAAQAAABkAAAD7/wYAAQABABkAAAD8/wYAAQABABkAAAD7/wUAAQABABkAAAD8/wUAAQABABkAAAD9/wUAAQABABkAAAD8/wQAAQABABkAAAD9/wQAAQABABkAAAD+/wQAAQABABkAAAD//wQAAQABABkAAAAAAAMAAQABABkAAAAAAAQAAQABABkAAAD+/wUAAQABABkAAAD//wUAAQABABkAAAAAAAUAAQABABkAAAABAAUAAQABABkAAAACAAUAAQABABkAAAABAAMAAQABABkAAAABAAQAAQABABkAAAACAAMAAQABABkAAAACAAQAAQABABkAAAAFAP//AQACABgAAAAFAAAAAQABABkAAAAFAAEAAQABABkAAAAFAAIAAQABABkAAAAFAAMAAQABABkAAAAFAAQAAQABABkAAAAEAAUAAQABABkAAAAEAAYAAQABABkAAAAFAAUAAQABABkAAAAFAAYAAQABABkAAAD6/wUAAQAAABkAAAD8/wMAAQABABkAAAD9/wMAAQABABkAAAD+/wMAAQABABkAAAD//wMAAQABABkAAAD8//7/AQABABkAAAD+/wEAAQABABkAAAD+/wIAAQABABkAAAD7/wAAAQABABkAAAD6/wMAAQAAABkAAAD6/wQAAQAAABkAAAD7/wMAAQABABkAAAD7/wQAAQABABkAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
 [node name="interior base -- floor2" type="TileMapLayer" parent="."]
@@ -641,54 +643,35 @@ tile_set = SubResource("TileSet_5m6t8")
 z_index = 1
 position = Vector2(-44, 26)
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(-56, -16)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.01
+drag_top_margin = 0.01
+drag_right_margin = 0.01
+drag_bottom_margin = 0.01
+editor_draw_limits = true
+script = ExtResource("17_4ubvu")
+target = NodePath("../Player")
+
 [node name="Treehouse_png" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1.16669, 5.125)
 scale = Vector2(0.370052, 0.370573)
 
 [node name="Baker_Trashcan" parent="." instance=ExtResource("22_m5cdb")]
-position = Vector2(-85, 8)
+position = Vector2(-82, 10)
 
 [node name="CuttingBoard" parent="." instance=ExtResource("19_owop5")]
-y_sort_enabled = true
-position = Vector2(51, -3)
+position = Vector2(-2, 54)
 collision_layer = 8
 collision_mask = 0
-
-[node name="Sprite2D" parent="CuttingBoard" index="1"]
-y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="CuttingBoard" index="3"]
-stream = null
-
-[node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
-points_required = 5
-game_duration = 100000.0
-night_time = true
-
-[node name="HelpButton" type="Button" parent="BakerGameLogic"]
-offset_left = 1037.0
-offset_top = 539.0
-offset_right = 1123.0
-offset_bottom = 619.0
-focus_mode = 0
-theme = SubResource("Theme_u2itv")
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_scgws")
-theme_override_styles/normal = SubResource("StyleBoxFlat_scgws")
-text = "?"
-script = ExtResource("20_v3vjk")
-is_night = true
-
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-z_index = 10
-y_sort_enabled = true
-position = Vector2(-2, -12)
-scale = Vector2(1, 0.983673)
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("22_1a82g")
-target = NodePath("../Player")
 
 [node name="Door_Treehouse" parent="." instance=ExtResource("27_n8xkf")]
 position = Vector2(-363, -21)
@@ -696,7 +679,7 @@ destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 
 [node name="Spawnpoint" parent="Door_Treehouse" index="2"]
-position = Vector2(359, 117)
+position = Vector2(309, 13)
 
 [node name="NPC_Baker_Night" parent="." instance=ExtResource("26_danju")]
 z_index = -1
@@ -708,59 +691,6 @@ position = Vector2(29, 0)
 
 [node name="DoorMarker" parent="NPC_Baker_Night" index="1"]
 position = Vector2(-63, -1)
-
-[node name="00undr" parent="NPC_Baker_Night/SpriteLayers" index="2"]
-frame = 0
-
-[node name="01body" parent="NPC_Baker_Night/SpriteLayers" index="3"]
-frame = 0
-
-[node name="02sock" parent="NPC_Baker_Night/SpriteLayers" index="4"]
-frame = 0
-
-[node name="03fot1" parent="NPC_Baker_Night/SpriteLayers" index="5"]
-frame = 0
-
-[node name="05shrt" parent="NPC_Baker_Night/SpriteLayers" index="6"]
-frame = 0
-
-[node name="06lwr2" parent="NPC_Baker_Night/SpriteLayers" index="7"]
-frame = 0
-
-[node name="07fot2" parent="NPC_Baker_Night/SpriteLayers" index="8"]
-frame = 0
-
-[node name="08lwr3" parent="NPC_Baker_Night/SpriteLayers" index="9"]
-frame = 0
-
-[node name="09hand" parent="NPC_Baker_Night/SpriteLayers" index="10"]
-frame = 0
-
-[node name="10outr" parent="NPC_Baker_Night/SpriteLayers" index="11"]
-frame = 0
-
-[node name="04lwr1" parent="NPC_Baker_Night/SpriteLayers" index="12"]
-frame = 0
-
-[node name="11neck" parent="NPC_Baker_Night/SpriteLayers" index="13"]
-frame = 0
-
-[node name="12face" parent="NPC_Baker_Night/SpriteLayers" index="14"]
-frame = 0
-
-[node name="13hair" parent="NPC_Baker_Night/SpriteLayers" index="15"]
-frame = 0
-
-[node name="14head" parent="NPC_Baker_Night/SpriteLayers" index="16"]
-frame = 0
-
-[node name="15over" parent="NPC_Baker_Night/SpriteLayers" index="17"]
-frame = 0
-
-[node name="farmer_bow" parent="NPC_Baker_Night/SpriteLayers" index="21"]
-rotation = 0.0
-offset = Vector2(0, -10)
-frame = 3
 
 [node name="NavigationAgent2D" parent="NPC_Baker_Night" index="5"]
 debug_enabled = false
@@ -836,70 +766,79 @@ one_way_collision_margin = 128.0
 [node name="WoodFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(82, 47)
+position = Vector2(87, 64)
 item_name = "Wood"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(144, 70, 48, 10)
 
-[node name="SugarFactory2" parent="." instance=ExtResource("20_eaqha")]
+[node name="SugarFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-65, 69)
+position = Vector2(-88, 64)
 item_name = "Sugar"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(64, 0, 16, 16)
 
-[node name="ItemSprite" parent="SugarFactory2" index="0"]
+[node name="ChocolateFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="SugarFactory2" index="2"]
-stream = null
-
-[node name="ChocolateFactory2" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-29, 69)
+position = Vector2(-28, -8)
 item_name = "Chocolate"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(17, 0, 15, 16)
 
-[node name="ItemSprite" parent="ChocolateFactory2" index="0"]
+[node name="VanillaFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="ChocolateFactory2" index="2"]
-stream = null
-
-[node name="VanillaFactory2" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(5, 69)
+position = Vector2(-32, 84)
 item_name = "Vanilla"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(48, 0, 16, 16)
 
-[node name="ItemSprite" parent="VanillaFactory2" index="0"]
+[node name="FlourFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-
-[node name="AudioStreamPlayer2D" parent="VanillaFactory2" index="2"]
-stream = null
-
-[node name="DoughFactory2" parent="." instance=ExtResource("20_eaqha")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(39, 69)
+position = Vector2(66, 23)
 item_name = "Flour"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(80, 0, 16, 16)
 
-[node name="ItemSprite" parent="DoughFactory2" index="0"]
-z_index = 1
-y_sort_enabled = true
+[node name="Recipe_board" type="StaticBody2D" parent="."]
+position = Vector2(-185, 79)
+script = ExtResource("32_scgws")
 
-[node name="AudioStreamPlayer2D" parent="DoughFactory2" index="2"]
-stream = null
+[node name="RecipeBoard" type="Sprite2D" parent="Recipe_board"]
+position = Vector2(231, -97)
+rotation = -0.261799
+scale = Vector2(0.0135, 0.0135)
+texture = ExtResource("31_0cn4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipe_board"]
+position = Vector2(232.5, -96.5)
+shape = SubResource("RectangleShape2D_4ubvu")
+
+[node name="Board_UI" parent="Recipe_board" instance=ExtResource("33_0cn4a")]
+visible = false
+
+[node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
+points_required = 5
+game_duration = 100000.0
+night_time = true
+
+[node name="HelpButton" type="Button" parent="BakerGameLogic"]
+offset_left = 1037.0
+offset_top = 539.0
+offset_right = 1123.0
+offset_bottom = 619.0
+focus_mode = 0
+theme = SubResource("Theme_u2itv")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_scgws")
+theme_override_styles/normal = SubResource("StyleBoxFlat_scgws")
+text = "?"
+script = ExtResource("20_v3vjk")
+is_night = true
 
 [node name="HelpLabels" type="Control" parent="."]
 layout_mode = 3
@@ -912,10 +851,10 @@ offset_bottom = 93.0
 [node name="Sugar" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -34.0
-offset_top = 32.0
-offset_right = 376.0
-offset_bottom = 270.0
+offset_left = -57.0
+offset_top = 24.0
+offset_right = 353.0
+offset_bottom = 262.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 130
@@ -927,10 +866,10 @@ vertical_alignment = 1
 [node name="Chocolate" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -6.0
-offset_top = 32.0
-offset_right = 632.0
-offset_bottom = 257.0
+offset_left = -3.0
+offset_top = -46.0
+offset_right = 635.0
+offset_bottom = 179.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -942,10 +881,10 @@ vertical_alignment = 1
 [node name="Vanilla" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 36.0
-offset_top = 32.0
-offset_right = 486.0
-offset_bottom = 257.0
+offset_left = -3.0
+offset_top = 44.0
+offset_right = 447.0
+offset_bottom = 269.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -958,10 +897,10 @@ vertical_alignment = 1
 [node name="Flour" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 71.0
-offset_top = 33.0
-offset_right = 430.0
-offset_bottom = 258.0
+offset_left = 99.0
+offset_top = -16.0
+offset_right = 458.0
+offset_bottom = 209.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -973,10 +912,10 @@ vertical_alignment = 1
 [node name="RecipeBoard" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -69.0
-offset_top = -33.0
-offset_right = 812.0
-offset_bottom = 192.0
+offset_left = 68.0
+offset_top = -97.0
+offset_right = 949.0
+offset_bottom = 128.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -988,10 +927,10 @@ vertical_alignment = 1
 [node name="CuttingBoard" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 70.0
-offset_top = -89.0
-offset_right = 951.0
-offset_bottom = 136.0
+offset_left = 18.0
+offset_top = -7.00001
+offset_right = 899.0
+offset_bottom = 218.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -1004,10 +943,10 @@ vertical_alignment = 1
 [node name="TrashCan" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = -61.0
-offset_top = -79.0
-offset_right = 576.0
-offset_bottom = 146.0
+offset_left = -55.0
+offset_top = -80.0
+offset_right = 582.0
+offset_bottom = 145.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -1036,10 +975,10 @@ vertical_alignment = 1
 [node name="Window" type="Label" parent="HelpLabels"]
 z_index = 5
 layout_mode = 0
-offset_left = 23.0
-offset_top = -123.0
-offset_right = 660.0
-offset_bottom = 102.0
+offset_left = 26.0
+offset_top = -118.0
+offset_right = 663.0
+offset_bottom = 107.0
 scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -1048,24 +987,8 @@ text = "Window"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Recipe_board" type="StaticBody2D" parent="."]
-position = Vector2(-185, 79)
-script = ExtResource("32_scgws")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipe_board"]
-position = Vector2(97, -37)
-shape = SubResource("RectangleShape2D_4ubvu")
-
-[node name="Board_UI" parent="Recipe_board" instance=ExtResource("33_0cn4a")]
-visible = false
-
-[connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
 [connection signal="point_earned" from="NPC_Baker_Night" to="BakerGameLogic" method="_on_npc_baker_night_point_earned"]
+[connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
 
-[editable path="CuttingBoard"]
 [editable path="Door_Treehouse"]
 [editable path="NPC_Baker_Night"]
-[editable path="SugarFactory2"]
-[editable path="ChocolateFactory2"]
-[editable path="VanillaFactory2"]
-[editable path="DoughFactory2"]

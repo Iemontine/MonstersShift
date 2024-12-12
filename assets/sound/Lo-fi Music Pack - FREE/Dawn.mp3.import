@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ckw066ydiy6f0"
-path="res://.godot/imported/Dawn.mp3-06fe6be95bc95317906fbd241cc7fa91.mp3str"
+path="res://.godot/imported/Dawn.mp3-8a2bb291a78a409b8a68dae06d0d5717.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Dawn.mp3"
-dest_files=["res://.godot/imported/Dawn.mp3-06fe6be95bc95317906fbd241cc7fa91.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Dawn.mp3"
+dest_files=["res://.godot/imported/Dawn.mp3-8a2bb291a78a409b8a68dae06d0d5717.mp3str"]
 
 [params]
 

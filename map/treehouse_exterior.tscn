@@ -23581,7 +23581,7 @@ size = Vector2(99.75, 123)
 size = Vector2(1104, 149.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqu8j"]
-size = Vector2(160, 240)
+size = Vector2(109, 240)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1pxbo"]
 size = Vector2(234, 52)
@@ -24696,12 +24696,14 @@ region_rect = Rect2(128, 1016, 64, 56)
 z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surroundings/TreeCollisions2"]
+modulate = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(376, -16, 547, 118, 1640, 120, 1608, -16)
 
 [node name="TreeCollisions" type="StaticBody2D" parent="Surroundings"]
 z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surroundings/TreeCollisions"]
+modulate = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(392, -96, 808, -96, 872, -152, 848, -184, 488, -184)
 
 [node name="repeating_trees_mountain" type="Node" parent="Surroundings"]
@@ -24783,7 +24785,7 @@ y_sort_enabled = true
 position = Vector2(1000, -416)
 
 [node name="Player" parent="." instance=ExtResource("1_ni0hd")]
-position = Vector2(271, -19)
+position = Vector2(272, -21)
 
 [node name="TestWidowAttack" parent="." instance=ExtResource("12_s6p8i")]
 position = Vector2(1056, -280)
@@ -24801,7 +24803,7 @@ destination_loadzone = "Loadzone_Treehouse"
 position = Vector2(891, -359)
 
 [node name="LeaveTooEarlyCutscene" parent="." instance=ExtResource("14_nucyf")]
-position = Vector2(283, 3)
+position = Vector2(300, 3)
 
 [node name="Path2D" type="Path2D" parent="."]
 z_index = 10
@@ -24811,19 +24813,19 @@ curve = SubResource("Curve2D_srtvs")
 position = Vector2(676, -58)
 rotation = -0.0613265
 
-[node name="AreaTrigger" parent="." instance=ExtResource("17_d42bs")]
+[node name="WidowNightAttackTrigger" parent="." instance=ExtResource("17_d42bs")]
 position = Vector2(432, -64)
 script = ExtResource("20_s6p8i")
 
-[node name="CollisionShape2D" parent="AreaTrigger" index="0"]
+[node name="CollisionShape2D" parent="WidowNightAttackTrigger" index="0"]
 position = Vector2(256.5, 4)
 shape = SubResource("RectangleShape2D_s6p8i")
 
-[node name="AreaTrigger2" parent="." instance=ExtResource("17_d42bs")]
+[node name="WidowScareTrigger" parent="." instance=ExtResource("17_d42bs")]
 position = Vector2(432, -64)
 script = ExtResource("21_ke287")
 
-[node name="CollisionShape2D" parent="AreaTrigger2" index="0"]
+[node name="CollisionShape2D" parent="WidowScareTrigger" index="0"]
 position = Vector2(480, -184)
 shape = SubResource("RectangleShape2D_doksa")
 
@@ -24863,7 +24865,7 @@ debug_color = Color(0, 0, 0, 0.42)
 script = ExtResource("24_lh7wg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalWidowScene"]
-position = Vector2(3152, 448)
+position = Vector2(3126.5, 448)
 shape = SubResource("RectangleShape2D_mqu8j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FinalWidowScene"]
@@ -24887,6 +24889,8 @@ editor_draw_limits = true
 script = ExtResource("2_nucyf")
 target = NodePath("../Player")
 
+[connection signal="path_follow_completed" from="Player" to="WidowNightAttackTrigger" method="_on_player_path_follow_completed"]
+
 [editable path="Door_Treehouse"]
-[editable path="AreaTrigger"]
-[editable path="AreaTrigger2"]
+[editable path="WidowNightAttackTrigger"]
+[editable path="WidowScareTrigger"]

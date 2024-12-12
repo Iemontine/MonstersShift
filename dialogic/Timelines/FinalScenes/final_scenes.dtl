@@ -8,7 +8,6 @@ do NpcController.setSpeed(100)
 do NpcController.moveUp()
 [wait time="1.1"]
 do NpcController.stop()
-# 
 do NpcController.set_target_npc("NPC_Widow")
 do NpcController.set_npc_position(932, -221)
 do NpcController.setSpeed(100)
@@ -54,8 +53,7 @@ do PlayerController.playAnimation("SitFloor2", 0, -1)
 player (smile): Rest easy Ben, I've got it from here.
 do PlayerController.moveLeft()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
-[wait time="2.0"]
+[wait time="1.5"]
 do PlayerController.stop()
-do PlayerController.switchScene("Main_Menu", "Door_Menu")
-[wait time="1.0"]
 [signal arg="uncontrol"]
+do SceneManager.switch_to_credits()

@@ -11,7 +11,7 @@ extends CanvasLayer
 
 var start_game:bool 
 var current_points:int
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	start_game = true
@@ -23,8 +23,7 @@ func _ready() -> void:
 		progress_bar.visible = true
 	help_labels.visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if start_game:
 		if current_points >= points_required:
 				progress_bar.visible = false

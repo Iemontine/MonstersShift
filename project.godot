@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://map/conbini.tscn"
+run/main_scene="res://map/bakery.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -60,6 +60,7 @@ directories/dtl_directory={
 "how_to_play": "res://dialogic/Timelines/Baker/how_to_play.dtl",
 "intro": "res://dialogic/Timelines/intro.dtl",
 "last_morning": "res://dialogic/Timelines/FinalScenes/last_morning.dtl",
+"leave_conbini_early": "res://dialogic/Timelines/Widow/leave_conbini_early.dtl",
 "leave_early_postarrival": "res://dialogic/Timelines/HouseAreaPostIntro/leave_early_postarrival.dtl",
 "leaving_bakery_evening": "res://dialogic/Timelines/Baker/leaving_bakery_evening.dtl",
 "leaving_house_early": "res://dialogic/Timelines/HouseAreaPostIntro/leaving_house_early.dtl",
@@ -69,6 +70,7 @@ directories/dtl_directory={
 "outside_bakery": "res://dialogic/Timelines/Baker/outside_bakery.dtl",
 "test": "res://dialogic/Timelines/Random/test.dtl",
 "test2": "res://dialogic/Timelines/Random/test2.dtl",
+"testing_portraits": "res://dialogic/Timelines/Random/testing_portraits.dtl",
 "widow_before_day_game": "res://dialogic/Timelines/Widow/widow_before_day_game.dtl",
 "widow_day_qte_fail": "res://dialogic/Timelines/Widow/widow_day_qte_fail.dtl",
 "widow_fail_daytime": "res://dialogic/Timelines/Widow/widow_fail_daytime.dtl",
@@ -236,4 +238,4 @@ load={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.255659, 0.255659, 0.255659, 1)
+environment/defaults/default_clear_color=Color(0.118581, 0.118581, 0.118581, 1)

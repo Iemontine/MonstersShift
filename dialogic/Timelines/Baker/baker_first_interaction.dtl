@@ -1,7 +1,7 @@
 # First interaction with the baker
 [signal arg="control"]
 do PlayerController.stop()
-[sound path="Voice_Male_V1_Reflexion_Mouth_Open_Mono_05.wav" volume="0.0"]
+[sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Male/Voice_Male_Expressions/Voice_Male_V2_Reflexion_Mouth_Close_Mono_06.wav" volume="0.0"]
 do NpcController.set_target_npc("NPC_Baker")
 do NpcController.playAnimation("MoodThumbsUp", 0, 1)
 baker (smile): Hey there sugar! You new to town? I think I’d recognize a face like yours if I’d seen it before!

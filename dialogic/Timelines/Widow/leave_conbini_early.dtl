@@ -1,0 +1,8 @@
+# if you try to leave the conbini before getting all groceries this plays 
+[signal arg="control"]
+do PlayerController.stop()
+do PlayerController.moveUp()
+[wait time="0.2"]
+do PlayerController.stop()
+player (neutral): I should make sure to get all the groceries before I leave.
+[signal arg="uncontrol"]

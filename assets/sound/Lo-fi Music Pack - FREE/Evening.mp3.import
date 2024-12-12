@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ducrhqrks5ydc"
-path="res://.godot/imported/Evening.mp3-a75d4d701dcab7007a4c220f9578a1d4.mp3str"
+path="res://.godot/imported/Evening.mp3-d37b6c8c948dae575d122687f43ef0c2.mp3str"
 
 [deps]
 
-source_file="res://assets/sound/music/Lo-fi Music Pack - FREE/Evening.mp3"
-dest_files=["res://.godot/imported/Evening.mp3-a75d4d701dcab7007a4c220f9578a1d4.mp3str"]
+source_file="res://assets/sound/Lo-fi Music Pack - FREE/Evening.mp3"
+dest_files=["res://.godot/imported/Evening.mp3-d37b6c8c948dae575d122687f43ef0c2.mp3str"]
 
 [params]
 
