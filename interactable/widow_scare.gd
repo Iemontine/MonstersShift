@@ -12,11 +12,12 @@ func _on_body_entered(_body:Object) -> void:
 		): 
 			NpcController.set_target_npc("NPC_Widow")
 			
-			#var glow = widow.get_node("Glow")
+			var glow = widow.get_node("Glow")
 			
 			widow.visible = true
 			var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_EXPO)
 			tween.tween_property(widow, "modulate:a", 1, 1).from(0)
+			tween.tween_property(glow, "color:a", 1, 1).from(0)
 			NpcController.control_npc()
 			NpcController.teleport(Vector2(912,-328))
 			NpcController.setSpeed(50)
@@ -26,6 +27,7 @@ func _on_body_entered(_body:Object) -> void:
 
 			tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_EXPO)
 			tween.tween_property(widow, "modulate:a", 0, 1).from(1)
+			tween.tween_property(glow, "color:a", 0, 1).from(1)
 
 			await tween.finished
 			

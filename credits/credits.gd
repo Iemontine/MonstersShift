@@ -6,7 +6,7 @@ extends Control
 @export var text_color := Color(0.812, 1, 0.863)
 @export var title_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
 @export var text_font : FontFile = load("res://assets/ui_and_font/font/DePixelHalbfett.ttf")
-@export var Music : AudioStream = load("res://assets/sound/Lo-fi Music Pack - FREE/Lo-fi Music Pack - FREE/Dawn.mp3")
+@export var Music : AudioStream = load("res://assets/sound/Lo-fi Music Pack - FREE/Dawn.mp3")
 @export var Use_Video_Audio : bool = false
 @export var Video : VideoStream = null
 

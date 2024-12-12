@@ -45,12 +45,24 @@ func attack(direction: Vector2) -> void:
 	set_collision_mask_value(1, false) # Disable Collision Mask 1
 	travel_to_anim("Hug", direction)
 
+
+	var scream_sounds = [
+		preload("res://assets/assets_widow/scream-with-echo-46585.mp3"),
+		preload("res://assets/assets_widow/scream-noise-142446.mp3")
+	]
+	var scream_sound = scream_sounds[randi() % scream_sounds.size()]
+	var scream_player = AudioStreamPlayer.new()
+	scream_player.stream = scream_sound
+	add_child(scream_player)
+	scream_player.play()
+
 	activate_glow()
 
 	var player_position = get_tree().current_scene.get_node("Player").position
 
 	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(self, "modulate:a", 1, 0.3).from(0)
+	tween.tween_property($Glow, "color:a", 1, 0.3).from(1).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position", player_position - direction * 4, 0.5).from(player_position - direction * 50).set_trans(Tween.TRANS_BOUNCE)
 	
 
@@ -60,6 +72,7 @@ func backoff() -> void:
 	
 	var tween: Tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(self, "modulate:a", 0, 0.5)
+	tween.tween_property($Glow, "color:a", 0, 0.3).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position", position - last_direction * 50, 0.5)
 
 	await get_tree().create_timer(0.5).timeout

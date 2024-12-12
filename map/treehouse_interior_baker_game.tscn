@@ -16,11 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="15_u2itv"]
 [ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="16_scgws"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="17_0cn4a"]
+[ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="17_4ubvu"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="20_eaqha"]
 [ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="20_v3vjk"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
-[ext_resource type="Script" uid="uid://bm46n0dpyb20l" path="res://scripts/camera_night_baker.gd" id="22_1a82g"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
 [ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
 [ext_resource type="Texture2D" uid="uid://bwv67phb884jc" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_vertical_right_3.png" id="26_1a82g"]
@@ -643,6 +643,23 @@ tile_set = SubResource("TileSet_5m6t8")
 z_index = 1
 position = Vector2(-44, 26)
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(-56, -16)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.01
+drag_top_margin = 0.01
+drag_right_margin = 0.01
+drag_bottom_margin = 0.01
+editor_draw_limits = true
+script = ExtResource("17_4ubvu")
+target = NodePath("../Player")
+
 [node name="Treehouse_png" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1.16669, 5.125)
@@ -656,19 +673,13 @@ position = Vector2(-2, 54)
 collision_layer = 8
 collision_mask = 0
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-z_index = 10
-y_sort_enabled = true
-position = Vector2(-2, -12)
-scale = Vector2(1, 0.983673)
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("22_1a82g")
-target = NodePath("../Player")
-
 [node name="Door_Treehouse" parent="." instance=ExtResource("27_n8xkf")]
 position = Vector2(-363, -21)
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
+
+[node name="Spawnpoint" parent="Door_Treehouse" index="2"]
+position = Vector2(309, 13)
 
 [node name="NPC_Baker_Night" parent="." instance=ExtResource("26_danju")]
 z_index = -1
@@ -755,12 +766,12 @@ one_way_collision_margin = 128.0
 [node name="WoodFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(87, 63)
+position = Vector2(87, 64)
 item_name = "Wood"
 item_texture = ExtResource("21_gptp6")
 item_region_rect = Rect2(144, 70, 48, 10)
 
-[node name="SugarFactory2" parent="." instance=ExtResource("20_eaqha")]
+[node name="SugarFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-88, 64)
@@ -768,7 +779,7 @@ item_name = "Sugar"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(64, 0, 16, 16)
 
-[node name="ChocolateFactory2" parent="." instance=ExtResource("20_eaqha")]
+[node name="ChocolateFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-28, -8)
@@ -776,7 +787,7 @@ item_name = "Chocolate"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(17, 0, 15, 16)
 
-[node name="VanillaFactory2" parent="." instance=ExtResource("20_eaqha")]
+[node name="VanillaFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-32, 84)
@@ -784,10 +795,10 @@ item_name = "Vanilla"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(48, 0, 16, 16)
 
-[node name="DoughFactory2" parent="." instance=ExtResource("20_eaqha")]
+[node name="FlourFactory" parent="." instance=ExtResource("20_eaqha")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(66, 24)
+position = Vector2(66, 23)
 item_name = "Flour"
 item_texture = ExtResource("30_3l7dr")
 item_region_rect = Rect2(80, 0, 16, 16)
@@ -810,7 +821,6 @@ shape = SubResource("RectangleShape2D_4ubvu")
 visible = false
 
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
-visible = false
 points_required = 5
 game_duration = 100000.0
 night_time = true
@@ -980,4 +990,5 @@ vertical_alignment = 1
 [connection signal="point_earned" from="NPC_Baker_Night" to="BakerGameLogic" method="_on_npc_baker_night_point_earned"]
 [connection signal="pressed" from="BakerGameLogic/HelpButton" to="BakerGameLogic/HelpButton" method="_on_pressed"]
 
+[editable path="Door_Treehouse"]
 [editable path="NPC_Baker_Night"]
