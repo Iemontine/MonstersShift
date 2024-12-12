@@ -3,7 +3,7 @@ extends Node
 # all on a linear scale, seems like 1.0 is the max before it gets bad
 const max_vol : float = 0.25
 const min_vol : float = 0.0
-const default_vol : float = 0.10
+const default_vol : float = 0.05
 
 # in dB
 var volume : float = linear_to_db(default_vol)
@@ -56,8 +56,9 @@ func _on_scene_transition_completed() -> void:
 		pass
 	elif not _check_ouside():
 		if SceneManager.current_scene:	# Added this line, TODO: current_scene not guaranteed a value on init
-			if not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
-					return
+			if not _tracks.has(SceneManager.current_scene.to_lower()) or \
+			   not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
+				return
 			var stream = load(_track_path + _tracks[SceneManager.current_scene.to_lower()])
 			stream_player.stream = stream
 			if _current_track != _tracks[SceneManager.current_scene.to_lower()]:
