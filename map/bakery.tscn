@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://douyapg7cuupm" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_condominium_2.png" id="4_mwicy"]
 [ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_igw2u"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="7_eyyg0"]
-[ext_resource type="PackedScene" uid="uid://77r3s225tlp3" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
+[ext_resource type="PackedScene" uid="uid://bqtbumgaave1p" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
 [ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
