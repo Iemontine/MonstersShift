@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://dkjd2a74ar4fy"]
+[gd_scene load_steps=46 format=4 uid="uid://dkjd2a74ar4fy"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_ni0hd"]
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_nucyf"]
@@ -12,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="10_ke287"]
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="11_doksa"]
 [ext_resource type="PackedScene" uid="uid://c27sdg6fx6eqh" path="res://scripts/loadzones/loadzone.tscn" id="12_lh7wg"]
-[ext_resource type="PackedScene" uid="uid://dwc4ls6ucen5q" path="res://interactable/sign.tscn" id="12_s6p8i"]
-[ext_resource type="PackedScene" uid="uid://dxiydhu8wr4dn" path="res://interactable/test_cutscene.tscn" id="12_vut3b"]
-[ext_resource type="Script" path="res://interactable/test_widow_attack.gd" id="13_ke287"]
-[ext_resource type="PackedScene" uid="uid://qiyrotejuoax" path="res://interactable/day_night_button.tscn" id="13_mqu8j"]
 [ext_resource type="PackedScene" uid="uid://ftjlrq5makyi" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.tscn" id="13_ni0hd"]
 [ext_resource type="PackedScene" uid="uid://cqq1lhxfiyg3q" path="res://cutscenes/HouseArea/leave_too_early_cutscene.tscn" id="14_nucyf"]
 [ext_resource type="PackedScene" path="res://interactable/area_trigger.tscn" id="17_d42bs"]
@@ -24704,7 +24700,7 @@ z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surroundings/TreeCollisions"]
 modulate = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(392, -96, 808, -96, 872, -152, 848, -184, 488, -184)
+polygon = PackedVector2Array(388, -88, 812, -88, 872, -152, 848, -184, 488, -184)
 
 [node name="repeating_trees_mountain" type="Node" parent="Surroundings"]
 
@@ -24780,19 +24776,8 @@ enabled = false
 color = Color(0.65533, 0.398047, 0.0745394, 1)
 texture = ExtResource("11_doksa")
 
-[node name="DayNightButton" parent="." instance=ExtResource("13_mqu8j")]
-y_sort_enabled = true
-position = Vector2(1000, -416)
-
 [node name="Player" parent="." instance=ExtResource("1_ni0hd")]
 position = Vector2(272, -21)
-
-[node name="TestWidowAttack" parent="." instance=ExtResource("12_s6p8i")]
-position = Vector2(1056, -280)
-script = ExtResource("13_ke287")
-
-[node name="TestCutscene" parent="." instance=ExtResource("12_vut3b")]
-position = Vector2(1005, -320)
 
 [node name="Loadzone_Town" parent="." instance=ExtResource("12_lh7wg")]
 position = Vector2(254, -31)

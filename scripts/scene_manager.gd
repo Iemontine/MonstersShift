@@ -44,7 +44,8 @@ func switch_scene_on_load(src_player: Player, destination: String, pos:Vector2, 
 	start_timer(0.5)
 
 func switch_scene(src_player: Player, destination: String, should_player_walk: bool, loadzone_name: String = "") -> void:
-	MusicManager.stream_player.stream_paused = true
+	if is_instance_valid(MusicManager.stream_player):
+		MusicManager.stream_player.stream_paused = true
 	
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished

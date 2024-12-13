@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="12_vwit3"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="13_3l7dr"]
 [ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="14_v3vjk"]
-[ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="15_u2itv"]
-[ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="16_scgws"]
+[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="15_u2itv"]
+[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="16_scgws"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="17_0cn4a"]
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="17_4ubvu"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="19_owop5"]
@@ -22,18 +22,18 @@
 [ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="20_v3vjk"]
 [ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="21_gptp6"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="22_m5cdb"]
-[ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
+[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="23_eaqha"]
 [ext_resource type="Texture2D" uid="uid://bwv67phb884jc" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_vertical_right_3.png" id="26_1a82g"]
 [ext_resource type="PackedScene" uid="uid://kilvngphlxac" path="res://prefabs/npc_baker_zombie_night.tscn" id="26_danju"]
-[ext_resource type="Script" uid="uid://c61rro7ns75sv" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
+[ext_resource type="Script" path="res://prefabs/baker_night_fix_door.gd" id="27_danju"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="27_n8xkf"]
-[ext_resource type="Script" uid="uid://c71guyw4tujej" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
+[ext_resource type="Script" path="res://prefabs/door_healthbar.gd" id="27_vwit3"]
 [ext_resource type="Script" uid="uid://cjhh7k24fxfqc" path="res://prefabs/window_baker_night.gd" id="28_3l7dr"]
 [ext_resource type="AudioStream" uid="uid://denh5oit0yejr" path="res://assets/baker_sounds/plank_break_sound.wav" id="28_scgws"]
 [ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="30_3l7dr"]
 [ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://assets/assets_baker/recipe_board.png" id="31_0cn4a"]
 [ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="32_scgws"]
-[ext_resource type="PackedScene" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
+[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="33_0cn4a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a82g"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -821,7 +821,7 @@ shape = SubResource("RectangleShape2D_4ubvu")
 visible = false
 
 [node name="BakerGameLogic" parent="." instance=ExtResource("23_eaqha")]
-points_required = 5
+points_required = 4
 game_duration = 100000.0
 night_time = true
 

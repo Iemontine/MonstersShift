@@ -24,6 +24,7 @@ func control_player() -> void:
 	player.state = Player.PlayerState.CONTROLLED
 
 func uncontrol_player() -> void:
+	player.enable_sprint()
 	player.state = Player.PlayerState.NORMAL
 
 # Possible commands callable by Dialogic are below:
@@ -95,6 +96,7 @@ func stop() -> void:
 	else:
 		player.travel_to_anim("Idle")
 		PlayerController.resetSpeed()
+	player.disable_sprint()
 	print("Stopping")
 
 func _on_path_follow_completed():

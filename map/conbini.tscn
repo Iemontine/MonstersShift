@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=4 uid="uid://b5vbrn4n2gs74"]
 
 [ext_resource type="Texture2D" uid="uid://0lwsmeirq7xv" path="res://assets/pixellight.png" id="1_4b6yk"]
-[ext_resource type="Script" uid="uid://b3eqqvpgcgs3b" path="res://map/conbini_flickering_lights.gd" id="1_k0ype"]
+[ext_resource type="Script" path="res://map/conbini_flickering_lights.gd" id="1_k0ype"]
 [ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_mtsbs"]
 [ext_resource type="Texture2D" uid="uid://4534isew3p5b" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_3d_walls_16x16.png" id="2_thbp3"]
 [ext_resource type="Texture2D" uid="uid://c8cl0a6ru5q6i" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/16_Grocery_store_Shadowless.png" id="3_yd03f"]
@@ -12,8 +12,8 @@
 [ext_resource type="Script" uid="uid://bip4dieqak5q7" path="res://interactable/event_lockable_door.gd" id="9_k0ype"]
 [ext_resource type="PackedScene" uid="uid://bywfnd7utfd7x" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
-[ext_resource type="Script" uid="uid://cknpthi013dqr" path="res://prefabs/grocery_handler.gd" id="10_ng1wl"]
-[ext_resource type="Script" uid="uid://bwnsief1oue5d" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
+[ext_resource type="Script" path="res://prefabs/grocery_handler.gd" id="10_ng1wl"]
+[ext_resource type="Script" uid="uid://bb5vmmj8012hl" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
 [ext_resource type="Texture2D" uid="uid://cuw473r15j4st" path="res://assets/assets_widow/conbini_jam.png" id="11_eebgc"]
 [ext_resource type="Texture2D" uid="uid://cj5u1w22hvh6a" path="res://assets/assets_widow/watermelon1.png" id="11_ffkw8"]
 [ext_resource type="Texture2D" uid="uid://dpo86wniggd40" path="res://assets/assets_widow/conbini_milk.png" id="12_4fgb6"]
@@ -3099,7 +3099,8 @@ physics_interpolation_mode = 2
 y_sort_enabled = true
 position = Vector2(160, 112)
 script = ExtResource("9_k0ype")
-event = 26
+after_event = 23
+before_event = 26
 scene = "leave_conbini_early"
 destination_scene = "Town"
 target_door = "Door_Conbini2"
@@ -3126,7 +3127,8 @@ physics_interpolation_mode = 2
 y_sort_enabled = true
 position = Vector2(0, 112)
 script = ExtResource("9_k0ype")
-event = 26
+after_event = 23
+before_event = 26
 scene = "leave_conbini_early"
 destination_scene = "Town"
 target_door = "Door_Conbini1"

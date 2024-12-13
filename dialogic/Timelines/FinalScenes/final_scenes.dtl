@@ -45,8 +45,8 @@ do PlayerController.moveUp()
 do PlayerController.stop()
 [clear time="1.5" text="false" portraits="false" music="false" positions="false" style="false"]
 The gravestone reads "In Loving Memory of Benjamin, your time with us will forever be cherished."
-player (smile): ...You really helped people here didn't you.
-player (smile): Of course you would light up the world wherever you went.
+player (sad): ...You really helped people here didn't you.
+player (sad): Of course you would light up the world wherever you went.
 A single tear slides down your cheek as you sit down to touch the stone.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Sample_A_Sound_Effect/Footsteps_Tile_Jump_Land_01.wav" volume="0.0"]
 do PlayerController.playAnimation("SitFloor2", 0, -1)
