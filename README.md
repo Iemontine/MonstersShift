@@ -8,7 +8,7 @@
 ## Project Resources
 
 * Play our game [here!](https://itch.io/)
-* View our trailer & press kit [here!]([https://youtube.com](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79))  
+* View our trailer & press kit [here!](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)  
 
 * Learn about our game and read our documentation [here](https://github.com/Iemontine/MonstersShift/blob/main/ProjectDocument.md#monsters-shift).
 
