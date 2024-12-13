@@ -2,7 +2,11 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+Genre: Town Life Sim x Horror
+
+Concept: An unassuming little city, with the protagonist’s estranged brother’s home, whose inhabitants turn into random themed monsters during the night.
+
+Your estranged brother has died, and left his assets solely to you. Confused and resentful, you leave town to find out what happened when he abandoned you all those years ago. You arrive in an average, unassuming city and find his lone treehouse in the nearby forest. Determined to find out more, you discover that your brother may have not left you for no good reason… turns out, he left to help people who needed him more than you did. You discover your brother’s old friends are somehow afflicted and can turn into monsters. It’s your responsibility to finish what he started in this town that may be more than meets the eye.
 
 ## Project Resources
 
