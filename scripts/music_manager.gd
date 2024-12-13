@@ -1,7 +1,7 @@
 extends Node
 
 # all on a linear scale, seems like 1.0 is the max before it gets bad
-const max_vol : float = 0.25
+const max_vol : float = 0.5
 const min_vol : float = 0.0
 const default_vol : float = max_vol
 
@@ -19,7 +19,7 @@ var _tracks := {
 	"bakery_no_game": "bakery.wav",
 	"treehouse_interior_baker_game": "bakery_game_night.wav",
 	"conbini" : "conbini.wav",
-	"treehouse_interior" : "house.wav",
+	"treehouse_interior" : "inside_treehouse.wav",
 	"main_menu": "main_menu.wav"
 }
 var _current_track : String
