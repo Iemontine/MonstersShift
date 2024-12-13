@@ -2961,7 +2961,6 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hc52d"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4b6yk"]
-load_path = "res://.godot/imported/watermelon1.png-b40b0b04b6a397feaa45e3a67b4133c6.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffkw8"]
 
