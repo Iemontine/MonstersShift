@@ -58,7 +58,7 @@ func fail_player():
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
 	stop_minigame()
-	StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
+	# StoryManager.transition_to_event(StoryManager.Event.WIDOW_FAIL_NIGHT)
 	PlayerController.start_cutscene("widow_fail_night")
 
 func _on_path_follow_completed():

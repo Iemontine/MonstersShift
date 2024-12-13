@@ -18,5 +18,5 @@ do PlayerController.stop()
 After hours of tossing and turning, you decide to get out of bed.
 do PlayerController.playAnimation("MoodSad")
 player (neutral): I just can't sleep...might as well go for a walk.
-player (normal or smile): Maybe I can stare at the pastries through the bakery window. Croissants always make me happy.
+player (smile): Maybe I can stare at the pastries through the bakery window. Croissants always make me happy.
 [signal arg="uncontrol"]

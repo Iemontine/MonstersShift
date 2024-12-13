@@ -28,10 +28,11 @@ player (surprise): Can I ask what happened to you?
 widow (sad or normal): Of course. Many years ago, in a tragic accident, I lost my child and husband.
 [sound path="res://assets/sound/Essentials_Series_NOX_SOUND/Voices_Essentials_NOX_SOUND/Voice_Female/Voice_Female_Breath/Voice_Female_V1_Breath_Single_Mono_06.wav" volume="0.0"]
 do NpcController.playAnimation("MoodSad", 0, -1)
-widow (sad or normal): ...They were everything to me. Without them, I couldn’t breathe. I couldn’t move. I just layed in bed. Frozen.
-widow (sad or normal): My sadness consumed me and turned me into what you just saw.
-widow (smile): I thought I would be like that forever…but then I met your sweet brother Benji. He saved me from myself.
-Benjamin helped this woman. Helped her recover from something unimaginable. Wow…
+widow (sad or normal): ...They were everything to me. Without them, I couldn’t breathe. I couldn’t move.
+widow (sad or normal):  I just layed in bed. Frozen.
+widow (sad or normal): My sadness consumed me and turned me into what you just saw..
+widow (smile): I thought I would be like that forever…but then I met your sweet brother Benji.
+widow (smile):  He saved me from myself.
 do PlayerController.moveRight()
 [wait time="0.1"]
 do PlayerController.stop()

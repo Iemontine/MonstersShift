@@ -863,7 +863,6 @@ target = NodePath("../Player")
 
 [node name="CuttingBoard" parent="." instance=ExtResource("10_n22bn")]
 z_index = 1
-y_sort_enabled = true
 position = Vector2(41, -40)
 collision_layer = 8
 collision_mask = 0
