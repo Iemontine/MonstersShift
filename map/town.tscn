@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://b70h03vjoiqqx"]
+[gd_scene load_steps=80 format=4 uid="uid://b70h03vjoiqqx"]
 
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="1_f72b0"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="2_5qoex"]
@@ -34,8 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://40bygst8skbn" path="res://interactable/test_widow_minigame.tscn" id="32_txolg"]
 [ext_resource type="PackedScene" uid="uid://d3ojvtx4yjg2j" path="res://cutscenes/WidowArea/widow_first_cutscene.tscn" id="33_fb3tg"]
 [ext_resource type="PackedScene" uid="uid://b2qfxonvvyga7" path="res://prefabs/qte_day.tscn" id="33_ukl65"]
-[ext_resource type="Script" uid="uid://ofl2m7xgpjm2" path="res://interactable/test_enable_widowgame.gd" id="34_fb3tg"]
-[ext_resource type="Script" uid="uid://dv05ig8ew0kbp" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
+[ext_resource type="Script" path="res://cutscenes/WidowArea/widow_first_cutscene.gd" id="34_uap6c"]
 [ext_resource type="Texture2D" uid="uid://c0gpnhjuh36fo" path="res://assets/light.png" id="37_apa6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5j3o1"]
@@ -29813,15 +29812,9 @@ position = Vector2(107, 52)
 position = Vector2(-1863, -153)
 script = ExtResource("29_q1b8d")
 
-[node name="TestCutscene" parent="." instance=ExtResource("30_jrct8")]
-position = Vector2(-1160, -175)
-
 [node name="WidowDoorCutscene" parent="." instance=ExtResource("31_ccldd")]
 z_index = 1
 position = Vector2(-1336, -494)
-
-[node name="TestWidow" parent="." instance=ExtResource("32_txolg")]
-position = Vector2(-1072, -170)
 
 [node name="QTE" parent="." node_paths=PackedStringArray("player") instance=ExtResource("33_ukl65")]
 visible = false
@@ -29833,10 +29826,6 @@ curve = SubResource("Curve2D_jrct8")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-1136, -176)
 rotation = 1.5708
-
-[node name="Sign" parent="." instance=ExtResource("32_txolg")]
-position = Vector2(-72, -8)
-script = ExtResource("34_fb3tg")
 
 [node name="WidowFirstCutscene" parent="." instance=ExtResource("33_fb3tg")]
 position = Vector2(-1255, -444)

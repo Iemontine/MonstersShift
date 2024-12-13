@@ -70,9 +70,9 @@ func _physics_process(_delta: float) -> void:
 			if agent_2d.is_navigation_finished():
 				state = NPCState.BAKER_ATTACKING_DOOR
 			travel_to_position = door_marker.position
-			travel_to_anim("Walk",Vector2(-1,0))
+			travel_to_anim("Push",Vector2(-1,0))
 		NPCState.BAKER_GO_TO_WINDOW:
-			travel_to_anim("Walk",Vector2(1,0))
+			travel_to_anim("Push",Vector2(1,0))
 			travel_to_position = window_marker.position
 			if agent_2d.is_navigation_finished():
 				eat_timer.start(2)

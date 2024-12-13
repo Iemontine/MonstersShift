@@ -3,7 +3,7 @@
 do PlayerController.stop()
 [background arg="res://dialogic/Images/transition.png" fade="2.0"]
 [wait time="2.0"]
-baker: UGGHH I LOVE DESSERT!
+baker (smile): UGGHH I LOVE DESSERT!
 - Exit
 	[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
 	do PlayerController.switchScene("Treehouse_Interior_Baker_Success", "Door_Treehouse")

@@ -11,15 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://b0pmhwx0vknha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/21_Clothing_Store_Black_Shadow_16x16.png" id="7_q3ipt"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="7_ya4jy"]
 [ext_resource type="Texture2D" uid="uid://dmthlsilfm2sg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/18_Jail_Black_Shadow_16x16.png" id="8_1my0l"]
-[ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
+[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
 [ext_resource type="Texture2D" uid="uid://boplmfg22sf2d" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/4_Bedroom_Shadowless.png" id="9_4hge0"]
-[ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
+[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
 [ext_resource type="Texture2D" uid="uid://ccclynhkmikvl" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/26_Condominium_Black_Shadow_16x16.png" id="9_hkc28"]
 [ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
 [ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
 [ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
 [ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="15_d3ftm"]
-[ext_resource type="Script" uid="uid://cayrl7xm7o2fw" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
+[ext_resource type="Script" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
 [ext_resource type="Script" uid="uid://bip4dieqak5q7" path="res://interactable/event_lockable_door.gd" id="20_tvmth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
@@ -565,7 +565,8 @@ scale = Vector2(0.370052, 0.370573)
 [node name="Door_Treehouse" parent="." instance=ExtResource("7_ya4jy")]
 position = Vector2(-56, -32)
 script = ExtResource("20_tvmth")
-event = 6
+after_event = 0
+before_event = 6
 scene = "leaving_house_early"
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"

@@ -70,7 +70,6 @@ func _on_body_entered(_body: Object) -> void:
 		tween.tween_property(glow, "color:a", 1, 1).from(0)
 		NpcController.teleport(Vector2(player.global_position.x + attack_direction.x * teleport_distance, self.global_position.y - 20))
 		
-		player.disable_sprint() # Disable sprinting
 		PlayerController.control_player()
 		PlayerController.stop()
 		var camera: Camera2D = get_tree().current_scene.get_node("Camera2D")
@@ -79,6 +78,7 @@ func _on_body_entered(_body: Object) -> void:
 		await get_tree().create_timer(2).timeout
 		attack_mode_active = true
 		PlayerController.uncontrol_player()
+		player.disable_sprint() # Disable sprinting
 		camera.target = player
 
 func _on_body_exited(_body: Object) -> void:
@@ -108,7 +108,7 @@ func kill_player():
 	widow.attack(-attack_direction)
 	player.state = Player.PlayerState.LOCKED
 	player.travel_to_anim("DeathBounce")
-	StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_SECOND_FAIL)
+	# StoryManager.transition_to_event(StoryManager.Event.WIDOW_NIGHT_SECOND_FAIL)
 	PlayerController.start_cutscene("widow_night_second_fail")
 
 func adjust_whispering_audio() -> void:

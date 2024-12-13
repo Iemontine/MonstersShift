@@ -3,7 +3,7 @@
 do PlayerController.stop()
 do NpcController.set_target_npc("NPC_Baker")
 do NpcController.playAnimation("Wave", 0, -1)
-baker: Hello cupcake! Thanks for stopping by but I don't need any help today.
+baker (smile): Hello cupcake! Thanks for stopping by but I don't need any help today.
 do PlayerController.moveDown()
 [wait time="0.2"]
 do PlayerController.stop()

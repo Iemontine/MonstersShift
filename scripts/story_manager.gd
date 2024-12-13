@@ -23,7 +23,7 @@ var objects_interacted_with : int = 0
 
 # var _event_name:String = ""
 
-@onready var current_event = Event.INTRO
+@onready var current_event = Event.DAY_TWO_MORNING
 
 func _ready():
 	SceneManager.connect("scene_transition_completed", Callable(self, "_on_scene_transition_completed"))
@@ -162,9 +162,9 @@ func enable_grocery_items():
 func enable_grocery_night():
 	if SceneManager.current_scene == "Conbini":
 		get_tree().current_scene.get_node("GroceryItemNight").enable_grocery_item()
-		get_tree().current_scene.get_node("Door_Conbini2").event = Event.GRABBED_NIGHT_ITEM
+		get_tree().current_scene.get_node("Door_Conbini2").before_event = Event.GRABBED_NIGHT_ITEM
 		get_tree().current_scene.get_node("Door_Conbini2").scene = "leave_conbini_early_night"
-		get_tree().current_scene.get_node("Door_Conbini1").event = Event.GRABBED_NIGHT_ITEM
+		get_tree().current_scene.get_node("Door_Conbini1").before_event = Event.GRABBED_NIGHT_ITEM
 		get_tree().current_scene.get_node("Door_Conbini1").scene = "leave_conbini_early_night"
 		
 
