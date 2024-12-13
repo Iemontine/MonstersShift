@@ -10,12 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="6_643em"]
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="7_leub4"]
 [ext_resource type="Script" uid="uid://bip4dieqak5q7" path="res://interactable/event_lockable_door.gd" id="9_k0ype"]
-[ext_resource type="PackedScene" uid="uid://bywfnd7utfd7x" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
+[ext_resource type="PackedScene" path="res://interactable/grocery_item.tscn" id="10_34ohj"]
 [ext_resource type="Texture2D" uid="uid://cw0qhqbpbn10u" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Shopping_Center_Door_1.png" id="10_a2425"]
-[ext_resource type="Script" path="res://prefabs/grocery_handler.gd" id="10_ng1wl"]
-[ext_resource type="Script" uid="uid://bb5vmmj8012hl" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
+[ext_resource type="Script" uid="uid://cknpthi013dqr" path="res://prefabs/grocery_handler.gd" id="10_ng1wl"]
+[ext_resource type="Script" path="res://prefabs/grocery_ui.gd" id="11_dvsie"]
 [ext_resource type="Texture2D" uid="uid://cuw473r15j4st" path="res://assets/assets_widow/conbini_jam.png" id="11_eebgc"]
-[ext_resource type="Texture2D" uid="uid://cj5u1w22hvh6a" path="res://assets/assets_widow/watermelon1.png" id="11_ffkw8"]
 [ext_resource type="Texture2D" uid="uid://dpo86wniggd40" path="res://assets/assets_widow/conbini_milk.png" id="12_4fgb6"]
 [ext_resource type="Texture2D" uid="uid://bqor2m8j2rgww" path="res://assets/assets_widow/holding.png" id="13_84gf0"]
 [ext_resource type="Texture2D" uid="uid://br778orhtvj6v" path="res://assets/assets_widow/conbini_pickles.png" id="13_qjfbt"]
@@ -2961,6 +2960,9 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hc52d"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4b6yk"]
+load_path = "res://.godot/imported/watermelon1.png-b40b0b04b6a397feaa45e3a67b4133c6.ctex"
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffkw8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7qlpu"]
@@ -3257,7 +3259,7 @@ offset_top = -260.0
 offset_right = -144.0
 offset_bottom = -69.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hc52d")
-icon = ExtResource("11_ffkw8")
+icon = SubResource("CompressedTexture2D_4b6yk")
 expand_icon = true
 
 [node name="Button2" type="Button" parent="CanvasLayer/GroceryUI"]
@@ -3268,7 +3270,7 @@ offset_top = -260.0
 offset_right = 88.0
 offset_bottom = -67.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ffkw8")
-icon = ExtResource("11_ffkw8")
+icon = SubResource("CompressedTexture2D_4b6yk")
 expand_icon = true
 
 [node name="Button3" type="Button" parent="CanvasLayer/GroceryUI"]
@@ -3279,7 +3281,7 @@ offset_top = -252.0
 offset_right = 312.0
 offset_bottom = -69.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ffkw8")
-icon = ExtResource("11_ffkw8")
+icon = SubResource("CompressedTexture2D_4b6yk")
 expand_icon = true
 
 [node name="Paper" type="TextureRect" parent="CanvasLayer/GroceryUI"]
@@ -3301,7 +3303,7 @@ offset_right = 568.0
 offset_bottom = 644.0
 scale = Vector2(0.268443, 0.268443)
 mouse_filter = 2
-texture = ExtResource("11_ffkw8")
+texture = SubResource("CompressedTexture2D_4b6yk")
 expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
