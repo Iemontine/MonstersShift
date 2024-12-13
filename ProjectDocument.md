@@ -10,17 +10,21 @@ Your estranged brother has died, and left his assets solely to you. Confused and
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
-[Trailer]()
-[Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
+* [Web-playable version of your game.](https://itch.io/)
+* [Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
+* [Trailer]()
+* [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
+The main objective of the game is to explore the town and help two of the npc's - the baker and the widow. Day 1 focuses fully on the baker while day 2 focuses on the widow. Due to the story being linear, players should not worry about missing anything extra because the story only progresses as you do each event. These events will be indicated by the dialogue. 
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. Explaining the button mappings and the most optimal gameplay strategy is encouraged.**
+For the minigames, they will take place throughout the story and will be triggered as events proceed. The tutorial for the baker minigame is given inside the game. For the widow minigames, part 1 involves finding the right items inside the store and selecting them. Part 2 involves a QTE where pressing space in the red loses a life, in the yellow causes normal walking, and in the green causes sprinting. 
 
-
-**Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+For button mappings: 
+* WASD to move
+* Space or Z to interact with items/doors/people
+* Space to go through dialogue
+* Shift to sprint
 
 # External Code, Ideas, and Structure #
 
