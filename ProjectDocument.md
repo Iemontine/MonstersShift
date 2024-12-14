@@ -4,7 +4,7 @@
 
 Genre: Town Life Sim x Horror
 
-Concept: An unassuming little city, with the protagonist’s estranged brother’s home, whose inhabitants turn into random themed monsters during the night.
+Concept: An unassuming little city, with the protagonist’s estranged brother’s home, whose inhabitants turn into themed monsters during the night.
 
 Your estranged brother has died, and left his assets solely to you. Confused and resentful, you leave town to find out what happened when he abandoned you all those years ago. You arrive in an average, unassuming city and find his lone treehouse in the nearby forest. Determined to find out more, you discover that your brother may have not left you for no good reason… turns out, he left to help people who needed him more than you did. You discover your brother’s old friends are somehow afflicted and can turn into monsters. It’s your responsibility to finish what he started in this town that may be more than meets the eye.
 
@@ -16,9 +16,7 @@ Your estranged brother has died, and left his assets solely to you. Confused and
 * [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
-The main objective of the game is to explore the town and help two of the npc's - the baker and the widow. Day 1 focuses fully on the baker while day 2 focuses on the widow. Due to the story being linear, players should not worry about missing anything extra because the story only progresses as you do each event. These events will be indicated by the dialogue. 
-
-For the minigames, they will take place throughout the story and will be triggered as events proceed. The tutorial for the baker minigame is given inside the game. For the widow minigames, part 1 involves finding the right items inside the store and selecting them. Part 2 involves a QTE where pressing space in the red loses a life, in the yellow causes normal walking, and in the green causes sprinting. 
+The main objective of the game is to explore the town, in doing so meeting two friends of your estranged brother: a baker and a widow. When meeting them, you discover they need your help working part time jobs and eventually helping calm them down when they become monsters in the form of minigames. The game mainly follows a narrative revolving around discovering more about these characters as the minigames drives the story forward. The baker needs your help creating baked goods in his bakery, while the widow needs your help getting groceries while she continues to mourn.
 
 For button mappings: 
 * WASD to move
@@ -26,27 +24,13 @@ For button mappings:
 * Space to go through dialogue
 * Shift to sprint
 
+**You may get soft-locked during the Baker's minigame, the only built in solution is to let the timer run down till you lose.**
+
 # External Code, Ideas, and Structure #
 
-If your project contains code that: 1) your team did not write, and 2) does not fit cleanly into a role, please document it in this section. Please include the author of the code, where to find the code, and note which scripts, folders, or other files that comprise the external contribution. Additionally, include the license for the external code that permits you to use it. You do not need to include the license for code provided by the instruction team.
-
-If you used tutorials or other intellectual guidance to create aspects of your project, include reference to that information as well.
-
+* We utilized the publically available Dialogic plugin, following some official tutorials to help.
 
 * Generally, we met once or twice a week in person to organize a general game plan and to discuss what we each were working on. We also maintained constant contact through Discord keeping each other up to date.
-
-# Main Roles #
-
-Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
-
-Below is a template for you to highlight items of your work. These provide the evidence needed for your work to be evaluated. Try to have at least four such descriptions. They will be assessed on the quality of the underlying system and how they are linked to course content. 
-
-*Short Description* - Long description of your work item that includes how it is relevant to topics discussed in class. [link to evidence in your repository](https://github.com/dr-jam/ECS189L/edit/project-description/ProjectDocumentTemplate.md)
-
-Here is an example:  
-*Procedural Terrain* - The game's background consists of procedurally generated terrain produced with Perlin noise. The game can modify this terrain at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
-
-You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
 ## Producer/Game Logic (Darroll)
 
@@ -194,35 +178,33 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
     * License - https://ibispaint.com/agreement.jsp?lang=en
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
-* With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to be our final map. ![early map dev](https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab)
-![early widow ideas](https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7)
-![early cutscene sketches](https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113)
-![pixil-frame-0 (2)](https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8)
-![Untitled16_20241211013237](https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed)
-![Untitled12_20241211020547](https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65)
-![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130)
-![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087)
-![Untitled10_20241211004658](https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb)
-![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
-![Untitled12_20241211002951](https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4)
-![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
-![cutsc![Uploading Untitled10_20241211010304.png…]()
-![pixilart-sprite (5)](https://github.com/user-attachments/![Untitled12_20241211000526](https://github.com/user-attachments/assets/d64b7838-5471-4b53-8eff-20ea7d24c732)
-assets/9a8bab62-4177-4718-af9e-0412b0471677)
-ene illustrations](https://github.com/user-attachments/assets/1f0a1f65-7eb1-4384-aa06-4bb21eb6a9fc)
-![Untitled16_20241211004552](https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f)
-![Uploading pixilart-sprite (5).png…]()
-![Untitled16_20241211004501](https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da)
-![Untitled10_20241211004153](https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5)
-![Untitled10_20241211004008](https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc)
-![Untitled10_20241211004002](https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029)
-![Untitled14_20241208002213](https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858)
-![Untitled12_20241202112334](https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005)
-![in game map](https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f)
-![Untitled video - Made with Clipchamp (1)](https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f)
+* With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to be our final map.
 
+<img width="500" alt="early map dev" src="https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab" />
+<img width="300" alt="early widow ideas" src="https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7" />
+<img width="300" alt="early cutscene sketches" src="https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113" />
+<img width="300" alt="pixil-frame-0 (2)" src="https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8" />
+<img width="300" alt="Untitled16_20241211013237" src="https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed" />
+<img width="300" alt="Untitled12_20241211020547" src="https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65" />
+<img width="300" alt="player portraits" src="https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130" />
+<img width="300" alt="baker portraits" src="https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087" />
+<img width="300" alt="Untitled10_20241211004658" src="https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb" />
+<img width="300" alt="widow portraits" src="https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9" />
+<img width="300" alt="Untitled12_20241211002951" src="https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4" />
+<img width="300" alt="cutscene illustrations" src="https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9" />
+<img width="300" alt="Untitled16_20241211004552" src="https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f" />
+<img width="300" alt="Untitled16_20241211004501" src="https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da" />
+<img width="300" alt="Untitled10_20241211004153" src="https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5" />
+<img width="300" alt="Untitled10_20241211004008" src="https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc" />
+<img width="300" alt="Untitled10_20241211004002" src="https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029" />
+<img width="300" alt="Untitled14_20241208002213" src="https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858" />
+<img width="300" alt="Untitled12_20241202112334" src="https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005" />
+<img width="300" alt="in game map" src="https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f" />
+<img width="500" alt="Untitled video - Made with Clipchamp (1)" src="https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f" />
 
-* It was very important to me that the player base (the treehouse) felt like a cozy and nostalgic place, with decorations and furniture that someone living in a treehouse might actually have. I designed and put into place the interior of the treehouse. In the treehouse, there are 3 objects that the player interacts with -- a picture frame, record player, and note. These three items have quest markers indicating importance, which I implemented such that after the player interacts with them, they disappear. ![treehouse screenshot](https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b)![conbini collisions](https://github.com/user-attachments/assets/743ecb3e-f663-4175-86d2-009b02a2d7ce)
+* It was very important to me that the player base (the treehouse) felt like a cozy and nostalgic place, with decorations and furniture that someone living in a treehouse might actually have. I designed and put into place the interior of the treehouse. In the treehouse, there are 3 objects that the player interacts with -- a picture frame, record player, and note. These three items have quest markers indicating importance, which I implemented such that after the player interacts with them, they disappear.
+<img width="300" alt="treehouse screenshot" src="https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b" />
+<img width="300" alt="conbini collisions" src="https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b" />
 This was a super time-consuming task because our map has a lot of small intricated decorations, so I spent a LOT of time colliding and sorting the supermarket, treehouse interior, forest, and some parts of the town exterior.
 
 * fonts
@@ -313,7 +295,7 @@ More information about music used and licensing can be found later in the music 
 **Describe the default input configuration.**
 **Add an entry for each platform or input style your project supports.**
 
-# Sub-Roles![treehouse screenshot](https://github.com/user-attachments/assets/26909566-0d20-4eef-9b21-e4284ecbd435)
+# Sub-Roles
 
 
 ## Gameplay Testing (Darroll)
