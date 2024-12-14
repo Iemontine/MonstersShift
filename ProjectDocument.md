@@ -91,20 +91,6 @@ Finally, I fully implemented the Widow night time sequence, complete with NPC an
 
 https://github.com/user-attachments/assets/15aa1f12-de69-4b9e-a38f-6237236cfb72
 
-## Game Testing (Darroll)
-* Related to my role as producer, my sub-role involved testing and ensuring new changes in commits are working to a high standard, functional, or match the direction and group vision for the game. I often had to fix styling or y-sorting issues before putting them up. Having a lot of intuition for game design having played many games in my lifetime, I had a sufficient grasp on how to switch direction and to provide better instructions to my team members.
-
-### Bug/Helping Fixes
-In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
-1) Integrating necessary code that allowed Dialogic to be used throughout development
-2) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
-3) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
-4) Adding interesting sprites to the convenience store grocery items
-5) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
-6) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
-7) Fixing and reworking the Baker as an interactable with pathfinding
-8) Determining missing assets, file organization
-   
 ## Narrative Design (Briana)
 Our game included approximately 40 story events. For about 95% of them, I covered creation, conversion into dialogic, and connection to the gameplay. Dialogic was incredibly important in creating and displaying our main narrative. Cutscenes would occur in three different cases:
 * Scene transitions - works with the [Scene Manager](https://github.com/Iemontine/MonstersShift/blob/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/scripts/scene_manager.gd)
@@ -311,17 +297,24 @@ The game is similar to the daytime version with the player trying to make food f
 
 ## User Interface and Input (Noel)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
-**Add an entry for each platform or input style your project supports.**
+Developed the main menu with scrolling
 
 # Sub-Roles
 
-
 ## Gameplay Testing (Darroll)
 
-**Add a link to the full results of your gameplay tests.**
-**Summarize the key findings from your gameplay tests.**
+* Related to my role as producer, my sub-role involved testing and ensuring new changes in commits are working to a high standard, functional, or match the direction and group vision for the game. I often had to fix styling or y-sorting issues before putting them up. Having a lot of intuition for game design having played many games in my lifetime, I had a sufficient grasp on how to switch direction and to provide better instructions to my team members.
+
+### Bug/Helping Fixes
+In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
+1) Integrating necessary code that allowed Dialogic to be used throughout development
+2) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
+3) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
+4) Adding interesting sprites to the convenience store grocery items
+5) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
+6) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
+7) Fixing and reworking the Baker as an interactable with pathfinding
+8) Determining missing assets, file organization
 
 ## Visual Design & UI (Briana)
 
@@ -396,8 +389,6 @@ While the actual management was briefly mentioned in the main role section, ther
 [Credits](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
 
 [Widow Chase Music](https://www.youtube.com/watch?v=MZ2D5i5_C1M) by MFP【Marron Fields Production】 - [License](https://dova-s.jp/EN/_contents/license/)
-
-**Document the sound style.** 
 
 ## Game Feel and Polish (Duy)
 
