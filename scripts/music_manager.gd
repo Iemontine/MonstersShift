@@ -1,7 +1,7 @@
 extends Node
 
 # all on a linear scale, seems like 1.0 is the max before it gets bad
-const max_vol : float = 0.5
+const max_vol : float = 0.25
 const min_vol : float = 0.0
 const default_vol : float = max_vol
 
@@ -45,8 +45,8 @@ func _on_scene_transition_completed() -> void:
 	stream_player = AudioStreamPlayer.new()
 	
 	if _use_custom_track:
-		if not (FileAccess.file_exists(_track_path + _custom_track)):
-			return
+		# if not (FileAccess.file_exists(_track_path + _custom_track)):
+		# 	return
 		var stream = load(_track_path + _custom_track)
 		stream_player.stream = stream
 		if _current_track != _custom_track and _custom_track != "":
@@ -56,37 +56,35 @@ func _on_scene_transition_completed() -> void:
 		pass
 	elif not _check_ouside():
 		if SceneManager.current_scene:	# Added this line, TODO: current_scene not guaranteed a value on init
-			if not _tracks.has(SceneManager.current_scene.to_lower()) or \
-			   not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
-				return
+			# if not _tracks.has(SceneManager.current_scene.to_lower()) or \
+			#    not (FileAccess.file_exists(_track_path + _tracks[SceneManager.current_scene.to_lower()])):
+			# 	return
 			var stream = load(_track_path + _tracks[SceneManager.current_scene.to_lower()])
 			stream_player.stream = stream
 			if _current_track != _tracks[SceneManager.current_scene.to_lower()]:
 				_current_playtime = 0.0
 				_current_track = _tracks[SceneManager.current_scene.to_lower()]
-
-			
 	else:
 		match SceneManager.time_of_day:
 			SceneManager.TIME.DAY:
-				if not (FileAccess.file_exists(_track_path + _tracks["Outside Day"])):
-					return
+				# if not (FileAccess.file_exists(_track_path + _tracks["Outside Day"])):
+				# 	return
 				var stream = load(_track_path + _tracks["Outside Day"])
 				stream_player.stream = stream
 				if _current_track != _tracks["Outside Day"]:
 					_current_playtime = 0.0
 					_current_track = _tracks["Outside Day"]
 			SceneManager.TIME.EVENING:
-				if not (FileAccess.file_exists(_track_path + _tracks["Outside Evening"])):
-					return
+				# if not (FileAccess.file_exists(_track_path + _tracks["Outside Evening"])):
+				# 	return
 				var stream = load(_track_path + _tracks["Outside Evening"])
 				stream_player.stream = stream
 				if _current_track != _tracks["Outside Evening"]:
 					_current_playtime = 0.0
 					_current_track = _tracks["Outside Evening"]
 			SceneManager.TIME.NIGHT:
-				if not (FileAccess.file_exists(_track_path + _tracks["Outside Night"])):
-					return
+				# if not (FileAccess.file_exists(_track_path + _tracks["Outside Night"])):
+				# 	return
 				var stream = load(_track_path + _tracks["Outside Night"])
 				stream_player.stream = stream
 				if _current_track != _tracks["Outside Night"]:
@@ -109,8 +107,8 @@ func end_custom_track() -> void:
 
 func play_custom_track(track:String, delay:float = 0.5):
 	use_custom_track(track)
-	if not (FileAccess.file_exists(_track_path + track)):
-		return
+	# if not (FileAccess.file_exists(_track_path + track)):
+	# 	return
 	
 	if stream_player:
 		stream_player.stop()

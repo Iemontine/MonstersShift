@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://mainmenu/main_menu.tscn"
+run/main_scene="res://mainmenu/Main_Menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -31,7 +31,6 @@ MusicManager="*res://scripts/music_manager.gd"
 directories/dch_directory={
 "baker": "res://dialogic/Characters/baker.dch",
 "player": "res://dialogic/Characters/player.dch",
-"sign": "res://dialogic/Characters/sign.dch",
 "widow": "res://dialogic/Characters/widow.dch"
 }
 directories/dtl_directory={
@@ -118,7 +117,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [filesystem]
 
