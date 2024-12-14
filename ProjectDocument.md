@@ -2,21 +2,29 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+Genre: Town Life Sim x Horror
+
+Concept: An unassuming little city, with the protagonist’s estranged brother’s home, whose inhabitants turn into random themed monsters during the night.
+
+Your estranged brother has died, and left his assets solely to you. Confused and resentful, you leave town to find out what happened when he abandoned you all those years ago. You arrive in an average, unassuming city and find his lone treehouse in the nearby forest. Determined to find out more, you discover that your brother may have not left you for no good reason… turns out, he left to help people who needed him more than you did. You discover your brother’s old friends are somehow afflicted and can turn into monsters. It’s your responsibility to finish what he started in this town that may be more than meets the eye.
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
-[Trailer]()
-[Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
+* [Web-playable version of your game.](https://itch.io/)
+* [Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
+* [Trailer]()
+* [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
+The main objective of the game is to explore the town and help two of the npc's - the baker and the widow. Day 1 focuses fully on the baker while day 2 focuses on the widow. Due to the story being linear, players should not worry about missing anything extra because the story only progresses as you do each event. These events will be indicated by the dialogue. 
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. Explaining the button mappings and the most optimal gameplay strategy is encouraged.**
+For the minigames, they will take place throughout the story and will be triggered as events proceed. The tutorial for the baker minigame is given inside the game. For the widow minigames, part 1 involves finding the right items inside the store and selecting them. Part 2 involves a QTE where pressing space in the red loses a life, in the yellow causes normal walking, and in the green causes sprinting. 
 
-
-**Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+For button mappings: 
+* WASD to move
+* Space or Z to interact with items/doors/people
+* Space to go through dialogue
+* Shift to sprint
 
 # External Code, Ideas, and Structure #
 
@@ -131,14 +139,14 @@ Darroll created an interactable class that let's players interact using the spac
 For some cases, an area2D was used to trigger cutscenes when a player walked in a certain location. This works very similarly to the interactables where the event will only trigger if you are in a very specific story state. For example, on day two when walking into the little park, a [first interaction with the widow](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/cutscenes/WidowArea/widow_first_cutscene.gd) will occur. The cutscene will not play if the story is anywhere before or after that in the sequence.
 
 ### Scene Transition Story Events
-The scene transition story events were done using a combination of the story manager and the scene manager (developed by Darroll, Duy, and Matthew). The story manager was connected to the scene manager so when a scene transition occurs, a story event may or not play. Using the enums I created earlier, I determined which events needed to play on scene transitions and implemented them in the function [here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L37). Using a [match to current event](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L39) statement, I found what event was the last to occur. If it was a scene transition event, I would check the new scene, and if it was the correct scene, the story would transition to the new event and a cutscene would played. For example, after leaving the bakery in evening, the player sleep cutscene will only play once the player goes inside the treehouse ([see here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L76-L79).
+The scene transition story events were done using a combination of the story manager and the scene manager (developed by Darroll, Duy, and Matthew). The story manager was connected to the scene manager so when a scene transition occurs, a story event may or not play. Using the enums I created earlier, I determined which events needed to play on scene transitions and implemented them in the function [here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L37). Using a [match to current event](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L39) statement, I found what event was the last to occur. If it was a scene transition event, I would check the new scene, and if it was the correct scene, the story would transition to the new event and a cutscene would played. For example, after leaving the bakery in evening, the player sleep cutscene will only play once the player goes inside the treehouse ([see here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L76-L79)).
 
 ### Other Transitions
 For time passage, Matthew created a day to evening to night function that I used in certain parts throughout the story. This made it feel like your actions actually took time and made the game more atmospheric.
   
 <img width="398" alt="Screenshot 2024-12-12 at 12 35 14 AM" src="https://github.com/user-attachments/assets/93b50d45-2e74-4d5b-bcaf-39e609c4f879" />
 
-To make the walking time between places not feel so arduous, I created transitions in scenes that worked like the scene manager's scene switcher. Inside the player controller function, created by Darroll, I added a function that [teleports the player inside a scene](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L107-L108). By using a basic black image and the Dialogic background feature, I would black out the screen, teleport the player to a new place, and then clear the background. An example of that is when the player grabs a drink on night two and goes to offer it to the widow ([see here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Widow/widows_house_night.dtl).
+To make the walking time between places not feel so arduous, I created transitions in scenes that worked like the scene manager's scene switcher. Inside the player controller function, created by Darroll, I added a function that [teleports the player inside a scene](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L107-L108). By using a basic black image and the Dialogic background feature, I would black out the screen, teleport the player to a new place, and then clear the background. An example of that is when the player grabs a drink on night two and goes to offer it to the widow ([see here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Widow/widows_house_night.dtl)).
 
 In some cutscenes, there needed to be transitions from one scene to another in the middle of the dialogue. Using the [player controller's switch scene function](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L43-L44), I was able to make seamless transitions in cutscenes that flowed naturally in the story. Also, this scene switcher was used to switch to the minigames ([see example here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Baker/baker_first_interaction.dtl#L49)).
 
