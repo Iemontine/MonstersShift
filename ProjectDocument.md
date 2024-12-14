@@ -236,8 +236,72 @@ This was a super time-consuming task because our map has a lot of small intricat
 * Collisions and y-sorting were also a large part of my time spent on this project. In order to make the game feel comfortable and natural, these were very important. I wanted to make sure it made sense and was intuitive what could and could not be walked on. For example, something laying flat on the ground would have a smaller y-sort difference compared to the player, since the character would show no matter where it was standing in relation to the sprite. However, something taller (like a cart) would hide part of the character's body if the character walked behind it. 
 ## Game Logic & Game Feel (Matthew)
 
-**Document the game states and game data you managed and the design patterns you used to complete your task.**
-**Document what you added to and how you tweaked your game to improve its game feel.**
+* Original Questing Logic
+
+This was the preface to the now StoryManager that ended up being implemented in the game. While the games scope still wasn't fully in development, ambitioned required a more lienent and none linear way to look at game quests.
+
+The Quest Manager did a few things:
+
+* Setup a quest
+* Start a quest
+* House a list of quest with 1 active
+* enable certain flags depending on the quest
+* Allow minigames to be handled and started
+* Check quest progress
+* Finalize the active quest and reward the player according.
+
+Much later as the scope was more established, these got refined into the [StoryManager](/scripts/story_manager.gd) to drive specific flags and events and the minigames were driven as part of this rather than independently. Another simplification was the use of flags to check progress rather than quests, which made things like story progression and event specific area trapping much easier. 
+
+* [Saving](/scripts/save_manager.gd)
+
+Although not visually apparent due to time constraint, saving and load is fully functional in the progress. Not only does it save the players position and scene, it saves the current story event and the time of day. Saving is as simple as pressing `ctrl + s` and loading is as simple as pressing `ctrl + l`. Originally these methods were also used to manage the fail states of the minigame; however those were simplified to not need these system. 
+
+* [Day/Night Shifting](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/scripts/scene_manager.gd#L117)
+
+Day shifting uses a modified property of the scene manager to keep track of the time of day we are in. The game is set across 2 days and we needed some way to differentiate between day and night. Especially because outside is meant to be dark at night. Using a canvas modulator conbined with point lights this was made possible. 
+
+There are 3 possible states the day can have:
+* Day
+![day](https://github.com/user-attachments/assets/62a5c846-98b6-4461-9a11-2af60f95cd5f)
+
+* Evening
+![evening](https://github.com/user-attachments/assets/a5edc684-a8cc-42d7-a4f8-4f7bc1ca7e8c)
+
+
+* Night
+![night](https://github.com/user-attachments/assets/fc21d38d-76c6-4f73-b6c8-27dc8c6645b3)
+
+
+A big part of a games feel is visual representation of the current state of the world, and through this simple but effective management, we are able to provide the feeling of time passing through the light of objects and the world. 
+
+* [Door Locking](/interactable/event_lockable_door.gd)
+
+Using an extension of the door created in interactables, forcing the player to be in a set area if the Story calls for it. This is seen mainly when the player first enters the enters the treehouse 
+
+![interior](https://github.com/user-attachments/assets/145da573-4cf7-422a-8e31-71338966554f)
+
+and when the player enters the convient store for groceries
+
+![grocery1](https://github.com/user-attachments/assets/ddfe9c46-bc20-4249-92be-d825183b40fd)
+
+![grocery2](https://github.com/user-attachments/assets/d6d212a5-0bab-4c69-bad8-5f872d0a9a04)
+
+This is accomplished by using the story manager to check if we within a certain event window in order to determine whether a door should be locked. In the case of the treehouse it should only ever be locked at the start of the game. However things got more complicated with the convenience store. We wanted the player to be able to explore the store without triggering anything early while also not getting trapped as a result of wandering in too early. Using the story manager we were able to [update](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/scripts/story_manager.gd#L153) The flags for the grocery store to work during the night for a separate event. Each locked door is also linked to a special dialogue to give the feeling that progress is actually happening and that you are trapped for a specific reason, not just because the devs wanted us to. 
+
+* [Music Management](/scripts/music_manager.gd)
+
+There are a couple things to take into consideration when it comes to music, Where the player is, what event the player is, what time of day it is and whether or not a custom track needs to be played. 
+
+While time did not allow, the music manager also had plenty of volume capability and was not fully able to be exchanged 
+
+[The General Cases](https://github.com/Iemontine/MonstersShift/blob/bdfb8c0abf5662b950a3e436f85b6b7ec44b504c/scripts/music_manager.gd#L14) 
+* Outside (Day/Evening/Night)
+* Baker (Normal/Day Minigame/Night Minigame)
+* Main Menu
+* convenience Store
+* Treehouse Interior
+
+More information about music used and licensing can be found later in the music section. 
 
 ## Game Logic (Duy)
 
@@ -295,7 +359,20 @@ After scanning in my drawings, I was able to send them to Katherine who placed t
 
 **List your assets, including their sources and licenses.**
 
-**Describe the implementation of your audio system.**
+While the actual management was briefly mentioned in the main role section, there is more to it. The manager works by attaching a stream, usually a mp3 or wav stream for music, and attaching it to the current scene and using the correct audio. This is a runtime load which makes it a little easier to allow us to use custom tracks as well. If we want to use custom tracks then we have a state to manage whether we use that or the basic items. Music updates either on scene transition or on custom choice.
+
+* Links and licensing
+[Outside Day Track](https://www.youtube.com/watch?v=pQD4Fg3wwMg) by shimtone - [License](https://dova-s.jp/EN/_contents/license/)
+[Outside Evening Track](https://www.youtube.com/watch?v=XowvSf38tZA) by 蒲鉾さちこ - [License](https://dova-s.jp/EN/_contents/license/)
+[Outside Night Track]()
+[Inside Treehouse Track - Upon Reflection](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/peaceful-and-relaxing-music/22) by Steve Oxen provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Bakery](https://www.youtube.com/watch?v=rPrqnKQRnNA) by MFP【Marron Fields Production】- [License](https://dova-s.jp/EN/_contents/license/)
+[Bakery Minigame - Silly Chicken](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/funny-music/21) by David Fesliyan provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Bakery Minigame Night - Drums And Percussion Only-Predator And Prey](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/suspenseful-music/25) by David Robson provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Convenience Store](https://www.youtube.com/watch?v=kulN4Y0MBX0)  by Noru - [License](https://dova-s.jp/EN/_contents/license/)
+[Main Menu](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user 	Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
+[Credits](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
+[Widow Chase Music](https://www.youtube.com/watch?v=MZ2D5i5_C1M) by MFP【Marron Fields Production】 - [License](https://dova-s.jp/EN/_contents/license/)
 
 **Document the sound style.** 
 
