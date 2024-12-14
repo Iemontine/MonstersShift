@@ -91,6 +91,9 @@ Finally, I fully implemented the Widow night time sequence, complete with NPC an
 
 https://github.com/user-attachments/assets/15aa1f12-de69-4b9e-a38f-6237236cfb72
 
+## Game Testing (Darroll)
+* Related to my role as producer, my sub-role involved testing and ensuring new changes in commits are working to a high standard, functional, or match the direction and group vision for the game. I often had to fix styling or y-sorting issues before putting them up. Having a lot of intuition for game design having played many games in my lifetime, I had a sufficient grasp on how to switch direction and to provide better instructions to my team members.
+
 ### Bug/Helping Fixes
 In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
 1) Integrating necessary code that allowed Dialogic to be used throughout development
