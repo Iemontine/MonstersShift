@@ -91,20 +91,6 @@ Finally, I fully implemented the Widow night time sequence, complete with NPC an
 
 https://github.com/user-attachments/assets/15aa1f12-de69-4b9e-a38f-6237236cfb72
 
-## Game Testing (Darroll)
-* Related to my role as producer, my sub-role involved testing and ensuring new changes in commits are working to a high standard, functional, or match the direction and group vision for the game. I often had to fix styling or y-sorting issues before putting them up. Having a lot of intuition for game design having played many games in my lifetime, I had a sufficient grasp on how to switch direction and to provide better instructions to my team members.
-
-### Bug/Helping Fixes
-In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
-1) Integrating necessary code that allowed Dialogic to be used throughout development
-2) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
-3) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
-4) Adding interesting sprites to the convenience store grocery items
-5) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
-6) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
-7) Fixing and reworking the Baker as an interactable with pathfinding
-8) Determining missing assets, file organization
-   
 ## Narrative Design (Briana)
 Our game included approximately 40 story events. For about 95% of them, I covered creation, conversion into dialogic, and connection to the gameplay. Dialogic was incredibly important in creating and displaying our main narrative. Cutscenes would occur in three different cases:
 * Scene transitions - works with the [Scene Manager](https://github.com/Iemontine/MonstersShift/blob/d0fbeeecea7af0c37b6bfc50e9f062485d4c9277/scripts/scene_manager.gd)
@@ -182,16 +168,16 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-* With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to create our final map. ![early map dev](https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab)
+* With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to create our final map. <img width="500" alt="early map dev" src="https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab" />
 
-* A lot of early discussion was about our characters and what they would be like in the day vs. their supernatural nighttime counterparts. Darroll and I spent a few meetings coming up with different folklore monsters to allude to, and we landed on a baker/zombie and a widow/La Llorona. Darroll built the character sprites and Briana hand-drew character a portrait for each character. I edited these **character portraits** digitally to have different expressions, which I thought was an important part of narrative immersion. I also came up with the idea of one minigame being to fetch the widow's groceries using a tear-stained list, some parts of which Darroll implemented in the final version. ![early widow ideas](https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7) ![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087) ![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130) ![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
+* A lot of early discussion was about our characters and what they would be like in the day vs. their supernatural nighttime counterparts. Darroll and I spent a few meetings coming up with different folklore monsters to allude to, and we landed on a baker/zombie and a widow/La Llorona. Darroll built the character sprites and Briana hand-drew character a portrait for each character. I edited these **character portraits** digitally to have different expressions, which I thought was an important part of narrative immersion. I also came up with the idea of one minigame being to fetch the widow's groceries using a tear-stained list, some parts of which Darroll implemented in the final version. <img width="300" alt="early widow ideas" src="https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7" /> <img width="300" alt="baker portraits" src="https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087" /> <img width="300" alt="widow portraits" src="https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9" />
 
-* I really wanted to make a story game with a linear narrative, for which cutscenes are important. I helped to author some of the cutscenes and dialogue Briana ultimately ended up using, and **storyboarded, drew, digitalized the introduction cutscene**. To improve world-building, I wanted the player to have a quick backstory to give our story more depth and stakes and to fuel the bittersweet emotional tone I wanted our game to have. ![early cutscene sketches](https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113) ![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
+* I really wanted to make a story game with a linear narrative, for which cutscenes are important. I helped to author some of the cutscenes and dialogue Briana ultimately ended up using, and **storyboarded, drew, digitalized the introduction cutscene**. To improve world-building, I wanted the player to have a quick backstory to give our story more depth and stakes and to fuel the bittersweet emotional tone I wanted our game to have. <img width="300" alt="early cutscene sketches" src="https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113" /> <img width="300" alt="cutscene illustrations" src="https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9" />
 
 * While we used most of our terrain and building sprites from the asset packs we found, some sprites we could not find so I **drew the pixel art** for them myself. I tried to make them small and practical and took lots of constructive criticism from my team and drew probably 10 different versions until we landed on one that looked good in game. The vanilla one was particularly finicky and had many iterations. The final sprites I drew were used in the baker minigame. ![pixilart-sprite_5](https://github.com/user-attachments/assets/e4c92a7b-40e2-422a-ac86-8d2868606037)
 
-* I also drew an **in-game map** when we noticed during the gallery walk that players were having trouble knowing where to go without directions from our team. ![in game map](https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f)
-* Likewise, we noticed some people weren't sure which controls to use, so I drew a cutscene panel describing the game keys. To keep in style with the in-game text, I did it in pixel art style. ![pixil-frame-0 (2)](https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8)
+* I also drew an **in-game map** when we noticed during the gallery walk that players were having trouble knowing where to go without directions from our team. <img width="300" alt="in game map" src="https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f" />
+* Likewise, we noticed some people weren't sure which controls to use, so I drew a cutscene panel describing the game keys. To keep in style with the in-game text, I did it in pixel art style. <img width="300" alt="pixil-frame-0 (2)" src="https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8" />
 
 * It was very important to me that the player base (the treehouse) felt like a cozy and nostalgic place, with decorations and furniture that someone living in a treehouse might actually have. I designed and put into place the **interior of the treehouse**. In the treehouse, there are 3 objects that the player interacts with -- a picture frame, record player, and note. These three items have quest markers indicating importance, which I implemented such that after the player interacts with them, they disappear. ![treehouse screenshot](https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b)
   
@@ -201,27 +187,19 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 
 * With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to be our final map.
 
-<img width="500" alt="early map dev" src="https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab" />
-<img width="300" alt="early widow ideas" src="https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7" />
-<img width="300" alt="early cutscene sketches" src="https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113" />
-<img width="300" alt="pixil-frame-0 (2)" src="https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8" />
-<img width="300" alt="Untitled16_20241211013237" src="https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed" />
-<img width="300" alt="Untitled12_20241211020547" src="https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65" />
-<img width="300" alt="player portraits" src="https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130" />
-<img width="300" alt="baker portraits" src="https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087" />
-<img width="300" alt="Untitled10_20241211004658" src="https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb" />
-<img width="300" alt="widow portraits" src="https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9" />
-<img width="300" alt="Untitled12_20241211002951" src="https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4" />
-<img width="300" alt="cutscene illustrations" src="https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9" />
-<img width="300" alt="Untitled16_20241211004552" src="https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f" />
-<img width="300" alt="Untitled16_20241211004501" src="https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da" />
-<img width="300" alt="Untitled10_20241211004153" src="https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5" />
-<img width="300" alt="Untitled10_20241211004008" src="https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc" />
-<img width="300" alt="Untitled10_20241211004002" src="https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029" />
-<img width="300" alt="Untitled14_20241208002213" src="https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858" />
-<img width="300" alt="Untitled12_20241202112334" src="https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005" />
-<img width="300" alt="in game map" src="https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f" />
-<img width="500" alt="Untitled video - Made with Clipchamp (1)" src="https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f" />
+<img width="100" alt="Untitled16_20241211013237" src="https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed" />
+<img width="100" alt="Untitled12_20241211020547" src="https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65" />
+<img width="100" alt="player portraits" src="https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130" />
+<img width="100" alt="Untitled10_20241211004658" src="https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb" />
+<img width="100" alt="Untitled12_20241211002951" src="https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4" />
+<img width="100" alt="Untitled16_20241211004552" src="https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f" />
+<img width="100" alt="Untitled16_20241211004501" src="https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da" />
+<img width="100" alt="Untitled10_20241211004153" src="https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5" />
+<img width="100" alt="Untitled10_20241211004008" src="https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc" />
+<img width="100" alt="Untitled10_20241211004002" src="https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029" />
+<img width="100" alt="Untitled14_20241208002213" src="https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858" />
+<img width="100" alt="Untitled12_20241202112334" src="https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005" />
+<img width="100" alt="Untitled video - Made with Clipchamp (1)" src="https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f" />
 
 * ![main menu and credits gif](https://github.com/user-attachments/assets/18eb1429-0619-41df-a789-f758ed01631a)
 
@@ -329,17 +307,24 @@ The game is similar to the daytime version with the player trying to make food f
 
 ## User Interface and Input (Noel)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-**Describe the default input configuration.**
-**Add an entry for each platform or input style your project supports.**
+Developed the main menu with scrolling
 
 # Sub-Roles
 
-
 ## Gameplay Testing (Darroll)
 
-**Add a link to the full results of your gameplay tests.**
-**Summarize the key findings from your gameplay tests.**
+* Related to my role as producer, my sub-role involved testing and ensuring new changes in commits are working to a high standard, functional, or match the direction and group vision for the game. I often had to fix styling or y-sorting issues before putting them up. Having a lot of intuition for game design having played many games in my lifetime, I had a sufficient grasp on how to switch direction and to provide better instructions to my team members.
+
+### Bug/Helping Fixes
+In the final week of development when the game was finally fully playable, I learned to quickly stress test the different minigames and optimize for game feel, fixing bugs along the way this included:
+1) Integrating necessary code that allowed Dialogic to be used throughout development
+2) Reorganizing baker interior to make the game more interesting (previously all ingredients were just sitting next to each other)
+3) Making it so three customer NPCs spawn, who each order something unique so the player practices creating the different recipes for the upcoming Boss version of the same minigame
+4) Adding interesting sprites to the convenience store grocery items
+5) Fixing issues like the wrong cutscene playing in the wrong location, testing sequence breaking
+6) Decreasing the width of the arrow hitbox during the Bar QTE, as a thick hitbox for the arrow meant it was easy to mishit or at least feel that you were
+7) Fixing and reworking the Baker as an interactable with pathfinding
+8) Determining missing assets, file organization
 
 ## Visual Design & UI (Briana)
 
@@ -414,8 +399,6 @@ While the actual management was briefly mentioned in the main role section, ther
 [Credits](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
 
 [Widow Chase Music](https://www.youtube.com/watch?v=MZ2D5i5_C1M) by MFP【Marron Fields Production】 - [License](https://dova-s.jp/EN/_contents/license/)
-
-**Document the sound style.** 
 
 ## Game Feel and Polish (Duy)
 
