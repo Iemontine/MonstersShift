@@ -262,13 +262,15 @@ Day shifting uses a modified property of the scene manager to keep track of the 
 
 There are 3 possible states the day can have:
 * Day
-(Image)
+![day](https://github.com/user-attachments/assets/62a5c846-98b6-4461-9a11-2af60f95cd5f)
 
 * Evening
-(Image)
+![evening](https://github.com/user-attachments/assets/a5edc684-a8cc-42d7-a4f8-4f7bc1ca7e8c)
+
 
 * Night
-(Image)
+![night](https://github.com/user-attachments/assets/fc21d38d-76c6-4f73-b6c8-27dc8c6645b3)
+
 
 A big part of a games feel is visual representation of the current state of the world, and through this simple but effective management, we are able to provide the feeling of time passing through the light of objects and the world. 
 
@@ -276,13 +278,13 @@ A big part of a games feel is visual representation of the current state of the 
 
 Using an extension of the door created in interactables, forcing the player to be in a set area if the Story calls for it. This is seen mainly when the player first enters the enters the treehouse 
 
-(image)
+![interior](https://github.com/user-attachments/assets/145da573-4cf7-422a-8e31-71338966554f)
 
 and when the player enters the convient store for groceries
 
-(image1)
+![grocery1](https://github.com/user-attachments/assets/ddfe9c46-bc20-4249-92be-d825183b40fd)
 
-(image2)
+![grocery2](https://github.com/user-attachments/assets/d6d212a5-0bab-4c69-bad8-5f872d0a9a04)
 
 This is accomplished by using the story manager to check if we within a certain event window in order to determine whether a door should be locked. In the case of the treehouse it should only ever be locked at the start of the game. However things got more complicated with the convenience store. We wanted the player to be able to explore the store without triggering anything early while also not getting trapped as a result of wandering in too early. Using the story manager we were able to [update](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/scripts/story_manager.gd#L153) The flags for the grocery store to work during the night for a separate event. Each locked door is also linked to a special dialogue to give the feeling that progress is actually happening and that you are trapped for a specific reason, not just because the devs wanted us to. 
 
