@@ -1,4 +1,4 @@
-![Untitled10_20241211004658](https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb)# Monsters' Shift - Project Document #
+# Monsters' Shift - Project Document #
 
 ## Summary ##
 
@@ -194,6 +194,7 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 ![Untitled12_20241211020547](https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65)
 ![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130)
 ![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087)
+![Untitled10_20241211004658](https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb)
 ![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
 ![Untitled12_20241211002951](https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4)
 ![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
