@@ -359,7 +359,20 @@ After scanning in my drawings, I was able to send them to Katherine who placed t
 
 **List your assets, including their sources and licenses.**
 
-**Describe the implementation of your audio system.**
+While the actual management was briefly mentioned in the main role section, there is more to it. The manager works by attaching a stream, usually a mp3 or wav stream for music, and attaching it to the current scene and using the correct audio. This is a runtime load which makes it a little easier to allow us to use custom tracks as well. If we want to use custom tracks then we have a state to manage whether we use that or the basic items. Music updates either on scene transition or on custom choice.
+
+* Links and licensing
+[Outside Day Track](https://www.youtube.com/watch?v=pQD4Fg3wwMg) by shimtone - [License](https://dova-s.jp/EN/_contents/license/)
+[Outside Evening Track](https://www.youtube.com/watch?v=XowvSf38tZA) by 蒲鉾さちこ - [License](https://dova-s.jp/EN/_contents/license/)
+[Outside Night Track]()
+[Inside Treehouse Track - Upon Reflection](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/peaceful-and-relaxing-music/22) by Steve Oxen provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Bakery](https://www.youtube.com/watch?v=rPrqnKQRnNA) by MFP【Marron Fields Production】- [License](https://dova-s.jp/EN/_contents/license/)
+[Bakery Minigame - Silly Chicken](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/funny-music/21) by David Fesliyan provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Bakery Minigame Night - Drums And Percussion Only-Predator And Prey](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/suspenseful-music/25) by David Robson provided by [FesliyStudioes](https://www.fesliyanstudios.com) - License provided by provider
+[Convenience Store](https://www.youtube.com/watch?v=kulN4Y0MBX0)  by Noru - [License](https://dova-s.jp/EN/_contents/license/)
+[Main Menu](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user 	Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
+[Credits](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
+[Widow Chase Music](https://www.youtube.com/watch?v=MZ2D5i5_C1M) by MFP【Marron Fields Production】 - [License](https://dova-s.jp/EN/_contents/license/)
 
 **Document the sound style.** 
 
