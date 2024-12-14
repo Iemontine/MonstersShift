@@ -195,7 +195,6 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 
 * **Collisions and y-sorting** were also a large part of my time spent on this project. In order to make the game feel comfortable and natural, these were very important. I wanted to make sure it made sense and was intuitive what could and could not be walked on. For example, something laying flat on the ground would have a smaller y-sort difference compared to the player, since the character would show no matter where it was standing in relation to the sprite. However, something taller (like a cart) would hide part of the character's body if the character walked behind it. This was a super time-consuming task because our map has a lot of small intricated decorations, so I spent a LOT of time colliding and sorting the supermarket, treehouse interior, forest, and some parts of the town exterior. The y-sorting in a game is something you don't notice when it's right but can't STOP noticing when it's wrong, so it took a long time to place and test everything -- walking behind every object and deciding whether something would be tall or short. ![Untitled video - Made with Clipchamp (1)](https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f)
 
-
 ## Game Logic & Game Feel (Matthew)
 
 * Original Questing Logic
@@ -359,6 +358,8 @@ After scanning in my drawings, I was able to send them to Katherine who placed t
 * Cutscenes were also an important part of the game to further narrative. Briana and I brainstormed the cutscenes together and she authored them in Dialogic. The initial cutscene drawings (see above) were important for giving a backstory to our protagonist and increasing the emotional stakes.
 
 * Darroll and I brainstormed in the inital stages of planning the idea of daytime minigames and a more difficult/spooky nighttime counterpart. We had a few other ideas too, including more simple Among Us-esque tasks, but decided that to improve player excitement they should be more complex and difficult. We wanted the gameplay to make sense within the narrative, so the customer-serving at the bakery and shopping for a bed-ridden widow were ideas we settled on that both worked with the level of difficulty we wanted in our game along with furthering the narrative of our game.
+
+* Some work of mine that does not fall into either my main role or sub-role include music for the main menu and credits as well as documentation (progress report and some of the initial plan).
 
 ## Music (Matthew)
 
