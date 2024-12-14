@@ -1,17 +1,17 @@
 [gd_scene load_steps=31 format=4 uid="uid://dcrol3he1cowb"]
 
 [ext_resource type="FontFile" uid="uid://cc61t5i06mcb3" path="res://assets/GrapeSoda.ttf" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://rmefhw4mhcdo" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="2_5f2nu"]
 [ext_resource type="FontFile" uid="uid://td7lvyh52ifq" path="res://assets/ui_and_font/font/DePixelHalbfett.ttf" id="3_gaol6"]
-[ext_resource type="Script" uid="uid://cgeucj3c4q33j" path="res://mainmenu/car.gd" id="4_0k4wn"]
+[ext_resource type="Script" path="res://mainmenu/car.gd" id="4_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://b2syprxservvb" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/19_Graveyard_16x16.png" id="6_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://cssjdu75klnau" path="res://assets/tileset/exteriors/Animated_16x16/Animated_Terrains_16x16/Sea_Water_Tileset_16x16.png" id="16_v2sba"]
 [ext_resource type="Texture2D" uid="uid://dbuqcyd3b4aq8" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_2_complete_5.png" id="18_qby1g"]
 [ext_resource type="Texture2D" uid="uid://nflsiqlosaqq" path="res://assets/tileset/exteriors/Godot_Autotiles_16x16.png" id="19_mg3m2"]
-[ext_resource type="Script" uid="uid://ckaa717283cgu" path="res://mainmenu/river.gd" id="21_7bbuq"]
+[ext_resource type="Script" path="res://mainmenu/river.gd" id="21_7bbuq"]
 [ext_resource type="Texture2D" uid="uid://bg82d6yq2x2ih" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/11_Camping_16x16.png" id="21_saq78"]
-[ext_resource type="Script" uid="uid://ditsh4idg1wvn" path="res://mainmenu/trees.gd" id="24_8uw0o"]
+[ext_resource type="Script" path="res://mainmenu/trees.gd" id="24_8uw0o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
@@ -2746,9 +2746,9 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gaol6")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
@@ -2761,9 +2761,9 @@ text = "Start game"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gaol6")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")
@@ -2776,9 +2776,9 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gaol6")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_06t4h")

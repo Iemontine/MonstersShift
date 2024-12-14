@@ -5,6 +5,8 @@
 do PlayerController.switchScene("Treehouse_Exterior", "Door_Treehouse")
 [wait time="0.75"]
 [signal arg="control"]
+[background arg="res://assets/game controls.png" fade="1.0"]
+Game controls!
 [background arg="res://dialogic/Images/cutscene 1 crayon.jpg" fade="1.0"]
 As a kid, everything seems perfect. There are no worries, no hardships, no struggles.
 It’s you and your sibling, excited to experience everything together.

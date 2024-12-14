@@ -14,7 +14,7 @@ script = ExtResource("1_61ity")
 position = Vector2(0, 8)
 texture = ExtResource("2_uvutd")
 region_enabled = true
-region_rect = Rect2(208, 256, 16, 32)
+region_rect = Rect2(132.65, 255.199, 24.9111, 35.9184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
