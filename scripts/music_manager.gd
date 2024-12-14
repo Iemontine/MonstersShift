@@ -25,7 +25,7 @@ var _tracks := {
 var _current_track : String
 var _track_path := "res://assets/sound/music/"
 var _use_custom_track : bool = false
-var _custom_track : String = "test_audio.WAV"
+var _custom_track : String = "outside_day.wav"
 var _current_playtime : float = 190.0
 
 @onready var stream_player : AudioStreamPlayer

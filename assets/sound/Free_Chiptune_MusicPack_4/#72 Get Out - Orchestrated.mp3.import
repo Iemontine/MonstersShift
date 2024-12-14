@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kjps312yc7uv"
+path="res://.godot/imported/#72 Get Out - Orchestrated.mp3-3c54fd499546777eb57c38f2f81ef6e1.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Free_Chiptune_MusicPack_4/#72 Get Out - Orchestrated.mp3"
+dest_files=["res://.godot/imported/#72 Get Out - Orchestrated.mp3-3c54fd499546777eb57c38f2f81ef6e1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
