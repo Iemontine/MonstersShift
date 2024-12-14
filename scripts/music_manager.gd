@@ -12,20 +12,20 @@ var volume : float = linear_to_db(default_vol)
 # TODO: make sure non outside tracks line up with scene names
 # TODO: FIND TRACKS
 var _tracks := {
-	"Outside Day" : "outside_day.wav",
-	"Outside Evening" : "outside_evening.wav",
-	"Outside Night" : "outside_night.wav",
-	"bakery" : "bakery_game_day.wav",
-	"bakery_no_game": "bakery.wav",
-	"treehouse_interior_baker_game": "bakery_game_night.wav",
-	"conbini" : "conbini.wav",
-	"treehouse_interior" : "inside_treehouse.wav",
-	"main_menu": "main_menu.wav"
+	"Outside Day" : "outside_day.mp3",
+	"Outside Evening" : "outside_evening.mp3",
+	"Outside Night" : "outside_night.mp3",
+	"bakery" : "bakery_game_day.mp3",
+	"bakery_no_game": "bakery.mp3",
+	"treehouse_interior_baker_game": "bakery_game_night.mp3",
+	"conbini" : "conbini.mp3",
+	"treehouse_interior" : "inside_treehouse.mp3",
+	"main_menu": "main_menu.mp3"
 }
 var _current_track : String
 var _track_path := "res://assets/sound/music/"
 var _use_custom_track : bool = false
-var _custom_track : String = "outside_day.wav"
+var _custom_track : String = "outside_day.mp3"
 var _current_playtime : float = 190.0
 
 @onready var stream_player : AudioStreamPlayer
