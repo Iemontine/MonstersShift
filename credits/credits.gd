@@ -42,7 +42,7 @@ var credits = [
 		"Matthew Fulde",
 		"Noel Lee",
 		"Katherine Li",
-		"Duy Nyugen",
+		"Duy Nguyen",
 		"Darroll Saddi"
 	],[
 		"Narrative Design",

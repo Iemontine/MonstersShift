@@ -2,21 +2,29 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+Genre: Town Life Sim x Horror
+
+Concept: An unassuming little city, with the protagonist’s estranged brother’s home, whose inhabitants turn into random themed monsters during the night.
+
+Your estranged brother has died, and left his assets solely to you. Confused and resentful, you leave town to find out what happened when he abandoned you all those years ago. You arrive in an average, unassuming city and find his lone treehouse in the nearby forest. Determined to find out more, you discover that your brother may have not left you for no good reason… turns out, he left to help people who needed him more than you did. You discover your brother’s old friends are somehow afflicted and can turn into monsters. It’s your responsibility to finish what he started in this town that may be more than meets the eye.
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
-[Trailer]()
-[Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
+* [Web-playable version of your game.](https://itch.io/)
+* [Press Kit](https://lifeofpear.notion.site/Monsters-Shift-Press-Kit-15a82e252f01808e9f50e468f1cfeb79)
+* [Trailer]()
+* [Proposal](https://docs.google.com/document/d/13rA_z6qEpbPbOANST8JtTClTLj1EfRgtfr3JS2eXfag/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
+The main objective of the game is to explore the town and help two of the npc's - the baker and the widow. Day 1 focuses fully on the baker while day 2 focuses on the widow. Due to the story being linear, players should not worry about missing anything extra because the story only progresses as you do each event. These events will be indicated by the dialogue. 
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. Explaining the button mappings and the most optimal gameplay strategy is encouraged.**
+For the minigames, they will take place throughout the story and will be triggered as events proceed. The tutorial for the baker minigame is given inside the game. For the widow minigames, part 1 involves finding the right items inside the store and selecting them. Part 2 involves a QTE where pressing space in the red loses a life, in the yellow causes normal walking, and in the green causes sprinting. 
 
-
-**Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+For button mappings: 
+* WASD to move
+* Space or Z to interact with items/doors/people
+* Space to go through dialogue
+* Shift to sprint
 
 # External Code, Ideas, and Structure #
 
@@ -131,14 +139,14 @@ Darroll created an interactable class that let's players interact using the spac
 For some cases, an area2D was used to trigger cutscenes when a player walked in a certain location. This works very similarly to the interactables where the event will only trigger if you are in a very specific story state. For example, on day two when walking into the little park, a [first interaction with the widow](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/cutscenes/WidowArea/widow_first_cutscene.gd) will occur. The cutscene will not play if the story is anywhere before or after that in the sequence.
 
 ### Scene Transition Story Events
-The scene transition story events were done using a combination of the story manager and the scene manager (developed by Darroll, Duy, and Matthew). The story manager was connected to the scene manager so when a scene transition occurs, a story event may or not play. Using the enums I created earlier, I determined which events needed to play on scene transitions and implemented them in the function [here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L37). Using a [match to current event](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L39) statement, I found what event was the last to occur. If it was a scene transition event, I would check the new scene, and if it was the correct scene, the story would transition to the new event and a cutscene would played. For example, after leaving the bakery in evening, the player sleep cutscene will only play once the player goes inside the treehouse ([see here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L76-L79).
+The scene transition story events were done using a combination of the story manager and the scene manager (developed by Darroll, Duy, and Matthew). The story manager was connected to the scene manager so when a scene transition occurs, a story event may or not play. Using the enums I created earlier, I determined which events needed to play on scene transitions and implemented them in the function [here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L37). Using a [match to current event](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L39) statement, I found what event was the last to occur. If it was a scene transition event, I would check the new scene, and if it was the correct scene, the story would transition to the new event and a cutscene would played. For example, after leaving the bakery in evening, the player sleep cutscene will only play once the player goes inside the treehouse ([see here](https://github.com/Iemontine/MonstersShift/blob/f053284fc774f766537662e667e152f7b516716d/scripts/story_manager.gd#L76-L79)).
 
 ### Other Transitions
 For time passage, Matthew created a day to evening to night function that I used in certain parts throughout the story. This made it feel like your actions actually took time and made the game more atmospheric.
   
 <img width="398" alt="Screenshot 2024-12-12 at 12 35 14 AM" src="https://github.com/user-attachments/assets/93b50d45-2e74-4d5b-bcaf-39e609c4f879" />
 
-To make the walking time between places not feel so arduous, I created transitions in scenes that worked like the scene manager's scene switcher. Inside the player controller function, created by Darroll, I added a function that [teleports the player inside a scene](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L107-L108). By using a basic black image and the Dialogic background feature, I would black out the screen, teleport the player to a new place, and then clear the background. An example of that is when the player grabs a drink on night two and goes to offer it to the widow ([see here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Widow/widows_house_night.dtl).
+To make the walking time between places not feel so arduous, I created transitions in scenes that worked like the scene manager's scene switcher. Inside the player controller function, created by Darroll, I added a function that [teleports the player inside a scene](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L107-L108). By using a basic black image and the Dialogic background feature, I would black out the screen, teleport the player to a new place, and then clear the background. An example of that is when the player grabs a drink on night two and goes to offer it to the widow ([see here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Widow/widows_house_night.dtl)).
 
 In some cutscenes, there needed to be transitions from one scene to another in the middle of the dialogue. Using the [player controller's switch scene function](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/scripts/player_controller.gd#L43-L44), I was able to make seamless transitions in cutscenes that flowed naturally in the story. Also, this scene switcher was used to switch to the minigames ([see example here](https://github.com/Iemontine/MonstersShift/blob/e72b6e0bedc9d966082f1007a6f095cb668ae593/dialogic/Timelines/Baker/baker_first_interaction.dtl#L49)).
 
@@ -164,10 +172,68 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 
 ## Animation & Visuals (Katherine)
 
-**List your assets, including their sources and licenses.**
+**Listed below are the assets used in our game, including their sources and licenses.**
+* Modular character asset - https://seliel-the-shaper.itch.io/farmer-base
+   * License: https://selieltheshaper.weebly.com/user-license.html
+* Interiors and exteriors assets - https://limezu.itch.io/
+    * https://limezu.itch.io/moderninteriors
+    * https://limezu.itch.io/modernexteriors
+    * License: 
+* Dialogue font asset - https://kmlgames.itch.io/friendly-scribbles
+    * License:	"You can use this font for free with attribution, but a donation is much appreciated - this means, if you've paid for the font, you don't have to give attribution (but it is still appreciated). For attribution please say something along the lines of "friendly scribbles font by @kmlgames", or however your credits list is formatted. You can not sell or reupload this font."
+* Title font asset - https://www.ingofonts.de/en/product-page/depixel
+    * License: 1 license allows:
+        * "Installation on up to 5 devices
+        * commercial use
+        * webfont
+        * ePub
+        * app
+        * The font must be applied in a way that prevents the end user from using it himself.
+        * Not allowed is: Lending or selling of the font software to a third party"
+* Digital art drawn with ibisPaint
+    * License - https://ibispaint.com/agreement.jsp?lang=en
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+* With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to be our final map. ![early map dev](https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab)
+![early widow ideas](https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7)
+![early cutscene sketches](https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113)
+![pixil-frame-0 (2)](https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8)
+![Untitled16_20241211013237](https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed)
+![Untitled12_20241211020547](https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65)
+![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130)
+![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087)
+![Untitled10_20241211004658](https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb)
+![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
+![Untitled12_20241211002951](https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4)
+![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
+![cutsc![Uploading Untitled10_20241211010304.png…]()
+![pixilart-sprite (5)](https://github.com/user-attachments/![Untitled12_20241211000526](https://github.com/user-attachments/assets/d64b7838-5471-4b53-8eff-20ea7d24c732)
+assets/9a8bab62-4177-4718-af9e-0412b0471677)
+ene illustrations](https://github.com/user-attachments/assets/1f0a1f65-7eb1-4384-aa06-4bb21eb6a9fc)
+![Untitled16_20241211004552](https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f)
+![Uploading pixilart-sprite (5).png…]()
+![Untitled16_20241211004501](https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da)
+![Untitled10_20241211004153](https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5)
+![Untitled10_20241211004008](https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc)
+![Untitled10_20241211004002](https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029)
+![Untitled14_20241208002213](https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858)
+![Untitled12_20241202112334](https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005)
+![in game map](https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f)
+![Untitled video - Made with Clipchamp (1)](https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f)
 
+
+* It was very important to me that the player base (the treehouse) felt like a cozy and nostalgic place, with decorations and furniture that someone living in a treehouse might actually have. I designed and put into place the interior of the treehouse. In the treehouse, there are 3 objects that the player interacts with -- a picture frame, record player, and note. These three items have quest markers indicating importance, which I implemented such that after the player interacts with them, they disappear. ![treehouse screenshot](https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b)![conbini collisions](https://github.com/user-attachments/assets/743ecb3e-f663-4175-86d2-009b02a2d7ce)
+This was a super time-consuming task because our map has a lot of small intricated decorations, so I spent a LOT of time colliding and sorting the supermarket, treehouse interior, forest, and some parts of the town exterior.
+
+* fonts
+* main menu![title page](https://github.com/user-attachments/assets/be770118-9f2e-4e36-a7ea-e59b2adaa982)
+
+* credits
+* ![main menu and credits gif](https://github.com/user-attachments/assets/18eb1429-0619-41df-a789-f758ed01631a)
+![Untitled video - Made with Clipchamp (2)](https://github.com/user-attachments/assets/6c917f3c-a44d-4426-b760-86249703d965)
+
+
+* Collisions and y-sorting were also a large part of my time spent on this project. In order to make the game feel comfortable and natural, these were very important. I wanted to make sure it made sense and was intuitive what could and could not be walked on. For example, something laying flat on the ground would have a smaller y-sort difference compared to the player, since the character would show no matter where it was standing in relation to the sprite. However, something taller (like a cart) would hide part of the character's body if the character walked behind it. 
 ## Game Logic & Game Feel (Matthew)
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
@@ -183,7 +249,8 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 **Describe the default input configuration.**
 **Add an entry for each platform or input style your project supports.**
 
-# Sub-Roles
+# Sub-Roles![treehouse screenshot](https://github.com/user-attachments/assets/26909566-0d20-4eef-9b21-e4284ecbd435)
+
 
 ## Gameplay Testing (Darroll)
 
