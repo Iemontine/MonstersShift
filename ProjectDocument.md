@@ -187,42 +187,37 @@ Some neat tricks were used to stop unwanted story progression. Certain preventat
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 * With regards to world-building, I wanted to capture the energy of a small town that fits with our narrative – a small city surrounded by nature. In our game, we demonstrate this with modern buildings and infrastructure alongside a forest that fits with our story. In early stages of our game's ideation and development, I created initial versions of the map. Attached are early map sketches from team meetings along with an early version I made in Godot, which Darroll adapted to be our final map. ![early map dev](https://github.com/user-attachments/assets/5d4edbab-aee2-4137-baba-ccc234890bab)
-![early widow ideas](https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7)
-![early cutscene sketches](https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113)
+* A lot of early discussion was about our characters and what they would be like in the day vs. their supernatural nighttime counterparts. Darroll and I spent a few meetings coming up with different folklore monsters to allude to, and we landed on a baker/zombie and a widow/La Llorona. Darroll built the character sprites and Briana hand-drew character a portrait for each character. I edited these character portraits digitally to have different expressions, which I thought was an important part of narrative immersion. I also came up with the idea of one minigame being to fetch the widow's groceries using a tear-stained list, some parts of which Darroll implemented in the final version. ![early widow ideas](https://github.com/user-attachments/assets/6e0eb33a-cdb3-4ecb-9877-b96482ed3cb7) ![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087) ![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130) ![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
+* I really wanted to make a story game with a linear narrative, for which cutscenes are important. I helped to author some of the cutscenes and dialogue Briana ultimately ended up using, and storyboarded and drew and digitalized the introduction cutscene. I wanted the player to have a quick backstory to give our story more depth and stakes and to fuel the bittersweet emotional tone I wanted our game to have. ![early cutscene sketches](https://github.com/user-attachments/assets/e227827f-db9e-4783-ad2b-0f0dc6355113) ![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
+* While we used most of our terrain and building sprites from the asset packs we found, some sprites we could not find so I drew the pixel art for them myself. I tried to make them small and practical and took lots of constructive criticism from my team and drew probably 10 different versions until we landed on one that looked good in game. The vanilla one was particularly finicky and had many iterations. The final sprites I drew were used in the baker minigame. 
+
 ![pixil-frame-0 (2)](https://github.com/user-attachments/assets/6a378460-6a5d-41d3-bd54-5d4d730d78c8)
 ![Untitled16_20241211013237](https://github.com/user-attachments/assets/b5273adc-0b31-4727-86eb-34ee272106ed)
 ![Untitled12_20241211020547](https://github.com/user-attachments/assets/b6d9a44e-8fdb-4cf2-b592-d6f5f7081a65)
-![player portraits](https://github.com/user-attachments/assets/b60e9e02-af4f-437c-80f8-597f774ef130)
-![baker portraits](https://github.com/user-attachments/assets/67470b6b-cb93-4404-beb9-9cfcb39cc087)
 ![Untitled10_20241211004658](https://github.com/user-attachments/assets/3ec4f0fc-4d97-4121-a4b0-aabe0c0ab5cb)
-![widow portraits](https://github.com/user-attachments/assets/c9d394ca-20f8-42c4-b433-5989adde7ee9)
 ![Untitled12_20241211002951](https://github.com/user-attachments/assets/67a9137c-7f58-46eb-90eb-bc0bb42a02e4)
-![cutscene illustrations](https://github.com/user-attachments/assets/3cb73fcd-97e3-4dbd-8126-93d7eba926b9)
-![cutsc![Uploading Untitled10_20241211010304.png…]()
 ![pixilart-sprite (5)](https://github.com/user-attachments/![Untitled12_20241211000526](https://github.com/user-attachments/assets/d64b7838-5471-4b53-8eff-20ea7d24c732)
-assets/9a8bab62-4177-4718-af9e-0412b0471677)
-ene illustrations](https://github.com/user-attachments/assets/1f0a1f65-7eb1-4384-aa06-4bb21eb6a9fc)
 ![Untitled16_20241211004552](https://github.com/user-attachments/assets/5c3e90e1-f33f-4111-9f0b-2a20a158261f)
-![Uploading pixilart-sprite (5).png…]()
 ![Untitled16_20241211004501](https://github.com/user-attachments/assets/8c3068b6-8ee4-40db-94a1-102dd19ac3da)
 ![Untitled10_20241211004153](https://github.com/user-attachments/assets/e8f81990-b9d7-422a-9ddf-181fafd2b7b5)
 ![Untitled10_20241211004008](https://github.com/user-attachments/assets/d606bebe-bc93-472f-9c55-989d981d2afc)
 ![Untitled10_20241211004002](https://github.com/user-attachments/assets/8517a1ab-42ec-4ec2-9dd3-fa63a37f2029)
 ![Untitled14_20241208002213](https://github.com/user-attachments/assets/7d9ec7c3-bb5d-40e9-814e-06065674a858)
 ![Untitled12_20241202112334](https://github.com/user-attachments/assets/d7f861b9-0978-4600-9ece-df8839f20005)
-![in game map](https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f)
 ![Untitled video - Made with Clipchamp (1)](https://github.com/user-attachments/assets/a78ab8fb-d304-4f28-b609-a8c252bf3d0f)
-
+* I also drew an in-game map when we noticed during the gallery walk that players were having trouble knowing where to go without directions from our team. ![in game map](https://github.com/user-attachments/assets/eee25fab-39ee-4991-b29a-01d291e5e95f)
+* Likewise, we noticed some people weren't sure which controls to use, so I drew a cutscene panel describing the game keys. To keep in style with the in-game text, I did it in pixel art style.
 
 * It was very important to me that the player base (the treehouse) felt like a cozy and nostalgic place, with decorations and furniture that someone living in a treehouse might actually have. I designed and put into place the interior of the treehouse. In the treehouse, there are 3 objects that the player interacts with -- a picture frame, record player, and note. These three items have quest markers indicating importance, which I implemented such that after the player interacts with them, they disappear. ![treehouse screenshot](https://github.com/user-attachments/assets/10ed109f-9363-4f15-9c9f-64ade95a984b)![conbini collisions](https://github.com/user-attachments/assets/743ecb3e-f663-4175-86d2-009b02a2d7ce)
 This was a super time-consuming task because our map has a lot of small intricated decorations, so I spent a LOT of time colliding and sorting the supermarket, treehouse interior, forest, and some parts of the town exterior.
 
 * fonts
-* main menu![title page](https://github.com/user-attachments/assets/be770118-9f2e-4e36-a7ea-e59b2adaa982)
+* To add on to Noel's initial iteration of the main menu, I stylized the buttons to match the tone of our game more and to improve immersion. Additionally, I rerouted the credits button to go to the right place and added music.![title page](https://github.com/user-attachments/assets/be770118-9f2e-4e36-a7ea-e59b2adaa982)
 
-* credits
+* One thing I really wanted to add to our project was a credits scene that leaves the player with a little bit of melancholy after finishing the game and acknowledges the hard work my team and I put into this project. I created the credits screen and added animations for extra cuteness. I wanted to create an almost Studio Ghibli type feel with a nostalgic garden scene and sweet music. I also wanted the music to have a good flow between the credits and main menu, so I used the same song played in different styles -- acoustic for the credits for a melancholy and nostalgic feel and electric for the main menu for a more upbeat and playful tone.
 * ![main menu and credits gif](https://github.com/user-attachments/assets/18eb1429-0619-41df-a789-f758ed01631a)
-![Untitled video - Made with Clipchamp (2)](https://github.com/user-attachments/assets/6c917f3c-a44d-4426-b760-86249703d965)
+
+*![Untitled video - Made with Clipchamp (2)](https://github.com/user-attachments/assets/6c917f3c-a44d-4426-b760-86249703d965)
 
 
 * Collisions and y-sorting were also a large part of my time spent on this project. In order to make the game feel comfortable and natural, these were very important. I wanted to make sure it made sense and was intuitive what could and could not be walked on. For example, something laying flat on the ground would have a smaller y-sort difference compared to the player, since the character would show no matter where it was standing in relation to the sprite. However, something taller (like a cart) would hide part of the character's body if the character walked behind it. 
