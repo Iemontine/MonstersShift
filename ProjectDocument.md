@@ -294,7 +294,7 @@ There are a couple things to take into consideration when it comes to music, Whe
 
 While time did not allow, the music manager also had plenty of volume capability and was not fully able to be exchanged 
 
-[The General Cases]() 
+[The General Cases](https://github.com/Iemontine/MonstersShift/blob/bdfb8c0abf5662b950a3e436f85b6b7ec44b504c/scripts/music_manager.gd#L14) 
 * Outside (Day/Evening/Night)
 * Baker (Normal/Day Minigame/Night Minigame)
 * Main Menu
