@@ -287,7 +287,33 @@ More information about music used and licensing can be found later in the music 
 
 ## Game Logic (Duy)
 
-**Document the game states and game data you managed and the design patterns you used to complete your task.**
+
+### Scene transitioning
+First week I was in charge of working on the transitioning between scenes [(script here)](https://github.com/Iemontine/MonstersShift/blob/75160c5d782c0a6fa7dda0b0ddacc0960f2f642c/scripts/scene_manager.gd#L1), the goal was to let the player go to new areas of the map, i.e. switching scenes. I made it so that when the player enters Area2D, they are forced to keep walking in that direction out of the map, while there is a fade out, switch scene, fade in, and the player is forced to continue walking in the same direction for a bit more time before they regain their control. 
+
+A few problems I faced were first making the transition multi-directional, meaning we can use it anywhere. Another is figuring out how to switch scene while keeping the same player and saving the player's last velocity (Sounds easy now that I'm a self-proclaimed Godot expert but was not easy for me when I started). One minor problem my script had was we could not have multiple doors switching to the same scene because multiple entrances to an area would have multiple entry points, and I did not know how to solve that problem. This was later fixed by Darroll, our producer and GitHub wizard.
+
+### Cutscene manager
+Second week I was in charge of working on an early iteration of the cutscene manager, which controls the player movement while inside a cutscene. I made it similar to the commands pattern project of the class. It took in direction and seconds to control their movement. This was later overhauled by Darroll to work with Dialogic - a plugin we use to help us with dialogues. 
+
+### Baker mini game day and night
+I was now in charge of the baker mini game, which took up all of the time we had left for the project.
+
+#### First Iteration
+Our original idea was to make the same all GUI-based, so to make a baked good, you need to drag and drop the ingredient into a board and craft it, and there would be a window, and an NPC would show up and ask for what they want, and you would make it. I spent a few days on this and got a working version with some much-needed interface improvement, but all game logic was working. I might also add that everything was scale to screen resolution so even when player has a weirdly wide screen, it still look right.
+<img width="1470" alt="Screenshot 2024-12-13 at 1 04 41 PM" src="https://github.com/user-attachments/assets/9b294f80-4cc0-4894-9904-49b55b194031" />
+
+But ultimately, the team decided to do something else for the baker mini-game to fit more into our theme, so we scraped everything and started over.
+
+#### Daytime Baker Mini Game
+With the setback of the baker mini-game, Darroll helped me implement the pickup ingredient and crafting for the baker mini-game. Then I implemented the customer and baker AI for the mini-game and the rest of the mini-game logic. For the [baker](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/npc_baker.gd#L1), we can give him a food, and he will deliver it to the right customer and return to his original position. The [NPC spawner](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/npc_spawner.gd#L1) will spawn a customer. The [customer](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/npc_bakery_customer.gd#L1) have unqiue randomly generated clothing will go in and find an available chair to sit in, then leave at the door where they spawned. The [chair](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/chair.gd#L1) was made to be multi-directional; you can put it in a direction, and the NPC customer will sit facing that direction with the right sprite.
+There are also [game logic](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/scripts/baker_game_logic.gd#L1) to control the player winning and losing. The baker mini-game also has a tutorial that I will talk about more in my subrole section.
+
+#### Nighttime Baker Mini-game 
+The nighttime baker also went through two different versions; the first one was made by Mathew, but later, the team had new ideas and did something else. Which I took charge of doing.
+
+The game is similar to the daytime version with the player trying to make food for the baker who is now a zombie, and the player must give the baker food through the window while trying to fortify the door so the baker can’t get through. The first I had to implement was the new logic for the night baker. The [night baker](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/npc_baker_zombie_night.gd#L1) can break down the [breakable and repairable door](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/door_healthbar.gd#L1) or pathfind to the window when the player throws out food, then pathfind back into the door when he finishes eating the food and continues to break down the door. The [window](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/window_baker_night.gd#L1) where the player gives out food was also something I had to implement. 
+
 
 ## User Interface and Input (Noel)
 
@@ -360,7 +386,10 @@ While the actual management was briefly mentioned in the main role section, ther
 
 ## Game Feel and Polish (Duy)
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
+There were little things that I added like moving car on the street for visual effects, giving trash to the baker make him play an angry animation. The fade-in and fade-out of scene transitions. 
+
+The majority of the the time was spent on the [day tutorial](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/dialogic/Timelines/Baker/how_to_play.dtl#L1) and [night tutorial](https://github.com/Iemontine/MonstersShift/blob/af06d329cdb992c4ac55e48490a7793f29262d08/dialogic/Timelines/Baker/night_how_to_play.dtl#L1) for the baker mini game and draw and edit the images for it, I wanted the arrow to look a particular way, it had to flow right and not repeatity there are curve and waves and the direction diague was clear short concise but also friendly.
+<img width="1470" alt="Screenshot 2024-12-13 at 5 27 17 PM" src="https://github.com/user-attachments/assets/74c48a49-7577-4b3a-ac8f-82dc389060e2" />
 
 ## Audio (Noel)
 
