@@ -149,4 +149,4 @@ func change_time_of_day(new_time_of_day: int = -1) -> void:
 	handle_day_shift()
 
 func switch_to_credits() -> void:
-	get_tree().change_scene_to_file("res://credits/credits.tscn")
+	get_tree().change_scene_to_file("res://credits/Credits.tscn")

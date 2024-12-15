@@ -68,7 +68,7 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 [node name="Qte2" type="Sprite2D" parent="Control"]
 modulate = Color(1.3, 1, 1, 1)
 position = Vector2(5.24928, 8.9988)
-scale = Vector2(0.297, 0.244487)
+scale = Vector2(0.597, 0.491)
 texture = ExtResource("3_202w6")
 
 [node name="BounceLeft" type="StaticBody2D" parent="Control"]
