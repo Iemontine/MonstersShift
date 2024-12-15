@@ -294,9 +294,14 @@ The nighttime baker also went through two different versions; the first one was 
 The game is similar to the daytime version with the player trying to make food for the baker who is now a zombie, and the player must give the baker food through the window while trying to fortify the door so the baker can’t get through. The first I had to implement was the new logic for the night baker. The [night baker](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/npc_baker_zombie_night.gd#L1) can break down the [breakable and repairable door](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/door_healthbar.gd#L1) or pathfind to the window when the player throws out food, then pathfind back into the door when he finishes eating the food and continues to break down the door. The [window](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/prefabs/window_baker_night.gd#L1) where the player gives out food was also something I had to implement. 
 
 
-## User Interface and Input (Noel)
+## UI/Design (Noel)
 
-Developed the main menu with scrolling
+* Created all of the main menu on my own, adding logic to create an infinitely scrolling background in a perfectly smooth loop.
+* Stylized the buttons adding shadows and rounded corners and so on, while utilizing the vboxcontainer to set up a system to make all buttons easy to modify together for change in style. Only stylistic change from others was a font swap on the buttons, using the font that I found for the title and music in the background. Outside of that, the main menu was completed on my own and was the final product, not an iteration.
+* Discussed with the producer about what kind of menu we would want to confirm the style and elements in the menu.
+* I chose an appropriate font that would match the pixelized style of our game for the title. Movement was added to the river as well as the background to create the illusion of movement and visual depth. Different velocities were chosen for the different elements to show greater depth. The car also moves in random velocities forward and backward, showing a more intricate movement that makes the game feel more luxurious.
+* Godot best practices were followed by making a vboxcontainer to hold all the buttons to resize/shape them together and keep them organized properly.
+* Game logic was added to link the buttons to other scenes as well as the exit function.
 
 # Sub-Roles
 
@@ -361,9 +366,40 @@ After scanning in my drawings, I was able to send them to Katherine who placed t
 
 * Some work of mine that does not fall into either my main role or sub-role include music for the main menu and credits as well as documentation (progress report and some of the initial plan).
 
-## Music (Matthew)
+## Game Feel and Polish (Duy)
 
-**List your assets, including their sources and licenses.**
+There were little things that I added like moving car on the street for visual effects, giving trash to the baker make him play an angry animation. The fade-in and fade-out of scene transitions. 
+
+The majority of the the time was spent on the [day tutorial](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/dialogic/Timelines/Baker/how_to_play.dtl#L1) and [night tutorial](https://github.com/Iemontine/MonstersShift/blob/af06d329cdb992c4ac55e48490a7793f29262d08/dialogic/Timelines/Baker/night_how_to_play.dtl#L1) for the baker mini game and draw and edit the images for it, I wanted the arrow to look a particular way, it had to flow right and not repeatity there are curve and waves and the direction diague was clear short concise but also friendly.
+<img width="1470" alt="Screenshot 2024-12-13 at 5 27 17 PM" src="https://github.com/user-attachments/assets/74c48a49-7577-4b3a-ac8f-82dc389060e2" />
+
+## Audio/Game Feel (Noel)
+
+* I listened to many tracks (over 100+) and carefully picked out over a dozen tracks that would match different parts of our game based on tone and energy. Again, I discussed with the producer to confirm what type of tracks we would be looking for and successfully found many high quality, license free and credit free tracks.
+* The Ao Oni chase music was used as inspiration and the horror/chase tracks I found carry a similar energy while being very high level musical compositions that would elevate the quality of the game greatly.
+* For game feel, I also kept in mind small things like varied movement speed between objects in the main menu to give a more nuanced feel to the movements on screen. The random positive and negative movement of the car I created also enhanced the natural and realistic feel of the main menu.
+
+[Horror/chase]
+https://www.youtube.com/watch?v=4gU6FfdYiSg
+https://www.youtube.com/watch?v=SJ1PkoJedJY
+https://www.youtube.com/watch?v=MZ2D5i5_C1M
+https://www.youtube.com/watch?v=uD0nmbcUuJ0
+
+[Town/warm]
+https://www.youtube.com/watch?v=Dp0fVggyz8g
+https://www.youtube.com/watch?v=pQD4Fg3wwMg
+https://www.youtube.com/watch?v=XowvSf38tZA
+https://www.youtube.com/watch?v=whGIHj5qkIc
+
+[Fun/minigame]
+https://www.youtube.com/watch?v=gvew60sDN-E
+https://www.youtube.com/watch?v=kulN4Y0MBX0
+https://www.youtube.com/watch?v=rPrqnKQRnNA
+https://www.youtube.com/watch?v=oMzpk1puvnE
+https://www.youtube.com/watch?v=IDxgGXPxToI
+No license or credits required, refer to (https://dova-s.jp/EN/_contents/license/)
+
+## Music (Matthew)
 
 While the actual management was briefly mentioned in the main role section, there is more to it. The manager works by attaching a stream, usually a mp3 or wav stream for music, and attaching it to the current scene and using the correct audio. This is a runtime load which makes it a little easier to allow us to use custom tracks as well. If we want to use custom tracks then we have a state to manage whether we use that or the basic items. Music updates either on scene transition or on custom choice.
 
@@ -390,16 +426,3 @@ While the actual management was briefly mentioned in the main role section, ther
 [Credits](https://swarajthegreat.itch.io/lo-fi-music-pack) by itch.io user Swarajthegreat - License [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en), No credits were necessary are given!
 
 [Widow Chase Music](https://www.youtube.com/watch?v=MZ2D5i5_C1M) by MFP【Marron Fields Production】 - [License](https://dova-s.jp/EN/_contents/license/)
-
-## Game Feel and Polish (Duy)
-
-There were little things that I added like moving car on the street for visual effects, giving trash to the baker make him play an angry animation. The fade-in and fade-out of scene transitions. 
-
-The majority of the the time was spent on the [day tutorial](https://github.com/Iemontine/MonstersShift/blob/238510b295fdfb970210cd5d4aa92659aabf8b4f/dialogic/Timelines/Baker/how_to_play.dtl#L1) and [night tutorial](https://github.com/Iemontine/MonstersShift/blob/af06d329cdb992c4ac55e48490a7793f29262d08/dialogic/Timelines/Baker/night_how_to_play.dtl#L1) for the baker mini game and draw and edit the images for it, I wanted the arrow to look a particular way, it had to flow right and not repeatity there are curve and waves and the direction diague was clear short concise but also friendly.
-<img width="1470" alt="Screenshot 2024-12-13 at 5 27 17 PM" src="https://github.com/user-attachments/assets/74c48a49-7577-4b3a-ac8f-82dc389060e2" />
-
-## Audio (Noel)
-
-**List your assets, including their sources and licenses.**
-
-**Describe the implementation of your audio system.**
