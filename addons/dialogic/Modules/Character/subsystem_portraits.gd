@@ -264,7 +264,13 @@ func _animate_node(node: Node, animation_path: String, length: float, repeats :=
 	anim_node.is_reversed = is_reversed
 
 	add_child(anim_node)
-	anim_node.animate()
+	if node.is_inside_tree():
+		anim_node.animate()
+	else:
+		# The node isn't in the scene tree (its layout hasn't been added yet), so
+		# neither a Tween nor a viewport can be created. Skip the animation and
+		# report it finished next frame so awaiting callers don't stall.
+		anim_node.call_deferred("emit_signal", "finished")
 
 	node.set_meta("animation_path", animation_path)
 	node.set_meta("animation_length", length)
