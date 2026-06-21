@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c27sdg6fx6eqh"]
+[gd_scene format=3 uid="uid://c27sdg6fx6eqh"]
 
 [ext_resource type="Script" uid="uid://cw1fo2h5hd4q6" path="res://scripts/loadzones/loadzone.gd" id="1_44gdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f73c5"]
 size = Vector2(5, 200)
 
-[node name="Loadzone" type="Area2D"]
+[node name="Loadzone" type="Area2D" unique_id=1564046106]
 script = ExtResource("1_44gdv")
 
-[node name="Area1" type="CollisionShape2D" parent="."]
+[node name="Area1" type="CollisionShape2D" parent="." unique_id=368015230]
 z_index = 4
 shape = SubResource("RectangleShape2D_f73c5")
 debug_color = Color(1, 1, 1, 0.42)

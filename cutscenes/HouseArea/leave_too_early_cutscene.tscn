@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqq1lhxfiyg3q"]
+[gd_scene format=3 uid="uid://cqq1lhxfiyg3q"]
 
 [ext_resource type="Script" uid="uid://bu7p8i4o6ucnq" path="res://cutscenes/HouseArea/leave_too_early_cutscene.gd" id="1_x8ptp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ptp"]
 size = Vector2(20, 168)
 
-[node name="LeaveTooEarlyCutscene" type="Area2D"]
+[node name="LeaveTooEarlyCutscene" type="Area2D" unique_id=101107337]
 script = ExtResource("1_x8ptp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118971509]
 shape = SubResource("RectangleShape2D_x8ptp")

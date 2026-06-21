@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://77r3s225tlp3"]
+[gd_scene format=3 uid="uid://77r3s225tlp3"]
 
 [ext_resource type="Script" uid="uid://bxix08gram7mh" path="res://prefabs/npc_spawner.gd" id="1_ws0kc"]
 [ext_resource type="PackedScene" uid="uid://bj3xurejxp5jn" path="res://prefabs/npc_bakery_customer.tscn" id="2_ocerp"]
-[ext_resource type="Texture2D" uid="uid://bd8h4qf3801y" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_glass_double.png" id="20_4a7r0"]
+[ext_resource type="Texture2D" uid="uid://dp0eexard6fsj" path="res://assets/tileset/interiors/3_Animated_objects/16x16/spritesheets/animated_door_glass_double.png" id="20_4a7r0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffbsp"]
 atlas = ExtResource("20_4a7r0")
@@ -72,18 +72,18 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ffbsp")
 }],
-"loop": false,
+"loop": 0,
 "name": &"door_open",
 "speed": 8.0
 }]
 
-[node name="NPC_Spawner" type="Node2D"]
+[node name="NPC_Spawner" type="Node2D" unique_id=923194182]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_ws0kc")
 npc_scene = ExtResource("2_ocerp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048619867]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -8)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0py0olc2x7cv"]
+[gd_scene format=3 uid="uid://d0py0olc2x7cv"]
 
 [ext_resource type="Texture2D" uid="uid://3tuh8enrwcur" path="res://assets/assets_baker/recipe_board.png" id="1_ocgyd"]
 
-[node name="Board_UI" type="CanvasLayer"]
+[node name="Board_UI" type="CanvasLayer" unique_id=1102278925]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1865053298]
 anchors_preset = -1
 anchor_left = 0.172
 anchor_top = 0.032
@@ -23,7 +23,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="TextureRect" unique_id=1045430358]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.374
@@ -40,7 +40,7 @@ theme_override_font_sizes/font_size = 800
 text = "Recipes"
 horizontal_alignment = 1
 
-[node name="Recipes" type="Label" parent="."]
+[node name="Recipes" type="Label" parent="." unique_id=1101937702]
 offset_left = 402.0
 offset_top = 329.0
 offset_right = 1003.0

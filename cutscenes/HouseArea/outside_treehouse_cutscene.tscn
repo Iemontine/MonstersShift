@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ftjlrq5makyi"]
+[gd_scene format=3 uid="uid://ftjlrq5makyi"]
 
 [ext_resource type="Script" uid="uid://b04af4rufovv8" path="res://cutscenes/HouseArea/outside_treehouse_cutscene.gd" id="1_fbua3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbua3"]
 size = Vector2(36, 28)
 
-[node name="OutsideTreehouseCutscene" type="Area2D"]
+[node name="OutsideTreehouseCutscene" type="Area2D" unique_id=1405033354]
 script = ExtResource("1_fbua3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1648295252]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_fbua3")

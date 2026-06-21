@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bquokw4krqvca"]
+[gd_scene format=3 uid="uid://bquokw4krqvca"]
 
 [ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="1_inmpo"]
-[ext_resource type="Texture2D" uid="uid://cfu4to76dcd4r" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Door_Treehouse.png" id="1_rx072"]
+[ext_resource type="Texture2D" uid="uid://djagmmokkh1he" path="res://assets/tileset/exteriors/Animated_16x16/Animated_sheets_16x16/Door_Treehouse.png" id="1_rx072"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(16, 32)
@@ -65,21 +65,21 @@ animations = [{
 "duration": 0.4,
 "texture": SubResource("AtlasTexture_70vw4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"door_open",
 "speed": 5.0
 }]
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" unique_id=382587021]
 physics_interpolation_mode = 2
 script = ExtResource("1_inmpo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=465106367]
 z_index = 1
 shape = SubResource("RectangleShape2D_v7ggh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=603609154]
 sprite_frames = SubResource("SpriteFrames_h7s5o")
 animation = &"door_open"
 
-[node name="Spawnpoint" type="Marker2D" parent="."]
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=254319074]

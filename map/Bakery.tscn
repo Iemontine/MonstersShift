@@ -1,28 +1,28 @@
-[gd_scene load_steps=46 format=4 uid="uid://n1ucfylsjlbl"]
+[gd_scene format=4 uid="uid://n1ucfylsjlbl"]
 
-[ext_resource type="Texture2D" uid="uid://by3ydv0aunarj" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
-[ext_resource type="Texture2D" uid="uid://lasxi2lo6ovq" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
-[ext_resource type="Texture2D" uid="uid://dst2sbnq2316u" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="3_yu6ri"]
-[ext_resource type="Texture2D" uid="uid://bpbjrdx65f1ha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="4_ffbsp"]
-[ext_resource type="Texture2D" uid="uid://douyapg7cuupm" path="res://assets/tileset/interiors/3_Animated_objects/spritesheets/animated_door_condominium_2.png" id="4_mwicy"]
-[ext_resource type="Texture2D" uid="uid://1g5bttpn801v" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_igw2u"]
+[ext_resource type="Texture2D" uid="uid://b8mskaifr18r8" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_16x16.png" id="1_fcgx5"]
+[ext_resource type="Texture2D" uid="uid://cj4ftnrclg1dv" path="res://assets/tileset/interiors/3_Animated_objects/16x16/spritesheets/animated_kitchen_sink_1.png" id="2_jjlq4"]
+[ext_resource type="Texture2D" uid="uid://dyytunasfus8t" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/12_Kitchen_Black_Shadow_16x16.png" id="3_yu6ri"]
+[ext_resource type="Texture2D" uid="uid://n15v5elpou06" path="res://assets/tileset/interiors/Theme_Sorter/24_Ice_Cream_Shop.png" id="4_ffbsp"]
+[ext_resource type="Texture2D" uid="uid://bduq3pcd7dpfe" path="res://assets/tileset/interiors/3_Animated_objects/16x16/spritesheets/animated_door_condominium_2.png" id="4_mwicy"]
+[ext_resource type="Texture2D" uid="uid://m64yxdvsyeih" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/1_Generic_Black_Shadow_16x16.png" id="5_igw2u"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="7_eyyg0"]
 [ext_resource type="PackedScene" uid="uid://77r3s225tlp3" path="res://prefabs/npc_spawner.tscn" id="7_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://cjaadvocusxea" path="res://interactable/baker_cuttingboard.tscn" id="9_kw8w0"]
-[ext_resource type="Script" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
+[ext_resource type="Script" uid="uid://b832r3o8puh2v" path="res://scripts/baker_camera.gd" id="10_ffbsp"]
 [ext_resource type="PackedScene" uid="uid://dd325esb66evn" path="res://interactable/item_factory.tscn" id="10_jwbsn"]
 [ext_resource type="PackedScene" uid="uid://bcekq52n6k3uf" path="res://interactable/baker_trashcan.tscn" id="12_ku7ja"]
 [ext_resource type="Texture2D" uid="uid://bjw2cww87j4ya" path="res://assets/assets_baker/kat_bakery_pixelart.png" id="13_mwicy"]
-[ext_resource type="PackedScene" path="res://prefabs/chair.tscn" id="14_fcgx5"]
+[ext_resource type="PackedScene" uid="uid://57nkfs84s4dl" path="res://prefabs/chair.tscn" id="14_fcgx5"]
 [ext_resource type="Script" uid="uid://bdqwi5t6duajw" path="res://interactable/door.gd" id="14_x3sc3"]
 [ext_resource type="PackedScene" uid="uid://y2o6o0rbwori" path="res://prefabs/npc_baker.tscn" id="15_jjlq4"]
-[ext_resource type="Texture2D" uid="uid://bu6o8lxvf718k" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/13_Conference_Hall_Black_Shadow_16x16.png" id="16_eyyg0"]
+[ext_resource type="Texture2D" uid="uid://5557h4drc3ai" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/13_Conference_Hall_Black_Shadow_16x16.png" id="16_eyyg0"]
 [ext_resource type="Script" uid="uid://dcllectwt4lkh" path="res://map/recipe_board.gd" id="16_yu6ri"]
-[ext_resource type="Texture2D" uid="uid://mw38uglnpyjg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="17_farls"]
-[ext_resource type="PackedScene" path="res://prefabs/board_ui.tscn" id="17_ffbsp"]
-[ext_resource type="PackedScene" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
-[ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
-[ext_resource type="Texture2D" uid="uid://cteds0ilonbdh" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
+[ext_resource type="Texture2D" uid="uid://yjlpk8v3srhd" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/15_Christmas_Black_Shadow_16x16.png" id="17_farls"]
+[ext_resource type="PackedScene" uid="uid://d0py0olc2x7cv" path="res://prefabs/board_ui.tscn" id="17_ffbsp"]
+[ext_resource type="PackedScene" uid="uid://ct2t64jd11l0j" path="res://scripts/baker_game_logic.tscn" id="18_igw2u"]
+[ext_resource type="Texture2D" uid="uid://bddgdckc5i0dh" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="18_kw8w0"]
+[ext_resource type="Texture2D" uid="uid://cxff720ghj67j" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/20_Japanese_interiors_Black_Shadow_16x16.png" id="19_jwbsn"]
 [ext_resource type="Script" uid="uid://cy8xtr15nx4ni" path="res://prefabs/help_button.gd" id="23_jwbsn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kw8w0"]
@@ -749,34 +749,34 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.909329, 0.742238, 0.85766, 1)
 
-[node name="Bakery" type="Node2D"]
+[node name="Bakery" type="Node2D" unique_id=633827179]
 y_sort_enabled = true
 
-[node name="floor" type="TileMapLayer" parent="."]
+[node name="floor" type="TileMapLayer" parent="." unique_id=641502780]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD5//7/AAAvAA4AAAD5////AAAvAA4AAAD5/wAAAAAvAA4AAAD5/wEAAAAvAA4AAAD5/wIAAAAvAA4AAAD5/wMAAAAvAA4AAAD6//7/AAAvAA4AAAD6////AAAvAA4AAAD6/wAAAAAvAA4AAAD6/wEAAAAvAA4AAAD6/wIAAAAvAA4AAAD6/wMAAAAvAA4AAAD7//7/AAAvAA4AAAD7////AAAvAA4AAAD7/wAAAAAvAA4AAAD7/wEAAAAvAA4AAAD7/wIAAAAvAA4AAAD7/wMAAAAvAA4AAAD7/wQAAAAvAA4AAAD7/wUAAAAvAA4AAAD8//7/AAAvAA4AAAD8////AAAvAA4AAAD8/wAAAAAvAA4AAAD8/wEAAAAvAA4AAAD8/wIAAAAvAA4AAAD8/wMAAAAvAA4AAAD8/wQAAAAvAA4AAAD8/wUAAAAvAA4AAAD9//7/AAAvAA4AAAD9////AAAvAA4AAAD9/wAAAAAvAA4AAAD9/wEAAAAvAA4AAAD9/wIAAAAvAA4AAAD9/wMAAAAvAA4AAAD9/wQAAAAvAA4AAAD9/wUAAAAvAA4AAAD+//7/AAAvAA4AAAD+////AAAvAA4AAAD+/wAAAAAvAA4AAAD+/wEAAAAvAA4AAAD+/wIAAAAvAA4AAAD+/wMAAAAvAA4AAAD///7/AAAvAA4AAAD/////AAAvAA4AAAD//wAAAAAvAA4AAAD//wEAAAAvAA4AAAD//wIAAAAvAA4AAAD//wMAAAAvAA4AAAAAAP7/AAAvAA4AAAAAAP//AAAvAA4AAAAAAAAAAAAvAA4AAAAAAAEAAAAvAA4AAAAAAAIAAAAvAA4AAAAAAAMAAAAvAA4AAAABAP7/AAAvAA4AAAABAP//AAAvAA4AAAABAAAAAAAvAA4AAAABAAEAAAAvAA4AAAABAAIAAAAvAA4AAAABAAMAAAAvAA4AAAACAP7/AAAvAA4AAAACAP//AAAvAA4AAAACAAAAAAAvAA4AAAACAAEAAAAvAA4AAAACAAIAAAAvAA4AAAACAAMAAAAvAA4AAAADAP7/AAAvAA4AAAADAP//AAAvAA4AAAADAAAAAAAvAA4AAAADAAEAAAAvAA4AAAADAAIAAAAvAA4AAAADAAMAAAAvAA4AAAAEAP7/AAAvAA4AAAAEAP//AAAvAA4AAAAEAAAAAAAvAA4AAAAEAAEAAAAvAA4AAAAEAAIAAAAvAA4AAAAEAAMAAAAvAA4AAAAFAP7/AAAvAA4AAAAFAP//AAAvAA4AAAAFAAAAAAAvAA4AAAAFAAEAAAAvAA4AAAAFAAIAAAAvAA4AAAAFAAMAAAAvAA4AAAAGAP7/AAAvAA4AAAAGAP//AAAvAA4AAAAGAAAAAAAvAA4AAAAGAAEAAAAvAA4AAAAGAAIAAAAvAA4AAAAGAAMAAAAvAA4AAAD4/w0AAAA2AGUAAAD5/w0AAAA3AGUAAAAHAA0AAAA4AGUAAAD6/w0AAAA3AGUAAAD7/w0AAAA4AGUAAAD8/w0AAAA3AGUAAAD9/w0AAAA4AGUAAAD+/w0AAAA3AGUAAAD//w0AAAA4AGUAAAAAAA0AAAA3AGUAAAABAA0AAAA4AGUAAAACAA0AAAA3AGUAAAAFAA0AAAA4AGUAAAAGAA0AAAA3AGUAAAD9/wcAAAAnABIAAAD9/wYAAAAnABIAAAD8/wYAAAAnABIAAAD7/wYAAAAnABIAAAD6/wYAAAAnABIAAAD5/wYAAAAnABIAAAD5/wcAAAAnABIAAAD5/wgAAAAnABIAAAD5/wkAAAAnABIAAAD5/woAAAAnABIAAAD5/wsAAAAnABIAAAD5/wwAAAAnABIAAAD6/wwAAAAoABEAAAD6/wsAAAAoABIAAAD6/woAAAAnABIAAAD6/wkAAAAoABEAAAD6/wgAAAAoABIAAAD6/wcAAAAnABIAAAD7/wcAAAAnABIAAAD7/wgAAAAnABIAAAD7/wkAAAAnABIAAAD7/woAAAAnABIAAAD7/wsAAAAnABIAAAD7/wwAAAAnABIAAAD8/wwAAAAnABIAAAD8/wsAAAAnABIAAAD8/woAAAAnABIAAAD8/wkAAAAnABIAAAD8/wgAAAAnABIAAAD8/wcAAAAnABIAAAD9/wgAAAAnABIAAAD9/wkAAAAnABIAAAD9/woAAAAnABIAAAD9/wsAAAAnABIAAAD9/wwAAAAnABIAAAD+/wwAAAAoABEAAAD+/wsAAAAoABIAAAD+/woAAAAnABIAAAD+/wkAAAAoABEAAAD+/wcAAAAnABIAAAD+/wYAAAAnABIAAAD//wYAAAAnABIAAAD//wcAAAAnABIAAAD//wgAAAAnABIAAAD//wkAAAAnABIAAAD//woAAAAnABIAAAD//wsAAAAnABIAAAD//wwAAAAnABIAAAAAAAwAAAAnABIAAAAAAAsAAAAnABIAAAAAAAoAAAAnABIAAAAAAAkAAAAnABIAAAAAAAgAAAAnABIAAAAAAAcAAAAnABIAAAAAAAYAAAAnABIAAAABAAYAAAAnABIAAAABAAcAAAAnABIAAAABAAgAAAAnABIAAAABAAkAAAAnABIAAAABAAoAAAAnABIAAAABAAsAAAAnABIAAAABAAwAAAAnABIAAAACAAwAAAAnABIAAAACAAsAAAAnABIAAAACAAoAAAAnABIAAAACAAkAAAAnABIAAAACAAgAAAAnABIAAAACAAcAAAAnABIAAAACAAYAAAAnABIAAAADAAYAAAAnABIAAAADAAcAAAAnABIAAAADAAgAAAAnABIAAAADAAkAAAAnABIAAAADAAoAAAAnABIAAAADAAsAAAAnABIAAAADAAwAAAAnABIAAAAEAAwAAAAnABIAAAAEAAsAAAAnABIAAAAEAAoAAAAnABIAAAAEAAkAAAAnABIAAAAEAAgAAAAnABIAAAAEAAcAAAAnABIAAAAEAAYAAAAnABIAAAAFAAYAAAAnABIAAAAFAAcAAAAnABIAAAAFAAgAAAAnABIAAAAFAAkAAAAnABIAAAAFAAoAAAAnABIAAAAFAAsAAAAnABIAAAAFAAwAAAAnABIAAAAGAAwAAAAnABIAAAAGAAsAAAAnABIAAAAGAAoAAAAnABIAAAAGAAkAAAAnABIAAAAGAAgAAAAnABIAAAAGAAcAAAAnABIAAAAGAAYAAAAnABIAAAD+/wgAAAAoABIAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
-[node name="walls" type="TileMapLayer" parent="."]
+[node name="walls" type="TileMapLayer" parent="." unique_id=1357989963]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAEAP3/AAA4AEAAAAAFAP3/AAA4AEAAAAAGAP3/AAA4AEAAAAAHAPz/AAA6AD8AAAAHAP3/AAA6AEAAAAAHAP7/AAA6AEIAAAD///3/AAA4AEAAAAD4//z/AAA1AD8AAAD4//3/AAA1AEAAAAD5//z/AAA4AEEAAAD5//3/AAA4AEAAAAD///z/AAAFAC0AAAAEAPz/AAAFAC0AAAD+//z/AAAFAC0AAAD+//3/AAA4AEAAAAD6//z/AAA4AEEAAAD6//3/AAA4AEAAAAD7//z/AAAFAC0AAAD7//3/AAA4AEAAAAAHAP//AAA6AEIAAAAHAAAAAAA6AEIAAAAHAAEAAAA6AEIAAAAHAAIAAAA6AEIAAAAHAAMAAAA6AEIAAAD4//7/AAA1AEIAAAD4////AAA1AEIAAAD4/wAAAAA1AEIAAAD4/wEAAAA1AEIAAAD4/wIAAAA1AEIAAAD4/wMAAAA1AEIAAAD4/wQAAAA2AGAAAAAHAAQAAAA6AGEAAAD4/wYAAAA2AGIAAAAHAAYAAAA5AGIAAAAHAAUAAAA6AGIAAAD4/wUAAAA2AGEAAAD4//v/AAA1AD4AAAD5//v/AAA3AD8AAAD6//v/AAA3AD8AAAD7//v/AAA3AD8AAAD+//v/AAA3AD8AAAD///v/AAA3AD8AAAAEAPv/AAA3AD8AAAAFAPv/AAA3AD8AAAAGAPv/AAA3AD8AAAAHAPv/AAA6AD4AAAAAAPz/AAAFAC0AAAAAAP3/AAA4AEAAAAABAP3/AAA4AEAAAAACAP3/AAA4AEAAAAADAP3/AAA4AEAAAAABAPz/AAAFAC0AAAACAPz/AAAFAC0AAAADAPz/AAAFAC0AAAABAPv/AAA3AD8AAAACAPv/AAA3AD8AAAADAPv/AAA3AD8AAAAAAPv/AAA3AD8AAAAFAPz/AAA4AEEAAAAGAPz/AAA4AEEAAAD4/wcAAAA2AGIAAAD4/wgAAAA2AGIAAAD4/wkAAAA2AGIAAAD4/woAAAA2AGIAAAD5/wQAAAA3AGIAAAD5/wUAAAA3AGMAAAD4/wsAAAA2AGIAAAD4/wwAAAA2AGIAAAD8//v/AAA3AD8AAAD8//z/AAAFAC0AAAD8//3/AAA4AEAAAAD9//v/AAA3AD8AAAD9//z/AAAFAC0AAAD9//3/AAA4AEAAAAD6/wQAAAA3AGIAAAD6/wUAAAA3AGMAAAD+/wQAAAA3AGIAAAD+/wUAAAA3AGMAAAD//wQAAAA3AGIAAAD//wUAAAA3AGMAAAAAAAQAAAA3AGIAAAAAAAUAAAA3AGMAAAABAAQAAAA3AGIAAAABAAUAAAA3AGMAAAACAAQAAAA3AGIAAAACAAUAAAA3AGMAAAADAAQAAAA3AGIAAAADAAUAAAA3AGMAAAAEAAQAAAA3AGIAAAAEAAUAAAA3AGMAAAAFAAQAAAA3AGIAAAAFAAUAAAA3AGMAAAAGAAQAAAA3AGIAAAAGAAUAAAA3AGMAAAAHAAcAAAA5AGIAAAAHAAgAAAA5AGIAAAAHAAkAAAA5AGIAAAAHAAoAAAA5AGIAAAAHAAsAAAA5AGIAAAAHAAwAAAA5AGIAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
-[node name="props" type="TileMapLayer" parent="."]
+[node name="props" type="TileMapLayer" parent="." unique_id=789080156]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD///7/CgAIAAsAAAAAAP3/CgAFAAEAAAAAAP7/CgADAAkAAAABAP3/CgAFAAEAAAABAP7/CgAFAAkAAAACAP3/CgAFAAEAAAADAP3/CgAFAAEAAAACAP7/CgAFAAkAABADAP7/CgADAAoAAAD5//7/CgACAAoAAAD5//3/CgAEAAEAAAAFAP3/CgAFAAEAAAAFAP7/CgADAAoAAAAGAP3/CgAGAAEAAAAGAP7/CgAEAAoAAAD6//3/CgAFAAEAAAD6//7/CgADAAoAAAD7//3/CgAGAAEAAAD7//7/CgAEAAoAAAD+//z/CgAAACYAAAAEAP3/CgAFAAEAAAAEAP7/CgADAAoAAAD6/wQAAAA5AGUAAAD+/wQAAAA2AGUAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
-[node name="props2" type="TileMapLayer" parent="."]
+[node name="props2" type="TileMapLayer" parent="." unique_id=93008050]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD7//3/CgAMAAcAAAD///z/CgALAB4AAAD6//3/CgALACAAAAD5//3/CgACABUAAAAAAP3/CgACABAAAAAEAP3/CgABABEAAAAFAP3/CAAKAAAAAAA=")
 tile_set = SubResource("TileSet_0210a")
 
-[node name="props3" type="TileMapLayer" parent="."]
+[node name="props3" type="TileMapLayer" parent="." unique_id=918640184]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_0210a")
 
-[node name="Door_Bakery" type="StaticBody2D" parent="."]
+[node name="Door_Bakery" type="StaticBody2D" parent="." unique_id=987714468]
 physics_interpolation_mode = 2
 z_index = 1
 y_sort_enabled = true
@@ -785,26 +785,26 @@ script = ExtResource("14_x3sc3")
 destination_scene = "Town"
 target_door = "Door_Bakery"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Bakery"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Bakery" unique_id=1027973754]
 z_index = 1
 position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_yu6ri")
 
-[node name="Spawnpoint" type="Marker2D" parent="Door_Bakery"]
+[node name="Spawnpoint" type="Marker2D" parent="Door_Bakery" unique_id=1027965599]
 position = Vector2(-120, -112)
 
-[node name="NPC_Spawner" parent="Door_Bakery" node_paths=PackedStringArray("travel_locations") instance=ExtResource("7_ffbsp")]
+[node name="NPC_Spawner" parent="Door_Bakery" unique_id=1948920567 node_paths=PackedStringArray("travel_locations") instance=ExtResource("7_ffbsp")]
 travel_locations = [NodePath("../../Chair1"), NodePath("../../Chair2"), NodePath("../../Chair3")]
 
-[node name="Player" parent="." instance=ExtResource("7_eyyg0")]
+[node name="Player" parent="." unique_id=1878370847 instance=ExtResource("7_eyyg0")]
 position = Vector2(24, 47)
 collision_layer = 2057
 collision_mask = 2049
 
-[node name="NPC_Baker" parent="." instance=ExtResource("15_jjlq4")]
+[node name="NPC_Baker" parent="." unique_id=883557859 instance=ExtResource("15_jjlq4")]
 position = Vector2(-56, 96)
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=836942851 node_paths=PackedStringArray("target")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(2, 4)
@@ -812,94 +812,94 @@ zoom = Vector2(3, 3)
 script = ExtResource("10_ffbsp")
 target = NodePath("../Player")
 
-[node name="CuttingBoard" parent="." instance=ExtResource("9_kw8w0")]
+[node name="CuttingBoard" parent="." unique_id=1552791781 instance=ExtResource("9_kw8w0")]
 position = Vector2(40, -24)
 collision_layer = 8
 collision_mask = 0
 
-[node name="SugarFactory" parent="." instance=ExtResource("10_jwbsn")]
+[node name="SugarFactory" parent="." unique_id=648953686 instance=ExtResource("10_jwbsn")]
 y_sort_enabled = true
 position = Vector2(-104, -8)
 item_name = "Sugar"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(64, 0, 16, 16)
 
-[node name="ChocolateFactory" parent="." instance=ExtResource("10_jwbsn")]
+[node name="ChocolateFactory" parent="." unique_id=103396842 instance=ExtResource("10_jwbsn")]
 y_sort_enabled = true
 position = Vector2(-104, 48)
 item_name = "Chocolate"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(17, 0, 15, 16)
 
-[node name="VanillaFactory" parent="." instance=ExtResource("10_jwbsn")]
+[node name="VanillaFactory" parent="." unique_id=93479080 instance=ExtResource("10_jwbsn")]
 y_sort_enabled = true
 position = Vector2(24, 48)
 item_name = "Vanilla"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(48, 0, 16, 16)
 
-[node name="DoughFactory" parent="." instance=ExtResource("10_jwbsn")]
+[node name="DoughFactory" parent="." unique_id=1171873748 instance=ExtResource("10_jwbsn")]
 y_sort_enabled = true
 position = Vector2(104, 8)
 item_name = "Flour"
 item_texture = ExtResource("13_mwicy")
 item_region_rect = Rect2(80, 0, 16, 16)
 
-[node name="Baker_Trashcan" parent="." instance=ExtResource("12_ku7ja")]
+[node name="Baker_Trashcan" parent="." unique_id=1720395090 instance=ExtResource("12_ku7ja")]
 z_index = 1
 position = Vector2(104, 62)
 
-[node name="Chair1" parent="." instance=ExtResource("14_fcgx5")]
+[node name="Chair1" parent="." unique_id=302269233 instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-23, 134)
 chair_direction = 1
 
-[node name="Chair2" parent="." instance=ExtResource("14_fcgx5")]
+[node name="Chair2" parent="." unique_id=1498109980 instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-88, 133)
 chair_direction = 1
 
-[node name="Chair3" parent="." instance=ExtResource("14_fcgx5")]
+[node name="Chair3" parent="." unique_id=1767233882 instance=ExtResource("14_fcgx5")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-88, 183)
 chair_direction = 1
 
-[node name="Recipe_board" type="StaticBody2D" parent="."]
+[node name="Recipe_board" type="StaticBody2D" parent="." unique_id=2135021569]
 script = ExtResource("16_yu6ri")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipe_board"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Recipe_board" unique_id=470335952]
 position = Vector2(97, -37)
 shape = SubResource("RectangleShape2D_ffbsp")
 
-[node name="Board_UI" parent="Recipe_board" instance=ExtResource("17_ffbsp")]
+[node name="Board_UI" parent="Recipe_board" unique_id=1278843768 instance=ExtResource("17_ffbsp")]
 visible = false
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1743672237]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-47, -176)
 tile_map_data = PackedByteArray("AAD8/xAAAgAAABwAAAD9/xQABAANACEAAAD9/xcABAANACEAAAABABQABAANACEAAAADABAAAQAOAAMAAAAGABAAAwAJAAcAAAAHABIAAAAIAAQAAAAJABAAAgANABUAAAA=")
 tile_set = SubResource("TileSet_mwicy")
 
-[node name="KitchenBarrier" type="StaticBody2D" parent="."]
+[node name="KitchenBarrier" type="StaticBody2D" parent="." unique_id=697991002]
 position = Vector2(-249.042, 152.561)
 collision_layer = 2048
 collision_mask = 2048
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenBarrier"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenBarrier" unique_id=2046391237]
 position = Vector2(196.042, -48.5606)
 shape = SubResource("RectangleShape2D_mwicy")
 
-[node name="HelpLabels" type="Control" parent="."]
+[node name="HelpLabels" type="Control" parent="." unique_id=1590164937]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sugar" type="Label" parent="HelpLabels"]
+[node name="Sugar" type="Label" parent="HelpLabels" unique_id=1417153477]
 z_index = 5
 layout_mode = 0
 offset_left = -34.0
@@ -914,7 +914,7 @@ text = "sugar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Chocolate" type="Label" parent="HelpLabels"]
+[node name="Chocolate" type="Label" parent="HelpLabels" unique_id=1213094489]
 z_index = 5
 layout_mode = 0
 offset_left = -6.0
@@ -929,7 +929,7 @@ text = "Chocolate"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Vanilla" type="Label" parent="HelpLabels"]
+[node name="Vanilla" type="Label" parent="HelpLabels" unique_id=1311587461]
 z_index = 5
 layout_mode = 0
 offset_left = 36.0
@@ -945,7 +945,7 @@ text = "Vanilla
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Flour" type="Label" parent="HelpLabels"]
+[node name="Flour" type="Label" parent="HelpLabels" unique_id=201881247]
 z_index = 5
 layout_mode = 0
 offset_left = 71.0
@@ -960,7 +960,7 @@ text = "Flour"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RecipeBoard" type="Label" parent="HelpLabels"]
+[node name="RecipeBoard" type="Label" parent="HelpLabels" unique_id=367568559]
 z_index = 5
 layout_mode = 0
 offset_left = 81.0
@@ -975,7 +975,7 @@ text = "Recipes Board"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CuttingBoard" type="Label" parent="HelpLabels"]
+[node name="CuttingBoard" type="Label" parent="HelpLabels" unique_id=1074217684]
 z_index = 5
 layout_mode = 0
 offset_left = 17.0
@@ -991,7 +991,7 @@ text = "Baking Board
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TrashCan" type="Label" parent="HelpLabels"]
+[node name="TrashCan" type="Label" parent="HelpLabels" unique_id=1792306847]
 z_index = 5
 layout_mode = 0
 offset_left = -121.0
@@ -1007,11 +1007,11 @@ text = "Trash Can
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BakerGameLogic" parent="." instance=ExtResource("18_igw2u")]
+[node name="BakerGameLogic" parent="." unique_id=533994165 instance=ExtResource("18_igw2u")]
 points_required = 3
 game_duration = 100.0
 
-[node name="HelpButton" type="Button" parent="BakerGameLogic"]
+[node name="HelpButton" type="Button" parent="BakerGameLogic" unique_id=1226757895]
 offset_left = 1037.0
 offset_top = 539.0
 offset_right = 1123.0
@@ -1020,8 +1020,8 @@ focus_mode = 0
 theme = SubResource("Theme_kw8w0")
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jwbsn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jwbsn")
 text = "?"
 script = ExtResource("23_jwbsn")
 

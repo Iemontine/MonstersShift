@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjaadvocusxea"]
+[gd_scene format=3 uid="uid://cjaadvocusxea"]
 
-[ext_resource type="Script" path="res://interactable/baker_cuttingboard.gd" id="1_1urdy"]
-[ext_resource type="Texture2D" uid="uid://cd0all16wsmpx" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/12_Kitchen_Shadowless.png" id="2_hgxhl"]
+[ext_resource type="Script" uid="uid://t6qtdfpaavp0" path="res://interactable/baker_cuttingboard.gd" id="1_1urdy"]
+[ext_resource type="Texture2D" uid="uid://cu8nh8tg5y3eq" path="res://assets/tileset/interiors/Theme_Sorter_Shadowless/12_Kitchen_Shadowless.png" id="2_hgxhl"]
 [ext_resource type="AudioStream" uid="uid://c6ypcl8t0pino" path="res://assets/baker_sounds/drop_item.wav" id="3_j0ukd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bipse"]
@@ -10,12 +10,12 @@ size = Vector2(27, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(32, 16)
 
-[node name="CuttingBoard" type="StaticBody2D"]
+[node name="CuttingBoard" type="StaticBody2D" unique_id=314406223]
 physics_interpolation_mode = 2
 y_sort_enabled = true
 script = ExtResource("1_1urdy")
 
-[node name="templabel" type="Label" parent="."]
+[node name="templabel" type="Label" parent="." unique_id=1878237047]
 y_sort_enabled = true
 offset_left = -16.0
 offset_top = -56.0
@@ -25,22 +25,22 @@ scale = Vector2(0.465, 0.465)
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=49569863]
 y_sort_enabled = true
 texture = ExtResource("2_hgxhl")
 offset = Vector2(0, -16)
 region_enabled = true
 region_rect = Rect2(138.88, 299.312, 45.0789, 24.0421)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1391956630]
 position = Vector2(-1.5, -16)
 shape = SubResource("RectangleShape2D_bipse")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066940058]
 y_sort_enabled = true
 position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_v7ggh")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=831300205]
 y_sort_enabled = true
 stream = ExtResource("3_j0ukd")

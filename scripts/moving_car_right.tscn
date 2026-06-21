@@ -1,12 +1,12 @@
-[gd_scene load_steps=46 format=3 uid="uid://cfxgqwxv24342"]
+[gd_scene format=3 uid="uid://cfxgqwxv24342"]
 
 [ext_resource type="Script" uid="uid://dh66mftutpkcm" path="res://scripts/moving_car.gd" id="1_vucso"]
-[ext_resource type="Texture2D" uid="uid://c0cv5wbx0fflq" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_4_16x16_3.png" id="2_bwuer"]
-[ext_resource type="Texture2D" uid="uid://d3adnsw5kcssu" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_5_16x16_4.png" id="3_b48t5"]
-[ext_resource type="Texture2D" uid="uid://c8l5i3wajwu02" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_1.png" id="4_bwuer"]
-[ext_resource type="Texture2D" uid="uid://cop4gvidns3dd" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_6.png" id="5_ipyhj"]
-[ext_resource type="Texture2D" uid="uid://b3buxrpfbb6i6" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_5_16x16_2.png" id="6_ohwgu"]
-[ext_resource type="Texture2D" uid="uid://cvnyj7gxlpvc0" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_4.png" id="7_ohwgu"]
+[ext_resource type="Texture2D" uid="uid://cggfdwynrw1yx" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_4_16x16_3.png" id="2_bwuer"]
+[ext_resource type="Texture2D" uid="uid://bm6tjgpylax1y" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_5_16x16_4.png" id="3_b48t5"]
+[ext_resource type="Texture2D" uid="uid://de3ld7o4djgmq" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_1.png" id="4_bwuer"]
+[ext_resource type="Texture2D" uid="uid://c3iwn6ry64wrc" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_6.png" id="5_ipyhj"]
+[ext_resource type="Texture2D" uid="uid://ybyuucmgg455" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_5_16x16_2.png" id="6_ohwgu"]
+[ext_resource type="Texture2D" uid="uid://c0ba375esjmex" path="res://assets/tileset/exteriors/Animated_16x16/Vehicles_16x16/Cars_16x16/Car_3_16x16_4.png" id="7_ohwgu"]
 
 [sub_resource type="Curve2D" id="Curve2D_ipyhj"]
 _data = {
@@ -179,7 +179,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g4xa3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car1",
 "speed": 5.0
 }, {
@@ -202,7 +202,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_amjyc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car2",
 "speed": 5.0
 }, {
@@ -225,7 +225,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a8dbe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car3",
 "speed": 5.0
 }, {
@@ -248,7 +248,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lh50w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car4",
 "speed": 5.0
 }, {
@@ -271,7 +271,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oot7m")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car5",
 "speed": 5.0
 }, {
@@ -294,20 +294,20 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fuyyn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"car6",
 "speed": 5.0
 }]
 
-[node name="MovingCar" type="Path2D"]
+[node name="MovingCar" type="Path2D" unique_id=31533000]
 curve = SubResource("Curve2D_ipyhj")
 script = ExtResource("1_vucso")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(2034, -11.2446)
-rotation = -0.00289435
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=164883355]
+position = Vector2(2034.001, -11.2445755)
+rotation = -0.0028943478
 progress = 1812.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D" unique_id=1270929986]
 sprite_frames = SubResource("SpriteFrames_b7x5p")
 animation = &"car6"

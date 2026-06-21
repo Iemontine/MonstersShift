@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cokqx7pumafu2"]
+[gd_scene format=3 uid="uid://cokqx7pumafu2"]
 
-[ext_resource type="Script" path="res://scripts/loadzones/transition_screen.gd" id="1_rbhqg"]
+[ext_resource type="Script" uid="uid://dda6o3xdtm2yb" path="res://scripts/loadzones/transition_screen.gd" id="1_rbhqg"]
 
 [sub_resource type="Animation" id="Animation_yeo5s"]
 length = 0.001
@@ -56,10 +56,10 @@ _data = {
 &"fade_to_normal": SubResource("Animation_kjbi5")
 }
 
-[node name="transition_screen" type="CanvasLayer"]
+[node name="transition_screen" type="CanvasLayer" unique_id=1026906238]
 script = ExtResource("1_rbhqg")
 
-[node name="BlackScreen" type="ColorRect" parent="."]
+[node name="BlackScreen" type="ColorRect" parent="." unique_id=1756227195]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -67,7 +67,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07764, 0.0328, 0.08, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_sjt7k")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=347704459]
+libraries/ = SubResource("AnimationLibrary_sjt7k")

@@ -1,25 +1,25 @@
-[gd_scene load_steps=35 format=4 uid="uid://dg5e1j6trerk0"]
+[gd_scene format=4 uid="uid://dg5e1j6trerk0"]
 
 [ext_resource type="Script" uid="uid://d383gn1sh0gbb" path="res://scripts/camera.gd" id="2_pdgtp"]
-[ext_resource type="Texture2D" uid="uid://dammnrnfiv5nh" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
-[ext_resource type="Texture2D" uid="uid://bsr6x4r0tn8la" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_io5y2"]
+[ext_resource type="Texture2D" uid="uid://djl08r7fdfi75" path="res://assets/tileset/interiors/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="4_he1c2"]
+[ext_resource type="Texture2D" uid="uid://buahqnefyxxdp" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/11_Halloween_Black_Shadow_16x16.png" id="4_io5y2"]
 [ext_resource type="PackedScene" uid="uid://dor7vry5lsfnu" path="res://prefabs/player.tscn" id="4_mxmix"]
-[ext_resource type="Texture2D" uid="uid://c34wgjwnvftei" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="5_70imq"]
-[ext_resource type="Texture2D" uid="uid://4c1lp22ly86y" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/5_Classroom_and_library_Black_Shadow_16x16.png" id="5_elqij"]
-[ext_resource type="Texture2D" uid="uid://c2rfmvqik4oh8" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="6_bs5hg"]
-[ext_resource type="Texture2D" uid="uid://rj7m3vr08uxi" path="res://assets/tileset/interiors/1_Interiors/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="7_ecpsx"]
-[ext_resource type="Texture2D" uid="uid://b0pmhwx0vknha" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/21_Clothing_Store_Black_Shadow_16x16.png" id="7_q3ipt"]
+[ext_resource type="Texture2D" uid="uid://2vnuwrh5rkd3" path="res://assets/tileset/interiors/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="5_70imq"]
+[ext_resource type="Texture2D" uid="uid://c42116mkdhnqk" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/5_Classroom_and_library_Black_Shadow_16x16.png" id="5_elqij"]
+[ext_resource type="Texture2D" uid="uid://bddgdckc5i0dh" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/2_LivingRoom_Black_Shadow_16x16.png" id="6_bs5hg"]
+[ext_resource type="Texture2D" uid="uid://c1nydck8ecyx8" path="res://assets/tileset/interiors/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="7_ecpsx"]
+[ext_resource type="Texture2D" uid="uid://6w4cydisk16p" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/21_Clothing_Store_Black_Shadow_16x16.png" id="7_q3ipt"]
 [ext_resource type="PackedScene" uid="uid://bquokw4krqvca" path="res://interactable/door.tscn" id="7_ya4jy"]
-[ext_resource type="Texture2D" uid="uid://dmthlsilfm2sg" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/18_Jail_Black_Shadow_16x16.png" id="8_1my0l"]
-[ext_resource type="PackedScene" uid="uid://di6t3joha6wa6" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
-[ext_resource type="Texture2D" uid="uid://boplmfg22sf2d" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/4_Bedroom_Shadowless.png" id="9_4hge0"]
-[ext_resource type="PackedScene" uid="uid://qe705ej3yt7p" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
-[ext_resource type="Texture2D" uid="uid://ccclynhkmikvl" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Black_Shadow/26_Condominium_Black_Shadow_16x16.png" id="9_hkc28"]
+[ext_resource type="Texture2D" uid="uid://c72p3wq4rky1q" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/18_Jail_Black_Shadow_16x16.png" id="8_1my0l"]
+[ext_resource type="PackedScene" uid="uid://64bjl8y4iavm" path="res://cutscenes/HouseArea/bed_cutscene.tscn" id="8_dhls6"]
+[ext_resource type="Texture2D" uid="uid://c42nksu8uyomv" path="res://assets/tileset/interiors/Theme_Sorter_Shadowless/4_Bedroom_Shadowless.png" id="9_4hge0"]
+[ext_resource type="PackedScene" uid="uid://das7bplhfqrfb" path="res://cutscenes/HouseArea/picture_frame_cutscene.tscn" id="9_6koqr"]
+[ext_resource type="Texture2D" uid="uid://3d0crji7wmh0" path="res://assets/tileset/interiors/Theme_Sorter_Black_Shadow/26_Condominium_Black_Shadow_16x16.png" id="9_hkc28"]
 [ext_resource type="PackedScene" uid="uid://c745xotfau06v" path="res://cutscenes/HouseArea/record_player_cutscene.tscn" id="10_12jsx"]
-[ext_resource type="Texture2D" uid="uid://cfw58ykrx7p4f" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
-[ext_resource type="Texture2D" uid="uid://dit7a8x8l1cnn" path="res://assets/tileset/interiors/1_Interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
-[ext_resource type="Texture2D" uid="uid://dsr3vg3h1g1v4" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="15_d3ftm"]
-[ext_resource type="Script" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
+[ext_resource type="Texture2D" uid="uid://bgplq01fokkfi" path="res://assets/tileset/interiors/Theme_Sorter_Shadowless/1_Generic_Shadowless.png" id="10_su4dy"]
+[ext_resource type="Texture2D" uid="uid://b0qsawibosoor" path="res://assets/tileset/interiors/Theme_Sorter_Shadowless/7_Art_Shadowless.png" id="12_uf7ov"]
+[ext_resource type="Texture2D" uid="uid://daia4b8i3ekds" path="res://assets/characters/4_User_Interface_Elements/UI_16x16.png" id="15_d3ftm"]
+[ext_resource type="Script" uid="uid://cayrl7xm7o2fw" path="res://map/exclamation_sprite.gd" id="15_fbt2o"]
 [ext_resource type="Script" uid="uid://bip4dieqak5q7" path="res://interactable/event_lockable_door.gd" id="20_tvmth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjiy"]
@@ -492,77 +492,77 @@ sources/15 = SubResource("TileSetAtlasSource_b6nma")
 sources/17 = SubResource("TileSetAtlasSource_wgr51")
 sources/18 = SubResource("TileSetAtlasSource_3vkj1")
 
-[node name="Treehouse_Interior" type="Node2D"]
+[node name="Treehouse_Interior" type="Node2D" unique_id=67187425]
 y_sort_enabled = true
 position = Vector2(-6, 41)
 
-[node name="interior layer -- top decor" type="TileMapLayer" parent="."]
+[node name="interior layer -- top decor" type="TileMapLayer" parent="." unique_id=973513158]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAFAAUAEQAAABEAAAADAAUABgABAEUAABADAAYABgABAEYAABD6/wIAEQACAA0AAAD6/wUAEQABABYAAAD6//v/CwAAAAIAAAD6//z/CwAAAAMAAAAFAPv/CwADAAIAAAAFAPz/CwADAAMAAAD7////DwANAA4AAAD6/wYACQAIAAYAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
-[node name="RecordPlayerCutscene" parent="interior layer -- top decor" instance=ExtResource("10_12jsx")]
+[node name="RecordPlayerCutscene" parent="interior layer -- top decor" unique_id=2022888075 instance=ExtResource("10_12jsx")]
 z_index = 1
 position = Vector2(-88, 86)
 
-[node name="exclamation_sprite" type="Sprite2D" parent="interior layer -- top decor/RecordPlayerCutscene"]
+[node name="exclamation_sprite" type="Sprite2D" parent="interior layer -- top decor/RecordPlayerCutscene" unique_id=645778509]
 position = Vector2(0, -10)
 texture = ExtResource("15_d3ftm")
 region_enabled = true
 region_rect = Rect2(144.554, 9.29463, 15.8023, 17.5822)
 script = ExtResource("15_fbt2o")
 
-[node name="PictureFrameCutscene" parent="interior layer -- top decor" instance=ExtResource("9_6koqr")]
+[node name="PictureFrameCutscene" parent="interior layer -- top decor" unique_id=2023264022 instance=ExtResource("9_6koqr")]
 z_index = 1
 position = Vector2(-88, 43)
 
-[node name="exclamation_sprite2" type="Sprite2D" parent="interior layer -- top decor/PictureFrameCutscene"]
+[node name="exclamation_sprite2" type="Sprite2D" parent="interior layer -- top decor/PictureFrameCutscene" unique_id=651404341]
 position = Vector2(0, -15)
 texture = ExtResource("15_d3ftm")
 region_enabled = true
 region_rect = Rect2(144.554, 9.29463, 15.8023, 17.5822)
 script = ExtResource("15_fbt2o")
 
-[node name="BedCutscene" parent="interior layer -- top decor" instance=ExtResource("8_dhls6")]
+[node name="BedCutscene" parent="interior layer -- top decor" unique_id=1505045695 instance=ExtResource("8_dhls6")]
 z_index = 1
 position = Vector2(87, 87)
 
-[node name="exclamation_sprite" type="Sprite2D" parent="interior layer -- top decor/BedCutscene"]
+[node name="exclamation_sprite" type="Sprite2D" parent="interior layer -- top decor/BedCutscene" unique_id=1809474697]
 position = Vector2(0, -15)
 texture = ExtResource("15_d3ftm")
 region_enabled = true
 region_rect = Rect2(144.554, 9.29463, 15.8023, 17.5822)
 script = ExtResource("15_fbt2o")
 
-[node name="interior layer -- furniture higher2" type="TileMapLayer" parent="."]
+[node name="interior layer -- furniture higher2" type="TileMapLayer" parent="." unique_id=1308434374]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAEAAUABgAHACoAAAAEAAYABgAHACsAAAAFAAQABgAIACkAAAAFAAYABgAIACsAAAADAAUABgAGACoAAAADAAYABgAGACsAAAAFAAUABgAIACoAAAAFAAMABgAMAFgAAAD6/wUADwAAAB0AAAD6/wYADwAAAB4AAAD9//3/BgAMAFgAAAD9//7/BgAMAFkAAAABAP//CwADACsAAAAFAP7/DAAPABYAAAD///3/BwAOAC8AAAD6//7/BwAGADkAAAAFAAIADAANAAEAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
-[node name="interior layer -- furniture lower" type="TileMapLayer" parent="."]
+[node name="interior layer -- furniture lower" type="TileMapLayer" parent="." unique_id=1381280642]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD8////EgANAAcAAAD//wMABgADAA0AAAD//wQABgADAA4AAAD//wUABgADAA8AAAAAAAQABgAEAA4AAAAAAAUABgAEAA8AAAACAAUABgAKAEMAAAACAAYABgAKAEQAAAADAAUABgAMAEMAAAADAAYABgAMAEQAAAAEAAUABgAMAEMAAAAEAAYABgAMAEQAAAAFAAUABgALAEMAAAAFAAYABgALAEQAAAD7/wUABgAKAEUAAAD7/wYABgAKAEYAAAD8/wUABgALAEUAAAD8/wYABgALAEYAAAD+//3/DwACADkAAAD+//7/DwACADoAAAD+////DwAAADgAAAD5//v/AAARAAEAAAD6//v/AAASAAEAAAD7//v/AAASAAEAAAD8//v/AAASAAEAAAD9//v/AAASAAEAAAD+//v/AAASAAEAAAD///v/AAASAAEAAAAAAPv/AAASAAEAAAABAPv/AAASAAEAAAACAPv/AAASAAEAAAADAPv/AAASAAEAAAAEAPv/AAASAAEAAAAFAPv/AAASAAEAAAAGAPv/AAATAAIAAAD9//z/BgAMAFYAAAD9//3/BgAMAFcAAAD6/wMABwABADQAAAAAAAMABgAGAAwAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
-[node name="interior base -- wall" type="TileMapLayer" parent="."]
+[node name="interior base -- wall" type="TileMapLayer" parent="." unique_id=1114007976]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD6//7/BQASABMAAAD7//7/BQATABMAAAD6//3/BQAQABIAAAD7//3/BQAQABIAAAD6//z/BQAQABIAAAD7//z/BQAQABIAAAD8//z/BQAQABIAAAD6//v/BQAQABIAAAD7//v/BQAQABIAAAD8//v/BQAQABIAAAD9//7/BQATABMAAAD+//7/BQATABMAAAD///7/BQATABMAAAD9//3/BQAQABIAAAD+//3/BQAQABIAAAD///3/BQAQABIAAAD9//z/BQAQABIAAAD+//z/BQAQABIAAAD///z/BQAQABIAAAD9//v/BQAQABIAAAD+//v/BQAQABIAAAD///v/BQAQABIAAAADAPv/BQAQABIAAAAEAPv/BQAQABIAAAAFAPv/BQAQABIAAAADAPz/BQAQABIAAAAEAPz/BQAQABIAAAAFAPz/BQAQABIAAAADAP3/BQAQABIAAAAEAP3/BQAQABIAAAAFAP3/BQAQABIAAAADAP7/BQATABMAAAAEAP7/BQATABMAAAAFAP7/BQAUABMAAAABAP7/BQATABMAAAACAP7/BQATABMAAAABAP3/BQAQABIAAAACAP3/BQAQABIAAAABAPz/BQAQABIAAAACAPz/BQAQABIAAAABAPv/BQAQABIAAAACAPv/BQAQABIAAAAAAP7/BQATABMAAAAAAP3/BQAQABIAAAAAAPz/BQAQABIAAAAAAPv/BQAQABIAAAD8//3/BQAOABMAAAD5////AAAnAAIAAAD5/wAAAAAnAAIAAAD5/wEAAAAnAAIAAAD5/wIAAAAnAAIAAAD5/wMAAAAnAAIAAAD5/wQAAAAnAAIAAAD5/wUAAAAnAAIAAAD5/wYAAAAnAAIAAAAGAP//AAApAAIAAAAGAAAAAAApAAIAAAAGAAEAAAApAAIAAAAGAAIAAAApAAIAAAAGAAMAAAApAAIAAAAGAAQAAAApAAIAAAAGAAUAAAApAAIAAAAGAAYAAAApAAIAAAD6/wcAAAAoAAMAAAD7/wcAAAAoAAMAAAD8/wcAAAAoAAMAAAD9/wcAAAAoAAMAAAD+/wcAAAAoAAMAAAD//wcAAAAoAAMAAAAAAAcAAAAoAAMAAAABAAcAAAAoAAMAAAACAAcAAAAoAAMAAAADAAcAAAAoAAMAAAAEAAcAAAAoAAMAAAAFAAcAAAAoAAMAAAAGAAcAAAApAAMAAAD5/wcAAAAnAAMAAAAGAPv/AAATAAIAAAAGAPz/AAATAAIAAAAGAP3/AAATAAIAAAAGAP7/AAATAAIAAAD5//v/AAARAAIAAAD5//z/AAARAAIAAAD5//3/AAARAAIAAAD5//7/AAARAAIAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
-[node name="interior base -- floor" type="TileMapLayer" parent="."]
+[node name="interior base -- floor" type="TileMapLayer" parent="." unique_id=187610809]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAP//AQABABgAAAABAP//AQABABgAAAACAP//AQABABgAAAADAP//AQABABgAAAADAAAAAQABABkAAAAEAP//AQABABgAAAAEAAAAAQABABkAAAAAAAAAAQABABkAAAABAAAAAQABABkAAAACAAAAAQABABkAAAD9////AQABABgAAAD9/wAAAQABABkAAAD+////AQABABgAAAD+/wAAAQABABkAAAD/////AQABABgAAAD//wAAAQABABkAAAD6////AQAAABgAAAD6/wAAAQAAABkAAAD7////AQABABgAAAD7/wAAAQABABkAAAD8////AQABABgAAAD8/wAAAQABABkAAAD6/wEAAQAAABkAAAD7/wEAAQABABkAAAD7/wIAAQABABkAAAD8/wEAAQABABkAAAD8/wIAAQABABkAAAD9/wEAAQABABkAAAD9/wIAAQABABkAAAD+/wEAAQABABkAAAD+/wIAAQABABkAAAD//wEAAQABABkAAAD//wIAAQABABkAAAAAAAEAAQABABkAAAAAAAIAAQABABkAAAABAAEAAQABABkAAAABAAIAAQABABkAAAACAAEAAQABABkAAAACAAIAAQABABkAAAADAAEAAQABABkAAAADAAIAAQABABkAAAAEAAEAAQABABkAAAAEAAIAAQABABkAAAADAAMAAQABABkAAAADAAQAAQABABkAAAAEAAMAAQABABkAAAAEAAQAAQABABkAAAADAAUAAQABABkAAAADAAYAAQABABkAAAAAAAYAAQABABkAAAABAAYAAQABABkAAAACAAYAAQABABkAAAD9/wYAAQABABkAAAD+/wYAAQABABkAAAD//wYAAQABABkAAAD6/wYAAQAAABkAAAD7/wYAAQABABkAAAD8/wYAAQABABkAAAD7/wUAAQABABkAAAD8/wUAAQABABkAAAD9/wUAAQABABkAAAD7/wQAAQABABkAAAD8/wQAAQABABkAAAD9/wQAAQABABkAAAD6/wQAAQAAABkAAAD+/wQAAQABABkAAAD//wQAAQABABkAAAAAAAMAAQABABkAAAAAAAQAAQABABkAAAD+/wUAAQABABkAAAD//wUAAQABABkAAAAAAAUAAQABABkAAAABAAUAAQABABkAAAACAAUAAQABABkAAAABAAMAAQABABkAAAABAAQAAQABABkAAAACAAMAAQABABkAAAACAAQAAQABABkAAAAFAP//AQACABgAAAAFAAAAAQABABkAAAAFAAEAAQABABkAAAAFAAIAAQABABkAAAAFAAMAAQABABkAAAAFAAQAAQABABkAAAAEAAUAAQABABkAAAAEAAYAAQABABkAAAAFAAUAAQABABkAAAAFAAYAAQABABkAAAD6/wUAAQAAABkAAAD6/wMAAQAAABkAAAD7/wMAAQABABkAAAD8/wMAAQABABkAAAD9/wMAAQABABkAAAD+/wMAAQABABkAAAD//wMAAQABABkAAAA=")
 tile_set = SubResource("TileSet_5m6t8")
 
-[node name="Player" parent="." instance=ExtResource("4_mxmix")]
+[node name="Player" parent="." unique_id=1163139918 instance=ExtResource("4_mxmix")]
 position = Vector2(-3, 25)
 
-[node name="Treehouse_png" type="Sprite2D" parent="."]
+[node name="Treehouse_png" type="Sprite2D" parent="." unique_id=910960914]
 visible = false
 position = Vector2(1.16669, 5.125)
 scale = Vector2(0.370052, 0.370573)
 
-[node name="Door_Treehouse" parent="." instance=ExtResource("7_ya4jy")]
+[node name="Door_Treehouse" parent="." unique_id=1591953966 instance=ExtResource("7_ya4jy")]
 position = Vector2(-56, -32)
 script = ExtResource("20_tvmth")
 after_event = 0
@@ -571,10 +571,10 @@ scene = "leaving_house_early"
 destination_scene = "Treehouse_Exterior"
 target_door = "Door_Treehouse"
 
-[node name="Spawnpoint" parent="Door_Treehouse" index="2"]
+[node name="Spawnpoint" parent="Door_Treehouse" index="2" unique_id=254319074]
 position = Vector2(0, 19)
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=893885868 node_paths=PackedStringArray("target")]
 z_index = 10
 y_sort_enabled = true
 position = Vector2(-352, -56)

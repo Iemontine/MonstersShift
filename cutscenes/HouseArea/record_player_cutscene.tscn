@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c745xotfau06v"]
+[gd_scene format=3 uid="uid://c745xotfau06v"]
 
-[ext_resource type="Script" path="res://cutscenes/HouseArea/record_player_cutscene.gd" id="1_x74qf"]
+[ext_resource type="Script" uid="uid://fhd0eispkmr3" path="res://cutscenes/HouseArea/record_player_cutscene.gd" id="1_x74qf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x74qf"]
 size = Vector2(13.5, 13.625)
 
-[node name="RecordPlayerCutscene" type="StaticBody2D"]
+[node name="RecordPlayerCutscene" type="StaticBody2D" unique_id=1136895530]
 script = ExtResource("1_x74qf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239092036]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_x74qf")

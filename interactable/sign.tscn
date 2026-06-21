@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwc4ls6ucen5q"]
+[gd_scene format=3 uid="uid://dwc4ls6ucen5q"]
 
-[ext_resource type="Script" path="res://interactable/sign.gd" id="1_61ity"]
-[ext_resource type="Texture2D" uid="uid://b6wirt5a20b0d" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_uvutd"]
+[ext_resource type="Script" uid="uid://ckvvpcjwymgk5" path="res://interactable/sign.gd" id="1_61ity"]
+[ext_resource type="Texture2D" uid="uid://dqojsbecwf2ux" path="res://assets/tileset/exteriors/ME_Theme_Sorter_16x16/21_Beach_16x16.png" id="2_uvutd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ggh"]
 size = Vector2(16, 32)
 
-[node name="Sign" type="StaticBody2D"]
+[node name="Sign" type="StaticBody2D" unique_id=970496220]
 physics_interpolation_mode = 2
 script = ExtResource("1_61ity")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1286690358]
 position = Vector2(0, 8)
 texture = ExtResource("2_uvutd")
 region_enabled = true
 region_rect = Rect2(132.65, 255.199, 24.9111, 35.9184)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709385348]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_v7ggh")
