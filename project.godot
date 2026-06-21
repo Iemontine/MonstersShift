@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="MonstersShift"
-run/main_scene="res://mainmenu/Main_Menu.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://dcrol3he1cowb"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,7 +22,7 @@ SceneManager="*res://scripts/scene_manager.gd"
 TransitionScreen="*res://scripts/loadzones/transition_screen.tscn"
 StoryManager="*res://scripts/story_manager.gd"
 SaveManager="*res://scripts/save_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 NpcController="*res://scripts/npc_controller.gd"
 MusicManager="*res://scripts/music_manager.gd"
 
@@ -110,6 +110,11 @@ text/autopauses={}
 "sign": "res://dialogic/Characters/sign.dch"
 }
 "res://dialogic/Characters/sign.dch[editor_plugins]enabled"=PackedStringArray("res://addons/dialogic/plugin.cfg")
+layout/style_directory={
+"": "res://dialogic/Styles/speaker_without_dialogue.tres",
+"speaker_dialogue": "res://dialogic/Styles/speaker_dialogue.tres",
+"speaker_without_dialogue": "res://dialogic/Styles/speaker_without_dialogue.tres"
+}
 
 [display]
 

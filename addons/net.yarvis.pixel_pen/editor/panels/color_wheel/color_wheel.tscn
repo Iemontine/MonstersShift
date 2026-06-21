@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://7y0nin2svgj7"]
+[gd_scene format=3 uid="uid://7y0nin2svgj7"]
 
-[ext_resource type="Script" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/color_wheel.gd" id="1_ibq4c"]
-[ext_resource type="Shader" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/sv_slider.gdshader" id="1_xdkuq"]
-[ext_resource type="Shader" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/hue_slider.gdshader" id="2_lkj77"]
-[ext_resource type="Script" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/sv_slider.gd" id="2_xsppv"]
-[ext_resource type="Script" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/hue_slider.gd" id="4_jsnlp"]
-[ext_resource type="Script" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/alpha_slider.gd" id="6_1shs5"]
-[ext_resource type="Shader" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/alpha_slider.gdshader" id="6_ajt15"]
+[ext_resource type="Script" uid="uid://b5ljspywxqf6q" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/color_wheel.gd" id="1_ibq4c"]
+[ext_resource type="Shader" uid="uid://c8l4loepxr2ss" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/sv_slider.gdshader" id="1_xdkuq"]
+[ext_resource type="Shader" uid="uid://bmtl67a30gyo8" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/hue_slider.gdshader" id="2_lkj77"]
+[ext_resource type="Script" uid="uid://djdijpjeysl5t" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/sv_slider.gd" id="2_xsppv"]
+[ext_resource type="Script" uid="uid://8awy6t8m1drp" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/hue_slider.gd" id="4_jsnlp"]
+[ext_resource type="Script" uid="uid://ct4k6yygxlh7r" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/color_wheel_script/alpha_slider.gd" id="6_1shs5"]
+[ext_resource type="Shader" uid="uid://cwe8nsetxebfq" path="res://addons/net.yarvis.pixel_pen/editor/panels/color_wheel/shader/alpha_slider.gdshader" id="6_ajt15"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0thh"]
 shader = ExtResource("1_xdkuq")
@@ -19,7 +19,7 @@ shader = ExtResource("2_lkj77")
 shader = ExtResource("6_ajt15")
 shader_parameter/alpha = 1.0
 
-[node name="ColorWheel" type="Control" node_paths=PackedStringArray("sv_slider", "hue_slider", "alpha_slider")]
+[node name="ColorWheel" type="Control" unique_id=1066756329 node_paths=PackedStringArray("sv_slider", "hue_slider", "alpha_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +31,7 @@ sv_slider = NodePath("VBoxContainer/AspectRatioContainer/SVSlider")
 hue_slider = NodePath("VBoxContainer/HueSlider")
 alpha_slider = NodePath("VBoxContainer/AlphaSlider")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=165512742]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -43,11 +43,11 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer" unique_id=4269452]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SVSlider" type="ColorRect" parent="VBoxContainer/AspectRatioContainer"]
+[node name="SVSlider" type="ColorRect" parent="VBoxContainer/AspectRatioContainer" unique_id=1087147744]
 material = SubResource("ShaderMaterial_g0thh")
 layout_mode = 2
 script = ExtResource("2_xsppv")
@@ -55,20 +55,20 @@ hue = 0.0
 saturation = 0.0
 value = 0.0
 
-[node name="HueSlider" type="ColorRect" parent="VBoxContainer"]
+[node name="HueSlider" type="ColorRect" parent="VBoxContainer" unique_id=29545712]
 material = SubResource("ShaderMaterial_8odh4")
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 script = ExtResource("4_jsnlp")
 hue = 0.0
 
-[node name="AlphaSlider" type="Control" parent="VBoxContainer"]
+[node name="AlphaSlider" type="Control" parent="VBoxContainer" unique_id=1998434488]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 script = ExtResource("6_1shs5")
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/AlphaSlider"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/AlphaSlider" unique_id=1746989233]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_4baan")
 layout_mode = 1
