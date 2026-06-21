@@ -49,3 +49,4 @@ func _on_focus(custom_sound) -> void:
 		play_sound(custom_sound)
 	else:
 		play_sound(sound_focus)
+

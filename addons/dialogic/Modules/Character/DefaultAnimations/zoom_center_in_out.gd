@@ -12,7 +12,7 @@ func animate() -> void:
 
 	else:
 		node.scale = Vector2(0, 0)
-		node.position.y = base_position.y - node.get_viewport().size.y * 0.5
+		node.position.y = base_position.y - get_viewport_size().y * 0.5
 
 		var original_modulation: Color = node.get(modulate_property)
 		original_modulation.a = 0.0

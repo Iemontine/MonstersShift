@@ -1,213 +1,234 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf3qks3v18xmr"]
+[gd_scene format=3 uid="uid://cf3qks3v18xmr"]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/settings_text.gd" id="2"]
+[ext_resource type="Script" uid="uid://cdxck874xobqh" path="res://addons/dialogic/Modules/Text/settings_text.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://dpwhshre1n4t6" path="res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dbpkta2tjsqim" path="res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn" id="3_s7xhj"]
 
-[sub_resource type="Image" id="Image_0sqes"]
-data = {
-"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="ImageTexture" id="ImageTexture_3xcp4"]
-image = SubResource("Image_0sqes")
-
-[node name="DialogText" type="VBoxContainer"]
+[node name="DialogText" type="VBoxContainer" unique_id=504665204]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=292071232]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Title3" type="Label" parent="VBoxContainer"]
+[node name="Title3" type="Label" parent="VBoxContainer" unique_id=1995113510]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
 text = "Behaviour"
 
-[node name="VBox" type="GridContainer" parent="VBoxContainer"]
+[node name="VBox" type="GridContainer" parent="VBoxContainer" unique_id=1753172112]
 layout_mode = 2
 columns = 2
 
-[node name="DefaultSpeedLabel" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="DefaultSpeedLabel" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=425542170]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBox/DefaultSpeedLabel"]
+[node name="Label" type="Label" parent="VBoxContainer/VBox/DefaultSpeedLabel" unique_id=945244787]
 layout_mode = 2
 text = "Default letter speed"
 
-[node name="HintTooltip2" parent="VBoxContainer/VBox/DefaultSpeedLabel" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip2" parent="VBoxContainer/VBox/DefaultSpeedLabel" unique_id=75256681 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "The speed in seconds per character. A speed of 0 will reveal the full text instantly (still taking pauses into consideration)."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "The speed in seconds per character. A speed of 0 will reveal the full text instantly (still taking pauses into consideration)."
 
-[node name="DefaultSpeed" type="SpinBox" parent="VBoxContainer/VBox"]
+[node name="DefaultSpeed" type="SpinBox" parent="VBoxContainer/VBox" unique_id=206895439]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.001
 
-[node name="InputActionLabel" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="InputActionLabel" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=1236610393]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/VBox/InputActionLabel"]
+[node name="Label2" type="Label" parent="VBoxContainer/VBox/InputActionLabel" unique_id=1529052552]
 layout_mode = 2
 text = "Input action"
 
-[node name="HintTooltip3" parent="VBoxContainer/VBox/InputActionLabel" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip3" parent="VBoxContainer/VBox/InputActionLabel" unique_id=1429426779 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "The action that skips text and generally advances to the next event.
 You can modify actions in the Project Settings > Input Map."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "The action that skips text and generally advances to the next event.
 You can modify actions in the Project Settings > Input Map."
 
-[node name="InputAction" parent="VBoxContainer/VBox" instance=ExtResource("3")]
+[node name="InputAction" parent="VBoxContainer/VBox" unique_id=971567244 instance=ExtResource("3")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=691581301]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/VBox/HBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/VBox/HBoxContainer" unique_id=1652257739]
 layout_mode = 2
 text = "Text Reveal Skippable"
 
-[node name="HintTooltip4" parent="VBoxContainer/VBox/HBoxContainer" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip4" parent="VBoxContainer/VBox/HBoxContainer" unique_id=179987970 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "If enabled the revealing of text can be skipped with the input action.
 If disabled you can only advance to the next event when revealing has finnished."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "If enabled the revealing of text can be skipped with the input action.
 If disabled you can only advance to the next event when revealing has finnished."
 
-[node name="Skippable" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="Skippable" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=181111310]
 layout_mode = 2
 
-[node name="Skippable" type="CheckBox" parent="VBoxContainer/VBox/Skippable"]
+[node name="Skippable" type="CheckBox" parent="VBoxContainer/VBox/Skippable" unique_id=638017811]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBox/Skippable"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBox/Skippable" unique_id=780477796]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer2"]
+[node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer2" unique_id=1779305967]
 layout_mode = 2
 text = "Skip Delay:"
 
-[node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer2" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer2" unique_id=996921330 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "Delay before you can skip. 
 
 Use this to prevent users from skipping through your timeline to quickly."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "Delay before you can skip. 
 
 Use this to prevent users from skipping through your timeline too quickly."
 
-[node name="SkippableDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer2"]
+[node name="SkippableDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer2" unique_id=1955883334]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 step = 0.01
 suffix = "s"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBox/Skippable"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBox/Skippable" unique_id=1047096979]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer3"]
+[node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer3" unique_id=2087979375]
 layout_mode = 2
 text = "Advance Delay:"
 
-[node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer3" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer3" unique_id=1209919706 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "Delay before you can advance (if the text finishes revealing on its own). 
 
 This is used to prevent players from advancing when they actually wanted to skip the revealing, but did so very shortly after the text was already fully revealed."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "Delay before you can advance (only if the text finishes revealing on its own). 
 
 This is used to prevent players from advancing when they actually wanted to skip the revealing, but did so very shortly after the text was already fully revealed."
 
-[node name="AdvanceDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer3"]
+[node name="AdvanceDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer3" unique_id=323383380]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 step = 0.01
 suffix = "s"
 
-[node name="ColorNames" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="ColorNames" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=1336397670]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="VBoxContainer/VBox/ColorNames"]
+[node name="Label4" type="Label" parent="VBoxContainer/VBox/ColorNames" unique_id=1997250004]
 layout_mode = 2
 text = "Autocolor names"
 
-[node name="HintTooltip5" parent="VBoxContainer/VBox/ColorNames" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip5" parent="VBoxContainer/VBox/ColorNames" unique_id=1494495805 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "If enabled character names will be colored in the characters color in text events."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "If enabled character names will be colored in the characters color in text events."
 
-[node name="AutocolorNames" type="CheckBox" parent="VBoxContainer/VBox"]
+[node name="AutocolorNames" type="CheckBox" parent="VBoxContainer/VBox" unique_id=104614774]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="TextPrefixLabel" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=1208413108]
 layout_mode = 2
 
-[node name="Label5" type="Label" parent="VBoxContainer/VBox/HBoxContainer3"]
+[node name="Label4" type="Label" parent="VBoxContainer/VBox/TextPrefixLabel" unique_id=1060247427]
+layout_mode = 2
+text = "Text prefix"
+
+[node name="HintTooltip5" parent="VBoxContainer/VBox/TextPrefixLabel" unique_id=1290218640 instance=ExtResource("3_s7xhj")]
+layout_mode = 2
+tooltip_text = "If enabled character names will be colored in the characters color in text events."
+texture = null
+hint_text = "This is put before the text. Can be used to apply bbcode effects to all texts."
+
+[node name="TextPrefix" type="LineEdit" parent="VBoxContainer/VBox" unique_id=2085915328]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BBCodeEffectLabel" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=678131026]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/VBox/BBCodeEffectLabel" unique_id=1588335120]
+layout_mode = 2
+text = "Custom BBCode Effects"
+
+[node name="HintTooltip5" parent="VBoxContainer/VBox/BBCodeEffectLabel" unique_id=1860732988 instance=ExtResource("3_s7xhj")]
+layout_mode = 2
+tooltip_text = "This is put before the text. Can be used to apply bbcode effects to all texts."
+texture = null
+hint_text = "Supply a list of bbcode effect resources (paths or uids) separated by comma."
+
+[node name="CustomBBCodeEffects" type="LineEdit" parent="VBoxContainer/VBox" unique_id=486277836]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=993158211]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/VBox/HBoxContainer3" unique_id=1487301023]
 layout_mode = 2
 text = "New lines as new events"
 
-[node name="HintTooltip7" parent="VBoxContainer/VBox/HBoxContainer3" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip7" parent="VBoxContainer/VBox/HBoxContainer3" unique_id=1871195193 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "If enabled dialogic, new lines will be treated as [n] effects,
 seemingly waiting for input before starting a new text."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "If enabled dialogic, new lines will be treated as [n] effects,
 seemingly waiting for input before starting a new text."
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBox"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBox" unique_id=1359717788]
 layout_mode = 2
 
-[node name="NewEvents" type="CheckBox" parent="VBoxContainer/VBox/HBoxContainer4"]
+[node name="NewEvents" type="CheckBox" parent="VBoxContainer/VBox/HBoxContainer4" unique_id=355326159]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NewEventOption" type="OptionButton" parent="VBoxContainer/VBox/HBoxContainer4"]
+[node name="NewEventOption" type="OptionButton" parent="VBoxContainer/VBox/HBoxContainer4" unique_id=593322335]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 2
 selected = 0
 fit_to_longest_item = false
+item_count = 2
 popup/item_0/text = "As new event"
 popup/item_0/id = 0
 popup/item_1/text = "Appended"
 popup/item_1/id = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1974575995]
 layout_mode = 2
 
-[node name="HBoxContainer AutoAdvance" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer AutoAdvance" type="HBoxContainer" parent="VBoxContainer" unique_id=1831511570]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoAdvance"]
+[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoAdvance" unique_id=1666380173]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
 text = "Auto-Advance"
 
-[node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoAdvance" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoAdvance" unique_id=51325750 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "Autoadvance is the concept of automatically progressing to the next event upon completing text display, usually after a certain delay.
 
@@ -219,7 +240,7 @@ These add up, so if any of them is true, Auto-Advance will happen.
 Unless manual advancement is disabled, the Auto-Advance time can always be skipped by the player.
 
 The Auto-Advance will wait for Voice audio to finish playing. This behaviour can be disabled via code. "
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "Autoadvance is the concept of automatically progressing to the next event upon completing text display, usually after a certain delay.
 
 You can enabled Auto-Advance from code using either:
@@ -231,24 +252,24 @@ Unless manual advancement is disabled, the Auto-Advance time can always be skipp
 
 The Auto-Advance will wait for Voice audio to finish playing. This behaviour can be disabled via code. "
 
-[node name="AutoadvanceSettings" type="GridContainer" parent="VBoxContainer"]
+[node name="AutoadvanceSettings" type="GridContainer" parent="VBoxContainer" unique_id=265268994]
 layout_mode = 2
 columns = 2
 
-[node name="HBox_BaseDelay2" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="HBox_BaseDelay2" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings" unique_id=1632566852]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2"]
+[node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2" unique_id=243720875]
 layout_mode = 2
 text = "Base Delay"
 
-[node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2" unique_id=638569218 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "This is the base delay for autoadvancment."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "This is the base delay for autoadvancment."
 
-[node name="FixedDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="FixedDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings" unique_id=1944054200]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
@@ -256,32 +277,32 @@ step = 0.01
 value = 1.0
 suffix = "s"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings" unique_id=1012439101]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer" unique_id=874055423]
 layout_mode = 2
 text = "Additional Delay"
 
-[node name="HintTooltip2" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip2" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer" unique_id=554828040 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "An additional delay per character or word can be added.
 
 Note: When changing values via code, you can actually use both modes simultaniously."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "An additional delay per character or word can be added.
 
 Note: When changing values via code, you can actually use both modes simultaniously."
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings" unique_id=1357246922]
 layout_mode = 2
 
-[node name="AdditionalDelayMode" type="OptionButton" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2"]
+[node name="AdditionalDelayMode" type="OptionButton" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2" unique_id=281910147]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 3
 selected = 0
 fit_to_longest_item = false
+item_count = 3
 popup/item_0/text = "None"
 popup/item_0/id = 0
 popup/item_1/text = "Per Word"
@@ -289,74 +310,74 @@ popup/item_1/id = 1
 popup/item_2/text = "Per Character"
 popup/item_2/id = 2
 
-[node name="AdditionalDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2"]
+[node name="AdditionalDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2" unique_id=338925936]
 unique_name_in_owner = true
 layout_mode = 2
 step = 0.001
 
-[node name="AutoadvanceIgnoreCharacters" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2"]
+[node name="AutoadvanceIgnoreCharacters" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2" unique_id=1958871974]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters"]
+[node name="Label3" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" unique_id=1479635837]
 layout_mode = 2
 text = "Ignored Characters"
 
-[node name="HintTooltip3" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip3" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" unique_id=868527188 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "An ignored character will add no delay, this is useful to exclude interpunction and whitespaces.
 
 If disabled, the general line of text length will be used, stripping the BBCode tags first.
 If enabled, the text will be scanned and the matching characters will be skipped."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "An ignored character will add no delay, this is useful to exclude interpunction and whitespaces.
 
 If disabled, the general line of text length will be used, stripping the BBCode tags first.
 If enabled, the text will be scanned and the matching characters will be skipped."
 
-[node name="IgnoredCharactersEnabled" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters"]
+[node name="IgnoredCharactersEnabled" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" unique_id=589362578]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="IgnoredCharacters" type="LineEdit" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters"]
+[node name="IgnoredCharacters" type="LineEdit" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" unique_id=1657706718]
 unique_name_in_owner = true
 layout_mode = 2
 text = "/\\\\,.( ); ?!-+\"'"
 expand_to_text_length = true
 
-[node name="HBox_BaseDelay" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="HBox_BaseDelay" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings" unique_id=590094307]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay"]
+[node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay" unique_id=709399876]
 layout_mode = 2
 text = "Enabled at the start"
 
-[node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay" unique_id=1143557111 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "While you would usually enable Auto-Advance via code,
 if this is true it will be initially enabled.
 This kind of Auto-Advance (system) only stops when disabled via code. "
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "While you would usually enable Auto-Advance via code,
 if this is true it will be initially enabled.
 This kind of Auto-Advance (system) only stops when disabled via code. "
 
-[node name="AutoAdvance" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings"]
+[node name="AutoAdvance" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings" unique_id=832533375]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=724318317]
 layout_mode = 2
 
-[node name="HBoxContainer AutoSkip" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer AutoSkip" type="HBoxContainer" parent="VBoxContainer" unique_id=487596874]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoSkip"]
+[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoSkip" unique_id=1864224725]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
 text = "Auto-Skip"
 
-[node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoSkip" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoSkip" unique_id=648509015 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "Auto-Skip is the concept of automatically skipping Timeline Events to the next unread Text Event or Event demanding user inputs (e.g. Choice, Wait Input, and Text Input).
 
@@ -366,7 +387,7 @@ Dialogic.Inputs.auto_skip.enabled = true
 By default, Auto-Skip will cancel on user input.
 You can disable this by calling:
 Dialogic.Inputs.auto_skip.disable_on_user_input = false"
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "Auto-Skip is the concept of automatically skipping Timeline Events to the next unread Text Event or Event demanding user inputs (e.g. Choice, Wait Input, and Text Input).
 
 You can enable Auto-Skip from code via:
@@ -376,30 +397,30 @@ By default, Auto-Skip will cancel on user input.
 You can disable this by calling:
 Dialogic.Inputs.auto_skip.disable_on_user_input = false"
 
-[node name="AutoskipSettings" type="GridContainer" parent="VBoxContainer"]
+[node name="AutoskipSettings" type="GridContainer" parent="VBoxContainer" unique_id=1119571928]
 layout_mode = 2
 columns = 2
 
-[node name="HBox_BaseDelay2" type="HBoxContainer" parent="VBoxContainer/AutoskipSettings"]
+[node name="HBox_BaseDelay2" type="HBoxContainer" parent="VBoxContainer/AutoskipSettings" unique_id=1244469956]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2"]
+[node name="Label" type="Label" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2" unique_id=685279290]
 layout_mode = 2
 text = "Time per Event"
 
-[node name="HintTooltip" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2" unique_id=1831243263 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "The time until Auto-Skip will execute the next event.
 
 If this is set to 0.1s, each event should finish within that time.
 Custom events must respect this time, built-in events already handle Auto-Skip."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "The time until Auto-Skip will execute the next event.
 
 If this is set to 0.1s, each event should finish within that time.
 Custom events must respect this time, built-in events already handle Auto-Skip."
 
-[node name="AutoskipTimePerEvent" type="SpinBox" parent="VBoxContainer/AutoskipSettings"]
+[node name="AutoskipTimePerEvent" type="SpinBox" parent="VBoxContainer/AutoskipSettings" unique_id=280353553]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
@@ -407,55 +428,55 @@ step = 0.01
 value = 0.1
 suffix = "s"
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" unique_id=784845331]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1330382706]
 layout_mode = 2
 
-[node name="Title2" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Title2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1440353326]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
 text = "Auto-Pauses"
 
-[node name="HintTooltip" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip" parent="VBoxContainer/HBoxContainer" unique_id=389104140 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "Adds pauses after certain letters.
 
 Each set can contain multiple letters that will (individually)
 have a pause of the given length added after them."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "Adds pauses after certain letters.
 
 Each set can contain multiple letters that will (individually)
 have a pause of the given length added after them."
 
-[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1988231132]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 text = "Add set"
 
-[node name="AutoPauseSets" type="GridContainer" parent="VBoxContainer"]
+[node name="AutoPauseSets" type="GridContainer" parent="VBoxContainer" unique_id=374652584]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=2100317744]
 layout_mode = 2
 
-[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=371121567]
 layout_mode = 2
 text = "Absolute auto-pause times"
 
-[node name="HintTooltip7" parent="VBoxContainer/HBoxContainer3" instance=ExtResource("3_s7xhj")]
+[node name="HintTooltip7" parent="VBoxContainer/HBoxContainer3" unique_id=120844592 instance=ExtResource("3_s7xhj")]
 layout_mode = 2
 tooltip_text = "If not enabled autopauses will be multiplied by the speed and user speed. When enabled those will be ignored."
-texture = SubResource("ImageTexture_3xcp4")
+texture = null
 hint_text = "If not enabled autopauses will be multiplied by the speed and user speed. When enabled those will be ignored."
 
-[node name="AutoPausesAbsolute" type="CheckBox" parent="VBoxContainer/HBoxContainer3"]
+[node name="AutoPausesAbsolute" type="CheckBox" parent="VBoxContainer/HBoxContainer3" unique_id=1143326730]
 unique_name_in_owner = true
 layout_mode = 2
 
